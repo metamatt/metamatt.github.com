@@ -1,0 +1,974 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Step 2 is the hard part.</title>
+  <meta name="author" content="Matt Ginzton">
+
+  
+  <meta name="description" content="In summer 2009, Comcast rolled out DOCSIS
+3.0 in the Bay Area,
+including my neighborhood in San Francisco. Specific offerings included speeds
+as high &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://metamatt.github.com/blog/page/8/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Step 2 is the hard part." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19563060-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Step 2 is the hard part.</a></h1>
+  
+    <h2>Matt Ginzton writes here.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:metamatt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/07/state-of-the-last-mile-internet-connection-year-2009/">State of the Last-mile Internet Connection, Year 2009</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-07T00:00:00-07:00" pubdate data-updated="true">Apr 7<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/04/07/state-of-the-last-mile-internet-connection-year-2009/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In summer 2009, Comcast rolled out <a href="http://en.wikipedia.org/wiki/DOCSIS#Speed_tables">DOCSIS
+3.0</a> in the Bay Area,
+including my neighborhood in San Francisco. Specific offerings included speeds
+as high as 50mbps/10mbps up/down, and a pretty decent price on 30mbps/6mbps.</p>
+
+<p>So: I abandoned <a href="http://blog.metamatt.com/blog/2011/04/07/state-of-the-last-mile-%0Ainternet-connection-year-2008/">my Astound 18/2
+connection</a> and signed up for Comcast 30/7. That was
+September 2009. Looking back, I see that it was only 4 months later that I
+signed up for <a href="http://pingdom.com/">pingdom monitoring</a> of my home IP address.
+That&#8217;s a bad sign &#8211; I wouldn&#8217;t need to monitor something that was working
+properly, would I?</p>
+
+<p>I spent a lot of time traveling in the middle of 2010 so I didn&#8217;t realize
+quite how bad it was getting, but it was getting bad &#8211; the <a href="http://stats.pingdom.com/sh6fgl3lqqrd/150515/history">Comcast
+connection would drop out
+entirely</a> a couple times
+a month, then a couple times a week, then almost daily, getting worse and
+worse over time. I don&#8217;t remember thinking it was really bad until November
+2010, but looking back at the data, the problems dated all the way back to
+January.</p>
+
+<p>Click on the <a href="http://stats.pingdom.com/sh6fgl3lqqrd/150515/history">Pingdom history link for the pretty
+graphs</a>, which
+unfortunately don&#8217;t tell the whole story: they show the amount of uptime (or
+downtime), but the problem is more insidious. At first, the connection
+failures would happen at night or when I wasn&#8217;t home, and would fix themselves
+after a few hours, and I just assumed the whole network was down. Over time,
+as this happened more and more, sometimes when I was home, and I gained
+familiarity with the problem, it acquired a very distinct signature: when I
+noticed an Internet connectivity failure, I&#8217;d ping the modem on its LAN
+address (192.168.100.1), it would fail to respond, I&#8217;d reboot it by unplugging
+and restoring power to it, and it would work fine immediately after reboot.
+This looks a lot less like a problem with the network itself and a lot more
+like a problem with my modem. So, Pingdom sees very little downtime because
+each time it goes down, if I&#8217;m home I immediately notice and bring it back up
+&#8211; it&#8217;s the number, not the length, of the outages that&#8217;s annoying me. You can
+click on the month links in the Pingdom status page to see the details;
+December 2010 through February 2011 sure isn&#8217;t pretty, with about 10 outages
+per month.</p>
+
+<p>So I arrived at a succinct description of the problem: modem suddenly stops
+carrying traffic; at this point it also stops responding to ICMP or HTTP
+requests on its local address. Reboot. It comes back fine. Speaking as a
+software engineer, this looks like a bug in the modem firmware &#8211; something
+goes wrong and the modem crashes. But I have no way of telling what went
+wrong, since the modem doesn&#8217;t have any useful logs or diagnostics accessible
+to me (even though I own the modem, its firmware and operational parameters
+are controlled by the network provider, namely Comcast, not me).</p>
+
+<p>I tried calling Comcast to see if they had any suggestions, but instantly lost
+a lot of faith in their monitoring acumen when they said they couldn&#8217;t see any
+history of problems, at a time when the modem was actually unplugged. I tried
+replacing the modem, but a brand new modem (different brand, Zoom) failed the
+same way within days. (I went back to the original modem, a Motorola SB-6120,
+since it reboots much faster, and given how often I have to reboot it, that&#8217;s
+actually an important feature. Plus it was already paid for.) I tried calling
+Comcast and had them send a troubleshooting tech out, twice. Both times, the
+tech measured the signal at the modem, said it looked great, then for good
+measure went around inspecting wiring (and the first time replaced a
+splitter). The problem persisted, albeit less frequently. Meanwhile, a few
+more calls to Comcast support yielded only suggestions to remove every
+splitter in the path (which is weird because (a), I didn&#8217;t realize that
+splitters are the root of all evil, but apparently everyone who&#8217;s worked on
+cable networks considers them the first thing to check, and (b), most
+customers have to be using splitters &#8211; how else are you supposed to connect
+your cable modem and your TV at the same time?).</p>
+
+<p>I do have to hand it to the first Comcast tech, who not only replaced one
+splitter but found an uncrimped connector on one end of a homemade cable (made
+by, er, me). It&#8217;s funny to me that this poorly made cable had no effect on
+speed or measurable signal quality at a given time, and not all that much
+effect on reliability, since the cable modem connected via that cable worked
+at a good speed for weeks or months between outages. But I&#8217;m sure it&#8217;s better
+to have that cable connected tightly. I&#8217;m also at a loss to explain why poor
+wiring causes modem crashes &#8211; it seems much more likely to cause signal
+degradation that causes persistent speed loss; it&#8217;s hard for me to see how
+(without measurably degrading the signal) it can occasionally just crash the
+modem. But hey, I&#8217;m not a cable modem designer. Maybe the bad wiring or rogue
+splitter would occasionally push the modem outside some operational parameter,
+electrically, and the modem responds by entering some untested area of its
+firmware and locking up. Who knows. Now they&#8217;ve removed all the splitters and
+then put back exactly one professionally installed one, checked the cabling,
+measured the signal and it all looks good, and yet the problem persists.</p>
+
+<p>Summary: the problem persists, and at this point Comcast charges me extra
+every time they send a tech out to not fix it. Right now, I&#8217;m just living with
+an Internet connection that forces me to reboot the modem once a week when it
+crashes.</p>
+
+<p>Pros: fastest Internet connection available in my area; pretty cheap at
+introductory rate; serious upload speed; I haven&#8217;t seen any speed degradation
+due to other customers on the same cable &#8211; I get full speed any time of day
+I&#8217;ve tried.</p>
+
+<p>Cons: Flaky connection; Comcast customer support and policies (no servers,
+per-month cap of 250GB, past bad behavior including throttling, entire Comcast
+address block is on the <a href="http://www.spamhaus.org/pbl/">Spamhaus PBL</a> so my NAS
+can&#8217;t email my Yahoo account to tell me about firmware upgrades); listening to
+<a href="http://blog.metamatt.com/blog/2011/01/26%0A/reason-number-7-its-weird-getting-internet-service-from-a-cable-company/">ads for pay-per-view boxing matches</a>
+when calling tech support; opaque pricing (between bundles and introductory
+rates, just try using Comcast&#8217;s website to figure out how much it actually
+costs).</p>
+
+<p>Summary: The network itself is competently run on the best technology
+available in this area, but nobody knows how to troubleshoot my problem and
+it&#8217;s apparently not worth it to Comcast to care for the price of one consumer
+connection.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/07/state-of-the-last-mile-internet-connection-year-2008/">State of the Last-mile Internet Connection, Year 2008</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-07T00:00:00-07:00" pubdate data-updated="true">Apr 7<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/04/07/state-of-the-last-mile-internet-connection-year-2008/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>When I moved between houses in 2008, since I was moving anyway it seemed like
+a good time to re-evaluate my options for Internet providers.</p>
+
+<p>In this neighborhood of San Francisco, I actually have a lot more choices than
+are available in most of the USA: 2 cable providers (Comcast &amp; Astound),
+first-party DSL from AT&amp;T, or 3rd-party DSL over AT&amp;T&#8217;s wires.</p>
+
+<p>I wanted speeds faster than DSL (the only affordable DSL connections topped
+out at 6mbps/768kbps), so I decided to try cable. The 2 cable providers
+offered similar speeds at the time, and I&#8217;d heard bad things about Comcast, so
+I signed up with Astound.</p>
+
+<p>Unlike telephone wires (one company has a local monopoly and owns all the
+wires, but is required to share the wires for rental by other companies, hence
+the existence of 3rd-party DSL), cable companies don&#8217;t have to share their
+wires, that I&#8217;m aware of. That&#8217;s why there&#8217;s no 3rd party cable internet, and
+most areas don&#8217;t have multiple cable providers. But this area does. So, there
+are 3 different sets of wires running along the poles along my street (4 if
+you count AC power): Comcast coax carrying Comcast signals, Astound coax
+carrying Astound signals, and AT&amp;T twisted pairs carrying who-knows-who&#8217;s
+signals. There was already a Comcast wire running to my building, but not an
+Astound wire, so when I first signed up, they had to run a new wire.</p>
+
+<p>They did it wrong. I didn&#8217;t realize at first, but over the first 2 weeks, my
+Internet connection would be reliable and plenty of fast most of the time, and
+then every couple days would break entirely for half an hour or so. I called
+Astound a couple times and they tried various troubleshooting purely from
+their dispatch center and couldn&#8217;t find any problems; eventually they sent a
+tech guy to my house, but he decided the problem was with the wiring which he
+couldn&#8217;t reach. It turns out that Astound, as the newest company on the pole,
+is also high man on the pole, as in their wires are mounted higher than the
+others; also, they use a combination of their own employees and independent
+contractors as service techs, and the guy they&#8217;d sent this time was a
+contractor. His ladder wouldn&#8217;t reach as high as the Astound cable, so he had
+to call a real Astound guy with a cherry-picker truck. Finally the real
+Astound guy showed up, replaced the cable from my house to the main line on
+the poles, and showed me that the original cable had a big gash in it, and
+basically as it moved in the wind could make or entirely break the electrical
+connection. And yet, with a physical connection so tenuous, it worked fine
+most of the time.</p>
+
+<p>After that, I didn&#8217;t have any more speed or reliability problems for the next
+year.</p>
+
+<p>Pros: pretty fast (18mbps/2mbps down/up); pretty cheap (especially at the 1st-
+year introductory rate); worked fine after the first problem was resolved;
+tech support was easy to reach and pretty easy to deal with.</p>
+
+<p>Cons: shoddily run. Example 1: the original broken wire they gave me, and the
+service tech they sent who couldn&#8217;t reach the wire. Example 2: they forgot to
+bill me for 3 months, then noticed and reacted by just turning off my account,
+which got my attention to call them pretty quickly &#8211; but it&#8217;s not like I was
+failing to pay their bills; they were failing to bill me. Example 3: they had
+bogus reverse-DNS entries, so that my IP address would reverse-resolve to a
+hostname that forward-resolved to some other IP address, which made it hard to
+log into various remote servers by ssh as sshd looks askance at such
+tomfoolery.</p>
+
+<p>Anyway, I stuck with this connection for a little more than a year, until
+Comcast rolled out DOCSIS 3 in this area, opening the door to faster speeds.
+Faster uploads, especially.</p>
+
+<p>One note is that I never saw the purported disadvantage of cable, where the
+medium and associated bandwidth is shared among a whole neighborhood, and the
+rated speed is high but actual speed decreases when your neighbors are doing
+anything &#8211; I got the rated speed pretty much all the time.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/07/state-of-the-last-mile-internet-connection-year-2003/">State of the Last-mile Internet Connection, Year 2003</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-07T00:00:00-07:00" pubdate data-updated="true">Apr 7<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/04/07/state-of-the-last-mile-internet-connection-year-2003/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In 2003 when I moved to San Francisco, I didn&#8217;t look around too hard but just
+signed up for the <a href="http://blog.metamatt.com/blog/2011/03/31/state-of-the-last-mile-%0Ainternet-connection-year-2001/">Speakeasy DSL connection that I had wanted
+before</a>, and which was actually available at my new
+address.</p>
+
+<p>I kept that connection for 5 years until I moved in 2008, and it worked out
+pretty well, though the speed was more impressive for 2003 than for 2008. Said
+speed: 6mbps down, 768kbps up, the fastest I&#8217;ve seen deployed in the US for
+standard ADSL (not ADSL2+).</p>
+
+<p>The good: the connection was reliable; Speakeasy was easy to deal with; their
+tech support people were clueful; their policies were customer-friendly (no
+caps, no restrictions on server hosting or sharing my network with others);
+pricing was transparent and up-front. (Some of these shouldn&#8217;t even count as
+benefits, but compared to a lot of the competition, they are, so I list them.)</p>
+
+<p>The bad: it was expensive ($116/month for &#8220;naked&#8221; DSL with a static IP and no
+phone line); no faster speeds were available. (They eventually rolled out a
+15mbps ADSL2 service that would reach me, but the cost was really high &#8211; over
+$200/month.)</p>
+
+<p>When I first moved in and got this service, I chose it because it was the
+fastest DSL connection available, I&#8217;d heard bad rumors about cable modems not
+reaching their advertised speed because of neighbor traffic (which I&#8217;ve since
+found to be untrue, but that&#8217;s a story for another time), and I wanted to deal
+with a company whose priority was the data network, not propping up an aging
+TV or telephone business. I was pretty happy with this over the years, but by
+2008, I probably would have bailed on DSL and gone to cable internet even if I
+hadn&#8217;t moved.</p>
+
+<p>(Note: all of the Speakeasy experiences described here were true at the time,
+before Speakeasy was acquired by Megapath. While I haven&#8217;t been a customer
+since, I don&#8217;t think all of these advantages are true any more; namely, the
+DSL lines have usage caps and it&#8217;s no longer possible to get a straightforward
+price quote from their web page. RIP, customer-friendly policies.)</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/31/state-of-the-last-mile-internet-connection-year-2001/">State of the Last-mile Internet Connection, Year 2001</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-31T00:00:00-07:00" pubdate data-updated="true">Mar 31<span>st</span>, 2011</time>
+        
+         | <a href="/blog/2011/03/31/state-of-the-last-mile-internet-connection-year-2001/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In 2001 I lived in residential Los Altos Hills in a small rental cottage on
+the edge of a larger piece of property. Other than that tiny cottage, it&#8217;s a
+pretty expensive neighborhood these days, but also pretty remote, and again
+the only available last-mile Internet connection was DSL, and with a pretty
+long loop length at that.</p>
+
+<p>I&#8217;d heard good things about Speakeasy, so I filled out their sign-up page,
+gave them my address, and their system did whatever lookups it does and
+decided it could serve me, so I signed up and scheduled an install. Then just
+before the install date a few days later, I got a message from them saying
+(paraphrased) &#8220;Er, we know we offered you you a nice fast ADSL connections for
+$50/month, but it turns out the PacBell &#8220;wiring&#8221; connecting your house to the
+phone network is actually just tin cans and string, or possibly rusty piano
+wire, and in any case is useless for ADSL… but would you be happy with SDSL,
+144kbits in each direction, for $200/month?&#8221;</p>
+
+<p>No, not really, I wouldn&#8217;t be.</p>
+
+<p>Actually, I don&#8217;t have to paraphrase, because I still have the email from
+Speakeasy:</p>
+
+<blockquote><p>Your order has been canceled due to pair gain on the line and needs to be
+downgraded to 144k IDSL. Pair Gain is the multiplexing of a certain number of
+phone conversations (signals) over a limited number of facilities. Basically
+you have a couple numbers, and so does your neighbor, but guess what? You both
+use the same CO facilities to talk on. Very bad for DSL.  If you are still
+interested in service, please see<a href="http://www.speakeasy.net/pricing/">[http://www.speakeasy.net/pricing/](http://w
+ww.speakeasy.net/pricing/)</a> for the 144k
+IDSL speed and it&#8217;s price difference from the service you originally
+requested.</p></blockquote>
+
+<p>They couldn&#8217;t offer any way to get my lines upgraded; just the observation
+that the wiring wouldn&#8217;t sustain a modern ADSL connection and changes to the
+wiring were out of their hands.</p>
+
+<p>Long story short: I signed up for PacBell DSL service, and they delivered it
+with no drama. It was pretty much the same price and speed as what Speakeasy
+was offering but found themselves unable to deliver.</p>
+
+<p>Over the same wires, right? Or maybe not. My theory is that PacBell had bad
+and good wires running to my neighborhood, and they were happy to switch their
+own DSL customers over to new shiny wires but relegate Covad/Speakeasy
+customers to the old rotten wires.</p>
+
+<p>(As an aside, looking through other emails from the same time frame, I&#8217;m
+amused to see that before giving up and going with PacBell, I also tried
+signing up for two different services from Sprint which I&#8217;d forgotten existed
+&#8211; &#8221;<a href="http://www.dslreports.com/shownews/Sprint-%0ABroadband-Direct-Goes-Offline-July-31-94556">Sprint Broadband Direct</a>&#8221; which was a 1.5mbps line-of-
+sight wireless link, and &#8221;<a href="http://www.networkworld.com/archive/2001/126613_10-22-2001.html">Sprint
+ION</a>&#8221; which
+was some ill-fated ATM-over-DSL technology that was heavily touted for a short
+period but was never actually available in my area.)</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/31/state-of-the-last-mile-internet-connection-year-2000/">State of the Last-mile Internet Connection, Year 2000</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-31T00:00:00-07:00" pubdate data-updated="true">Mar 31<span>st</span>, 2011</time>
+        
+         | <a href="/blog/2011/03/31/state-of-the-last-mile-internet-connection-year-2000/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In the fall of 2000, my last year at Stanford, I lived with a group of friends
+in one of <a href="http://www.paloaltoonline.com/weekly/mo%0Argue/news/1996_Sep_11.DEAD.html">Rob Levitsky&#8217;s Dead Houses</a>. While most of the Dead Houses already had
+shared DSL connections, this specific house was new to this capacity and
+didn&#8217;t. We called up PacBell and asked for a DSL line; they said it would take
+3 months.</p>
+
+<p>(Seriously, here we are in residential Palo Alto &#8211; in the heart of Silicon
+Valley during the tech boom &#8211; and the fastest last-mile Internet connection
+available is 1.5 megabit DSL and even that has a 3 month waiting period.)</p>
+
+<p>One of the friends moving into the new house had previously been living in
+another Dead House right across the street, and it turned out that the DSL
+line for that house was in his name and attached to his phone number. He
+wanted to keep the phone number, and PacBell was happy to move the line to the
+new house immediately, but then neither house would have Internet for 3
+months.</p>
+
+<p>So, like any self-sufficient group of tech-savvy geeks, we took matters into
+our own hands. We strung an Ethernet cable across the street, connecting the
+houses (there was enough tree cover that you could barely see the cable). One
+cat5 cable has 4 twisted pairs of wire, and the slower variants of Ethernet
+only need 2 pairs. So we connected one pair from this cable to the incoming
+phone line at the old house, moved the DSL modem across the street to the new
+house and connected it to the other end of that pair, then set up a NAT router
+at the new house, put an Ethernet plug on 4 of the remaining wires in the long
+cable, and used 2 of the remaining pairs to share the NAT router back across
+the street so the old house didn&#8217;t lose Internet access.</p>
+
+<p>The cable crossing the street in the trees was probably illegal, and running
+both phone and Ethernet on different pairs in the same cat5 cable is not
+exactly encouraged by the Ethernet spec, but it all worked fine.</p>
+
+<p>For about 6 months. Until a squirrel chewed through the cable.</p>
+
+<p>Oh well. It was fun while it lasted. I don&#8217;t remember what we did after that,
+but I think the severe backlog at PacBell had eased and we were able to get
+each house its own DSL line relatively quickly.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/31/in-honor-of-world-backup-day/">In Honor of World Backup Day</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-31T00:00:00-07:00" pubdate data-updated="true">Mar 31<span>st</span>, 2011</time>
+        
+         | <a href="/blog/2011/03/31/in-honor-of-world-backup-day/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In honor of <a href="http://arstechnica.com/gadgets/news/2011/03%0A/world-backup-day-what-are-you-doing-to-make-sure-youre-covered.ars">World Backup Day</a>, here&#8217;s a
+description of my current backup strategy:</p>
+
+<p>My desktop computer backs up to:</p>
+
+<ul>
+<li>Time Machine to local drive</li>
+<li><a href="http://www.crashplan.com/">CrashPlan</a> to a separate server in my house which hosts a Promise DS4600 RAID array</li>
+<li>CrashPlan to a friend&#8217;s house in another state, where I stashed another Promise NS4300 RAID array</li>
+</ul>
+
+
+<p>My laptop backs up to CrashPlan to the server in my house, only.</p>
+
+<p>I don&#8217;t really like Time Machine for local use, had even worse experiences
+with it on my LAN (my Mac Pro would frequently kernel panic on resume from
+sleep, and it hasn&#8217;t done that since I moved the TM drive local), and it
+doesn&#8217;t even try to work across the WAN. And TM is slow: even for local use,
+it seems like TM is almost always running or &#8220;cleaning&#8221; even if few files have
+changed since the last run &#8211; it will often take > 10 minutes to back up what
+it reports as 3MB of data (I haven&#8217;t used the trick described in the article
+above to dial back Time Machine from its default hourly backups, and intend to
+try that now).</p>
+
+<p>CrashPlan has a lot of advantages over Time Machine (in addition to working
+with computers other than Macs) &#8211; it mostly works across the WAN, across
+networks and firewalls, and it doesn&#8217;t take nearly as long to run.</p>
+
+<p>I don&#8217;t see the objections to offsite networked backup these days, assuming
+you have a decent Internet connection. Several different services have
+unlimited storage for $5/month, CrashPlan among them, but CP one-ups the
+others by also offering a free option if you host the storage yourself (or a
+friend does it for you). As for speeds, I have a 5mbps upstream connection and
+was able to back up about 300GB from scratch in about 10 days. The incremental
+backups for whatever I change in a day have no trouble running overnight. This
+is a DOCSIS 3 cable connection; if you have DSL your upload speeds are
+probably 3x to 10x slower and that could be painful; if you&#8217;re lucky enough to
+have fiber your upload speeds are probably 10x faster and this is a no-
+brainer; anyway I wasn&#8217;t wholly expecting 5mbps to be fast enough to make
+backups painless but was pleasantly surprised. I look forward to the day when
+we can take that level of speed for granted.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/26/phil-libin-on-data-protection-at-evernote/">Phil Libin on Data Protection at Evernote</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-26T00:00:00-07:00" pubdate data-updated="true">Mar 26<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/03/26/phil-libin-on-data-protection-at-evernote/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://blog.evernote.com/2011/03/24/evernote%E2%80%99s-three-laws-%0Aof-data-protection/">Phil Libin on data protection at
+Evernote</a></p>
+
+<p><a href="http://blog.evernote.com/2011/03/24/evernote%E2%80%99s-three-laws-%0Aof-data-protection/">Evernote&#8217;s Three Laws of Data
+Protection</a>:</p>
+
+<blockquote><p>Everything we do at Evernote follows these three basic rules:</p>
+
+<ol>
+<li><p>Your Data is <em>Yours</em></p></li>
+<li><p>Your Data is <em>Protected</em></p></li>
+<li><p>Your Data is <em>Portable</em></p></li>
+</ol>
+</blockquote>
+
+<p>Like what I said about <a href="http://blog.metamatt.com/blog/2010/05/19/kellan-elliott-mccrea-%0Aon-data-portability-at-flickr/">Flickr&#8217;s similar
+pronouncement</a>, this is totally the right approach for
+companies that want to be trusted with your data. I almost hesitate to heap
+praise on these companies for just doing what&#8217;s right, since (as I said
+before) this is basically the minimum standard that should be acceptable and
+it should be the norm, but it&#8217;s not really the norm, and Evernote and Flickr
+are two companies that treat their users and their data better than the norm,
+so, sure, let&#8217;s continue to praise them.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/22/that-time-is-not-for-the-candidates-it-is-for-the-voters/">That Time Is Not for the Candidates. It Is for the Voters.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-22T00:00:00-07:00" pubdate data-updated="true">Mar 22<span>nd</span>, 2011</time>
+        
+         | <a href="/blog/2011/03/22/that-time-is-not-for-the-candidates-it-is-for-the-voters/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><blockquote><p>That time is not for the candidates. It is for the voters.</p></blockquote>
+
+<p>&#8211;Newton N. Minow on why candidates for public office should get free TV airtime to discuss their positions, in <a href="http://www.theatlantic.com/magazine/archive/2011/04/a-vaster-wasteland/8418/2/">A Vaster Wasteland</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/22/im-not-proposing-complacency-here-i-am-proposing-perspective/">I’m Not Proposing Complacency Here. I Am Proposing Perspective.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-22T00:00:00-07:00" pubdate data-updated="true">Mar 22<span>nd</span>, 2011</time>
+        
+         | <a href="/blog/2011/03/22/im-not-proposing-complacency-here-i-am-proposing-perspective/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><blockquote><p>I&#8217;m not proposing complacency here. I am proposing perspective.</p></blockquote>
+
+<p>&#8211;George Monbiot, in <a href="http://www.guardian.co.uk/commentisfree/2011/mar/21/pro-nuclear-japan-fukushima">Why Fukushima made me stop worrying and love nuclear power</a>, on injecting contrarian common sense into an emotional debate.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/22/as-we-think-about-the-next-50-years-i-remember-a-story-president-kennedy-told-a-week-before-he-was-killed-the-story-was-about-french-marshal-louis-hubert-gonzalve-lyautey-who-walked-one-morning-through/">As We Think About the Next 50 Years, I Remember a Story President Kennedy Told a Week Before He Was Killed. The Story Was About French Marshal Louis-Hubert-Gonzalve Lyautey, Who Walked One Morning Through His Garden With His Gardener. He Stopped at a Certain Point and Asked the Gardener to Plant a Tree There the Next Morning. The Gardener Said, “but the Tree Will Not Bloom for 100 Years.” the Marshal Replied, “in That Case, You Had Better Plant It This Afternoon.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-22T00:00:00-07:00" pubdate data-updated="true">Mar 22<span>nd</span>, 2011</time>
+        
+         | <a href="/blog/2011/03/22/as-we-think-about-the-next-50-years-i-remember-a-story-president-kennedy-told-a-week-before-he-was-killed-the-story-was-about-french-marshal-louis-hubert-gonzalve-lyautey-who-walked-one-morning-through/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><blockquote><p>As we think about the next 50 years, I remember a story President Kennedy
+told a week before he was killed. The story was about French Marshal Louis-
+Hubert-Gonzalve Lyautey, who walked one morning through his garden with his
+gardener. He stopped at a certain point and asked the gardener to plant a tree
+there the next morning. The gardener said, “But the tree will not bloom for
+100 years.” The marshal replied, “In that case, you had better plant it this
+afternoon.</p></blockquote>
+
+<p>&#8211;Newton N. Minow on taking a long-term view, in <a href="http://www.theatlantic.com/magazine/archive/2011/04/a-vaster-wasteland/8418/2/">A Vaster Wasteland</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/9/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/7/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/21/speedy-resume/">Speedy resume</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">Two things I didn&#8217;t know about Mac OS internet sharing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/">Troubleshooting Mac sleep problems</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/metamatt">@metamatt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'metamatt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("metamatt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/metamatt" class="twitter-follow-button" data-show-count="false">Follow @metamatt</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117348958487049022391?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Matt Ginzton -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'metamatt';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

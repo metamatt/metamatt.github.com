@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Mac boot drive selection from Bluetooth keyboard - Step 2 is the hard part.</title>
+  <meta name="author" content="Matt Ginzton">
+
+  
+  <meta name="description" content="Twice in the last few months1 I&#8217;ve had to do troubleshooting steps on
+Vanessa&#8217;s iMac that involved booting from alternate volumes2. This &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://metamatt.github.com/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Step 2 is the hard part." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19563060-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Step 2 is the hard part.</a></h1>
+  
+    <h2>Matt Ginzton writes here.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:metamatt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Mac Boot Drive Selection From Bluetooth Keyboard</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-27T00:00:00-08:00" pubdate data-updated="true">Dec 27<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Twice in the last few months1 I&#8217;ve had to do troubleshooting steps on
+Vanessa&#8217;s iMac that involved booting from alternate volumes2. This is normally
+easy on a Mac, but not quite so easy on a Mac with a wireless Bluetooth
+keyboard3.</p>
+
+<p>Both times, it was an exercise in frustration, as I give the reboot command
+and wait about 10 seconds for the reboot to actually happen; then I hold
+Command-R, watch the screen blink black, wait, watch it blink white, wait,
+chime, wait, Apple logo, wait, and… oh hello, login screen! That&#8217;s not right.
+I&#8217;ve just wasted a minute and I&#8217;m back where I started.</p>
+
+<p>Apple&#8217;s <a href="http://support.apple.com/kb/HT4718">support document on recovery
+mode</a> makes it sound so easy:</p>
+
+<blockquote><p>Restart your Mac and hold down the Command key and the R key (Command-R),
+and keep holding them until the Apple icon appears, indicating that your Mac
+is starting up. After the Recovery System is finished starting up, you should
+see a desktop with a OS X menu bar and a &#8220;Mac OS X Utilities&#8221; application
+window. Note: If you see a login window or your own desktop and icons, it is
+possible that you didn&#8217;t hold Command-R early enough. Restart and try again.</p></blockquote>
+
+<p>After reading and rereading that, I try a few more times, holding Command-R
+earlier and earlier as Apple recommends, and, no luck. Wait a minute, I&#8217;m
+using a Bluetooth keyboard. Does that cause complications, like, the computer
+and keyboard aren&#8217;t able to communicate right at the beginning of the boot
+process? Yes4. Do I need to go find a USB keyboard to plug in? Not quite.</p>
+
+<p>It turns out the magic answer is to reboot the computer, wait for the LED on
+the keyboard to flash (which is after the computer starts booting and chimes
+and does a self-test which on this iMac with 12GB of memory all takes about 20
+seconds), and <em>then</em> immediately press and hold Command-R. Any earlier than
+that, and you&#8217;ll be ignored.</p>
+
+<p>You&#8217;d think Apple&#8217;s help docs could mention this, since they&#8217;ve been shipping
+Bluetooth keyboards by default with all their desktop machines for years now.</p>
+
+<hr />
+
+<ol>
+<li><p>Both of these occasions involved disk failures in the <a href="http://blog.metamatt.com/blog/2012/01/20/nothing-is-as-easy-as-it-should-be-ssd-upgrades/">Crucial M4 SSD I installed a year ago</a>. You can probably guess that I&#8217;m not quite as happy with these as I wanted to be. ↩</p></li>
+<li><p><a href="http://support.apple.com/kb/HT1533">Booting from CD</a> to upgrade firmware, or <a href="http://support.apple.com/kb/HT4718">booting from the recovery partition</a> to attempt disk repair. Each of these requires holding a certain key down while the computer is booting. ↩</p></li>
+<li><p>I put the same SSD model in my own computer, a Mac Pro tower with easily accessible drive bays and an old-school wired keyboard. It&#8217;s a lot easier to troubleshoot and a lot easier to repair. Murphy&#8217;s Law dictates that if we&#8217;re going to have problems with one SSD, it&#8217;ll be the one <a href="http://www.ifixit.com/Guide/iMac+Intel+27-Inch+EMC+2309+and+2374+Hard+Drive+Replacement/1634/1">tucked away under the glass front of the iMac</a>. ↩</p></li>
+<li><p>Try googling for &#8221;<a href="https://www.google.com/search?q=boot+mac+from+cd">boot Mac from CD</a>&#8221; versus &#8221;<a href="https://www.google.com/search?q=boot+mac+from+cd+bluetooth">boot Mac from CD bluetooth</a>&#8221;. Big difference. The first one leads you to a simple answer (but deceptively simple in the case you have a Bluetooth keyboard); the second one leads you through a muddle of hundreds of confused people. ↩</p></li>
+</ol>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Matt Ginzton</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-27T00:00:00-08:00" pubdate data-updated="true">Dec 27<span>th</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://metamatt.github.com/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard/" data-via="metamatt" data-counturl="http://metamatt.github.com/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/11/28/visiting-ireland-with-baby-dominic/" title="Previous Post: Visiting Ireland with baby Dominic">&laquo; Visiting Ireland with baby Dominic</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/01/09/previewing-markdown-files-from-the-terminal/" title="Next Post: Previewing Markdown files from the terminal">Previewing Markdown files from the terminal &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/21/speedy-resume/">Speedy resume</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">Two things I didn't know about Mac OS internet sharing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/">Troubleshooting Mac sleep problems</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/metamatt">@metamatt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'metamatt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("metamatt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/metamatt" class="twitter-follow-button" data-show-count="false">Follow @metamatt</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117348958487049022391?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Matt Ginzton -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'metamatt';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

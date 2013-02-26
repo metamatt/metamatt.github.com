@@ -1,0 +1,381 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Google account access from an iPhone - Step 2 is the hard part.</title>
+  <meta name="author" content="Matt Ginzton">
+
+  
+  <meta name="description" content="Google recently announced that after January 2013, they&#8217;ll be deprecating EAS
+access to
+Gmail (and
+calendar, and address book) for free &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://metamatt.github.com/blog/2013/01/23/google-account-access-from-an-iphone/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Step 2 is the hard part." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19563060-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Step 2 is the hard part.</a></h1>
+  
+    <h2>Matt Ginzton writes here.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:metamatt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Google Account Access From an iPhone</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-23T00:00:00-08:00" pubdate data-updated="true">Jan 23<span>rd</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Google recently announced that after January 2013, they&#8217;ll be <a href="http://support.google.com/a/bin/answer.py?hl=en&amp;answer=2716936">deprecating EAS
+access to
+Gmail</a> (and
+calendar, and address book) for free customers (addresses ending in
+@gmail.com, and free Google Apps accounts). It&#8217;ll still be available for paid
+Google Apps customers, and it&#8217;ll keep working for normal customers who are
+already using it, but only on their existing devices.</p>
+
+<p>This is bad news because EAS (aka Google Sync) has been and continues to be
+the best way to get Google services on an iOS device. In my opinion, iOS +
+Google Sync continues to be the best combination of mobile device and cloud
+services, but this change makes them work a little less well together.</p>
+
+<p>Google Sync (EAS) is the best way to connect iOS to Google services because</p>
+
+<ul>
+<li>One &#8220;account&#8221; (setup step in iOS) handles mail, contacts and calendars.</li>
+<li>Until September 2012, this was the only way to sync contacts between iOS and Google.</li>
+<li>Mail works better: Push works, and the delete button works the way you&#8217;d expect. (Supposedly both iOS mail client and Gimap mail server support IMAP IDLE, but they disagree on how, or something, because the result doesn&#8217;t work.)</li>
+<li>Also, if you enable Google&#8217;s 2-factor authentication, you need to generate fallback &#8220;app-specific&#8221; passwords for all your devices1, and for EAS this is one per device, and without EAS it&#8217;s at least two2.</li>
+</ul>
+
+
+<p>For these reasons, especially the second one, I&#8217;ve been using — and
+recommending to friends and family — EAS as the preferred way of connecting to
+Google accounts. In fact, I didn&#8217;t even realize that contact sync was now
+possible without it (Google just added CardDAV support in September 2012).</p>
+
+<p>Similarly, I&#8217;ve been using — and recommending to friends and family — Google
+Apps (Gmail and friends) as my preferred provider for cloud
+mail/contacts/calendars. Apple&#8217;s track record for cloud mail services is
+spotty; even if iCloud is improving, I just don&#8217;t see the advantage over
+Google, especially if you don&#8217;t want to tie yourself to Apple devices
+forever3.</p>
+
+<p>That leaves us trying to connect iOS to Google&#8217;s services as best we can.
+Which to be fair is pretty good, but losing EAS is a step back4. This speaks
+to <a href="http://levelsofdetail.kendeeter.com/post/31926718063/maps">something my friend Ken wrote months
+ago</a> (in the
+context of the maps kerfuffle):</p>
+
+<blockquote><p>Why is it that two tech giants with best-of-breed tech in different areas
+rarely seem to be able to cooperate to produce an awesome product for the
+user?</p></blockquote>
+
+<p>This has been a bright spot in this regard, which is getting a little less
+bright at the end of January.</p>
+
+<p>Google probably doesn&#8217;t care about keeping free EAS working because, in order
+of preference, they&#8217;d like to see</p>
+
+<ul>
+<li>You using an Android device to connect to Gmail+friends</li>
+<li>You using a (paid) Google Apps for Business account</li>
+<li>And for anyone else, using a non-Google device to connect to a free Google account, there are still the open protocols (IMAP for mail, CardDAV and CalDAV for calendar and contacts).</li>
+</ul>
+
+
+<p>Apple may not care about optimizing the Gmail experience for iOS users because</p>
+
+<ul>
+<li>They&#8217;d like to see you using iCloud for mail+contacts+calendars</li>
+<li>Plus they&#8217;ve already connected you to Google services using EAS, so why should they have to do it again differently.</li>
+</ul>
+
+
+<p>In fairness to Apple, adding a &#8220;Gmail&#8221; account to iOS adds both mail and
+calendars (IMAP + CalDAV), and Google only added CardDAV support on the server
+side in September 2012 (i.e. after the current iOS release). Maybe, hopefully,
+Apple will make iOS &#8220;Gmail&#8221; accounts start supporting calendars via CardDAV in
+the next release. In the meantime, you have to do it manually.</p>
+
+<p>I don&#8217;t see any reason why the open-protocol support from iOS to Google
+services couldn&#8217;t work just as well as EAS — if one setup step added all 3
+protocols, and if push were made to work — but it&#8217;s not the case now.</p>
+
+<hr />
+
+<ol>
+<li><p>It&#8217;s too bad that native device clients basically negate the advantage of 2-factor authentication, since they aren&#8217;t compatible and force you to use the fallback mechanism. ↩</p></li>
+<li><p>One for the &#8220;Gmail&#8221; account supporting IMAP and CalDAV, and one for the separate CardDAV account you have to add. And I don&#8217;t know whether/how &#8220;app-specific&#8221; password authentication actually works for the Gmail account type, given that it&#8217;s a hybrid of two protocols; it&#8217;s possible that doesn&#8217;t work in which case you would have to avoid the Gmail account type, generate 3 fallback passwords, and set up IMAP and CardDAV and CalDav separately. ↩</p></li>
+<li><p>I&#8217;m complaining here about the flaws in the relatively good iOS support for Google services; I suspect that anyone trying to connect to iCloud from Android or Windows apps has it far worse. ↩</p></li>
+<li><p>There&#8217;s some irony here in that the best way to connect some Apple software to some Google software is using protocols designed by Microsoft. ↩</p></li>
+</ol>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Matt Ginzton</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-23T00:00:00-08:00" pubdate data-updated="true">Jan 23<span>rd</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://metamatt.github.com/blog/2013/01/23/google-account-access-from-an-iphone/" data-via="metamatt" data-counturl="http://metamatt.github.com/blog/2013/01/23/google-account-access-from-an-iphone/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/01/09/previewing-markdown-files-from-the-terminal/" title="Previous Post: Previewing Markdown files from the terminal">&laquo; Previewing Markdown files from the terminal</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/01/23/restore-from-backup/" title="Next Post: Restore from backup">Restore from backup &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/21/speedy-resume/">Speedy resume</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">Two things I didn't know about Mac OS internet sharing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/">Troubleshooting Mac sleep problems</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/metamatt">@metamatt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'metamatt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("metamatt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/metamatt" class="twitter-follow-button" data-show-count="false">Follow @metamatt</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117348958487049022391?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Matt Ginzton -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'metamatt';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

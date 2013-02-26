@@ -1,0 +1,1385 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Step 2 is the hard part.</title>
+  <meta name="author" content="Matt Ginzton">
+
+  
+  <meta name="description" content="After the SSD upgrade project, I now have a stack of
+unused 1TB hard drives. I also have an old NAS unit (ReadyNAS NV) which is
+currently hosting 4  &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://metamatt.github.com/blog/page/5/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Step 2 is the hard part." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19563060-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Step 2 is the hard part.</a></h1>
+  
+    <h2>Matt Ginzton writes here.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:metamatt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/20/nothing-is-as-easy-as-it-should-be-nas-upgrades/">Nothing Is as Easy as It Should Be: NAS Upgrades</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-20T00:00:00-08:00" pubdate data-updated="true">Jan 20<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/01/20/nothing-is-as-easy-as-it-should-be-nas-upgrades/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>After <a href="http://blog.metamatt.com/blog/2012/01/20%0A/nothing-is-as-easy-as-it-should-be-ssd-upgrades/">the SSD upgrade project</a>, I now have a stack of
+unused 1TB hard drives. I also have an old NAS unit (ReadyNAS NV) which is
+currently hosting 4 320GB hard drives, is almost full, and while old is still
+compatible with the 1TB drives. Sounds like a good match — time to upgrade.</p>
+
+<p>Reading about <a href="http://www.readynas.com/?cat=54">ReadyNAS&#8217; vaunted X-RAID
+technology</a>, a proprietary extension to RAID
+that allows resizing, this sounds easy — one by one, replace each drive with a
+larger one, and wait for the RAID to rebuild onto the new drive. When the
+drives are different sizes, the array will be limited to 4x the size of the
+smallest, but after upgrading all 4 to 1TB, I simply reboot and will have
+access to the full new size. And since the ReadyNAS supports hot swap and has
+the drives mounted in nice hot swappable sleds, I don&#8217;t even have to reboot
+except for that final resize (and I&#8217;m not really clear on why I have to then,
+but whatever).</p>
+
+<p>Sounds easy… until I actually try swapping out the drives. The drives are in
+sleds, see, and the sleds have this latch, and the latch has this release
+button… and nothing happens when I press the release button. I try reading the
+manual, which talks about how easy it is to add drives but doesn&#8217;t go into any
+details on what to do if you have trouble removing one. I try reading &#8221;<a href="http://www.readynas.com/?page_id=193">The
+definitive guide to the ReadyNAS NV+</a>&#8221;
+(a slightly newer but very similar model) for tips; it talks about how disk
+replacement eases the stress of disk failure; my mind jumps to bad puns about
+stressing the ease while easing the stress, and thinking I&#8217;m glad I&#8217;m not
+dealing with the stress of a failed disk that I can&#8217;t remove.</p>
+
+<p>Eventually I find a <a href="http://www.readynas.com/forum/viewtopic.php?p=30550">forum thread on the
+problem</a>, with the
+solution. It&#8217;s 5.5 years old, and still kicking. Much like my ReadyNAS NV, I
+suppose.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/20/nest-learning-thermostat-review/">Nest Learning Thermostat Review</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-20T00:00:00-08:00" pubdate data-updated="true">Jan 20<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/01/20/nest-learning-thermostat-review/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I bought two <a href="http://www.nest.com/living-with-%0Anest/">Nest Learning Thermostats</a> for my house, which has two furnaces. Here&#8217;s how they&#8217;re working out
+for me.</p>
+
+<p><strong>Ordering</strong></p>
+
+<p>I almost bought them on the day they were announced back in November, but
+dithered, and the initial batch sold out; I got on the waiting list and
+waited. In early January they sent me an email allowing me to place an order
+(for up to 5 units); I ordered two; they arrived Friday and I&#8217;ve spent the
+weekend playing (er, working) with them.</p>
+
+<p>One thing that happened between when I didn&#8217;t order them the first day and
+when my turn to order came around was <a href="http://www.marco.org/2011/12/17%0A/nest-incompatibility-without-c-wire">Marco Arment&#8217;s post on Nest
+incompatibility with his existing wiring</a>. Having read that, I semi-carefully
+checked my own wiring against Nest&#8217;s online compatibility wizard before
+ordering (which I might not have bothered doing if I hadn&#8217;t read Marco&#8217;s post,
+given that my furnaces and wiring are only 3 years old, so I assumed they&#8217;re
+modern). When I say &#8220;semi-carefully&#8221;, I mean I looked at my wires and verified
+them against Nest&#8217;s tool (which says I&#8217;m fine), and I considered Marco&#8217;s
+problem (2 wires, red and white, are enough for a basic thermostat to control
+heating, but not to power or recharge the thermostat without activating said
+heating) and made sure I had a 3rd wire and figured I wouldn&#8217;t have that
+problem.</p>
+
+<p>In fact, when my thermostats arrived and I installed them, I also uttered a
+<a href="https://twitter.com/#!/metamatt/status/157882839508062209">triumphant but premature
+tweet</a> about having
+modern wiring. If only. If you&#8217;re reading carefully — more carefully than I
+had read Marco&#8217;s post — you&#8217;ll note I said I had 3 wires, but not which 3
+wires. And, as it turns out, I had it wrong. No, I didn&#8217;t have a C (common)
+wire; my third wire was a G (fan) wire.</p>
+
+<p><strong>Unboxing and setup</strong></p>
+
+<p>The packaging is nice; the actual thermostat unit is nice; the base which you
+attach to the wall has a built-in level, and pressure-fit connectors for the
+wires instead of screw terminals. It&#8217;s obvious the device was carefully
+designed and built without taking shortcuts — which had better be true, given
+the price.</p>
+
+<p>It was fairly easy to take my old thermostat off the wall, note how it was
+using the wires, reconnect the same wires (Rh, W and G, again) in the same
+capacity to the Nest base, attach the Nest base to the wall, and then press
+the Nest device onto the base. It didn&#8217;t take long to do this twice, in fact —
+once upstairs and once downstairs.</p>
+
+<p>The next step is to connect the thermostat my Wi-Fi network — entering Wi-Fi
+passwords on small devices without keyboards is usually no fun, but entering
+text on the Nest&#8217;s rotating dial is surprisingly satisfying. Kind of like
+using a combination lock from high school again, but less confusing. As soon
+as it connected to the network, the Nest found itself a software update,
+invoking the download-and-reboot cycle that&#8217;s the bane of many modern smart
+devices. In fact, it seemed to reboot twice. The downstairs device survived
+this fine and next wanted me to join it to a cloud management account; the
+upstairs device asked me what time it was, which is a bad sign for something
+that&#8217;s supposed to be connected to the internet. It turns out it had forgotten
+how to connect to the network, so I had to enter my Wi-Fi password again.</p>
+
+<p>After this setup phase — which took a little longer than I&#8217;d expected due to
+all that rebooting — the thermostats were active, ready to use manually, and,
+ostensibly, learning my habits so I don&#8217;t need to tell them what to do.</p>
+
+<p><strong>Use</strong></p>
+
+<p>These thermostats are easy on the eyes and easy to use; you just turn the dial
+to change the temperature, or push in on the dial to bring up the onscreen UI
+with easy-to-understand options for setting home/away, turning the whole thing
+off, or invoking manual scheduling settings I haven&#8217;t bothered playing with.</p>
+
+<p>If you create a Nest account and install the smartphone app or use their
+website, you can monitor and change the temperature from anywhere, which is
+pretty darn space age if you ask me.</p>
+
+<p>One minor glitch is that the just-approach-to-wake-screen feature seems to
+only sometimes work; the Nest is supposed to recognize when you approach and
+greet you by turning on the screen, but sometimes it doesn&#8217;t turn on until I
+actually touch it, sometimes it only turns in when I stick my hand within
+inches, and sometimes it turns on when I just walk by. This would be a minor
+annoyance, but it also makes me wonder how well the auto-away feature will
+work, since that&#8217;s also based on a proximity sensor (maybe the same one, maybe
+a different one, I don&#8217;t know).</p>
+
+<p>Two simple things my old, not-worth-blogging-about thermostat did that the
+Nest doesn&#8217;t: show you the time on the main screen (my wife and I are used to
+using the thermostat as a clock on our way out the door, as it&#8217;s conveniently
+located for that) and remind you to change the furnace filters. Oh well, not a
+dealbreaker, and maybe these features will appear in a future software update.</p>
+
+<p>One design deficiency that wouldn&#8217;t be worth complaining about with any other
+thermostat, but is noteworthy with the Nest now that they&#8217;re trying to apply
+good design to elevate thermostats to the level of art object: off-angle
+viewing of the display is terrible. It looks great from straight on, but
+thermostats are usually mounted at chest level, not at eye level, and used
+from fairly close by, so in normal use I&#8217;m looking down at the display at a
+fairly steep angle. Part of the problem is the LCD display itself, and part of
+the problem is the convex lens sitting over it; it&#8217;s really not putting its
+best face forward in actual use.</p>
+
+<p><strong>Problems</strong></p>
+
+<p>The second day after I installed the two Nests, I heard a clicking sound
+coming from the heating ducts. Upon inspection, the downstairs furnace was
+working fine, but the upstairs furnace was making the clicking noises, which
+were resonating through the ducts. I fiddled with the thermostat; it wanted
+the furnace on but it wouldn&#8217;t come on. I turned the thermostat off; the
+clicking stopped. I turned the thermostat back on, and it turned on the
+furnace for about a minute, then the furnace turned off and went back to
+clicking. I fiddled with the thermostat for a while longer, and was able to
+provoke various permutations of this behavior, but not a working upstairs
+furnace.</p>
+
+<p>I called Nest support, and got a really helpful and knowledgeable guy who
+suggested I swap the upstairs and downstairs units, to help rule out a problem
+with the thermostat itself. After the swap, I still had problems upstairs and
+not downstairs — apparently the problem is with the furnace, and not the
+specific Nest unit. His hypothesis was that my furnace was so sensitive to
+voltage that it would work fine if the thermostat just bridges the Rh and W
+wires, but if the thermostat pulls any power at all from those wires, the
+furnace relays get confused and start toggling instead of staying on. Just for
+fun, I measured the wiring at both thermostats with a multimeter and couldn&#8217;t
+detect much difference between upstairs and downstairs (in both cases, the
+multimeter saw 28 V across Rh and W with the thermostat detached and the
+furnace not running, and 0.485 A across Rh and W with the furnace running),
+but the Nest&#8217;s built-in technical details monitoring report claimed voltage
+dropped from 29 V upstairs when not running the furnace to 7.77 V when running
+the furnace (and compared to 9.19 V downstairs). Is that 1.4 V difference
+enough to explain why one would work and the other wouldn&#8217;t? I don&#8217;t know.</p>
+
+<p>When I called back to Nest support with these results, the tech support guy
+said this sounds like a power stealing problem and the probable solution is to
+run a C wire. I asked why two nearly identical (same model, different size)
+furnaces that are only 3 years old would be different in this regard, and he
+didn&#8217;t really know.</p>
+
+<p>Note this isn&#8217;t the same problem Marco wrote about, though I&#8217;d likely have
+that problem over time too; his problem happens if the furnace doesn&#8217;t run
+very often and the Nest needs to charge itself without running the furnace; in
+my case the fully charged Nest couldn&#8217;t even run the furnace when it should be
+on.</p>
+
+<p><strong>Gripes</strong></p>
+
+<p>Beyond the fact that the thermostat can&#8217;t run one of my furnaces, it&#8217;s
+annoying that the <a href="http://store.nest.com/#compatibility">Nest compatibility
+tool</a> doesn&#8217;t even warn of this problem.</p>
+
+<p>A few other things that came up with I was on the support call: first, when I
+was first describing the problem and giving information on how I&#8217;d connected
+the Nest et cetera, I asked if they were already collecting diagnostic
+information in the cloud since the thermostat is smart and internet-connected,
+and was told no. I find that surprising and disappointing — a missed
+opportunity. (There&#8217;s maybe a privacy concern, and I don&#8217;t want them selling
+data on how often I run my furnace or how often I&#8217;m home vs away, but I
+certainly wouldn&#8217;t mind them collecting diagnostics to improve their product.)</p>
+
+<p>Also while chatting with the support tech, I asked if there was a way to get
+the Nest to display a clock on the main screen, and to remind me when to
+change the furnace filter, and was told no on both accounts; then I asked if I
+could file a feature request for those and was told that not only do they not
+take feature requests from customers, but that the support techs are
+prohibited from talking to the product designers, both for legal/intellectual
+property reasons. I joked that this must be because Nest was founded by people
+from Apple — famous for not being persnickety about taking ideas from people
+who might then claim ownership of said ideas; what can you say about a company
+with an official &#8221;<a href="http://www.apple.com/legal/policies/ideas.html">unsolicited idea submission
+policy</a>&#8221;? — and he said yeah,
+if you read our privacy policy it has a lot in common with Apple&#8217;s. But come
+on. It&#8217;s not like there&#8217;s any intellectual property in the idea of a
+thermostat displaying the time of day. And more than that: a policy that says
+a company can&#8217;t listen to its customers is a customer-hostile policy.</p>
+
+<p><strong>Solution</strong></p>
+
+<p>Basically, to get the Nest working with my upstairs furnace, I need to give it
+a C wire. I did consider running new thermostat control wiring, but when I
+looked at where the wires run, it&#8217;s not worth the trouble — there&#8217;s no way to
+rerun the wires without opening walls.</p>
+
+<p>But. What&#8217;s this G wire for, anyway? Following the <a href="http://%0Awiki.xtronics.com/index.php/Thermostat_signals_and_wiring#Heating">Transtronics wiki</a> Marco
+linked to, and confirmed by observation, the thermostat doesn&#8217;t need to tell
+the fan when to run while heating — I have gas heating and the furnace itself
+controls the fan. Now, the thermostat can also tell the fan to run without the
+heat, and it turns out that&#8217;s all the G wire is good for. After checking with
+my wife, I confirmed we almost never use that feature (and it was relatively
+easy to access before, with a switch on our old thermostats, whereas with the
+Nest it requires digging through the settings menu a bit, so we&#8217;re even less
+likely to do it).</p>
+
+<p>Thus, the solution: repurpose the G wire as a C wire. We don&#8217;t really need
+direct control over the fan, and if I do, I can run new wiring for that, to
+locations that aren&#8217;t as hard to get to as the thermostat locations. (Note
+that this works for me because we have gas heat; electric heaters don&#8217;t
+control the fan themselves, so removing the G wire would not be a good idea.)
+So, I had to turn off the furnace and reconnect the green wire on that end
+too, moving it from the G terminal to the C terminal. This quick-and-dirty
+solution satisfies my hacker instincts, and after a couple days of use, the
+Nest is much happier: the Nest&#8217;s voltage monitoring reports 36 V at 100 mA,
+instead of 8 V at 20 mA without the C wire, and the furnace runs when it
+should.</p>
+
+<p><strong>Summary</strong></p>
+
+<p>I like it; I&#8217;ll keep mine.</p>
+
+<p>But based on my experience, I can&#8217;t recommend the Nest thermostat unless you
+can give it a C wire. And I&#8217;m disappointed that all the information Nest will
+give you before buying doesn&#8217;t point out even a whiff of such problems.</p>
+
+<p><strong>Update</strong>: Nest support <a href="https://twitter.com/#!/nest/status/160464579711877120">tweeted me back</a> to say they&#8217;ve updated the compatibility tool with a note about the C wire, but in my opinion <a href="http://blog.metamatt.com/blog/2012/01/20/nest-c-wire-update/">it&#8217;s still buried where it&#8217;s too easy to miss</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/20/nest-c-wire-update/">Nest &#8220;C&#8221; Wire Update</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-20T00:00:00-08:00" pubdate data-updated="true">Jan 20<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/01/20/nest-c-wire-update/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>My <a href="http://blog.metamatt.com/blog/2012/01/20/nest-%0Alearning-thermostat-review/">Nest thermostat review</a> complained about up-front lack of obviousness
+about &#8220;C&#8221; wire compatibility issues, and Nest support <a href="https://twitter.com/#!/nest/status/160464579711877120">replied with a
+tweet</a> saying</p>
+
+<blockquote><p>We&#8217;ve updated the compatibility tool so there&#8217;s a note about C wire, but
+you&#8217;re right - it could be clearer.</p></blockquote>
+
+<p>I took a trip back through the compatibility wizard, and (unless there are
+more changes coming) it&#8217;s there but it&#8217;s still not obvious.</p>
+
+<p>First, I tell it what I&#8217;ve got:</p>
+
+<p><img src="http://farm8.staticflickr.com/7001/6733277723_e2c7b691a7_z.jpg" alt="" /></p>
+
+<p>Then, it tells me what to expect:</p>
+
+<p><img src="http://farm8.staticflickr.com/7167/6733277795_b182cdd286_z.jpg" alt="" /></p>
+
+<p>I&#8217;m compatible, no reservations, it says. Unless I click through the &#8221;<a href="http://support.nest.com/customer/portal/articles/285077">Learn
+more</a>&#8221; link, which
+from the context sounds like it&#8217;s going to help me decide whether I can
+install it without help, not whether it&#8217;s compatible with my wiring. That link
+goes to a &#8221;<a href="http://support.nest.com/customer/portal/articles/285077">Does Nest need a common
+wire?</a>&#8221; article,
+which has some useful information, including recognition of the possible
+problem, a suggestion to do what I did (turn another wire into a C wire if
+possible), and a link to <a href="http://support.nest.com/customer/portal/articles/197951-when-nest-%0Aneeds-a-common-wire">even more
+details</a>.</p>
+
+<p>That&#8217;s the right information, but I wouldn&#8217;t expect to find it hidden behind
+that &#8220;Learn more&#8221; link, and I still think anyone who clicks through the
+compatibility wizard without a C wire should see it. Maybe these problems are
+rarer than my small sample size indicates, but on the other hand, this &#8220;power
+stealing&#8221; problem doesn&#8217;t seem like an easy one.</p>
+
+<p>C&#8217;mon, Nest — I like the product, and now that I&#8217;ve got mine working, I expect
+to remain a happy customer. But for an issue this subtle and important, I
+think you&#8217;d do well to err on the side of caution.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/20/blog-comment-semi-spam/">Blog Comment Semi-spam</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-20T00:00:00-08:00" pubdate data-updated="true">Jan 20<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/01/20/blog-comment-semi-spam/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Seems like spammers are taking to spamming weblog comments wherever they are
+allowed with innocuous-looking content-free posts just to link back to
+themselves. (Is this somewhere between spam and
+<a href="http://en.wikipedia.org/wiki/Bacn">bacn</a>, since it&#8217;s not quite spam? I was
+unsure at first, but now I think it&#8217;s just spam.)</p>
+
+<p>Typically these posts will be written in a fairly reasonable facsimile of
+English, and not overtly spammy — a bunch of compliments I&#8217;m almost
+egotistical enough to believe, except there&#8217;s no relation to the post they&#8217;re
+commenting on, and somewhere at the end, a link to some site they&#8217;re pimping.</p>
+
+<p>These range from the fairly obvious link</p>
+
+<p><img src="http://farm8.staticflickr.com/7163/6729985265_71906afdc5.jpg" alt="" /></p>
+
+<p>to a link trying to masquerade as a signature</p>
+
+<p><img src="http://farm8.staticflickr.com/7155/6729985235_df30215312.jpg" alt="" /></p>
+
+<p>to links only in the author&#8217;s name</p>
+
+<p><img src="http://farm8.staticflickr.com/7018/6729985403_6d6804566d.jpg" alt="" /></p>
+
+<p>and then there&#8217;s the variant using Tumblr&#8217;s &#8220;like&#8221; feature, as in</p>
+
+<p><img src="http://farm8.staticflickr.com/7003/6729985363_b922c7938a.jpg" alt="" /></p>
+
+<p>or</p>
+
+<p><img src="http://farm8.staticflickr.com/7021/6729985315_1f0dabf0c8.jpg" alt="" /></p>
+
+<p>and for a final really blatant example, there&#8217;s this guy:</p>
+
+<p><img src="http://farm8.staticflickr.com/7031/6729985535_44467970b4_z.jpg" alt="" /></p>
+
+<p><img src="http://farm8.staticflickr.com/7024/6729985563_f4143d2412_z.jpg" alt="" /></p>
+
+<p>These last ones might actually require more than 2 seconds of thought to
+recognize as spam, if they didn&#8217;t appear in batches of 8 on the same post.</p>
+
+<p>Needless to say, I just delete all these, except for the Tumblr &#8220;like&#8221; spam
+which I don&#8217;t know how to target directly. (The next step would be turning off
+both comments and Tumblr &#8220;notes&#8221; in the theme, which would make these problems
+go away entirely.)</p>
+
+<p>The ironic thing is these people are probably doing this for Google link
+juice, but the way comments work via Disqus, it&#8217;s all Javascript and not in
+the real HTML as the page loads anyway, so I doubt indexers follow it. Plus I
+just delete it anyway. Spammers, if you&#8217;re reading this, you&#8217;re just wasting
+your time and mine.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/28/configuring-ios-for-googles-cloud-data-services/">Configuring iOS for Google&#8217;s Cloud Data Services</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-28T00:00:00-08:00" pubdate data-updated="true">Nov 28<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/11/28/configuring-ios-for-googles-cloud-data-services/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you&#8217;re a Gmail user, you&#8217;ve already got cloud email, a contact list or
+address book, and a calendar (actually a set of calendars) hosted by Google.
+And if you have an iPhone, you want to connect the built-in email, contacts
+and calendar applications to those Google data sources.</p>
+
+<p>It&#8217;s possible, but it&#8217;s not as easy as it should be.</p>
+
+<p>&#8220;Not easy&#8221;, you&#8217;re thinking? Go to Settings, &#8220;Mail, Contacts, Calendars&#8221;, &#8220;Add
+Account&#8221;, and there&#8217;s Gmail — enter your credentials, the account is set up,
+what could be easier than that?</p>
+
+<p>Well, that isn&#8217;t hard, but it also doesn&#8217;t work very well. If you use the
+&#8220;Gmail&#8221; account type, it doesn&#8217;t sync contacts at all. Email is there, via
+IMAP, but Gmail via IMAP has some notable deficiencies: push email doesn&#8217;t
+work (so the iPhone doesn&#8217;t see new mail or other changes right away), the
+delete behavior is weird, and there&#8217;s this extra &#8220;All Mail&#8221; folder which might
+sync an extra copy of all your messages. Your calendars are there &#8211; well, by
+default, only the main calendar, and not any others you may have created, or
+calendars others have shared with you, or delegated/published calendars like
+the one TripIt can automatically publish your travel plans to. (<a href="http://www.google.com/support/mobile/bin/answer.py?answer=151674">You can fix
+this with an extra
+step</a>, after
+which multiple calendars work normally.)</p>
+
+<p>There&#8217;s another way: add your Google account using the &#8220;Microsoft Exchange&#8221;
+account type. (If this seems confusing, note that what this really means is to
+access Google&#8217;s data services using the Exchange ActiveSync, or EAS, protocol,
+<a href="http://en.wikipedia.org/wiki/ActiveSync">which Microsoft has licensed to both Apple and Google among
+others</a>. Even more confusing, Google
+brands this method of access to its services not as Exchange or EAS, but as
+&#8221;<a href="http://www.google.com/mobile/sync/">Google Sync</a>&#8221;. Whatever.)</p>
+
+<p>If you do this, things get quite a bit better: contacts sync to the phone;
+email gains push (and in my opinion, the folder list and delete button work
+better). This is actually t<a href="http://www.google.com/support/mobile/bin/answer.py?answer=138740">he method Google recommends for use with
+iOS</a>. Again,
+only the main calendar syncs to the phone, but again, <a href="http://www.google.com/support/mobile/bin/answer.py?answer=139206">there&#8217;s a way to enable
+the other
+calendars</a>,
+which is even more of a pain than the CalDAV method.</p>
+
+<p>(Aside: I think the ability to get multiple calendars via Google Sync and EAS
+was recently added, because when I first set up my iPhone I couldn&#8217;t find this
+method, and resorted to adding my Gmail account twice: once using the
+&#8220;Exchange&#8221; account type for email and contacts with calendars disabled, and
+once using the &#8220;Gmail&#8221; account type for calendars with email disabled. This no
+longer seems necessary, but it may be a useful tip for anyone who wants Google
+contacts synced to their phone but for whatever reason don&#8217;t like the
+EAS/Google Sync behavior for email or calendars.)</p>
+
+<p>You may also run into some problems with contact sync, documented on the
+&#8221;<a href="http://www.google.com/support/mobile/bin/answer.py?answer=139635">Google Sync known issues with
+iOS</a>&#8221; page,
+under &#8220;Limited Contact Information&#8221;: &#8220;Phone number synchronization is limited
+to 2 Home numbers, 1 Home Fax, 1 Mobile, 1 Pager, 3 Work (one will be labeled
+&#8216;Company Main&#8217;) and one Work Fax number.&#8221; Another problem <strong>not</strong> described
+here is that phone numbers not exactly matching the expected labels (which are
+case sensitive) will not sync: I had dozens of friends who in in my Google
+contacts list had their mobile phone number labeled as &#8220;Mobile&#8221; instead of
+&#8220;mobile&#8221;, and these people showed up on my iPhone with no phone number at all.</p>
+
+<p>The end result is that it&#8217;s possible to make iOS and Google accounts play
+nicely together, but it requires some up front knowledge, some extra steps in
+account step on the iOS device, and some extra massaging of, potentially,
+every entry in your address book to make sure the expected phone numbers sync.</p>
+
+<p>Is it possible to do better than this? Sure. The late
+<a href="http://en.wikipedia.org/wiki/WebOS">webOS</a> synced all my Google data (email,
+calendars and contacts) easily with no extra setup beyond choosing the Gmail
+account type and adding my credentials. Presumably Android is capable of
+similarly smooth integration. Apple may not be interested in smoothing the
+process in iOS because they&#8217;re wary of Google&#8217;s dominance and want to push
+<a href="http://www.apple.com/icloud/">their own cloud data services</a>, but given the
+number of people who use both Gmail and iOS, I think they do their users a
+disservice.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/27/using-itunes-match-as-itunes-library-sync/">Using iTunes Match as iTunes Library Sync</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-27T00:00:00-08:00" pubdate data-updated="true">Nov 27<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/11/27/using-itunes-match-as-itunes-library-sync/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Apple recently added two new features to iTunes: &#8221;<a href="http://www.apple.com/icloud/features/">iTunes in the
+Cloud</a>&#8221;, which adds all your iTunes
+music purchases to a cloud library which can be streamed or downloaded as
+often as you want to any of your devices (iPhone, iPod, iPad, computer with
+iTunes), and &#8220;iTunes Match&#8221;, which adds all the music you <em>didn&#8217;t</em> buy from
+iTunes to that same cloud library, enabling all the same &#8220;iTunes in the Cloud&#8221;
+features.</p>
+
+<p>Apple is billing this primarily as a way to get your music from your iTunes
+library onto your phone or iPad without having to plan ahead and pre-sync the
+music onto the device.</p>
+
+<p>However, in addition to using iCloud to sync music between devices, iTunes
+Match also has another benefit: it syncs the library metadata between multiple
+iTunes libraries that enable iTunes Match using the same account.</p>
+
+<p>This subtle addition is actually something important that I&#8217;ve wanted from
+iTunes as long as I&#8217;ve been using it: iTunes has a bunch of organization
+features including smart playlists which work best if it knows what you listen
+to and how much you like it. It tracks how many times you play each song and
+allows you to rate songs, and it automatically syncs this between one iTunes
+library and any connected iPods, but until now each iTunes library has been an
+island: if you have two computers, say a desktop and a laptop, each has its
+own library, with its own play counts and ratings and playlists, and its own
+idea of your preferences, and any iPods or other Apple devices you have were
+able to sync songs and metadata from a single one of these libraries.</p>
+
+<p>Now, with iTunes Match enabled, all my computers with iTunes see the same
+library — all of the songs on any one of them are synced up to iCloud and then
+back to the other computers, and metadata including play counts, ratings and
+playlists are also kept in sync. This joining of the libraries also means it
+matters a lot less which of my computers I sync a given iPod with, since
+effectively they all use the same library.</p>
+
+<p>There&#8217;s one minor remaining annoyance given the way I use iTunes at home: I
+have a file server with all my music, a Mac Mini in the living room which can
+play music and movies, and my main desktop computer, and each of these Macs
+uses the network file server for the music files instead of storing a local
+copy. (My laptop spends enough time disconnected from the home network that it
+does deserve a local copy of the music.) This means that if I add music to the
+library on one of the desktop computers, it&#8217;s already accessible in the
+expected location from any of the other computers that can access the file
+server, though the other computers won&#8217;t know it until I tell iTunes to add
+the files to the local library. The storage is shared; the library metadata is
+still per-computer. Using iTunes Match, the libraries are kept in sync
+automatically, but iTunes doesn&#8217;t notice that some of the files are magically
+already local — it will show such files with the cloud icon, and offer to
+stream them or download them even though that&#8217;s unnecessary. Streaming works
+fine, and downloading works, but actually downloads the file to the same
+folder, notices that the file already exists, and adds a numeric suffix to
+make the filename unique.</p>
+
+<p>It would be nice if there was a way to tell iTunes to notice local copies of
+files that it thinks are only in iCloud. Also, I occasionally found myself
+having downloaded extra copies of songs, noticing this cluttering up the music
+folder, and deleting the extra files outside of iTunes (using Finder) — this
+left me in a broken state where iTunes has an entry for the song in the
+library, and the file exists in the filesystem and in iCloud, but iTunes
+thinks it&#8217;s local so won&#8217;t stream or download from iCloud and thinks it has a
+different name so it won&#8217;t play the local file, at which point things are
+pretty broken. What&#8217;s needed here is a way to stuff the file back into the
+cloud, making iTunes think there is no local copy so it will go get it from
+iCloud again the next time it&#8217;s needed — I couldn&#8217;t figure out how to do this
+until I read this <a href="http://arstechnica.com/apple/news/2011/11/more-itunes-match-answers-%0Adj-sets-how-to-replace-music-and-more.ars,">Q&amp;A article at Ars
+Technica</a> which has the secret: select the
+song, hold the option key while pressing the delete key, and the normal delete
+confirmation dialog will grow a new checkbox &#8220;also delete this song from
+iCloud&#8221;. Leaving that option unchecked, you can delete the local copy of the
+song (or, a broken link to a missing local copy of a song) while leaving it in
+the cloud library, the cloud icon comes back, and iTunes will go back to
+getting the data from iCloud as needed again.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/24/how-photo-sync-would-be-done-right/">How Photo Sync Would Be Done Right</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-24T00:00:00-08:00" pubdate data-updated="true">Nov 24<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/11/24/how-photo-sync-would-be-done-right/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&#8217;ve been wishing and waiting and watching and waiting, with an idea in my
+head of what I want: from computers and the internet, regarding photos and
+photo management, and connecting all the computers I use. Some of this is very
+specific to photos, and some of this is general multi-computer file
+management, and after years of watching and waiting, little of it is done the
+way I wish it was.</p>
+
+<p>I take photos with digital cameras. I want all of those photos accessible to
+me wherever I go, on all the computers and smart devices I own and any I
+happen to use temporarily; I want them backed up for safety; I want some of
+them shared with my friends or the whole internet. In short: I want my
+memories protected, accessible to me, and selectively shared with those I
+choose to share them with.</p>
+
+<p>There exist good file sync solutions, and there exist good backup solutions,
+and there exist good photo sharing solutions, but all of them have drawbacks,
+not least of which is that they&#8217;re separate and don&#8217;t really work together, so
+I need to do more to get these combined benefits.</p>
+
+<p>Ideally, I&#8217;d like all photos I take immediately uploaded to a private site in
+the cloud, automatically, which acts as backup and also automatically syncs
+them between all my devices, and which also offers a web interface capable of
+giving me full access to the collection, and selecting some photos for sharing
+in a nice way, with or without authentication.</p>
+
+<p>Since upload bandwidth is generally too slow and expensive, I want the cloud
+upload to happen once, automatically and asynchronously in the background, as
+soon as possible; the photo is now backed up and syncable; if I choose to
+share it, there&#8217;s no further waiting for upload.</p>
+
+<p>I want flexible organization (which should work well with as much metadata as
+I want to add, or as little), to scale to my collection of thousands of photos
+over many years, and grow into the future. I want the sync solution to play
+promiscuously well with other apps I choose to use, and not enforce a
+particular filesystem or logical organization scheme, but I want it to offer
+optional organization features which help me keep a well-groomed collection if
+I can use the help. And the sync part of the solution means that any
+organizational changes I make, on any connected device and in any app, is
+reflected everywhere.</p>
+
+<p>I want this to work with full-resolution photos, and raw photos, and I want it
+to work with arbitrary metadata. And I want it to be promiscuously
+crossplatform: on Mac and Windows and Linux desktops, and iOS and Android and
+whichever other mobile platforms manage to prove their relevance.</p>
+
+<p>I want the mobile device version to realize and revel in the constraints of
+the platform, acknowledging that connectivity is ubiquitous but not always
+fast or reliable, that memory is limited, and that snappy touch interactions
+feel good. Thus, if I&#8217;m using a device that combines a camera and a network
+interface (any smartphone) I want every photo I take immediately sent to the
+cloud for backup and syncability. I also want my entire collection synced down
+to my device as a photo wallet, but, acknowledging local storage limits, I
+want this to automatically downscale to an appropriate resolution, and I want
+to be able to select per-device subsets of the entire collection to subscribe
+to.</p>
+
+<p>It would be great if the sync/backup/share features work with non-photo files
+&#8211; the solution I envision would be file-based, and have a bunch of special
+sugar for image files, but would be useful even for other files &#8211; but that&#8217;s
+not necessary. Non-photo files are already handled pretty well by services
+like DropBox.</p>
+
+<p>In fact, my continuing desire for the magic super photo cloud service is
+driven by noting that by and large, photos are the only remaining file type I
+have to really care about on my computer, meaning data I create that isn&#8217;t
+already well handled by cloud services. Examples that are already well
+handled: Email (tons of cloud services including Gmail);  office documents
+(Google Docs); unstructured notes and clippings (Evernote); miscellaneous
+files that don&#8217;t fall into the above buckets but are small (Dropbox): what&#8217;s
+left? Well, photos, music and video. But music is a special beast, which like
+photos also involves largish files but unlike photos is something I buy
+instead of create, meaning any individual file I want already exists in some
+canonical form I can get from lots of other sources; anyway it&#8217;s well handled:
+Amazon, Apple, and Google have cloud sync; the file-based approach is somewhat
+displaced by subscription services like Rhapsody and Spotify. Video is a
+combination of photos and music which, in the case of video we record
+ourselves, I think will end up having the same properties as photos: large
+files we create, embodying our memories, that we want to sync and backup and
+share. So it&#8217;s the photos we take (and by extension I include video we take)
+that we care about managing with computers, better than it&#8217;s currently done.</p>
+
+<p>Here&#8217;s a smattering of things that exist now, attacking some of the above
+problems and illustrating a variety of different approaches. I&#8217;ll call out
+what they do right, and what I find lacking:</p>
+
+<ul>
+<li><a href="https://www.dropbox.com/">Dropbox</a> (file sync and then some): can do most of what I&#8217;m asking for, but it&#8217;s not photo-specific (which could be bug or feature or both). The price is high (compared to photo sharing and backup services which usually offer unlimited storage). They have a sharing UI which has been somewhat customized for photo albums, but it&#8217;s pretty bare bones compared to full-blown photo sharing sites. The syncing is good but not perfect; p2p sync first requires an upload to the cloud (so it makes you wait for the slow hop then skips the fast hop); it enforces a certain filesystem layout on computer clients; it doesn&#8217;t have an appropriate mode for syncing all photos to/from smart devices at suitable resolution. All this said, Dropbox is probably the closest existing thing to what I want, and it offers good 3rd party APIs allowing others to extend it &#8211; I think they see themselves more as storage infrastructure for the web than any specific application &#8211; so if the interoperability and pricing concerns don&#8217;t bother you, maybe it&#8217;s already the right answer.</li>
+<li><a href="http://www.apple.com/icloud/features/photo-stream.html">Photo Stream</a> (photo sync): gets the sync right (the first I&#8217;ve seen that automatically adds photos as they&#8217;re taken). However, it has very strict and arbitrary limits: no deletion, no organization, and includes only the last 1000 photos or 30 days, so it&#8217;s basically this write-only temporary repository that syncs across devices but which you need to manually fish the things you care about out of, and manage separately. It does have the magic auto-upload feature for network-connected cameras, and it does deal with RAW images. I see this as a promising demo of one aspect of what I&#8217;m looking for, but it doesn&#8217;t even touch the others (organization, backup, or sharing).</li>
+<li><a href="http://www.adobe.com/products/carousel.html">Adobe Carousel</a> (photo sync and sharing): haven&#8217;t tried it yet, and it looks promising but with limited platform support and doesn&#8217;t handle raw files. Pricing may be a turnoff (monthly fee and limited number of carousels). Should handle sharing, both public and private. But not suitable for my entire photo library, as far as I can tell.</li>
+<li><a href="http://www.crashplan.com/">CrashPlan</a> (online backup, also see Mozy, Carbonite, BackBlaze): cheap unlimited-size cloud backup, which can also let you retrieve individual files from the cloud via a web interface, which in a pinch means you can get at your files from anywhere. The web interface isn&#8217;t optimized for this case though, nor is it optimized for photo display, and there are no suitable features for sharing (albums, delegatable access control).</li>
+<li><a href="http://www.flickr.com/">Flickr</a> (photo sharing): Flickr is great for photo hosting and sharing; it has great organizational features and a good community. The pro version offers effectively unlimited storage and has neat tracking features so you can see the popularity of what you post. However, Flickr doesn&#8217;t itself handle uploads or, really, client software in general, so it doesn&#8217;t handle sync (it does have an API with good 3rd party adoption, addressing this somewhat). It doesn&#8217;t handle RAW files, and it&#8217;s not suitable for backup. The sharing features allow flexible public and private sharing, but with not a lot of flexibility for album display. In general, the evolution of the site has been slow since Yahoo! bought them out. I think the site was originally designed with a forward-looking vision that in the near future, nobody would need any local photo software, and you could just upload everything to Flickr, edit and organize it there, share it there, and you wouldn&#8217;t need sync or backup. And maybe if the site had continued on its original trajectory and pace, this would have happened by now &#8211; but I find it&#8217;s anything but true in the real world.</li>
+<li><a href="https://www.facebook.com/">Facebook</a> (photo sharing): Facebook has huge adoption, and I&#8217;ve found that photos I post there get seen (and &#8220;liked&#8221; and commented on) more than anywhere else, including Flickr. But, Facebook is a walled garden (it may be possible to use it for public photo sharing but I don&#8217;t see people doing that in practice); content hosted there is not search engine friendly; you as the photographer also get zero control over photo presentation, zero insight into who&#8217;s viewing your photos, and only very limited organizational features (albums with a size limit which can&#8217;t be nested hierarchically). Person tagging and automatic face recognition make up for some of this; general ease of use and speed and reach make Facebook a good solution for sharing your photos as long as your needs are simple; however on my list of big top-level wishes (handle sync, backup, and sharing) it only touches sharing, and honestly, given the limited control over organization and presentation, I&#8217;d prefer to use Flickr if I could get the same reach. Given the name of the site (it&#8217;s the book of faces, after all) and the mandate implied therein, I feel like they could take this feature much much farther, but it also seems like the backup/syncing aspect I want is not part of this &#8220;book of faces&#8221; mandate and cries out for a dedicated solution. Note that Facebook is free and offers unlimited storage (as far as I know); the platform scales well (and is, I believe, by far the world&#8217;s largest-volume photo server); it doesn&#8217;t handle RAW files, or even particularly high-resolution images.</li>
+<li><a href="https://picasaweb.google.com/">Google&#8217;s photo suite</a> (photo organization and sharing): Google has nice desktop client software for photo organization and editing (Picasa), which they eventually built an online companion for with sharing and automatic sync features (Picasaweb), and then integrated into their new social network, Google+. Taken together, this provides a pretty good start-to-finish solution for taking, editing, uploading, and sharing photos. However the upload/sync solution based on Picasa is not flexible or pervasive enough to serve as backup or sync files managed outside Picasa, and the website is certainly not designed to serve as a central hub for managing and syncing my entire photo library. I&#8217;m not even sure if the sync is bidirectional; it may be upload-only.</li>
+<li><a href="http://evernote.com/">Evernote</a> (generic unstructured data sync): Evernote has a good web service, with client apps and a web app for access, automatic syncing for offline access, and attractive pricing. However it doesn&#8217;t offer any of the organization or sharing features you&#8217;d really want for photo management, nor does it integrate with other apps via the filesystem (stuff stored in and synced via Evernote is available via the Evernote API, but not via older integration points, namely local filesystems).</li>
+<li>File sync in general: Beyond Dropbox, described above, I haven&#8217;t seen anything that really scratches this itch in the way I&#8217;m envisioning.</li>
+<li>Photo sharing in general: there are tons more photo sharing services, but by and large, they have the same properties I ascribed to Flickr above, but are less good at it. You might have a favorite that you think I&#8217;m giving short shrift to here; fine; let me know if you know of any that are qualitatively better than Flickr on the list of things I&#8217;m wishing for in this post.</li>
+<li>Other things not mentioned here: This list is intended to show examples, not be exhaustive, so I&#8217;ve collapsed whole categories onto one exemplar; for example, while I&#8217;m aware of SpiderOak and see it having certain advantages over Dropbox, for my purposes here it&#8217;s essentially the same. There are probably many other sync, backup and photo sharing services that have their own advantages but don&#8217;t break new ground on the aspects I care about; if you know about something I missed that does address my wish list, please let me know.</li>
+</ul>
+
+
+<p>How I&#8217;d build this: I&#8217;d want the following pieces:</p>
+
+<ol>
+<li>The central cloud service which stores files securely for backup, and handles sync to any clients I&#8217;ve authorized.</li>
+<li>Client software for every platform which matters, which handles sync, automatically in the background: new files appearing first on this device are uploaded to the cloud service; new files announced from the cloud service are synced (at an appropriate resolution) down to this device&#8217;s local library; changes to existing files (including filesystem metadata like name and location, picture-specific metadata like that encoded in EXIF and IPTC mechanisms, and image data itself) are also automatically synced in both directions.</li>
+<li>Web app atop the first cloud service which handles organization and management &#8211; letting me move files between folders or albums, apply tags, and designate what to share with whom.</li>
+<li>Web app for sharing, pulling authorized files from the cloud service, and displaying them with nice presentation and according to whatever organization (individual file, album, by tag, etc) I&#8217;ve chosen.</li>
+<li>Client local versions of #3 (optional and lower priority, since I should be able to use the web version or any local software I want to most things this could do).</li>
+</ol>
+
+
+<p>(I think Evernote, top to bottom, service to applications, is a great example
+of this architecture &#8211; handling what they call &#8220;notes&#8221;, which basically means
+document snippets with attachments &#8211; but, as described above, it doesn&#8217;t
+solve my photo sync problem, since the client local apps don&#8217;t integrate my
+local filesystem and provide an integration point for other local apps, and
+the web interface doesn&#8217;t have theorganization and display features I&#8217;d want
+for photos.)</p>
+
+<p>I don&#8217;t know what this should cost or what I&#8217;d be willing to pay for it &#8211;
+more than free (Google and Facebook); probably more than Flickr&#8217;s $25/year and
+more than the unlimited backup companies&#8217; $5/month; probably less than
+Dropbox&#8217;s per-GB-per-month fees. For this to be done right, the storage and
+bandwidth would probably have significant cost, and most of the data is
+private so can&#8217;t be de-duped.</p>
+
+<p>Clearly this isn&#8217;t easy &#8211; the inherent challenges of handling and
+transporting and scaling to this much data, and designing good interfaces for
+all the services and applications, are real, and for anyone but the
+incumbents, there are also the additional challenges of integrating with 3rd
+party software and OS platforms, especially less open and less flexible mobile
+platforms (given the sandboxing and multitasking restrictions in iOS, for
+example, I&#8217;m not sure anyone but Apple is in a position to implement Photo
+Stream for iOS right now).</p>
+
+<p>But it would be nice.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/17/kindle-fire-first-impressions/">Kindle Fire First Impressions</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-17T00:00:00-08:00" pubdate data-updated="true">Nov 17<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/11/17/kindle-fire-first-impressions/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>My first impressions after playing with the Kindle Fire for an hour or so:</p>
+
+<ul>
+<li><p>it&#8217;s basically a color, video-happy, app-happy Kindle.</p></li>
+<li><p>fine for reading Kindle books, but if that&#8217;s what you want to do, the e-ink Kindles are cheaper, lighter, less distracting, and have much better battery life.</p></li>
+<li><p>video playback from Amazon&#8217;s store or Netflix works great</p></li>
+<li><p>app selection is small, but I&#8217;ll bet a lot of games show up soon/over time</p></li>
+<li><p>overall touch interaction is ok but clunky, doesn&#8217;t quite feel right compared to iOS, scrolling is choppy, some touches aren&#8217;t recognized, some light touches send it scrolling for miles</p></li>
+<li><p>web browser feels decidedly not as fast as this year&#8217;s Apple devices (iPad 2, iPhone 4S). So much for Silk?</p></li>
+</ul>
+
+
+<p>Overall, if you compare it head to head against an iPad 2, of course the iPad
+comes out ahead, but it also costs 2.5x more, and is bigger and heavier. But
+iOS still sets the standard for natural touch interaction, and iOS also has a
+much wider app selection. Plus there&#8217;s more hardware packed into an iPad:
+camera and GPS, and options for adding external keyboards, so some people even
+find they can use it as a laptop replacement… anyway, I don&#8217;t see the Kindle
+Fire having comparable versatility.</p>
+
+<p>If you want to focus on reading, video and games, and you like the 7&#8221; size
+(which is just right in many ways), the Kindle Fire is pretty compelling,
+especially given the price.</p>
+
+<p>I sure hope Amazon is rapidly improving the touch interaction via software
+updates, though.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/17/how-much-can-the-kindle-fire-improve-with-software-updates/">How Much Can the Kindle Fire Improve With Software Updates?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-17T00:00:00-08:00" pubdate data-updated="true">Nov 17<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/11/17/how-much-can-the-kindle-fire-improve-with-software-updates/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I wrote a <a href="http://blog.metamatt.com/blog/2011/11/17/kindle-fire-first-impressions/">semi-positive mini-review of the Kindle
+Fire</a>
+this morning.</p>
+
+<p>Then I read <a href="http://www.marco.org/2011/11/17/kindle-fire-review">Marco Arment&#8217;s rather scathing &#8220;human
+review&#8221;</a>, and wondered:
+wait a minute, if it&#8217;s that bad, should I return it, and wait for a better
+version (or save my money if no better version materializes)?</p>
+
+<p>The thing is, I saw most of the same things he did and had most of the same
+complaints; I just expect Amazon to fix them. Marco sees the glass half-empty;
+I see it half-full; maybe I&#8217;m too much of an optimist. I understand that it&#8217;s
+smarter to buy something for or judge something on its current capabilities,
+not ones that may or may not materialize in the future. Still, it seems worth
+considering how much better the current generation hardware might be able to
+get with software updates.</p>
+
+<p>Most of the complaints centered around speed and touch interaction. And those
+are legitimate &#8211; lots of taps are ignored; lots of taps are interpreted as
+small drags from nowhere to nowhere; scrolling is chunky and jerky; it&#8217;s at
+best annoying and far from a premium experience. For goodness sake, the orange
+pointed stripe that you drag to unlock the device, every time you want to wake
+it from sleep, doesn&#8217;t drag smoothly &#8211; it&#8217;s the first thing you see; how hard
+is it to get that right? Still, if Amazon cares &#8211; and I hope they do &#8211; they
+should be able to fix this.</p>
+
+<p>So will they (fix it)? What&#8217;s the problem here, anyway? <a href="http://www.anandtech.com/show/5117/amazon-kindle-fire-tore-%0Adown-has-512mb-of-ram">The hardware should
+be up to the task</a> &#8211;<a href="http://en.wikipedia.org/wiki/Texas_Instruments_OMAP#OMAP_4"> TI OMAP 4430
+SOC</a> with two
+gigahertz CPU cores on Cortex A9 architecture and PowerVR SGX540 GPU, 512MB of
+RAM. That compares favorably with this year&#8217;s Apple devices based on the A5
+SOC (iPad 2, iPhone 4S: two comparable CPU cores and a somewhat newer GPU
+core) and very favorably with last year&#8217;s Apple devices based on the A4 SOC
+(iPhone 4 and 4th-generation iPod Touch: one comparable CPU core and a
+somewhat older GPU core). I heard that <a href="http://daringfireball.net/linked/2011/11/14/siegler-specs">specs are
+dead</a>, but at least
+this establishes a baseline. And note that at the Kindle Fire&#8217;s 1024x600
+screen resolution, it&#8217;s pushing the exact same number of pixels as the 960x640
+retina display in the iPhone 4 and 4S. So assuming they can figure out how to
+effectively leverage the CPUs and GPU &#8211; I don&#8217;t know how good Android is at
+this, and I don&#8217;t know what shortcuts Amazon took in forking Android, and so
+on &#8211; you&#8217;d think they should be able to get iPhone 4S-like performance out of
+this. At the very least they should be able to compete with the 4th-generation
+iPod Touch (which is a year old and the same price). The point is that Amazon
+and Apple (and everyone else too) are using similar guts, with similar-
+architecture ARM CPU cores and PowerVR GPU cores. Right now, the iPod Touch is
+night and day more responsive. Amazon, get cracking.</p>
+
+<p>(I&#8217;ve owned the previous 2 generations of e-ink Kindle and Amazon delivered
+significant software updates to these long after purchase; that gives me
+reason to be hopeful the same applies to the Kindle Fire.)</p>
+
+<p>Some of the complaints were about missing physical buttons &#8211; hardware volume
+buttons would be nice, a dedicated home button would be nice, and there&#8217;s no
+way to fix those problems in software. (The headphone complaints are also
+legitimate; the headphone jack location is obviously not patchable in
+software; the popping might be; however I don&#8217;t really care, because the iPod
+has so won the music race that I don&#8217;t have any desire to use the Kindle Fire
+for music. I do find it notable that pretty much every non-Apple multifunction
+device that <em>can</em> play music takes it so unseriously that they have popping
+problems like this; that&#8217;s par for the course with old and new Palm
+smartphones too… oh well.)</p>
+
+<p>What this boils down to is this: if Amazon can wring decent performance out of
+the hardware, and pay some real attention to nitpicky details about the touch
+interaction, about half of Marco&#8217;s (and my) complaints should go away. I see
+no reason this is impossible to fix with the current hardware. However, if
+they also decide to yield to common sense and add hardware home and volume
+buttons, the first-generation units will forever feel lacking by comparison.</p>
+
+<p>I&#8217;ll close with a final note on why I&#8217;m willing to give the Kindle Fire some
+slack. I&#8217;m not trying to compare the Kindle Fire and iPad or argue the Kindle
+Fire kills or replaces anything else, much less the iPad. But I do think the
+Kindle Fire has the right guts to deliver a much better experience than it
+does today, and is fixable in software if Amazon has the will to improve it.
+I&#8217;m also intrigued that there&#8217;s finally an Android competitor to the iPod
+Touch &#8211; decent hardware sold contract-free and unsubsidized for an honest
+$200. (Incidentally, that&#8217;s something <a href="http://daringfireball.net/2010/11/apples_pricing_advantage">John Gruber called out for
+before</a>.) The big
+difference between the Kindle Fire and the iPod Touch, other than the
+operating system (and the responsiveness and app ecosystem that put Apple way
+ahead on the software side) is obviously the size; I&#8217;m not going to get into
+the screen size argument, other than to point out that anything that doesn&#8217;t
+fit in a pocket is clearly less portable than anything that does, and that
+size imposes so many tradeoffs there&#8217;s no one perfect size. Pick the one that
+works for you.</p>
+
+<p>Given that the $200 Android-based iPod Touch competitor now exists, I&#8217;m
+interested to see what happens with the app ecosystem. I think it could be a
+big gaming success, the way the iPod Touch has been, for example.</p>
+
+<p>If Amazon can endow it with a major dose of missing snappiness, that is.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/08/nyc-marathon-results/">NYC Marathon Results</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-08T00:00:00-08:00" pubdate data-updated="true">Nov 8<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/11/08/nyc-marathon-results/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>For the MMRF: They raised about $525K via this marathon, which is one third of
+their overall events-based fundraising for the year. (And this year was a
+record high.) $4300 of that was from you all, so one more big thank-you from
+me, the MMRF, and the people they try to help.</p>
+
+<p>For the marathon as a whole: Conditions were great, and the top 3 men all beat
+the previous course record. You can find plenty of news stories on this if
+you&#8217;re curious.</p>
+
+<p>For me: I originally started training for this marathon (my first) with a goal
+of finishing in under 4 hours, which is about 9 minutes per mile. Towards the
+middle of my training, it became obvious that I&#8217;d be able to exceed that goal
+and revised it to somewhere between a very optimistic 8 minutes per mile (3:30
+total) to a more realistic 8:30 per mile (3:45 total). I ran with my friend
+Jeff pacing me (he&#8217;s run a couple marathons before) and we set out with a goal
+of starting with 8:30 miles and speeding up as we went.</p>
+
+<p>Of course, at the beginning we felt great and it was hard to run the exact
+speed we&#8217;d planned. We did the first 6 miles a little slower than 8 minutes,
+then still felt strong so we sped up a little. Up through the first 16 miles
+(which is right where the course enters Manhattan for the first time) I felt
+great. At 16 miles I began to feel only good, but we kept the pace around 8
+minutes per mile until mile 22, where a couple things happened: I began to
+feel not great at all, there&#8217;s a very mild but very long uphill leading into
+Central Park, and I decided I needed to slow down. Jeff stayed strong and went
+on ahead; I slowed down by about a minute a mile, did the last 4 miles at
+about a 9:30 pace, and finished in 3:37:19. (Jeff finished in 3:32:35, and I
+say thanks to Jeff for pulling me along at a strong pace and congrats for
+being able to stick it out the whole way.)</p>
+
+<p>It&#8217;s funny, because during the first 16 miles I felt like I should go do this
+every day, and during the last 4 miles I never wanted to do it again, and
+after finishing, of course, my feelings (a little more detached and not in the
+middle of a runner&#8217;s high or extreme pain) are somewhere in between. During
+those last 4 miles, I knew I had to just keep slogging on to the finish; I
+couldn&#8217;t quite keep the 8 minute pace but I knew I had to keep running;
+slowing down any more wouldn&#8217;t have felt better; the only thing that would
+have felt good at that point was quitting, and I knew that wasn&#8217;t an option,
+not least because of yall&#8217;s support.</p>
+
+<p>Anyway, I&#8217;m very happy with the result for my first marathon, and looking
+back, I don&#8217;t know if the pain and the subsequent slowdown in the last 4 miles
+is (a) because we went out too fast, (b) because I didn&#8217;t do quite enough
+training at a >20 mile distance, (c) lack of fuel, or (d) totally normal and
+that&#8217;s why they call it a marathon.</p>
+
+<p>I also have to praise the marathon organizers &#8211; this race had the best
+organization (website, runner tracking, getting to the start line, knowing
+what to expect), the best infrastructure (timing mats almost every mile,
+drinks and food along the way), and the best cheering crowd of any race I&#8217;ve
+ever been involved in. That&#8217;s what I was told to expect ahead of time, but it
+sure lived up to expectations. If you&#8217;ve run NYC before you know what I&#8217;m
+talking about, and if you haven&#8217;t and you&#8217;re a runner, do consider it. It
+really was a great experience.</p>
+
+<p>If you&#8217;re curious for any more details, the marathon website has the detailed
+splits available &#8211; go to <a href="http://trackmyrun%0Aners.ingnycmarathon.org/Runners.aspx">[http://trackmyrunners.ingnycmarathon.org/Runners.a
+spx](http://trackmyrunners.ingnycmarathon.org/Runners.aspx)</a> and search for Ginzton. Then click the +
+button on the far right, and it&#8217;ll turn my name into a link which you can
+click on for the details.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/6/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/4/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/21/speedy-resume/">Speedy resume</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">Two things I didn&#8217;t know about Mac OS internet sharing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/">Troubleshooting Mac sleep problems</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/metamatt">@metamatt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'metamatt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("metamatt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/metamatt" class="twitter-follow-button" data-show-count="false">Follow @metamatt</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117348958487049022391?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Matt Ginzton -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'metamatt';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,404 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Mac OS "HiDPI" settings and TVs as "Retina" displays - Step 2 is the hard part.</title>
+  <meta name="author" content="Matt Ginzton">
+
+  
+  <meta name="description" content="Apple has been dabbling with resolution
+independence in Mac OS
+since 2005; in 2011 they shipped double-resolution &#8220;Retina&#8221; displays in &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://metamatt.github.com/blog/2012/08/22/mac-os-hidpi-settings-and-tvs-as-retina-displays/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Step 2 is the hard part." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19563060-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Step 2 is the hard part.</a></h1>
+  
+    <h2>Matt Ginzton writes here.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:metamatt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Mac OS "HiDPI" Settings and TVs as "Retina" Displays</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-22T00:00:00-07:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Apple has been dabbling with <a href="http://en.wikipedia.org/wiki/Resolution_independence">resolution
+independence</a> in Mac OS
+since 2005; in 2011 they shipped double-resolution &#8220;Retina&#8221; displays in iPhone
+and iPad, and in that year&#8217;s Mac OS release (10.7 &#8220;Lion&#8221;), renamed the
+tentative resolution-independence support &#8220;HiDPI&#8221; and capped it to a 2x
+scaling factor, hinting strongly at the future release of Retina Macs. In
+2012, they released the Retina MacBook Pro and soon thereafter, Mac OS 10.8
+&#8220;Mountain Lion&#8221;, bringing the HiDPI modes out from behind the developer tools
+and debug flags.</p>
+
+<p>My question was whether Apple would ever make Mac OS usable for media-watching
+purposes, connected to an HDTV, aka an
+<a href="http://en.wikipedia.org/wiki/Home_theater_PC">HTPC</a>. Connected to our living
+room 1080P LCD TV, we have an Apple TV, an Xbox 360, and a Mac Mini; the Mac
+is there as an HTPC basically to handle whatever the dedicated media devices
+can&#8217;t; the list of things the ATV and Xbox can&#8217;t handle has been shrinking
+over time, but still. The pain point in this arrangement has been that if I
+set the Mac Mini to full 1080P output, text onscreen is too small to read. If
+I set it to 720P, text is borderline readable but still on the small side, and
+images are scaled by 1.5X in the TV, so there&#8217;s some loss of picture quality
+once we get into a movie.</p>
+
+<p>This scenario seems a pretty good match for the HiDPI modes — specifically
+960x540 HiDPI, meaning text and UI elements are rendered for a virtual 960x540
+resolution but the display itself is running at its native 1080P (1920x1080,
+exactly double the virtual resolution in each direction) and images get to
+address every pixel. (It seems faintly ridiculous to me that Mac OS had to
+wait until 2012 to offer any kind of control over the size of UI elements, and
+that after waiting until 2012 it arrives in such limited form; Microsoft
+Windows has offered control over UI element text size since forever; in
+practice apps with custom skins would often misrender some controls if you
+used custom text sizes, and I suppose Apple was trying to limit exposure to
+that problem by exposing such a little and late form of resolution
+independence. Did it work? Read on….)</p>
+
+<p>Note that by Apple&#8217;s definition, a 32&#8221; 1080P display from a distance of 8
+feet, across our living room, very much qualifies as a &#8220;Retina&#8221; display. You
+can&#8217;t see individual pixels, and both text and images ought to look pretty
+darn great.</p>
+
+<p>In my experience with the &#8220;960x640 (HiDPI)&#8221; mode in both Mac OS 10.7 and 10.8,
+by forcing the 2X scaling factor and automatically pixel-doubling unaware
+apps, Apple has successfully avoided the problem with both Windows&#8217; themed UI
+font sizes and Mac OS 10.4-10.6 scaling factors where some UI elements would
+be clipped to the wrong size. On the other hand, by giving me 960x540 as the
+only resolution that both addresses every physical pixel and has readably
+larger text, they&#8217;ve introduced a new problem: nobody cares about making apps
+actually fit on screen sizes this small. (Typically, the archaic and once-
+grand XGA, 1024x768, resolution is taken as the smallest possible, and indeed
+Mac OS warns you if you select a resolution smaller than that in either
+direction that apps may not fit.)</p>
+
+<p>The problem starts with Apple&#8217;s own apps; here&#8217;s Software Update (from 10.7)
+on the 960x540 screen. (A couple notes here. First, the sad thing is this app
+is not design-intensive and does not require any special UI elements; the
+window itself and the individual panes are resizable; there&#8217;s no reason it
+couldn&#8217;t run perfectly well at 960x540. Second, in 10.8 this app has been
+replaced with the Mac App Store app, which does a better, but still not good,
+job of fitting at 960x540.)</p>
+
+<p><a href="http://www.flickr.com/photos/67861147@N00/7839608446"><img src="http://farm9.staticflickr.com/8426/78%0A39608446_2a59f28012.jpg" alt="Screen Shot 2012-04-05 at 6.58.22 PM" /></a></p>
+
+<p>Note that the initial window size (above) doesn&#8217;t even try to use all the
+available screen height; note also that enlarging it (below) helps not at all
+with the real problem.</p>
+
+<p><a href="http://www.flickr.com/photos/67861147@N00/7839608226"><img src="http://farm8.staticflickr.com/7258/78%0A39608226_95d17378a9.jpg" alt="Screen Shot 2012-04-05 at 6.58.45 PM" /></a></p>
+
+<p>Hoping that 10.8 (the first OS X release conceived and shipped for Retina
+Macs) might fix this oversight, I upgraded the OS on this machine. The initial
+results are not pretty. The first thing you see when launching the Mountain
+Lion installer:</p>
+
+<p><a href="http://www.flickr.com/photos/67861147@N00/783960671%0A6"><img src="http://farm8.staticflickr.com/7267/7%0A839606716_ea7f39b90d.jpg" alt="Screen Shot 2012-08-20 at 12.58.33 PM" /></a></p>
+
+<p>Such crisply rendered text! (Click through for a high-res version.) Nice large
+cougar image! Such beautiful use of whitespace! But… where&#8217;s that promised
+Continue button?</p>
+
+<p>(I cheated, changed display resolution to reveal the Continue button, pressed
+it, then changed resolution back to 960x540 for the next screenshot.) Again,
+the same problem.</p>
+
+<p><a href="http://www.flickr.com/photos/67861147@N00/7839607938"><img src="http://farm9.staticflickr.com/8294/78%0A39607938_e66ef0823c.jpg" alt="Screen Shot 2012-08-20 at 1.04.53 PM" /></a></p>
+
+<p>OK, you say, but those images are still from OS X 10.7. It&#8217;s an app designed
+for and as part of 10.8, to be sure, but maybe 10.8 itself will be better?
+Reboot into the new OS install, and:</p>
+
+<p><a href="http://www.flickr.com/photos/67861147@N00/7839606564"><img src="http://farm8.staticflickr.com/7117/78%0A39606564_852af9b7d8.jpg" alt="Screen Shot 2012-08-21 at 9.48.12 PM" /></a></p>
+
+<p>Rats. Foiled again. At least the clickable buttons are onscreen, but the
+screen was obviously cropped, and not intentionally.</p>
+
+<p><a href="http://www.flickr.com/photos/67861147@N00/7839606366"><img src="http://farm8.staticflickr.com/7265/78%0A39606366_167da70f92.jpg" alt="Screen Shot 2012-08-21 at 9.48.40 PM" /></a></p>
+
+<p>No, Apple, thank <em>you</em>. (And a special extra thanks for not starting the
+screen sharing daemon until after I click these two right arrows from the
+local display, preventing people from upgrading their Mac OS installs
+remotely. You can do the rest over screen sharing / remote desktop, but you
+need a local display and mouse to get past these two screens.)</p>
+
+<p>The real problem here isn&#8217;t that TV-as-Retina-display-with-HiDPI couldn&#8217;t
+work, it&#8217;s that apparently nobody cares. Nobody cares about screens smaller
+than 1024x768 because nobody&#8217;s shipping those any more; nobody cares about
+making 960x540 work as a special case for TV use, because you&#8217;re just supposed
+to buy an Apple TV instead of hooking a Mac up to your TV, I guess.</p>
+
+<p>So close, but yet so far.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Matt Ginzton</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-22T00:00:00-07:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://metamatt.github.com/blog/2012/08/22/mac-os-hidpi-settings-and-tvs-as-retina-displays/" data-via="metamatt" data-counturl="http://metamatt.github.com/blog/2012/08/22/mac-os-hidpi-settings-and-tvs-as-retina-displays/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/08/22/diesel-vs-gasoline-fuel-mileage-redux/" title="Previous Post: Diesel vs gasoline fuel mileage, redux">&laquo; Diesel vs gasoline fuel mileage, redux</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/09/14/step-2-is-the-hard-part-indeed/" title="Next Post: Step 2 is the hard part, indeed">Step 2 is the hard part, indeed &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/21/speedy-resume/">Speedy resume</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">Two things I didn't know about Mac OS internet sharing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/">Troubleshooting Mac sleep problems</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/metamatt">@metamatt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'metamatt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("metamatt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/metamatt" class="twitter-follow-button" data-show-count="false">Follow @metamatt</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117348958487049022391?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Matt Ginzton -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'metamatt';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

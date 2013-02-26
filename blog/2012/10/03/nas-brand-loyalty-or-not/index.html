@@ -1,0 +1,400 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>NAS brand loyalty (or not) - Step 2 is the hard part.</title>
+  <meta name="author" content="Matt Ginzton">
+
+  
+  <meta name="description" content="2006: The first RAID/storage appliance I bought was the original Infrant
+ReadyNAS NV. It was medium-expensive for its time, well-built, and at first &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://metamatt.github.com/blog/2012/10/03/nas-brand-loyalty-or-not/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Step 2 is the hard part." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19563060-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Step 2 is the hard part.</a></h1>
+  
+    <h2>Matt Ginzton writes here.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:metamatt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">NAS Brand Loyalty (or Not)</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-03T00:00:00-07:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>2006: The first RAID/storage appliance I bought was the original Infrant
+ReadyNAS NV. It was medium-expensive for its time, well-built, and at first I
+liked it a lot. However a few missteps by Infrant (one about spending years
+stonewalling user requests for ssh access while sitting on a MAC-address-based
+backdoor password, one about essentially a product recall of the fan which if
+you read between the lines just meant they&#8217;d installed it backwards and
+customers who want proper cooling should flip it around but it will get
+louder), one power supply failure, and some mediocre experiences with their
+generally well regarded tech support around buggy CIFS and AFP coexistence,
+then the fact that Infrant sold itself to Netgear (the conventional wisdom on
+which had it that there goes their tech support, although I didn&#8217;t notice any
+difference, and their jedi council is still at it today), combined with
+extremely middling performance, meant when I needed more space, I went
+elsewhere. (As you&#8217;ll see, in hindsight this feels misguided; 6 years later
+and the little ReadyNAS NV is still humming along fine, Infrant continues to
+support it with software updates, and it&#8217;s been far less frustrating and more
+useful than my next couple purchases.)</p>
+
+<p>2008: Elsewhere meant Promise; I bought an NS4300N. It offered a fairly
+similar feature set to the ReadyNAS, but was half the price and slightly
+faster. It was also of notably lower build quality, a lot more rickety and a
+lot louder. Over time the firmware situation got sketchier; the product
+stopped evolving; I moved it to a friend&#8217;s house to use as offsite backup,
+then slowly stopped using it; now it&#8217;s gathering dust.</p>
+
+<p>2010: Soured on the consumer-priced NAS market mostly due to poor performance
+(Infrant and Promise had both claimed speeds of around 30MB/second but that
+seems to involve way too many arcane dances and incantations involving jumbo
+frames and disabling journaling and other bad ideas, even for me; configured
+sanely, I see a reliable 10MB/second from the ReadyNAS, which is overkill for
+music storage and backup and frustrating for anything else, so guess what? I
+use it for music storage and backup), and still dreaming of fast centralized
+storage for photos and videos and home directories and data I care about, I
+tried a DAS solution next. The Promise DS4600, cabled via Firewire 800 to a
+Mac Mini which is on all the time anyways. (The decision calculus that lead to
+my original NAS purchase in 2006 involved servers that drew 100+ watts and
+marketing claims that the consumer NAS units performed fine and had reasonable
+AFP implementations; here in 2010 I was betting that I&#8217;d get better
+performance and correctness from the real Apple AFP server on a real (Intel
+Core 2 Duo) CPU and now that only draws 10 watts.) In retrospect, this was the
+worst of the bunch. On a good day it reads and writes at 50MB/sec, but on the
+much more common bad day it reads and writes at less than 1 MB/sec; as
+originally shipped it would somehow cause the host computer to slow to a crawl
+and need rebooting every few days, spending all its time in unbillable kernel
+space (how a Firewire device accomplishes this, I have no idea); a firmware
+update eventually fixed that, but to this day years later, performance is
+unpredictable and generally slow, especially for small random writes, and if I
+reboot the host computer, the DS4600 array won&#8217;t be visible until several
+minutes after boot. Also twice the array thought there was no volume
+configured (and it came back up reboot, but that&#8217;s still pretty scary, and
+meant I had to stop using this for anything important).</p>
+
+<p>Oh, and the configuration app for Mac OS that ships with the DS4600 creates
+1024 threads (for what unholy purpose, I have no idea) and causes 16 identical
+copies of the mouse cursor to appear onscreen, offset vertically by 64 pixels.
+Keep in mind that while I didn&#8217;t buy this from Apple, this is a product that
+Apple actually stocked and sold specifically for use with Macs, so I shouldn&#8217;t
+have been that far off the beaten path here. (This is tied with another
+Promise software disaster inflicted on me a few years ago for reasons not to
+keep buying their products. Their hardware seems to perform well for a low
+price, but riddled with software/firmware bugs as it is, no more for me. The
+other case I speak of: I bought a low-end 2-port SATA RAID controller for a
+Windows PC in 2006. All configuration for this PCI card was carried out by a
+Java app with an in-browser interface, meaning you need a Java VM and a web
+browser to twiddle a few hardware registers on a PCI card. Also, the installer
+failed to create any front door to invoke the web browser, so I had to run
+tcpview to figure out what port it was listening on to invoke it. All this for
+something I only had to use once, for one-shot configuration. The RAID
+controller worked fine for years, but what a horrible out-of-box experience.
+The resulting web UI for the PCI card and the standalone NS4300 RAID appliance
+was almost identical, I can almost cross my eyes far enough to envision a
+world where it made sense to do write-once-limp-anywhere for the configuration
+UI, but not quite, and in no case does that excuse making me run tcpview to
+figure out where to point the browser. Though to bring this full circle, this
+division of labor between the embedded software development and real-OS
+software development, or lack thereof, probably explains the 1024 threads the
+&#8220;SmartNAVI&#8221; app creates, somehow.)</p>
+
+<p>2012: Thoroughly frustrated with the DS4600 and its foibles, lack of
+reliability, and unpredictable speed. And we&#8217;re shooting lots of video of
+Dominic, so I need somewhere big and fast to store video files. DAS no longer
+sounds like a good idea, largely because how am I going to connect it? My
+current home server, the Mac Mini, has only USB2 and Firewire 800 and those
+are no longer considered fast. Apple continues to willfully ignore eSATA;
+their anointed storage bus is Thunderbolt which is (still) a tiny expensive
+low-volume ecosystem which tends to point back to Promise, and which is not
+available on any of my current machines anyway; USB3 is starting to creep into
+their machines but as of October 2012 is still inexplicably only available on
+portables; there&#8217;s just no DAS array that I could plausibly connect to my
+current server and a future server and expect good performance. Now you&#8217;re
+probably wondering why I&#8217;m talking about Apple hardware anyway; clearly they
+have no desire to let us do external storage anywhere near the price-
+performance of the PC world; I should just build my own box and run Linux or
+Nexenta and soak in the ZFS goodness and… no thanks. I&#8217;m crazy enough to
+<a href="http://blog.metamatt.com/blog/2012/03/19%0A/custom-built-linux-router-no-thanks-to-realtek/">build my own networking hardware</a>, but don&#8217;t want to deal with
+storage hardware.</p>
+
+<p>So…. back to NAS? The last day the DS4600 thoroughly irked me, a few hours
+later Ars Technica ran <a href="http://arstechnica.com/gadgets/2012/09/synology-ds-412-is-fast-fun-%0Aand-flexible/">this gushing review of the Synology
+DS-412+</a>. Sounds good to me. I ordered one (actually the 5-bay DS-1512+,
+which cost hardly any more) and am setting it up now. Wish me luck. In first
+impressions, the hardware is well built, it runs quieter than either the
+ReadyNAS NV or the DS4600 that it&#8217;s meant to replace, and I like that they
+gave some thought to fan replacement and memory upgrades. The browser UI is a
+little too flashy for its own good, but is impressive in its own way. I
+haven&#8217;t done any real performance testing yet. Wish me luck.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Matt Ginzton</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-03T00:00:00-07:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://metamatt.github.com/blog/2012/10/03/nas-brand-loyalty-or-not/" data-via="metamatt" data-counturl="http://metamatt.github.com/blog/2012/10/03/nas-brand-loyalty-or-not/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/10/03/airlines-are-getting-worse/" title="Previous Post: Airlines are getting worse">&laquo; Airlines are getting worse</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/10/03/those-ios-6-maps/" title="Next Post: Those iOS 6 maps">Those iOS 6 maps &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/21/speedy-resume/">Speedy resume</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">Two things I didn't know about Mac OS internet sharing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/">Troubleshooting Mac sleep problems</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/metamatt">@metamatt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'metamatt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("metamatt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/metamatt" class="twitter-follow-button" data-show-count="false">Follow @metamatt</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117348958487049022391?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Matt Ginzton -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'metamatt';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

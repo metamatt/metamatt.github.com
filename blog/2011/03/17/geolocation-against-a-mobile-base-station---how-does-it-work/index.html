@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Geolocation against a mobile base station - how does it work? - Step 2 is the hard part.</title>
+  <meta name="author" content="Matt Ginzton">
+
+  
+  <meta name="description" content="I just saw these two posts describing how an iPad tethered to an iPhone still gets accurate
+and up-to-date location information without GPS (via DF, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://metamatt.github.com/blog/2011/03/17/geolocation-against-a-mobile-base-station---how-does-it-work/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Step 2 is the hard part." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19563060-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Step 2 is the hard part.</a></h1>
+  
+    <h2>Matt Ginzton writes here.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:metamatt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Geolocation Against a Mobile Base Station - How Does It Work?</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-17T00:00:00-07:00" pubdate data-updated="true">Mar 17<span>th</span>, 2011</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I just saw these <a href="http://blog.urbanape.com/post/3798485232/show-me-the-%0Away">two</a> <a href="http://www.tabletmonsters.com/news/video-wi-fi-only-ipad-2-gps-%0Anavigation">posts</a> describing how an iPad tethered to an iPhone still gets accurate
+and up-to-date location information without GPS (via DF, citing this ability
+as &#8221;<a href="http://daringfireball.net/linked/2011/03/16/gps-tethering">another reason to consider a Wi-Fi-only
+iPad</a>&#8221;).</p>
+
+<p>(As background, location information on mobile devices generally comes from
+some combination of 3 sources, each of which may or may not be available: (1)
+triangulation against GPS satellites, (2) triangulation against the cellular
+network towers, (3) triangulation against Wi-Fi base stations. On cell phones,
+GPS is often implemented as A-GPS, which means &#8220;assisted GPS&#8221; and is often
+confused with #2, but is actually a combination of #1 and #2 &#8211; that is, A-GPS
+is a superset of standard GPS. The reason for having 3 different methods is
+partly that each one requires a separate radio, and partly that different
+methods work better in different situations &#8211; GPS is most accurate and covers
+the whole globe but is slow and only works outdoors; the other two only work
+in areas with cellular or Wi-Fi coverage and are less accurate.)</p>
+
+<p>Recent smartphones generally support all 3 of these methods (the original
+iPhone lacked a GPS chip, and used #2 and #3). An iPod Touch has only a Wi-Fi
+radio, no cellular radio and no GPS radio, so it can do only #3; this is also
+true of most current laptops. The iPad is sold in two versions, branded as Wi-
+Fi and 3G; Apple also adds a GPS chip only in the 3G models, so the Wi-Fi iPad
+can do only #3, and the 3G iPad can do all 3 methods (this is true of both the
+original iPad and iPad 2).</p>
+
+<p>So. Clearly the 3G iPad is better equipped to know its location &#8211; the
+question is how well the Wi-Fi only iPad can know its location, especially,
+say, if you&#8217;re driving around using it for navigation, and its data connection
+is coming from Wi-Fi tethering to a mobile hotspot (in the examples above an
+iPhone 4, but in theory this could also be another cell phone with mobile
+hotspot feature, or dedicated mobile hotspot device &#8211; I wonder if that works
+too).</p>
+
+<p>This is a Wi-Fi only iPad, so clearly it can&#8217;t use techniques #1 or #2. It can
+use #3, but the standard query &#8211; &#8220;I can see the base station with this MAC
+address; where am I?&#8221; doesn&#8217;t work in a straightforward way when the base
+station is a mobile hotspot with no fixed location. That&#8217;s why the fact that
+it does work is news.</p>
+
+<p>After brainstorming with friends we came up with 4 possible ways this could
+work:</p>
+
+<p>1) Collusion between the iPad and the hotspot: Some new protocol/secret
+channel between the iPad and the mobile hotspot, where without using any of
+the standard techniques listed above, the iPad can just ask the mobile hotspot
+where it is. (The mobile hotspot has access at least to technique #2, and
+probably #1, so it knows where it is.) This would be easy for Apple to do, but
+somebody would probably have noticed if there was a new network service on the
+iPhone whereby you could query its location. (NB 1: this might have privacy
+concerns, though if all you can do is ask an iPhone where it is when you&#8217;re
+already right next to it, these concerns are minimal. NB 2: this would only
+work with Apple hotspots, not, say, a Mi-Fi.)</p>
+
+<p>2) Collusion between the hotspot and the service that implements base station
+-> location lookups: This would make modify technique #3 to cooperate with
+base stations that move around frequently, i.e. mobile hotspots. This is
+believable, since Apple originally licensed said service from Skyhook and then
+later moved to their own implementation. Maybe the iPhone in personal hotspot
+mode is constantly updating Apple with its location, and the iPad can then do
+the normal &#8220;where is base station with this MAC address&#8221; query and actually
+get up-to-date results. (NB 1: this might also have privacy concerns, if
+anybody can query the database by MAC address and follow your iPhone around.
+NB 2: this would also work only with Apple hotspots, at least initially.)</p>
+
+<ol>
+<li><p>Collusion between the location service and the cellular network: the cell
+network knows where your mobile hotspot is (using technique #2), and it knows
+what IP address it&#8217;s assigned to your mobile hotspot. All of the data from
+your tethered iPad is being routed through that IP address. Thus, it&#8217;s
+theoretically possible for the cell network to implement a service that
+answers the question &#8220;I sent you a data packet, look at its IP source and map
+that to a mobile hotspot and tell me where I am&#8221;. This doesn&#8217;t seem to have
+any privacy issues, and doesn&#8217;t require any changes to the hotspot so would
+work with all hotspots, and would be a neat service for the cell networks to
+offer, but you&#8217;d have to get every cell network to offer it, and I&#8217;m not aware
+of any such thing.</p></li>
+<li><p>None of the above; the iPads in the posts above aren&#8217;t getting location
+information from the iPhone they&#8217;re tethered to; they&#8217;re also seeing other
+(fixed) base stations in range as they drive by, and are using those MAC
+addresses to implement technique #3 the normal way; that is, nothing new is
+happening here, and this works as long as you&#8217;re in range of fixed base
+stations (i.e. in a city) but not otherwise (i.e. on the open road, hiking
+trails, etc).</p></li>
+</ol>
+
+
+<p>Without going out somewhere where there are no other Wi-Fi signals available,
+it&#8217;s impossible to distinguish case #4 from the others. We tried this in San
+Francisco today with an iPad tethered to a Palm Pre on Sprint, and its
+location updated in real time as we walked around. I also tried tethering my
+MacBook Pro to a Palm Pre on Sprint, then using Google Maps inside Chrome
+(which supports geolocation services for web apps), and Google Maps was able
+to correctly determine my location &#8211; but again, it&#8217;s impossible to tell
+whether this was case #4 or one of the others.</p>
+
+<p>Further research needed: does the iPad get up-to-date location from all
+personal hotspots, or only an iPhone 4? And does this work in the boonies, or
+only in range of fixed Wi-Fi base stations whose location is already known?</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Matt Ginzton</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-17T00:00:00-07:00" pubdate data-updated="true">Mar 17<span>th</span>, 2011</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://metamatt.github.com/blog/2011/03/17/geolocation-against-a-mobile-base-station---how-does-it-work/" data-via="metamatt" data-counturl="http://metamatt.github.com/blog/2011/03/17/geolocation-against-a-mobile-base-station---how-does-it-work/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/02/17/why-is-the-iphone-so-expensive/" title="Previous Post: Why is the iPhone so expensive?">&laquo; Why is the iPhone so expensive?</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/03/17/re-browser-ui/" title="Next Post: re: browser ui">re: browser ui &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/21/speedy-resume/">Speedy resume</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">Two things I didn't know about Mac OS internet sharing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/">Troubleshooting Mac sleep problems</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/metamatt">@metamatt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'metamatt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("metamatt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/metamatt" class="twitter-follow-button" data-show-count="false">Follow @metamatt</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117348958487049022391?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Matt Ginzton -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'metamatt';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

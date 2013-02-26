@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>How to search your own activity streams? greplin! - Step 2 is the hard part.</title>
+  <meta name="author" content="Matt Ginzton">
+
+  
+  <meta name="description" content="I recently wrote a post, On searching one&#8217;s own activity
+streams, lamenting the difficulty of finding stuff I myself had
+posted on Facebook and &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://metamatt.github.com/blog/2011/04/15/how-to-search-your-own-activity-streams-greplin/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Step 2 is the hard part." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19563060-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Step 2 is the hard part.</a></h1>
+  
+    <h2>Matt Ginzton writes here.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:metamatt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">How to Search Your Own Activity Streams? Greplin!</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-15T00:00:00-07:00" pubdate data-updated="true">Apr 15<span>th</span>, 2011</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I recently wrote a post, <a href="http://blog.metamatt.com/blog/2011/04/13/on-searching-ones-own-%0Aactivity-streams/">On searching one&#8217;s own activity
+streams</a>, lamenting the difficulty of finding stuff I myself had
+posted on Facebook and Twitter. In response to that post, a friend pointed
+out: &#8220;You may be looking for <a href="https://www.greplin.com/">Greplin</a>&#8221;.</p>
+
+<p>Intrigued, I gave Greplin a try, and overall I&#8217;m impressed. It&#8217;s a new service
+that indexes data you create, on other sites and services like Facebook,
+Twitter, Gmail and associated Google services like Calendar, and Evernote.
+(Note that most of these involve indexing data that&#8217;s not publicly available,
+so Greplin needs access to your account data &#8211; it uses OAuth to request this
+access without needing to know your password.)</p>
+
+<p>This goes well beyond what I was asking for in the stream-search post, and
+actually nicely answers something else I&#8217;d been wanting recently, and overall
+I&#8217;m impressed (and slightly jealous I didn&#8217;t get to it first).</p>
+
+<p>But, back to the specific &#8220;find my own Facebook&#8221; posts case that led me to
+Greplin in the first place: I tried searching for a few of my own posts, and
+it didn&#8217;t find them. It seems pretty good about finding tweets, mail messages,
+appointments, and pretty much everything else it&#8217;s supposed to including
+Facebook messages, but not Facebook wall posts. I went looking for answers in
+Greplin&#8217;s help system. From the <a href="http://help.greplin.com/customer/portal/articles/4766-which-sites-%0Adoes-greplin-index-">&#8220;which sites does Greplin index&#8221; article in
+their FAQ</a>:</p>
+
+<blockquote><p>Please note that for news feed and wall posts, Facebook only allows us to
+collect data from a few days before you began your index on Greplin. However,
+we will collect all your data from that point forward. This means that you may
+not find Facebook news feed or wall post items that were created up to 4 days
+prior to your initial signup for Greplin.</p></blockquote>
+
+<p>Ouch. I don&#8217;t know whether that&#8217;s a policy or technical limitation. I don&#8217;t
+believe it&#8217;s a technical limitation, because I wrote my own little Python
+script to download my own status messages since the beginning of time, and
+comments on those status messages, and they&#8217;re all available via the API.</p>
+
+<p>That seems to leave policy as the limitation. I sure hope that Facebook isn&#8217;t
+preventing 3rd party sites, with my permission, from looking at my own data. I
+can&#8217;t see any consistency in letting Greplin access my very recent posts and
+my future posts but not my past posts. Especially because if they&#8217;re not
+allowed to index old content, and they want to index content going forward
+(and the ability to rebuild the index as necessary), that pretty much requires
+them to keep a separate copy of my data, whereas if they had reasonable access
+to past data, they could rely on Facebook to store it and provide it as
+necessary and they would need only the index on their side.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Matt Ginzton</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-15T00:00:00-07:00" pubdate data-updated="true">Apr 15<span>th</span>, 2011</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://metamatt.github.com/blog/2011/04/15/how-to-search-your-own-activity-streams-greplin/" data-via="metamatt" data-counturl="http://metamatt.github.com/blog/2011/04/15/how-to-search-your-own-activity-streams-greplin/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/04/14/tumblr-editor-bug-leaves-css-metadata-in-my-data/" title="Previous Post: Tumblr editor bug leaves CSS metadata in my data">&laquo; Tumblr editor bug leaves CSS metadata in my data</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/04/18/dsl-disappointments-annex-m-edition/" title="Next Post: DSL disappointments: Annex M edition">DSL disappointments: Annex M edition &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/21/speedy-resume/">Speedy resume</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">Two things I didn't know about Mac OS internet sharing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/">Troubleshooting Mac sleep problems</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/metamatt">@metamatt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'metamatt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("metamatt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/metamatt" class="twitter-follow-button" data-show-count="false">Follow @metamatt</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117348958487049022391?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Matt Ginzton -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'metamatt';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Two things I didn't know about Mac OS internet sharing - Step 2 is the hard part.</title>
+  <meta name="author" content="Matt Ginzton">
+
+  
+  <meta name="description" content="On a recent trip to Mexico, we stayed in a hotel that charged a significant
+extra fee for fairly slow Internet access. After paying for an access &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://metamatt.github.com/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Step 2 is the hard part." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19563060-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Step 2 is the hard part.</a></h1>
+  
+    <h2>Matt Ginzton writes here.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:metamatt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Two Things I Didn't Know About Mac OS Internet Sharing</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-13T00:00:00-08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>On a recent trip to Mexico, we stayed in a hotel that charged a significant
+extra fee for fairly slow Internet access. After paying for an access code, we
+could associate one device at a time to the Wi-Fi network; we could use
+multiple devices only by paying for multiple codes (which we didn&#8217;t want to do
+because for the speed, even paying once was a poor value) or by disconnecting
+the previous device.</p>
+
+<p>Of course, I went looking for ways around this. We had at our disposal a Mac
+laptop, two iPads and two iPhones. Mac OS X has <a href="http://support.apple.com/kb/PH6589">built-in Internet connection
+sharing</a>, but it operates only between
+separate network adapters: you can share an Ethernet-connected Internet
+connection over Wi-Fi, or vice versa, but you can&#8217;t share Wi-Fi over Wi-Fi1.
+There&#8217;s some reason to hope that this would be possible &#8211; it&#8217;s &#8220;just&#8221; a
+software problem2; Windows and Linux generally support multiple virtual Wi-Fi
+interfaces from the same physical device, as used by <a href="http://www.connectify.me/hotspot/">Connectify
+Hotspot</a> for Windows or the multi-SSID
+feature in many Linux-based Wi-Fi access points &#8211; but this software feature
+doesn&#8217;t exist for Mac OS X.</p>
+
+<p>So, no sharing Wi-Fi over Wi-Fi with my Mac laptop, unfortunately. But there&#8217;s
+another option that works without additional hardware; this is where the
+learning comes in. <strong>First new fact</strong>: you can share an Internet connection
+over Bluetooth. I&#8217;d thought this was only for sharing a cellular data
+connection from a phone to a computer (under the oxymoronic misnomer of
+&#8220;wireless tethering&#8221;), but it turns out to work in the other direction (known
+as &#8220;reverse tethering&#8221;). If you pair an iPhone or iPad with a Mac over
+Bluetooth, your Mac will grow a new network adapter called &#8220;Bluetooth PAN&#8221;
+(for Personal Area Network); you can then use the normal Sharing preference
+panel to enable Internet Sharing from Wi-Fi to Bluetooth PAN. Bingo.</p>
+
+<p>(I can claim only partial success here, but it was good enough for me at the
+time. This technique works fine for iPads, but not iPhones. I don&#8217;t know why;
+<a href="https://discussions.apple.com/message/20996155#20996155">nobody else seems to know why
+either</a>.)</p>
+
+<p>That got us past our trip, and I was happy to have a new tool for my cheap-
+connectivity-while-traveling toolbox. However, when we returned home, I had an
+unpleasant surprise, though it took me a while to connect the dots. My Mac
+laptop was getting really hot when I left it plugged in overnight to charge. I
+eventually realized this was because it wasn&#8217;t asleep, even with the lid
+closed (and with the lid closed, it generates more heat than it can
+comfortably dissipate, even at idle). This was frustrating because there are
+so many things that can keep a Mac from sleeping; this is where more learning
+comes in. Googling for ways to identify causes of Mac insomnia, I learned of
+the <code>pmset -g log</code> command, which I now highly recommend. It pointed me right
+at the culprit. <strong>Second new fact</strong>: Internet connection sharing prevents the
+Mac from sleeping while plugged in. (This is actually incredibly obvious in
+retrospect; it says so right in the Sharing panel: &#8220;Computers connected to AC
+power won&#8217;t sleep while Internet Sharing is turned on.&#8221; I hadn&#8217;t read that
+while enabling Internet Sharing because I thought I already knew how to use
+it; by the time it was causing problems, the problems were too disconnected
+from the cause.)</p>
+
+<p>In summary: Internet connection sharing is useful, and the Bluetooth PAN
+variant is further useful, but don&#8217;t leave it on when you&#8217;re not using it.</p>
+
+<hr />
+
+<ol>
+<li><p>Well, you can share Wi-Fi over Wi-Fi if you have multiple physical Wi-Fi interfaces. My laptop only has the one built-in Wi-Fi interface. It might be worth carrying a cheap additional USB Wi-Fi device for this reason. That would probably be the cheapest reliable solution to this problem. ↩</p></li>
+<li><p>At the physical layer, a single Wi-Fi radio can only be tuned to a single channel, but nothing stops it from participating in multiple SSIDs as long as they&#8217;re all on that channel. ↩</p></li>
+</ol>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Matt Ginzton</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-13T00:00:00-08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://metamatt.github.com/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/" data-via="metamatt" data-counturl="http://metamatt.github.com/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/" title="Previous Post: Troubleshooting Mac sleep problems">&laquo; Troubleshooting Mac sleep problems</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/02/21/speedy-resume/" title="Next Post: Speedy resume">Speedy resume &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/21/speedy-resume/">Speedy resume</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">Two things I didn't know about Mac OS internet sharing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/">Troubleshooting Mac sleep problems</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/metamatt">@metamatt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'metamatt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("metamatt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/metamatt" class="twitter-follow-button" data-show-count="false">Follow @metamatt</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117348958487049022391?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Matt Ginzton -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'metamatt';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

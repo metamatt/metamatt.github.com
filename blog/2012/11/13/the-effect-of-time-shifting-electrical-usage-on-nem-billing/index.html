@@ -1,0 +1,381 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>The effect of time-shifting electrical usage on NEM billing - Step 2 is the hard part.</title>
+  <meta name="author" content="Matt Ginzton">
+
+  
+  <meta name="description" content="One more post on the topic of PG&amp;E bills for solar (NEM) customers. PGE&#8217;s NEM billing scheme blends usage across
+seasons to
+allow for &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://metamatt.github.com/blog/2012/11/13/the-effect-of-time-shifting-electrical-usage-on-nem-billing/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Step 2 is the hard part." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19563060-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Step 2 is the hard part.</a></h1>
+  
+    <h2>Matt Ginzton writes here.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:metamatt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">The Effect of Time-shifting Electrical Usage on NEM Billing</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-13T00:00:00-08:00" pubdate data-updated="true">Nov 13<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>One more post on the topic of PG&amp;E bills for solar (NEM) customers.</p>
+
+<p>PGE&#8217;s NEM billing scheme <a href="http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/">blends usage across
+seasons</a> to
+allow for seasonal variation in generated power, and their E-6 billing scheme
+<a href="http://blog.metamatt.com/blog/2012/11/11/e-1-vs-e-6-for-residential-%0Asolar-customers/">separates usage into 5 time-of-use
+periods</a> to encourage customers to shift usage away from peak
+periods.</p>
+
+<p>A question that just occurred to me is whether you can game their billing
+results by time-shifting usage around inside the same true-up period, between
+TOU zones, months, or even seasons.</p>
+
+<p>It&#8217;s pretty easy to move usage between TOU zones of the same day (say between
+summer on-peak and summer off-peak) by delaying energy-hungry activities like
+baking pies until night; that&#8217;s both tractable for a home customer and exactly
+the kind of behavior the E-6 TOU billing rates are designed to encourage.
+Moving usage between TOU zones of different seasons (say between summer on-
+peak and winter off-peak), or even from one monthly billing cycle to another,
+would be more difficult (it&#8217;s possible in theory but doesn&#8217;t really match
+human activity patterns to delay all your energy-hungry activities for months
+and then execute them in a big batch months later; alternatively you&#8217;d need a
+really big battery which is exactly what grid tie-in lets you avoid), but I&#8217;m
+still curious if it would be advantageous in some circumstances.</p>
+
+<p>Again drawing on the example of my last year&#8217;s experience, the answer turns
+out to be yes for both forms of time-shifting. Say you&#8217;re going to bake a
+bunch of pies, and need to run the oven at 3KW for a little over 3 hours,
+consuming 10 KWh of electricity. (The 3 KW figure is realistic for an electric
+oven; the heating element running continuously is not; ignore that in the
+service of an example.) If you&#8217;re going to consume that 10 KWh, does it matter
+<em>when</em> you consume it; what&#8217;s the effect on your final true-up bill of adding
+10 KWh at various different times?</p>
+
+<p>If you can move that 10 KWh from a higher-value TOU period to a lower-value
+TOU period in the same day, you win; this turns out to be independent of
+tiering, consumption, or which month or season you&#8217;re in, which is a nice
+property. It won&#8217;t change your overall consumption for that day or month, so
+it won&#8217;t change your tiering calculation. If you had a surplus in the higher-
+value TOU period, you&#8217;ll now have a bigger surplus, which at the higher rate
+is more than enough to buy the same electricity back from PG&amp;E later in the
+day, even if the solar cells aren&#8217;t producing at that time. (Basically, it
+wasn&#8217;t immediately obvious to me what the credit/charge calculations do in
+this case, because my intuition keeps wanting to tell me it&#8217;s better to
+consume energy when I&#8217;m getting it free from my solar panels than when I&#8217;m
+buying it from PG&amp;E. That turns out not to be true; the NEM system means if
+you buy and sell the same amount of electricity at a given rate, it&#8217;s a wash,
+and the TOU system actually rewards you for selling it at a higher rate and
+buying it back at a lower rate.) So yes, you can &#8220;game&#8221; the E-6 billing system
+by moving usage from peak times to off-peak times, which use of &#8220;game&#8221; gets
+scare quotes because it&#8217;s actually the behavior they want to encourage.</p>
+
+<p>Meanwhile, if you could move that same 10 KWh across months, the story is a
+lot more complicated. Due to tiering, you may be paying more than the baseline
+rate for some of your electricity, and since PG&amp;E applies the tiering
+calculations entirely inside each month, based on that month&#8217;s usage, you can
+actually get crossover between &#8220;high-value&#8221; and &#8220;low-value&#8221; TOU periods. More
+concretely: as a solar generator, you may be paying more for winter off-peak
+electricity at 3rd-tier rates than you are for summer part-peak electricity
+where you never exceed the first tier. This is exactly what happened to me
+over the last year (note in the <a href="http://www.pge.com/tariffs/tm2/pdf/ELEC_SCHEDS_E-6.pdf">E-6
+schedule</a> that winter
+off-peak and part-peak above 130% of baseline cost about what summer on-peak
+baseline usage does, and winter off-peak and part-peak above 200% of baseline
+cost more than the summer on-peak baseline). While from the previous example
+you&#8217;d expect the result of time-shifting your usage to depend on the TOU rates
+(and you would win by shifting from a high-rate TOU to a low-rate TOU, and
+lose by doing the reverse), in fact it also depends on the tiering
+calculations, and you can also win by shifting usage out of a month where you
+had higher-tier usage into a month where you didn&#8217;t, and this can even be true
+if it involves shifting that usage from a low-rate TOU to a higher-rate TOU.
+So, surprisingly, you could see a net benefit from moving usage from winter to
+summer; it&#8217;s pretty easy to make the numbers work out if moving from winter
+part-peak to summer part-peak, and in extreme cases, you could even win by
+moving from winter off-peak to summer on-peak. This is decidedly not the
+result they want to encourage, so I&#8217;d call it gaming the system. (Of course,
+you&#8217;d need a way to actually buffer your usage across months; a better way to
+lower your winter bills is to simply use less electricity, without
+compensating in the opposite direction in the summer.)</p>
+
+<p>I&#8217;ll note again that this perverse result derives from the fact that PG&amp;E
+calculates and finalizes the tiering calculations entirely inside each month,
+instead of smoothing them across the true-up period, so it&#8217;s actually possible
+for a big energy user with an even bigger solar array to generate a net
+surplus for the year but be paying 4th-tier rates for winter electricity when
+the array is underperforming.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Matt Ginzton</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-13T00:00:00-08:00" pubdate data-updated="true">Nov 13<span>th</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://metamatt.github.com/blog/2012/11/13/the-effect-of-time-shifting-electrical-usage-on-nem-billing/" data-via="metamatt" data-counturl="http://metamatt.github.com/blog/2012/11/13/the-effect-of-time-shifting-electrical-usage-on-nem-billing/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/11/11/e-1-vs-e-6-for-residential-solar-customers/" title="Previous Post: E-1 vs E-6 for residential solar customers">&laquo; E-1 vs E-6 for residential solar customers</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/11/28/visiting-ireland-with-baby-dominic/" title="Next Post: Visiting Ireland with baby Dominic">Visiting Ireland with baby Dominic &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/21/speedy-resume/">Speedy resume</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">Two things I didn't know about Mac OS internet sharing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/">Troubleshooting Mac sleep problems</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/metamatt">@metamatt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'metamatt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("metamatt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/metamatt" class="twitter-follow-button" data-show-count="false">Follow @metamatt</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117348958487049022391?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Matt Ginzton -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'metamatt';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

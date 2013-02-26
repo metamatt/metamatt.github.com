@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Configuring iOS for Google's cloud data services - Step 2 is the hard part.</title>
+  <meta name="author" content="Matt Ginzton">
+
+  
+  <meta name="description" content="If you&#8217;re a Gmail user, you&#8217;ve already got cloud email, a contact list or
+address book, and a calendar (actually a set of calendars) &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://metamatt.github.com/blog/2011/11/28/configuring-ios-for-googles-cloud-data-services/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Step 2 is the hard part." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19563060-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Step 2 is the hard part.</a></h1>
+  
+    <h2>Matt Ginzton writes here.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:metamatt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Configuring iOS for Google's Cloud Data Services</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-28T00:00:00-08:00" pubdate data-updated="true">Nov 28<span>th</span>, 2011</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>If you&#8217;re a Gmail user, you&#8217;ve already got cloud email, a contact list or
+address book, and a calendar (actually a set of calendars) hosted by Google.
+And if you have an iPhone, you want to connect the built-in email, contacts
+and calendar applications to those Google data sources.</p>
+
+<p>It&#8217;s possible, but it&#8217;s not as easy as it should be.</p>
+
+<p>&#8220;Not easy&#8221;, you&#8217;re thinking? Go to Settings, &#8220;Mail, Contacts, Calendars&#8221;, &#8220;Add
+Account&#8221;, and there&#8217;s Gmail — enter your credentials, the account is set up,
+what could be easier than that?</p>
+
+<p>Well, that isn&#8217;t hard, but it also doesn&#8217;t work very well. If you use the
+&#8220;Gmail&#8221; account type, it doesn&#8217;t sync contacts at all. Email is there, via
+IMAP, but Gmail via IMAP has some notable deficiencies: push email doesn&#8217;t
+work (so the iPhone doesn&#8217;t see new mail or other changes right away), the
+delete behavior is weird, and there&#8217;s this extra &#8220;All Mail&#8221; folder which might
+sync an extra copy of all your messages. Your calendars are there &#8211; well, by
+default, only the main calendar, and not any others you may have created, or
+calendars others have shared with you, or delegated/published calendars like
+the one TripIt can automatically publish your travel plans to. (<a href="http://www.google.com/support/mobile/bin/answer.py?answer=151674">You can fix
+this with an extra
+step</a>, after
+which multiple calendars work normally.)</p>
+
+<p>There&#8217;s another way: add your Google account using the &#8220;Microsoft Exchange&#8221;
+account type. (If this seems confusing, note that what this really means is to
+access Google&#8217;s data services using the Exchange ActiveSync, or EAS, protocol,
+<a href="http://en.wikipedia.org/wiki/ActiveSync">which Microsoft has licensed to both Apple and Google among
+others</a>. Even more confusing, Google
+brands this method of access to its services not as Exchange or EAS, but as
+&#8221;<a href="http://www.google.com/mobile/sync/">Google Sync</a>&#8221;. Whatever.)</p>
+
+<p>If you do this, things get quite a bit better: contacts sync to the phone;
+email gains push (and in my opinion, the folder list and delete button work
+better). This is actually t<a href="http://www.google.com/support/mobile/bin/answer.py?answer=138740">he method Google recommends for use with
+iOS</a>. Again,
+only the main calendar syncs to the phone, but again, <a href="http://www.google.com/support/mobile/bin/answer.py?answer=139206">there&#8217;s a way to enable
+the other
+calendars</a>,
+which is even more of a pain than the CalDAV method.</p>
+
+<p>(Aside: I think the ability to get multiple calendars via Google Sync and EAS
+was recently added, because when I first set up my iPhone I couldn&#8217;t find this
+method, and resorted to adding my Gmail account twice: once using the
+&#8220;Exchange&#8221; account type for email and contacts with calendars disabled, and
+once using the &#8220;Gmail&#8221; account type for calendars with email disabled. This no
+longer seems necessary, but it may be a useful tip for anyone who wants Google
+contacts synced to their phone but for whatever reason don&#8217;t like the
+EAS/Google Sync behavior for email or calendars.)</p>
+
+<p>You may also run into some problems with contact sync, documented on the
+&#8221;<a href="http://www.google.com/support/mobile/bin/answer.py?answer=139635">Google Sync known issues with
+iOS</a>&#8221; page,
+under &#8220;Limited Contact Information&#8221;: &#8220;Phone number synchronization is limited
+to 2 Home numbers, 1 Home Fax, 1 Mobile, 1 Pager, 3 Work (one will be labeled
+&#8216;Company Main&#8217;) and one Work Fax number.&#8221; Another problem <strong>not</strong> described
+here is that phone numbers not exactly matching the expected labels (which are
+case sensitive) will not sync: I had dozens of friends who in in my Google
+contacts list had their mobile phone number labeled as &#8220;Mobile&#8221; instead of
+&#8220;mobile&#8221;, and these people showed up on my iPhone with no phone number at all.</p>
+
+<p>The end result is that it&#8217;s possible to make iOS and Google accounts play
+nicely together, but it requires some up front knowledge, some extra steps in
+account step on the iOS device, and some extra massaging of, potentially,
+every entry in your address book to make sure the expected phone numbers sync.</p>
+
+<p>Is it possible to do better than this? Sure. The late
+<a href="http://en.wikipedia.org/wiki/WebOS">webOS</a> synced all my Google data (email,
+calendars and contacts) easily with no extra setup beyond choosing the Gmail
+account type and adding my credentials. Presumably Android is capable of
+similarly smooth integration. Apple may not be interested in smoothing the
+process in iOS because they&#8217;re wary of Google&#8217;s dominance and want to push
+<a href="http://www.apple.com/icloud/">their own cloud data services</a>, but given the
+number of people who use both Gmail and iOS, I think they do their users a
+disservice.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Matt Ginzton</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-28T00:00:00-08:00" pubdate data-updated="true">Nov 28<span>th</span>, 2011</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://metamatt.github.com/blog/2011/11/28/configuring-ios-for-googles-cloud-data-services/" data-via="metamatt" data-counturl="http://metamatt.github.com/blog/2011/11/28/configuring-ios-for-googles-cloud-data-services/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/11/27/using-itunes-match-as-itunes-library-sync/" title="Previous Post: Using iTunes Match as iTunes library sync">&laquo; Using iTunes Match as iTunes library sync</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/01/20/blog-comment-semi-spam/" title="Next Post: Blog comment semi-spam">Blog comment semi-spam &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/21/speedy-resume/">Speedy resume</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">Two things I didn't know about Mac OS internet sharing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/">Troubleshooting Mac sleep problems</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/metamatt">@metamatt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'metamatt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("metamatt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/metamatt" class="twitter-follow-button" data-show-count="false">Follow @metamatt</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117348958487049022391?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Matt Ginzton -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'metamatt';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

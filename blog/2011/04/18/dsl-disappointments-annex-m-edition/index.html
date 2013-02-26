@@ -1,0 +1,429 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>DSL disappointments: Annex M edition - Step 2 is the hard part.</title>
+  <meta name="author" content="Matt Ginzton">
+
+  
+  <meta name="description" content="Yet another disappointment with the DSL connection and/or modem from
+Sonic.net: Annex M doesn&#8217;t seem to do any good at all for upload speeds. &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://metamatt.github.com/blog/2011/04/18/dsl-disappointments-annex-m-edition/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Step 2 is the hard part." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19563060-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Step 2 is the hard part.</a></h1>
+  
+    <h2>Matt Ginzton writes here.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:metamatt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">DSL Disappointments: Annex M Edition</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-18T00:00:00-07:00" pubdate data-updated="true">Apr 18<span>th</span>, 2011</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Yet another disappointment with the DSL connection and/or modem from
+Sonic.net: Annex M doesn&#8217;t seem to do any good at all for upload speeds.</p>
+
+<p><a href="http://blog.metamatt.com/blog/2011/04/09/state-of-the-last-mile-%0Ainternet-connection-year-2011/">As I wrote in my introductory post on
+Sonic.net,</a> the whole reason I was willing to consider
+them (or DSL technology at all) was the promise of decent upload speeds. The
+last DSL connection I had was only 768kbps upstream, and even ADSL2+ promises
+only about 1mbps upstream, but Sonic.net offers this Annex M configuration
+which trades some downstream bandwidth for upstream bandwidth, with upstream
+speeds theoretically as high as 3.3mbps (Sonic claims 2.5mbps is more typical
+real-world performance on a good line). Given that Sonic makes it easy to
+double these speeds by combining two lines together, now we&#8217;re talking &#8211; a
+combined 5mbps upstream would compare decently with what I&#8217;m getting from
+Comcast&#8217;s DOCSIS 3 technology.</p>
+
+<p>(It&#8217;s hard to know exactly what real-world speeds to expect from Annex M.
+Sonic&#8217;s baseline for a single ADSL2+ line under good conditions, using the
+default Annex A configuration, is 20mbps/1mbps, or 40mbps/2mbps across 2
+lines. Annex M should increase upload speeds to as much as 2.5mbps per line,
+but at at unknown cost to downstream speeds &#8211; I haven&#8217;t found anyone willing
+to predict that. It seems a reasonable estimate would be somewhere between the
+following hypothetical best case and worst case: best case, I added 1.5mbps of
+upstream, so it should cost me 1.5mbps of downstream; worst case, I multiplied
+upstreams speed by 2.5, so my downstream speed will be divided by 2.5. Using
+those as upper and lower bounds, I should expect something between 8mbps and
+18mbps remaining downstream per line, or 16-36mbps/5mbps combined, with Annex
+M. That would compare favorably enough with the 32mbps/7.5mbps I&#8217;m getting
+from Comcast that, given the reliability problems and caps I&#8217;m also getting
+from Comcast, I&#8217;d be happy to switch.)</p>
+
+<p>As described in my <a href="http://blog.metamatt.com/blog/2011/04/09/state-%0Aof-the-last-mile-internet-connection-year-2011/">earlier</a>
+<a href="http://blog.metamatt.com/post/4719413815/dsl-modem-annoyances-%0Amisleading-sync-speed-edition">posts</a>, after two months of asking Sonic to ask AT&amp;T
+to provide wiring that will sustain a good ADSL2+ signal, I have one line
+syncing at 18mbps and one line syncing at only 4mbps (downstream speeds, using
+Annex A). Still, I figured I might as well see the results of the Annex M
+spectrum reallocation, so last Friday I called Sonic and asked them to enable
+Annex M on both lines.</p>
+
+<p>Then I went to the modem&#8217;s status page to see the effect on sync speeds. (If
+you followed my recent post on <a href="http://blog.metamatt.com/post/4719413815/dsl-modem-annoyances-%0Amisleading-sync-speed-edition">sync speeds vs actual transfer
+speeds</a>, all tests here were done at the MPOE with no
+filter, that is, the best case from those earlier tests.)</p>
+
+<p>First annoyance: the modem wouldn&#8217;t sync at all, on either line, until I
+enabled Annex M on both lines. Maybe this is how it&#8217;s designed to work, but
+from earlier reading of Sonic&#8217;s site (2 months ago when I first signed up, all
+excited by Annex M) that&#8217;s not the impression I got. Reading again now, the
+<a href="http://sonic.net/support/faq/advanced/annexm.shtml">Annex M FAQ</a> doesn&#8217;t say
+one way or the other, but <a href="http://corp.sonic.net/ceo/2010/04/20/fusion-annex-m-available-for-testing-%0Ain-santa-rosa/">Dane&#8217;s post introducing Annex
+M</a> seems to imply it&#8217;s safe to leave it on on the network end and
+toggle it at will on your end. That would be more convenient, but for my
+Comtrend 5361 at least, the behavior is: if the network end is set to Annex A
+and the modem is set to Annex M, it syncs using Annex A (good), but if the
+network end is set to Annex M and the modem is set to Annex A, it doesn&#8217;t sync
+at all (bad).</p>
+
+<p>Annoying, but not a deal-breaker. Let&#8217;s see how the speeds compare. I&#8217;ll give
+numbers even for the broken configurations that didn&#8217;t sync, since I did test
+those combinations and the results are interesting.</p>
+
+<p>All of the following tests are with Annex M enabled for both lines on Sonic&#8217;s
+end, and at my end with the modem plugged directly into the MPOE with no
+filter. Speed test results are from speedtest.sonic.net.</p>
+
+<p>Both master and slave lines set to Annex M:</p>
+
+<ul>
+<li>Master sync: 2.54/1.08</li>
+<li>Slave sync: 12.51/1.14</li>
+<li>Combined sync: 15.06/2.23</li>
+<li>Speed test: 5.92/1.83</li>
+</ul>
+
+
+<p>Master on Annex M, slave on Annex A:</p>
+
+<ul>
+<li>Master sync: 2.54/1.08</li>
+<li>Slave sync: no sync</li>
+<li>Combined sync: 2.54/1.08</li>
+<li>Speed test: 2.17/0.88</li>
+</ul>
+
+
+<p>Master on Annex A, slave on Annex M:</p>
+
+<ul>
+<li>Master sync: no sync</li>
+<li>Slave sync: 12.62/1.14</li>
+<li>Combined sync: 12.62/1.14</li>
+<li>Speed test: 10.82/0.96</li>
+</ul>
+
+
+<p>Both master and slave set to Annex A:</p>
+
+<ul>
+<li>Master sync: no sync</li>
+<li>Slave sync: no sync</li>
+<li>Speed test: N/A</li>
+</ul>
+
+
+<p>As a comparison point, here are my most recent numbers for a comparable test
+with Annex A on both ends:</p>
+
+<ul>
+<li>Master sync: 4.84/1.08</li>
+<li>Slave sync: 18.36/1.15</li>
+<li>Combined sync: 23.12/2.23</li>
+<li>Speed test: 19.72/1.83</li>
+</ul>
+
+
+<p>So, two things to note here.</p>
+
+<p>First, Annex M significantly decreases downstream speed without increasing
+upstream speed at all, for me. Compare the sync speeds above for Annex A and
+Annex M. The best sync speed I saw for the slow line was 53% of what it was
+without Annex M; the best sync speed I saw for the fast line was 69% of what
+it was without Annex M; the combined sync speed was 76% of what it was without
+Annex M.</p>
+
+<p>Second, Annex M hurt my transfer speeds even more than the claimed sync
+speeds. Note the oddity that while bonded operation results in a faster sync
+speed than connecting the fast line only, when I measure the actual transfer
+speed, it actually got slower. (That&#8217;s reminiscent of <a href="http://blog.metamatt.com/post/4719413815/dsl-%0Amodem-annoyances-misleading-sync-speed-edition">the earlier bonding
+experiments I ran with Annex A</a>.). The single-line Annex M
+tests both transferred data at the 85% of claimed sync speed that I&#8217;ve come to
+expect, but using both lines bonded together, this ratio drops to only 39%.</p>
+
+<p>Again, I&#8217;m curious why bonding the lines results in slower operation than one
+line alone, without this effect being visible in sync speeds or ATM errors.
+And unless something is completely wrong here, it looks like Annex M does not,
+for me, bring DSL back into the realm of competitive upload speeds.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Matt Ginzton</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-18T00:00:00-07:00" pubdate data-updated="true">Apr 18<span>th</span>, 2011</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://metamatt.github.com/blog/2011/04/18/dsl-disappointments-annex-m-edition/" data-via="metamatt" data-counturl="http://metamatt.github.com/blog/2011/04/18/dsl-disappointments-annex-m-edition/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/04/15/how-to-search-your-own-activity-streams-greplin/" title="Previous Post: How to search your own activity streams? greplin!">&laquo; How to search your own activity streams? greplin!</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/04/18/dsl-disappointments-misleading-sync-speed-edition/" title="Next Post: DSL disappointments: misleading sync speed edition">DSL disappointments: misleading sync speed edition &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/21/speedy-resume/">Speedy resume</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">Two things I didn't know about Mac OS internet sharing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/">Troubleshooting Mac sleep problems</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/metamatt">@metamatt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'metamatt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("metamatt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/metamatt" class="twitter-follow-button" data-show-count="false">Follow @metamatt</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117348958487049022391?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Matt Ginzton -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'metamatt';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

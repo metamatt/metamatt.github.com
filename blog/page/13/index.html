@@ -1,0 +1,847 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Step 2 is the hard part.</title>
+  <meta name="author" content="Matt Ginzton">
+
+  
+  <meta name="description" content="This is traceroute output from a server in a datacenter in Fremont, California
+to the IP address of the DSL connection in the apartment I&#8217;m &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://metamatt.github.com/blog/page/13/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Step 2 is the hard part." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19563060-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Step 2 is the hard part.</a></h1>
+  
+    <h2>Matt Ginzton writes here.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:metamatt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/25/amusing-traceroutes-from-argentina/">Amusing Traceroutes From Argentina</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-25T00:00:00-08:00" pubdate data-updated="true">Nov 25<span>th</span>, 2010</time>
+        
+         | <a href="/blog/2010/11/25/amusing-traceroutes-from-argentina/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is traceroute output from a server in a datacenter in Fremont, California
+to the IP address of the DSL connection in the apartment I&#8217;m staying in in
+Buenos Aires:</p>
+
+<p>skynet:~>traceroute 190.55.119.242</p>
+
+<p>traceroute to 190.55.119.242 (190.55.119.242), 30 hops max, 40 byte packets</p>
+
+<p>1 64.62.173.1 (64.62.173.1) 0.399 ms 0.302 ms 2.316 ms</p>
+
+<p>2 gige-g3-15.core1.fmt1.he.net (64.62.244.109) 2.687 ms 3.670 ms 3.597 ms</p>
+
+<p>3 10gigabitethernet1-2.core1.sjc2.he.net (72.52.92.110) 4.046 ms 4.094 ms
+4.135 ms</p>
+
+<p>4 Port-channel100.ar3.SJC2.gblx.net (64.214.174.245) 13.111 ms 13.034 ms
+12.961 ms</p>
+
+<p>5 INTERNATIONAL-SATELLITE-COMM.gigabitethernet2-5.ar3.EZE1.gblx.net
+(208.48.250.82) 195.896 ms 195.824 ms 195.702 ms</p>
+
+<p>6 * * *</p>
+
+<p>7 * * *</p>
+
+<p>8 * * *</p>
+
+<p>9 * * *</p>
+
+<p>10 * * *</p>
+
+<p>Hop 5 is the interesting one. (That lands in Buenos Aires, by the name;
+packets after that aren&#8217;t getting a response.) So Global Crossing is routing
+this over a satellite connection with ~200ms of latency?</p>
+
+<p>The same trace in the other direction, from Buenos Aires to Fremont:</p>
+
+<p>C:\Users\magi>tracert skynet.timespace.net</p>
+
+<p>Tracing route to skynet.timespace.net [64.62.173.33]</p>
+
+<p>over a maximum of 30 hops:</p>
+
+<p>1 3 ms 1 ms 1 ms 192.168.1.1</p>
+
+<p>2 * * * Request timed out.</p>
+
+<p>3 10 ms 10 ms 10 ms cpe-200-115-195-85.telecentro-reversos.com.ar
+[200.115.195.85]</p>
+
+<p>4 * 32 ms 33 ms te4-4.baires3.bai.seabone.net [195.22.220.33]</p>
+
+<p>5 161 ms 162 ms 162 ms te4-4.ashburn2.ash.seabone.net [89.221.40.7]</p>
+
+<p>6 * * * Request timed out.</p>
+
+<p>7 207 ms 213 ms 207 ms 10gigabitethernet1-4.core1.pao1.he.net [72.52.92.29]</p>
+
+<p>8 213 ms 221 ms 223 ms 10gigabitethernet1-2.core1.fmt1.he.net [66.160.158.241]</p>
+
+<p>9 206 ms 207 ms 207 ms lafrance-internet-
+services.gigabitethernet3-15.core1.fmt1.he.net [66.220.10.126]</p>
+
+<p>10 207 ms 207 ms 222 ms 64.62.173.33</p>
+
+<p>That&#8217;s a little better; the long hop is over
+<a href="http://www.seabone.net/">seabone.net</a>, &#8220;the international backbone of Telecom
+Italia&#8221;; hopefully a higher-capacity land link but still slow.</p>
+
+<p>No wonder net access from Argentina to US sites has seemed uniformly slow.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/24/windows-connection-sharing-for-travel-network-access/">Windows Connection Sharing for Travel Network Access</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-24T00:00:00-08:00" pubdate data-updated="true">Nov 24<span>th</span>, 2010</time>
+        
+         | <a href="/blog/2010/11/24/windows-connection-sharing-for-travel-network-access/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>While traveling the world, Vanessa and I have been sharing a single netbook
+for internet access.  In addition to the netbook, we each have one of my old
+unlocked iPhones, which are useful for voice calls and even 3G data access in
+countries where that&#8217;s available cheap to travelers, and also come in handy as
+wi-fi devices for checking email/facebook/web/whatever when the netbook is
+already in use.</p>
+
+<p>One thing we found is that in some countries (India, Argentina, Turkey) wi-fi
+is widely available and the iPhones (or even an iPod Touch) can get online
+almost anywhere; in other places (especially Japan) there&#8217;s widespread wired
+ethernet but no wi-fi. In these cases, it&#8217;s handy to use the netbook as a wi-
+fi base station, repeating the internet access from ethernet over a private
+wi-fi network so the iPhones can see it. (Another use for this technique is
+business hotels where they charge per device; if we get the netbook online we
+can use the iPhones simultaneously for free.)</p>
+
+<p>To do this using Windows 7&#8217;s internet connection sharing, you need to do 2
+things:</p>
+
+<ul>
+<li><p>set up a computer-to-computer network (in &#8220;Network and Sharing Center&#8221; control panel, go to &#8220;Manage Wireless Networks&#8221;, click Add, then choose &#8220;Create an Ad Hoc Network&#8221;; after you create this once, it will remain available in the list of available wi-fi networks)</p></li>
+<li><p>enable connection sharing (in &#8220;Network and Sharing Center&#8221; control panel, click &#8220;Change adapter settings&#8221;, get properties for the wired connection (probably called &#8220;Local Area Connection&#8221;), go to the Sharing tab, and enable &#8220;Allow other network users to connect through this computer&#8217;s internet connection&#8221;.</p></li>
+</ul>
+
+
+<p>Note that you have to turn off internet connection sharing before you can join
+any other wireless networks. (If you don&#8217;t, Windows won&#8217;t give you any errors
+but traffic over the wireless network will just silently not work; this can be
+frustrating if you don&#8217;t know what&#8217;s going on.)</p>
+
+<p>Also of note:</p>
+
+<ul>
+<li>internet connection sharing isn&#8217;t available in Windows 7 Home Basic that came with our netbook; we had to upgrade to Home Premium</li>
+<li>the wi-fi network that Windows creates isn&#8217;t perfect; one iPhone is perfectly happy to see it, another loses the DHCP settings every time it goes to sleep, and my Palm Pre can&#8217;t see it at all. Still, much better than nothing.</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/24/sfo-doesnt-actually-use-the-tsa-for-passenger-screening/">SFO Doesn&#8217;t Actually Use the TSA for Passenger Screening?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-24T00:00:00-08:00" pubdate data-updated="true">Nov 24<span>th</span>, 2010</time>
+        
+         | <a href="/blog/2010/11/24/sfo-doesnt-actually-use-the-tsa-for-passenger-screening/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://blog.tsa.gov/2010/11/airports-who-opt-out-of-tsa-%0Ascreening.html">SFO doesnt actually use the TSA for passenger
+screening?</a></p>
+
+<p><a href="http://blog.tsa.gov/2010/11/airports-who-opt-out-of-tsa-%0Ascreening.html">This TSA blog post</a> is mostly a reaction to the story about how airports can opt
+out of hiring the TSA for passenger screening, reminding people that even if
+an airport does this it&#8217;s still regulated by the TSA &#8211; they still have to
+follow the same procedures the TSA would.</p>
+
+<p>However, it also comes with a list of airports where security isn&#8217;t run by the
+TSA. Of personal interest, it includes SFO. I guess I&#8217;d noticed different
+uniforms on the security personnel but it hadn&#8217;t registered that they weren&#8217;t
+actually TSA.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/24/amazon-reviews-in-kindle-store-sorting-from-oldest-to-newest-is-not-helpful/">Amazon Reviews in Kindle Store: Sorting From Oldest to Newest Is Not Helpful</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-24T00:00:00-08:00" pubdate data-updated="true">Nov 24<span>th</span>, 2010</time>
+        
+         | <a href="/blog/2010/11/24/amazon-reviews-in-kindle-store-sorting-from-oldest-to-newest-is-not-helpful/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you use the Kindle device itself to shop in the Kindle store, you can
+browse and search for books, and view reviews, but: the reviews are sorted by
+time, ascending chronologically. There&#8217;s no way I can find to change this and
+it&#8217;s painful to scroll through more than a few (they&#8217;re presented 3 per
+screen, and there&#8217;s no way to jump around in the list), so in practice you
+only ever end up looking at the first few reviews in the list, which means the
+first few reviews posted.</p>
+
+<p>There are some really egregious examples of this. For
+<a href="http://www.amazon.com/Dune-40th-Anniversary-Edition-%0Aebook/dp/B001F0WXY0/ref=sr_1_1?ie=UTF8&amp;m=AG56TWVU5XWC2&amp;s=digital-%0Atext&amp;qid=1290353113&amp;sr=1-1">Dune</a>, the reviews start in 1996, and even with a lot of
+clicking and waiting, my patience was exhausted before I got out of 1996. For
+the Lonely Planet  guidebook to Chile, the first reviews you see castigate the
+1999 edition, but here in 2010, with the book having been revised several
+times since then, who knows how reflective that is of the current edition.
+(Note that if you follow the Dune link on the web, here, you get the real
+Amazon storefront which shows reviews sorted by &#8220;most helpful&#8221;, very unlike
+the Kindle result. That is, I can&#8217;t demonstrate the problem I&#8217;m talking about
+by linking to Amazon&#8217;s website, because the website doesn&#8217;t have this problem.
+Moreover, the Amazon website doesn&#8217;t even show the same search result for the
+Lonely Planet Chile guidebook I bought, so I can&#8217;t link to that at all.)</p>
+
+<p>(Aside: my two examples are also <a href="http://blog.metamatt.com/blog/2010/10/21/amazon-review-format-%0Acombining-can-be-dangerous/">additional examples of times when combining
+reviews for multiple editions of a product is not
+helpful</a>. The current edition of Dune, and the one I
+bought, is the &#8220;40th anniversary edition&#8221; printed in 2005, so reviews from
+1996 have only partial applicability to this edition. And the guidebook
+problem is obvious, since new editions aren&#8217;t just reprints with typo fixes,
+they&#8217;re ostensibly redone entirely.)</p>
+
+<p>It would be better if they sorted reverse-chronologically, or sorted most-
+helpful-first, or even random if they don&#8217;t want the-rich-get-richer &#8211; which
+is a pretty bad problem with the current order.  But the current order is
+pretty much the worst possible one.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/23/story-of-tsa-encounter-when-getting-off-a-plane/">Story of TSA Encounter When Getting *off* a Plane</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-23T00:00:00-08:00" pubdate data-updated="true">Nov 23<span>rd</span>, 2010</time>
+        
+         | <a href="/blog/2010/11/23/story-of-tsa-encounter-when-getting-off-a-plane/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://noblasters.com/post/1650102322/my-tsa-encounter">Story of TSA encounter when getting <em>off</em> a
+plane</a></p>
+
+<p>The thing this, and stories like it, make me want to ask is: what purpose is
+being served here?</p>
+
+<p><a href="http://noblasters.com/post/1650102322/my-tsa-encounter">noblasters</a>:</p>
+
+<blockquote><p>“You don’t need to see his identification.”</p>
+
+<p><strong>On November 21, 2010, I was allowed to enter the U.S. through an airport
+security checkpoint without being x-rayed or touched by a TSA officer. This
+post explains how.</strong></p>
+
+<p>_Edit: Minor edits for clarity. I have uploaded the audio and it is
+available _</p></blockquote>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/23/how-long-can-bugs-survive-in-windows-notepad/">How Long Can Bugs Survive in Windows Notepad?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-23T00:00:00-08:00" pubdate data-updated="true">Nov 23<span>rd</span>, 2010</time>
+        
+         | <a href="/blog/2010/11/23/how-long-can-bugs-survive-in-windows-notepad/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Damn the Windows Notepad bug that makes the cursor move away from the end of
+the document when you add lines and press save.  How many years and they
+haven&#8217;t fixed that?</p>
+
+<p>(I haven&#8217;t figured out the exact behavior that triggers this, but it&#8217;s
+something like: open a new or existing file, and add a paragraph or so at the
+end; leave the cursor at the end of the document; invoke the Save command,
+using mouse or keyboard shortcuts, and the cursor will move back a few
+characters. The amount it moves seems to be proportional to the amount of text
+you&#8217;ve added since the last save; I suspect some confusion over the 2-byte
+CRLF ( ) sequence.)</p>
+
+<p>This is annoying because if you&#8217;ve trained yourself to press ctrl-s to save
+your document every once in a while, and you type, press ctrl-s, then keep
+typing, the later burst of typing won&#8217;t append like you expect it to, it&#8217;ll be
+in the middle of one of the words from the first burst of typing. Kind of like
+if your trackpad detects a false click from your palm and moves the cursor,
+except Notepad doesn&#8217;t need a trackpad&#8217;s help for this.</p>
+
+<p>I&#8217;ve noticed this bug at least since Windows 2000, and each time there&#8217;s a new
+version of Windows I wonder if they&#8217;ll have noticed and fixed this, but as of
+Windows 7 it&#8217;s still there, and still annoying me.</p>
+
+<p>Also, Notepad tends to add fake hard line breaks at the window width when you
+save with word wrap on.  It doesn&#8217;t really add line break, but it appears to;
+after you open a file (with word wrap on and necessary), edit it, save it,
+then widen the window, the lines don&#8217;t rewrap (until you exit and relauch
+Notepad).</p>
+
+<p>(Yeah, who really uses Notepad? That&#8217;s probably why these bugs survive. Still,
+it&#8217;s there and the easiest thing to reach for when you want a text editor; if
+they&#8217;re going to ship it they should fix the bugs!)</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/23/for-dinner-theyll-give-you-food-you-wont-like-it-but-its-edible/">For Dinner They’ll Give You Food. You Won’t Like It, but It’s Edible.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-23T00:00:00-08:00" pubdate data-updated="true">Nov 23<span>rd</span>, 2010</time>
+        
+         | <a href="/blog/2010/11/23/for-dinner-theyll-give-you-food-you-wont-like-it-but-its-edible/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><blockquote><p>For dinner they&#8217;ll give you food. You won&#8217;t like it, but it&#8217;s edible.</p></blockquote>
+
+<p>&#8211;Vanessa, explaining to Melissa what to expect from long-distance buses in Argentina.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/23/does-anyone-sleep-in-argentina/">Does Anyone Sleep in Argentina?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-23T00:00:00-08:00" pubdate data-updated="true">Nov 23<span>rd</span>, 2010</time>
+        
+         | <a href="/blog/2010/11/23/does-anyone-sleep-in-argentina/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>There seems to be something in the air that makes people not need to sleep.</p>
+
+<p>Item: Argentinians are reputed to party all night, not going out until 2am or
+later.</p>
+
+<p>Item: When we went on a tour starting at 7am on Sunday, our guide said
+everyone else on the road was coming home from Saturday night.</p>
+
+<p>Item: When we went to the airport at 5:30am to catch a 6:30am flight, all the
+shops in the airport were already open.</p>
+
+<p>Item: When we went to the local ski area, and hiked to the top of the (closed
+for maintenance) chairlift, and found a little coffee shop at the top, at
+6:30pm, it was open.</p>
+
+<p>Item: We have gotten up at 6am 4 days in a row, and 4:30am today for our
+flight, and still have energy.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/22/apple-devices-and-argentina-time/">Apple Devices and Argentina Time</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-22T00:00:00-08:00" pubdate data-updated="true">Nov 22<span>nd</span>, 2010</time>
+        
+         | <a href="/blog/2010/11/22/apple-devices-and-argentina-time/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>All my Apple devices &#8211; iPhone, iPod Nano &#8211; that I&#8217;m traveling with think
+that Argentina is 2 hours ahead of Eastern time (EDT), when really it should
+be only 1 hour ahead right now.  (Argentina doesn&#8217;t use daylight savings time,
+which adds an hour to all US times right now; Argentina is always GMT-3, and
+EST would be GMT-5 but during daylight savings time, Eastern time becomes EDT
+which is GMT-4.)  How does Apple get this wrong?</p>
+
+<p>(My Windows netbook gets it right automatically; 3 different digital cameras
+from Canon, Nikon and Panasonic have a manual daylight savings adjust, so it&#8217;s
+easy to get wrong, but once I learned how to take the extra step, they give me
+the opportunity to do it right.  I don&#8217;t see any daylight savings settings on
+the Apple devices, though.)</p>
+
+<p>In practice, I just had to tell the iPod and iPhone that I&#8217;m in Santiago.</p>
+
+<p>Update: Even after the US went back to Standard time in early November, the
+iPod and iPhone still get it wrong &#8211; now Argentina is 2 hours ahead of EST
+but my iPod thinks it&#8217;s 3 hours ahead. So it&#8217;s not a daylight savings thing
+after all &#8211; it&#8217;s just wrong.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/21/playmobil-security-check-point/">Playmobil Security Check Point</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-21T00:00:00-08:00" pubdate data-updated="true">Nov 21<span>st</span>, 2010</time>
+        
+         | <a href="/blog/2010/11/21/playmobil-security-check-point/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.amazon.com/exec/obidos/ASIN/B0002CYTL2">Playmobil Security Check
+Point</a></p>
+
+<p>The reviews for this are hilarious; people are using Amazon&#8217;s review system
+for social commentary (to the exclusion of any literal reviews of the product
+itself). It&#8217;s a little hard to tell whether it&#8217;s even a real product.</p>
+
+<p>My guess is the product is real, and the reviews are not in the spirit of real
+reviews; while I&#8217;ve got no problem with this form of social commentary I
+wonder if it&#8217;s the kind of thing Amazon would take down once the wrong people
+notice. For better or worse, the actual toy is no longer available for sale.
+Too bad; after reading the reviews I sort of want one!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/14/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/12/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/21/speedy-resume/">Speedy resume</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">Two things I didn&#8217;t know about Mac OS internet sharing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/">Troubleshooting Mac sleep problems</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/metamatt">@metamatt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'metamatt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("metamatt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/metamatt" class="twitter-follow-button" data-show-count="false">Follow @metamatt</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117348958487049022391?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Matt Ginzton -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'metamatt';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

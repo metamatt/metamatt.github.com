@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Storytlr/Tumblr import failures, and fix - Step 2 is the hard part.</title>
+  <meta name="author" content="Matt Ginzton">
+
+  
+  <meta name="description" content="I installed Storytlr on my own server for personal
+use, and then started adding the sources where I have accounts &#8211; Flickr,
+Twitter, Delicious &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://metamatt.github.com/blog/2011/02/03/storytlrtumblr-import-failures-and-fix/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Step 2 is the hard part." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19563060-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Step 2 is the hard part.</a></h1>
+  
+    <h2>Matt Ginzton writes here.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:metamatt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Storytlr/Tumblr Import Failures, and Fix</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-03T00:00:00-08:00" pubdate data-updated="true">Feb 3<span>rd</span>, 2011</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I installed <a href="http://storytlr.org/">Storytlr</a> on my own server for personal
+use, and then started adding the sources where I have accounts &#8211; Flickr,
+Twitter, Delicious, and a few others worked right away, but I couldn&#8217;t get it
+to add Tumblr at all. Every attempt yielded an error message that just said to
+try again later; looking in Storytlr&#8217;s messages.log, I saw more detailed
+errors like</p>
+
+<p>2010-12-24T03:50:55+01:00 ERR (3): Exception updating tumblr (21): Tumblr API
+returned http status 503 for url: <a href="http://metamatt.tumblr.com/api/read/json?callback=%0Awrap&amp;num=50&amp;start=0">http://metamatt.tumblr.com/api/read/json?ca
+llback=wrap&amp;num=50&amp;start=0</a></p>
+
+<p>2010-12-24T20:07:38+01:00 ERR (3): Exception updating tumblr (22): Tumblr API
+returned http status 503 for url: <a href="http://metamatt.tumblr.com/api/read/json?callbac%0Ak=wrap&amp;num=50&amp;start=550">http://metamatt.tumblr.com/api/read/json?ca
+llback=wrap&amp;num=50&amp;start=550</a></p>
+
+<p>2010-12-24T20:08:10+01:00 ERR (3): Exception updating tumblr (23): Tumblr API
+returned http status 503 for url: <a href="http://metamatt.tumblr.com/api/read/json?callback=%0Awrap&amp;num=50&amp;start=0">http://metamatt.tumblr.com/api/read/json?ca
+llback=wrap&amp;num=50&amp;start=0</a></p>
+
+<p>2010-12-24T20:09:28+01:00 ERR (3): Exception updating tumblr (24): Tumblr API
+returned http status 503 for url: <a href="http://metamatt.tumblr.com/api/read/json?callback%0A=wrap&amp;num=50&amp;start=50">http://metamatt.tumblr.com/api/read/json?ca
+llback=wrap&amp;num=50&amp;start=50</a></p>
+
+<p>2010-12-24T20:27:05+01:00 ERR (3): Exception updating tumblr (25): Tumblr API
+returned http status 503 for url: <a href="http://metamatt.tumblr.com/api/read/json?callba%0Ack=wrap&amp;num=50&amp;start=1150">http://metamatt.tumblr.com/api/read/json?ca
+llback=wrap&amp;num=50&amp;start=1150</a></p>
+
+<p>Note that the &#8220;start&#8221; parameter in the request varies each time, and sometimes
+got quite large &#8211; Obviously it&#8217;s looking for too many posts and doesn&#8217;t know
+where to stop, since my Tumblr blog has &lt; 100 posts. My theory is that Tumblr
+rate-throttles requests, so when Storytlr makes a few or a few dozen requests
+at once, Tumblr returns 503 (temporary failure, try again later) and Storytlr
+treats that as a more serious error.</p>
+
+<p>Looking at the Storytlr source, I quickly found the code that imports from
+Tumblr, and the problem. Here&#8217;s the answer:</p>
+
+<pre><code>--- protected/application/plugins/tumblr/models/TumblrModel-orig.php     2010-12-24 11:39:38.000000000 -0800
++++ protected/application/plugins/tumblr/models/TumblrModel.php     2010-12-24 11:40:05.000000000 -0800
+@@ -53,9 +53,9 @@
+      }
+
+      public function updateData($full=false) {
+-          // Fetch the data from twitter
++          // Fetch the data from Tumblr
+           $username   = $this-&gt;getProperty(username);
+-          $pages          = $full ? 50 : 1;
++          $pages          = $full ? 2 : 1;
+           $count          = 50;
+           $result      = array();
+           $curl = curl_init();
+</code></pre>
+
+<p>So it&#8217;s hardcoded to always ask for 50 pages of data (2500 posts); hardcoded
+is probably not the way to go here. (It would be wasteful, but not inherently
+wrong, as long as the Tumblr API were happy to return 50 pages of empty posts,
+or if the Storytlr import code would understand 503 status codes and retry;
+however since the Tumblr API is currently unreliable enough that you&#8217;re lucky
+to get a couple consecutive reads to succeed, and Storytlr doesn&#8217;t know to
+retry, it&#8217;s important to only ask for what you really need.)</p>
+
+<p>I just hacked it to ask for 2 pages since I knew that would account for my
+posts; a better fix would query Tumblr for the actual number of posts, and
+stop there, and/or just recognize an empty response and stop there.</p>
+
+<p>(Note: I tried posting this to the <a href="http://groups.google.com/group/storytlr-discuss">Storytlr-discuss mailing
+list</a>, which is backed by a
+Google Group, but the group is broken or a moderator is eating the post,
+because it will temporarily show up and then disappear, with commensurate bugs
+in the unread-post count. So I&#8217;m posting it here.)</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Matt Ginzton</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-03T00:00:00-08:00" pubdate data-updated="true">Feb 3<span>rd</span>, 2011</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://metamatt.github.com/blog/2011/02/03/storytlrtumblr-import-failures-and-fix/" data-via="metamatt" data-counturl="http://metamatt.github.com/blog/2011/02/03/storytlrtumblr-import-failures-and-fix/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/01/26/reason-number-7-its-weird-getting-internet-service-from-a-cable-company/" title="Previous Post: Reason number 7 it's weird getting Internet service from a cable company">&laquo; Reason number 7 it's weird getting Internet service from a cable company</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/02/08/comcast-data-cap-doesnt-apply-to-on-network-transfers/" title="Next Post: Comcast data cap doesn't apply to on-network transfers?">Comcast data cap doesn't apply to on-network transfers? &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/21/speedy-resume/">Speedy resume</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">Two things I didn't know about Mac OS internet sharing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/">Troubleshooting Mac sleep problems</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/metamatt">@metamatt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'metamatt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("metamatt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/metamatt" class="twitter-follow-button" data-show-count="false">Follow @metamatt</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117348958487049022391?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Matt Ginzton -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'metamatt';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

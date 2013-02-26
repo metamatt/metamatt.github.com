@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>On searching one's own activity streams - Step 2 is the hard part.</title>
+  <meta name="author" content="Matt Ginzton">
+
+  
+  <meta name="description" content="One of the potential upsides to posting stuff on Twitter or Facebook ought to
+be that you can find it later when you want to know what you were
+doing &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://metamatt.github.com/blog/2011/04/13/on-searching-ones-own-activity-streams/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Step 2 is the hard part." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19563060-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Step 2 is the hard part.</a></h1>
+  
+    <h2>Matt Ginzton writes here.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:metamatt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">On Searching One's Own Activity Streams</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-13T00:00:00-07:00" pubdate data-updated="true">Apr 13<span>th</span>, 2011</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>One of the potential upsides to posting stuff on Twitter or Facebook ought to
+be that you can find it later when you want to know what you were
+doing/thinking/saying at a given time.</p>
+
+<p>Too bad neither site has a good way of searching your own contributions.</p>
+
+<p>Twitter does have a search feature and you can restrict it to your own tweets
+by adding your username but it only returns very recent tweets (like maybe the
+last week); Twitter is also indexed by the major web search engines and if you
+add &#8220;site:twitter.com username&#8221; to your queries you may or may not find what
+you&#8217;re looking for with minimal additional cruft; there&#8217;s also <a href="http://snapbird.org/">Snap
+Bird</a> which is a 3rd party site designed to do this but
+it&#8217;s clunky and I&#8217;ve never seen it actually work (maybe the fault of Twitter&#8217;s
+API, who knows).</p>
+
+<p>Facebook does have a search feature but it inexplicably doesn&#8217;t search your
+own updates (it finds people and pages and if you click the &#8220;See more results
+for…&#8221; link then a tantalizing &#8220;posts from friends&#8221; link appears which doesn&#8217;t
+seem to find content in posts by me or my friends); Facebook is a walled
+garden and its content is generally not indexable by external search engines;
+it does have a pretty good API and so somebody could probably go build this as
+a 3rd party app but I&#8217;m not aware of one, and arguably it would be better done
+as part of the core site anyway.</p>
+
+<p>So, on those occasions I do want to go track down one of my own updates on
+either of these sites, I resort to viewing my own profile, then scrolling
+down, and clicking the &#8220;show older posts&#8221; link as necessary, and scrolling
+down, and repeating until I&#8217;ve gone back a couple months, and using my
+browser&#8217;s find-in-page feature to find what I&#8217;m looking for, eventually after
+way too much clicking and scrolling.</p>
+
+<p>Not only is this ridiculous, it&#8217;s made even worse by an interaction with
+Google Chrome (and maybe other browsers, but Chrome&#8217;s what I&#8217;m using lately).
+Apparently the AJAXy way these sites use DOM writes or whatever they do to
+append content to the current page without reloading triggers this behavior in
+Chrome where &#8220;Find Again&#8221; (ctrl-G or Command-G) doesn&#8217;t find text in newly
+added parts of the page. So often, I&#8217;ll load the page and scroll back a month
+or so and then use the browser Find command to search for &#8220;widgets&#8221; and not
+find it, then scroll another month or so and then hit Command-G and not find
+it, then scroll back another month or so and so on… and after going back 6 or
+7 months, I&#8217;ll remember that Command-G doesn&#8217;t work, and cancel the search and
+repeat the search with Command-F and <em>then</em> command-G and then it will find it
+halfway up the page, which I would have found a lot easier if Command-G had
+worked the first applicable time. (This was a pattern I learned with earlier
+versions of Chrome; using Chrome 10, it&#8217;s a little different &#8211; the first
+Command-G may actually scroll the search hit into view, but it won&#8217;t highlight
+it and you won&#8217;t notice it on a busy page, and it will keep reporting &#8220;0 of 0&#8221;
+in the search status pane; you still need to do the 3-step deselect, Find,
+Find Again dance to get it to highlight.)</p>
+
+<p>(Side note on Facebook: there&#8217;s a <a href="http://ask.metafilter.com/128906/How-to-search-%0Athrough-your-own-Facebook-profile">metafilter question asking how to search
+your own Facebook profile</a>; not only do the answers there not have a
+solution, but the overall feeling is highly negative on it even being
+possible. That&#8217;s not quite true; I&#8217;ve confirmed that using the Facebook API
+from a simple Python script I can get back anything I ever posted. They do
+keep it, and they or someone else could write an indexer and search tool.)</p>
+
+<p>Update: <a href="https://greplin.com">Greplin</a> does a pretty good job of this, though
+<a href="http://blog.metamatt.com/blog/2011/04/15/how-to-search-your-own-%0Aactivity-streams-greplin/">not as good a job as it could with Facebook
+posts</a>.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Matt Ginzton</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-13T00:00:00-07:00" pubdate data-updated="true">Apr 13<span>th</span>, 2011</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://metamatt.github.com/blog/2011/04/13/on-searching-ones-own-activity-streams/" data-via="metamatt" data-counturl="http://metamatt.github.com/blog/2011/04/13/on-searching-ones-own-activity-streams/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/04/13/dsl-modem-annoyances/" title="Previous Post: DSL modem annoyances">&laquo; DSL modem annoyances</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/04/14/tumblr-editor-bug-leaves-css-metadata-in-my-data/" title="Next Post: Tumblr editor bug leaves CSS metadata in my data">Tumblr editor bug leaves CSS metadata in my data &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/21/speedy-resume/">Speedy resume</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">Two things I didn't know about Mac OS internet sharing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/">Troubleshooting Mac sleep problems</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/metamatt">@metamatt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'metamatt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("metamatt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/metamatt" class="twitter-follow-button" data-show-count="false">Follow @metamatt</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117348958487049022391?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Matt Ginzton -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'metamatt';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

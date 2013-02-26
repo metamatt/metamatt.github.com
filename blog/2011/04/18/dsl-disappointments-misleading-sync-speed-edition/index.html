@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>DSL disappointments: misleading sync speed edition - Step 2 is the hard part.</title>
+  <meta name="author" content="Matt Ginzton">
+
+  
+  <meta name="description" content="Another annoying behavior of the Comtrend modem I got from Sonic.net: it doesn&#8217;t
+always transfer real data at anywhere near the claimed &#8220; &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://metamatt.github.com/blog/2011/04/18/dsl-disappointments-misleading-sync-speed-edition/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Step 2 is the hard part." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19563060-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Step 2 is the hard part.</a></h1>
+  
+    <h2>Matt Ginzton writes here.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:metamatt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">DSL Disappointments: Misleading Sync Speed Edition</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-18T00:00:00-07:00" pubdate data-updated="true">Apr 18<span>th</span>, 2011</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Another <a href="http://blog.metamatt.com/blog/2011/04/13/dsl-%0Amodem-annoyances/">annoying behavior</a> of the Comtrend modem I got from Sonic.net: it doesn&#8217;t
+always transfer real data at anywhere near the claimed &#8220;sync&#8221; speed.</p>
+
+<p>As noted in <a href="http://blog.metamatt.com/blog/2011/04/09/state-of-the-last-mile-%0Ainternet-connection-year-2011/">my initial post about Sonic.net&#8217;s Fusion
+Broadband</a>, I have 2 DSL lines from Sonic.net, which each
+in theory should support up to 20mbps downstream, but right now one of them
+syncs at 18mbps and one of them at only 4mbps, due to overly high attenuation
+in the wiring supplied by AT&amp;T. Still, I should be able to get a combined
+22mbps, right?</p>
+
+<p>Well, with the modem deployed the way I intend to use it (in a back room near
+my other networking equipment and my UPS, connected to a DSL filter with a
+normal telephone patch cord), according to <a href="http://speedtest.sonic.net/ookla/">Sonic&#8217;s own speed test
+site</a>, I get about 4mbps download and
+1.83mbps upload. Whoa, that&#8217;s a lot lower.</p>
+
+<p>To make things weirder, if I disconnect the slow line (the one that syncs at
+only 4mbps) and leave only the fast line (synced at 18mbps) connected, the
+same speed test result is 15.71mbps download, 0.95mbps upload. How is one line
+alone faster than the two lines together? At first I suspected a bug in the
+modem when bonding lines of different speeds, but then I repeated the test at
+the MPOE, and got the expected results: the two lines bonded together were
+slightly faster than the fast line alone.</p>
+
+<p>Curious, and suspicious of everything at this point, I decided to run a bunch
+of tests: both at the MPOE (not depending on my own internal wiring) and in my
+network closet (adding ~50 feet of internal wiring), with and without the DSL
+filter supplied with the modem, and with different patch cables (the patch
+cable that came with the modem, the separate Y cable Sonic gave me, and an old
+patch cable I had lying around); for various combinations of each of these
+variables I tested both lines together, and where possible each line alone
+(that&#8217;s easy to do at the MPOE and hard to do at the server room, <a href="http://blog.metamatt.com/blog/2011/04/13/dsl-modem-annoyances/">due to the
+way the modem is wired for single-line
+operation</a>).</p>
+
+<p>The results are pretty weird. I&#8217;ll list the results, one per line, with a
+description of the test configuration, the modem&#8217;s reported sync speed
+(down/up), the actual usable speed as reported by speedtest.sonic.net, and a %
+number which is the ratio of usable download speed to claimed downlink sync
+speed. First, testing one line at a time:</p>
+
+<ul>
+<li>At MPOE, fast line, no filter, Y cable:  sync 18.46/1.14, speed test 15.76/0.95 (85%)</li>
+<li>At network closet, fast line, with filter, Y cable: sync 18.49/1.14, speed test 15.71/0.95 (85%)</li>
+<li>At MPOE, slow line, no filter, Y cable: sync 4.93/1.08, speed test 4.02/0.90 (82%)</li>
+<li>At network closet, slow line, with filter, Y cable: sync 3.48/1.02, speed test won&#8217;t run (because modem has sync on slave line only)</li>
+</ul>
+
+
+<p>The result of these single line tests shows that my internal wiring (between
+MPOE and network closet) and filter don&#8217;t seem to affect the speed at all &#8211;
+the modem syncs at the same speed, and tests at the same speed, in both
+locations.</p>
+
+<p>But then, dual line tests (sorted by descending actual speed):</p>
+
+<ul>
+<li>At MPOE, both lines, no filter, Y cable: sync 23.60/2.23, speed test 20.06/1.83 (85%)</li>
+<li>At MPOE, both lines, no filter, Y cable + their patch cable: sync 22.99/2.23, speed test 18.94/1.83 (82%)</li>
+<li> At network closet, both lines, no filter, my patch cable: sync 22.84/2.23, speed test 12.05/1.83 (53%)</li>
+<li><p>At network closet, both lines, no filter, their patch cable: sync 22.86/2.23, speed test 10.38/1.83 (45%)
+At MPOE,  both lines, with filter, Y cable + their patch cable: sync
+22.09/2.23, speed test 6.12/1.83 (28%)</p></li>
+<li><p>At network closet, both lines, with filter, their patch cable: sync 21.83/2.23, speed test 4.23/1.83 (19%)</p></li>
+</ul>
+
+
+<p>Note how the sync speed does not change appreciably across all these tests,
+but the actual speed changes hugely. Every single difference from the minimal
+MPOE configuration results in decreased speed!</p>
+
+<p>Some additional notes: first, bonded upload speed is completely stable at
+1.83mbps in every single test I&#8217;ve run. Second, I have tried various other
+speed test sites, and FTP of a large test file hosted by Sonic.net in case
+Flash/Java speed tests aren&#8217;t reliable indicators, but I got roughly
+equivalent results from all of them, so I stick with the speedtest.sonic.net
+numbers for comparison here.</p>
+
+<p>First complaint: where are the bits going? Why is the sync speed not a
+reliable indicator of real speed? It&#8217;s annoying losing speed, and it&#8217;s
+annoying not being able to trust the sync speed, and this makes
+troubleshooting speed problems a lot harder (it takes longer to run a speed
+test than just check the sync speed, and Sonic.net&#8217;s support system shows them
+my sync speed but not, I presume, my actual transfer speeds). Presumably if
+the modem can&#8217;t actually transfer data at the sync rate, that&#8217;s due to errors
+and dropped frames at the ATM level, but the modem&#8217;s status page shows 0 for
+every ATM and DSL error category.</p>
+
+<p>Second complaint: why do the filter, patch cable, and my internal wiring all
+result in a speed loss, but only in bonded operation, and not one line at a
+time, and without affecting the sync speed?</p>
+
+<p>It&#8217;s looking increasingly unlikely that I&#8217;m going to get a fast and trouble-
+free connection via DSL. I mean, I <em>could</em> put the modem by the MPOE (with no
+UPS and no filter), but that wasn&#8217;t the intent, and I don&#8217;t understand why I
+should have to.</p>
+
+<p>And one final note: in response to my earlier article about this modem, Sonic
+is already sending me a new one; I don&#8217;t really want to take time to repeat
+all of these experiments but I&#8217;ll at least see if the new modem or new filter
+does better in the cases that were worst here. (If nothing else, it should be
+easier to do apples-to-apples comparisons, using the same cables and getting
+all data points at both locations.)</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Matt Ginzton</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-18T00:00:00-07:00" pubdate data-updated="true">Apr 18<span>th</span>, 2011</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://metamatt.github.com/blog/2011/04/18/dsl-disappointments-misleading-sync-speed-edition/" data-via="metamatt" data-counturl="http://metamatt.github.com/blog/2011/04/18/dsl-disappointments-misleading-sync-speed-edition/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/04/18/dsl-disappointments-annex-m-edition/" title="Previous Post: DSL disappointments: Annex M edition">&laquo; DSL disappointments: Annex M edition</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/04/20/dont-override-keys-that-already-have-a-meaning-in-your-scope/" title="Next Post: Don't override keys that already have a meaning in your scope">Don't override keys that already have a meaning in your scope &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/21/speedy-resume/">Speedy resume</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">Two things I didn't know about Mac OS internet sharing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/">Troubleshooting Mac sleep problems</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/metamatt">@metamatt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'metamatt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("metamatt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/metamatt" class="twitter-follow-button" data-show-count="false">Follow @metamatt</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117348958487049022391?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Matt Ginzton -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'metamatt';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
