@@ -3,7 +3,10 @@ source "http://rubygems.org"
 group :development do
   gem 'rake', '~> 0.9'
   gem 'rack', '~> 1.4.1'
-  gem 'jekyll', '~> 0.12'
+  #gem 'jekyll', '~> 0.12'
+  gem 'jekyll', :path => '/home/magi/src/jekyll'
+  gem 'nokogiri', '>= 0.0'
+  gem 'json', '>= 0.0'
   gem 'rdiscount', '~> 1.6.8'
   gem 'pygments.rb', '~> 0.3.4'
   gem 'RedCloth', '~> 4.2.9'
