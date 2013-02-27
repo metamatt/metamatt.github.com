@@ -4,6 +4,7 @@ title: ! 'Trelew, Rawson, Punta Tombo: dolphins and penguins'
 tags:
 - travel
 - argentina
+comments: true
 ---
 We're in coastal Patagonia with the hopes of seeing penguins, dolphins, and
 whales -- all of which should be around this time of year. There are two big

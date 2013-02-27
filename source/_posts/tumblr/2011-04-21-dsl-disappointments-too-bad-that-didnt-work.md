@@ -5,6 +5,7 @@ tags:
 - dsl
 - last-mile
 - network
+comments: true
 ---
 I'm giving up on DSL. There are really 3 separate reasons that it's not
 performing as I'd hoped and expected:

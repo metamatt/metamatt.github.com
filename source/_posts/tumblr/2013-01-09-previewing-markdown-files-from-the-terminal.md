@@ -3,6 +3,7 @@ layout: post
 title: Previewing Markdown files from the terminal
 tags:
 - software
+comments: true
 ---
 I've been wanting a way to preview
 [Markdown](http://daringfireball.net/projects/markdown/)-formatted text files

@@ -4,6 +4,7 @@ title: Birdwatching in Esteros del Ibará
 tags:
 - travel
 - argentina
+comments: true
 ---
 Disclaimer: I'm no expert birdwatcher and have heretofore exhibited little
 interest in birding. However, staying for a couple days at the edge of Esteros

@@ -7,6 +7,7 @@ tags:
 - web
 - security
 - ssl
+comments: true
 ---
 It's possible to [hijack an SSL connection that's forwarded through a network
 you control](http://www.thoughtcrime.org/software/sslstrip/), if the user and

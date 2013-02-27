@@ -8,6 +8,7 @@ tags:
 - cellular
 - data
 - network
+comments: true
 ---
 Here are the stats on my cellular data usage over one year on Sprint's
 network1. (I got the phone on Halloween of 2011, and took this screenshot on

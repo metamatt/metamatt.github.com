@@ -5,6 +5,7 @@ tags:
 - software
 - bugs
 - patch
+comments: true
 ---
 I installed [Storytlr](http://storytlr.org/) on my own server for personal
 use, and then started adding the sources where I have accounts -- Flickr,

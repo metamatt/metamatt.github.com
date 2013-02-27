@@ -2,6 +2,7 @@
 layout: post
 title: State of terror to become more pervasive
 tags: 
+comments: true
 ---
 Now, to make sure people are even more continually conscious that we need to
 be terrorized by terrorists, we're going to advertise this in Wal-Mart. Two

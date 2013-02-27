@@ -4,6 +4,7 @@ title: Windows wi-fi connection sharing annoyances
 tags:
 - software
 - windows
+comments: true
 ---
 Windows has this "internet connection sharing" feature which lets you share an
 existing network connection over one network adapter by turning on NAT,

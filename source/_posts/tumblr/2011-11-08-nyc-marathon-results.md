@@ -3,6 +3,7 @@ layout: post
 title: NYC marathon results
 tags:
 - running
+comments: true
 ---
 For the MMRF: They raised about $525K via this marathon, which is one third of
 their overall events-based fundraising for the year. (And this year was a

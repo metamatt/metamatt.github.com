@@ -6,6 +6,7 @@ tags:
 - software
 - openwrt
 - linux
+comments: true
 ---
 One thing OpenWRT can do (if you run it on a router with USB ports) is stream
 video from a webcam using mjpg-streamer. Pretty useful if you want to put a

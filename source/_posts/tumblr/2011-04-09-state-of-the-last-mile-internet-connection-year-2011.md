@@ -8,6 +8,7 @@ tags:
 - sonic.net
 - cable
 - dsl
+comments: true
 ---
 Given the reliability problems I'm experiencing with [my otherwise nicely fast
 Comcast DOCSIS 3 connection](http://blog.metamatt.com/blog/2011/04/07/state-

@@ -2,6 +2,7 @@
 layout: post
 title: Individual airports can opt out of hiring TSA for security screening
 tags: 
+comments: true
 ---
 [The Washington Examiner](http://www.washingtonexaminer.com/politics/Amid-
 airport-anger_-GOP-takes-aim-at-screening-1576602-108259869.html):

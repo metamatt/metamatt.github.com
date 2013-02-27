@@ -3,6 +3,7 @@ layout: post
 title: SF 1/2 marathon challenge
 tags:
 - running
+comments: true
 ---
 I'm [planning to run the NYC Marathon in
 November](http://blog.metamatt.com/blog/2011/07/26/nyc-marathon/), as

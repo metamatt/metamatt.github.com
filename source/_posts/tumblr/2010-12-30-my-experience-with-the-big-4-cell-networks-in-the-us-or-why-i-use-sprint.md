@@ -3,6 +3,7 @@ layout: post
 title: My experience with the big 4 cell networks in the US (or, why I use Sprint)
 tags:
 - mobile
+comments: true
 ---
 Over the past 12 years I've been a customer of Sprint, T-Mobile and
 Cingular/AT&T for wireless service in the US, and from this, I have a simple

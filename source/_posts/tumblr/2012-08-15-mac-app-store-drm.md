@@ -4,6 +4,7 @@ title: Mac App Store DRM
 tags:
 - apple
 - drm
+comments: true
 ---
 Apparently apps from the Mac App Store are wrapped in DRM (not surprising) and
 this DRM is somehow tied to the motherboard hardware, not the OS install or

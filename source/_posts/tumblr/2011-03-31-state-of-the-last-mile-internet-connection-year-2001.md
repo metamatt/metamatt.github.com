@@ -5,6 +5,7 @@ tags:
 - dsl
 - network
 - last-mile
+comments: true
 ---
 In 2001 I lived in residential Los Altos Hills in a small rental cottage on
 the edge of a larger piece of property. Other than that tiny cottage, it's a

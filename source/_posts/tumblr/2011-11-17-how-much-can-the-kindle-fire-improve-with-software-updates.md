@@ -5,6 +5,7 @@ tags:
 - gadgets
 - amazon
 - kindle
+comments: true
 ---
 I wrote a [semi-positive mini-review of the Kindle
 Fire](http://blog.metamatt.com/blog/2011/11/17/kindle-fire-first-impressions/)

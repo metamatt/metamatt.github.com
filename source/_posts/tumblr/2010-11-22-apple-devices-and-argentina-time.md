@@ -7,6 +7,7 @@ tags:
 - bugs
 - software
 - apple
+comments: true
 ---
 All my Apple devices -- iPhone, iPod Nano -- that I'm traveling with think
 that Argentina is 2 hours ahead of Eastern time (EDT), when really it should

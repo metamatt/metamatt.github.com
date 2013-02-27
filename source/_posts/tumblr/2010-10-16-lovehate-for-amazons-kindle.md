@@ -7,6 +7,7 @@ tags:
 - kindle
 - software
 - iusethis
+comments: true
 ---
 The Kindle brings a really unique proposition, one you maybe have to try
 before you believe in it (I didn't get it at first, but I have to admit, the

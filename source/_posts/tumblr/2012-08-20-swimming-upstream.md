@@ -4,6 +4,7 @@ title: Swimming upstream
 tags:
 - diesel
 - vw
+comments: true
 ---
 [VW's safety/recall department just sent me these janky
 stickers](http://askavwsalesguy.com/blog/2012/07/30/volkswagen-send-tdi-

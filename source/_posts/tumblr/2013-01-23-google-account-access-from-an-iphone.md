@@ -7,6 +7,7 @@ tags:
 - mobile
 - cloud
 - gadgets
+comments: true
 ---
 Google recently announced that after January 2013, they'll be [deprecating EAS
 access to

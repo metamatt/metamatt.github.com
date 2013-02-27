@@ -4,6 +4,7 @@ title: Tierra del Fuego?
 tags:
 - travel
 - argentina
+comments: true
 ---
 Based on our experience here in Tierra del Fuego the past few days, the name
 doesn't seem so apt; either Tierra de la Agua or Tierra del Viento would be

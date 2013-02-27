@@ -8,6 +8,7 @@ tags:
 - facebook
 - twitter
 - chrome
+comments: true
 ---
 One of the potential upsides to posting stuff on Twitter or Facebook ought to
 be that you can find it later when you want to know what you were

@@ -4,6 +4,7 @@ title: ! 'Nothing is as easy as it should be: NAS upgrades'
 tags:
 - nas
 - readynas
+comments: true
 ---
 After [the SSD upgrade project](http://blog.metamatt.com/blog/2012/01/20
 /nothing-is-as-easy-as-it-should-be-ssd-upgrades/), I now have a stack of

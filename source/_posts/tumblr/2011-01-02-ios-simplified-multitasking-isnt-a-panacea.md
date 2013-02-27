@@ -5,6 +5,7 @@ tags:
 - apple
 - gadgets
 - software
+comments: true
 ---
 iOS was born without support for multitasking, and when competing smartphone
 OSes (especially WebOS and Android) added it, it was occasionally mocked for

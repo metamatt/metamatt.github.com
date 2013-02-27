@@ -2,6 +2,7 @@
 layout: post
 title: ! 'That’s what history really is: masses of people doing ordinary things.'
 tags: 
+comments: true
 ---
 > That's what history really is: masses of people doing ordinary things.
 

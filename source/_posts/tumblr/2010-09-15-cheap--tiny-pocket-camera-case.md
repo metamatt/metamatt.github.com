@@ -4,6 +4,7 @@ title: Cheap & tiny pocket camera case
 tags:
 - gadgets
 - cameras
+comments: true
 ---
 Useful tip: for carrying a pocket digital camera, keep it in a $5 microfiber
 bag like the ones used for sunglasses (easily obtainable at a sunglass store

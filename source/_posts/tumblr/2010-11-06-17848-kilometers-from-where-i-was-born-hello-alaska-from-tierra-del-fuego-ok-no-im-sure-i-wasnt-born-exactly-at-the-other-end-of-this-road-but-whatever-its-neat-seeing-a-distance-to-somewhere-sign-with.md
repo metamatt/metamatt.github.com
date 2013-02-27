@@ -5,6 +5,7 @@ title: ! '17,848 kilometers from where I was born: hello, Alaska, from Tierra de
   whatever. It’s neat seeing a distance-to-somewhere sign with a distance that large.)'
 tags:
 - travel
+comments: true
 ---
 ![](http://www.tumblr.com/photo/1280/metamatt/1498987032/1/tumblr_lbhcfaMMTd1q
 edkms)

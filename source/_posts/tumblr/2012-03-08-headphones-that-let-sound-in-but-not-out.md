@@ -4,6 +4,7 @@ title: Headphones that let sound in but not out
 tags:
 - headphones
 - gadgets
+comments: true
 ---
 When our son Dominic was born, I knew that my wife and I (and he) would start
 having diverging sleep schedules for a while, and I suddenly discovered a need

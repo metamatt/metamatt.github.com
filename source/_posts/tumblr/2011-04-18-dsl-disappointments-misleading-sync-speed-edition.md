@@ -5,6 +5,7 @@ tags:
 - dsl
 - network
 - last-mile
+comments: true
 ---
 Another [annoying behavior](http://blog.metamatt.com/blog/2011/04/13/dsl-
 modem-annoyances/) of the Comtrend modem I got from Sonic.net: it doesn't

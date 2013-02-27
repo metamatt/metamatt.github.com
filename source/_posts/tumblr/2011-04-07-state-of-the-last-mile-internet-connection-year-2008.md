@@ -6,6 +6,7 @@ tags:
 - last-mile
 - dsl
 - cable
+comments: true
 ---
 When I moved between houses in 2008, since I was moving anyway it seemed like
 a good time to re-evaluate my options for Internet providers.

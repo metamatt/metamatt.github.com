@@ -6,6 +6,7 @@ tags:
 - photography
 - travel
 - iusethis
+comments: true
 ---
 Vanessa and I just got back from a long trip during which we took and [posted
 a lot of pictures](http://www.flickr.com/photos/metamatt/collections/721576239

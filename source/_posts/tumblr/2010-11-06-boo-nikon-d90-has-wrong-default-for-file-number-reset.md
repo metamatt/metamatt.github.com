@@ -4,6 +4,7 @@ title: Boo, Nikon D90 has wrong default for "file number reset"
 tags:
 - gadgets
 - cameras
+comments: true
 ---
 Oops. I just realized that the "file number reset" setting on my D90 was set
 to off, because I got a new camera and assumed the default was correct,

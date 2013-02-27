@@ -3,6 +3,7 @@ layout: post
 title: How to add Tumblr to your Google Buzz feed
 tags:
 - web
+comments: true
 ---
 [How to add Tumblr to your Google Buzz feed](http://waffle-
 iron.tumblr.com/post/412393314/how-to-add-tumblr-to-your-google-buzz-feed)

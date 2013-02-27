@@ -4,6 +4,7 @@ title: Turkish buses were a pleasant surprise
 tags:
 - travel
 - turkey
+comments: true
 ---
 I'm not used to traveling by bus but I've been pleasantly surprised by Turkish
 buses.  They're not that fast, but they are cheap, comfortable enough, leave

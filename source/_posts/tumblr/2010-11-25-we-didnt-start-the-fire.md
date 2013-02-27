@@ -4,6 +4,7 @@ title: We didn't start the fire
 tags:
 - travel
 - argentina
+comments: true
 ---
 We've stayed in 3 places in Argentina that were sufficiently apartment-like to
 come with a kitchen or kitchenette with gas stove.

@@ -4,6 +4,7 @@ title: The FUD department is connected to the legal department is connected to t
   Kinect department?
 tags:
 - gadgets
+comments: true
 ---
 [The FUD department is connected to the legal department is connected to the
 Kinect department?](http://arstechnica.com/gaming/news/2010/11/hacked-kinect-

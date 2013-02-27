@@ -5,6 +5,7 @@ tags:
 - apple
 - mac os
 - gadgets
+comments: true
 ---
 Apple has been dabbling with [resolution
 independence](http://en.wikipedia.org/wiki/Resolution_independence) in Mac OS

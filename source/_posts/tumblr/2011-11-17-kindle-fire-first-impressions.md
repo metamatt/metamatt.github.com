@@ -5,6 +5,7 @@ tags:
 - gadget
 - kindle
 - amazon
+comments: true
 ---
 My first impressions after playing with the Kindle Fire for an hour or so:
 

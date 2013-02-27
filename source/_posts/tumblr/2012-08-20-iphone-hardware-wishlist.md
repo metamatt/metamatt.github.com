@@ -5,6 +5,7 @@ tags:
 - apple
 - gadgets
 - iphone
+comments: true
 ---
 It’s almost September, [so time for a new iPhone](http://www.imore.com/apple-
 iphone-5-and-ipad-mini-event-planned-september-12-iphone-5-release-date-

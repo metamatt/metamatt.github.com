@@ -5,6 +5,7 @@ tags:
 - mac
 - software
 - apple
+comments: true
 ---
 I wanted to use my new [remap-volume-keys
 trick](http://blog.metamatt.com/blog/2011/01/10/how-to-make-software-volume-

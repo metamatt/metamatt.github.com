@@ -5,6 +5,7 @@ tags:
 - dsl
 - network
 - last-mile
+comments: true
 ---
 Yet another disappointment with the DSL connection and/or modem from
 Sonic.net: Annex M doesn't seem to do any good at all for upload speeds.

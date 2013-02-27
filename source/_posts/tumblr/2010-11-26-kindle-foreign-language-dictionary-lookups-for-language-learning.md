@@ -5,6 +5,7 @@ tags:
 - kindle
 - gadgets
 - argentina
+comments: true
 ---
 OK, this rules -- ask and you shall receive.
 

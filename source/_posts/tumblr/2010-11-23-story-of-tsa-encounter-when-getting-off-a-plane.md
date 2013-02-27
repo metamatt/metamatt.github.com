@@ -3,6 +3,7 @@ layout: post
 title: Story of TSA encounter when getting *off* a plane
 tags:
 - tsa
+comments: true
 ---
 [Story of TSA encounter when getting *off* a
 plane](http://noblasters.com/post/1650102322/my-tsa-encounter)

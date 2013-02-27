@@ -4,6 +4,7 @@ title: Birdwatching in Tierra del Fuego
 tags:
 - travel
 - argentina
+comments: true
 ---
 Another location where there are too many neat birds to ignore, so, more
 birdwatching and another list of birds, this time from the area in and around

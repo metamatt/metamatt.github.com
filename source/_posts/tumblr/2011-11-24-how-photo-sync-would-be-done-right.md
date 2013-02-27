@@ -7,6 +7,7 @@ tags:
 - sync
 - sharing
 - backup
+comments: true
 ---
 I've been wishing and waiting and watching and waiting, with an idea in my
 head of what I want: from computers and the internet, regarding photos and

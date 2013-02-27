@@ -5,6 +5,7 @@ tags:
 - software
 - bug
 - lightroom
+comments: true
 ---
 Lightroom loves to lose keyboard focus when you're typing in iptc fields in
 the metadata editor in the right panel, especially on slow netbook -- select a

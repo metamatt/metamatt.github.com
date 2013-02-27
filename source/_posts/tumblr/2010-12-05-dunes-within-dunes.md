@@ -2,6 +2,7 @@
 layout: post
 title: Dunes within dunes
 tags: 
+comments: true
 ---
 I just reread the first 3 Dune books (Dune, Dune Messiah, Children of Dune).
 Consistent with my memory from the 1st reading, the first is awesome and the

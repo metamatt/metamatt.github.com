@@ -4,6 +4,7 @@ title: How high are the various Machu Picchu sites?
 tags:
 - travel
 - peru
+comments: true
 ---
 This might be confusing because all of the following can be called "Machu
 Picchu", so I'll try to be unambiguous.

@@ -5,6 +5,7 @@ tags:
 - apple
 - macbook
 - gadgets
+comments: true
 ---
 I ordered the Retina MacBook Pro the second day they were available. (In that
 day, the order backlog went from 1 week to 3 weeks, so I just got it a week

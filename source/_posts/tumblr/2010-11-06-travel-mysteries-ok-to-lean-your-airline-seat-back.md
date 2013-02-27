@@ -3,6 +3,7 @@ layout: post
 title: ! 'Travel mysteries: ok to lean your airline seat back?'
 tags:
 - travel
+comments: true
 ---
 I've been learning that the issues surrounding when you're allowed and
 expected to recline your airline seat are a lot more complex than I'd

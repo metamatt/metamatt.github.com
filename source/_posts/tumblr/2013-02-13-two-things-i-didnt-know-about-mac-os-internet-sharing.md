@@ -5,6 +5,7 @@ tags:
 - apple
 - networking
 - gadgets
+comments: true
 ---
 On a recent trip to Mexico, we stayed in a hotel that charged a significant
 extra fee for fairly slow Internet access. After paying for an access code, we

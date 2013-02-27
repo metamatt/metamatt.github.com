@@ -5,6 +5,7 @@ tags:
 - amazon
 - kindle
 - gadgets
+comments: true
 ---
 If you use the Kindle device itself to shop in the Kindle store, you can
 browse and search for books, and view reviews, but: the reviews are sorted by

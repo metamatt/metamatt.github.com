@@ -4,6 +4,7 @@ title: How whales and dolphins sleep without drowning
 tags:
 - travel
 - argentina
+comments: true
 ---
 After watching a bunch of aquatic mammals (seals, sea lions, dolphins, and
 whales) in Patagonia, Vanessa and I got curious about a suddenly obvious

@@ -5,6 +5,7 @@ tags:
 - linux
 - networking
 - gadgets
+comments: true
 ---
 In my last post, I spelled out my requirements for a home router: dependable
 and not requiring babysitting or monthly rebooting, but flexible enough to let

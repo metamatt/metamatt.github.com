@@ -5,6 +5,7 @@ tags:
 - apple
 - microsoft
 - gadgets
+comments: true
 ---
 When I worked on my high school paper, I spent many hours working on the
 newsroom Macs, but I had a Windows machine at home, and I was pretty

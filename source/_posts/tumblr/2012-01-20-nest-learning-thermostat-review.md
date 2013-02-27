@@ -5,6 +5,7 @@ tags:
 - nest
 - gadgets
 - thermostats
+comments: true
 ---
 I bought two [Nest Learning Thermostats](http://www.nest.com/living-with-
 nest/) for my house, which has two furnaces. Here's how they're working out

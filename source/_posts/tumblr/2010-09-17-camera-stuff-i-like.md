@@ -4,6 +4,7 @@ title: Camera stuff I like
 tags:
 - gadgets
 - cameras
+comments: true
 ---
 Pocket camera: Canon Powershot S90 (the recent S95 is probably even better).
 Takes the best photos I've seen from any camera that will fit in a pants

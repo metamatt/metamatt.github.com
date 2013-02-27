@@ -2,6 +2,7 @@
 layout: post
 title: ! '"Many Americans are criminals and they don''t even know it"'
 tags: 
+comments: true
 ---
 > If you don't consider yourself a criminal, do you have anything to hide?
 Well, maybe:

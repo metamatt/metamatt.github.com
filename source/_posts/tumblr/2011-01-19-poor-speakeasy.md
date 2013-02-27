@@ -2,6 +2,7 @@
 layout: post
 title: Poor Speakeasy
 tags: 
+comments: true
 ---
 [![](http://farm6.static.flickr.com/5042/5365925256_758fd3e5d2.jpg)](http://ww
 w.flickr.com/photos/metamatt/5365925256)

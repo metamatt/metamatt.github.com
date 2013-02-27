@@ -4,6 +4,7 @@ title: Kellan Elliott-McCrea on data portability at Flickr
 tags:
 - web
 - software
+comments: true
 ---
 [Kellan Elliott-McCrea on data portability at
 Flickr](http://laughingmeme.org/2010/05/18/minimal-competence-data-access-

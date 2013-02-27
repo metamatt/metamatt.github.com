@@ -2,6 +2,7 @@
 layout: post
 title: I’m not proposing complacency here. I am proposing perspective.
 tags: 
+comments: true
 ---
 > I'm not proposing complacency here. I am proposing perspective.
 

@@ -5,6 +5,7 @@ tags:
 - apple
 - south park
 - magic
+comments: true
 ---
 MG Siegler, [Apple’s Magic Is In The Turn, Not The
 Prestige](http://techcrunch.com/2012/09/13/the-iphone-5-event/):

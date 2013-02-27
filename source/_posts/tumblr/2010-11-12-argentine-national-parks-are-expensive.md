@@ -4,6 +4,7 @@ title: Argentine national parks are expensive
 tags:
 - travel
 - argentina
+comments: true
 ---
 Argentine national parks are really expensive for foreigners. Admission tends
 to be something like $75, per person, per day -- unlike in the US where

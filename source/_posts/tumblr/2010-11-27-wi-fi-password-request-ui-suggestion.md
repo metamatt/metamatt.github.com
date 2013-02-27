@@ -4,6 +4,7 @@ title: Wi-fi password request UI suggestion
 tags:
 - gadgets
 - software
+comments: true
 ---
 Say you're at a friend's house, or in a hotel or cafe, and they have a wi-fi
 network you haven't used before, and you try to connect, and it's password

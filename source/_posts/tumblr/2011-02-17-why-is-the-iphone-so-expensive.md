@@ -2,6 +2,7 @@
 layout: post
 title: Why is the iPhone so expensive?
 tags: 
+comments: true
 ---
 Why is the iPhone so expensive?
 

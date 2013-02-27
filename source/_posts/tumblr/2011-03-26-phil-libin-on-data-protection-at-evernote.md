@@ -5,6 +5,7 @@ tags:
 - software
 - web
 - iusethis
+comments: true
 ---
 [Phil Libin on data protection at
 Evernote](http://blog.evernote.com/2011/03/24/evernote%E2%80%99s-three-laws-

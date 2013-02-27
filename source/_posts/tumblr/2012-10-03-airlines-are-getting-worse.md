@@ -3,6 +3,7 @@ layout: post
 title: Airlines are getting worse
 tags:
 - travel
+comments: true
 ---
 Yeah I know, this is already well known and I'm just piling on and
 complaining. Still, it's annoying and worth noting. Airlines keep adding

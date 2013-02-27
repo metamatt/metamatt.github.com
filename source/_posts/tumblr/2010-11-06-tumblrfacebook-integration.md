@@ -3,6 +3,7 @@ layout: post
 title: Tumblr/Facebook integration
 tags:
 - web
+comments: true
 ---
 I like that Tumblr has an app to integrate Tumblr posts into my Facebook
 profile, and that it seems to work both reliably and quickly. I wish I could

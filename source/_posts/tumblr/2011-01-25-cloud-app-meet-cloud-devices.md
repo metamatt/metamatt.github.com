@@ -5,6 +5,7 @@ tags:
 - cloud
 - software
 - mobile
+comments: true
 ---
 When using Citibank's site to set a credit card bill to pay itself, I was
 forced to make the following declaration:

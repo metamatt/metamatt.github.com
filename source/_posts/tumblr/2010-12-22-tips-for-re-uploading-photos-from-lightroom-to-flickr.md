@@ -4,6 +4,7 @@ title: Tips for re-uploading photos from Lightroom to Flickr
 tags:
 - software
 - iusethis
+comments: true
 ---
 If you use both Flickr and Adobe Lightroom, and upload from Lightroom to
 Flickr using [Jeffrey's "Export to Flickr" Lighroom

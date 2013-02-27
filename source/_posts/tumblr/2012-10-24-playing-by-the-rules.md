@@ -4,6 +4,7 @@ title: Playing by the rules
 tags:
 - gadgets
 - surface
+comments: true
 ---
 I read two extensive reviews of Microsoft's new Surface tablets today.
 

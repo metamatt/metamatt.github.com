@@ -5,6 +5,7 @@ tags:
 - apple
 - iTunes
 - sync
+comments: true
 ---
 Apple recently added two new features to iTunes: "[iTunes in the
 Cloud](http://www.apple.com/icloud/features/)", which adds all your iTunes

@@ -4,6 +4,7 @@ title: Use of proxy server to trick websites that serve you the wrong thing base
   on geolocation
 tags:
 - web
+comments: true
 ---
 There are a few US-centric websites that I want to use while traveling, which
 work suboptimally from outside the US.

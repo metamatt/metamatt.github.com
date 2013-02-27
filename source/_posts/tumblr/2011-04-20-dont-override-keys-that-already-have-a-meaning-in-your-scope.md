@@ -5,6 +5,7 @@ tags:
 - mac os x
 - software
 - adobe
+comments: true
 ---
 Two keyboard shortcuts I use very frequently under Mac OS X are:
 

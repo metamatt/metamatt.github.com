@@ -2,6 +2,7 @@
 layout: post
 title: This is why you need a Groklaw
 tags: 
+comments: true
 ---
 > This is why you need a Groklaw, to carefully gather all the pieces of true
 computer history, so when people talk like this, you have a place to send

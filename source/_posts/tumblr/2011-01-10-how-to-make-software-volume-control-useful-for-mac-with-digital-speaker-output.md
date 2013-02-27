@@ -5,6 +5,7 @@ tags:
 - software
 - mac
 - apple
+comments: true
 ---
 I bought a pair of Beringer MS40 speakers for my Mac and connected them via an
 optical digital cable, and immediately the master volume control on the Mac

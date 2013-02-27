@@ -3,6 +3,7 @@ layout: post
 title: Amusing traceroutes from Argentina
 tags:
 - web
+comments: true
 ---
 This is traceroute output from a server in a datacenter in Fremont, California
 to the IP address of the DSL connection in the apartment I'm staying in in

@@ -2,6 +2,7 @@
 layout: post
 title: That time is not for the candidates. It is for the voters.
 tags: 
+comments: true
 ---
 > That time is not for the candidates. It is for the voters.
 

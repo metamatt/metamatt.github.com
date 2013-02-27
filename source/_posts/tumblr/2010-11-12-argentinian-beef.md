@@ -4,6 +4,7 @@ title: Argentinian beef
 tags:
 - travel
 - food
+comments: true
 ---
 Apparently by visiting now we're slipping in just under the window for the
 legendary Argentinian beef… people are complaining already it's gone down in

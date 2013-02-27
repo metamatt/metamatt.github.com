@@ -4,6 +4,7 @@ title: Off-the-cuff reaction to OS X Mountain Lion
 tags:
 - apple
 - os x
+comments: true
 ---
 After reading about [Apple's new Mountain Lion](http://www.apple.com/macosx
 /mountain-lion/), including coverage from [Daring

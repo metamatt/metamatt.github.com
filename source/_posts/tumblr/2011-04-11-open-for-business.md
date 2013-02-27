@@ -3,6 +3,7 @@ layout: post
 title: Open for business
 tags:
 - software
+comments: true
 ---
 > Nokia says that Symbian is no longer open source, just "open for business."
 The definition of "open" in the mobile space is apparently completely

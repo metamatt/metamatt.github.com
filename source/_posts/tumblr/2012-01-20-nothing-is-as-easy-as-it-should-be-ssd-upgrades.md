@@ -5,6 +5,7 @@ tags:
 - apple
 - gadgets
 - ssd
+comments: true
 ---
 Santa, bless the guy, heard me getting annoyed at the sounds of hard drives
 spinning up and down in the night, and decided to help me out by bringing me

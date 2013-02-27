@@ -4,6 +4,7 @@ title: Arbitrary Argentine Acronyms
 tags:
 - travel
 - random
+comments: true
 ---
 If you're entertained by finding patterns in noise, meaning in chaos -- even
 false meanings -- and especially if you're a English-speaking rap-listening

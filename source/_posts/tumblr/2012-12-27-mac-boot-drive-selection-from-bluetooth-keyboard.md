@@ -4,6 +4,7 @@ title: Mac boot drive selection from Bluetooth keyboard
 tags:
 - apple
 - mac os
+comments: true
 ---
 Twice in the last few months1 I've had to do troubleshooting steps on
 Vanessa's iMac that involved booting from alternate volumes2. This is normally

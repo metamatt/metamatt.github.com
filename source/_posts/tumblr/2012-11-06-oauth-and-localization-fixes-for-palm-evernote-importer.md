@@ -5,6 +5,7 @@ tags:
 - software
 - palm
 - evernote
+comments: true
 ---
 I’ve updated my [utility for importing notes from Palm Desktop into
 Evernote](http://www.maddogsw.com/evernote-utilities/evernote-palm-importer/)

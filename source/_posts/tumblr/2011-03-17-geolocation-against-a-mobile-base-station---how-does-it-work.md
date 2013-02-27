@@ -5,6 +5,7 @@ tags:
 - mobile
 - apple
 - location
+comments: true
 ---
 I just saw these [two](http://blog.urbanape.com/post/3798485232/show-me-the-
 way) [posts](http://www.tabletmonsters.com/news/video-wi-fi-only-ipad-2-gps-

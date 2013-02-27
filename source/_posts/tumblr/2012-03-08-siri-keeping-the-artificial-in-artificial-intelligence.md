@@ -4,6 +4,7 @@ title: Siri, keeping the "artificial" in "artificial intelligence"
 tags:
 - siri
 - apple
+comments: true
 ---
 A lot has already been written on
 [Siri](http://www.apple.com/iphone/features/siri.html), most of it pretty

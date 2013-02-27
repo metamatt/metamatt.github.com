@@ -7,6 +7,7 @@ title: As we think about the next 50 years, I remember a story President Kennedy
   The gardener said, “But the tree will not bloom for 100 years.” The marshal replied,
   “In that case, you had better plant it this afternoon.
 tags: 
+comments: true
 ---
 > As we think about the next 50 years, I remember a story President Kennedy
 told a week before he was killed. The story was about French Marshal Louis-

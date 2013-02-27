@@ -5,6 +5,7 @@ tags:
 - apple
 - mac os x
 - bugs
+comments: true
 ---
 Mostly the OS X user experience is really good and getting better, and Apple's
 famous for fit and finish and general polish and avoiding dreary annoyances

@@ -6,6 +6,7 @@ tags:
 - network
 - last-mile
 - cable
+comments: true
 ---
 In summer 2009, Comcast rolled out [DOCSIS
 3.0](http://en.wikipedia.org/wiki/DOCSIS#Speed_tables) in the Bay Area,

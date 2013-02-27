@@ -4,6 +4,7 @@ title: Visiting Ireland with baby Dominic
 tags:
 - travel
 - dominic
+comments: true
 ---
 Vanessa and I wanted to take a real destination trip with Dominic, kinda sorta
 just to see if we could do it. Not that we were hoping or envisioning that it

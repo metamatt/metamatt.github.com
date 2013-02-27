@@ -3,6 +3,7 @@ layout: post
 title: OS X has a builtin Wi-Fi network scanner
 tags:
 - apple
+comments: true
 ---
 Here's a bonus on top of a bonus: OS X 10.8 (Mountain Lion) adds a really
 useful "Wi-Fi" scan feature, buried inside a utility I didn't know existed.

@@ -4,6 +4,7 @@ title: The effect of time-shifting electrical usage on NEM billing
 tags:
 - solar
 - energy
+comments: true
 ---
 One more post on the topic of PG&E bills for solar (NEM) customers.
 

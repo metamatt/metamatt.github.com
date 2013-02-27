@@ -3,6 +3,7 @@ layout: post
 title: SFO doesn't actually use the TSA for passenger screening?
 tags:
 - tsa
+comments: true
 ---
 [SFO doesnt actually use the TSA for passenger
 screening?](http://blog.tsa.gov/2010/11/airports-who-opt-out-of-tsa-

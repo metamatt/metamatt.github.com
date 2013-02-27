@@ -2,6 +2,7 @@
 layout: post
 title: This new blog
 tags: 
+comments: true
 ---
 After repeatedly saying someday I'll start a blog and then not doing it
 because of all the stuff it's already missing and all the stuff I won't have

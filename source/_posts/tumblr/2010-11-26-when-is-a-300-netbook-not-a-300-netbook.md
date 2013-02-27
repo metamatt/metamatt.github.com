@@ -4,6 +4,7 @@ title: When is a $300 netbook not a $300 netbook?
 tags:
 - gadgets
 - windows
+comments: true
 ---
 Since we were going to be spending so much time on the road this year, Vanessa
 and I bought a $300 netbook to bring with us. (Rationale: I didn't want to

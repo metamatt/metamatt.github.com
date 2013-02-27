@@ -6,6 +6,7 @@ tags:
 - last-mile
 - network
 - squirrels
+comments: true
 ---
 In the fall of 2000, my last year at Stanford, I lived with a group of friends
 in one of [Rob Levitsky's Dead Houses](http://www.paloaltoonline.com/weekly/mo

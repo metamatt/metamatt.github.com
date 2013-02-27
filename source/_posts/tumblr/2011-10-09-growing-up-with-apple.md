@@ -3,6 +3,7 @@ layout: post
 title: Growing up with Apple
 tags:
 - apple
+comments: true
 ---
 RIP Steve Jobs. Along with his passing, everyone in the tech world seems to be
 telling their [stories about Apple's influence on them in their formative

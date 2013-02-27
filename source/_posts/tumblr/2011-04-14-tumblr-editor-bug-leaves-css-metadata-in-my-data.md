@@ -5,6 +5,7 @@ tags:
 - tumblr
 - bug
 - software
+comments: true
 ---
 Tumblr's editor turned t[his post](http://blog.metamatt.com/blog/2011/04/11
 /this-is-why-you-need-a-groklaw/) into [![](http://farm6.static.flickr.com/526

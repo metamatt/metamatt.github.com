@@ -2,6 +2,7 @@
 layout: post
 title: Really good take on the e-book state of the union
 tags: 
+comments: true
 ---
 [Really good take on the e-book state of the
 union](http://arstechnica.com/gadgets/reviews/2010/11/kindle-3-e-book-readers-

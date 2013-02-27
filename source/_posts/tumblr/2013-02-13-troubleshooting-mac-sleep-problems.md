@@ -4,6 +4,7 @@ title: Troubleshooting Mac sleep problems
 tags:
 - apple
 - gadgets
+comments: true
 ---
 Here's a useful nugget if you're inclined to poke at computers to see how they
 work: `pmset -g log`.

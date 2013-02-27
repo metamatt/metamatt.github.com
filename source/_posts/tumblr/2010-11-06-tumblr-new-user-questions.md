@@ -3,6 +3,7 @@ layout: post
 title: Tumblr new-user questions
 tags:
 - web
+comments: true
 ---
 Just started using Tumblr; here are a couple things I want to do but can't
 figure out how.

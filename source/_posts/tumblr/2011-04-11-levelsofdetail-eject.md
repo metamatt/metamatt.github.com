@@ -5,6 +5,7 @@ tags:
 - software
 - windows
 - mac os x
+comments: true
 ---
 [LevelsOfDetail: eject](http://puntium.tumblr.com/post/4517405510)
 

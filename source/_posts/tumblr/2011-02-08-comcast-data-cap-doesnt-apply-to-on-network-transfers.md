@@ -5,6 +5,7 @@ tags:
 - data
 - internet
 - comcast
+comments: true
 ---
 For the time being, I have a residential cable connection from Comcast as my
 connection to the Internet. One of the things that Comcast gets a lot of

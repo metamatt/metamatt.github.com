@@ -5,6 +5,7 @@ tags:
 - mobile
 - gadgets
 - apple
+comments: true
 ---
 I just bought a new iPod Touch to replace[ the iPhone 3G I sacrificed to the
 gods of Machu Picchu](http://blog.metamatt.com/blog/2010/12/03/iphone-3g-

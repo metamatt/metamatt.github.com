@@ -4,6 +4,7 @@ title: Speedy resume
 tags:
 - apple
 - gadgets
+comments: true
 ---
 My initial reason for switching from Windows laptops to Mac laptops 7 years
 ago — which has remained a primary benefit across those 7 years — was better

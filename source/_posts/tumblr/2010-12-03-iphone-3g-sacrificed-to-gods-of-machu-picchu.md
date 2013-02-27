@@ -5,6 +5,7 @@ tags:
 - gadgets
 - travel
 - peru
+comments: true
 ---
 Vanessa and I visited Machu Picchu yesterday and today; beyond visiting the
 ruins of the Inca citadel itself, we also climbed the higher of the two

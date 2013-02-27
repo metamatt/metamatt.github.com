@@ -5,6 +5,7 @@ tags:
 - amazon
 - kindle
 - gadgets
+comments: true
 ---
 Why is the Kindle keyboard so awfully hard to type on? It sure seems like
 Amazon wants us to use it -- it's part of the original Kindle vision (it's

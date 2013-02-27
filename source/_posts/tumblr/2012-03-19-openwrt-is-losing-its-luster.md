@@ -6,6 +6,7 @@ tags:
 - linux
 - networking
 - gadgets
+comments: true
 ---
 Ever since I discovered it in 2006, I've used, and been a huge fan of,
 [OpenWrt](https://openwrt.org/) for my home network router. I started running

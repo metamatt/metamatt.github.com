@@ -4,6 +4,7 @@ title: Playmobil Security Check Point
 tags:
 - amazon
 - tsa
+comments: true
 ---
 [Playmobil Security Check
 Point](http://www.amazon.com/exec/obidos/ASIN/B0002CYTL2)

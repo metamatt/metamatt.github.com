@@ -4,6 +4,7 @@ title: Blog comment semi-spam
 tags:
 - blogging
 - spam
+comments: true
 ---
 Seems like spammers are taking to spamming weblog comments wherever they are
 allowed with innocuous-looking content-free posts just to link back to

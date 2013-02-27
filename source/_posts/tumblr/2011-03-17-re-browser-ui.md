@@ -2,6 +2,7 @@
 layout: post
 title: ! 're: browser ui'
 tags: 
+comments: true
 ---
 [puntium](http://puntium.tumblr.com/post/3923741525):
 

@@ -3,6 +3,7 @@ layout: post
 title: A waterproof tablet! A step in in the right direction
 tags:
 - gadgets
+comments: true
 ---
 In [this announcement of a new Sony tablet for
 Android](http://arstechnica.com/gadgets/2013/02/sony-unveils-thinnest-10-1

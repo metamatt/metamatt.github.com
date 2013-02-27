@@ -6,6 +6,7 @@ tags:
 - kindle
 - gadgets
 - drm
+comments: true
 ---
 If you subscribe to a periodical on Kindle, each issue of the periodical can
 only be viewed on one Kindle device, ever.

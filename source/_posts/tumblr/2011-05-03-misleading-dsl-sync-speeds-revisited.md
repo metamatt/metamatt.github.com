@@ -5,6 +5,7 @@ tags:
 - dsl
 - last-mile
 - network
+comments: true
 ---
 In response to my previous articles about frustrations with my DSL modem,
 Sonic.net sent me a replacement modem to see if it would fare better. It had

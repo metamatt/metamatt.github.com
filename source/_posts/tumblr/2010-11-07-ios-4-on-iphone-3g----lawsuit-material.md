@@ -2,6 +2,7 @@
 layout: post
 title: iOS 4 on iPhone 3G -- lawsuit material?
 tags: 
+comments: true
 ---
 [iOS 4 on iPhone 3G -- lawsuit
 material?](http://arstechnica.com/apple/news/2010/11/lawsuit-apple-turned-

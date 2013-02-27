@@ -5,6 +5,7 @@ tags:
 - dsl
 - last-mile
 - network
+comments: true
 ---
 In 2003 when I moved to San Francisco, I didn't look around too hard but just
 signed up for the [Speakeasy DSL connection that I had wanted

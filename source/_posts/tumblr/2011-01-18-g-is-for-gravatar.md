@@ -2,6 +2,7 @@
 layout: post
 title: G is for Gravatar
 tags: 
+comments: true
 ---
 [![](http://farm6.static.flickr.com/5204/5365925206_b4ae45b001.jpg)](http://ww
 w.flickr.com/photos/metamatt/5365925206/)

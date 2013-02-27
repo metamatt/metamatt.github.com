@@ -4,6 +4,7 @@ title: Google default account for multiple sign in
 tags:
 - google
 - accounts
+comments: true
 ---
 Google Accounts allow you to [stay signed into multiple accounts at
 once](http://support.google.com/accounts/bin/answer.py?hl=en&answer=1721977),

@@ -4,6 +4,7 @@ title: ! 'Travel mysteries: undercharge with respect to receipt?'
 tags:
 - travel
 - argentina
+comments: true
 ---
 We've noticed that a few tour bus companies in Ushuaia, running between the
 town and the national park, will offer us a discount (say 55 pesos round trip

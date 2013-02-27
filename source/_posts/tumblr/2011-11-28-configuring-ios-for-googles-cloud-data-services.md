@@ -7,6 +7,7 @@ tags:
 - google
 - gmail
 - sync
+comments: true
 ---
 If you're a Gmail user, you've already got cloud email, a contact list or
 address book, and a calendar (actually a set of calendars) hosted by Google.

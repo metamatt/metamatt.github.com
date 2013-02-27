@@ -5,6 +5,7 @@ tags:
 - dsl
 - last-mile
 - network
+comments: true
 ---
 For [my dual-line Fusion setup](http://blog.metamatt.com/blog/2011/04/09
 /state-of-the-last-mile-internet-connection-year-2011/), Sonic.net sent me a

@@ -3,6 +3,7 @@ layout: post
 title: One year of solar power
 tags:
 - energy
+comments: true
 ---
 When I got solar panels installed on the roof of our house last fall, friends
 immediately started asking how well they were working out, and my answer had

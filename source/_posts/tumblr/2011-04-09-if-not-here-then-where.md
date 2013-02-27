@@ -6,6 +6,7 @@ tags:
 - last-mile
 - network
 - fiber
+comments: true
 ---
 [if not here, then where...](http://blog.metamatt.com/post/4476116669)
 

@@ -2,6 +2,7 @@
 layout: post
 title: Browsing Facebook from Kindle 3
 tags: 
+comments: true
 ---
 I'm now traveling internationally and right before I left I got a Kindle 3 to
 replace one I'd dropped in the river. One of the unexpected benefits of the

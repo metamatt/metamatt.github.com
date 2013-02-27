@@ -3,6 +3,7 @@ layout: post
 title: NYC marathon
 tags:
 - running
+comments: true
 ---
 I've signed up to run the New York City marathon in November. It'll be my
 first marathon, so both training and the actual event should be interesting

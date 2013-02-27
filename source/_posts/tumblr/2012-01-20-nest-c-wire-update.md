@@ -5,6 +5,7 @@ tags:
 - nest
 - thermostats
 - gadgets
+comments: true
 ---
 My [Nest thermostat review](http://blog.metamatt.com/blog/2012/01/20/nest-
 learning-thermostat-review/) complained about up-front lack of obviousness

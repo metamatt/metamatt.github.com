@@ -3,6 +3,7 @@ layout: post
 title: Flickr->Facebook upload announcements, finally working for me
 tags:
 - software
+comments: true
 ---
 I mostly share my photos on Flickr, but want the uploads announced on Facebook
 so that my friends know about them. Flickr has long offered a way to do this;

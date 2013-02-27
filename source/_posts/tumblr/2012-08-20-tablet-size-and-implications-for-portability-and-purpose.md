@@ -9,6 +9,7 @@ tags:
 - google
 - nexus
 - android
+comments: true
 ---
 Apple [pretty much owns the tablet
 market](https://www.google.com/search?q=%22tablet+market%22+%22ipad+market%22)

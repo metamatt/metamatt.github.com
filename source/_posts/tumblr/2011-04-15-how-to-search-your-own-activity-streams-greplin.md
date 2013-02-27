@@ -6,6 +6,7 @@ tags:
 - greplin
 - lifestream
 - software
+comments: true
 ---
 I recently wrote a post, [On searching one's own activity
 streams](http://blog.metamatt.com/blog/2011/04/13/on-searching-ones-own-

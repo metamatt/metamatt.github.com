@@ -4,6 +4,7 @@ title: Restore from backup
 tags:
 - apple
 - software
+comments: true
 ---
 The SSD in Vanessa's iMac died and needed to be replaced. In theory, this is
 pretty simple since we have backups — replace the faulty hardware, restore the

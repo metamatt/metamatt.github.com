@@ -6,6 +6,7 @@ tags:
 - cable
 - last-mile
 - openwrt
+comments: true
 ---
 My outbound Internet connection stopped working again this morning, and (like
 the last couple times) evidence pointed towards my router, not the modem or

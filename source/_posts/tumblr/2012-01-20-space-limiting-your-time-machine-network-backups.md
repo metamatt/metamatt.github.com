@@ -5,6 +5,7 @@ tags:
 - apple
 - nas
 - backup
+comments: true
 ---
 As part of the [aforementioned office-quieting
 project](http://blog.metamatt.com/blog/2012/01/20/nothing-is-as-easy-as-it-

@@ -6,6 +6,7 @@ tags:
 - software
 - vmware
 - windows
+comments: true
 ---
 [MKSTaskbarPlugin for VMware Workstation for
 Windows](http://labs.vmware.com/flings/mkstaskbarplugin)

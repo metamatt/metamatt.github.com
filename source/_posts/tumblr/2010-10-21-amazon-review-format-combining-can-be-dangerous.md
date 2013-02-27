@@ -3,6 +3,7 @@ layout: post
 title: Amazon review format-combining can be dangerous
 tags:
 - amazon
+comments: true
 ---
 Amazon often sells the same thing in a variety of editions -- a book can be
 bound in hardcover or softcover or distributed purely electronically in Kindle

@@ -3,6 +3,7 @@ layout: post
 title: Why are we letting the terrorists succeed by making us act as if we’re frightened?
   Most of us aren’t, really.
 tags: 
+comments: true
 ---
 > Why are we letting the terrorists succeed by making us act as if we’re
 frightened? Most of us aren’t, really.

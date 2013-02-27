@@ -3,6 +3,7 @@ layout: post
 title: NAS brand loyalty (or not)
 tags:
 - gadgets
+comments: true
 ---
 2006: The first RAID/storage appliance I bought was the original Infrant
 ReadyNAS NV. It was medium-expensive for its time, well-built, and at first I

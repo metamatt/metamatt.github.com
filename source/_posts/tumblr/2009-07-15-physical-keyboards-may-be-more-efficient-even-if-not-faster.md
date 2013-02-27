@@ -3,6 +3,7 @@ layout: post
 title: Physical keyboards may be more efficient even if not faster
 tags:
 - Gadgets
+comments: true
 ---
 Having read the debate between [John
 Gruber](http://daringfireball.net/2009/06/palm_saturday) and [Tim

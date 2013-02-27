@@ -4,6 +4,7 @@ title: ! 'The perils of halfway speaking Spanish '
 tags:
 - travel
 - argentina
+comments: true
 ---
 One of my favorite things about being in Argentina is the opportunity to learn
 Spanish for real -- I'd taken a few months of classes and have that stilted

@@ -3,6 +3,7 @@ layout: post
 title: 3 things I miss in the mobile phone market
 tags:
 - mobile
+comments: true
 ---
 Here's what I really want from the mobile phone market: I want to be able to
 

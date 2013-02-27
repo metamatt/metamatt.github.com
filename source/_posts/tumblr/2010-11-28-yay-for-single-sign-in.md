@@ -4,6 +4,7 @@ title: ! 'Yay for single sign-in '
 tags:
 - amazon
 - web
+comments: true
 ---
 I just found a useful answer on [Amazon Askville](http://askville.amazon.com/)
 and wanted to vote it up. It says you have to be signed in to vote, so ok,

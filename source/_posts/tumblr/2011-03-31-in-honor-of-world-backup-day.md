@@ -5,6 +5,7 @@ tags:
 - backup
 - software
 - iusethis
+comments: true
 ---
 In honor of [World Backup Day](http://arstechnica.com/gadgets/news/2011/03
 /world-backup-day-what-are-you-doing-to-make-sure-youre-covered.ars), here's a

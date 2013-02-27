@@ -5,6 +5,7 @@ tags:
 - software
 - windows
 - gadgets
+comments: true
 ---
 Visiting parents for the holidays, I wanted to show a slide show from my and
 Vanessa's recent travels, and wanted to show this on their big screen TV, not

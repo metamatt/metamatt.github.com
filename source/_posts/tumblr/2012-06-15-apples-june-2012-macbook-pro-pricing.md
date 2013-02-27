@@ -4,6 +4,7 @@ title: Apple's June 2012 MacBook Pro pricing
 tags:
 - apple
 - gadgets
+comments: true
 ---
 Apple updated the MacBook Pro lineup this week, with both evolutionary
 enhancements recognizable as successors to the previous lineup, and also

@@ -4,6 +4,7 @@ title: Those iOS 6 maps
 tags:
 - apple
 - gadgets
+comments: true
 ---
 So, it's come to this:
 

@@ -5,6 +5,7 @@ tags:
 - energy
 - cars
 - diesel
+comments: true
 ---
 Since Vanessa and I have fairly similar cars, one gasoline and one diesel, I
 found it instructive to compare their observed fuel efficiency now that we’ve

@@ -4,6 +4,7 @@ title: Windows connection sharing for travel network access
 tags:
 - windows
 - travel
+comments: true
 ---
 While traveling the world, Vanessa and I have been sharing a single netbook
 for internet access.  In addition to the netbook, we each have one of my old

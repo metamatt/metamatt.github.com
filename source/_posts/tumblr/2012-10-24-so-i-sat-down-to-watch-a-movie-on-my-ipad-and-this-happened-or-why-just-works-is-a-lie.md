@@ -6,6 +6,7 @@ tags:
 - apple
 - gadgets
 - bugs
+comments: true
 ---
 Vanessa and I went on a weekend trip to Orange County with Dominic and wanted
 to relax by watching a movie when he was napping, and the easiest vehicle for

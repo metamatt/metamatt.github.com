@@ -5,6 +5,7 @@ tags:
 - software
 - windows
 - bugs
+comments: true
 ---
 Damn the Windows Notepad bug that makes the cursor move away from the end of
 the document when you add lines and press save.  How many years and they

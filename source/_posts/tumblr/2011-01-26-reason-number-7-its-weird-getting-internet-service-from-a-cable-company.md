@@ -2,6 +2,7 @@
 layout: post
 title: Reason number 7 it's weird getting Internet service from a cable company
 tags: 
+comments: true
 ---
 Ads for a Holyfield match during a tech support call?
 

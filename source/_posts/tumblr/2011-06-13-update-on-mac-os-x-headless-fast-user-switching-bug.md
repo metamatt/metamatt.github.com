@@ -5,6 +5,7 @@ tags:
 - apple
 - bugs
 - mac os x
+comments: true
 ---
 I [complained](http://blog.metamatt.com/blog/2011/02/15/mac-os-x-bugs-apples-
 never-gonna-fix/) that Fast User Switching over a Screen Sharing connection is

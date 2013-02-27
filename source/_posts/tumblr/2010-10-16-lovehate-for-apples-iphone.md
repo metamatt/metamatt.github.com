@@ -6,6 +6,7 @@ tags:
 - gadgets
 - software
 - mobile
+comments: true
 ---
 I really like using the iPhone, but it's not my actual daily-use phone any
 more when I'm home in the US; here's why, roughly, I had to switch away from

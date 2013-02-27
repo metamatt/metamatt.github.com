@@ -4,6 +4,7 @@ title: E-1 vs E-6 for residential solar customers
 tags:
 - solar
 - energy
+comments: true
 ---
 As a follow-on to my [article on understanding the PG&E NEM
 bill](http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/), I

@@ -3,6 +3,7 @@ layout: post
 title: Sabbatical travel map
 tags:
 - travel
+comments: true
 ---
 [Sabbatical travel map](http://www.travelpod.com/travel-
 blog/metamatt/1/tpod.html)

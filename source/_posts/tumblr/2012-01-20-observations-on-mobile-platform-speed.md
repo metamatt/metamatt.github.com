@@ -8,6 +8,7 @@ tags:
 - webos
 - systems
 - gadgets
+comments: true
 ---
 Over the past 5 years, I've used smartphones from Apple and Palm (powered by
 iOS and webOS), and played around with Android devices over the same timeframe

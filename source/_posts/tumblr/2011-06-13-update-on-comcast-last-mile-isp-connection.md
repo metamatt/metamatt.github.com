@@ -5,6 +5,7 @@ tags:
 - network
 - cable
 - last-mile
+comments: true
 ---
 After [months of woe with my Comcast cable
 connection](http://blog.metamatt.com/blog/2011/04/07/state-of-the-last-mile-
