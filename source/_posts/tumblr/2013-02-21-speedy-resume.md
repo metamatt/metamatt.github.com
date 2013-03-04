@@ -37,7 +37,7 @@ it's suspending to disk, has a lot of memory to restore from disk, and doesn't
 show any visible signs of progress while restoring from disk.
 
 I changed the `standbydelay` value to 12 hours on battery (`sudo pmset -b
-standbydelay 43200`) and disabled it entirely on AC power (`sudo pmset -a
+standbydelay 43200`) and disabled it entirely on AC power (`sudo pmset -c
 standby 0`) and things seem much better now2.
 
 Oh. And sleep reliability3? That's even more important. When I first got the
