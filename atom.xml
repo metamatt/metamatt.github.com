@@ -4,7 +4,7 @@
   <title><![CDATA[Step 2 is the hard part.]]></title>
   <link href="http://metamatt.github.com/atom.xml" rel="self"/>
   <link href="http://metamatt.github.com/"/>
-  <updated>2013-02-26T06:50:23-08:00</updated>
+  <updated>2013-03-05T17:28:50-08:00</updated>
   <id>http://metamatt.github.com/</id>
   <author>
     <name><![CDATA[Matt Ginzton]]></name>
@@ -108,7 +108,7 @@ it&#8217;s suspending to disk, has a lot of memory to restore from disk, and doe
 show any visible signs of progress while restoring from disk.</p>
 
 <p>I changed the <code>standbydelay</code> value to 12 hours on battery (<code>sudo pmset -b
-standbydelay 43200</code>) and disabled it entirely on AC power (<code>sudo pmset -a
+standbydelay 43200</code>) and disabled it entirely on AC power (<code>sudo pmset -c
 standby 0</code>) and things seem much better now2.</p>
 
 <p>Oh. And sleep reliability3? That&#8217;s even more important. When I first got the

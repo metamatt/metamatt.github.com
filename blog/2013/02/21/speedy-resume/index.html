@@ -137,7 +137,7 @@ it&#8217;s suspending to disk, has a lot of memory to restore from disk, and doe
 show any visible signs of progress while restoring from disk.</p>
 
 <p>I changed the <code>standbydelay</code> value to 12 hours on battery (<code>sudo pmset -b
-standbydelay 43200</code>) and disabled it entirely on AC power (<code>sudo pmset -a
+standbydelay 43200</code>) and disabled it entirely on AC power (<code>sudo pmset -c
 standby 0</code>) and things seem much better now2.</p>
 
 <p>Oh. And sleep reliability3? That&#8217;s even more important. When I first got the
@@ -210,6 +210,12 @@ Macbook Air:</p>
     </p>
   </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -319,7 +325,10 @@ Macbook Air:</p>
       var disqus_shortname = 'metamatt';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://metamatt.github.com/blog/2013/02/21/speedy-resume/';
+        var disqus_url = 'http://metamatt.github.com/blog/2013/02/21/speedy-resume/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
