@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Step 2 is the hard part.]]></title>
-  <link href="http://metamatt.github.com/atom.xml" rel="self"/>
-  <link href="http://metamatt.github.com/"/>
-  <updated>2013-03-05T17:28:50-08:00</updated>
-  <id>http://metamatt.github.com/</id>
+  <link href="http://blog.metamatt.com/atom.xml" rel="self"/>
+  <link href="http://blog.metamatt.com/"/>
+  <updated>2013-03-05T17:44:12-08:00</updated>
+  <id>http://blog.metamatt.com/</id>
   <author>
     <name><![CDATA[Matt Ginzton]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[OS X has a builtin Wi-Fi network scanner]]></title>
-    <link href="http://metamatt.github.com/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/"/>
+    <link href="http://blog.metamatt.com/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/"/>
     <updated>2013-02-25T00:00:00-08:00</updated>
-    <id>http://metamatt.github.com/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner</id>
+    <id>http://blog.metamatt.com/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner</id>
     <content type="html"><![CDATA[<p>Here&#8217;s a bonus on top of a bonus: OS X 10.8 (Mountain Lion) adds a really
 useful &#8220;Wi-Fi&#8221; scan feature, buried inside a utility I didn&#8217;t know existed.</p>
 
@@ -51,9 +51,9 @@ bonus to having upgraded and deserves wider mention.</p>
   
   <entry>
     <title type="html"><![CDATA[A waterproof tablet! A step in in the right direction]]></title>
-    <link href="http://metamatt.github.com/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/"/>
+    <link href="http://blog.metamatt.com/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/"/>
     <updated>2013-02-25T00:00:00-08:00</updated>
-    <id>http://metamatt.github.com/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction</id>
+    <id>http://blog.metamatt.com/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction</id>
     <content type="html"><![CDATA[<p>In <a href="http://arstechnica.com/gadgets/2013/02/sony-unveils-thinnest-10-1%0A-tablet-ever-the-xperia-tablet-z/">this announcement of a new Sony tablet for
 Android</a>, the following bit stood out to me:</p>
 
@@ -73,9 +73,9 @@ to phones.</p>
   
   <entry>
     <title type="html"><![CDATA[Speedy resume]]></title>
-    <link href="http://metamatt.github.com/blog/2013/02/21/speedy-resume/"/>
+    <link href="http://blog.metamatt.com/blog/2013/02/21/speedy-resume/"/>
     <updated>2013-02-21T00:00:00-08:00</updated>
-    <id>http://metamatt.github.com/blog/2013/02/21/speedy-resume</id>
+    <id>http://blog.metamatt.com/blog/2013/02/21/speedy-resume</id>
     <content type="html"><![CDATA[<p>My initial reason for switching from Windows laptops to Mac laptops 7 years
 ago — which has remained a primary benefit across those 7 years — was better
 power management. The details are many but the result is simple: a laptop that
@@ -139,9 +139,9 @@ Macbook Air:</p>
   
   <entry>
     <title type="html"><![CDATA[Two things I didn't know about Mac OS internet sharing]]></title>
-    <link href="http://metamatt.github.com/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/"/>
+    <link href="http://blog.metamatt.com/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/"/>
     <updated>2013-02-13T00:00:00-08:00</updated>
-    <id>http://metamatt.github.com/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing</id>
+    <id>http://blog.metamatt.com/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing</id>
     <content type="html"><![CDATA[<p>On a recent trip to Mexico, we stayed in a hotel that charged a significant
 extra fee for fairly slow Internet access. After paying for an access code, we
 could associate one device at a time to the Wi-Fi network; we could use
@@ -210,9 +210,9 @@ variant is further useful, but don&#8217;t leave it on when you&#8217;re not usi
   
   <entry>
     <title type="html"><![CDATA[Troubleshooting Mac sleep problems]]></title>
-    <link href="http://metamatt.github.com/blog/2013/02/13/troubleshooting-mac-sleep-problems/"/>
+    <link href="http://blog.metamatt.com/blog/2013/02/13/troubleshooting-mac-sleep-problems/"/>
     <updated>2013-02-13T00:00:00-08:00</updated>
-    <id>http://metamatt.github.com/blog/2013/02/13/troubleshooting-mac-sleep-problems</id>
+    <id>http://blog.metamatt.com/blog/2013/02/13/troubleshooting-mac-sleep-problems</id>
     <content type="html"><![CDATA[<p>Here&#8217;s a useful nugget if you&#8217;re inclined to poke at computers to see how they
 work: <code>pmset -g log</code>.</p>
 
@@ -239,9 +239,9 @@ disabling.</p>
   
   <entry>
     <title type="html"><![CDATA[Google default account for multiple sign in]]></title>
-    <link href="http://metamatt.github.com/blog/2013/01/31/google-default-account-for-multiple-sign-in/"/>
+    <link href="http://blog.metamatt.com/blog/2013/01/31/google-default-account-for-multiple-sign-in/"/>
     <updated>2013-01-31T00:00:00-08:00</updated>
-    <id>http://metamatt.github.com/blog/2013/01/31/google-default-account-for-multiple-sign-in</id>
+    <id>http://blog.metamatt.com/blog/2013/01/31/google-default-account-for-multiple-sign-in</id>
     <content type="html"><![CDATA[<p>Google Accounts allow you to <a href="http://support.google.com/accounts/bin/answer.py?hl=en&amp;answer=1721977">stay signed into multiple accounts at
 once</a>,
 which is hugely helpful for those of us who have multiple account, but there&#8217;s
@@ -308,9 +308,9 @@ helping me figure this out.</p>
   
   <entry>
     <title type="html"><![CDATA[Restore from backup]]></title>
-    <link href="http://metamatt.github.com/blog/2013/01/23/restore-from-backup/"/>
+    <link href="http://blog.metamatt.com/blog/2013/01/23/restore-from-backup/"/>
     <updated>2013-01-23T00:00:00-08:00</updated>
-    <id>http://metamatt.github.com/blog/2013/01/23/restore-from-backup</id>
+    <id>http://blog.metamatt.com/blog/2013/01/23/restore-from-backup</id>
     <content type="html"><![CDATA[<p>The SSD in Vanessa&#8217;s iMac died and needed to be replaced. In theory, this is
 pretty simple since we have backups — replace the faulty hardware, restore the
 backup, and get on with life.</p>
@@ -349,9 +349,9 @@ Machine restore the files.</p>
   
   <entry>
     <title type="html"><![CDATA[Google account access from an iPhone]]></title>
-    <link href="http://metamatt.github.com/blog/2013/01/23/google-account-access-from-an-iphone/"/>
+    <link href="http://blog.metamatt.com/blog/2013/01/23/google-account-access-from-an-iphone/"/>
     <updated>2013-01-23T00:00:00-08:00</updated>
-    <id>http://metamatt.github.com/blog/2013/01/23/google-account-access-from-an-iphone</id>
+    <id>http://blog.metamatt.com/blog/2013/01/23/google-account-access-from-an-iphone</id>
     <content type="html"><![CDATA[<p>Google recently announced that after January 2013, they&#8217;ll be <a href="http://support.google.com/a/bin/answer.py?hl=en&amp;answer=2716936">deprecating EAS
 access to
 Gmail</a> (and
@@ -442,9 +442,9 @@ protocols, and if push were made to work — but it&#8217;s not the case now.</p
   
   <entry>
     <title type="html"><![CDATA[Previewing Markdown files from the terminal]]></title>
-    <link href="http://metamatt.github.com/blog/2013/01/09/previewing-markdown-files-from-the-terminal/"/>
+    <link href="http://blog.metamatt.com/blog/2013/01/09/previewing-markdown-files-from-the-terminal/"/>
     <updated>2013-01-09T00:00:00-08:00</updated>
-    <id>http://metamatt.github.com/blog/2013/01/09/previewing-markdown-files-from-the-terminal</id>
+    <id>http://blog.metamatt.com/blog/2013/01/09/previewing-markdown-files-from-the-terminal</id>
     <content type="html"><![CDATA[<p>I&#8217;ve been wanting a way to preview
 <a href="http://daringfireball.net/projects/markdown/">Markdown</a>-formatted text files
 from the terminal, ideally via <a href="http://www.greenwoodsoftware.com/less/">less</a>.
@@ -491,9 +491,9 @@ Mac OS X), so that&#8217;s what I&#8217;ll use.</p>
   
   <entry>
     <title type="html"><![CDATA[Mac boot drive selection from Bluetooth keyboard]]></title>
-    <link href="http://metamatt.github.com/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard/"/>
+    <link href="http://blog.metamatt.com/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard/"/>
     <updated>2012-12-27T00:00:00-08:00</updated>
-    <id>http://metamatt.github.com/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard</id>
+    <id>http://blog.metamatt.com/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard</id>
     <content type="html"><![CDATA[<p>Twice in the last few months1 I&#8217;ve had to do troubleshooting steps on
 Vanessa&#8217;s iMac that involved booting from alternate volumes2. This is normally
 easy on a Mac, but not quite so easy on a Mac with a wireless Bluetooth
@@ -544,9 +544,9 @@ Bluetooth keyboards by default with all their desktop machines for years now.</p
   
   <entry>
     <title type="html"><![CDATA[Visiting Ireland with baby Dominic]]></title>
-    <link href="http://metamatt.github.com/blog/2012/11/28/visiting-ireland-with-baby-dominic/"/>
+    <link href="http://blog.metamatt.com/blog/2012/11/28/visiting-ireland-with-baby-dominic/"/>
     <updated>2012-11-28T00:00:00-08:00</updated>
-    <id>http://metamatt.github.com/blog/2012/11/28/visiting-ireland-with-baby-dominic</id>
+    <id>http://blog.metamatt.com/blog/2012/11/28/visiting-ireland-with-baby-dominic</id>
     <content type="html"><![CDATA[<p>Vanessa and I wanted to take a real destination trip with Dominic, kinda sorta
 just to see if we could do it. Not that we were hoping or envisioning that it
 would be impossible, but it was hard to visualize, so we had to try.</p>
@@ -622,9 +622,9 @@ pictures</a>.</p>
   
   <entry>
     <title type="html"><![CDATA[The effect of time-shifting electrical usage on NEM billing]]></title>
-    <link href="http://metamatt.github.com/blog/2012/11/13/the-effect-of-time-shifting-electrical-usage-on-nem-billing/"/>
+    <link href="http://blog.metamatt.com/blog/2012/11/13/the-effect-of-time-shifting-electrical-usage-on-nem-billing/"/>
     <updated>2012-11-13T00:00:00-08:00</updated>
-    <id>http://metamatt.github.com/blog/2012/11/13/the-effect-of-time-shifting-electrical-usage-on-nem-billing</id>
+    <id>http://blog.metamatt.com/blog/2012/11/13/the-effect-of-time-shifting-electrical-usage-on-nem-billing</id>
     <content type="html"><![CDATA[<p>One more post on the topic of PG&amp;E bills for solar (NEM) customers.</p>
 
 <p>PGE&#8217;s NEM billing scheme <a href="http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/">blends usage across
@@ -716,9 +716,9 @@ the array is underperforming.</p>
   
   <entry>
     <title type="html"><![CDATA[E-1 vs E-6 for residential solar customers]]></title>
-    <link href="http://metamatt.github.com/blog/2012/11/11/e-1-vs-e-6-for-residential-solar-customers/"/>
+    <link href="http://blog.metamatt.com/blog/2012/11/11/e-1-vs-e-6-for-residential-solar-customers/"/>
     <updated>2012-11-11T00:00:00-08:00</updated>
-    <id>http://metamatt.github.com/blog/2012/11/11/e-1-vs-e-6-for-residential-solar-customers</id>
+    <id>http://blog.metamatt.com/blog/2012/11/11/e-1-vs-e-6-for-residential-solar-customers</id>
     <content type="html"><![CDATA[<p>As a follow-on to my <a href="http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/">article on understanding the PG&amp;E NEM
 bill</a>, I
 decided to go back and recalculate our usage charges for the normal E-1
@@ -770,9 +770,9 @@ confirmation of that on PG&amp;E&#8217;s website today, though.</p>
   
   <entry>
     <title type="html"><![CDATA[One year of solar power]]></title>
-    <link href="http://metamatt.github.com/blog/2012/11/09/one-year-of-solar-power/"/>
+    <link href="http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/"/>
     <updated>2012-11-09T00:00:00-08:00</updated>
-    <id>http://metamatt.github.com/blog/2012/11/09/one-year-of-solar-power</id>
+    <id>http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power</id>
     <content type="html"><![CDATA[<p>When I got solar panels installed on the roof of our house last fall, friends
 immediately started asking how well they were working out, and my answer had
 to be that while they&#8217;re <a href="https://enlighten.enphaseenergy.com/public/systems/g8ah32261">generating a nice amount of
@@ -998,9 +998,9 @@ calculation.</p>
   
   <entry>
     <title type="html"><![CDATA[One year of cellular data]]></title>
-    <link href="http://metamatt.github.com/blog/2012/11/07/one-year-of-cellular-data/"/>
+    <link href="http://blog.metamatt.com/blog/2012/11/07/one-year-of-cellular-data/"/>
     <updated>2012-11-07T00:00:00-08:00</updated>
-    <id>http://metamatt.github.com/blog/2012/11/07/one-year-of-cellular-data</id>
+    <id>http://blog.metamatt.com/blog/2012/11/07/one-year-of-cellular-data</id>
     <content type="html"><![CDATA[<p>Here are the stats on my cellular data usage over one year on Sprint&#8217;s
 network1. (I got the phone on Halloween of 2011, and took this screenshot on
 Halloween of 2012.)</p>
@@ -1044,9 +1044,9 @@ definition of fair.</p>
   
   <entry>
     <title type="html"><![CDATA[OAuth and localization fixes for Palm-Evernote importer]]></title>
-    <link href="http://metamatt.github.com/blog/2012/11/06/oauth-and-localization-fixes-for-palm-evernote-importer/"/>
+    <link href="http://blog.metamatt.com/blog/2012/11/06/oauth-and-localization-fixes-for-palm-evernote-importer/"/>
     <updated>2012-11-06T00:00:00-08:00</updated>
-    <id>http://metamatt.github.com/blog/2012/11/06/oauth-and-localization-fixes-for-palm-evernote-importer</id>
+    <id>http://blog.metamatt.com/blog/2012/11/06/oauth-and-localization-fixes-for-palm-evernote-importer</id>
     <content type="html"><![CDATA[<p>I’ve updated my <a href="http://www.maddogsw.com/evernote-utilities/evernote-palm-importer/">utility for importing notes from Palm Desktop into
 Evernote</a>
 again.</p>
@@ -1084,9 +1084,9 @@ importer/)</a>.</p>
   
   <entry>
     <title type="html"><![CDATA[Platform preferences and rolling with punches]]></title>
-    <link href="http://metamatt.github.com/blog/2012/10/29/platform-preferences-and-rolling-with-punches/"/>
+    <link href="http://blog.metamatt.com/blog/2012/10/29/platform-preferences-and-rolling-with-punches/"/>
     <updated>2012-10-29T00:00:00-07:00</updated>
-    <id>http://metamatt.github.com/blog/2012/10/29/platform-preferences-and-rolling-with-punches</id>
+    <id>http://blog.metamatt.com/blog/2012/10/29/platform-preferences-and-rolling-with-punches</id>
     <content type="html"><![CDATA[<p>When I worked on my high school paper, I spent many hours working on the
 newsroom Macs, but I had a Windows machine at home, and I was pretty
 comfortable going back and forth. I noticed a few people who had more trouble:
@@ -1130,9 +1130,9 @@ right</a>…</p>
   
   <entry>
     <title type="html"><![CDATA[So, I sat down to watch a movie on my iPad and this happened. Or, why "just works" is a lie.]]></title>
-    <link href="http://metamatt.github.com/blog/2012/10/24/so-i-sat-down-to-watch-a-movie-on-my-ipad-and-this-happened-or-why-just-works-is-a-lie/"/>
+    <link href="http://blog.metamatt.com/blog/2012/10/24/so-i-sat-down-to-watch-a-movie-on-my-ipad-and-this-happened-or-why-just-works-is-a-lie/"/>
     <updated>2012-10-24T00:00:00-07:00</updated>
-    <id>http://metamatt.github.com/blog/2012/10/24/so-i-sat-down-to-watch-a-movie-on-my-ipad-and-this-happened-or-why-just-works-is-a-lie</id>
+    <id>http://blog.metamatt.com/blog/2012/10/24/so-i-sat-down-to-watch-a-movie-on-my-ipad-and-this-happened-or-why-just-works-is-a-lie</id>
     <content type="html"><![CDATA[<p>Vanessa and I went on a weekend trip to Orange County with Dominic and wanted
 to relax by watching a movie when he was napping, and the easiest vehicle for
 this seemed to be our iPad. What could go wrong? Lots, it turns out.</p>
@@ -1265,9 +1265,9 @@ there for long.</p>
   
   <entry>
     <title type="html"><![CDATA[Playing by the rules]]></title>
-    <link href="http://metamatt.github.com/blog/2012/10/24/playing-by-the-rules/"/>
+    <link href="http://blog.metamatt.com/blog/2012/10/24/playing-by-the-rules/"/>
     <updated>2012-10-24T00:00:00-07:00</updated>
-    <id>http://metamatt.github.com/blog/2012/10/24/playing-by-the-rules</id>
+    <id>http://blog.metamatt.com/blog/2012/10/24/playing-by-the-rules</id>
     <content type="html"><![CDATA[<p>I read two extensive reviews of Microsoft&#8217;s new Surface tablets today.</p>
 
 <p><a href="http://arstechnica.com/gadgets/2012/10/microsofts-first-stab-at-a%0A-pc-surface-reviewed/">Peter Bright, writing for Ars
@@ -1299,9 +1299,9 @@ that much trouble for taking a Brillo pad to his Touch Cover. Oh well.</p>
   
   <entry>
     <title type="html"><![CDATA[Those iOS 6 maps]]></title>
-    <link href="http://metamatt.github.com/blog/2012/10/03/those-ios-6-maps/"/>
+    <link href="http://blog.metamatt.com/blog/2012/10/03/those-ios-6-maps/"/>
     <updated>2012-10-03T00:00:00-07:00</updated>
-    <id>http://metamatt.github.com/blog/2012/10/03/those-ios-6-maps</id>
+    <id>http://blog.metamatt.com/blog/2012/10/03/those-ios-6-maps</id>
     <content type="html"><![CDATA[<p>So, it&#8217;s come to this:</p>
 
 <p><a href="ht%0Atp://www.flickr.com/photos/67861147@N00/8052630604"><img src="http://farm9.staticflickr.com/8031/8052630604_7c3946ed99.jpg" alt="IMG_1136" /></a></p>
