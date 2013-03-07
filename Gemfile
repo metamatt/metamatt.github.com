@@ -4,7 +4,7 @@ group :development do
   gem 'rake', '~> 0.9'
   gem 'rack', '~> 1.4.1'
   #gem 'jekyll', '~> 0.12'
-  gem 'jekyll', :path => '/home/magi/src/open/jekyll'
+  gem 'jekyll', :path => '~/src/open/jekyll'
   gem 'nokogiri', '>= 0.0'
   gem 'json', '>= 0.0'
   #gem 'rdiscount', '~> 1.6.8'

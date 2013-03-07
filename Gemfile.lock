@@ -1,5 +1,5 @@
 PATH
-  remote: /home/magi/src/open/jekyll
+  remote: ~/src/open/jekyll
   specs:
     jekyll (0.12.0)
       classifier (~> 1.3)
