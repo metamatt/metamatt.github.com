@@ -11,7 +11,7 @@ from the terminal, ideally via [less](http://www.greenwoodsoftware.com/less/).
 Primarily, I think, because Github encourages it, a lot of open source
 projects are starting to include a
 [README.md](https://www.google.com/search?q=+readme.md) instead of a plain old
-[README](http://en.wikipedia.org/wiki/README)12; these marked-down READMEs are
+[README](http://en.wikipedia.org/wiki/README)[^1],[^2]; these marked-down READMEs are
 easy to view in Github's web interface but not after (or before) you clone the
 repo into your own filesystem.
 
@@ -39,9 +39,6 @@ Or, a `mdless` command implemented as a tcsh alias:
 
 `alias mdless "pandoc -s -f markdown -t man \!* | groff -T utf8 -man | less"`
 
-* * *
+[^1]: As one data point for when this became common, README.md was added to the short list of common readme file names in this Wikipedia article on [March 7, 2012](http://en.wikipedia.org/w/index.php?title=README&oldid=480712255).
 
-  1. As one data point for when this became common, README.md was added to the short list of common readme file names in this Wikipedia article on [March 7, 2012](http://en.wikipedia.org/w/index.php?title=README&oldid=480712255). ↩
-
-  2. Not to be confused with [REAMDE](http://www.amazon.com/gp/product/0062191497/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=metamatt-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0062191497). ↩
-
+[^2]: Not to be confused with [REAMDE](http://www.amazon.com/gp/product/0062191497/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=metamatt-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0062191497).

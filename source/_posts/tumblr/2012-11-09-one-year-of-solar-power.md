@@ -22,8 +22,8 @@ California, two things will happen:
 ## The problem:
 
 California electric rates are confusing because they're complicated and
-variable. You pay a different rate depending on how much you use (tiering)1.
-You can opt into time-of-use (TOU) billing2, which makes electricity more
+variable. You pay a different rate depending on how much you use (tiering)[^1].
+You can opt into time-of-use (TOU) billing[^2], which makes electricity more
 expensive at peak times and cheaper the rest of the time to encourage you to
 shift usage away from peak times. The normal residential billing schedule is
 called [E-1 ("residential
@@ -47,14 +47,14 @@ Your monthly bills are only an approximation, and at the end of the year they
 calculate the actual balance owed compared to what you already paid, and have
 you "true up" to that amount, hence the name.
 
-For NEM customers, that's 3 different axes of variation3: tiered rates based
+For NEM customers, that's 3 different axes of variation[^3]: tiered rates based
 on total consumption, variable rates due to time-of-use, and true-up billing
 to account for seasonal variation of generated output.
 
 ## Before adding solar generation
 
 You have to calculate how much electricity you want to generate to produce the
-desired effect (economically or ecologically or both4), and then you need to
+desired effect (economically or ecologically or both[^4]), and then you need to
 calculate the size of a PV solar array that will produce that effect.
 
 Both of these calculations actually turn out to involve a fair amount of
@@ -74,7 +74,7 @@ these cancel out, and how?)
 
 I said that after activating a solar array and switching over to PG&E's NEM
 program, you'll get lower bills that you won't understand. Here's what I mean.
-Each month with my electric bill5, I get a separate "Net energy metering
+Each month with my electric bill[^5], I get a separate "Net energy metering
 electric statement". It includes three amounts:
 
   1. "total current month's billed amount", which is always in the neighborhood of $12.
@@ -83,7 +83,7 @@ electric statement". It includes three amounts:
 
 This is hard to interpret month by month, partly because there's no
 relationship between what I'm asked to pay (#1) and what I used (#2), and #3
-will swing wildly one direction6 and then correct over the course of the year.
+will swing wildly one direction[^6] and then correct over the course of the year.
 All of this evens out at the end of the year, which is the reason for the
 1-year true-up method of billing.
 
@@ -92,7 +92,7 @@ payment, there's a new confusing quantity: "total current month's billed
 amount" is replaced with "total true-up billed amount". This amount, which is
 your actual bill for the 12th month, is not the usual $12, bears no obvious
 relationship to the cumulative energy charge, and isn't explained or derived
-by PG&E on the bill or elsewhere that I could find7. (In my case: my
+by PG&E on the bill or elsewhere that I could find[^7]. (In my case: my
 cumulative energy charge after 12 months was $60.22, and the "total true-up
 billed amount" was $22.02.) Why?
 
@@ -115,7 +115,7 @@ $12.02 for a 30-day billing cycle).
 
 Second, the usage charges. These are not simple (since they involve both the
 tiering and TOU calculations), but they are actually decently explained on the
-monthly NEM statement itself, and with one nitpicky exception8, they're the
+monthly NEM statement itself, and with one nitpicky exception[^8], they're the
 same as what you had before you added NEM, and the true-up calculation doesn't
 affect them.
 
@@ -135,7 +135,7 @@ period is over, but a provisional placeholder: you pay this with each month's
 $12 bill, but at the end of the year, when your real usage is known, you get
 back the provisional amount and pay the real amount. At the end of the year,
 you take your usage charge/credit, and add the meter charge ($0.25 per day or
-about $7.50 per monthly bill or $92.33 in a full year9), and that's what you
+about $7.50 per monthly bill or $92.33 in a full year[^9]), and that's what you
 owe for the year. Except you've already paid that meter charge, plus you've
 paid the "minimum" usage charge as a provisional placeholder. So subtract the
 provisional usage charge ($0.15 per day or about $4.50 per monthly bill or
@@ -202,23 +202,21 @@ slightly larger than this may pay off by reducing higher-tier winter bills,
 even though the net surplus KWh aren't themselves valuable in the NCS
 calculation.
 
-* * *
+[^1]: The baseline usage, which determines the details of the tiering calculation, further varies by where you live in California and whether your home has a gas or electric primary heat source.
 
-  1. The baseline usage, which determines the details of the tiering calculation, further varies by where you live in California and whether your home has a gas or electric primary heat source. ↩
+[^2]: You can opt into TOU billing regardless of whether you have solar or other generation facilities, but in general, it makes a lot of sense if you have generation capabilities and less sense if you don't, plus most people not planning on adding solar won't have the TOU option waved in their face and probably don't even know about it. I don't know the exact numbers, but I presume most NEM customers opt for TOU billing, and most grid-only customers do not.
 
-  2. You can opt into TOU billing regardless of whether you have solar or other generation facilities, but in general, it makes a lot of sense if you have generation capabilities and less sense if you don't, plus most people not planning on adding solar won't have the TOU option waved in their face and probably don't even know about it. I don't know the exact numbers, but I presume most NEM customers opt for TOU billing, and most grid-only customers do not. ↩
+[^3]: There's another confusing way they split things up, but I'm not denoting it as an axis because it's not orthogonal to the others. PG&E separates the rate into separate quantities for "generation", "transmission", "distribution", and "the funding of public purpose programs". We'll come back to the reason for this bookkeeping sleight-of-hand later; it doesn't really matter unless you generate a surplus, but if you do, look for this to raise its head in the Net Surplus Compensation calculation.
 
-  3. There's another confusing way they split things up, but I'm not denoting it as an axis because it's not orthogonal to the others. PG&E separates the rate into separate quantities for "generation", "transmission", "distribution", and "the funding of public purpose programs". We'll come back to the reason for this bookkeeping sleight-of-hand later; it doesn't really matter unless you generate a surplus, but if you do, look for this to raise its head in the Net Surplus Compensation calculation. ↩
+[^4]: If you believe solar power is cleaner than grid power, the ecologically optimal size for your home array is "as large as possible", though of course there's some ecological cost to PV panel manufacturing too. But if you're trying to make your solar array economically viable, you'll want to compare actual costs and benefits; the costs depend on the cost and output of the array and how long you plan to keep it and whether you buy or lease and the details of the financing, all things you can find [companies or calculators](http://www.gosolarnow.com/NetMetering.html) to help with. The benefits depend on what you're actually paying for grid electricity, which follows the complicated calculations already described. If you're a light user paying baseline $0.12/KWh rates, you'll save less than a heavy user paying 4th-tier $0.34/KWh rates. While the specifics vary, it's probably easy to generate solar power for less than $0.34/KWh and somewhat hard to generate solar power for less than $0.12/KWh. What this means is most solar customers try to offset most but not all of their own usage, to get back down in the baseline tier. It's often not cost-effective to compete with PG&E's baseline rates. It's especially cost-ineffective to operate at a net surplus, because of the way PG&E values the surplus: read their [Net Surplus Compensation](http://www.pge.com/myhome/saveenergymoney/solarenergy/afterinstalling/ab920/) rules, paying special attention to the last section, "Why is NSC less than the credit on my NEM statement?". In short, PG&E splits the "retail" rates that you're used to seeing into separate components for generation, transmission, distribution, and the funding of public programs like nuclear plant decommissioning; your NEM credits come back at the retail rate until you hit break-even; however if you operate at a surplus, PG&E pays only a "wholesale-type rate for generation". You can see the actual breakdown on the E-1 or E-6 billing schedules; I don't actually know how to calculate the breakdown for E-6 since your surplus is for the year and it's not clear which TOU rate to apply; in any case generation is less than half of the total.
 
-  4. If you believe solar power is cleaner than grid power, the ecologically optimal size for your home array is "as large as possible", though of course there's some ecological cost to PV panel manufacturing too. But if you're trying to make your solar array economically viable, you'll want to compare actual costs and benefits; the costs depend on the cost and output of the array and how long you plan to keep it and whether you buy or lease and the details of the financing, all things you can find [companies or calculators](http://www.gosolarnow.com/NetMetering.html) to help with. The benefits depend on what you're actually paying for grid electricity, which follows the complicated calculations already described. If you're a light user paying baseline $0.12/KWh rates, you'll save less than a heavy user paying 4th-tier $0.34/KWh rates. While the specifics vary, it's probably easy to generate solar power for less than $0.34/KWh and somewhat hard to generate solar power for less than $0.12/KWh. What this means is most solar customers try to offset most but not all of their own usage, to get back down in the baseline tier. It's often not cost-effective to compete with PG&E's baseline rates. It's especially cost-ineffective to operate at a net surplus, because of the way PG&E values the surplus: read their [Net Surplus Compensation](http://www.pge.com/myhome/saveenergymoney/solarenergy/afterinstalling/ab920/) rules, paying special attention to the last section, "Why is NSC less than the credit on my NEM statement?". In short, PG&E splits the "retail" rates that you're used to seeing into separate components for generation, transmission, distribution, and the funding of public programs like nuclear plant decommissioning; your NEM credits come back at the retail rate until you hit break-even; however if you operate at a surplus, PG&E pays only a "wholesale-type rate for generation". You can see the actual breakdown on the E-1 or E-6 billing schedules; I don't actually know how to calculate the breakdown for E-6 since your surplus is for the year and it's not clear which TOU rate to apply; in any case generation is less than half of the total. ↩
+[^5]: Actually not _with_ my electric bill, because I've opted for paperless billing and told PG&E to stop sending me paperless bills, and I can look at the details on the website. But none of the NEM details are available on their website, nor is there an option to go paperless for the NEM data. So what actually happens is the NEM data shows up on paper in my mailbox a few days after I get the bill itself electronically.
 
-  5. Actually not _with_ my electric bill, because I've opted for paperless billing and told PG&E to stop sending me paperless bills, and I can look at the details on the website. But none of the NEM details are available on their website, nor is there an option to go paperless for the NEM data. So what actually happens is the NEM data shows up on paper in my mailbox a few days after I get the bill itself electronically. ↩
+[^6]: Which direction it swings will depend on when your true-up period starts. Mine starts in October and so the first few months are fall and winter, and I accumulated quite a large charge before April when I started getting credits. By the following October, it was nearly back to 0. If your true-up period starts in April, you'd presumably see the reverse, amassing a series of credits and a large negative balance over the summer before winter charges start to eat away at the credit balance.
 
-  6. Which direction it swings will depend on when your true-up period starts. Mine starts in October and so the first few months are fall and winter, and I accumulated quite a large charge before April when I started getting credits. By the following October, it was nearly back to 0. If your true-up period starts in April, you'd presumably see the reverse, amassing a series of credits and a large negative balance over the summer before winter charges start to eat away at the credit balance. ↩
+[^7]: PG&E's explanation of how to read this is split into four pages on their website, for the [monthly statement](http://www.pge.com/myhome/myaccount/explanationofbill/nem/), [monthly bill](http://www.pge.com/myhome/myaccount/explanationofbill/nem/monthlybill/), [true-up-statement](http://www.pge.com/myhome/myaccount/explanationofbill/nem/trueupstatement/), and [true-up bill](http://www.pge.com/myhome/myaccount/explanationofbill/nem/trueupstatement/). These pages explain the meaning of each item on the bill, but don't explain how the amounts are calculated, or why you owe what you owe.
 
-  7. PG&E's explanation of how to read this is split into four pages on their website, for the [monthly statement](http://www.pge.com/myhome/myaccount/explanationofbill/nem/), [monthly bill](http://www.pge.com/myhome/myaccount/explanationofbill/nem/monthlybill/), [true-up-statement](http://www.pge.com/myhome/myaccount/explanationofbill/nem/trueupstatement/), and [true-up bill](http://www.pge.com/myhome/myaccount/explanationofbill/nem/trueupstatement/). These pages explain the meaning of each item on the bill, but don't explain how the amounts are calculated, or why you owe what you owe. ↩
+[^8]: The true-up calculation doesn't affect the monthly usage charge calculation, but arguably it should, because the rates depend on tiering, the tiering depends on usage, and usage is supposed to be smoothed over the entire true-up period. But actually, the tiering calculations are done entirely inside each month. What this means is that in the winter when your solar array is underperforming, higher usage might push you into the upper tiers, and you'll pay more for your grid electricity because of this, and no amount of summer credits can offset these higher rates. Again using my first-year numbers as an example, my assigned baseline value for the year sums to 2878 units, and my actual cumulative usage was 1601 KWh. (Or: the average of the monthly baselines was 240, and my average monthly usage was 133.) I'd argue that this means I should be paying only first-tier rates. However, because of the seasonal variation expected with solar generation, my usage from PG&E's point of view is skewed heavily toward winter, and in fact I had above-baseline usage in only the 4 shortest months: November through February. Because PG&E applies the baseline-to-tier calculation on each month's usage individually, instead of across the true-up period, I paid substantially more for electricity in those 4 months. In my case, I was charged $60.22 for my electricity usage, but if it had all been at baseline rates, I would have been owed a $5 credit.
 
-  8. The true-up calculation doesn't affect the monthly usage charge calculation, but arguably it should, because the rates depend on tiering, the tiering depends on usage, and usage is supposed to be smoothed over the entire true-up period. But actually, the tiering calculations are done entirely inside each month. What this means is that in the winter when your solar array is underperforming, higher usage might push you into the upper tiers, and you'll pay more for your grid electricity because of this, and no amount of summer credits can offset these higher rates. Again using my first-year numbers as an example, my assigned baseline value for the year sums to 2878 units, and my actual cumulative usage was 1601 KWh. (Or: the average of the monthly baselines was 240, and my average monthly usage was 133.) I'd argue that this means I should be paying only first-tier rates. However, because of the seasonal variation expected with solar generation, my usage from PG&E's point of view is skewed heavily toward winter, and in fact I had above-baseline usage in only the 4 shortest months: November through February. Because PG&E applies the baseline-to-tier calculation on each month's usage individually, instead of across the true-up period, I paid substantially more for electricity in those 4 months. In my case, I was charged $60.22 for my electricity usage, but if it had all been at baseline rates, I would have been owed a $5 credit. ↩
-
-  9. I'm writing this after my first year of NEM, and the PGE switched me over to NEM billing in the middle of a billing month without changing the billing cycle, so my first month's NEM bill only included 9 days, and so my first true-up period of 12 bills is only 11 1/3 months or 345 days. Presumably, future true-up periods will be a full year. ↩
+[^9]: I'm writing this after my first year of NEM, and the PGE switched me over to NEM billing in the middle of a billing month without changing the billing cycle, so my first month's NEM bill only included 9 days, and so my first true-up period of 12 bills is only 11 1/3 months or 345 days. Presumably, future true-up periods will be a full year.
 

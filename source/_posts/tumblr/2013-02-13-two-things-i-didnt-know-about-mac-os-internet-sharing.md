@@ -18,9 +18,9 @@ Of course, I went looking for ways around this. We had at our disposal a Mac
 laptop, two iPads and two iPhones. Mac OS X has [built-in Internet connection
 sharing](http://support.apple.com/kb/PH6589), but it operates only between
 separate network adapters: you can share an Ethernet-connected Internet
-connection over Wi-Fi, or vice versa, but you can't share Wi-Fi over Wi-Fi1.
+connection over Wi-Fi, or vice versa, but you can't share Wi-Fi over Wi-Fi[^1].
 There's some reason to hope that this would be possible -- it's "just" a
-software problem2; Windows and Linux generally support multiple virtual Wi-Fi
+software problem[^2]; Windows and Linux generally support multiple virtual Wi-Fi
 interfaces from the same physical device, as used by [Connectify
 Hotspot](http://www.connectify.me/hotspot/) for Windows or the multi-SSID
 feature in many Linux-based Wi-Fi access points -- but this software feature
@@ -63,9 +63,6 @@ from the cause.)
 In summary: Internet connection sharing is useful, and the Bluetooth PAN
 variant is further useful, but don't leave it on when you're not using it.
 
-* * *
+[^1]: Well, you can share Wi-Fi over Wi-Fi if you have multiple physical Wi-Fi interfaces. My laptop only has the one built-in Wi-Fi interface. It might be worth carrying a cheap additional USB Wi-Fi device for this reason. That would probably be the cheapest reliable solution to this problem.
 
-  1. Well, you can share Wi-Fi over Wi-Fi if you have multiple physical Wi-Fi interfaces. My laptop only has the one built-in Wi-Fi interface. It might be worth carrying a cheap additional USB Wi-Fi device for this reason. That would probably be the cheapest reliable solution to this problem. ↩
-
-  2. At the physical layer, a single Wi-Fi radio can only be tuned to a single channel, but nothing stops it from participating in multiple SSIDs as long as they're all on that channel. ↩
-
+[^2]: At the physical layer, a single Wi-Fi radio can only be tuned to a single channel, but nothing stops it from participating in multiple SSIDs as long as they're all on that channel.

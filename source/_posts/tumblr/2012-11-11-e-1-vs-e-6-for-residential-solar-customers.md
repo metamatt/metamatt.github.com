@@ -17,17 +17,17 @@ to buy all the electricity we used from PG&E if we hadn't installed the solar
 array.
 
 In short, E-6 was a solid win for us: a usage charge of $64.54 would have been
-$275.10 with E-11.
+$275.10 with E-1[^1].
 
 The results:
 
 E-6 was a solid win for us. In the 6 winter months where we had a usage
-charge, the usage charge was about $10/month higher with E-12. In the 6 summer
+charge, the usage charge was about $10/month higher with E-1[^2]. In the 6 summer
 months where we had a usage credit, the usage credit was about $30/month lower
-with E-13.
+with E-1[^3].
 
 On the flip side, E-6 has a "meter charge" of approximately 25 cents per day,
-or $92 per year4, which E-1 does not. So our true E-6 cost (for electrical
+or $92 per year[^4], which E-1 does not. So our true E-6 cost (for electrical
 usage, plus the privilege of E-6 TOU billing) is $156.88 for the year, and
 E-1's true cost remains at $275.10.
 
@@ -43,13 +43,10 @@ then at the end of the first year, if you didn't save money, you can take a
 mulligan and retroactively undo the switch and pay the E-1 rate. I can't find
 confirmation of that on PG&E's website today, though.
 
-* * *
+[^1]: You may notice that my earlier article lists our usage charge for the year as $60.22 and here it's $64.54; the difference is that $60.22 is PG&E's number and $64.54 is my calculation for what it should be (and I had to fudge the numbers for October 2011 where PG&E switched me from the old plan to NEM midway through the billing cycle, plus we may round differently, plus there may be other errors in my calculations). This seemed close enough to go through the rest of the exercise, and the technique used to calculate this number is the same one I'll use for the E-1 number, so this seemed like the one to use for this comparison.
 
-  1. You may notice that my earlier article lists our usage charge for the year as $60.22 and here it's $64.54; the difference is that $60.22 is PG&E's number and $64.54 is my calculation for what it should be (and I had to fudge the numbers for October 2011 where PG&E switched me from the old plan to NEM midway through the billing cycle, plus we may round differently, plus there may be other errors in my calculations). This seemed close enough to go through the rest of the exercise, and the technique used to calculate this number is the same one I'll use for the E-1 number, so this seemed like the one to use for this comparison. ↩
+[^2]: E-6 is always a win in the winter, because there's no winter peak zone; winter part-peak and winter off-peak are both cheaper than the E-1 rate. And between the solar array and our usage patterns, the vast majority of our PG&E usage was in the off-peak time anyway.
 
-  2. E-6 is always a win in the winter, because there's no winter peak zone; winter part-peak and winter off-peak are both cheaper than the E-1 rate. And between the solar array and our usage patterns, the vast majority of our PG&E usage was in the off-peak time anyway. ↩
+[^3]: Between the solar array and our usage patterns, we ran a surplus in summer on-peak and summer part-peak for nearly the entire summer, and had to buy summer electricity only off-peak. This is exactly the behavior that E-6 is designed to encourage, and it rewarded us correspondingly.
 
-  3. Between the solar array and our usage patterns, we ran a surplus in summer on-peak and summer part-peak for nearly the entire summer, and had to buy summer electricity only off-peak. This is exactly the behavior that E-6 is designed to encourage, and it rewarded us correspondingly. ↩
-
-  4. So if you want a true zero bill from E-6, you need to generate enough of a surplus that it would counterbalance this $92/year "meter charge". That would take 495 KWh of summer on-peak surplus or 1028 KWh of summer part-peak surplus, paid out at the "generation" rate due to the NSC rules. ↩
-
+[^4]: So if you want a true zero bill from E-6, you need to generate enough of a surplus that it would counterbalance this $92/year "meter charge". That would take 495 KWh of summer on-peak surplus or 1028 KWh of summer part-peak surplus, paid out at the "generation" rate due to the NSC rules.

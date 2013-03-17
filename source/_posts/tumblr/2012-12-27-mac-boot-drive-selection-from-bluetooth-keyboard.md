@@ -6,10 +6,10 @@ tags:
 - mac os
 comments: true
 ---
-Twice in the last few months1 I've had to do troubleshooting steps on
-Vanessa's iMac that involved booting from alternate volumes2. This is normally
+Twice in the last few months[^1] I've had to do troubleshooting steps on
+Vanessa's iMac that involved booting from alternate volumes[^2]. This is normally
 easy on a Mac, but not quite so easy on a Mac with a wireless Bluetooth
-keyboard3.
+keyboard[^3].
 
 Both times, it was an exercise in frustration, as I give the reboot command
 and wait about 10 seconds for the reboot to actually happen; then I hold
@@ -31,7 +31,7 @@ After reading and rereading that, I try a few more times, holding Command-R
 earlier and earlier as Apple recommends, and, no luck. Wait a minute, I'm
 using a Bluetooth keyboard. Does that cause complications, like, the computer
 and keyboard aren't able to communicate right at the beginning of the boot
-process? Yes4. Do I need to go find a USB keyboard to plug in? Not quite.
+process? Yes[^4]. Do I need to go find a USB keyboard to plug in? Not quite.
 
 It turns out the magic answer is to reboot the computer, wait for the LED on
 the keyboard to flash (which is after the computer starts booting and chimes
@@ -42,13 +42,10 @@ that, and you'll be ignored.
 You'd think Apple's help docs could mention this, since they've been shipping
 Bluetooth keyboards by default with all their desktop machines for years now.
 
-* * *
+[^1]: Both of these occasions involved disk failures in the [Crucial M4 SSD I installed a year ago](http://blog.metamatt.com/blog/2012/01/20/nothing-is-as-easy-as-it-should-be-ssd-upgrades/). You can probably guess that I'm not quite as happy with these as I wanted to be.
 
-  1. Both of these occasions involved disk failures in the [Crucial M4 SSD I installed a year ago](http://blog.metamatt.com/blog/2012/01/20/nothing-is-as-easy-as-it-should-be-ssd-upgrades/). You can probably guess that I'm not quite as happy with these as I wanted to be. ↩
+[^2]: [Booting from CD](http://support.apple.com/kb/HT1533) to upgrade firmware, or [booting from the recovery partition](http://support.apple.com/kb/HT4718) to attempt disk repair. Each of these requires holding a certain key down while the computer is booting.
 
-  2. [Booting from CD](http://support.apple.com/kb/HT1533) to upgrade firmware, or [booting from the recovery partition](http://support.apple.com/kb/HT4718) to attempt disk repair. Each of these requires holding a certain key down while the computer is booting. ↩
+[^3]: I put the same SSD model in my own computer, a Mac Pro tower with easily accessible drive bays and an old-school wired keyboard. It's a lot easier to troubleshoot and a lot easier to repair. Murphy's Law dictates that if we're going to have problems with one SSD, it'll be the one [tucked away under the glass front of the iMac](http://www.ifixit.com/Guide/iMac+Intel+27-Inch+EMC+2309+and+2374+Hard+Drive+Replacement/1634/1).
 
-  3. I put the same SSD model in my own computer, a Mac Pro tower with easily accessible drive bays and an old-school wired keyboard. It's a lot easier to troubleshoot and a lot easier to repair. Murphy's Law dictates that if we're going to have problems with one SSD, it'll be the one [tucked away under the glass front of the iMac](http://www.ifixit.com/Guide/iMac+Intel+27-Inch+EMC+2309+and+2374+Hard+Drive+Replacement/1634/1). ↩
-
-  4. Try googling for "[boot Mac from CD](https://www.google.com/search?q=boot+mac+from+cd)" versus "[boot Mac from CD bluetooth](https://www.google.com/search?q=boot+mac+from+cd+bluetooth)". Big difference. The first one leads you to a simple answer (but deceptively simple in the case you have a Bluetooth keyboard); the second one leads you through a muddle of hundreds of confused people. ↩
-
+[^4]: Try googling for "[boot Mac from CD](https://www.google.com/search?q=boot+mac+from+cd)" versus "[boot Mac from CD bluetooth](https://www.google.com/search?q=boot+mac+from+cd+bluetooth)". Big difference. The first one leads you to a simple answer (but deceptively simple in the case you have a Bluetooth keyboard); the second one leads you through a muddle of hundreds of confused people.
