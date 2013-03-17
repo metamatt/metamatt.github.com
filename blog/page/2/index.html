@@ -9,8 +9,10 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="Vanessa and I wanted to take a real destination trip with Dominic, kinda sorta
-just to see if we could do it. Not that we were hoping or envisioning &hellip;">
+  <meta name="description" content="Google recently announced that after January 2013, they&rsquo;ll be deprecating EAS
+access to
+Gmail (and
+calendar, and address book) for free &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +85,298 @@ just to see if we could do it. Not that we were hoping or envisioning &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/01/23/google-account-access-from-an-iphone/">Google Account Access From an iPhone</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-23T00:00:00-05:00" pubdate data-updated="true">Jan 23<span>rd</span>, 2013</time>
+        
+         | <a href="/blog/2013/01/23/google-account-access-from-an-iphone/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Google recently announced that after January 2013, they&rsquo;ll be <a href="http://support.google.com/a/bin/answer.py?hl=en&amp;answer=2716936">deprecating EAS
+access to
+Gmail</a> (and
+calendar, and address book) for free customers (addresses ending in
+@gmail.com, and free Google Apps accounts). It&rsquo;ll still be available for paid
+Google Apps customers, and it&rsquo;ll keep working for normal customers who are
+already using it, but only on their existing devices.</p>
+
+<p>This is bad news because EAS (aka Google Sync) has been and continues to be
+the best way to get Google services on an iOS device. In my opinion, iOS +
+Google Sync continues to be the best combination of mobile device and cloud
+services, but this change makes them work a little less well together.</p>
+
+<p>Google Sync (EAS) is the best way to connect iOS to Google services because</p>
+
+<ul>
+<li>One &ldquo;account&rdquo; (setup step in iOS) handles mail, contacts and calendars.</li>
+<li>Until September 2012, this was the only way to sync contacts between iOS and Google.</li>
+<li>Mail works better: Push works, and the delete button works the way you&rsquo;d expect. (Supposedly both iOS mail client and Gimap mail server support IMAP IDLE, but they disagree on how, or something, because the result doesn&rsquo;t work.)</li>
+<li>Also, if you enable Google&rsquo;s 2-factor authentication, you need to generate fallback &ldquo;app-specific&rdquo; passwords for all your devices<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>, and for EAS this is one per device, and without EAS it&rsquo;s at least two<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</li>
+</ul>
+
+
+<p>For these reasons, especially the second one, I&rsquo;ve been using — and
+recommending to friends and family — EAS as the preferred way of connecting to
+Google accounts. In fact, I didn&rsquo;t even realize that contact sync was now
+possible without it (Google just added CardDAV support in September 2012).</p>
+
+<p>Similarly, I&rsquo;ve been using — and recommending to friends and family — Google
+Apps (Gmail and friends) as my preferred provider for cloud
+mail/contacts/calendars. Apple&rsquo;s track record for cloud mail services is
+spotty; even if iCloud is improving, I just don&rsquo;t see the advantage over
+Google, especially if you don&rsquo;t want to tie yourself to Apple devices
+forever<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>.</p>
+
+<p>That leaves us trying to connect iOS to Google&rsquo;s services as best we can.
+Which to be fair is pretty good, but losing EAS is a step back<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>. This speaks
+to <a href="http://levelsofdetail.kendeeter.com/post/31926718063/maps">something my friend Ken wrote months
+ago</a> (in the
+context of the maps kerfuffle):</p>
+
+<blockquote><p>Why is it that two tech giants with best-of-breed tech in different areas
+rarely seem to be able to cooperate to produce an awesome product for the
+user?</p></blockquote>
+
+<p>This has been a bright spot in this regard, which is getting a little less
+bright at the end of January.</p>
+
+<p>Google probably doesn&rsquo;t care about keeping free EAS working because, in order
+of preference, they&rsquo;d like to see</p>
+
+<ul>
+<li>You using an Android device to connect to Gmail+friends</li>
+<li>You using a (paid) Google Apps for Business account</li>
+<li>And for anyone else, using a non-Google device to connect to a free Google account, there are still the open protocols (IMAP for mail, CardDAV and CalDAV for calendar and contacts).</li>
+</ul>
+
+
+<p>Apple may not care about optimizing the Gmail experience for iOS users because</p>
+
+<ul>
+<li>They&rsquo;d like to see you using iCloud for mail+contacts+calendars</li>
+<li>Plus they&rsquo;ve already connected you to Google services using EAS, so why should they have to do it again differently.</li>
+</ul>
+
+
+<p>In fairness to Apple, adding a &ldquo;Gmail&rdquo; account to iOS adds both mail and
+calendars (IMAP + CalDAV), and Google only added CardDAV support on the server
+side in September 2012 (i.e. after the current iOS release). Maybe, hopefully,
+Apple will make iOS &ldquo;Gmail&rdquo; accounts start supporting calendars via CardDAV in
+the next release. In the meantime, you have to do it manually.</p>
+
+<p>I don&rsquo;t see any reason why the open-protocol support from iOS to Google
+services couldn&rsquo;t work just as well as EAS — if one setup step added all 3
+protocols, and if push were made to work — but it&rsquo;s not the case now.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>It&rsquo;s too bad that native device clients basically negate the advantage of 2-factor authentication, since they aren&rsquo;t compatible and force you to use the fallback mechanism.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>One for the &ldquo;Gmail&rdquo; account supporting IMAP and CalDAV, and one for the separate CardDAV account you have to add. And I don&rsquo;t know whether/how &ldquo;app-specific&rdquo; password authentication actually works for the Gmail account type, given that it&rsquo;s a hybrid of two protocols; it&rsquo;s possible that doesn&rsquo;t work in which case you would have to avoid the Gmail account type, generate 3 fallback passwords, and set up IMAP and CardDAV and CalDav separately.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>I&rsquo;m complaining here about the flaws in the relatively good iOS support for Google services; I suspect that anyone trying to connect to iCloud from Android or Windows apps has it far worse.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>There&rsquo;s some irony here in that the best way to connect some Apple software to some Google software is using protocols designed by Microsoft.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/09/previewing-markdown-files-from-the-terminal/">Previewing Markdown Files From the Terminal</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-09T00:00:00-05:00" pubdate data-updated="true">Jan 9<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/01/09/previewing-markdown-files-from-the-terminal/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;ve been wanting a way to preview
+<a href="http://daringfireball.net/projects/markdown/">Markdown</a>-formatted text files
+from the terminal, ideally via <a href="http://www.greenwoodsoftware.com/less/">less</a>.
+Primarily, I think, because Github encourages it, a lot of open source
+projects are starting to include a
+<a href="https://www.google.com/search?q=+readme.md">README.md</a> instead of a plain old
+<a href="http://en.wikipedia.org/wiki/README">README</a><sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>,<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>; these marked-down READMEs are
+easy to view in Github&rsquo;s web interface but not after (or before) you clone the
+repo into your own filesystem.</p>
+
+<p>There&rsquo;s <code>zless</code> that can understand compressed files; why not <code>mdless</code> that
+can understand Markdown files?</p>
+
+<p>I went looking and stackoverflow came to the rescue with this question and
+answer about a <a href="http://stackoverflow.com/a/7603703/275581">less-style markdown viewer for UNIX
+systems</a>, suggesting
+<a href="http://johnmacfarlane.net/pandoc/">pandoc</a> as the tool to translate from
+Markdown format to troff format. The suggested incantation there works for me
+under Debian Linux but not under Mac OS X because it relies on <code>man</code>&rsquo;s <code>-l</code>
+option, which I&rsquo;m guessing is a GNU addition not supported by BSD <code>man</code>. I had
+to figure out how to duplicate the processing that <code>man -l</code> does, which I knew
+involved <code>troff</code> (or <code>groff</code>); it turns out that <code>groff</code> understands a <code>-man</code>
+flag which predefines the macros used by manpages. The version using <code>groff</code>
+instead of <code>man -l</code> seems more portable (it works fine under Linux as well as
+Mac OS X), so that&rsquo;s what I&rsquo;ll use.</p>
+
+<p>Hence, the following incantation to view a README.md file:</p>
+
+<p><code>pandoc -s -f markdown -t man README.md | groff -T utf8 -man | less</code></p>
+
+<p>Or, a <code>mdless</code> command implemented as a tcsh alias:</p>
+
+<p><code>alias mdless "pandoc -s -f markdown -t man \!* | groff -T utf8 -man | less"</code></p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>As one data point for when this became common, README.md was added to the short list of common readme file names in this Wikipedia article on <a href="http://en.wikipedia.org/w/index.php?title=README&amp;oldid=480712255">March 7, 2012</a>.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>Not to be confused with <a href="http://www.amazon.com/gp/product/0062191497/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=metamatt-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0062191497">REAMDE</a>.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard/">Mac Boot Drive Selection From Bluetooth Keyboard</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-27T00:00:00-05:00" pubdate data-updated="true">Dec 27<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Twice in the last few months<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> I&rsquo;ve had to do troubleshooting steps on
+Vanessa&rsquo;s iMac that involved booting from alternate volumes<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>. This is normally
+easy on a Mac, but not quite so easy on a Mac with a wireless Bluetooth
+keyboard<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>.</p>
+
+<p>Both times, it was an exercise in frustration, as I give the reboot command
+and wait about 10 seconds for the reboot to actually happen; then I hold
+Command-R, watch the screen blink black, wait, watch it blink white, wait,
+chime, wait, Apple logo, wait, and… oh hello, login screen! That&rsquo;s not right.
+I&rsquo;ve just wasted a minute and I&rsquo;m back where I started.</p>
+
+<p>Apple&rsquo;s <a href="http://support.apple.com/kb/HT4718">support document on recovery
+mode</a> makes it sound so easy:</p>
+
+<blockquote><p>Restart your Mac and hold down the Command key and the R key (Command-R),
+and keep holding them until the Apple icon appears, indicating that your Mac
+is starting up. After the Recovery System is finished starting up, you should
+see a desktop with a OS X menu bar and a &ldquo;Mac OS X Utilities&rdquo; application
+window. Note: If you see a login window or your own desktop and icons, it is
+possible that you didn&rsquo;t hold Command-R early enough. Restart and try again.</p></blockquote>
+
+<p>After reading and rereading that, I try a few more times, holding Command-R
+earlier and earlier as Apple recommends, and, no luck. Wait a minute, I&rsquo;m
+using a Bluetooth keyboard. Does that cause complications, like, the computer
+and keyboard aren&rsquo;t able to communicate right at the beginning of the boot
+process? Yes<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>. Do I need to go find a USB keyboard to plug in? Not quite.</p>
+
+<p>It turns out the magic answer is to reboot the computer, wait for the LED on
+the keyboard to flash (which is after the computer starts booting and chimes
+and does a self-test which on this iMac with 12GB of memory all takes about 20
+seconds), and <em>then</em> immediately press and hold Command-R. Any earlier than
+that, and you&rsquo;ll be ignored.</p>
+
+<p>You&rsquo;d think Apple&rsquo;s help docs could mention this, since they&rsquo;ve been shipping
+Bluetooth keyboards by default with all their desktop machines for years now.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Both of these occasions involved disk failures in the <a href="http://blog.metamatt.com/blog/2012/01/20/nothing-is-as-easy-as-it-should-be-ssd-upgrades/">Crucial M4 SSD I installed a year ago</a>. You can probably guess that I&rsquo;m not quite as happy with these as I wanted to be.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p><a href="http://support.apple.com/kb/HT1533">Booting from CD</a> to upgrade firmware, or <a href="http://support.apple.com/kb/HT4718">booting from the recovery partition</a> to attempt disk repair. Each of these requires holding a certain key down while the computer is booting.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>I put the same SSD model in my own computer, a Mac Pro tower with easily accessible drive bays and an old-school wired keyboard. It&rsquo;s a lot easier to troubleshoot and a lot easier to repair. Murphy&rsquo;s Law dictates that if we&rsquo;re going to have problems with one SSD, it&rsquo;ll be the one <a href="http://www.ifixit.com/Guide/iMac+Intel+27-Inch+EMC+2309+and+2374+Hard+Drive+Replacement/1634/1">tucked away under the glass front of the iMac</a>.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>Try googling for &ldquo;<a href="https://www.google.com/search?q=boot+mac+from+cd">boot Mac from CD</a>&rdquo; versus &ldquo;<a href="https://www.google.com/search?q=boot+mac+from+cd+bluetooth">boot Mac from CD bluetooth</a>&rdquo;. Big difference. The first one leads you to a simple answer (but deceptively simple in the case you have a Bluetooth keyboard); the second one leads you through a muddle of hundreds of confused people.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/11/28/visiting-ireland-with-baby-dominic/">Visiting Ireland With Baby Dominic</a></h1>
     
     
@@ -99,7 +393,7 @@ just to see if we could do it. Not that we were hoping or envisioning &hellip;">
   
 
 
-<time datetime="2012-11-28T00:00:00-08:00" pubdate data-updated="true">Nov 28<span>th</span>, 2012</time>
+<time datetime="2012-11-28T00:00:00-05:00" pubdate data-updated="true">Nov 28<span>th</span>, 2012</time>
         
          | <a href="/blog/2012/11/28/visiting-ireland-with-baby-dominic/#disqus_thread">Comments</a>
         
@@ -206,7 +500,7 @@ pictures</a>.</p>
   
 
 
-<time datetime="2012-11-13T00:00:00-08:00" pubdate data-updated="true">Nov 13<span>th</span>, 2012</time>
+<time datetime="2012-11-13T00:00:00-05:00" pubdate data-updated="true">Nov 13<span>th</span>, 2012</time>
         
          | <a href="/blog/2012/11/13/the-effect-of-time-shifting-electrical-usage-on-nem-billing/#disqus_thread">Comments</a>
         
@@ -329,7 +623,7 @@ the array is underperforming.</p>
   
 
 
-<time datetime="2012-11-11T00:00:00-08:00" pubdate data-updated="true">Nov 11<span>th</span>, 2012</time>
+<time datetime="2012-11-11T00:00:00-05:00" pubdate data-updated="true">Nov 11<span>th</span>, 2012</time>
         
          | <a href="/blog/2012/11/11/e-1-vs-e-6-for-residential-solar-customers/#disqus_thread">Comments</a>
         
@@ -416,7 +710,7 @@ confirmation of that on PG&amp;E&rsquo;s website today, though.</p>
   
 
 
-<time datetime="2012-11-09T00:00:00-08:00" pubdate data-updated="true">Nov 9<span>th</span>, 2012</time>
+<time datetime="2012-11-09T00:00:00-05:00" pubdate data-updated="true">Nov 9<span>th</span>, 2012</time>
         
          | <a href="/blog/2012/11/09/one-year-of-solar-power/#disqus_thread">Comments</a>
         
@@ -682,7 +976,7 @@ calculation.</p>
   
 
 
-<time datetime="2012-11-07T00:00:00-08:00" pubdate data-updated="true">Nov 7<span>th</span>, 2012</time>
+<time datetime="2012-11-07T00:00:00-05:00" pubdate data-updated="true">Nov 7<span>th</span>, 2012</time>
         
          | <a href="/blog/2012/11/07/one-year-of-cellular-data/#disqus_thread">Comments</a>
         
@@ -760,7 +1054,7 @@ definition of fair.</p>
   
 
 
-<time datetime="2012-11-06T00:00:00-08:00" pubdate data-updated="true">Nov 6<span>th</span>, 2012</time>
+<time datetime="2012-11-06T00:00:00-05:00" pubdate data-updated="true">Nov 6<span>th</span>, 2012</time>
         
          | <a href="/blog/2012/11/06/oauth-and-localization-fixes-for-palm-evernote-importer/#disqus_thread">Comments</a>
         
@@ -831,7 +1125,7 @@ importer/)</a>.</p>
   
 
 
-<time datetime="2012-10-29T00:00:00-07:00" pubdate data-updated="true">Oct 29<span>th</span>, 2012</time>
+<time datetime="2012-10-29T00:00:00-04:00" pubdate data-updated="true">Oct 29<span>th</span>, 2012</time>
         
          | <a href="/blog/2012/10/29/platform-preferences-and-rolling-with-punches/#disqus_thread">Comments</a>
         
@@ -885,324 +1179,6 @@ right</a>…</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/24/so-i-sat-down-to-watch-a-movie-on-my-ipad-and-this-happened-or-why-just-works-is-a-lie/">So, I Sat Down to Watch a Movie on My iPad and This Happened. or, Why &#8220;Just Works&#8221; Is a Lie.</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-24T00:00:00-07:00" pubdate data-updated="true">Oct 24<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/10/24/so-i-sat-down-to-watch-a-movie-on-my-ipad-and-this-happened-or-why-just-works-is-a-lie/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Vanessa and I went on a weekend trip to Orange County with Dominic and wanted
-to relax by watching a movie when he was napping, and the easiest vehicle for
-this seemed to be our iPad. What could go wrong? Lots, it turns out.</p>
-
-<p>I cruised over to the increasingly inaccurately named iTunes store and found
-<a href="http://www.imdb.com/title/tt1862079/">Safety Not Guaranteed</a> which looked
-interesting so clicked Buy, waited for it to start downloading, watched the
-progress bar long enough to verify it looked like it would take about 40
-minutes to download, and took Dominic out for a walk so he&rsquo;d fall asleep, with
-the idea that in 40 minutes we&rsquo;d have a sleeping baby and a watchable movie.</p>
-
-<p>Dominic behaved as I&rsquo;d hoped; the iPad didn&rsquo;t; after about an hour I grabbed
-the iPad to find absolutely no sign of the movie. The Videos app said &ldquo;no
-videos, but you can cruise over to the store to buy one&rdquo;. The iTunes store app
-didn&rsquo;t have any downloads in progress, and going back to the Purchases tab, it
-had the cloud icon next to our movie. Upon clicking that, it told me it can&rsquo;t
-download it because there&rsquo;s not enough storage available.</p>
-
-<p>So apparently when I first purchased the movie, there was enough storage to
-download it, but then something went wrong with the download, it silently
-canceled the download without showing me any error message whatsoever, and now
-there&rsquo;s not enough space for it? That&rsquo;s hard to explain, but whatever, there&rsquo;s
-nothing to do but try to clear space and download it again. I go to Settings:
-General: Usage and look at the breakdown of what&rsquo;s using how much space, and
-the individual app usage doesn&rsquo;t add up to anywhere close to what it says is
-used, but I don&rsquo;t have many options here. So I deleted Infinity Blade to free
-up a gigabyte, invoked the download, and waited another 40 minutes while it
-downloaded the movie again. At the end of the download, the iPad spent another
-5 minutes saying &ldquo;processing&rdquo;, then gave me a generic error message, and
-kicked me back to the state where the movie is not available for playback but
-is available for download. And again trying to download it says there&rsquo;s no
-space available, and going back to Settings: General: Usage, there&rsquo;s 2.7GB
-(the size of the movie) less than there had been when I started the download.
-Something very weird is going on. I can&rsquo;t fix this problem on the iPad itself
-(so much for the post-PC era: you need a PC to configure or troubleshoot your
-post-PC device!) and now it&rsquo;s been 2 hours and we don&rsquo;t have time to watch a
-movie anyway.</p>
-
-<p>When I got back home from the trip, I plugged the iPad into my Mac and
-launched iTunes and iTunes told me that there&rsquo;s 10GB of &ldquo;other&rdquo; content. Given
-that this is the 16GB model (whose actual capacity is 13.8GB; go figure), that
-doesn&rsquo;t leave room for very many 2.7GB movie downloads. That also explains why
-the total usage was so much higher than the sum of the space used by each app.
-But it doesn&rsquo;t at all help explain what &ldquo;other&rdquo; actually means; <a href="https://www.google.com/search?q=itunes+capacity+other">the Internet
-isn&rsquo;t much help here
-either</a>. Trying to get
-this to go away or at least explain itself, I tried syncing the iPad with the
-Mac a couple times. The first thing I got for my trouble was that iTunes
-decided I had 7.1GB of video on the iPad, and now I&rsquo;m over capacity by 6GB
-(this without me having added any additional content to the iPad, actually).
-The second thing I got for my trouble was that iTunes decided to sync that
-video content back to the Mac, which took all night, and resulted in 70GB of
-corrupt data: it created 3 .m4v files which were actually directories
-containing what looks like the entire iPad filesystem, 2 of which were named
-after the movie that caused/revealed all this trouble (Safety Not Guaranteed)
-and the 3rd of which was an episode of Breaking Bad which I didn&rsquo;t realize was
-on the iPad in the first place. I&rsquo;ll repeat: what got synced back to my
-computer in each case was not a valid .m4v file, but an entire directory
-structure whose top level ended in &ldquo;.m4v&rdquo;; one of these was 10GB, one was
-20GB, and one was 40GB. Clearly, these weren&rsquo;t actually on the iPad, and no,
-my Mac didn&rsquo;t really like the resulting 70GB of garbage data either.
-(Something created what should have been .m4v files on the iPad as symbolic
-links to /, maybe? <a href="http://metamatt.com/static/2012/10/crazy-ipad-movie-sync.txt">The entire directory listing is
-here</a> if anyone
-finds this edifying.)</p>
-
-<p>Back to reality. Apparently the fix for this <a href="https://discussions.apple.com/thread/2562027?start=90&amp;tstart=0">runaway &ldquo;Other&rdquo;
-usage</a> is to
-back up the iPad, then restore it from backup. So I did this, and after half
-an hour, I had a working iPad with 2.2GB of apps, 3.3GB of &ldquo;other&rdquo;, and 7.3GB
-free. That&rsquo;s still not very satisfying, though &mdash; what is this 3.3GB and how
-do I get it back?</p>
-
-<p>So then I tried completely erasing and restoring the iPad (restoring the
-firmware, not just the user data, which is a similarly named but differently
-implemented operation in iTunes). This worked a little too well — the iPad
-came back with only 0.62GB of &ldquo;other&rdquo; and 13.2GB free, because it has no apps
-installed. Um, that&rsquo;s partially my fault, because I&rsquo;d turned off syncing of
-apps in iTunes (in my experience, leaving app syncing enabled makes syncing
-take much longer and sometimes forever, and it shouldn&rsquo;t be necessary in the
-post-PC mode where you manage the device on the device itself); I don&rsquo;t find
-it obvious, but apparently if you disable the syncing of apps in iTunes, that
-also means that local restores via iTunes don&rsquo;t restore apps either.</p>
-
-<p>But oh whatever, I have a recent iCloud backup which should have all the apps
-backed up. I do another complete erase of the iPad, and this time when it
-boots up, instead of driving the restore from iTunes on the Mac, I walk
-through the on-device setup and select my iCloud backup. It chews for a while,
-reboots, and then gets stuck forever at the boot screen (Apple logo with
-progress bar). <a href="https://discussions.apple.com/thread/4372003?start=0&amp;tstart=0">Apparently I&rsquo;m not the only one with this problem
-either</a>. I
-tried again and got the same result.</p>
-
-<p>So apparently the iCloud backup is corrupt and can&rsquo;t be used; the local backup
-works but leaves me with extra work to do.</p>
-
-<p>In the big picture, this is just another internet rant about a bug which
-happened to one person and probably isn&rsquo;t generally applicable, and while I
-can describe it as 6 separate problems (iPad aborts my download without
-showing an error message, iPad downloads movie to bit bucket and won&rsquo;t play it
-back, iPad runs out of space, iTunes can&rsquo;t sanely describe space usage, iTunes
-syncs garbage from iPad back to my computer, iCloud backup is corrupt) it&rsquo;s
-likely all one root cause, where some data structure got corrupted and caused
-the rest of the failures downstream from there. And computers are complicated,
-and not that expensive given the complexity, and hard and expensive to get
-right.</p>
-
-<p>But what&rsquo;s frustrating about this is that Apple&rsquo;s moved the openness needle
-pretty far back toward walled garden, in the name of preventing problems.
-Problems like malware, yes, but also problems due to misconfigurations, and
-problems due to third party software that causes finger-pointing instead of
-solutions. This was all first-party software; Apple content in Apple software
-on an Apple device synced and controlled from another Apple device. No
-jailbreaking, and I didn&rsquo;t even commit the minor sin of trying to run iTunes
-on Windows. This is the case that we should be getting right; that&rsquo;s the
-benefit that we&rsquo;re paying the walled-garden cost for.</p>
-
-<p>Apple is often applauded for bringing us technology that &ldquo;just works&rdquo;, but
-I&rsquo;ve been having more and more experiences lately that are pretty far from
-&ldquo;just works&rdquo;. The moral of the story is that Apple&rsquo;s devices are computers
-just like other computers; they&rsquo;re still a stack of fiendishly complex
-hardware and software components; also with iOS in version 6 and <a href="http://en.wikipedia.org/wiki/ITunes_version_history#Version_history">iTunes in
-version
-10.7</a>
-there&rsquo;s a lot of untestable legacy cruft. &ldquo;Just works&rdquo; sounds nice, but we&rsquo;re
-not really there yet, or maybe we&rsquo;ve been there but don&rsquo;t know how to stay
-there for long.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/24/playing-by-the-rules/">Playing by the Rules</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-24T00:00:00-07:00" pubdate data-updated="true">Oct 24<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/10/24/playing-by-the-rules/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I read two extensive reviews of Microsoft&rsquo;s new Surface tablets today.</p>
-
-<p><a href="http://arstechnica.com/gadgets/2012/10/microsofts-first-stab-at-a%0A-pc-surface-reviewed/">Peter Bright, writing for Ars
-Technica</a>:</p>
-
-<blockquote><p>They&rsquo;re covered in polyurethane that should prove hard-wearing and water
-resistant (I was told that they should withstand scouring pads, though I admit
-I&rsquo;m too chicken to try—we had to promise to return our review units unharmed)</p></blockquote>
-
-<p><a href="http://www.wired.com/reviews/2012/10%0A/microsoft-surface/all/">Mathew Honan, writing for Wired</a>:</p>
-
-<blockquote><p>And it’s quite sturdy, to boot. In Microsoft’s lab, we saw Surfaces that had
-been opened and closed hundreds of thousands of times. They still snapped open
-and shut like they were new. We wanted to see how easy it was to break one.
-It’s very possible, but you have to really try. We did manage to break off the
-kickstand by gradually leaning onto it, but I had to put nearly my full weight
-onto the tablet before the kickstand snapped off.</p></blockquote>
-
-<p>and</p>
-
-<blockquote><p>Microsoft showed us a drop test by letting a Surface fall from a chest-high
-height. I duplicated this by literally throwing it at the floor, but to no ill
-effect.</p></blockquote>
-
-<p>All in the name of science, of course. I doubt Bright could have gotten in
-that much trouble for taking a Brillo pad to his Touch Cover. Oh well.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/03/those-ios-6-maps/">Those iOS 6 Maps</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-03T00:00:00-07:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2012</time>
-        
-         | <a href="/blog/2012/10/03/those-ios-6-maps/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>So, it&rsquo;s come to this:</p>
-
-<p><a href="ht%0Atp://www.flickr.com/photos/67861147@N00/8052630604"><img src="http://farm9.staticflickr.com/8031/8052630604_7c3946ed99.jpg" alt="IMG_1136" /></a></p>
-
-<p>I waited a week after iOS 6 was released, asked my Facebook friends what they
-thought of it, and within hours got 6 responses that all said not to upgrade
-if I care about maps. Well, I do care about maps, but how bad can it be? I
-wanted to see for myself, but not shoot myself in the foot on the phone I
-depend on daily, so I upgraded my iPad instead.</p>
-
-<p>Actually, the new 3D view is very cool where the data is good, and here in San
-Francisco the data is good. Zooming around my neighborhood is fun and looks
-great; that&rsquo;s a real win. In fact the maps overall look great, and the zooming
-is much smoother than what we&rsquo;re used to with the Google-powered maps in
-previous versions of iOS. How about the underlying data? Um, not so good.
-Roads are (in my experience) where they belong, but addresses and landmarks
-and businesses are often not. I don&rsquo;t know why anyone is surprised by this;
-it&rsquo;s a very hard problem, and <a href="http://www.theatlantic.com/technology/archive/2012/09/how-google-builds-%0Aits-maps-and-what-it-means-for-the-future-of-everything/261913/">Google has worked incredibly
-hard</a> (and thrown a
-lot of money, human time, and computer time at acquiring and massaging the
-data) to get their maps to the point we all take for granted now. The world is
-very big.</p>
-
-<p>That doesn&rsquo;t mean it&rsquo;s pleasant when I search for an address a mile from where
-I&rsquo;m standing and get a search result for a similarly named street 1000 miles
-away in Texas. That&rsquo;s what happened to me the first time I tried actually
-using Maps for real, i.e. to find something whose location I didn&rsquo;t already
-know. I also tried plugging in a few locations I remember from our trip to
-Ireland, where iOS 5 maps (i.e. Google maps) got us everywhere we needed to
-be, and Apple maps didn&rsquo;t know them; that trip would have been much harder.</p>
-
-<p>But luckily, the built-in Maps app powered by Apple&rsquo;s fledgling data set isn&rsquo;t
-your only choice, and that&rsquo;s what my screen shot above reflects. I tried the
-various alternatives shown here before upgrading, and came to roughly the same
-conclusions as <a href="http://arstechnica.com/apple/2012/10/replacing-ios-6-maps-hands-on-%0Awith-mapquest-bing-waze-google-nokia/">this Ars Technica
-article</a>: Waze is neat for navigation but not a
-replacement map; MapQuest is pretty unpleasant to use; the Google Maps website
-actually works just fine; upon confirming that last, I decided it was fine to
-upgrade.</p>
-
-<p>More surprising to me is that it&rsquo;s Nokia who has the second-best map
-experience — both data quality and interaction design — after Google. (Maybe I
-shouldn&rsquo;t have been surprised. I remember reading about <a href="http://arstechnica.com/gadgets/2011/02/calling-all-cars-%0Ameasuring-traffic-using-cell-phone-data/">Nokia&rsquo;s Mobile
-Millenium project</a> and thinking that while their
-approach seemed more like academia than industry and Google is probably
-leaving them in the dust in terms of speed of deploying new features, their
-very thoughtful approach especially with respect to privacy is commendable.
-Clearly, they&rsquo;ve been taking this seriously.) I tried, again, punching in some
-of the hotels we stayed in in Ireland, which Google could locate and Apple
-couldn&rsquo;t, and Nokia found them just fine. That test involves just a few data
-points, but is in keeping with a general reputation that only Google and Nokia
-have decent place data outside the US.</p>
-
-<p>So the obvious conclusion: Apple should just buy Nokia.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -1220,23 +1196,23 @@ have decent place data outside the US.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/">From Tumblr to Octopress, part 3: footnotes</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/">From Tumblr to Octopress, part 2: how</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-1-why/">From Tumblr to Octopress, part 1: why</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
       </li>
     
       <li class="post">
         <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/21/speedy-resume/">Speedy resume</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">Two things I didn&#8217;t know about Mac OS internet sharing</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/">Troubleshooting Mac sleep problems</a>
       </li>
     
   </ul>

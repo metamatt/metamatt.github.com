@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>From Tumblr to Octopress, part 2: how - Step 2 is the hard part.</title>
+  <meta name="author" content="Matt Ginzton">
+
+  
+  <meta name="description" content="Having decided to move this blog from Tumblr to Octopress, there remained the matter of migrating it1. Octopress is basically a convenience framework &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.metamatt.com/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Step 2 is the hard part." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19563060-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Step 2 is the hard part.</a></h1>
+  
+    <h2>Matt Ginzton writes here.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.metamatt.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">From Tumblr to Octopress, Part 2: How</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-17T01:40:00-04:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Having decided to move this blog from Tumblr to Octopress, there remained the matter of migrating it<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>.</p>
+
+<p>Octopress is basically a convenience framework around Jekyll, adding a nice-by-default theme and some convenience wrappers for starting new posts, invoking Jekyll to generate the site, and deploying the site. You could probably use Octopress quite happily without touching Jekyll directly, unless you want to import an existing blog; then you end up at <a href="https://github.com/mojombo/jekyll/wiki/blog-migrations">Jekyll&rsquo;s Blog Migrations tool</a>, which has options for a number of popular blog engines, including Tumblr.</p>
+
+<p>The instructions for <a href="http://octopress.org/docs/setup/">setting up Octopress</a> are pretty simple and <a href="http://octopress.org/docs/setup/">well documented</a>:
+* git and ruby (and probably rvm or rbenv) are prerequisites
+* obtain octopress itself via &ldquo;git clone&rdquo;
+* install dependencies via &ldquo;gem install bundler; bundle install&rdquo;
+* install the default Octopress theme (which also generates the skeleton site layout) via &ldquo;rake install&rdquo;</p>
+
+<p>At this point, you&rsquo;ve got a working Octopress installation and you could use its rake task-based interface to write and publish posts. However, if you want to migrate an existing blog, you have more setup steps which are also <a href="https://github.com/mojombo/jekyll/wiki/blog-migrations">well documented</a>:
+* assuming you want to keep your raw posts in markdown format instead of raw HTML, Jekyll&rsquo;s Tumblr migrator needs nokogiri: <code>gem install nokogiri</code>
+* invoke the Tumblr migrator (<code>ruby -rubygems -e 'require "jekyll/migrators/tumblr"; Jekyll::Tumblr.process("http://www.your_blog_url.com", "md")'</code>). Note that this doesn&rsquo;t require any account information or credentials, because the Tumblr API will provide enough information to do this anonymously. Heck, if you&rsquo;re evil, you could convert someone else&rsquo;s blog (don&rsquo;t do that). On the topic of Tumblr reliability, I ran this step a few dozen times while I was figuring out how it works and fixing some bugs in tumblr.rb, and ~90% of the time, it downloaded my ~165 posts almost instantly, but palpably often, it would get stuck halfway as the Tumblr API stopped sending it network traffic. Oh well. Ctrl-C and restart if this happens to you.</p>
+
+<p>What neither the Jekyll nor Octopress documentation tells you is what happens next. Assuming you run all the above commands from the octopress directory: Octopress setup (the <code>rake install</code> step) created a directory called &ldquo;source&rdquo;, under which the (initially empty) &ldquo;_posts&rdquo; directory is where Jekyll will look for posts. Meanwhile, Jekyll&rsquo;s tumblr.rb will create and populate a &ldquo;<em>\posts/tumblr&rdquo; directory with your posts, and a &ldquo;posts&rdquo; directory with redirects from the old Tumblr-style post URLs to new Octopress-style URLs<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>,<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>. Neither the &ldquo;</em>\posts&rdquo; nor &ldquo;posts&rdquo; directory spit out by tumblr.rb are under &ldquo;source&rdquo; where Jekyll will look for them. What this means is that without additional effort on your part, Jekyll as invoked by Octopress won&rsquo;t see the files you just imported.</p>
+
+<p>Again: your blog posts go in &ldquo;octopress/source/<em>posts&rdquo;. The Tumblr migrator will create &ldquo;octopress/posts&rdquo; and &ldquo;octopress/</em>posts&rdquo;. Just move these two directories under &ldquo;octopress/source&rdquo; once you&rsquo;ve verified they look OK. (NB: the migrator actually dumped all its files under &ldquo;octopress/<em>posts/tumblr&rdquo;; it&rsquo;s fine to leave them there, so they end up in &ldquo;octopress/source/</em>posts/tumblr&rdquo;; Octopress doesn&rsquo;t seem to care about the organization of your files inside the source/_posts directory.)</p>
+
+<p>Now, you can tell Octopress to generate the site: &ldquo;rake generate&rdquo;.</p>
+
+<p>If you&rsquo;re reading this at the right point of relative stability, lucky you; you win. I ran into several more issues, due to the fact that Jekyll and Octopress are prerelease open source software intended for an audience of hackers; some assembly definitely required:</p>
+
+<ul>
+<li>At the point I was performing this migration (January 2013), Jekyll was at version 0.12 and the tumblr.rb migrator script was broken in a <a href="https://github.com/mojombo/jekyll/commit/863643c7e8080c73a7968caabfc9c7e9b18c6b95">couple</a> <a href="https://github.com/mojombo/jekyll/commit/fbc9d0c66397234ab85e03a55955602e0ce40356">respects</a> which I submitted patches for.</li>
+<li>After my patches were merged upstream, I tried running with Jekyll&rsquo;s head version in mid-February, to find that tumblr.rb had been deleted from the Jekyll repository entirely, and moved to a separate <a href="https://github.com/jekyll/jekyll-import">jekyll-import</a> project, which at the time had no documentation and appeared to have little chance of running.</li>
+<li>Meanwhile, using any version of Jekyll newer than 0.12 broke Octopress in a trivial way; the :generate rule in Octopress&rsquo;s Rakefile finishes by invoking Jekyll as <code>system 'jekyll'</code>, with no arguments, and newer versions of Jekyll expect a <code>build</code> argument. Octopress will fix this when Jekyll actually releases a new version (which may have already happened between me finding this and posting this); it makes no sense to fix it sooner.</li>
+</ul>
+
+
+<p>This last list of foibles is probably all related to Jekyll being in the throes of the 1.0 release process and will probably be a historical footnote afterwards.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Many others have done this before; one post I found helpful was <a href="http://blog.assimov.net/blog/2012/03/24/tumblr-to-octopress-powered-by-jekyll-and-markdown/">Goodbye Tumblr. Hello, Octopress Powered by Jekyll and Markdown!</a>.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>The redirects spit out by tumblr.rb are under &ldquo;posts&rdquo; because Tumblr URLs are of the form example.com/posts/12341234/post-title-slug; Octopress URLs are by default of the form example.com/blog/year/month/post-title-slug; tumblr.rb creates redirects from the former to the latter, without requiring any special interaction with the webserver, by just creating a file for each post, named for the Tumblr relative URL (in this case, posts/12341234/post-title-slug/index.html) containing a browser-side meta refresh redirect to the new URL.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>I found the redirects created by tumblr.rb to be not quite enough. Tumblr indexes posts by number, then creates a nice search-engine-friendly SLUG such as post-title-slug, yielding a post URL like example.com/posts/12341234/post-title-slug. But actually, when receiving a request, Tumblr ignores everything after the number, and you could also load that post as example.com/posts/12341234/foobar, or just example.com/posts/12341234, and in fact the latter is the canonical URL used by Disqus. If you are running a webserver with rewrite rules, you might do well to redirect the entire URL namespace under posts/12341234 to the new URL, as Tumblr would have; I settled for copying posts/12341234/post-title-slug/index.html to posts/12341234/index.html for each post, so both number alone and number+SLUG will redirect correctly.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Matt Ginzton</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-17T01:40:00-04:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.metamatt.com/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/" data-via="metamatt" data-counturl="http://blog.metamatt.com/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/03/17/from-tumblr-to-octopress-part-1-why/" title="Previous Post: From Tumblr to Octopress, part 1: why">&laquo; From Tumblr to Octopress, part 1: why</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/" title="Next Post: From Tumblr to Octopress, part 3: footnotes">From Tumblr to Octopress, part 3: footnotes &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/">From Tumblr to Octopress, part 3: footnotes</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/">From Tumblr to Octopress, part 2: how</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-1-why/">From Tumblr to Octopress, part 1: why</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/metamatt">@metamatt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'metamatt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("metamatt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/metamatt" class="twitter-follow-button" data-show-count="false">Follow @metamatt</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117348958487049022391?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Matt Ginzton -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'metamatt';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.metamatt.com/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/';
+        var disqus_url = 'http://blog.metamatt.com/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

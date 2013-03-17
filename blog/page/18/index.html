@@ -9,11 +9,8 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="Having read the debate between John
-Gruber and Tim
-Bray and
-Gruber again on
-the subject of physical vs onscreen keyboards for smartphones, I wanted &hellip;">
+  <meta name="description" content="One thing OpenWRT can do (if you run it on a router with USB ports) is stream
+video from a webcam using mjpg-streamer. Pretty useful if you want to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +83,176 @@ the subject of physical vs onscreen keyboards for smartphones, I wanted &hellip;
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2010/09/15/mjpg-streamer-from-openwrt-with-cheap-webcams/">Mjpg-streamer From OpenWRT With Cheap Webcams</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-15T00:00:00-04:00" pubdate data-updated="true">Sep 15<span>th</span>, 2010</time>
+        
+         | <a href="/blog/2010/09/15/mjpg-streamer-from-openwrt-with-cheap-webcams/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>One thing OpenWRT can do (if you run it on a router with USB ports) is stream
+video from a webcam using mjpg-streamer. Pretty useful if you want to put a
+webcam in some random place.</p>
+
+<p>(The current version of OpenWRT, backfire, needs additional nondefault
+packages involved: see <a href="http://blog.bashroom.com/2010/05/04/webcam-streaming-%0Awith-openwrt-backfire/">[http://blog.bashroom.com/2010/05/04/webcam-streaming-
+with-openwrt-backfire/](http://blog.bashroom.com/2010/05/04/webcam-streaming-
+with-openwrt-backfire/)</a>.)</p>
+
+<p>I tried this with an old webcam I had lying around, but the old webcam
+predated the UVC (USB Video Class) standard, and I couldn&rsquo;t get it to work. So
+then I bought a couple of the cheapest webcams on Amazon that claimed UVC
+support.</p>
+
+<p>Not too surprisingly, neither one worked right away &mdash; when I start mjpg-
+streamer as described in the abovelinked article, it would say &ldquo;Unable to set
+format: invalid argument&rdquo;. This turns out to be because these cheaper cameras
+don&rsquo;t support MJPG in hardware, only YUV output; mjpg-streamer can convert but
+you have to pass -y to it.</p>
+
+<p>So for OpenWRT, I edited /etc/init.d/mjpg-streamer to add -y to the &mdash;input
+argument.</p>
+
+<p>The resulting stream is choppy, and gets backed up several frames, but is good
+enough for my purposes. It also spikes the router CPU to 100%, even on a newer
+faster router I have, so I told mjpg-streamer to stream at 1 fps, which is not
+that much choppier and still good enough for my purposes (edit /etc/config
+/mjpg-streamer to do this).</p>
+
+<p>Moral of the story: it&rsquo;s probably better to buy a webcam known to support MJPG
+in hardware.</p>
+
+<p>(Thanks to <a href="https://forum.openwrt.org/viewtopic.php?%0Apid=98294">[https://forum.openwrt.org/viewtopic.php?pid=98294](https://forum.
+openwrt.org/viewtopic.php?pid=98294)</a>and <a href="http://arthurhong-%0Alinux.blogspot.com/2008/11/mjpgstreamer-or-uvcstreamer-always.html">[http://arthurhong-linux.blogspot.com/2008/11/mjpgstreamer-or-
+uvcstreamer-always.html](http://arthurhong-linux.blogspot.com/2008/11
+/mjpgstreamer-or-uvcstreamer-always.html)</a> for
+helping me figure out the YUV format problem and solution.)</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/15/cheap--tiny-pocket-camera-case/">Cheap & Tiny Pocket Camera Case</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-15T00:00:00-04:00" pubdate data-updated="true">Sep 15<span>th</span>, 2010</time>
+        
+         | <a href="/blog/2010/09/15/cheap--tiny-pocket-camera-case/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Useful tip: for carrying a pocket digital camera, keep it in a $5 microfiber
+bag like the ones used for sunglasses (easily obtainable at a sunglass store
+if you don&rsquo;t already have one).</p>
+
+<p>It adds nothing to the size, so the pocket camera still fits in your pocket.
+It protects the screen, and keeps the camera reasonably free of dust. It
+doesn&rsquo;t protect it against drops, so don&rsquo;t drop your camera &mdash; sure, you could
+get a padded case but then it&rsquo;s no longer a pocket camera.</p>
+
+<p>I&rsquo;ve kept my last 3 pocket-sized cameras in nothing more protective, while
+they lived years in my pocket accompanying me on various adventures, and
+they&rsquo;re all faring fine, except for one which I landed on in a skiing crash.
+Oh well.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/05/19/kellan-elliott-mccrea-on-data-portability-at-flickr/">Kellan Elliott-McCrea on Data Portability at Flickr</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-19T00:00:00-04:00" pubdate data-updated="true">May 19<span>th</span>, 2010</time>
+        
+         | <a href="/blog/2010/05/19/kellan-elliott-mccrea-on-data-portability-at-flickr/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://laughingmeme.org/2010/05/18/minimal-competence-data-access-%0Adata-ownership-and-sharecropping/">Kellan Elliott-McCrea on data portability at
+Flickr</a></p>
+
+<p>&ldquo;With Flickr you can get out, via the API, every single piece of information
+you put into the system.&rdquo;</p>
+
+<p>I think this makes a pretty good definition of the minimum standard for data
+portability that online services should be held to &mdash; to paraphrase, anything
+you put in you can get back out.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2009/07/15/physical-keyboards-may-be-more-efficient-even-if-not-faster/">Physical Keyboards May Be More Efficient Even if Not Faster</a></h1>
     
     
@@ -102,7 +269,7 @@ the subject of physical vs onscreen keyboards for smartphones, I wanted &hellip;
   
 
 
-<time datetime="2009-07-15T00:00:00-07:00" pubdate data-updated="true">Jul 15<span>th</span>, 2009</time>
+<time datetime="2009-07-15T00:00:00-04:00" pubdate data-updated="true">Jul 15<span>th</span>, 2009</time>
         
          | <a href="/blog/2009/07/15/physical-keyboards-may-be-more-efficient-even-if-not-faster/#disqus_thread">Comments</a>
         
@@ -178,23 +345,23 @@ onscreen keyboards, though.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/">From Tumblr to Octopress, part 3: footnotes</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/">From Tumblr to Octopress, part 2: how</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-1-why/">From Tumblr to Octopress, part 1: why</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
       </li>
     
       <li class="post">
         <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/21/speedy-resume/">Speedy resume</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">Two things I didn&#8217;t know about Mac OS internet sharing</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/">Troubleshooting Mac sleep problems</a>
       </li>
     
   </ul>

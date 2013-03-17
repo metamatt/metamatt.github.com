@@ -9,8 +9,8 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="Yet another disappointment with the DSL connection and/or modem from
-Sonic.net: Annex M doesn&rsquo;t seem to do any good at all for upload speeds. &hellip;">
+  <meta name="description" content="I&rsquo;m giving up on DSL. There are really 3 separate reasons that it&rsquo;s not
+performing as I&rsquo;d hoped and expected: Reliance on AT&amp;T& &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +83,297 @@ Sonic.net: Annex M doesn&rsquo;t seem to do any good at all for upload speeds. &
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2011/04/21/dsl-disappointments-too-bad-that-didnt-work/">DSL Disappointments: Too Bad That Didn&#8217;t Work</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-21T00:00:00-04:00" pubdate data-updated="true">Apr 21<span>st</span>, 2011</time>
+        
+         | <a href="/blog/2011/04/21/dsl-disappointments-too-bad-that-didnt-work/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;m giving up on DSL. There are really 3 separate reasons that it&rsquo;s not
+performing as I&rsquo;d hoped and expected:</p>
+
+<ul>
+<li>Reliance on AT&amp;T&rsquo;s wiring, and no incentives for AT&amp;T to provide good enough wiring. There&rsquo;s apparently no clear agreement between Sonic.net (and more importantly their DSL equipment) and AT&amp;T as to what constitutes acceptable wiring. AT&amp;T claims they&rsquo;ve met their side of the bargain, but I have one line that syncs at 18mbps and one that syncs at 3-5mbps. Clearly, there&rsquo;s an important difference between them, but it&rsquo;s one that AT&amp;T isn&rsquo;t required to care about.</li>
+<li><a href="http://blog.metamatt.com/blog/2011/04/18/dsl-disappointments-annex-m-edition/">Annex M doesn&rsquo;t deliver, for me</a>. Maybe it works in other cases, but for both my fast line and slow line, it caused a significant decrease in downstream performance and no increase whatsoever in upstream performance.</li>
+<li>The modem is finicky: depending on exactly how I connect it (which cabling, whether I use a filter, and what order I connect the two lines), <a href="http://blog.metamatt.com/blog/2011/04/18/dsl-disappointments-misleading-sync-speed-edition/">it delivers as little as 30% of the sync speed as usable performance</a>.</li>
+</ul>
+
+
+<p>I was hoping to see Annex A speeds syncing at the expected 40mbps down/2mbps
+up, which using Annex M could be reallocated as something like 30mbps
+down/5mbps up. But instead I&rsquo;m getting 22mbps/2mbps from the wires in Annex A,
+and Annex M reallocates that as 15mbps/2mbps, which there&rsquo;s no reason to do.
+The highest real transfer speeds (not sync speeds) I&rsquo;ve seen, sticking with
+the Annex A configuration, are 20mbps down, 1.8mbps up.</p>
+
+<p>That 1.8mbps upstream is the clincher &mdash; that&rsquo;s only a quarter of what I&rsquo;m
+getting from Comcast. That might be fine for people who don&rsquo;t want to run
+offsite backups across the WAN, but I&rsquo;ve grown addicted to faster upload
+speeds.</p>
+
+<p>I really like Sonic.net as a company &mdash; their policies and their attitude
+towards customers are preferable to any of the incumbents that own their own
+wires. But the wiring they&rsquo;re able to rent from AT&amp;T doesn&rsquo;t cut it for me. If
+in the future they&rsquo;re able to connect my house with something better than AT&amp;T
+phone wiring, I&rsquo;d certainly consider it.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/20/dont-override-keys-that-already-have-a-meaning-in-your-scope/">Don&#8217;t Override Keys That Already Have a Meaning in Your Scope</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-20T00:00:00-04:00" pubdate data-updated="true">Apr 20<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/04/20/dont-override-keys-that-already-have-a-meaning-in-your-scope/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Two keyboard shortcuts I use very frequently under Mac OS X are:</p>
+
+<ul>
+<li>Command-H: hide the current application</li>
+<li>Command-L: jump to the browser address bar (this isn&rsquo;t a systemwide shortcut, but it&rsquo;s the same for Safari, Chrome and Firefox, so it may as well be).</li>
+</ul>
+
+
+<p>These, along with Command-Tab to switch between applications, and Command-
+curly brace to switch between tabs of the current application, are basically
+how I navigate the system from the keyboard, and I get very annoyed when
+something interferes with them and they don&rsquo;t work as intended.</p>
+
+<p>(A special note on Command-H, for hide: I&rsquo;ve never liked the OS X minimize
+behavior. You just get a pile of tiny icons at the end of the dock, in
+addition to the app icon at the beginning of the dock. For a plethora of
+reasons intertwined with the dock/taskbar/task switching behavior, minimized
+windows are more useful under Windows and Linux than they are under Mac OS X.
+Now, you do want a &ldquo;get out of my face until I need you again&rdquo; action, and
+under Windows and Linux minimize is that action, but under OS X minimize is
+not that action. Hide is that action.)</p>
+
+<p>Since Command-H is bound to an important systemwide command, no apps should
+override it, at least by default. It should be available for app use in
+special cases (remote control or virtual machine environment where you may
+need access to every possible key and there&rsquo;s a predefined bypass mechanism;
+kiosk apps that are designed not to be hidden), but if apps get a way to turn
+this into an arms race, I wish the system gave me a way to escalate by
+removing that ability from naughty ones (Adobe CreativeSuite apps are the ones
+I remember being frustrating in this regard).</p>
+
+<p>Likewise, for sites and plugins that are designed to be hosted inside a web
+browser, you do realize that that browser already has dibs on certain
+keystrokes, right? Again it&rsquo;s Adobe that breaks conventions &mdash; Flash applets
+in particular often like to hook all keystrokes, including those with meaning
+to the browser like Command-L to jump to the address bar, Command-T to open a
+new tab, and Command-} to go to to the next tab. Again, I&rsquo;m glad this is
+technically possible for those few special cases where the applet knows best,
+but I can&rsquo;t see a good argument for acting this way by default, and again I
+wish the outer scope (in this case the browser) provided me a big hammer to
+say &ldquo;always interpret your own keyboard shortcuts first&rdquo;.</p>
+
+<p>This is especially annoying because not only is behavior that I depend on and
+have committed to muscle memory getting blocked, but it&rsquo;s not even for any
+good reason &mdash; the feature that Illustrator CS3 bound to Command-H wasn&rsquo;t
+anything I ever used (at least it let me unmap the keyboard shortcut and
+return it to the OS). And most Flash applets that steal Command-L don&rsquo;t do
+anything at all when I press it (nor is there, to the best of my knowledge, a
+way to tell them to stop hooking keystrokes I care about, at either the Flash
+Player or browser level &mdash; it&rsquo;s up to the applet).</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/18/dsl-disappointments-misleading-sync-speed-edition/">DSL Disappointments: Misleading Sync Speed Edition</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-18T00:00:00-04:00" pubdate data-updated="true">Apr 18<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/04/18/dsl-disappointments-misleading-sync-speed-edition/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Another <a href="http://blog.metamatt.com/blog/2011/04/13/dsl-%0Amodem-annoyances/">annoying behavior</a> of the Comtrend modem I got from Sonic.net: it doesn&rsquo;t
+always transfer real data at anywhere near the claimed &ldquo;sync&rdquo; speed.</p>
+
+<p>As noted in <a href="http://blog.metamatt.com/blog/2011/04/09/state-of-the-last-mile-%0Ainternet-connection-year-2011/">my initial post about Sonic.net&rsquo;s Fusion
+Broadband</a>, I have 2 DSL lines from Sonic.net, which each
+in theory should support up to 20mbps downstream, but right now one of them
+syncs at 18mbps and one of them at only 4mbps, due to overly high attenuation
+in the wiring supplied by AT&amp;T. Still, I should be able to get a combined
+22mbps, right?</p>
+
+<p>Well, with the modem deployed the way I intend to use it (in a back room near
+my other networking equipment and my UPS, connected to a DSL filter with a
+normal telephone patch cord), according to <a href="http://speedtest.sonic.net/ookla/">Sonic&rsquo;s own speed test
+site</a>, I get about 4mbps download and
+1.83mbps upload. Whoa, that&rsquo;s a lot lower.</p>
+
+<p>To make things weirder, if I disconnect the slow line (the one that syncs at
+only 4mbps) and leave only the fast line (synced at 18mbps) connected, the
+same speed test result is 15.71mbps download, 0.95mbps upload. How is one line
+alone faster than the two lines together? At first I suspected a bug in the
+modem when bonding lines of different speeds, but then I repeated the test at
+the MPOE, and got the expected results: the two lines bonded together were
+slightly faster than the fast line alone.</p>
+
+<p>Curious, and suspicious of everything at this point, I decided to run a bunch
+of tests: both at the MPOE (not depending on my own internal wiring) and in my
+network closet (adding ~50 feet of internal wiring), with and without the DSL
+filter supplied with the modem, and with different patch cables (the patch
+cable that came with the modem, the separate Y cable Sonic gave me, and an old
+patch cable I had lying around); for various combinations of each of these
+variables I tested both lines together, and where possible each line alone
+(that&rsquo;s easy to do at the MPOE and hard to do at the server room, <a href="http://blog.metamatt.com/blog/2011/04/13/dsl-modem-annoyances/">due to the
+way the modem is wired for single-line
+operation</a>).</p>
+
+<p>The results are pretty weird. I&rsquo;ll list the results, one per line, with a
+description of the test configuration, the modem&rsquo;s reported sync speed
+(down/up), the actual usable speed as reported by speedtest.sonic.net, and a %
+number which is the ratio of usable download speed to claimed downlink sync
+speed. First, testing one line at a time:</p>
+
+<ul>
+<li>At MPOE, fast line, no filter, Y cable:  sync 18.46/1.14, speed test 15.76/0.95 (85%)</li>
+<li>At network closet, fast line, with filter, Y cable: sync 18.49/1.14, speed test 15.71/0.95 (85%)</li>
+<li>At MPOE, slow line, no filter, Y cable: sync 4.93/1.08, speed test 4.02/0.90 (82%)</li>
+<li>At network closet, slow line, with filter, Y cable: sync 3.48/1.02, speed test won&rsquo;t run (because modem has sync on slave line only)</li>
+</ul>
+
+
+<p>The result of these single line tests shows that my internal wiring (between
+MPOE and network closet) and filter don&rsquo;t seem to affect the speed at all &mdash;
+the modem syncs at the same speed, and tests at the same speed, in both
+locations.</p>
+
+<p>But then, dual line tests (sorted by descending actual speed):</p>
+
+<ul>
+<li>At MPOE, both lines, no filter, Y cable: sync 23.60/2.23, speed test 20.06/1.83 (85%)</li>
+<li>At MPOE, both lines, no filter, Y cable + their patch cable: sync 22.99/2.23, speed test 18.94/1.83 (82%)</li>
+<li> At network closet, both lines, no filter, my patch cable: sync 22.84/2.23, speed test 12.05/1.83 (53%)</li>
+<li><p>At network closet, both lines, no filter, their patch cable: sync 22.86/2.23, speed test 10.38/1.83 (45%)
+At MPOE,  both lines, with filter, Y cable + their patch cable: sync
+22.09/2.23, speed test 6.12/1.83 (28%)</p></li>
+<li><p>At network closet, both lines, with filter, their patch cable: sync 21.83/2.23, speed test 4.23/1.83 (19%)</p></li>
+</ul>
+
+
+<p>Note how the sync speed does not change appreciably across all these tests,
+but the actual speed changes hugely. Every single difference from the minimal
+MPOE configuration results in decreased speed!</p>
+
+<p>Some additional notes: first, bonded upload speed is completely stable at
+1.83mbps in every single test I&rsquo;ve run. Second, I have tried various other
+speed test sites, and FTP of a large test file hosted by Sonic.net in case
+Flash/Java speed tests aren&rsquo;t reliable indicators, but I got roughly
+equivalent results from all of them, so I stick with the speedtest.sonic.net
+numbers for comparison here.</p>
+
+<p>First complaint: where are the bits going? Why is the sync speed not a
+reliable indicator of real speed? It&rsquo;s annoying losing speed, and it&rsquo;s
+annoying not being able to trust the sync speed, and this makes
+troubleshooting speed problems a lot harder (it takes longer to run a speed
+test than just check the sync speed, and Sonic.net&rsquo;s support system shows them
+my sync speed but not, I presume, my actual transfer speeds). Presumably if
+the modem can&rsquo;t actually transfer data at the sync rate, that&rsquo;s due to errors
+and dropped frames at the ATM level, but the modem&rsquo;s status page shows 0 for
+every ATM and DSL error category.</p>
+
+<p>Second complaint: why do the filter, patch cable, and my internal wiring all
+result in a speed loss, but only in bonded operation, and not one line at a
+time, and without affecting the sync speed?</p>
+
+<p>It&rsquo;s looking increasingly unlikely that I&rsquo;m going to get a fast and trouble-
+free connection via DSL. I mean, I <em>could</em> put the modem by the MPOE (with no
+UPS and no filter), but that wasn&rsquo;t the intent, and I don&rsquo;t understand why I
+should have to.</p>
+
+<p>And one final note: in response to my earlier article about this modem, Sonic
+is already sending me a new one; I don&rsquo;t really want to take time to repeat
+all of these experiments but I&rsquo;ll at least see if the new modem or new filter
+does better in the cases that were worst here. (If nothing else, it should be
+easier to do apples-to-apples comparisons, using the same cables and getting
+all data points at both locations.)</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2011/04/18/dsl-disappointments-annex-m-edition/">DSL Disappointments: Annex M Edition</a></h1>
     
     
@@ -99,7 +390,7 @@ Sonic.net: Annex M doesn&rsquo;t seem to do any good at all for upload speeds. &
   
 
 
-<time datetime="2011-04-18T00:00:00-07:00" pubdate data-updated="true">Apr 18<span>th</span>, 2011</time>
+<time datetime="2011-04-18T00:00:00-04:00" pubdate data-updated="true">Apr 18<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/04/18/dsl-disappointments-annex-m-edition/#disqus_thread">Comments</a>
         
@@ -271,7 +562,7 @@ for me, bring DSL back into the realm of competitive upload speeds.</p>
   
 
 
-<time datetime="2011-04-15T00:00:00-07:00" pubdate data-updated="true">Apr 15<span>th</span>, 2011</time>
+<time datetime="2011-04-15T00:00:00-04:00" pubdate data-updated="true">Apr 15<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/04/15/how-to-search-your-own-activity-streams-greplin/#disqus_thread">Comments</a>
         
@@ -352,7 +643,7 @@ necessary and they would need only the index on their side.</p>
   
 
 
-<time datetime="2011-04-14T00:00:00-07:00" pubdate data-updated="true">Apr 14<span>th</span>, 2011</time>
+<time datetime="2011-04-14T00:00:00-04:00" pubdate data-updated="true">Apr 14<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/04/14/tumblr-editor-bug-leaves-css-metadata-in-my-data/#disqus_thread">Comments</a>
         
@@ -405,7 +696,7 @@ maybe something like 5% of the time.</p>
   
 
 
-<time datetime="2011-04-13T00:00:00-07:00" pubdate data-updated="true">Apr 13<span>th</span>, 2011</time>
+<time datetime="2011-04-13T00:00:00-04:00" pubdate data-updated="true">Apr 13<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/04/13/on-searching-ones-own-activity-streams/#disqus_thread">Comments</a>
         
@@ -502,7 +793,7 @@ posts</a>.</p>
   
 
 
-<time datetime="2011-04-13T00:00:00-07:00" pubdate data-updated="true">Apr 13<span>th</span>, 2011</time>
+<time datetime="2011-04-13T00:00:00-04:00" pubdate data-updated="true">Apr 13<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/04/13/dsl-modem-annoyances/#disqus_thread">Comments</a>
         
@@ -621,7 +912,7 @@ being proactive.</p>
   
 
 
-<time datetime="2011-04-11T00:00:00-07:00" pubdate data-updated="true">Apr 11<span>th</span>, 2011</time>
+<time datetime="2011-04-11T00:00:00-04:00" pubdate data-updated="true">Apr 11<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/04/11/this-is-why-you-need-a-groklaw/#disqus_thread">Comments</a>
         
@@ -663,7 +954,7 @@ people to find what really happened.</p></blockquote>
   
 
 
-<time datetime="2011-04-11T00:00:00-07:00" pubdate data-updated="true">Apr 11<span>th</span>, 2011</time>
+<time datetime="2011-04-11T00:00:00-04:00" pubdate data-updated="true">Apr 11<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/04/11/open-for-business/#disqus_thread">Comments</a>
         
@@ -678,295 +969,6 @@ different than it is everywhere else in the software industry.</p></blockquote>
 
 <p>Ryan Paul, <a href="http://arstechnica.com/gadgets/news/2011/04/nokia-transitions-%0Asymbian-source-to-non-open-license.ars">Nokia transitions Symbian source to non-open
 license</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/11/levelsofdetail-eject/">LevelsOfDetail: Eject</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-11T00:00:00-07:00" pubdate data-updated="true">Apr 11<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/04/11/levelsofdetail-eject/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://puntium.tumblr.com/post/4517405510">LevelsOfDetail: eject</a></p>
-
-<p><a href="http://puntium.tumblr.com/post/4517405510">puntium</a>:</p>
-
-<blockquote><p>I shouldn’t have to ask this, but what is the fastest way to eject a
-removable disk in Windows 7? So far I’ve been finding an explorer window, then
-right clicking on the drive, and picking eject. Why is this three difficult
-clicks? What’s the one thing that you know is going to happen with…</p></blockquote>
-
-<p>I use the systray icon. I don&rsquo;t think it&rsquo;s that bad. Except when it breaks…
-yeah, that shouldn&rsquo;t be a concern but it is; even under Win7 I&rsquo;ve seen quite a
-few occurrences where right-clicking that Unplug/Eject systray icon does
-nothing. Then you have to double-click said icon, and navigate through the
-resulting dialog box, which is too many clicks. Also, even when the systray
-icon isn&rsquo;t broken, sometimes the autohide logic decides to hide it (and I
-understand the sad state of affairs that led MS to implement autohide for
-systray icons, but I don&rsquo;t think it should choose transient status icons like
-this one). I just set it to always show.</p>
-
-<p>I&rsquo;m not 100% with you on &ldquo;what&rsquo;s the one thing you know is going to happen
-with&rdquo; removable disks. Just because it&rsquo;s connected to a bus that technically
-supports hotplug doesn&rsquo;t mean you&rsquo;re going to remove it. On my Mac, I have a
-couple drives connected via Firewire that I never unplug, and I actively
-dislike that there&rsquo;s always an eject button staring me in the face and
-tempting me to press it, or waiting for errant clicks. I&rsquo;ve only ever
-accidentally ejected one of these drives once, but that&rsquo;s still once too many.
-And in no case should the guest user be able to eject the Time Machine drive.
-(<a href="http://www.facebook.com/metamatt/posts/10150099468713843">I complained about this
-before</a>;
-unfortunately that was on Facebook and links from the public web won&rsquo;t work
-well so apologies if you&rsquo;re reading this and can&rsquo;t see that.) And even for
-disks you do unplug sometimes, the OS gets no guarantees as to when.</p>
-
-<p>I&rsquo;m fine with how Windows exposes this (though it should actually always
-work). And I wish that Mac OS had a way to say &ldquo;treat this drive as
-nonremovable&rdquo;, or at least require admin abilities and a confirmation dialog
-before ejecting it.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/09/state-of-the-last-mile-internet-connection-year-2011/">State of the Last-mile Internet Connection, Year 2011</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-09T00:00:00-07:00" pubdate data-updated="true">Apr 9<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/04/09/state-of-the-last-mile-internet-connection-year-2011/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Given the reliability problems I&rsquo;m experiencing with <a href="http://blog.metamatt.com/blog/2011/04/07/state-%0Aof-the-last-mile-internet-connection-year-2009/">my otherwise nicely fast
-Comcast DOCSIS 3 connection</a>, I&rsquo;m looking for something
-new. It has to be reliable, and it has to be at least competitive on speeds
-for both download and upload, though I&rsquo;m willing to sacrifice some speed for
-reliability and better policies.</p>
-
-<p>The long and short of the Comcast connection: it&rsquo;s flaky (manifesting as modem
-crashes. I&rsquo;ve called Comcast multiple times and they&rsquo;ve twice told me to
-remove splitters, twice visited and measured the signal and said it looks good
-and once replaced a poorly wired splitter; after all this the problem is less
-frequent but still occurs multiple times per month.</p>
-
-<p>So what are my other options? <a href="http://blog.metamatt.com/blog/2011/04/07/state-of-the-last-mile-internet-%0Aconnection-year-2008/">Astound worked ok for
-me</a> but is too slow (esp. for uploads); AT&amp;T&rsquo;s best is
-U-verse which also has slower upload speeds and apparently isn&rsquo;t available
-here anyway; other DSL options have even slower upload speeds; then there&rsquo;s
-this newer indie ISP, Sonic.net, with a DSL option I haven&rsquo;t seen before.</p>
-
-<p><a href="http://sonic.net/solutions/home/internet/fusion/">Sonic.net Fusion Broadband</a>
-is intriguing: an ADSL2+ connection advertised as 20mbps/1mbps, but supporting
-an optional Annex M mode where you might get can get upload speeds as high as
-3mbps by sacrificing some download speed, and it allows you to bond 2 lines
-together for double the speed in each direction. Even accounting for some
-falloff due to distance (I&rsquo;m estimated to be about 3000 wire feet from the
-central office, which should be <a href="http://www.dslreports.com/forum/r21245835-ADSLADSL2-Speeds-VS-%0ADistance">just fine for
-ADSL2+</a>), it seems like dual-line Fusion should get me back in the ballpark
-of 30mbps/6mbps like I have now. And from a company whose entire business is
-data, not trying to tie me to legacy TV or voice business models, to boot.</p>
-
-<p>So, provisionally, I&rsquo;m trying out Sonic: The plan was to get the lines
-installed, see a nice 40mbps/2mbps connection, then see how good Annex M
-actually does for upload speed (nobody will make solid predictions, so I just
-have to try it for myself), and if (across 2 lines with Annex M enabled and at
-my loop distance) the resulting speed is even, say, 75% of what I was getting
-from Comcast (30/6mbps), consider it a keeper, due to friendlier policies and
-reliability.</p>
-
-<p>Easy in theory. In reality, signing up with Sonic was easy, but the going got
-rougher right after that. Sonic doesn&rsquo;t own the wires to my house; they have
-to <a href="http://en.wikipedia.org/wiki/Unbundled_Network_Element">rent them from
-AT&amp;T</a>; as I found
-<a href="http://blog.metamatt.com/blog/2011/03/31%0A/state-of-the-last-mile-internet-connection-year-2001/">last time I tried indie DSL in 2001</a>, this isn&rsquo;t a perfect
-recipe for success. The day they were supposed to connect the wires, AT&amp;T
-showed up 7 hours late, then told me they couldn&rsquo;t do the job because it was
-too late in the day and they&rsquo;d have to come back the next day. The next day,
-they connected the wires, I plugged in the DSL modem from Sonic, and found
-myself the proud owner of two 4mbps/1mbps DSL circuits. This wasn&rsquo;t going
-exactly as planned.</p>
-
-<p>I called Sonic; they looked at the statistics they monitor from their end of
-the DSL equipment and immediately agreed this was a problem that AT&amp;T would
-have to look into; they made an appointment and AT&amp;T sent someone back to my
-house a few days later; the AT&amp;T tech measured a bunch of stuff, said &ldquo;looks
-good to me&rdquo;, and left without anything having improved.</p>
-
-<p>Fast forward a few weeks. Sonic seems to be going to heroic lengths to get
-AT&amp;T to up the quality of the wiring, but the fact that heroic lengths are
-necessary, and haven&rsquo;t succeeded after 6 weeks, is disheartening. They&rsquo;ve
-managed to speed up one line and not the other, so one line syncs at
-18mbps/1mbps and the other at 4mbps/1mbps. (Now that one line is behaving as
-promised, it&rsquo;s also hard to believe they can&rsquo;t get the other one into shape &mdash;
-before that, I was starting to think the distance to the CO was wrong and
-there was another 6000 feet of wire in my loop.) In any case, I have yet to
-even get to the second step of my plan, after dozens of calls to Sonic and 5
-visits from AT&amp;T service technicians.</p>
-
-<p>At this point, it continues to be a race to see who can give me fast reliable
-access. I&rsquo;m continuing to try to get Sonic to get AT&amp;T to provide the promised
-line quality and speeds. The more time that passes, the harder it is to remain
-optimistic about this. Meanwhile Comcast seems to remain the owners of the
-highest-bandwidth wires into my house, so at the same time I keep trying to
-get them to fix their reliability problem, though they&rsquo;ve been charging me $30
-for troubleshooting visits which didn&rsquo;t find or fix the problem, which is not
-cool.</p>
-
-<p>My current plan is still to stick with Sonic &mdash; I really want to like them &mdash;
-but the difficulty of getting AT&amp;T to give me a good line (after 6 weeks and
-counting) is disheartening, and even when they do get that fixed, I&rsquo;ll have to
-cross my fingers and hope that Annex M works out ok. Also, the Comtrend 5361
-modem Sonic sent me has now crashed 3 times even though I&rsquo;m barely using it,
-and generally seems buggy (which is scary since, you&rsquo;ll recall, I only reached
-this point because of cable modem crashes). And worse, the reported 22mbps
-speed I&rsquo;ve reached so far is just the sync speed reported by the modem &mdash;
-actual usable transfer speeds to any site I&rsquo;ve tried top out around 7mbps
-down, which I suspect might also be a bug in the modem firmware when bonding
-lines of different speeds (maybe it won&rsquo;t shove any more data over the fast
-line than the slow line). If once the lines are the same speed, usable speed
-remains only 1/3 of nominal sync speed, I&rsquo;ll be sorely disappointed.</p>
-
-<p>So. Maybe all these problems will be resolved and I&rsquo;ll get a reliable modem
-that syncs at 30+/5+ and actually delivers that as usable speed. And maybe
-I&rsquo;ll have to consider other options.</p>
-
-<p>Backup plan 1: Get Comcast to fix the crashtastic-cable-modem problem. I&rsquo;m
-losing hope in that, too, after multiple service visits, all they want to do
-is yank on wires, and that hasn&rsquo;t fixed it; also their monitoring is poor (I
-called in while modem was down and they say they have no record of outages and
-I say what about right now?); also I filled out a survey about customer
-service and got a phone call from a manager saying &ldquo;ok I see you&rsquo;ve been
-having this problem for a while, we&rsquo;ll make sure to send you the good tech
-guy&rdquo; and the next tech guy they sent did seem better but still didn&rsquo;t fix it.</p>
-
-<p>Backup plan 2: Maybe Comcast&rsquo;s
-<a href="http://business.comcast.com/internet/plans.aspx">business</a>
-<a href="http://business.comcast.com/enterprise/Index/Services/teleworker">options</a>
-have better tech support, troubleshooting abilities, or reliability
-guarantees. A business-class line of my own costs a lot more than what I&rsquo;m
-paying now; the teleworker plan is actually cheaper but relies on support from
-my employer, which may or may not exist.</p>
-
-<p>Backup plan 3: Stick with Comcast, but route around the crashtastic modem:
-install a USB-controlled kill switch/<a href="http://en.wikipedia.org/wiki/STONITH">STONITH
-device</a>, connect that to my router, and
-teach the router to reboot the cable modem when necessary.</p>
-
-<p>Backup plan 4: A low-tech version of #3; run a pull cord toggle switch (like
-those used for lamps), controlling the cable modem&rsquo;s power line, from the
-modem&rsquo;s home in my server closet up through the furnace duct to my office.</p>
-
-<p>Backup plan 5: Hmm, I wonder how much <a href="http://fastmetrics.com/metricfiber_diagram.htm">fiber from
-fastmetrics</a> would actually
-cost. Way too much, I&rsquo;m sure. But still.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/09/if-not-here-then-where/">If Not Here, Then Where&#8230;</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-09T00:00:00-07:00" pubdate data-updated="true">Apr 9<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/04/09/if-not-here-then-where/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://blog.metamatt.com/post/4476116669">if not here, then where&hellip;</a></p>
-
-<blockquote><p><a href="http://blog.metamatt.com/post/4476116669">metamatt</a>:</p>
-
-<blockquote><p>Given the reliability problems I’m experiencing with <a href="http://blog.metamatt.com/blog/2011/04/07%0A/state-of-the-last-mile-internet-connection-year-2009/">my otherwise nicely
-fast Comcast DOCSIS 3 connection</a>, I’m looking for
-something new. It has to be reliable, and it has to be at least competitive on
-speeds for both download and upload, though I’m willing to sacrifice some
-speed for…</p></blockquote>
-
-<p><a href="http://puntium.tumblr.com/post/4476784120">puntium</a>:</p>
-
-<blockquote><p>Backup plan 6: move to a burb that has FiOS</p></blockquote></blockquote>
-
-<p>Right. Remind me again why Silicon Valley and the Bay Area as a whole doesn&rsquo;t
-have FiOS or anything comparable? (There are a few trial areas in Palo Alto
-and Sebastopol with FTTH in small areas, but no wide scale deployments.)</p>
-
-<p>I&rsquo;m pretty sure there&rsquo;s a market for it here.</p>
 </div>
   
   
@@ -991,23 +993,23 @@ and Sebastopol with FTTH in small areas, but no wide scale deployments.)</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/">From Tumblr to Octopress, part 3: footnotes</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/">From Tumblr to Octopress, part 2: how</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-1-why/">From Tumblr to Octopress, part 1: why</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
       </li>
     
       <li class="post">
         <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/21/speedy-resume/">Speedy resume</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">Two things I didn&#8217;t know about Mac OS internet sharing</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/">Troubleshooting Mac sleep problems</a>
       </li>
     
   </ul>

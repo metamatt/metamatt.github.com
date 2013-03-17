@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>From Tumblr to Octopress, part 3: footnotes - Step 2 is the hard part.</title>
+  <meta name="author" content="Matt Ginzton">
+
+  
+  <meta name="description" content="Once I got Jekyll and Octopress to import my blog from Tumblr and generate it in its new format, almost everything was formatted correctly, with the &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.metamatt.com/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Step 2 is the hard part." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19563060-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Step 2 is the hard part.</a></h1>
+  
+    <h2>Matt Ginzton writes here.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.metamatt.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">From Tumblr to Octopress, Part 3: Footnotes</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-17T01:42:00-04:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Once I got Jekyll and Octopress to import my blog from Tumblr and generate it in its new format, almost everything was formatted correctly, with the marked exception of footnotes. Like a certain furious Canadian<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>, I&rsquo;ve become a fan of footnotes for adding detail without littering my posts with parenthetical expressions. In the migrated posts, the footnotes were there at the bottom, but the links to them were all wrong — full-sized unlinked numbers, instead of superscripted hyperlinks.</p>
+
+<p>It took me a while to figure out what was wrong because there were actually 3 distinct problems. And as background, while it wasn&rsquo;t a direct problem here, you should understand that footnotes are not a feature of the <a href="http://daringfireball.net/projects/markdown/syntax">original Markdown syntax</a>, but were added later by other dialects, mostly converging around <a href="http://michelf.ca/projects/php-markdown/extra/#footnotes">PHP Markdown Extra</a>, which is what Tumblr uses.</p>
+
+<p>First: The post content generated in Markdown format from tumblr.rb, in its trip through nokogiri and html2text and maybe elsewhere, didn&rsquo;t actually preserve the footnote declarations I&rsquo;d originally given Tumblr. Even though I had written these posts in Markdown format, and the Markdown form of my posts is presumably preserved somewhere at Tumblr<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>, tumblr.rb instead downloads HTML and then reverse-converts it back to Markdown format. This conversion doesn&rsquo;t preserve footnotes as Markdown footnotes; instead it leaves them as static HTML, and it renders the footnote bodies reasonably but the footnote links unreasonably.</p>
+
+<p>So I had to go edit all the posts in which I used footnotes, and manually redo the footnote links using PHP Markdown Extra syntax.</p>
+
+<p>Second: Having done that and told Jekyll to regenerate the blog, I found myself looking at a bunch of raw unconverted PHP Markdown Extra footnote tags. That&rsquo;s because Jekyll&rsquo;s markdown processing is done by RDiscount, and the version of RDiscount specified by Octopress&rsquo;s Gemfile (1.6.8) does not support footnotes at all; footnotes using PHP Markdown Extra syntax were added as a feature of RDiscount 2.0.7.</p>
+
+<p>So I had to edit the Gemfile to specify RDiscount 2.0.7.</p>
+
+<p>Third: Having done that and told Jekyll to regenerate the blog, some posts looked fine, but others had chunks of footnote definition content floating near the end of the post body but before the footnotes, and completely out of order. Some trial and error led me to deduce that RDiscount 2.0.7 does not actually honor the documented PHP Markdown Extra syntax, which allows you to hard-wrap the footnotes or even place the definition offset from the footnote number<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>; RDiscount is happy only if the footnote number and entire body are on one logical line with no hard line breaks. Since I&rsquo;m doing all this posting from a colocated Linux VM on which I don&rsquo;t run X, and thus use text editors in old-school terminal windows, I tend to hard-break my posts (and in fact, the posts I imported from Tumblr tended to be hard-wrapped at 76 columns by something somewhere along the write/post/import pipeline). RDiscount doesn&rsquo;t play well with these hard breaks.</p>
+
+<p>So I had to edit all the footnoted posts again to comply with RDiscount&rsquo;s actual behavior.</p>
+
+<p>Summary: you can get nice footnotes from Octopress/Jekyll if you</p>
+
+<ul>
+<li>Update to RDiscount 2.0.7</li>
+<li>Use the footnote syntax that RDiscount actually supports, which is like PHP Markdown Extra except each footnote definition must stay on one line without hard line breaks</li>
+<li>If importing your blog from a previous home using a script like tumblr.rb, verify that the conversion actually generates footnote markup</li>
+</ul>
+
+
+<p>There&rsquo;s still one more bug with footnotes on the index page, which is that Jekyll generates each page independently through RDiscount, which generates in-page links between the footnotes and their bodies, using the footnote number: for the first footnote, the forward link is <code>#fn:1</code> and the backward link is <code>#fnref:1</code>. This works fine on individual pages, but on the index page the footnote numbers get reused and collide, so the in-page links don&rsquo;t work there. Syeong Gan has a post with <a href="http://syeong.jcsg.com/2012/07/07/octopress-footnote-problem/">a deeper description of this problem, and a possible workaround</a>.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p><a href="http://canadian-fury.com/2012/04/26/footnotify-and-octopress/">Footnotes, Footnotify and Octopress</a> has a pretty good argument in favor of footnotes, as well as a point-in-time description of how to get them to work in Octopress which I think is now outdated: he suggests switching from RDiscount to Kramdown; as mentioned above, RDiscount 2.0.7 added footnote support which mostly works. I tried Kramdown anyway and found RDiscount to do a slightly less bad job of honoring PHP Markdown Extra syntax than Kramdown does.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>MarsEdit can edit posts already posted at Tumblr, even if not originally authored with MarsEdit, in their original format: if the post was written in Markdown, MarsEdit&rsquo;s edit view sees Markdown. This might imply that there&rsquo;s a better way for Jekyll&rsquo;s tumblr.rb to use the Tumblr API to get the Markdown source, instead of the reverse-conversion it currently does.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>See the PHP Markdown Extra <a href="http://michelf.ca/projects/php-markdown/extra/#footnotes">documentation on footnotes</a>, notably the part starting with &ldquo;Footnotes can contain block-level elements&rdquo;.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Matt Ginzton</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-17T01:42:00-04:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.metamatt.com/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/" data-via="metamatt" data-counturl="http://blog.metamatt.com/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/" title="Previous Post: From Tumblr to Octopress, part 2: how">&laquo; From Tumblr to Octopress, part 2: how</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/">From Tumblr to Octopress, part 3: footnotes</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/">From Tumblr to Octopress, part 2: how</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-1-why/">From Tumblr to Octopress, part 1: why</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/metamatt">@metamatt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'metamatt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("metamatt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/metamatt" class="twitter-follow-button" data-show-count="false">Follow @metamatt</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117348958487049022391?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Matt Ginzton -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'metamatt';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.metamatt.com/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/';
+        var disqus_url = 'http://blog.metamatt.com/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

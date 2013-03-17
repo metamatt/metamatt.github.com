@@ -4,7 +4,7 @@
   <title><![CDATA[Step 2 is the hard part.]]></title>
   <link href="http://blog.metamatt.com/atom.xml" rel="self"/>
   <link href="http://blog.metamatt.com/"/>
-  <updated>2013-03-16T21:58:56-07:00</updated>
+  <updated>2013-03-17T01:44:04-04:00</updated>
   <id>http://blog.metamatt.com/</id>
   <author>
     <name><![CDATA[Matt Ginzton]]></name>
@@ -14,9 +14,134 @@
 
   
   <entry>
+    <title type="html"><![CDATA[From Tumblr to Octopress, part 3: footnotes]]></title>
+    <link href="http://blog.metamatt.com/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/"/>
+    <updated>2013-03-17T01:42:00-04:00</updated>
+    <id>http://blog.metamatt.com/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes</id>
+    <content type="html"><![CDATA[<p>Once I got Jekyll and Octopress to import my blog from Tumblr and generate it in its new format, almost everything was formatted correctly, with the marked exception of footnotes. Like a certain furious Canadian<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>, I&rsquo;ve become a fan of footnotes for adding detail without littering my posts with parenthetical expressions. In the migrated posts, the footnotes were there at the bottom, but the links to them were all wrong — full-sized unlinked numbers, instead of superscripted hyperlinks.</p>
+
+<p>It took me a while to figure out what was wrong because there were actually 3 distinct problems. And as background, while it wasn&rsquo;t a direct problem here, you should understand that footnotes are not a feature of the <a href="http://daringfireball.net/projects/markdown/syntax">original Markdown syntax</a>, but were added later by other dialects, mostly converging around <a href="http://michelf.ca/projects/php-markdown/extra/#footnotes">PHP Markdown Extra</a>, which is what Tumblr uses.</p>
+
+<p>First: The post content generated in Markdown format from tumblr.rb, in its trip through nokogiri and html2text and maybe elsewhere, didn&rsquo;t actually preserve the footnote declarations I&rsquo;d originally given Tumblr. Even though I had written these posts in Markdown format, and the Markdown form of my posts is presumably preserved somewhere at Tumblr<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>, tumblr.rb instead downloads HTML and then reverse-converts it back to Markdown format. This conversion doesn&rsquo;t preserve footnotes as Markdown footnotes; instead it leaves them as static HTML, and it renders the footnote bodies reasonably but the footnote links unreasonably.</p>
+
+<p>So I had to go edit all the posts in which I used footnotes, and manually redo the footnote links using PHP Markdown Extra syntax.</p>
+
+<p>Second: Having done that and told Jekyll to regenerate the blog, I found myself looking at a bunch of raw unconverted PHP Markdown Extra footnote tags. That&rsquo;s because Jekyll&rsquo;s markdown processing is done by RDiscount, and the version of RDiscount specified by Octopress&rsquo;s Gemfile (1.6.8) does not support footnotes at all; footnotes using PHP Markdown Extra syntax were added as a feature of RDiscount 2.0.7.</p>
+
+<p>So I had to edit the Gemfile to specify RDiscount 2.0.7.</p>
+
+<p>Third: Having done that and told Jekyll to regenerate the blog, some posts looked fine, but others had chunks of footnote definition content floating near the end of the post body but before the footnotes, and completely out of order. Some trial and error led me to deduce that RDiscount 2.0.7 does not actually honor the documented PHP Markdown Extra syntax, which allows you to hard-wrap the footnotes or even place the definition offset from the footnote number<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>; RDiscount is happy only if the footnote number and entire body are on one logical line with no hard line breaks. Since I&rsquo;m doing all this posting from a colocated Linux VM on which I don&rsquo;t run X, and thus use text editors in old-school terminal windows, I tend to hard-break my posts (and in fact, the posts I imported from Tumblr tended to be hard-wrapped at 76 columns by something somewhere along the write/post/import pipeline). RDiscount doesn&rsquo;t play well with these hard breaks.</p>
+
+<p>So I had to edit all the footnoted posts again to comply with RDiscount&rsquo;s actual behavior.</p>
+
+<p>Summary: you can get nice footnotes from Octopress/Jekyll if you</p>
+
+<ul>
+<li>Update to RDiscount 2.0.7</li>
+<li>Use the footnote syntax that RDiscount actually supports, which is like PHP Markdown Extra except each footnote definition must stay on one line without hard line breaks</li>
+<li>If importing your blog from a previous home using a script like tumblr.rb, verify that the conversion actually generates footnote markup</li>
+</ul>
+
+
+<p>There&rsquo;s still one more bug with footnotes on the index page, which is that Jekyll generates each page independently through RDiscount, which generates in-page links between the footnotes and their bodies, using the footnote number: for the first footnote, the forward link is <code>#fn:1</code> and the backward link is <code>#fnref:1</code>. This works fine on individual pages, but on the index page the footnote numbers get reused and collide, so the in-page links don&rsquo;t work there. Syeong Gan has a post with <a href="http://syeong.jcsg.com/2012/07/07/octopress-footnote-problem/">a deeper description of this problem, and a possible workaround</a>.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p><a href="http://canadian-fury.com/2012/04/26/footnotify-and-octopress/">Footnotes, Footnotify and Octopress</a> has a pretty good argument in favor of footnotes, as well as a point-in-time description of how to get them to work in Octopress which I think is now outdated: he suggests switching from RDiscount to Kramdown; as mentioned above, RDiscount 2.0.7 added footnote support which mostly works. I tried Kramdown anyway and found RDiscount to do a slightly less bad job of honoring PHP Markdown Extra syntax than Kramdown does.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>MarsEdit can edit posts already posted at Tumblr, even if not originally authored with MarsEdit, in their original format: if the post was written in Markdown, MarsEdit&rsquo;s edit view sees Markdown. This might imply that there&rsquo;s a better way for Jekyll&rsquo;s tumblr.rb to use the Tumblr API to get the Markdown source, instead of the reverse-conversion it currently does.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>See the PHP Markdown Extra <a href="http://michelf.ca/projects/php-markdown/extra/#footnotes">documentation on footnotes</a>, notably the part starting with &ldquo;Footnotes can contain block-level elements&rdquo;.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[From Tumblr to Octopress, part 2: how]]></title>
+    <link href="http://blog.metamatt.com/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/"/>
+    <updated>2013-03-17T01:40:00-04:00</updated>
+    <id>http://blog.metamatt.com/blog/2013/03/17/from-tumblr-to-octopress-part-2-how</id>
+    <content type="html"><![CDATA[<p>Having decided to move this blog from Tumblr to Octopress, there remained the matter of migrating it<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>.</p>
+
+<p>Octopress is basically a convenience framework around Jekyll, adding a nice-by-default theme and some convenience wrappers for starting new posts, invoking Jekyll to generate the site, and deploying the site. You could probably use Octopress quite happily without touching Jekyll directly, unless you want to import an existing blog; then you end up at <a href="https://github.com/mojombo/jekyll/wiki/blog-migrations">Jekyll&rsquo;s Blog Migrations tool</a>, which has options for a number of popular blog engines, including Tumblr.</p>
+
+<p>The instructions for <a href="http://octopress.org/docs/setup/">setting up Octopress</a> are pretty simple and <a href="http://octopress.org/docs/setup/">well documented</a>:
+* git and ruby (and probably rvm or rbenv) are prerequisites
+* obtain octopress itself via &ldquo;git clone&rdquo;
+* install dependencies via &ldquo;gem install bundler; bundle install&rdquo;
+* install the default Octopress theme (which also generates the skeleton site layout) via &ldquo;rake install&rdquo;</p>
+
+<p>At this point, you&rsquo;ve got a working Octopress installation and you could use its rake task-based interface to write and publish posts. However, if you want to migrate an existing blog, you have more setup steps which are also <a href="https://github.com/mojombo/jekyll/wiki/blog-migrations">well documented</a>:
+* assuming you want to keep your raw posts in markdown format instead of raw HTML, Jekyll&rsquo;s Tumblr migrator needs nokogiri: <code>gem install nokogiri</code>
+* invoke the Tumblr migrator (<code>ruby -rubygems -e 'require "jekyll/migrators/tumblr"; Jekyll::Tumblr.process("http://www.your_blog_url.com", "md")'</code>). Note that this doesn&rsquo;t require any account information or credentials, because the Tumblr API will provide enough information to do this anonymously. Heck, if you&rsquo;re evil, you could convert someone else&rsquo;s blog (don&rsquo;t do that). On the topic of Tumblr reliability, I ran this step a few dozen times while I was figuring out how it works and fixing some bugs in tumblr.rb, and ~90% of the time, it downloaded my ~165 posts almost instantly, but palpably often, it would get stuck halfway as the Tumblr API stopped sending it network traffic. Oh well. Ctrl-C and restart if this happens to you.</p>
+
+<p>What neither the Jekyll nor Octopress documentation tells you is what happens next. Assuming you run all the above commands from the octopress directory: Octopress setup (the <code>rake install</code> step) created a directory called &ldquo;source&rdquo;, under which the (initially empty) &ldquo;_posts&rdquo; directory is where Jekyll will look for posts. Meanwhile, Jekyll&rsquo;s tumblr.rb will create and populate a &ldquo;<em>\posts/tumblr&rdquo; directory with your posts, and a &ldquo;posts&rdquo; directory with redirects from the old Tumblr-style post URLs to new Octopress-style URLs<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>,<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>. Neither the &ldquo;</em>\posts&rdquo; nor &ldquo;posts&rdquo; directory spit out by tumblr.rb are under &ldquo;source&rdquo; where Jekyll will look for them. What this means is that without additional effort on your part, Jekyll as invoked by Octopress won&rsquo;t see the files you just imported.</p>
+
+<p>Again: your blog posts go in &ldquo;octopress/source/<em>posts&rdquo;. The Tumblr migrator will create &ldquo;octopress/posts&rdquo; and &ldquo;octopress/</em>posts&rdquo;. Just move these two directories under &ldquo;octopress/source&rdquo; once you&rsquo;ve verified they look OK. (NB: the migrator actually dumped all its files under &ldquo;octopress/<em>posts/tumblr&rdquo;; it&rsquo;s fine to leave them there, so they end up in &ldquo;octopress/source/</em>posts/tumblr&rdquo;; Octopress doesn&rsquo;t seem to care about the organization of your files inside the source/_posts directory.)</p>
+
+<p>Now, you can tell Octopress to generate the site: &ldquo;rake generate&rdquo;.</p>
+
+<p>If you&rsquo;re reading this at the right point of relative stability, lucky you; you win. I ran into several more issues, due to the fact that Jekyll and Octopress are prerelease open source software intended for an audience of hackers; some assembly definitely required:</p>
+
+<ul>
+<li>At the point I was performing this migration (January 2013), Jekyll was at version 0.12 and the tumblr.rb migrator script was broken in a <a href="https://github.com/mojombo/jekyll/commit/863643c7e8080c73a7968caabfc9c7e9b18c6b95">couple</a> <a href="https://github.com/mojombo/jekyll/commit/fbc9d0c66397234ab85e03a55955602e0ce40356">respects</a> which I submitted patches for.</li>
+<li>After my patches were merged upstream, I tried running with Jekyll&rsquo;s head version in mid-February, to find that tumblr.rb had been deleted from the Jekyll repository entirely, and moved to a separate <a href="https://github.com/jekyll/jekyll-import">jekyll-import</a> project, which at the time had no documentation and appeared to have little chance of running.</li>
+<li>Meanwhile, using any version of Jekyll newer than 0.12 broke Octopress in a trivial way; the :generate rule in Octopress&rsquo;s Rakefile finishes by invoking Jekyll as <code>system 'jekyll'</code>, with no arguments, and newer versions of Jekyll expect a <code>build</code> argument. Octopress will fix this when Jekyll actually releases a new version (which may have already happened between me finding this and posting this); it makes no sense to fix it sooner.</li>
+</ul>
+
+
+<p>This last list of foibles is probably all related to Jekyll being in the throes of the 1.0 release process and will probably be a historical footnote afterwards.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Many others have done this before; one post I found helpful was <a href="http://blog.assimov.net/blog/2012/03/24/tumblr-to-octopress-powered-by-jekyll-and-markdown/">Goodbye Tumblr. Hello, Octopress Powered by Jekyll and Markdown!</a>.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>The redirects spit out by tumblr.rb are under &ldquo;posts&rdquo; because Tumblr URLs are of the form example.com/posts/12341234/post-title-slug; Octopress URLs are by default of the form example.com/blog/year/month/post-title-slug; tumblr.rb creates redirects from the former to the latter, without requiring any special interaction with the webserver, by just creating a file for each post, named for the Tumblr relative URL (in this case, posts/12341234/post-title-slug/index.html) containing a browser-side meta refresh redirect to the new URL.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>I found the redirects created by tumblr.rb to be not quite enough. Tumblr indexes posts by number, then creates a nice search-engine-friendly SLUG such as post-title-slug, yielding a post URL like example.com/posts/12341234/post-title-slug. But actually, when receiving a request, Tumblr ignores everything after the number, and you could also load that post as example.com/posts/12341234/foobar, or just example.com/posts/12341234, and in fact the latter is the canonical URL used by Disqus. If you are running a webserver with rewrite rules, you might do well to redirect the entire URL namespace under posts/12341234 to the new URL, as Tumblr would have; I settled for copying posts/12341234/post-title-slug/index.html to posts/12341234/index.html for each post, so both number alone and number+SLUG will redirect correctly.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[From Tumblr to Octopress, part 1: why]]></title>
+    <link href="http://blog.metamatt.com/blog/2013/03/17/from-tumblr-to-octopress-part-1-why/"/>
+    <updated>2013-03-17T01:37:00-04:00</updated>
+    <id>http://blog.metamatt.com/blog/2013/03/17/from-tumblr-to-octopress-part-1-why</id>
+    <content type="html"><![CDATA[<p>When I first started this blog, I set it up at Tumblr so I wouldn&rsquo;t have to think about hosting it and could concentrate on writing.</p>
+
+<p>I&rsquo;ve since realized that Tumblr is a bad match. Among things that I prioritize higher than Tumblr evidently does, reliability ranks high on the list<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>, as do control over site structure and appearance. Tumblr themes allow some control over appearance — and there are some very nice ones — but not the structure<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
+
+<p>Among things that they care about that I do not are their web posting interface, iOS native clients, a plethora of post types designed to be slightly quicker if you want to post audio/picture/video/quote content<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>, and a follower system<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>.</p>
+
+<p>So. On to Octopress. I get a lot more control over site structure, a more usable form of control over visual layout, and I can host it somewhere reliable (github for now, myself if I want to, and I can move hosting providers without having to do any deeper conversion).</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Reliability problems with Tumblr have been intermittent; sometimes it works fine, sometimes I get &ldquo;the server returned no content&rdquo; errors 10 times in a row before I can load a single page.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>Tumblr&rsquo;s main navigational construct is a list of all posts sorted in descending order by posting date. Individual posts get permalinks, and there&rsquo;s a very slow-loading calendar view which gives some semblance of an overall table of contents, but there&rsquo;s no really usable way to do monthly archives or next/previous links to stitch time back together.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>All Tumblr posts have a URL, a title, and a body; what goes into the body can include really anything you can embed in a webpage, including audio and video. Presumably in an attempt to move beyond text-heavy blogging, in addition to letting you embed pictures/audio/video in a normal &ldquo;text&rdquo; post, Tumblr added these separate post types that special-case the body (the &ldquo;link&rdquo; post type makes the title into a navigable link; the &ldquo;quote&rdquo; type puts quotes around the body, etc). All of these are less general than the &ldquo;text&rdquo; type; they are also poorly represented in the API and, as I&rsquo;ve found out, commensurately poorly handled by export tools. I dabbled in the special post types a few times, and am mostly sorry I did.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>Readers are unlikely to be Tumblr users; that&rsquo;s what RSS is for.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[OS X has a builtin Wi-Fi network scanner]]></title>
     <link href="http://blog.metamatt.com/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/"/>
-    <updated>2013-02-25T00:00:00-08:00</updated>
+    <updated>2013-02-25T00:00:00-05:00</updated>
     <id>http://blog.metamatt.com/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner</id>
     <content type="html"><![CDATA[<p>Here&rsquo;s a bonus on top of a bonus: OS X 10.8 (Mountain Lion) adds a really
 useful &ldquo;Wi-Fi&rdquo; scan feature, buried inside a utility I didn&rsquo;t know existed.</p>
@@ -52,7 +177,7 @@ bonus to having upgraded and deserves wider mention.</p>
   <entry>
     <title type="html"><![CDATA[A waterproof tablet! A step in in the right direction]]></title>
     <link href="http://blog.metamatt.com/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/"/>
-    <updated>2013-02-25T00:00:00-08:00</updated>
+    <updated>2013-02-25T00:00:00-05:00</updated>
     <id>http://blog.metamatt.com/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction</id>
     <content type="html"><![CDATA[<p>In <a href="http://arstechnica.com/gadgets/2013/02/sony-unveils-thinnest-10-1-tablet-ever-the-xperia-tablet-z/">this announcement of a new Sony tablet for Android</a>, the following bit stood out to me:</p>
 
@@ -72,7 +197,7 @@ to phones.</p>
   <entry>
     <title type="html"><![CDATA[Speedy resume]]></title>
     <link href="http://blog.metamatt.com/blog/2013/02/21/speedy-resume/"/>
-    <updated>2013-02-21T00:00:00-08:00</updated>
+    <updated>2013-02-21T00:00:00-05:00</updated>
     <id>http://blog.metamatt.com/blog/2013/02/21/speedy-resume</id>
     <content type="html"><![CDATA[<p>My initial reason for switching from Windows laptops to Mac laptops 7 years
 ago — which has remained a primary benefit across those 7 years — was better
@@ -141,7 +266,7 @@ Macbook Air:</p>
   <entry>
     <title type="html"><![CDATA[Two things I didn't know about Mac OS internet sharing]]></title>
     <link href="http://blog.metamatt.com/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/"/>
-    <updated>2013-02-13T00:00:00-08:00</updated>
+    <updated>2013-02-13T00:00:00-05:00</updated>
     <id>http://blog.metamatt.com/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing</id>
     <content type="html"><![CDATA[<p>On a recent trip to Mexico, we stayed in a hotel that charged a significant
 extra fee for fairly slow Internet access. After paying for an access code, we
@@ -214,7 +339,7 @@ variant is further useful, but don&rsquo;t leave it on when you&rsquo;re not usi
   <entry>
     <title type="html"><![CDATA[Troubleshooting Mac sleep problems]]></title>
     <link href="http://blog.metamatt.com/blog/2013/02/13/troubleshooting-mac-sleep-problems/"/>
-    <updated>2013-02-13T00:00:00-08:00</updated>
+    <updated>2013-02-13T00:00:00-05:00</updated>
     <id>http://blog.metamatt.com/blog/2013/02/13/troubleshooting-mac-sleep-problems</id>
     <content type="html"><![CDATA[<p>Here&rsquo;s a useful nugget if you&rsquo;re inclined to poke at computers to see how they
 work: <code>pmset -g log</code>.</p>
@@ -243,7 +368,7 @@ disabling.</p>
   <entry>
     <title type="html"><![CDATA[Google default account for multiple sign in]]></title>
     <link href="http://blog.metamatt.com/blog/2013/01/31/google-default-account-for-multiple-sign-in/"/>
-    <updated>2013-01-31T00:00:00-08:00</updated>
+    <updated>2013-01-31T00:00:00-05:00</updated>
     <id>http://blog.metamatt.com/blog/2013/01/31/google-default-account-for-multiple-sign-in</id>
     <content type="html"><![CDATA[<p>Google Accounts allow you to <a href="http://support.google.com/accounts/bin/answer.py?hl=en&amp;answer=1721977">stay signed into multiple accounts at
 once</a>,
@@ -317,7 +442,7 @@ helping me figure this out.</p>
   <entry>
     <title type="html"><![CDATA[Restore from backup]]></title>
     <link href="http://blog.metamatt.com/blog/2013/01/23/restore-from-backup/"/>
-    <updated>2013-01-23T00:00:00-08:00</updated>
+    <updated>2013-01-23T00:00:00-05:00</updated>
     <id>http://blog.metamatt.com/blog/2013/01/23/restore-from-backup</id>
     <content type="html"><![CDATA[<p>The SSD in Vanessa&rsquo;s iMac died and needed to be replaced. In theory, this is
 pretty simple since we have backups — replace the faulty hardware, restore the
@@ -358,7 +483,7 @@ Machine restore the files.</p>
   <entry>
     <title type="html"><![CDATA[Google account access from an iPhone]]></title>
     <link href="http://blog.metamatt.com/blog/2013/01/23/google-account-access-from-an-iphone/"/>
-    <updated>2013-01-23T00:00:00-08:00</updated>
+    <updated>2013-01-23T00:00:00-05:00</updated>
     <id>http://blog.metamatt.com/blog/2013/01/23/google-account-access-from-an-iphone</id>
     <content type="html"><![CDATA[<p>Google recently announced that after January 2013, they&rsquo;ll be <a href="http://support.google.com/a/bin/answer.py?hl=en&amp;answer=2716936">deprecating EAS
 access to
@@ -455,7 +580,7 @@ protocols, and if push were made to work — but it&rsquo;s not the case now.</p
   <entry>
     <title type="html"><![CDATA[Previewing Markdown files from the terminal]]></title>
     <link href="http://blog.metamatt.com/blog/2013/01/09/previewing-markdown-files-from-the-terminal/"/>
-    <updated>2013-01-09T00:00:00-08:00</updated>
+    <updated>2013-01-09T00:00:00-05:00</updated>
     <id>http://blog.metamatt.com/blog/2013/01/09/previewing-markdown-files-from-the-terminal</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve been wanting a way to preview
 <a href="http://daringfireball.net/projects/markdown/">Markdown</a>-formatted text files
@@ -506,7 +631,7 @@ Mac OS X), so that&rsquo;s what I&rsquo;ll use.</p>
   <entry>
     <title type="html"><![CDATA[Mac boot drive selection from Bluetooth keyboard]]></title>
     <link href="http://blog.metamatt.com/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard/"/>
-    <updated>2012-12-27T00:00:00-08:00</updated>
+    <updated>2012-12-27T00:00:00-05:00</updated>
     <id>http://blog.metamatt.com/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard</id>
     <content type="html"><![CDATA[<p>Twice in the last few months<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> I&rsquo;ve had to do troubleshooting steps on
 Vanessa&rsquo;s iMac that involved booting from alternate volumes<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>. This is normally
@@ -563,7 +688,7 @@ Bluetooth keyboards by default with all their desktop machines for years now.</p
   <entry>
     <title type="html"><![CDATA[Visiting Ireland with baby Dominic]]></title>
     <link href="http://blog.metamatt.com/blog/2012/11/28/visiting-ireland-with-baby-dominic/"/>
-    <updated>2012-11-28T00:00:00-08:00</updated>
+    <updated>2012-11-28T00:00:00-05:00</updated>
     <id>http://blog.metamatt.com/blog/2012/11/28/visiting-ireland-with-baby-dominic</id>
     <content type="html"><![CDATA[<p>Vanessa and I wanted to take a real destination trip with Dominic, kinda sorta
 just to see if we could do it. Not that we were hoping or envisioning that it
@@ -641,7 +766,7 @@ pictures</a>.</p>
   <entry>
     <title type="html"><![CDATA[The effect of time-shifting electrical usage on NEM billing]]></title>
     <link href="http://blog.metamatt.com/blog/2012/11/13/the-effect-of-time-shifting-electrical-usage-on-nem-billing/"/>
-    <updated>2012-11-13T00:00:00-08:00</updated>
+    <updated>2012-11-13T00:00:00-05:00</updated>
     <id>http://blog.metamatt.com/blog/2012/11/13/the-effect-of-time-shifting-electrical-usage-on-nem-billing</id>
     <content type="html"><![CDATA[<p>One more post on the topic of PG&amp;E bills for solar (NEM) customers.</p>
 
@@ -735,7 +860,7 @@ the array is underperforming.</p>
   <entry>
     <title type="html"><![CDATA[E-1 vs E-6 for residential solar customers]]></title>
     <link href="http://blog.metamatt.com/blog/2012/11/11/e-1-vs-e-6-for-residential-solar-customers/"/>
-    <updated>2012-11-11T00:00:00-08:00</updated>
+    <updated>2012-11-11T00:00:00-05:00</updated>
     <id>http://blog.metamatt.com/blog/2012/11/11/e-1-vs-e-6-for-residential-solar-customers</id>
     <content type="html"><![CDATA[<p>As a follow-on to my <a href="http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/">article on understanding the PG&amp;E NEM
 bill</a>, I
@@ -793,7 +918,7 @@ confirmation of that on PG&amp;E&rsquo;s website today, though.</p>
   <entry>
     <title type="html"><![CDATA[One year of solar power]]></title>
     <link href="http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/"/>
-    <updated>2012-11-09T00:00:00-08:00</updated>
+    <updated>2012-11-09T00:00:00-05:00</updated>
     <id>http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power</id>
     <content type="html"><![CDATA[<p>When I got solar panels installed on the roof of our house last fall, friends
 immediately started asking how well they were working out, and my answer had
@@ -1030,7 +1155,7 @@ calculation.</p>
   <entry>
     <title type="html"><![CDATA[One year of cellular data]]></title>
     <link href="http://blog.metamatt.com/blog/2012/11/07/one-year-of-cellular-data/"/>
-    <updated>2012-11-07T00:00:00-08:00</updated>
+    <updated>2012-11-07T00:00:00-05:00</updated>
     <id>http://blog.metamatt.com/blog/2012/11/07/one-year-of-cellular-data</id>
     <content type="html"><![CDATA[<p>Here are the stats on my cellular data usage over one year on Sprint&rsquo;s
 network<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. (I got the phone on Halloween of 2011, and took this screenshot on
@@ -1079,7 +1204,7 @@ definition of fair.</p>
   <entry>
     <title type="html"><![CDATA[OAuth and localization fixes for Palm-Evernote importer]]></title>
     <link href="http://blog.metamatt.com/blog/2012/11/06/oauth-and-localization-fixes-for-palm-evernote-importer/"/>
-    <updated>2012-11-06T00:00:00-08:00</updated>
+    <updated>2012-11-06T00:00:00-05:00</updated>
     <id>http://blog.metamatt.com/blog/2012/11/06/oauth-and-localization-fixes-for-palm-evernote-importer</id>
     <content type="html"><![CDATA[<p>I’ve updated my <a href="http://www.maddogsw.com/evernote-utilities/evernote-palm-importer/">utility for importing notes from Palm Desktop into
 Evernote</a>
@@ -1121,7 +1246,7 @@ importer/)</a>.</p>
   <entry>
     <title type="html"><![CDATA[Platform preferences and rolling with punches]]></title>
     <link href="http://blog.metamatt.com/blog/2012/10/29/platform-preferences-and-rolling-with-punches/"/>
-    <updated>2012-10-29T00:00:00-07:00</updated>
+    <updated>2012-10-29T00:00:00-04:00</updated>
     <id>http://blog.metamatt.com/blog/2012/10/29/platform-preferences-and-rolling-with-punches</id>
     <content type="html"><![CDATA[<p>When I worked on my high school paper, I spent many hours working on the
 newsroom Macs, but I had a Windows machine at home, and I was pretty
@@ -1161,237 +1286,6 @@ haven&rsquo;t seen flake out that way.</p>
 
 <p>But maybe if I could just learn to <a href="https://www.google.com/search?q=holding+it+wrong">hold it
 right</a>…</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[So, I sat down to watch a movie on my iPad and this happened. Or, why "just works" is a lie.]]></title>
-    <link href="http://blog.metamatt.com/blog/2012/10/24/so-i-sat-down-to-watch-a-movie-on-my-ipad-and-this-happened-or-why-just-works-is-a-lie/"/>
-    <updated>2012-10-24T00:00:00-07:00</updated>
-    <id>http://blog.metamatt.com/blog/2012/10/24/so-i-sat-down-to-watch-a-movie-on-my-ipad-and-this-happened-or-why-just-works-is-a-lie</id>
-    <content type="html"><![CDATA[<p>Vanessa and I went on a weekend trip to Orange County with Dominic and wanted
-to relax by watching a movie when he was napping, and the easiest vehicle for
-this seemed to be our iPad. What could go wrong? Lots, it turns out.</p>
-
-<p>I cruised over to the increasingly inaccurately named iTunes store and found
-<a href="http://www.imdb.com/title/tt1862079/">Safety Not Guaranteed</a> which looked
-interesting so clicked Buy, waited for it to start downloading, watched the
-progress bar long enough to verify it looked like it would take about 40
-minutes to download, and took Dominic out for a walk so he&rsquo;d fall asleep, with
-the idea that in 40 minutes we&rsquo;d have a sleeping baby and a watchable movie.</p>
-
-<p>Dominic behaved as I&rsquo;d hoped; the iPad didn&rsquo;t; after about an hour I grabbed
-the iPad to find absolutely no sign of the movie. The Videos app said &ldquo;no
-videos, but you can cruise over to the store to buy one&rdquo;. The iTunes store app
-didn&rsquo;t have any downloads in progress, and going back to the Purchases tab, it
-had the cloud icon next to our movie. Upon clicking that, it told me it can&rsquo;t
-download it because there&rsquo;s not enough storage available.</p>
-
-<p>So apparently when I first purchased the movie, there was enough storage to
-download it, but then something went wrong with the download, it silently
-canceled the download without showing me any error message whatsoever, and now
-there&rsquo;s not enough space for it? That&rsquo;s hard to explain, but whatever, there&rsquo;s
-nothing to do but try to clear space and download it again. I go to Settings:
-General: Usage and look at the breakdown of what&rsquo;s using how much space, and
-the individual app usage doesn&rsquo;t add up to anywhere close to what it says is
-used, but I don&rsquo;t have many options here. So I deleted Infinity Blade to free
-up a gigabyte, invoked the download, and waited another 40 minutes while it
-downloaded the movie again. At the end of the download, the iPad spent another
-5 minutes saying &ldquo;processing&rdquo;, then gave me a generic error message, and
-kicked me back to the state where the movie is not available for playback but
-is available for download. And again trying to download it says there&rsquo;s no
-space available, and going back to Settings: General: Usage, there&rsquo;s 2.7GB
-(the size of the movie) less than there had been when I started the download.
-Something very weird is going on. I can&rsquo;t fix this problem on the iPad itself
-(so much for the post-PC era: you need a PC to configure or troubleshoot your
-post-PC device!) and now it&rsquo;s been 2 hours and we don&rsquo;t have time to watch a
-movie anyway.</p>
-
-<p>When I got back home from the trip, I plugged the iPad into my Mac and
-launched iTunes and iTunes told me that there&rsquo;s 10GB of &ldquo;other&rdquo; content. Given
-that this is the 16GB model (whose actual capacity is 13.8GB; go figure), that
-doesn&rsquo;t leave room for very many 2.7GB movie downloads. That also explains why
-the total usage was so much higher than the sum of the space used by each app.
-But it doesn&rsquo;t at all help explain what &ldquo;other&rdquo; actually means; <a href="https://www.google.com/search?q=itunes+capacity+other">the Internet
-isn&rsquo;t much help here
-either</a>. Trying to get
-this to go away or at least explain itself, I tried syncing the iPad with the
-Mac a couple times. The first thing I got for my trouble was that iTunes
-decided I had 7.1GB of video on the iPad, and now I&rsquo;m over capacity by 6GB
-(this without me having added any additional content to the iPad, actually).
-The second thing I got for my trouble was that iTunes decided to sync that
-video content back to the Mac, which took all night, and resulted in 70GB of
-corrupt data: it created 3 .m4v files which were actually directories
-containing what looks like the entire iPad filesystem, 2 of which were named
-after the movie that caused/revealed all this trouble (Safety Not Guaranteed)
-and the 3rd of which was an episode of Breaking Bad which I didn&rsquo;t realize was
-on the iPad in the first place. I&rsquo;ll repeat: what got synced back to my
-computer in each case was not a valid .m4v file, but an entire directory
-structure whose top level ended in &ldquo;.m4v&rdquo;; one of these was 10GB, one was
-20GB, and one was 40GB. Clearly, these weren&rsquo;t actually on the iPad, and no,
-my Mac didn&rsquo;t really like the resulting 70GB of garbage data either.
-(Something created what should have been .m4v files on the iPad as symbolic
-links to /, maybe? <a href="http://metamatt.com/static/2012/10/crazy-ipad-movie-sync.txt">The entire directory listing is
-here</a> if anyone
-finds this edifying.)</p>
-
-<p>Back to reality. Apparently the fix for this <a href="https://discussions.apple.com/thread/2562027?start=90&amp;tstart=0">runaway &ldquo;Other&rdquo;
-usage</a> is to
-back up the iPad, then restore it from backup. So I did this, and after half
-an hour, I had a working iPad with 2.2GB of apps, 3.3GB of &ldquo;other&rdquo;, and 7.3GB
-free. That&rsquo;s still not very satisfying, though &mdash; what is this 3.3GB and how
-do I get it back?</p>
-
-<p>So then I tried completely erasing and restoring the iPad (restoring the
-firmware, not just the user data, which is a similarly named but differently
-implemented operation in iTunes). This worked a little too well — the iPad
-came back with only 0.62GB of &ldquo;other&rdquo; and 13.2GB free, because it has no apps
-installed. Um, that&rsquo;s partially my fault, because I&rsquo;d turned off syncing of
-apps in iTunes (in my experience, leaving app syncing enabled makes syncing
-take much longer and sometimes forever, and it shouldn&rsquo;t be necessary in the
-post-PC mode where you manage the device on the device itself); I don&rsquo;t find
-it obvious, but apparently if you disable the syncing of apps in iTunes, that
-also means that local restores via iTunes don&rsquo;t restore apps either.</p>
-
-<p>But oh whatever, I have a recent iCloud backup which should have all the apps
-backed up. I do another complete erase of the iPad, and this time when it
-boots up, instead of driving the restore from iTunes on the Mac, I walk
-through the on-device setup and select my iCloud backup. It chews for a while,
-reboots, and then gets stuck forever at the boot screen (Apple logo with
-progress bar). <a href="https://discussions.apple.com/thread/4372003?start=0&amp;tstart=0">Apparently I&rsquo;m not the only one with this problem
-either</a>. I
-tried again and got the same result.</p>
-
-<p>So apparently the iCloud backup is corrupt and can&rsquo;t be used; the local backup
-works but leaves me with extra work to do.</p>
-
-<p>In the big picture, this is just another internet rant about a bug which
-happened to one person and probably isn&rsquo;t generally applicable, and while I
-can describe it as 6 separate problems (iPad aborts my download without
-showing an error message, iPad downloads movie to bit bucket and won&rsquo;t play it
-back, iPad runs out of space, iTunes can&rsquo;t sanely describe space usage, iTunes
-syncs garbage from iPad back to my computer, iCloud backup is corrupt) it&rsquo;s
-likely all one root cause, where some data structure got corrupted and caused
-the rest of the failures downstream from there. And computers are complicated,
-and not that expensive given the complexity, and hard and expensive to get
-right.</p>
-
-<p>But what&rsquo;s frustrating about this is that Apple&rsquo;s moved the openness needle
-pretty far back toward walled garden, in the name of preventing problems.
-Problems like malware, yes, but also problems due to misconfigurations, and
-problems due to third party software that causes finger-pointing instead of
-solutions. This was all first-party software; Apple content in Apple software
-on an Apple device synced and controlled from another Apple device. No
-jailbreaking, and I didn&rsquo;t even commit the minor sin of trying to run iTunes
-on Windows. This is the case that we should be getting right; that&rsquo;s the
-benefit that we&rsquo;re paying the walled-garden cost for.</p>
-
-<p>Apple is often applauded for bringing us technology that &ldquo;just works&rdquo;, but
-I&rsquo;ve been having more and more experiences lately that are pretty far from
-&ldquo;just works&rdquo;. The moral of the story is that Apple&rsquo;s devices are computers
-just like other computers; they&rsquo;re still a stack of fiendishly complex
-hardware and software components; also with iOS in version 6 and <a href="http://en.wikipedia.org/wiki/ITunes_version_history#Version_history">iTunes in
-version
-10.7</a>
-there&rsquo;s a lot of untestable legacy cruft. &ldquo;Just works&rdquo; sounds nice, but we&rsquo;re
-not really there yet, or maybe we&rsquo;ve been there but don&rsquo;t know how to stay
-there for long.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Playing by the rules]]></title>
-    <link href="http://blog.metamatt.com/blog/2012/10/24/playing-by-the-rules/"/>
-    <updated>2012-10-24T00:00:00-07:00</updated>
-    <id>http://blog.metamatt.com/blog/2012/10/24/playing-by-the-rules</id>
-    <content type="html"><![CDATA[<p>I read two extensive reviews of Microsoft&rsquo;s new Surface tablets today.</p>
-
-<p><a href="http://arstechnica.com/gadgets/2012/10/microsofts-first-stab-at-a%0A-pc-surface-reviewed/">Peter Bright, writing for Ars
-Technica</a>:</p>
-
-<blockquote><p>They&rsquo;re covered in polyurethane that should prove hard-wearing and water
-resistant (I was told that they should withstand scouring pads, though I admit
-I&rsquo;m too chicken to try—we had to promise to return our review units unharmed)</p></blockquote>
-
-<p><a href="http://www.wired.com/reviews/2012/10%0A/microsoft-surface/all/">Mathew Honan, writing for Wired</a>:</p>
-
-<blockquote><p>And it’s quite sturdy, to boot. In Microsoft’s lab, we saw Surfaces that had
-been opened and closed hundreds of thousands of times. They still snapped open
-and shut like they were new. We wanted to see how easy it was to break one.
-It’s very possible, but you have to really try. We did manage to break off the
-kickstand by gradually leaning onto it, but I had to put nearly my full weight
-onto the tablet before the kickstand snapped off.</p></blockquote>
-
-<p>and</p>
-
-<blockquote><p>Microsoft showed us a drop test by letting a Surface fall from a chest-high
-height. I duplicated this by literally throwing it at the floor, but to no ill
-effect.</p></blockquote>
-
-<p>All in the name of science, of course. I doubt Bright could have gotten in
-that much trouble for taking a Brillo pad to his Touch Cover. Oh well.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Those iOS 6 maps]]></title>
-    <link href="http://blog.metamatt.com/blog/2012/10/03/those-ios-6-maps/"/>
-    <updated>2012-10-03T00:00:00-07:00</updated>
-    <id>http://blog.metamatt.com/blog/2012/10/03/those-ios-6-maps</id>
-    <content type="html"><![CDATA[<p>So, it&rsquo;s come to this:</p>
-
-<p><a href="ht%0Atp://www.flickr.com/photos/67861147@N00/8052630604"><img src="http://farm9.staticflickr.com/8031/8052630604_7c3946ed99.jpg" alt="IMG_1136" /></a></p>
-
-<p>I waited a week after iOS 6 was released, asked my Facebook friends what they
-thought of it, and within hours got 6 responses that all said not to upgrade
-if I care about maps. Well, I do care about maps, but how bad can it be? I
-wanted to see for myself, but not shoot myself in the foot on the phone I
-depend on daily, so I upgraded my iPad instead.</p>
-
-<p>Actually, the new 3D view is very cool where the data is good, and here in San
-Francisco the data is good. Zooming around my neighborhood is fun and looks
-great; that&rsquo;s a real win. In fact the maps overall look great, and the zooming
-is much smoother than what we&rsquo;re used to with the Google-powered maps in
-previous versions of iOS. How about the underlying data? Um, not so good.
-Roads are (in my experience) where they belong, but addresses and landmarks
-and businesses are often not. I don&rsquo;t know why anyone is surprised by this;
-it&rsquo;s a very hard problem, and <a href="http://www.theatlantic.com/technology/archive/2012/09/how-google-builds-%0Aits-maps-and-what-it-means-for-the-future-of-everything/261913/">Google has worked incredibly
-hard</a> (and thrown a
-lot of money, human time, and computer time at acquiring and massaging the
-data) to get their maps to the point we all take for granted now. The world is
-very big.</p>
-
-<p>That doesn&rsquo;t mean it&rsquo;s pleasant when I search for an address a mile from where
-I&rsquo;m standing and get a search result for a similarly named street 1000 miles
-away in Texas. That&rsquo;s what happened to me the first time I tried actually
-using Maps for real, i.e. to find something whose location I didn&rsquo;t already
-know. I also tried plugging in a few locations I remember from our trip to
-Ireland, where iOS 5 maps (i.e. Google maps) got us everywhere we needed to
-be, and Apple maps didn&rsquo;t know them; that trip would have been much harder.</p>
-
-<p>But luckily, the built-in Maps app powered by Apple&rsquo;s fledgling data set isn&rsquo;t
-your only choice, and that&rsquo;s what my screen shot above reflects. I tried the
-various alternatives shown here before upgrading, and came to roughly the same
-conclusions as <a href="http://arstechnica.com/apple/2012/10/replacing-ios-6-maps-hands-on-%0Awith-mapquest-bing-waze-google-nokia/">this Ars Technica
-article</a>: Waze is neat for navigation but not a
-replacement map; MapQuest is pretty unpleasant to use; the Google Maps website
-actually works just fine; upon confirming that last, I decided it was fine to
-upgrade.</p>
-
-<p>More surprising to me is that it&rsquo;s Nokia who has the second-best map
-experience — both data quality and interaction design — after Google. (Maybe I
-shouldn&rsquo;t have been surprised. I remember reading about <a href="http://arstechnica.com/gadgets/2011/02/calling-all-cars-%0Ameasuring-traffic-using-cell-phone-data/">Nokia&rsquo;s Mobile
-Millenium project</a> and thinking that while their
-approach seemed more like academia than industry and Google is probably
-leaving them in the dust in terms of speed of deploying new features, their
-very thoughtful approach especially with respect to privacy is commendable.
-Clearly, they&rsquo;ve been taking this seriously.) I tried, again, punching in some
-of the hotels we stayed in in Ireland, which Google could locate and Apple
-couldn&rsquo;t, and Nokia found them just fine. That test involves just a few data
-points, but is in keeping with a general reputation that only Google and Nokia
-have decent place data outside the US.</p>
-
-<p>So the obvious conclusion: Apple should just buy Nokia.</p>
 ]]></content>
   </entry>
   

@@ -9,8 +9,7 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="Here&rsquo;s a bonus on top of a bonus: OS X 10.8 (Mountain Lion) adds a really
-useful &ldquo;Wi-Fi&rdquo; scan feature, buried inside a utility I &hellip;">
+  <meta name="description" content="Once I got Jekyll and Octopress to import my blog from Tumblr and generate it in its new format, almost everything was formatted correctly, with the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +82,218 @@ useful &ldquo;Wi-Fi&rdquo; scan feature, buried inside a utility I &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/">From Tumblr to Octopress, Part 3: Footnotes</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-17T01:42:00-04:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Once I got Jekyll and Octopress to import my blog from Tumblr and generate it in its new format, almost everything was formatted correctly, with the marked exception of footnotes. Like a certain furious Canadian<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>, I&rsquo;ve become a fan of footnotes for adding detail without littering my posts with parenthetical expressions. In the migrated posts, the footnotes were there at the bottom, but the links to them were all wrong — full-sized unlinked numbers, instead of superscripted hyperlinks.</p>
+
+<p>It took me a while to figure out what was wrong because there were actually 3 distinct problems. And as background, while it wasn&rsquo;t a direct problem here, you should understand that footnotes are not a feature of the <a href="http://daringfireball.net/projects/markdown/syntax">original Markdown syntax</a>, but were added later by other dialects, mostly converging around <a href="http://michelf.ca/projects/php-markdown/extra/#footnotes">PHP Markdown Extra</a>, which is what Tumblr uses.</p>
+
+<p>First: The post content generated in Markdown format from tumblr.rb, in its trip through nokogiri and html2text and maybe elsewhere, didn&rsquo;t actually preserve the footnote declarations I&rsquo;d originally given Tumblr. Even though I had written these posts in Markdown format, and the Markdown form of my posts is presumably preserved somewhere at Tumblr<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>, tumblr.rb instead downloads HTML and then reverse-converts it back to Markdown format. This conversion doesn&rsquo;t preserve footnotes as Markdown footnotes; instead it leaves them as static HTML, and it renders the footnote bodies reasonably but the footnote links unreasonably.</p>
+
+<p>So I had to go edit all the posts in which I used footnotes, and manually redo the footnote links using PHP Markdown Extra syntax.</p>
+
+<p>Second: Having done that and told Jekyll to regenerate the blog, I found myself looking at a bunch of raw unconverted PHP Markdown Extra footnote tags. That&rsquo;s because Jekyll&rsquo;s markdown processing is done by RDiscount, and the version of RDiscount specified by Octopress&rsquo;s Gemfile (1.6.8) does not support footnotes at all; footnotes using PHP Markdown Extra syntax were added as a feature of RDiscount 2.0.7.</p>
+
+<p>So I had to edit the Gemfile to specify RDiscount 2.0.7.</p>
+
+<p>Third: Having done that and told Jekyll to regenerate the blog, some posts looked fine, but others had chunks of footnote definition content floating near the end of the post body but before the footnotes, and completely out of order. Some trial and error led me to deduce that RDiscount 2.0.7 does not actually honor the documented PHP Markdown Extra syntax, which allows you to hard-wrap the footnotes or even place the definition offset from the footnote number<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>; RDiscount is happy only if the footnote number and entire body are on one logical line with no hard line breaks. Since I&rsquo;m doing all this posting from a colocated Linux VM on which I don&rsquo;t run X, and thus use text editors in old-school terminal windows, I tend to hard-break my posts (and in fact, the posts I imported from Tumblr tended to be hard-wrapped at 76 columns by something somewhere along the write/post/import pipeline). RDiscount doesn&rsquo;t play well with these hard breaks.</p>
+
+<p>So I had to edit all the footnoted posts again to comply with RDiscount&rsquo;s actual behavior.</p>
+
+<p>Summary: you can get nice footnotes from Octopress/Jekyll if you</p>
+
+<ul>
+<li>Update to RDiscount 2.0.7</li>
+<li>Use the footnote syntax that RDiscount actually supports, which is like PHP Markdown Extra except each footnote definition must stay on one line without hard line breaks</li>
+<li>If importing your blog from a previous home using a script like tumblr.rb, verify that the conversion actually generates footnote markup</li>
+</ul>
+
+
+<p>There&rsquo;s still one more bug with footnotes on the index page, which is that Jekyll generates each page independently through RDiscount, which generates in-page links between the footnotes and their bodies, using the footnote number: for the first footnote, the forward link is <code>#fn:1</code> and the backward link is <code>#fnref:1</code>. This works fine on individual pages, but on the index page the footnote numbers get reused and collide, so the in-page links don&rsquo;t work there. Syeong Gan has a post with <a href="http://syeong.jcsg.com/2012/07/07/octopress-footnote-problem/">a deeper description of this problem, and a possible workaround</a>.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p><a href="http://canadian-fury.com/2012/04/26/footnotify-and-octopress/">Footnotes, Footnotify and Octopress</a> has a pretty good argument in favor of footnotes, as well as a point-in-time description of how to get them to work in Octopress which I think is now outdated: he suggests switching from RDiscount to Kramdown; as mentioned above, RDiscount 2.0.7 added footnote support which mostly works. I tried Kramdown anyway and found RDiscount to do a slightly less bad job of honoring PHP Markdown Extra syntax than Kramdown does.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>MarsEdit can edit posts already posted at Tumblr, even if not originally authored with MarsEdit, in their original format: if the post was written in Markdown, MarsEdit&rsquo;s edit view sees Markdown. This might imply that there&rsquo;s a better way for Jekyll&rsquo;s tumblr.rb to use the Tumblr API to get the Markdown source, instead of the reverse-conversion it currently does.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>See the PHP Markdown Extra <a href="http://michelf.ca/projects/php-markdown/extra/#footnotes">documentation on footnotes</a>, notably the part starting with &ldquo;Footnotes can contain block-level elements&rdquo;.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/">From Tumblr to Octopress, Part 2: How</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-17T01:40:00-04:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Having decided to move this blog from Tumblr to Octopress, there remained the matter of migrating it<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>.</p>
+
+<p>Octopress is basically a convenience framework around Jekyll, adding a nice-by-default theme and some convenience wrappers for starting new posts, invoking Jekyll to generate the site, and deploying the site. You could probably use Octopress quite happily without touching Jekyll directly, unless you want to import an existing blog; then you end up at <a href="https://github.com/mojombo/jekyll/wiki/blog-migrations">Jekyll&rsquo;s Blog Migrations tool</a>, which has options for a number of popular blog engines, including Tumblr.</p>
+
+<p>The instructions for <a href="http://octopress.org/docs/setup/">setting up Octopress</a> are pretty simple and <a href="http://octopress.org/docs/setup/">well documented</a>:
+* git and ruby (and probably rvm or rbenv) are prerequisites
+* obtain octopress itself via &ldquo;git clone&rdquo;
+* install dependencies via &ldquo;gem install bundler; bundle install&rdquo;
+* install the default Octopress theme (which also generates the skeleton site layout) via &ldquo;rake install&rdquo;</p>
+
+<p>At this point, you&rsquo;ve got a working Octopress installation and you could use its rake task-based interface to write and publish posts. However, if you want to migrate an existing blog, you have more setup steps which are also <a href="https://github.com/mojombo/jekyll/wiki/blog-migrations">well documented</a>:
+* assuming you want to keep your raw posts in markdown format instead of raw HTML, Jekyll&rsquo;s Tumblr migrator needs nokogiri: <code>gem install nokogiri</code>
+* invoke the Tumblr migrator (<code>ruby -rubygems -e 'require "jekyll/migrators/tumblr"; Jekyll::Tumblr.process("http://www.your_blog_url.com", "md")'</code>). Note that this doesn&rsquo;t require any account information or credentials, because the Tumblr API will provide enough information to do this anonymously. Heck, if you&rsquo;re evil, you could convert someone else&rsquo;s blog (don&rsquo;t do that). On the topic of Tumblr reliability, I ran this step a few dozen times while I was figuring out how it works and fixing some bugs in tumblr.rb, and ~90% of the time, it downloaded my ~165 posts almost instantly, but palpably often, it would get stuck halfway as the Tumblr API stopped sending it network traffic. Oh well. Ctrl-C and restart if this happens to you.</p>
+
+<p>What neither the Jekyll nor Octopress documentation tells you is what happens next. Assuming you run all the above commands from the octopress directory: Octopress setup (the <code>rake install</code> step) created a directory called &ldquo;source&rdquo;, under which the (initially empty) &ldquo;_posts&rdquo; directory is where Jekyll will look for posts. Meanwhile, Jekyll&rsquo;s tumblr.rb will create and populate a &ldquo;<em>\posts/tumblr&rdquo; directory with your posts, and a &ldquo;posts&rdquo; directory with redirects from the old Tumblr-style post URLs to new Octopress-style URLs<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>,<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>. Neither the &ldquo;</em>\posts&rdquo; nor &ldquo;posts&rdquo; directory spit out by tumblr.rb are under &ldquo;source&rdquo; where Jekyll will look for them. What this means is that without additional effort on your part, Jekyll as invoked by Octopress won&rsquo;t see the files you just imported.</p>
+
+<p>Again: your blog posts go in &ldquo;octopress/source/<em>posts&rdquo;. The Tumblr migrator will create &ldquo;octopress/posts&rdquo; and &ldquo;octopress/</em>posts&rdquo;. Just move these two directories under &ldquo;octopress/source&rdquo; once you&rsquo;ve verified they look OK. (NB: the migrator actually dumped all its files under &ldquo;octopress/<em>posts/tumblr&rdquo;; it&rsquo;s fine to leave them there, so they end up in &ldquo;octopress/source/</em>posts/tumblr&rdquo;; Octopress doesn&rsquo;t seem to care about the organization of your files inside the source/_posts directory.)</p>
+
+<p>Now, you can tell Octopress to generate the site: &ldquo;rake generate&rdquo;.</p>
+
+<p>If you&rsquo;re reading this at the right point of relative stability, lucky you; you win. I ran into several more issues, due to the fact that Jekyll and Octopress are prerelease open source software intended for an audience of hackers; some assembly definitely required:</p>
+
+<ul>
+<li>At the point I was performing this migration (January 2013), Jekyll was at version 0.12 and the tumblr.rb migrator script was broken in a <a href="https://github.com/mojombo/jekyll/commit/863643c7e8080c73a7968caabfc9c7e9b18c6b95">couple</a> <a href="https://github.com/mojombo/jekyll/commit/fbc9d0c66397234ab85e03a55955602e0ce40356">respects</a> which I submitted patches for.</li>
+<li>After my patches were merged upstream, I tried running with Jekyll&rsquo;s head version in mid-February, to find that tumblr.rb had been deleted from the Jekyll repository entirely, and moved to a separate <a href="https://github.com/jekyll/jekyll-import">jekyll-import</a> project, which at the time had no documentation and appeared to have little chance of running.</li>
+<li>Meanwhile, using any version of Jekyll newer than 0.12 broke Octopress in a trivial way; the :generate rule in Octopress&rsquo;s Rakefile finishes by invoking Jekyll as <code>system 'jekyll'</code>, with no arguments, and newer versions of Jekyll expect a <code>build</code> argument. Octopress will fix this when Jekyll actually releases a new version (which may have already happened between me finding this and posting this); it makes no sense to fix it sooner.</li>
+</ul>
+
+
+<p>This last list of foibles is probably all related to Jekyll being in the throes of the 1.0 release process and will probably be a historical footnote afterwards.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Many others have done this before; one post I found helpful was <a href="http://blog.assimov.net/blog/2012/03/24/tumblr-to-octopress-powered-by-jekyll-and-markdown/">Goodbye Tumblr. Hello, Octopress Powered by Jekyll and Markdown!</a>.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>The redirects spit out by tumblr.rb are under &ldquo;posts&rdquo; because Tumblr URLs are of the form example.com/posts/12341234/post-title-slug; Octopress URLs are by default of the form example.com/blog/year/month/post-title-slug; tumblr.rb creates redirects from the former to the latter, without requiring any special interaction with the webserver, by just creating a file for each post, named for the Tumblr relative URL (in this case, posts/12341234/post-title-slug/index.html) containing a browser-side meta refresh redirect to the new URL.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>I found the redirects created by tumblr.rb to be not quite enough. Tumblr indexes posts by number, then creates a nice search-engine-friendly SLUG such as post-title-slug, yielding a post URL like example.com/posts/12341234/post-title-slug. But actually, when receiving a request, Tumblr ignores everything after the number, and you could also load that post as example.com/posts/12341234/foobar, or just example.com/posts/12341234, and in fact the latter is the canonical URL used by Disqus. If you are running a webserver with rewrite rules, you might do well to redirect the entire URL namespace under posts/12341234 to the new URL, as Tumblr would have; I settled for copying posts/12341234/post-title-slug/index.html to posts/12341234/index.html for each post, so both number alone and number+SLUG will redirect correctly.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/17/from-tumblr-to-octopress-part-1-why/">From Tumblr to Octopress, Part 1: Why</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-17T01:37:00-04:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-1-why/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>When I first started this blog, I set it up at Tumblr so I wouldn&rsquo;t have to think about hosting it and could concentrate on writing.</p>
+
+<p>I&rsquo;ve since realized that Tumblr is a bad match. Among things that I prioritize higher than Tumblr evidently does, reliability ranks high on the list<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>, as do control over site structure and appearance. Tumblr themes allow some control over appearance — and there are some very nice ones — but not the structure<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
+
+<p>Among things that they care about that I do not are their web posting interface, iOS native clients, a plethora of post types designed to be slightly quicker if you want to post audio/picture/video/quote content<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>, and a follower system<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>.</p>
+
+<p>So. On to Octopress. I get a lot more control over site structure, a more usable form of control over visual layout, and I can host it somewhere reliable (github for now, myself if I want to, and I can move hosting providers without having to do any deeper conversion).</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Reliability problems with Tumblr have been intermittent; sometimes it works fine, sometimes I get &ldquo;the server returned no content&rdquo; errors 10 times in a row before I can load a single page.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>Tumblr&rsquo;s main navigational construct is a list of all posts sorted in descending order by posting date. Individual posts get permalinks, and there&rsquo;s a very slow-loading calendar view which gives some semblance of an overall table of contents, but there&rsquo;s no really usable way to do monthly archives or next/previous links to stitch time back together.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>All Tumblr posts have a URL, a title, and a body; what goes into the body can include really anything you can embed in a webpage, including audio and video. Presumably in an attempt to move beyond text-heavy blogging, in addition to letting you embed pictures/audio/video in a normal &ldquo;text&rdquo; post, Tumblr added these separate post types that special-case the body (the &ldquo;link&rdquo; post type makes the title into a navigable link; the &ldquo;quote&rdquo; type puts quotes around the body, etc). All of these are less general than the &ldquo;text&rdquo; type; they are also poorly represented in the API and, as I&rsquo;ve found out, commensurately poorly handled by export tools. I dabbled in the special post types a few times, and am mostly sorry I did.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>Readers are unlikely to be Tumblr users; that&rsquo;s what RSS is for.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X Has a Builtin Wi-Fi Network Scanner</a></h1>
     
     
@@ -99,7 +310,7 @@ useful &ldquo;Wi-Fi&rdquo; scan feature, buried inside a utility I &hellip;">
   
 
 
-<time datetime="2013-02-25T00:00:00-08:00" pubdate data-updated="true">Feb 25<span>th</span>, 2013</time>
+<time datetime="2013-02-25T00:00:00-05:00" pubdate data-updated="true">Feb 25<span>th</span>, 2013</time>
         
          | <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/#disqus_thread">Comments</a>
         
@@ -164,7 +375,7 @@ bonus to having upgraded and deserves wider mention.</p>
   
 
 
-<time datetime="2013-02-25T00:00:00-08:00" pubdate data-updated="true">Feb 25<span>th</span>, 2013</time>
+<time datetime="2013-02-25T00:00:00-05:00" pubdate data-updated="true">Feb 25<span>th</span>, 2013</time>
         
          | <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/#disqus_thread">Comments</a>
         
@@ -213,7 +424,7 @@ to phones.</p>
   
 
 
-<time datetime="2013-02-21T00:00:00-08:00" pubdate data-updated="true">Feb 21<span>st</span>, 2013</time>
+<time datetime="2013-02-21T00:00:00-05:00" pubdate data-updated="true">Feb 21<span>st</span>, 2013</time>
         
          | <a href="/blog/2013/02/21/speedy-resume/#disqus_thread">Comments</a>
         
@@ -311,7 +522,7 @@ Macbook Air:</p>
   
 
 
-<time datetime="2013-02-13T00:00:00-08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2013</time>
+<time datetime="2013-02-13T00:00:00-05:00" pubdate data-updated="true">Feb 13<span>th</span>, 2013</time>
         
          | <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/#disqus_thread">Comments</a>
         
@@ -413,7 +624,7 @@ variant is further useful, but don&rsquo;t leave it on when you&rsquo;re not usi
   
 
 
-<time datetime="2013-02-13T00:00:00-08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2013</time>
+<time datetime="2013-02-13T00:00:00-05:00" pubdate data-updated="true">Feb 13<span>th</span>, 2013</time>
         
          | <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/#disqus_thread">Comments</a>
         
@@ -471,7 +682,7 @@ disabling.</p>
   
 
 
-<time datetime="2013-01-31T00:00:00-08:00" pubdate data-updated="true">Jan 31<span>st</span>, 2013</time>
+<time datetime="2013-01-31T00:00:00-05:00" pubdate data-updated="true">Jan 31<span>st</span>, 2013</time>
         
          | <a href="/blog/2013/01/31/google-default-account-for-multiple-sign-in/#disqus_thread">Comments</a>
         
@@ -574,7 +785,7 @@ helping me figure this out.</p>
   
 
 
-<time datetime="2013-01-23T00:00:00-08:00" pubdate data-updated="true">Jan 23<span>rd</span>, 2013</time>
+<time datetime="2013-01-23T00:00:00-05:00" pubdate data-updated="true">Jan 23<span>rd</span>, 2013</time>
         
          | <a href="/blog/2013/01/23/restore-from-backup/#disqus_thread">Comments</a>
         
@@ -623,298 +834,6 @@ Machine restore the files.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/23/google-account-access-from-an-iphone/">Google Account Access From an iPhone</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-23T00:00:00-08:00" pubdate data-updated="true">Jan 23<span>rd</span>, 2013</time>
-        
-         | <a href="/blog/2013/01/23/google-account-access-from-an-iphone/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Google recently announced that after January 2013, they&rsquo;ll be <a href="http://support.google.com/a/bin/answer.py?hl=en&amp;answer=2716936">deprecating EAS
-access to
-Gmail</a> (and
-calendar, and address book) for free customers (addresses ending in
-@gmail.com, and free Google Apps accounts). It&rsquo;ll still be available for paid
-Google Apps customers, and it&rsquo;ll keep working for normal customers who are
-already using it, but only on their existing devices.</p>
-
-<p>This is bad news because EAS (aka Google Sync) has been and continues to be
-the best way to get Google services on an iOS device. In my opinion, iOS +
-Google Sync continues to be the best combination of mobile device and cloud
-services, but this change makes them work a little less well together.</p>
-
-<p>Google Sync (EAS) is the best way to connect iOS to Google services because</p>
-
-<ul>
-<li>One &ldquo;account&rdquo; (setup step in iOS) handles mail, contacts and calendars.</li>
-<li>Until September 2012, this was the only way to sync contacts between iOS and Google.</li>
-<li>Mail works better: Push works, and the delete button works the way you&rsquo;d expect. (Supposedly both iOS mail client and Gimap mail server support IMAP IDLE, but they disagree on how, or something, because the result doesn&rsquo;t work.)</li>
-<li>Also, if you enable Google&rsquo;s 2-factor authentication, you need to generate fallback &ldquo;app-specific&rdquo; passwords for all your devices<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>, and for EAS this is one per device, and without EAS it&rsquo;s at least two<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</li>
-</ul>
-
-
-<p>For these reasons, especially the second one, I&rsquo;ve been using — and
-recommending to friends and family — EAS as the preferred way of connecting to
-Google accounts. In fact, I didn&rsquo;t even realize that contact sync was now
-possible without it (Google just added CardDAV support in September 2012).</p>
-
-<p>Similarly, I&rsquo;ve been using — and recommending to friends and family — Google
-Apps (Gmail and friends) as my preferred provider for cloud
-mail/contacts/calendars. Apple&rsquo;s track record for cloud mail services is
-spotty; even if iCloud is improving, I just don&rsquo;t see the advantage over
-Google, especially if you don&rsquo;t want to tie yourself to Apple devices
-forever<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>.</p>
-
-<p>That leaves us trying to connect iOS to Google&rsquo;s services as best we can.
-Which to be fair is pretty good, but losing EAS is a step back<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>. This speaks
-to <a href="http://levelsofdetail.kendeeter.com/post/31926718063/maps">something my friend Ken wrote months
-ago</a> (in the
-context of the maps kerfuffle):</p>
-
-<blockquote><p>Why is it that two tech giants with best-of-breed tech in different areas
-rarely seem to be able to cooperate to produce an awesome product for the
-user?</p></blockquote>
-
-<p>This has been a bright spot in this regard, which is getting a little less
-bright at the end of January.</p>
-
-<p>Google probably doesn&rsquo;t care about keeping free EAS working because, in order
-of preference, they&rsquo;d like to see</p>
-
-<ul>
-<li>You using an Android device to connect to Gmail+friends</li>
-<li>You using a (paid) Google Apps for Business account</li>
-<li>And for anyone else, using a non-Google device to connect to a free Google account, there are still the open protocols (IMAP for mail, CardDAV and CalDAV for calendar and contacts).</li>
-</ul>
-
-
-<p>Apple may not care about optimizing the Gmail experience for iOS users because</p>
-
-<ul>
-<li>They&rsquo;d like to see you using iCloud for mail+contacts+calendars</li>
-<li>Plus they&rsquo;ve already connected you to Google services using EAS, so why should they have to do it again differently.</li>
-</ul>
-
-
-<p>In fairness to Apple, adding a &ldquo;Gmail&rdquo; account to iOS adds both mail and
-calendars (IMAP + CalDAV), and Google only added CardDAV support on the server
-side in September 2012 (i.e. after the current iOS release). Maybe, hopefully,
-Apple will make iOS &ldquo;Gmail&rdquo; accounts start supporting calendars via CardDAV in
-the next release. In the meantime, you have to do it manually.</p>
-
-<p>I don&rsquo;t see any reason why the open-protocol support from iOS to Google
-services couldn&rsquo;t work just as well as EAS — if one setup step added all 3
-protocols, and if push were made to work — but it&rsquo;s not the case now.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>It&rsquo;s too bad that native device clients basically negate the advantage of 2-factor authentication, since they aren&rsquo;t compatible and force you to use the fallback mechanism.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>One for the &ldquo;Gmail&rdquo; account supporting IMAP and CalDAV, and one for the separate CardDAV account you have to add. And I don&rsquo;t know whether/how &ldquo;app-specific&rdquo; password authentication actually works for the Gmail account type, given that it&rsquo;s a hybrid of two protocols; it&rsquo;s possible that doesn&rsquo;t work in which case you would have to avoid the Gmail account type, generate 3 fallback passwords, and set up IMAP and CardDAV and CalDav separately.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-<li id="fn:3">
-<p>I&rsquo;m complaining here about the flaws in the relatively good iOS support for Google services; I suspect that anyone trying to connect to iCloud from Android or Windows apps has it far worse.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
-<li id="fn:4">
-<p>There&rsquo;s some irony here in that the best way to connect some Apple software to some Google software is using protocols designed by Microsoft.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/09/previewing-markdown-files-from-the-terminal/">Previewing Markdown Files From the Terminal</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-09T00:00:00-08:00" pubdate data-updated="true">Jan 9<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/01/09/previewing-markdown-files-from-the-terminal/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;ve been wanting a way to preview
-<a href="http://daringfireball.net/projects/markdown/">Markdown</a>-formatted text files
-from the terminal, ideally via <a href="http://www.greenwoodsoftware.com/less/">less</a>.
-Primarily, I think, because Github encourages it, a lot of open source
-projects are starting to include a
-<a href="https://www.google.com/search?q=+readme.md">README.md</a> instead of a plain old
-<a href="http://en.wikipedia.org/wiki/README">README</a><sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>,<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>; these marked-down READMEs are
-easy to view in Github&rsquo;s web interface but not after (or before) you clone the
-repo into your own filesystem.</p>
-
-<p>There&rsquo;s <code>zless</code> that can understand compressed files; why not <code>mdless</code> that
-can understand Markdown files?</p>
-
-<p>I went looking and stackoverflow came to the rescue with this question and
-answer about a <a href="http://stackoverflow.com/a/7603703/275581">less-style markdown viewer for UNIX
-systems</a>, suggesting
-<a href="http://johnmacfarlane.net/pandoc/">pandoc</a> as the tool to translate from
-Markdown format to troff format. The suggested incantation there works for me
-under Debian Linux but not under Mac OS X because it relies on <code>man</code>&rsquo;s <code>-l</code>
-option, which I&rsquo;m guessing is a GNU addition not supported by BSD <code>man</code>. I had
-to figure out how to duplicate the processing that <code>man -l</code> does, which I knew
-involved <code>troff</code> (or <code>groff</code>); it turns out that <code>groff</code> understands a <code>-man</code>
-flag which predefines the macros used by manpages. The version using <code>groff</code>
-instead of <code>man -l</code> seems more portable (it works fine under Linux as well as
-Mac OS X), so that&rsquo;s what I&rsquo;ll use.</p>
-
-<p>Hence, the following incantation to view a README.md file:</p>
-
-<p><code>pandoc -s -f markdown -t man README.md | groff -T utf8 -man | less</code></p>
-
-<p>Or, a <code>mdless</code> command implemented as a tcsh alias:</p>
-
-<p><code>alias mdless "pandoc -s -f markdown -t man \!* | groff -T utf8 -man | less"</code></p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>As one data point for when this became common, README.md was added to the short list of common readme file names in this Wikipedia article on <a href="http://en.wikipedia.org/w/index.php?title=README&amp;oldid=480712255">March 7, 2012</a>.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>Not to be confused with <a href="http://www.amazon.com/gp/product/0062191497/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=metamatt-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0062191497">REAMDE</a>.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard/">Mac Boot Drive Selection From Bluetooth Keyboard</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-12-27T00:00:00-08:00" pubdate data-updated="true">Dec 27<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Twice in the last few months<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> I&rsquo;ve had to do troubleshooting steps on
-Vanessa&rsquo;s iMac that involved booting from alternate volumes<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>. This is normally
-easy on a Mac, but not quite so easy on a Mac with a wireless Bluetooth
-keyboard<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>.</p>
-
-<p>Both times, it was an exercise in frustration, as I give the reboot command
-and wait about 10 seconds for the reboot to actually happen; then I hold
-Command-R, watch the screen blink black, wait, watch it blink white, wait,
-chime, wait, Apple logo, wait, and… oh hello, login screen! That&rsquo;s not right.
-I&rsquo;ve just wasted a minute and I&rsquo;m back where I started.</p>
-
-<p>Apple&rsquo;s <a href="http://support.apple.com/kb/HT4718">support document on recovery
-mode</a> makes it sound so easy:</p>
-
-<blockquote><p>Restart your Mac and hold down the Command key and the R key (Command-R),
-and keep holding them until the Apple icon appears, indicating that your Mac
-is starting up. After the Recovery System is finished starting up, you should
-see a desktop with a OS X menu bar and a &ldquo;Mac OS X Utilities&rdquo; application
-window. Note: If you see a login window or your own desktop and icons, it is
-possible that you didn&rsquo;t hold Command-R early enough. Restart and try again.</p></blockquote>
-
-<p>After reading and rereading that, I try a few more times, holding Command-R
-earlier and earlier as Apple recommends, and, no luck. Wait a minute, I&rsquo;m
-using a Bluetooth keyboard. Does that cause complications, like, the computer
-and keyboard aren&rsquo;t able to communicate right at the beginning of the boot
-process? Yes<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>. Do I need to go find a USB keyboard to plug in? Not quite.</p>
-
-<p>It turns out the magic answer is to reboot the computer, wait for the LED on
-the keyboard to flash (which is after the computer starts booting and chimes
-and does a self-test which on this iMac with 12GB of memory all takes about 20
-seconds), and <em>then</em> immediately press and hold Command-R. Any earlier than
-that, and you&rsquo;ll be ignored.</p>
-
-<p>You&rsquo;d think Apple&rsquo;s help docs could mention this, since they&rsquo;ve been shipping
-Bluetooth keyboards by default with all their desktop machines for years now.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>Both of these occasions involved disk failures in the <a href="http://blog.metamatt.com/blog/2012/01/20/nothing-is-as-easy-as-it-should-be-ssd-upgrades/">Crucial M4 SSD I installed a year ago</a>. You can probably guess that I&rsquo;m not quite as happy with these as I wanted to be.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p><a href="http://support.apple.com/kb/HT1533">Booting from CD</a> to upgrade firmware, or <a href="http://support.apple.com/kb/HT4718">booting from the recovery partition</a> to attempt disk repair. Each of these requires holding a certain key down while the computer is booting.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-<li id="fn:3">
-<p>I put the same SSD model in my own computer, a Mac Pro tower with easily accessible drive bays and an old-school wired keyboard. It&rsquo;s a lot easier to troubleshoot and a lot easier to repair. Murphy&rsquo;s Law dictates that if we&rsquo;re going to have problems with one SSD, it&rsquo;ll be the one <a href="http://www.ifixit.com/Guide/iMac+Intel+27-Inch+EMC+2309+and+2374+Hard+Drive+Replacement/1634/1">tucked away under the glass front of the iMac</a>.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
-<li id="fn:4">
-<p>Try googling for &ldquo;<a href="https://www.google.com/search?q=boot+mac+from+cd">boot Mac from CD</a>&rdquo; versus &ldquo;<a href="https://www.google.com/search?q=boot+mac+from+cd+bluetooth">boot Mac from CD bluetooth</a>&rdquo;. Big difference. The first one leads you to a simple answer (but deceptively simple in the case you have a Bluetooth keyboard); the second one leads you through a muddle of hundreds of confused people.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -930,23 +849,23 @@ Bluetooth keyboards by default with all their desktop machines for years now.</p
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/">From Tumblr to Octopress, part 3: footnotes</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/">From Tumblr to Octopress, part 2: how</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-1-why/">From Tumblr to Octopress, part 1: why</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
       </li>
     
       <li class="post">
         <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/21/speedy-resume/">Speedy resume</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">Two things I didn&#8217;t know about Mac OS internet sharing</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/">Troubleshooting Mac sleep problems</a>
       </li>
     
   </ul>
