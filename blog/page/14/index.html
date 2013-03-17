@@ -118,11 +118,11 @@ and sea lions), which are <a href="http://en.wikipedia.org/wiki/Pinniped">techni
 aquatic</a>.</p>
 
 <p>Back to the real marine mammals, the cetaceans, <a href="http://www.scientificamerican.com/article.cfm?id=how-do-whales-and-%0Adolphin">the answer is a lot more
-complex than I&#8217;d originally
-suspected</a> &#8211; not only do they need to come to the surface to find air to
+complex than I&rsquo;d originally
+suspected</a> &mdash; not only do they need to come to the surface to find air to
 breathe, but their breathing system is under conscious control (unlike, say,
-humans). So they can&#8217;t ever become completely unconscious and continue
-breathing; also there are times when they can&#8217;t stop swimming without sinking.
+humans). So they can&rsquo;t ever become completely unconscious and continue
+breathing; also there are times when they can&rsquo;t stop swimming without sinking.
 Instead, they continue swimming while sleeping, and are able to sleep with
 half their brain and body at a time, while the other half remains awake.</p>
 </div>
@@ -162,14 +162,14 @@ half their brain and body at a time, while the other half remains awake.</p>
   </header>
 
 
-  <div class="entry-content"><p>Lightroom loves to lose keyboard focus when you&#8217;re typing in iptc fields in
-the metadata editor in the right panel, especially on slow netbook &#8211; select a
+  <div class="entry-content"><p>Lightroom loves to lose keyboard focus when you&rsquo;re typing in iptc fields in
+the metadata editor in the right panel, especially on slow netbook &mdash; select a
 bunch of images, change one field for all of them, press Tab, keep typing in
-the 2nd field, a second or two later it&#8217;ll decide to commit the first edits
+the 2nd field, a second or two later it&rsquo;ll decide to commit the first edits
 and yank focus away from the text field and then apply the rest of your
 keypresses as LR keyboard shortcuts.</p>
 
-<p>I&#8217;ve noticed this bug in LR 2.x and 3.x, and again, it&#8217;s especially easy to
+<p>I&rsquo;ve noticed this bug in LR 2.x and 3.x, and again, it&rsquo;s especially easy to
 trigger on a slow Windows netbook.</p>
 </div>
   
@@ -213,45 +213,45 @@ work suboptimally from outside the US.</p>
 
 <p>Obvious examples are Netflix (watch instantly) and Rhapsody, which probably
 have license agreements restricting their use to inside the US. If you try to
-browse these sites from a non-US IP address, they&#8217;ll just tell you to go away.</p>
+browse these sites from a non-US IP address, they&rsquo;ll just tell you to go away.</p>
 
 <p>A less obvious example is PayPal; they work from outside the US but tend to
 paranoia about dirty foreign hackers stealing access to your account. At
 least, when I logged into my own account from Turkey, I found it locked into
-&#8220;limited&#8221; mode, and after I jumped through the hoops to prove I was the real
+&ldquo;limited&rdquo; mode, and after I jumped through the hoops to prove I was the real
 owner and get the limitations removed, then went to Argentina, I immediately
 found the account limited again the first time I logged in. All in all, it
-seems easiest to let PayPal think I&#8217;m always in the US.</p>
+seems easiest to let PayPal think I&rsquo;m always in the US.</p>
 
-<p>I understand why these sites have these behaviors based on location, but it&#8217;s
-not what I want for me &#8211; I&#8217;m paying the same fees for the use of these sites
+<p>I understand why these sites have these behaviors based on location, but it&rsquo;s
+not what I want for me &mdash; I&rsquo;m paying the same fees for the use of these sites
 regardless of where I am; it seems silly to enforce artificial geographic
 boundaries on the Internet.</p>
 
 <p>So, I run an http proxy (tinyproxy) on a computer I control in the US, and
-when I&#8217;m out of the US, I proxy use of these sites through that computer.</p>
+when I&rsquo;m out of the US, I proxy use of these sites through that computer.</p>
 
 <p>In practice there are a couple steps to this:</p>
 
 <p>1) install tinyproxy somewhere</p>
 
-<p>2) lock it down so only you can use it; you don&#8217;t want random people using it
+<p>2) lock it down so only you can use it; you don&rsquo;t want random people using it
 (you might be paying for bandwidth, it might slow down your connection, and if
 Netflix/Rhapsody/PayPal see too much traffic from it they might figure out
-what you&#8217;re up to and block it). You could try to lock it down by IP but if
-you&#8217;re traveling your IP address will change all the time; you could try to
-set up authentication but I haven&#8217;t bothered to look what authentication
+what you&rsquo;re up to and block it). You could try to lock it down by IP but if
+you&rsquo;re traveling your IP address will change all the time; you could try to
+set up authentication but I haven&rsquo;t bothered to look what authentication
 mechanisms are available to both tinyproxy and the browsers I care about and
-whether they&#8217;re secure. Instead, I already have an all-purpose authentication
-mechanism I like, openssh &#8211; so I set up an ssh tunnel with a local port
+whether they&rsquo;re secure. Instead, I already have an all-purpose authentication
+mechanism I like, openssh &mdash; so I set up an ssh tunnel with a local port
 forwarded to the proxy port, and I just set tinyproxy to accept connections
 only from localhost.</p>
 
 <p>3) set your browser to use the proxy. Since proxied browsing relies on me
 starting the ssh tunnel, might be slightly slower, and in some cases I do want
-sites to be able to correctly geolocate me, I don&#8217;t want this to be the
-default. I could turn the proxy on and off depending on what I&#8217;m browsing, but
-that&#8217;s a pain. Instead, since I have multiple browsers installed, I just leave
+sites to be able to correctly geolocate me, I don&rsquo;t want this to be the
+default. I could turn the proxy on and off depending on what I&rsquo;m browsing, but
+that&rsquo;s a pain. Instead, since I have multiple browsers installed, I just leave
 one set without a proxy for normal use, and another one configured with the
 proxy for the sites that need it. (I wonder if there are extensions for Chrome
 or Firefox that allow you to configure per-site proxies?)</p>
@@ -292,8 +292,8 @@ or Firefox that allow you to configure per-site proxies?)</p>
   </header>
 
 
-  <div class="entry-content"><p>What do you do after you&#8217;ve watched two movies, drank 10 cups of yerba mate,
-finished one book, and it&#8217;s still daylight?</p>
+  <div class="entry-content"><p>What do you do after you&rsquo;ve watched two movies, drank 10 cups of yerba mate,
+finished one book, and it&rsquo;s still daylight?</p>
 </div>
   
   
@@ -333,11 +333,11 @@ finished one book, and it&#8217;s still daylight?</p>
 
   <div class="entry-content"><p><a href="http://www.washingtonexaminer.com/politics/Amid-%0Aairport-anger_-GOP-takes-aim-at-screening-1576602-108259869.html">The Washington Examiner</a>:</p>
 
-<p>&#8220;Did you know that the nation&#8217;s airports are not required to have
+<p>&ldquo;Did you know that the nation&rsquo;s airports are not required to have
 Transportation Security Administration screeners checking passengers at
 security checkpoints? The 2001 law creating the TSA gave airports the right to
 opt out of the TSA program in favor of private screeners after a two-year
-period.&#8221;</p>
+period.&rdquo;</p>
 
 <p>(Via <a href="http://daringfireball.net/linked/2010/11/16/airports-opt-out">DF</a>.)</p>
 </div>
@@ -381,7 +381,7 @@ period.&#8221;</p>
 of getting killed by terrorists.</a></p>
 
 <p>(And apparently, both can be calculated as less dangerous than the cosmic
-radiation you&#8217;re exposed to while flying at jet cruising altitude.)</p>
+radiation you&rsquo;re exposed to while flying at jet cruising altitude.)</p>
 </div>
   
   
@@ -419,9 +419,9 @@ radiation you&#8217;re exposed to while flying at jet cruising altitude.)</p>
   </header>
 
 
-  <div class="entry-content"><blockquote><p>That&#8217;s what history really is: masses of people doing ordinary things.</p></blockquote>
+  <div class="entry-content"><blockquote><p>That&rsquo;s what history really is: masses of people doing ordinary things.</p></blockquote>
 
-<p>&#8211;Bill Bryson, <a href="http://www.amazon.com/At-Home-Short-History-Private/dp/0767919386/ref=sr_1_1?ie=UTF8&amp;s=books&amp;qid=1290098848&amp;sr=8-1">At Home: A Short History of Private Life</a></p>
+<p>&mdash;Bill Bryson, <a href="http://www.amazon.com/At-Home-Short-History-Private/dp/0767919386/ref=sr_1_1?ie=UTF8&amp;s=books&amp;qid=1290098848&amp;sr=8-1">At Home: A Short History of Private Life</a></p>
 </div>
   
   
@@ -461,7 +461,7 @@ radiation you&#8217;re exposed to while flying at jet cruising altitude.)</p>
 
   <div class="entry-content"><p><a href="http://arstechnica.com/media/news/2010/11%0A/ptc-broadcast-profanity-on-tv-out-of-control.ars">What other organization, indeed?</a></p>
 
-<p>&#8220;Because what other organization would put out a chart like this.&#8221; (Worth
+<p>&ldquo;Because what other organization would put out a chart like this.&rdquo; (Worth
 seeing.)</p>
 </div>
   
@@ -542,34 +542,34 @@ law enforcement or product safety issue?</p>
   </header>
 
 
-  <div class="entry-content"><p>We&#8217;re in coastal Patagonia with the hopes of seeing penguins, dolphins, and
-whales &#8211; all of which should be around this time of year. There are two big
-wildlife reserves here &#8211; Peninsula Valdes to the north (known for whales and
-elephant seals) and Punta Tombo to the south (the world&#8217;s largest colonly of
-Magellanic Penguins). We&#8217;ve also been told there are good dolphin-watching
+  <div class="entry-content"><p>We&rsquo;re in coastal Patagonia with the hopes of seeing penguins, dolphins, and
+whales &mdash; all of which should be around this time of year. There are two big
+wildlife reserves here &mdash; Peninsula Valdes to the north (known for whales and
+elephant seals) and Punta Tombo to the south (the world&rsquo;s largest colonly of
+Magellanic Penguins). We&rsquo;ve also been told there are good dolphin-watching
 opportunities nearby, and we should try to combine this into our trip to the
 penguin reserve.</p>
 
 <p>Short story for those just interested in the animals: we saw the penguins and
-dolphins and both were endearing. The dolphins we saw are Commerson&#8217;s
-dolphins, which are tiny, live here year around, and are called &#8220;toninas&#8221; by
-the Argentinians; other larger dolphin species (&#8220;delfines&#8221;) show up in the
-summer but aren&#8217;t here yet. The toninas were easy to spot, and obligingly
+dolphins and both were endearing. The dolphins we saw are Commerson&rsquo;s
+dolphins, which are tiny, live here year around, and are called &ldquo;toninas&rdquo; by
+the Argentinians; other larger dolphin species (&ldquo;delfines&rdquo;) show up in the
+summer but aren&rsquo;t here yet. The toninas were easy to spot, and obligingly
 playful, swimming near our boat, and surfing the bow waves from our and other
 boats. The penguins in the Punta Tombo colony are Magellanic penguins, about 2
 feet tall, fairly lazy, and fairly willing to ignore humans traipsing through
 their nesting areas. We spent a few hours watching them, sleeping in their
 nests, standing up and stretching and standing still for 10s of minutes at a
 time, going through a wake-up grooming ritual that looks a lot like humans
-brushing their teeth &#8211; hey, penguins are easy to anthropomorphize &#8211; and
+brushing their teeth &mdash; hey, penguins are easy to anthropomorphize &mdash; and
 occasionally waddling around.</p>
 
 <p>Longer story with advice for anyone who might be trying this trip themselves:</p>
 
-<p>The guidebooks we&#8217;re using are both heavily biased towards using Puerto Madryn
+<p>The guidebooks we&rsquo;re using are both heavily biased towards using Puerto Madryn
 as a base for visiting these areas, but we decided to stay in Trelew first,
-for three reasons: it&#8217;s closer to the penguin reserve, it&#8217;s got the airport
-we&#8217;re flying into, and being less recommended by guidebooks it&#8217;ll be less full
+for three reasons: it&rsquo;s closer to the penguin reserve, it&rsquo;s got the airport
+we&rsquo;re flying into, and being less recommended by guidebooks it&rsquo;ll be less full
 of guidebook-toting tourists.</p>
 
 <p>So, then, here we are in Trelew trying to figure out how best to visit Punta
@@ -580,23 +580,23 @@ going to Puerto Madryn).</p>
 <p>It seems we have 3 basic options: a guided tour package, a taxi hired for the
 day, or renting a car and going by ourselves. The taxi that picked us up from
 the airport mentioned they do all-day tours to Punta Tombo for a fixed price
-of AR$480, so that&#8217;s our starting point.</p>
+of AR$480, so that&rsquo;s our starting point.</p>
 
-<p>Looking for tours, it seems like most of what&#8217;s available starts in Puerto
+<p>Looking for tours, it seems like most of what&rsquo;s available starts in Puerto
 Madryn and not Trelew. Using guidebook advice, we find one company starting in
-Trelew but they&#8217;re not running a tour today. Finally our hotel front desk
-finds one; it&#8217;s AR$180 per person, and visits the penguin reserve, Gaiman for
+Trelew but they&rsquo;re not running a tour today. Finally our hotel front desk
+finds one; it&rsquo;s AR$180 per person, and visits the penguin reserve, Gaiman for
 Welsh tea, and the dinosaur museum. So a group tour: nearly the same price,
-takes us other places we didn&#8217;t want to go, doesn&#8217;t visit the dolphins, and
+takes us other places we didn&rsquo;t want to go, doesn&rsquo;t visit the dolphins, and
 leaves only about 1 hour with the penguins.</p>
 
-<p>We ruled out renting a car because I didn&#8217;t feel like driving all day.</p>
+<p>We ruled out renting a car because I didn&rsquo;t feel like driving all day.</p>
 
-<p>That left us back with the taxi option, and since now we know it doesn&#8217;t cost
-that much more than a package tour (for 2 people &#8211; and for 3 or 4 people, it
+<p>That left us back with the taxi option, and since now we know it doesn&rsquo;t cost
+that much more than a package tour (for 2 people &mdash; and for 3 or 4 people, it
 would actually be cheaper), plus lets us go at our own pace, stay with the
 penguins as long as we want, and work the dolphins into the itinerary too,
-it&#8217;s the clear winner.</p>
+it&rsquo;s the clear winner.</p>
 
 <p>Next up: bus to Puerto Madryn, rent a car, and drive into Peninsula Valdes to
 see the whales and elephant seals.</p>

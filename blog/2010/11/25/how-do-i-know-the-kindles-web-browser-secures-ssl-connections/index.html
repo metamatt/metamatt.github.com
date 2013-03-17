@@ -9,9 +9,9 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="It&#8217;s possible to hijack an SSL connection that&#8217;s forwarded through a network
+  <meta name="description" content="It&rsquo;s possible to hijack an SSL connection that&rsquo;s forwarded through a network
 you control, if the user and
-browser combination aren&#8217; &hellip;">
+browser combination aren&rsquo; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -106,48 +106,48 @@ browser combination aren&#8217; &hellip;">
   </header>
 
 
-<div class="entry-content"><p>It&#8217;s possible to <a href="http://www.thoughtcrime.org/software/sslstrip/">hijack an SSL connection that&#8217;s forwarded through a network
+<div class="entry-content"><p>It&rsquo;s possible to <a href="http://www.thoughtcrime.org/software/sslstrip/">hijack an SSL connection that&rsquo;s forwarded through a network
 you control</a>, if the user and
-browser combination aren&#8217;t extra vigilant to verify they ended up at the
+browser combination aren&rsquo;t extra vigilant to verify they ended up at the
 requested domain. (Actually, sslstrip can generally hijack traffic on adjacent
-networks by pretending to be the router, but it&#8217;s even easier and more
+networks by pretending to be the router, but it&rsquo;s even easier and more
 reliable if it runs on the router.)</p>
 
 <p>This hijacking is possible even using best-available off-the-shelf browsers.
-If you control the browser, of course it&#8217;s even easier to hijack SSL; you just
+If you control the browser, of course it&rsquo;s even easier to hijack SSL; you just
 fake the padlock icon and send the traffic wherever you want.</p>
 
-<p>I&#8217;m not saying Amazon does anything like this with the Kindle, but I am
+<p>I&rsquo;m not saying Amazon does anything like this with the Kindle, but I am
 curious how to verify that SSL traffic originating in the Kindle browser is
 actually secure end-to-end like SSL is supposed to be.</p>
 
-<p>I got curious about this and used my Kindle&#8217;s 3G connection to retrieve some
+<p>I got curious about this and used my Kindle&rsquo;s 3G connection to retrieve some
 pages from an HTTPS server I control, and looked at the access log to see
 where the access came from.</p>
 
 <p>Using the Kindle 3G connection (from Argentina!), the requesting IP address
 was 8.18.145.245, which back-resolves as kindle-user.whispernet.com according
-to nslookup. (That name doesn&#8217;t forward-resolve to anything, which is
-suspicious network management on Amazon&#8217;s part.) Running a traceroute to this
-address shows packets entering Amazon&#8217;s network and doesn&#8217;t show details past
+to nslookup. (That name doesn&rsquo;t forward-resolve to anything, which is
+suspicious network management on Amazon&rsquo;s part.) Running a traceroute to this
+address shows packets entering Amazon&rsquo;s network and doesn&rsquo;t show details past
 that.</p>
 
 <p>Setting the Kindle to use Wi-Fi instead of 3G and then requesting the page
 again, the requesting IP address was 190.55.119.242, which back-resolves as
-cpe-190-55-119-242.telecentro-reversos.com.ar &#8211; clearly in Argentina.</p>
+cpe-190-55-119-242.telecentro-reversos.com.ar &mdash; clearly in Argentina.</p>
 
 <p>As another comparison point: Using my cell phone on 3G, with Wi-Fi disabled,
 to request the same page yielded an access from IP address 170.51.255.253,
-which doesn&#8217;t have a reverse DNS entry; traceroute shows this address as
-clearly in Argentina, however. (The cell phone was on Claro&#8217;s network; I don&#8217;t
-know what 3G network the Kindle was using, and it&#8217;s not necessarily the same.)</p>
+which doesn&rsquo;t have a reverse DNS entry; traceroute shows this address as
+clearly in Argentina, however. (The cell phone was on Claro&rsquo;s network; I don&rsquo;t
+know what 3G network the Kindle was using, and it&rsquo;s not necessarily the same.)</p>
 
 <p>What this means is that not only does Amazon control the Kindle hardware and
 software, but for 3G (Whispernet) connections, they apparently route all the
-traffic through Amazon&#8217;s network and datacenter. It&#8217;s probably cheaper for
+traffic through Amazon&rsquo;s network and datacenter. It&rsquo;s probably cheaper for
 them to negotiate bulk data contracts with a bunch of 3G networks that way,
-but it would make me feel better if I saw a direct route from where I&#8217;m
-sitting to where I&#8217;m going, like I do with the cell phone.</p>
+but it would make me feel better if I saw a direct route from where I&rsquo;m
+sitting to where I&rsquo;m going, like I do with the cell phone.</p>
 
 <p>(Note 1: this is all moot since again, if you control the browsing software
 and hardware as Amazon does, there are easier ways to cheat, and I do trust

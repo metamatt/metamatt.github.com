@@ -113,12 +113,12 @@ never drops the Wi-Fi connection on wakeup, and is on the network and ready
 for me to type almost as soon as I open the lid. Almost like what we expect
 from a tablet or smartphone.</p>
 
-<p>That&#8217;s the dream, anyway. I&#8217;ve never owned or used a Windows laptop (or Linux
+<p>That&rsquo;s the dream, anyway. I&rsquo;ve never owned or used a Windows laptop (or Linux
 laptop, for that matter) that pulled that off, and not for lack of trying. It
 was much truer of Apple laptops running Mac OS X, ever since their
 introduction in 2001. It remained one of my favorite things about more recent
-Macbooks, but I&#8217;ve found it getting less true over time, culminating in my
-2012 &#8220;Macbook Pro with Retina Display&#8221; (henceforth rMBP), which seems to take
+Macbooks, but I&rsquo;ve found it getting less true over time, culminating in my
+2012 &ldquo;Macbook Pro with Retina Display&rdquo; (henceforth rMBP), which seems to take
 like 30 seconds to wake from sleep, then sometimes crashes immediately as the
 crowning touch.</p>
 
@@ -126,42 +126,45 @@ crowning touch.</p>
 of it, I think there are 3 pieces to the puzzle.</p>
 
 <ol>
-<li><p>The rMBP (like Macbook Air models) has no external status lights. No charge level indicator on the battery like older models with removable batteries, no charge level indicator on the side of the unit like previous unibody Macbook Pro models, no power light that winks while asleep and glows while awake like all previous Macbook models. So when you open the lid, if it wakes up and is ready for use, great, but if not, you don&#8217;t know whether it&#8217;s powered off, has a dead battery, or is already trying to wake up and just taking its sweet time.</p></li>
-<li><p>The default power-management plan is &#8220;Safe Sleep&#8221;, which means that when you close the lid the computer writes a suspend image to disk, then suspends to RAM1. Then wakeup is normally fast because RAM contents are still present, but if power is lost for any reason (battery dies, battery is removed on models where that&#8217;s possible, or the computer decides to power itself off to stop expending battery power to support the RAM), it can still resume from where you left it, just more slowly, by reading from disk. This last bit about deciding to power itself off is crucial; it&#8217;s controlled by a parameter known as <code>standbydelay</code>, and on this computer at least (rMBP running OS X 10.8) the default value of <code>standbydelay</code> was 4200 seconds, or 70 minutes, just over an hour. This means if you suspend the computer and wake it up again within 70 minutes, it will resume from RAM, but if you leave it asleep for more than 70 minutes, it will have powered off entirely, and will resume from disk. On my previous laptop (a 13&#8221; Macbook Pro from 2010, also now running OS X 10.8), <code>standbydelay</code> was not set at all, which I assume means it will try to keep RAM supplied with power until the battery dies. I don&#8217;t know the reason for the different defaults.</p></li>
-<li><p>This rMBP has 16 gigabytes of RAM, more than any laptop I&#8217;ve owned in the past. Now, it also has a fast SSD, so I wouldn&#8217;t have thought it would take that much longer to resume from disk vs RAM (and in actual usage it shouldn&#8217;t have to save and restore all of it anyway) but it&#8217;s likely a factor: if it had to transfer the entire 16GB, even at 500 MB/sec that would be 32 seconds. It actually only needs to save/restore the active pages; say on average that&#8217;s 60% of memory and add a few seconds to get the hardware devices from cold boot to powered on, and you&#8217;re in the 20 second ballpark that is long enough to annoy me.</p></li>
+<li><p> The rMBP (like Macbook Air models) has no external status lights. No charge level indicator on the battery like older models with removable batteries, no charge level indicator on the side of the unit like previous unibody Macbook Pro models, no power light that winks while asleep and glows while awake like all previous Macbook models. So when you open the lid, if it wakes up and is ready for use, great, but if not, you don&rsquo;t know whether it&rsquo;s powered off, has a dead battery, or is already trying to wake up and just taking its sweet time.</p></li>
+<li><p> The default power-management plan is &ldquo;Safe Sleep&rdquo;, which means that when you close the lid the computer writes a suspend image to disk, then suspends to RAM<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. Then wakeup is normally fast because RAM contents are still present, but if power is lost for any reason (battery dies, battery is removed on models where that&rsquo;s possible, or the computer decides to power itself off to stop expending battery power to support the RAM), it can still resume from where you left it, just more slowly, by reading from disk. This last bit about deciding to power itself off is crucial; it&rsquo;s controlled by a parameter known as <code>standbydelay</code>, and on this computer at least (rMBP running OS X 10.8) the default value of <code>standbydelay</code> was 4200 seconds, or 70 minutes, just over an hour. This means if you suspend the computer and wake it up again within 70 minutes, it will resume from RAM, but if you leave it asleep for more than 70 minutes, it will have powered off entirely, and will resume from disk. On my previous laptop (a 13&#8221; Macbook Pro from 2010, also now running OS X 10.8), <code>standbydelay</code> was not set at all, which I assume means it will try to keep RAM supplied with power until the battery dies. I don&rsquo;t know the reason for the different defaults.</p></li>
+<li><p> This rMBP has 16 gigabytes of RAM, more than any laptop I&rsquo;ve owned in the past. Now, it also has a fast SSD, so I wouldn&rsquo;t have thought it would take that much longer to resume from disk vs RAM (and in actual usage it shouldn&rsquo;t have to save and restore all of it anyway) but it&rsquo;s likely a factor: if it had to transfer the entire 16GB, even at 500 MB/sec that would be 32 seconds. It actually only needs to save/restore the active pages; say on average that&rsquo;s 60% of memory and add a few seconds to get the hardware devices from cold boot to powered on, and you&rsquo;re in the 20 second ballpark that is long enough to annoy me.</p></li>
 </ol>
 
 
 <p>So boiled down: this machine feels slower to resume than previous ones because
-it&#8217;s suspending to disk, has a lot of memory to restore from disk, and doesn&#8217;t
+it&rsquo;s suspending to disk, has a lot of memory to restore from disk, and doesn&rsquo;t
 show any visible signs of progress while restoring from disk.</p>
 
 <p>I changed the <code>standbydelay</code> value to 12 hours on battery (<code>sudo pmset -b
 standbydelay 43200</code>) and disabled it entirely on AC power (<code>sudo pmset -c
-standby 0</code>) and things seem much better now2.</p>
+standby 0</code>) and things seem much better now<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
 
-<p>Oh. And sleep reliability3? That&#8217;s even more important. When I first got the
-rMBP, it would kernel panic and show &#8220;Your computer must be restarted&#8221; when
+<p>Oh. And sleep reliability<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>? That&rsquo;s even more important. When I first got the
+rMBP, it would kernel panic and show &ldquo;Your computer must be restarted&rdquo; when
 resuming from sleep once in a while, roughly once a month. That was
-intolerable; at a guess I disabled PowerNap; I don&#8217;t know whether it was the
-actual problem but I haven&#8217;t had reliability problems since.</p>
+intolerable; at a guess I disabled PowerNap; I don&rsquo;t know whether it was the
+actual problem but I haven&rsquo;t had reliability problems since.</p>
 
 <p>So these are my current recommendations for power management on a rMBP or
 Macbook Air:</p>
 
 <ul>
-<li>Increase <code>standbydelay</code> value enough that you don&#8217;t notice the computer resuming from disk in normal use</li>
+<li>Increase <code>standbydelay</code> value enough that you don&rsquo;t notice the computer resuming from disk in normal use</li>
 <li>Disable PowerNap</li>
 </ul>
 
-
-<hr />
-
+<div class="footnotes">
+<hr/>
 <ol>
-<li><p>The difference between suspend-to-disk and suspend-to-RAM is that suspend-to-RAM expends battery power to keep the contents of RAM alive, so wakeup is faster, while suspend-to-disk extends battery life at the expense of slower wakeup. ↩</p></li>
-<li><p>I didn&#8217;t realize the import of this at first, but Mac OS maintains separate sleep policies for battery and AC power, and pmset can set either one (-b for battery, -c for charger) or both (-a for both, which is also the default); so there are two <code>standbydelay</code> values. I have my computer set to never sleep on AC power, but I sleep it manually by closing the lid when I&#8217;m not using it. After having applied the longer standbydelay to battery, I was annoyed to find the computer slow to wake after leaving it asleep and charging for a while. Hence the second command to entirely disable the <code>standby</code> behavior on AC power. ↩</p></li>
-<li><p>When talking about sleep reliability, what&#8217;s actually important is the ability to <em>wake back up</em> reliably, just like when talking about backup reliability, what&#8217;s important is the ability to restore from backups. It&#8217;s the round trip that matters. ↩</p></li>
+<li id="fn:1">
+<p>The difference between suspend-to-disk and suspend-to-RAM is that suspend-to-RAM expends battery power to keep the contents of RAM alive, so wakeup is faster, while suspend-to-disk extends battery life at the expense of slower wakeup.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>I didn&rsquo;t realize the import of this at first, but Mac OS maintains separate sleep policies for battery and AC power, and pmset can set either one (-b for battery, -c for charger) or both (-a for both, which is also the default); so there are two <code>standbydelay</code> values. I have my computer set to never sleep on AC power, but I sleep it manually by closing the lid when I&rsquo;m not using it. After having applied the longer standbydelay to battery, I was annoyed to find the computer slow to wake after leaving it asleep and charging for a while. Hence the second command to entirely disable the <code>standby</code> behavior on AC power.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>When talking about sleep reliability, what&rsquo;s actually important is the ability to <em>wake back up</em> reliably, just like when talking about backup reliability, what&rsquo;s important is the ability to restore from backups. It&rsquo;s the round trip that matters.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
 </ol>
+</div>
 
 </div>
 

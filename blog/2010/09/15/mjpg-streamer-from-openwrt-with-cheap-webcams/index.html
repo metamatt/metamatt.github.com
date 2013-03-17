@@ -115,17 +115,17 @@ with-openwrt-backfire/](http://blog.bashroom.com/2010/05/04/webcam-streaming-
 with-openwrt-backfire/)</a>.)</p>
 
 <p>I tried this with an old webcam I had lying around, but the old webcam
-predated the UVC (USB Video Class) standard, and I couldn&#8217;t get it to work. So
+predated the UVC (USB Video Class) standard, and I couldn&rsquo;t get it to work. So
 then I bought a couple of the cheapest webcams on Amazon that claimed UVC
 support.</p>
 
-<p>Not too surprisingly, neither one worked right away &#8211; when I start mjpg-
-streamer as described in the abovelinked article, it would say &#8220;Unable to set
-format: invalid argument&#8221;. This turns out to be because these cheaper cameras
-don&#8217;t support MJPG in hardware, only YUV output; mjpg-streamer can convert but
+<p>Not too surprisingly, neither one worked right away &mdash; when I start mjpg-
+streamer as described in the abovelinked article, it would say &ldquo;Unable to set
+format: invalid argument&rdquo;. This turns out to be because these cheaper cameras
+don&rsquo;t support MJPG in hardware, only YUV output; mjpg-streamer can convert but
 you have to pass -y to it.</p>
 
-<p>So for OpenWRT, I edited /etc/init.d/mjpg-streamer to add -y to the &#8211;input
+<p>So for OpenWRT, I edited /etc/init.d/mjpg-streamer to add -y to the &mdash;input
 argument.</p>
 
 <p>The resulting stream is choppy, and gets backed up several frames, but is good
@@ -134,7 +134,7 @@ faster router I have, so I told mjpg-streamer to stream at 1 fps, which is not
 that much choppier and still good enough for my purposes (edit /etc/config
 /mjpg-streamer to do this).</p>
 
-<p>Moral of the story: it&#8217;s probably better to buy a webcam known to support MJPG
+<p>Moral of the story: it&rsquo;s probably better to buy a webcam known to support MJPG
 in hardware.</p>
 
 <p>(Thanks to <a href="https://forum.openwrt.org/viewtopic.php?%0Apid=98294">[https://forum.openwrt.org/viewtopic.php?pid=98294](https://forum.

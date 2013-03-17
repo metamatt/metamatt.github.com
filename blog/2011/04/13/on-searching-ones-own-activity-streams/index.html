@@ -115,51 +115,51 @@ doing/thinking/saying at a given time.</p>
 <p>Twitter does have a search feature and you can restrict it to your own tweets
 by adding your username but it only returns very recent tweets (like maybe the
 last week); Twitter is also indexed by the major web search engines and if you
-add &#8220;site:twitter.com username&#8221; to your queries you may or may not find what
-you&#8217;re looking for with minimal additional cruft; there&#8217;s also <a href="http://snapbird.org/">Snap
+add &ldquo;site:twitter.com username&rdquo; to your queries you may or may not find what
+you&rsquo;re looking for with minimal additional cruft; there&rsquo;s also <a href="http://snapbird.org/">Snap
 Bird</a> which is a 3rd party site designed to do this but
-it&#8217;s clunky and I&#8217;ve never seen it actually work (maybe the fault of Twitter&#8217;s
+it&rsquo;s clunky and I&rsquo;ve never seen it actually work (maybe the fault of Twitter&rsquo;s
 API, who knows).</p>
 
-<p>Facebook does have a search feature but it inexplicably doesn&#8217;t search your
-own updates (it finds people and pages and if you click the &#8220;See more results
-for…&#8221; link then a tantalizing &#8220;posts from friends&#8221; link appears which doesn&#8217;t
+<p>Facebook does have a search feature but it inexplicably doesn&rsquo;t search your
+own updates (it finds people and pages and if you click the &ldquo;See more results
+for…&rdquo; link then a tantalizing &ldquo;posts from friends&rdquo; link appears which doesn&rsquo;t
 seem to find content in posts by me or my friends); Facebook is a walled
 garden and its content is generally not indexable by external search engines;
 it does have a pretty good API and so somebody could probably go build this as
-a 3rd party app but I&#8217;m not aware of one, and arguably it would be better done
+a 3rd party app but I&rsquo;m not aware of one, and arguably it would be better done
 as part of the core site anyway.</p>
 
 <p>So, on those occasions I do want to go track down one of my own updates on
 either of these sites, I resort to viewing my own profile, then scrolling
-down, and clicking the &#8220;show older posts&#8221; link as necessary, and scrolling
-down, and repeating until I&#8217;ve gone back a couple months, and using my
-browser&#8217;s find-in-page feature to find what I&#8217;m looking for, eventually after
+down, and clicking the &ldquo;show older posts&rdquo; link as necessary, and scrolling
+down, and repeating until I&rsquo;ve gone back a couple months, and using my
+browser&rsquo;s find-in-page feature to find what I&rsquo;m looking for, eventually after
 way too much clicking and scrolling.</p>
 
-<p>Not only is this ridiculous, it&#8217;s made even worse by an interaction with
-Google Chrome (and maybe other browsers, but Chrome&#8217;s what I&#8217;m using lately).
+<p>Not only is this ridiculous, it&rsquo;s made even worse by an interaction with
+Google Chrome (and maybe other browsers, but Chrome&rsquo;s what I&rsquo;m using lately).
 Apparently the AJAXy way these sites use DOM writes or whatever they do to
 append content to the current page without reloading triggers this behavior in
-Chrome where &#8220;Find Again&#8221; (ctrl-G or Command-G) doesn&#8217;t find text in newly
-added parts of the page. So often, I&#8217;ll load the page and scroll back a month
-or so and then use the browser Find command to search for &#8220;widgets&#8221; and not
+Chrome where &ldquo;Find Again&rdquo; (ctrl-G or Command-G) doesn&rsquo;t find text in newly
+added parts of the page. So often, I&rsquo;ll load the page and scroll back a month
+or so and then use the browser Find command to search for &ldquo;widgets&rdquo; and not
 find it, then scroll another month or so and then hit Command-G and not find
 it, then scroll back another month or so and so on… and after going back 6 or
-7 months, I&#8217;ll remember that Command-G doesn&#8217;t work, and cancel the search and
+7 months, I&rsquo;ll remember that Command-G doesn&rsquo;t work, and cancel the search and
 repeat the search with Command-F and <em>then</em> command-G and then it will find it
 halfway up the page, which I would have found a lot easier if Command-G had
 worked the first applicable time. (This was a pattern I learned with earlier
-versions of Chrome; using Chrome 10, it&#8217;s a little different &#8211; the first
-Command-G may actually scroll the search hit into view, but it won&#8217;t highlight
-it and you won&#8217;t notice it on a busy page, and it will keep reporting &#8220;0 of 0&#8221;
+versions of Chrome; using Chrome 10, it&rsquo;s a little different &mdash; the first
+Command-G may actually scroll the search hit into view, but it won&rsquo;t highlight
+it and you won&rsquo;t notice it on a busy page, and it will keep reporting &ldquo;0 of 0&rdquo;
 in the search status pane; you still need to do the 3-step deselect, Find,
 Find Again dance to get it to highlight.)</p>
 
-<p>(Side note on Facebook: there&#8217;s a <a href="http://ask.metafilter.com/128906/How-to-search-%0Athrough-your-own-Facebook-profile">metafilter question asking how to search
+<p>(Side note on Facebook: there&rsquo;s a <a href="http://ask.metafilter.com/128906/How-to-search-%0Athrough-your-own-Facebook-profile">metafilter question asking how to search
 your own Facebook profile</a>; not only do the answers there not have a
 solution, but the overall feeling is highly negative on it even being
-possible. That&#8217;s not quite true; I&#8217;ve confirmed that using the Facebook API
+possible. That&rsquo;s not quite true; I&rsquo;ve confirmed that using the Facebook API
 from a simple Python script I can get back anything I ever posted. They do
 keep it, and they or someone else could write an indexer and search tool.)</p>
 

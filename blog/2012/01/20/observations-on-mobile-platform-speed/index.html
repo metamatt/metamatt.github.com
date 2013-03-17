@@ -9,7 +9,7 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="Over the past 5 years, I&#8217;ve used smartphones from Apple and Palm (powered by
+  <meta name="description" content="Over the past 5 years, I&rsquo;ve used smartphones from Apple and Palm (powered by
 iOS and webOS), and played around with Android devices over the &hellip;">
   
 
@@ -105,26 +105,26 @@ iOS and webOS), and played around with Android devices over the &hellip;">
   </header>
 
 
-<div class="entry-content"><p>Over the past 5 years, I&#8217;ve used smartphones from Apple and Palm (powered by
+<div class="entry-content"><p>Over the past 5 years, I&rsquo;ve used smartphones from Apple and Palm (powered by
 iOS and webOS), and played around with Android devices over the same timeframe
-though I&#8217;ve never owned one for daily use.</p>
+though I&rsquo;ve never owned one for daily use.</p>
 
 <p>Still, I find the different design choices at the system level to be very
-different, and the results pretty much what you&#8217;d expect for each one:</p>
+different, and the results pretty much what you&rsquo;d expect for each one:</p>
 
 <ul>
-<li>webOS as Palm originally shipped it: apps are written in Javascript and run in an interpreter; the platform doesn&#8217;t swap out virtual memory. I never saw apps crash; it was pretty common to get out-of-memory errors (in the guise of a message that says you&#8217;re trying to do too many things at once and need to close some apps). Apps were pretty slow.</li>
-<li>webOS as reinterpreted by the hacker/modder community: apps are still Javascript running in an interpreter, but now there&#8217;s a swapfile pretending there&#8217;s more memory. (I think Palm liked this patch enough they eventually folded it back into their official kernels, actually. And if swapping caused a hit to speed, it was compensated for by the fact that the hacker kernels also overclocked the CPU.) The result with this was a platform on which apps never crashed, and also never run out of memory, but they could be glacially slow. The poster child here was the Google Maps app, which often took so long just to launch — over a minute, no kidding — that it would apparently become confused about why it had launched in the first place, and just draw a white screen. (The bit about confusion is just my narrative, but it often would draw nothing but a white screen, and that seemed to correlate highly with the times it took forever to launch.) You can certainly make the argument that an app that takes a minute to launch to a broken state is no more helpful than an app that crashed; there&#8217;s no panacea here.</li>
-<li>iOS: apps are written in Objective C and compiled to native code; there&#8217;s no swapfile I&#8217;m aware of. There are two results here: apps run fast, and they crash often. They crash because they segv from bad code, they crash because malloc returns null and they segv instead of checking for that, and they crash because the platform kills them for using too much memory.</li>
-<li>Android: apps are written in Java and run in a JIT-compiled VM (which has gotten faster over time, notably in the 2.3 release); I don&#8217;t know if there&#8217;s a swapfile, but I suspect stock Android releases don&#8217;t have one and mods like CyanogenMod allow one. As I said above, I don&#8217;t have deep experience with Android devices, but my general perception is that on contemporary roughly equivalent hardware, it feels significantly faster than webOS and significantly slower than iOS. (I&#8217;m talking about user perception of speed here, which has to do both with how responsive the UI is and how fast real work gets done. iOS and webOS both pay more attention than Android to keeping the UI responsive, to the best of my knowledge.)</li>
+<li>webOS as Palm originally shipped it: apps are written in Javascript and run in an interpreter; the platform doesn&rsquo;t swap out virtual memory. I never saw apps crash; it was pretty common to get out-of-memory errors (in the guise of a message that says you&rsquo;re trying to do too many things at once and need to close some apps). Apps were pretty slow.</li>
+<li>webOS as reinterpreted by the hacker/modder community: apps are still Javascript running in an interpreter, but now there&rsquo;s a swapfile pretending there&rsquo;s more memory. (I think Palm liked this patch enough they eventually folded it back into their official kernels, actually. And if swapping caused a hit to speed, it was compensated for by the fact that the hacker kernels also overclocked the CPU.) The result with this was a platform on which apps never crashed, and also never run out of memory, but they could be glacially slow. The poster child here was the Google Maps app, which often took so long just to launch — over a minute, no kidding — that it would apparently become confused about why it had launched in the first place, and just draw a white screen. (The bit about confusion is just my narrative, but it often would draw nothing but a white screen, and that seemed to correlate highly with the times it took forever to launch.) You can certainly make the argument that an app that takes a minute to launch to a broken state is no more helpful than an app that crashed; there&rsquo;s no panacea here.</li>
+<li>iOS: apps are written in Objective C and compiled to native code; there&rsquo;s no swapfile I&rsquo;m aware of. There are two results here: apps run fast, and they crash often. They crash because they segv from bad code, they crash because malloc returns null and they segv instead of checking for that, and they crash because the platform kills them for using too much memory.</li>
+<li>Android: apps are written in Java and run in a JIT-compiled VM (which has gotten faster over time, notably in the 2.3 release); I don&rsquo;t know if there&rsquo;s a swapfile, but I suspect stock Android releases don&rsquo;t have one and mods like CyanogenMod allow one. As I said above, I don&rsquo;t have deep experience with Android devices, but my general perception is that on contemporary roughly equivalent hardware, it feels significantly faster than webOS and significantly slower than iOS. (I&rsquo;m talking about user perception of speed here, which has to do both with how responsive the UI is and how fast real work gets done. iOS and webOS both pay more attention than Android to keeping the UI responsive, to the best of my knowledge.)</li>
 </ul>
 
 
 <p>So. This evidence is relatively unsurprising and easy to explain — interpreted
 code that can have as much memory as it wants never crashes but takes forever
 to do anything useful; native code under tight memory management is much
-faster and much more crash prone — what&#8217;s interesting to me is that all 3 of
-these approaches were considered viable in the marketplace. And I don&#8217;t even
+faster and much more crash prone — what&rsquo;s interesting to me is that all 3 of
+these approaches were considered viable in the marketplace. And I don&rsquo;t even
 know that the dog slowness of webOS is the reason it failed in the marketplace
 (and if HP had poured the right resources into it and actually shipped what
 they said they would in 2011, a better optimized webOS 3 running on 2011-class

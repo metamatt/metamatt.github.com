@@ -9,7 +9,7 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="Mostly the OS X user experience is really good and getting better, and Apple&#8217;s
+  <meta name="description" content="Mostly the OS X user experience is really good and getting better, and Apple&rsquo;s
 famous for fit and finish and general polish and avoiding dreary &hellip;">
   
 
@@ -105,24 +105,24 @@ famous for fit and finish and general polish and avoiding dreary &hellip;">
   </header>
 
 
-<div class="entry-content"><p>Mostly the OS X user experience is really good and getting better, and Apple&#8217;s
+<div class="entry-content"><p>Mostly the OS X user experience is really good and getting better, and Apple&rsquo;s
 famous for fit and finish and general polish and avoiding dreary annoyances
 that other platforms make users put up with.</p>
 
 <p>That said, here are a couple problems which I experience sporadically, and
-have been seeing for years, and at this point don&#8217;t really expect to ever see
+have been seeing for years, and at this point don&rsquo;t really expect to ever see
 fixed:</p>
 
 <ol>
-<li>Sleep Mac, do something else, later wake it up. Usually this works great (Mac OS on Apple hardware has by far the fastest and most reliable suspend/resume code of any general-purpose OS I&#8217;ve ever used). However, on resume sometimes I&#8217;ll be unable to dismiss the screen saver after entering my password. The OS itself is healthy at most levels (compare with Windows which used to frequently BSOD on suspend/resume, or Linux which seems to like to resume most of the hardware but leave the graphics hardware in a useless state): processes are running, input devices work, the rendering stack works. It&#8217;s just that there&#8217;s this all-black topmost window which won&#8217;t go away. I can ssh in and use the Mac like any other Unix machine, but that&#8217;s small comfort. Reproducible: randomly, occasionally. Fix: reboot.</li>
-<li>Leave Mail.app running on two different Macs connected to the same IMAP account served by courier-imap. Sleep one Mac, use the other, wake first the first one, return to Mail.app, and it it won&#8217;t see changes that happened (new messages that arrived, old messages moved to another folder, etc.) while it was asleep. This bug showed up in Snow Leopard and persists in 10.6.7. Reproducible: always. Fix: quit/relaunch mail.</li>
-<li>My desktop background sometimes disappears (and is replaced by the configured background color instead of the configured background image). Reproducible: randomly, frequently. Fix: launch &#8220;Desktop &amp; Screen Saver&#8221; prefpane and toggle any setting.</li>
-<li>Log into headless Mac mini via Screen Sharing.app (VNC), try to use Fast User Switching to switch to another user account. Display stack gets completely screwed up; I can still ssh into the Mac and use terminal-based processes, but can&#8217;t use the GUI either remotely via VNC or locally if I attach a screen. Reproducible: always. Fix: reboot.</li>
+<li> Sleep Mac, do something else, later wake it up. Usually this works great (Mac OS on Apple hardware has by far the fastest and most reliable suspend/resume code of any general-purpose OS I&rsquo;ve ever used). However, on resume sometimes I&rsquo;ll be unable to dismiss the screen saver after entering my password. The OS itself is healthy at most levels (compare with Windows which used to frequently BSOD on suspend/resume, or Linux which seems to like to resume most of the hardware but leave the graphics hardware in a useless state): processes are running, input devices work, the rendering stack works. It&rsquo;s just that there&rsquo;s this all-black topmost window which won&rsquo;t go away. I can ssh in and use the Mac like any other Unix machine, but that&rsquo;s small comfort. Reproducible: randomly, occasionally. Fix: reboot.</li>
+<li> Leave Mail.app running on two different Macs connected to the same IMAP account served by courier-imap. Sleep one Mac, use the other, wake first the first one, return to Mail.app, and it it won&rsquo;t see changes that happened (new messages that arrived, old messages moved to another folder, etc.) while it was asleep. This bug showed up in Snow Leopard and persists in 10.6.7. Reproducible: always. Fix: quit/relaunch mail.</li>
+<li> My desktop background sometimes disappears (and is replaced by the configured background color instead of the configured background image). Reproducible: randomly, frequently. Fix: launch &ldquo;Desktop &amp; Screen Saver&rdquo; prefpane and toggle any setting.</li>
+<li> Log into headless Mac mini via Screen Sharing.app (VNC), try to use Fast User Switching to switch to another user account. Display stack gets completely screwed up; I can still ssh into the Mac and use terminal-based processes, but can&rsquo;t use the GUI either remotely via VNC or locally if I attach a screen. Reproducible: always. Fix: reboot.</li>
 </ol>
 
 
-<p>I&#8217;ve reported most of these to Apple, to see them either languish for years or
-get resolved as a dupe of some older bug that&#8217;s been languishing for even more
+<p>I&rsquo;ve reported most of these to Apple, to see them either languish for years or
+get resolved as a dupe of some older bug that&rsquo;s been languishing for even more
 years. Oh well.</p>
 </div>
 

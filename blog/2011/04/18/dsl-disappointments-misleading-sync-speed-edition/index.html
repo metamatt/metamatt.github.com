@@ -9,8 +9,8 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="Another annoying behavior of the Comtrend modem I got from Sonic.net: it doesn&#8217;t
-always transfer real data at anywhere near the claimed &#8220; &hellip;">
+  <meta name="description" content="Another annoying behavior of the Comtrend modem I got from Sonic.net: it doesn&rsquo;t
+always transfer real data at anywhere near the claimed &ldquo; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -105,10 +105,10 @@ always transfer real data at anywhere near the claimed &#8220; &hellip;">
   </header>
 
 
-<div class="entry-content"><p>Another <a href="http://blog.metamatt.com/blog/2011/04/13/dsl-%0Amodem-annoyances/">annoying behavior</a> of the Comtrend modem I got from Sonic.net: it doesn&#8217;t
-always transfer real data at anywhere near the claimed &#8220;sync&#8221; speed.</p>
+<div class="entry-content"><p>Another <a href="http://blog.metamatt.com/blog/2011/04/13/dsl-%0Amodem-annoyances/">annoying behavior</a> of the Comtrend modem I got from Sonic.net: it doesn&rsquo;t
+always transfer real data at anywhere near the claimed &ldquo;sync&rdquo; speed.</p>
 
-<p>As noted in <a href="http://blog.metamatt.com/blog/2011/04/09/state-of-the-last-mile-%0Ainternet-connection-year-2011/">my initial post about Sonic.net&#8217;s Fusion
+<p>As noted in <a href="http://blog.metamatt.com/blog/2011/04/09/state-of-the-last-mile-%0Ainternet-connection-year-2011/">my initial post about Sonic.net&rsquo;s Fusion
 Broadband</a>, I have 2 DSL lines from Sonic.net, which each
 in theory should support up to 20mbps downstream, but right now one of them
 syncs at 18mbps and one of them at only 4mbps, due to overly high attenuation
@@ -117,9 +117,9 @@ in the wiring supplied by AT&amp;T. Still, I should be able to get a combined
 
 <p>Well, with the modem deployed the way I intend to use it (in a back room near
 my other networking equipment and my UPS, connected to a DSL filter with a
-normal telephone patch cord), according to <a href="http://speedtest.sonic.net/ookla/">Sonic&#8217;s own speed test
+normal telephone patch cord), according to <a href="http://speedtest.sonic.net/ookla/">Sonic&rsquo;s own speed test
 site</a>, I get about 4mbps download and
-1.83mbps upload. Whoa, that&#8217;s a lot lower.</p>
+1.83mbps upload. Whoa, that&rsquo;s a lot lower.</p>
 
 <p>To make things weirder, if I disconnect the slow line (the one that syncs at
 only 4mbps) and leave only the fast line (synced at 18mbps) connected, the
@@ -136,12 +136,12 @@ filter supplied with the modem, and with different patch cables (the patch
 cable that came with the modem, the separate Y cable Sonic gave me, and an old
 patch cable I had lying around); for various combinations of each of these
 variables I tested both lines together, and where possible each line alone
-(that&#8217;s easy to do at the MPOE and hard to do at the server room, <a href="http://blog.metamatt.com/blog/2011/04/13/dsl-modem-annoyances/">due to the
+(that&rsquo;s easy to do at the MPOE and hard to do at the server room, <a href="http://blog.metamatt.com/blog/2011/04/13/dsl-modem-annoyances/">due to the
 way the modem is wired for single-line
 operation</a>).</p>
 
-<p>The results are pretty weird. I&#8217;ll list the results, one per line, with a
-description of the test configuration, the modem&#8217;s reported sync speed
+<p>The results are pretty weird. I&rsquo;ll list the results, one per line, with a
+description of the test configuration, the modem&rsquo;s reported sync speed
 (down/up), the actual usable speed as reported by speedtest.sonic.net, and a %
 number which is the ratio of usable download speed to claimed downlink sync
 speed. First, testing one line at a time:</p>
@@ -150,12 +150,12 @@ speed. First, testing one line at a time:</p>
 <li>At MPOE, fast line, no filter, Y cable:  sync 18.46/1.14, speed test 15.76/0.95 (85%)</li>
 <li>At network closet, fast line, with filter, Y cable: sync 18.49/1.14, speed test 15.71/0.95 (85%)</li>
 <li>At MPOE, slow line, no filter, Y cable: sync 4.93/1.08, speed test 4.02/0.90 (82%)</li>
-<li>At network closet, slow line, with filter, Y cable: sync 3.48/1.02, speed test won&#8217;t run (because modem has sync on slave line only)</li>
+<li>At network closet, slow line, with filter, Y cable: sync 3.48/1.02, speed test won&rsquo;t run (because modem has sync on slave line only)</li>
 </ul>
 
 
 <p>The result of these single line tests shows that my internal wiring (between
-MPOE and network closet) and filter don&#8217;t seem to affect the speed at all &#8211;
+MPOE and network closet) and filter don&rsquo;t seem to affect the speed at all &mdash;
 the modem syncs at the same speed, and tests at the same speed, in both
 locations.</p>
 
@@ -177,34 +177,34 @@ but the actual speed changes hugely. Every single difference from the minimal
 MPOE configuration results in decreased speed!</p>
 
 <p>Some additional notes: first, bonded upload speed is completely stable at
-1.83mbps in every single test I&#8217;ve run. Second, I have tried various other
+1.83mbps in every single test I&rsquo;ve run. Second, I have tried various other
 speed test sites, and FTP of a large test file hosted by Sonic.net in case
-Flash/Java speed tests aren&#8217;t reliable indicators, but I got roughly
+Flash/Java speed tests aren&rsquo;t reliable indicators, but I got roughly
 equivalent results from all of them, so I stick with the speedtest.sonic.net
 numbers for comparison here.</p>
 
 <p>First complaint: where are the bits going? Why is the sync speed not a
-reliable indicator of real speed? It&#8217;s annoying losing speed, and it&#8217;s
+reliable indicator of real speed? It&rsquo;s annoying losing speed, and it&rsquo;s
 annoying not being able to trust the sync speed, and this makes
 troubleshooting speed problems a lot harder (it takes longer to run a speed
-test than just check the sync speed, and Sonic.net&#8217;s support system shows them
+test than just check the sync speed, and Sonic.net&rsquo;s support system shows them
 my sync speed but not, I presume, my actual transfer speeds). Presumably if
-the modem can&#8217;t actually transfer data at the sync rate, that&#8217;s due to errors
-and dropped frames at the ATM level, but the modem&#8217;s status page shows 0 for
+the modem can&rsquo;t actually transfer data at the sync rate, that&rsquo;s due to errors
+and dropped frames at the ATM level, but the modem&rsquo;s status page shows 0 for
 every ATM and DSL error category.</p>
 
 <p>Second complaint: why do the filter, patch cable, and my internal wiring all
 result in a speed loss, but only in bonded operation, and not one line at a
 time, and without affecting the sync speed?</p>
 
-<p>It&#8217;s looking increasingly unlikely that I&#8217;m going to get a fast and trouble-
+<p>It&rsquo;s looking increasingly unlikely that I&rsquo;m going to get a fast and trouble-
 free connection via DSL. I mean, I <em>could</em> put the modem by the MPOE (with no
-UPS and no filter), but that wasn&#8217;t the intent, and I don&#8217;t understand why I
+UPS and no filter), but that wasn&rsquo;t the intent, and I don&rsquo;t understand why I
 should have to.</p>
 
 <p>And one final note: in response to my earlier article about this modem, Sonic
-is already sending me a new one; I don&#8217;t really want to take time to repeat
-all of these experiments but I&#8217;ll at least see if the new modem or new filter
+is already sending me a new one; I don&rsquo;t really want to take time to repeat
+all of these experiments but I&rsquo;ll at least see if the new modem or new filter
 does better in the cases that were worst here. (If nothing else, it should be
 easier to do apples-to-apples comparisons, using the same cables and getting
 all data points at both locations.)</p>

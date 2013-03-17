@@ -9,7 +9,7 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="I&#8217;ve been wanting a way to preview
+  <meta name="description" content="I&rsquo;ve been wanting a way to preview
 Markdown-formatted text files
 from the terminal, ideally via less.
 Primarily, I think, because Github &hellip;">
@@ -107,17 +107,17 @@ Primarily, I think, because Github &hellip;">
   </header>
 
 
-<div class="entry-content"><p>I&#8217;ve been wanting a way to preview
+<div class="entry-content"><p>I&rsquo;ve been wanting a way to preview
 <a href="http://daringfireball.net/projects/markdown/">Markdown</a>-formatted text files
 from the terminal, ideally via <a href="http://www.greenwoodsoftware.com/less/">less</a>.
 Primarily, I think, because Github encourages it, a lot of open source
 projects are starting to include a
 <a href="https://www.google.com/search?q=+readme.md">README.md</a> instead of a plain old
-<a href="http://en.wikipedia.org/wiki/README">README</a>12; these marked-down READMEs are
-easy to view in Github&#8217;s web interface but not after (or before) you clone the
+<a href="http://en.wikipedia.org/wiki/README">README</a><sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>,<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>; these marked-down READMEs are
+easy to view in Github&rsquo;s web interface but not after (or before) you clone the
 repo into your own filesystem.</p>
 
-<p>There&#8217;s <code>zless</code> that can understand compressed files; why not <code>mdless</code> that
+<p>There&rsquo;s <code>zless</code> that can understand compressed files; why not <code>mdless</code> that
 can understand Markdown files?</p>
 
 <p>I went looking and stackoverflow came to the rescue with this question and
@@ -125,13 +125,13 @@ answer about a <a href="http://stackoverflow.com/a/7603703/275581">less-style ma
 systems</a>, suggesting
 <a href="http://johnmacfarlane.net/pandoc/">pandoc</a> as the tool to translate from
 Markdown format to troff format. The suggested incantation there works for me
-under Debian Linux but not under Mac OS X because it relies on <code>man</code>&#8217;s <code>-l</code>
-option, which I&#8217;m guessing is a GNU addition not supported by BSD <code>man</code>. I had
+under Debian Linux but not under Mac OS X because it relies on <code>man</code>&rsquo;s <code>-l</code>
+option, which I&rsquo;m guessing is a GNU addition not supported by BSD <code>man</code>. I had
 to figure out how to duplicate the processing that <code>man -l</code> does, which I knew
 involved <code>troff</code> (or <code>groff</code>); it turns out that <code>groff</code> understands a <code>-man</code>
 flag which predefines the macros used by manpages. The version using <code>groff</code>
 instead of <code>man -l</code> seems more portable (it works fine under Linux as well as
-Mac OS X), so that&#8217;s what I&#8217;ll use.</p>
+Mac OS X), so that&rsquo;s what I&rsquo;ll use.</p>
 
 <p>Hence, the following incantation to view a README.md file:</p>
 
@@ -140,13 +140,15 @@ Mac OS X), so that&#8217;s what I&#8217;ll use.</p>
 <p>Or, a <code>mdless</code> command implemented as a tcsh alias:</p>
 
 <p><code>alias mdless "pandoc -s -f markdown -t man \!* | groff -T utf8 -man | less"</code></p>
-
-<hr />
-
+<div class="footnotes">
+<hr/>
 <ol>
-<li><p>As one data point for when this became common, README.md was added to the short list of common readme file names in this Wikipedia article on <a href="http://en.wikipedia.org/w/index.php?title=README&amp;oldid=480712255">March 7, 2012</a>. ↩</p></li>
-<li><p>Not to be confused with <a href="http://www.amazon.com/gp/product/0062191497/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=metamatt-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0062191497">REAMDE</a>. ↩</p></li>
+<li id="fn:1">
+<p>As one data point for when this became common, README.md was added to the short list of common readme file names in this Wikipedia article on <a href="http://en.wikipedia.org/w/index.php?title=README&amp;oldid=480712255">March 7, 2012</a>.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>Not to be confused with <a href="http://www.amazon.com/gp/product/0062191497/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=metamatt-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0062191497">REAMDE</a>.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
 </ol>
+</div>
 
 </div>
 

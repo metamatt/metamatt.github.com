@@ -9,7 +9,7 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="The SSD in Vanessa&#8217;s iMac died and needed to be replaced. In theory, this is
+  <meta name="description" content="The SSD in Vanessa&rsquo;s iMac died and needed to be replaced. In theory, this is
 pretty simple since we have backups — replace the faulty hardware &hellip;">
   
 
@@ -105,37 +105,37 @@ pretty simple since we have backups — replace the faulty hardware &hellip;">
   </header>
 
 
-<div class="entry-content"><p>The SSD in Vanessa&#8217;s iMac died and needed to be replaced. In theory, this is
+<div class="entry-content"><p>The SSD in Vanessa&rsquo;s iMac died and needed to be replaced. In theory, this is
 pretty simple since we have backups — replace the faulty hardware, restore the
 backup, and get on with life.</p>
 
-<p>In reality, it&#8217;s a little more complicated. I suppose these are small
-complaints since in the big picture, she didn&#8217;t lose any data. Still.</p>
+<p>In reality, it&rsquo;s a little more complicated. I suppose these are small
+complaints since in the big picture, she didn&rsquo;t lose any data. Still.</p>
 
 <p>The way I carried out the restore was to</p>
 
 <ul>
-<li>Attach the replacement SSD in an external USB enclosure (the &#8220;drive toaster&#8221;)</li>
+<li>Attach the replacement SSD in an external USB enclosure (the &ldquo;drive toaster&rdquo;)</li>
 <li>Boot off the recovery partition of the failing SSD, which still worked well enough for this purpose (otherwise I would have had to make a bootable USB stick or DVD)</li>
 <li>Invoke restore from Time Machine onto the new drive</li>
 <li>Power down, open the computer, and install the new SSD in place of the old one. (This is the hard part on a recent iMac, involving taking the screen off with suction cups, and so on.)</li>
 </ul>
 
 
-<p>And we&#8217;re done, right? Not quite. Even after the Time Machine restore, a bunch
+<p>And we&rsquo;re done, right? Not quite. Even after the Time Machine restore, a bunch
 of things were wonky:</p>
 
 <ul>
-<li>There&#8217;s no recovery partition on the new drive. You&#8217;d think Time Machine would recreate that, too, but it doesn&#8217;t. Internet wisdom says all you need to do is reinstall the current version of Mac OS X over itself and it will automatically recreate the recovery partition; I tried it and that wasn&#8217;t the case. What this means is the next failure will be harder to deal with because I&#8217;ll need alternate boot media; the manual means of creating the recovery partition at this point seem just as hard as dealing with that problem when it arises, so I&#8217;m ignoring it for now.</li>
-<li>Legitimate licensed Adobe CreativeSuite apps had their copy protection crap out, and refused to run with scary messages from the licensing subsystem using the word &#8220;catastrophic&#8221;. I called Adobe tech support, and they took 20 minutes to tell me to uninstall and reinstall the apps, which took another 20 minutes but worked.</li>
-<li>CrashPlan backups weren&#8217;t running because their software uses Java and Mac OS X ships without Java until you launch an interactive Java app at which point you&#8217;re prompted whether you want to automatically install a Java runtime.</li>
-<li>Time Machine backups weren&#8217;t running because who knows why, until I went into System Preferences and manually prodded them to run once, after which they kept running fine automatically.</li>
-<li>Mac App Store wasn&#8217;t automatically updating software until I launched it and manually signed in.</li>
+<li>There&rsquo;s no recovery partition on the new drive. You&rsquo;d think Time Machine would recreate that, too, but it doesn&rsquo;t. Internet wisdom says all you need to do is reinstall the current version of Mac OS X over itself and it will automatically recreate the recovery partition; I tried it and that wasn&rsquo;t the case. What this means is the next failure will be harder to deal with because I&rsquo;ll need alternate boot media; the manual means of creating the recovery partition at this point seem just as hard as dealing with that problem when it arises, so I&rsquo;m ignoring it for now.</li>
+<li>Legitimate licensed Adobe CreativeSuite apps had their copy protection crap out, and refused to run with scary messages from the licensing subsystem using the word &ldquo;catastrophic&rdquo;. I called Adobe tech support, and they took 20 minutes to tell me to uninstall and reinstall the apps, which took another 20 minutes but worked.</li>
+<li>CrashPlan backups weren&rsquo;t running because their software uses Java and Mac OS X ships without Java until you launch an interactive Java app at which point you&rsquo;re prompted whether you want to automatically install a Java runtime.</li>
+<li>Time Machine backups weren&rsquo;t running because who knows why, until I went into System Preferences and manually prodded them to run once, after which they kept running fine automatically.</li>
+<li>Mac App Store wasn&rsquo;t automatically updating software until I launched it and manually signed in.</li>
 </ul>
 
 
 <p>These problems could have been caused by the hard drive replacement, the
-restore from backup, or the OS reinstall; I don&#8217;t really know which. I just
+restore from backup, or the OS reinstall; I don&rsquo;t really know which. I just
 know there was a lot more to getting a working system back than letting Time
 Machine restore the files.</p>
 </div>

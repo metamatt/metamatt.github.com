@@ -108,37 +108,37 @@ which is hugely helpful for those of us who have multiple account, but there &he
 
 <div class="entry-content"><p>Google Accounts allow you to <a href="http://support.google.com/accounts/bin/answer.py?hl=en&amp;answer=1721977">stay signed into multiple accounts at
 once</a>,
-which is hugely helpful for those of us who have multiple account, but there&#8217;s
-one thing that&#8217;s been frustrating me here.</p>
+which is hugely helpful for those of us who have multiple account, but there&rsquo;s
+one thing that&rsquo;s been frustrating me here.</p>
 
 <p>I use the browser address bar (relying heavily on its autocomplete feature) to
 do most of my navigation directly from the keyboard. If I want my document
 files in Google Docs, I open a new browser tab from the keyboard shortcut,
-then type &#8220;docs&#8221; and by that time, autocomplete has already filled in
-docs.google.com1,2.</p>
+then type &ldquo;docs&rdquo; and by that time, autocomplete has already filled in
+docs.google.com<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>,<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
 
-<p>However, I have 3 different Google Accounts that I&#8217;m usually signed into: one
-standard personal account (ending in @gmail.com), one GAFYD3 account for my
-personal email4, and one GAFYD account for work. If I navigate to
+<p>However, I have 3 different Google Accounts that I&rsquo;m usually signed into: one
+standard personal account (ending in @gmail.com), one GAFYD<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup> account for my
+personal email<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>, and one GAFYD account for work. If I navigate to
 docs.google.com, Google automatically chooses one of the accounts to redirect
 to, and at different times on different computers I end up with a different
-(seemingly arbitrary) account selected, and if it wasn&#8217;t the right one, it&#8217;s 3
+(seemingly arbitrary) account selected, and if it wasn&rsquo;t the right one, it&rsquo;s 3
 extra clicks in the account switcher to get to the right account.</p>
 
-<p>What&#8217;s controlling its choice? It turns out it&#8217;s the order you sign into the
+<p>What&rsquo;s controlling its choice? It turns out it&rsquo;s the order you sign into the
 accounts. If you look closely at the URLs, either by mousing over the links in
 the account switcher or by looking at the URL you end up at for gmail but not
-for docs5, you&#8217;ll see an &#8220;authuser&#8221; or &#8220;u&#8221; parameter which is a low-valued
+for docs<sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup>, you&rsquo;ll see an &ldquo;authuser&rdquo; or &ldquo;u&rdquo; parameter which is a low-valued
 integer. It starts at 0 for the first account you sign into, and counts up
 from there as you sign into additional accounts.</p>
 
-<p>If you navigate directly to docs.google.com (or mail.google.com, etc), you&#8217;ll
+<p>If you navigate directly to docs.google.com (or mail.google.com, etc), you&rsquo;ll
 get the account currently associated as authuser 0, which is the first account
 you signed into.</p>
 
 <p>For the GAFYD case, Google lets you <a href="http://support.google.com/a/bin/answer.py?hl=en&amp;answer=53340">set up convenient forwarding
 addresses</a> for
-domains you control, and I&#8217;ve used this to map mail.mydomain.foo and
+domains you control, and I&rsquo;ve used this to map mail.mydomain.foo and
 docs.mydomain.foo to redirect automatically to mail.google.com/a/mydomain.foo
 and docs.google.com/a/mydomain.foo. This means that for the two GAFYD domains,
 if I want the mail or docs view associated with that account, I go to
@@ -156,16 +156,21 @@ I always want my personal account selected by default.</p>
 
 <p>Thanks go to <a href="http://www.linkedin.com/pub/ramesh-dharan/1/13b/8a2">Ramesh</a> for
 helping me figure this out.</p>
-
-<hr />
-
+<div class="footnotes">
+<hr/>
 <ol>
-<li><p>Google has rebranded Google Docs as Google Drive, and docs.google.com redirects to drive.google.com. I haven&#8217;t retrained my fingers, so I always type &#8220;docs&#8221;, so I&#8217;ll keep using the old name. Both names work fine as described in this post. ↩</p></li>
-<li><p>(Everything in this post is true for other Google Accounts services like gmail, as well, but docs is the one I navigate directly to the most frequently, so I&#8217;ll stick with it for the example.) ↩</p></li>
-<li><p>Google Apps for Your Domain, back when that was a thing; since rebranded as <a href="http://www.google.com/intl/en/enterprise/apps/business/">Google Apps for Business</a> once they removed the free option. ↩</p></li>
-<li><p>Why a separate gmail.com and personal GAFYD account? I&#8217;ve long used the same personal email address at a domain I control, predating Gmail. When Google created Gmail and started tacking many other services onto your Gmail account, becoming Google Accounts, I signed up with a gmail address but didn&#8217;t use it for email, just for Google Accounts. At some point I got tired of running my own email server and dealing with reliability and spam, so I decided to let Google host it via the then-free GAFYD. I could have just forwarded mail from the vanity address to the gmail address without setting up another mailbox, but it seemed simpler to keep them separate. That may have been a mistake. ↩</p></li>
-<li><p>The URLs vary by service, so this isn&#8217;t as obvious as it could be. Docs/Drive uses URLs like drive.google.com/?authuser=N in the account switcher, but for a GAFYD account, you actually end up at drive.google.com/a/mydomain.foo. Gmail uses URLs like mail.google.com/u/N, both in the account switcher and where you actually end up, though for a GAFYD account you can also navigate to mail.google.com/a/mydomain.foo (and you&#8217;ll be redirected to mail.google.com/u/N for the correct value of N if you&#8217;re already signed into that account, and to the login page if you&#8217;re not). ↩</p></li>
+<li id="fn:1">
+<p>Google has rebranded Google Docs as Google Drive, and docs.google.com redirects to drive.google.com. I haven&rsquo;t retrained my fingers, so I always type &ldquo;docs&rdquo;, so I&rsquo;ll keep using the old name. Both names work fine as described in this post.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>(Everything in this post is true for other Google Accounts services like gmail, as well, but docs is the one I navigate directly to the most frequently, so I&rsquo;ll stick with it for the example.)<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>Google Apps for Your Domain, back when that was a thing; since rebranded as <a href="http://www.google.com/intl/en/enterprise/apps/business/">Google Apps for Business</a> once they removed the free option.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>Why a separate gmail.com and personal GAFYD account? I&rsquo;ve long used the same personal email address at a domain I control, predating Gmail. When Google created Gmail and started tacking many other services onto your Gmail account, becoming Google Accounts, I signed up with a gmail address but didn&rsquo;t use it for email, just for Google Accounts. At some point I got tired of running my own email server and dealing with reliability and spam, so I decided to let Google host it via the then-free GAFYD. I could have just forwarded mail from the vanity address to the gmail address without setting up another mailbox, but it seemed simpler to keep them separate. That may have been a mistake.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+<li id="fn:5">
+<p>The URLs vary by service, so this isn&rsquo;t as obvious as it could be. Docs/Drive uses URLs like drive.google.com/?authuser=N in the account switcher, but for a GAFYD account, you actually end up at drive.google.com/a/mydomain.foo. Gmail uses URLs like mail.google.com/u/N, both in the account switcher and where you actually end up, though for a GAFYD account you can also navigate to mail.google.com/a/mydomain.foo (and you&rsquo;ll be redirected to mail.google.com/u/N for the correct value of N if you&rsquo;re already signed into that account, and to the login page if you&rsquo;re not).<a href="#fnref:5" rev="footnote">&#8617;</a></p></li>
 </ol>
+</div>
 
 </div>
 

@@ -10,7 +10,7 @@
 
   
   <meta name="description" content="I installed Storytlr on my own server for personal
-use, and then started adding the sources where I have accounts &#8211; Flickr,
+use, and then started adding the sources where I have accounts &mdash; Flickr,
 Twitter, Delicious &hellip;">
   
 
@@ -107,10 +107,10 @@ Twitter, Delicious &hellip;">
 
 
 <div class="entry-content"><p>I installed <a href="http://storytlr.org/">Storytlr</a> on my own server for personal
-use, and then started adding the sources where I have accounts &#8211; Flickr,
-Twitter, Delicious, and a few others worked right away, but I couldn&#8217;t get it
+use, and then started adding the sources where I have accounts &mdash; Flickr,
+Twitter, Delicious, and a few others worked right away, but I couldn&rsquo;t get it
 to add Tumblr at all. Every attempt yielded an error message that just said to
-try again later; looking in Storytlr&#8217;s messages.log, I saw more detailed
+try again later; looking in Storytlr&rsquo;s messages.log, I saw more detailed
 errors like</p>
 
 <p>2010-12-24T03:50:55+01:00 ERR (3): Exception updating tumblr (21): Tumblr API
@@ -133,15 +133,15 @@ llback=wrap&amp;num=50&amp;start=50</a></p>
 returned http status 503 for url: <a href="http://metamatt.tumblr.com/api/read/json?callba%0Ack=wrap&amp;num=50&amp;start=1150">http://metamatt.tumblr.com/api/read/json?ca
 llback=wrap&amp;num=50&amp;start=1150</a></p>
 
-<p>Note that the &#8220;start&#8221; parameter in the request varies each time, and sometimes
-got quite large &#8211; Obviously it&#8217;s looking for too many posts and doesn&#8217;t know
+<p>Note that the &ldquo;start&rdquo; parameter in the request varies each time, and sometimes
+got quite large &mdash; Obviously it&rsquo;s looking for too many posts and doesn&rsquo;t know
 where to stop, since my Tumblr blog has &lt; 100 posts. My theory is that Tumblr
 rate-throttles requests, so when Storytlr makes a few or a few dozen requests
 at once, Tumblr returns 503 (temporary failure, try again later) and Storytlr
 treats that as a more serious error.</p>
 
 <p>Looking at the Storytlr source, I quickly found the code that imports from
-Tumblr, and the problem. Here&#8217;s the answer:</p>
+Tumblr, and the problem. Here&rsquo;s the answer:</p>
 
 <pre><code>--- protected/application/plugins/tumblr/models/TumblrModel-orig.php     2010-12-24 11:39:38.000000000 -0800
 +++ protected/application/plugins/tumblr/models/TumblrModel.php     2010-12-24 11:40:05.000000000 -0800
@@ -159,13 +159,13 @@ Tumblr, and the problem. Here&#8217;s the answer:</p>
            $curl = curl_init();
 </code></pre>
 
-<p>So it&#8217;s hardcoded to always ask for 50 pages of data (2500 posts); hardcoded
+<p>So it&rsquo;s hardcoded to always ask for 50 pages of data (2500 posts); hardcoded
 is probably not the way to go here. (It would be wasteful, but not inherently
 wrong, as long as the Tumblr API were happy to return 50 pages of empty posts,
 or if the Storytlr import code would understand 503 status codes and retry;
-however since the Tumblr API is currently unreliable enough that you&#8217;re lucky
-to get a couple consecutive reads to succeed, and Storytlr doesn&#8217;t know to
-retry, it&#8217;s important to only ask for what you really need.)</p>
+however since the Tumblr API is currently unreliable enough that you&rsquo;re lucky
+to get a couple consecutive reads to succeed, and Storytlr doesn&rsquo;t know to
+retry, it&rsquo;s important to only ask for what you really need.)</p>
 
 <p>I just hacked it to ask for 2 pages since I knew that would account for my
 posts; a better fix would query Tumblr for the actual number of posts, and
@@ -175,7 +175,7 @@ stop there, and/or just recognize an empty response and stop there.</p>
 list</a>, which is backed by a
 Google Group, but the group is broken or a moderator is eating the post,
 because it will temporarily show up and then disappear, with commensurate bugs
-in the unread-post count. So I&#8217;m posting it here.)</p>
+in the unread-post count. So I&rsquo;m posting it here.)</p>
 </div>
 
 

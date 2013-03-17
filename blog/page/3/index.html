@@ -113,25 +113,25 @@ ReadyNAS NV. It was medium-expensive for its time, well-built, and at first I
 liked it a lot. However a few missteps by Infrant (one about spending years
 stonewalling user requests for ssh access while sitting on a MAC-address-based
 backdoor password, one about essentially a product recall of the fan which if
-you read between the lines just meant they&#8217;d installed it backwards and
+you read between the lines just meant they&rsquo;d installed it backwards and
 customers who want proper cooling should flip it around but it will get
 louder), one power supply failure, and some mediocre experiences with their
 generally well regarded tech support around buggy CIFS and AFP coexistence,
 then the fact that Infrant sold itself to Netgear (the conventional wisdom on
-which had it that there goes their tech support, although I didn&#8217;t notice any
+which had it that there goes their tech support, although I didn&rsquo;t notice any
 difference, and their jedi council is still at it today), combined with
 extremely middling performance, meant when I needed more space, I went
-elsewhere. (As you&#8217;ll see, in hindsight this feels misguided; 6 years later
+elsewhere. (As you&rsquo;ll see, in hindsight this feels misguided; 6 years later
 and the little ReadyNAS NV is still humming along fine, Infrant continues to
-support it with software updates, and it&#8217;s been far less frustrating and more
+support it with software updates, and it&rsquo;s been far less frustrating and more
 useful than my next couple purchases.)</p>
 
 <p>2008: Elsewhere meant Promise; I bought an NS4300N. It offered a fairly
 similar feature set to the ReadyNAS, but was half the price and slightly
 faster. It was also of notably lower build quality, a lot more rickety and a
 lot louder. Over time the firmware situation got sketchier; the product
-stopped evolving; I moved it to a friend&#8217;s house to use as offsite backup,
-then slowly stopped using it; now it&#8217;s gathering dust.</p>
+stopped evolving; I moved it to a friend&rsquo;s house to use as offsite backup,
+then slowly stopped using it; now it&rsquo;s gathering dust.</p>
 
 <p>2010: Soured on the consumer-priced NAS market mostly due to poor performance
 (Infrant and Promise had both claimed speeds of around 30MB/second but that
@@ -145,7 +145,7 @@ tried a DAS solution next. The Promise DS4600, cabled via Firewire 800 to a
 Mac Mini which is on all the time anyways. (The decision calculus that lead to
 my original NAS purchase in 2006 involved servers that drew 100+ watts and
 marketing claims that the consumer NAS units performed fine and had reasonable
-AFP implementations; here in 2010 I was betting that I&#8217;d get better
+AFP implementations; here in 2010 I was betting that I&rsquo;d get better
 performance and correctness from the real Apple AFP server on a real (Intel
 Core 2 Duo) CPU and now that only draws 10 watts.) In retrospect, this was the
 worst of the bunch. On a good day it reads and writes at 50MB/sec, but on the
@@ -155,16 +155,16 @@ and need rebooting every few days, spending all its time in unbillable kernel
 space (how a Firewire device accomplishes this, I have no idea); a firmware
 update eventually fixed that, but to this day years later, performance is
 unpredictable and generally slow, especially for small random writes, and if I
-reboot the host computer, the DS4600 array won&#8217;t be visible until several
+reboot the host computer, the DS4600 array won&rsquo;t be visible until several
 minutes after boot. Also twice the array thought there was no volume
-configured (and it came back up reboot, but that&#8217;s still pretty scary, and
+configured (and it came back up reboot, but that&rsquo;s still pretty scary, and
 meant I had to stop using this for anything important).</p>
 
 <p>Oh, and the configuration app for Mac OS that ships with the DS4600 creates
 1024 threads (for what unholy purpose, I have no idea) and causes 16 identical
 copies of the mouse cursor to appear onscreen, offset vertically by 64 pixels.
-Keep in mind that while I didn&#8217;t buy this from Apple, this is a product that
-Apple actually stocked and sold specifically for use with Macs, so I shouldn&#8217;t
+Keep in mind that while I didn&rsquo;t buy this from Apple, this is a product that
+Apple actually stocked and sold specifically for use with Macs, so I shouldn&rsquo;t
 have been that far off the beaten path here. (This is tied with another
 Promise software disaster inflicted on me a few years ago for reasons not to
 keep buying their products. Their hardware seems to perform well for a low
@@ -184,10 +184,10 @@ UI, but not quite, and in no case does that excuse making me run tcpview to
 figure out where to point the browser. Though to bring this full circle, this
 division of labor between the embedded software development and real-OS
 software development, or lack thereof, probably explains the 1024 threads the
-&#8220;SmartNAVI&#8221; app creates, somehow.)</p>
+&ldquo;SmartNAVI&rdquo; app creates, somehow.)</p>
 
 <p>2012: Thoroughly frustrated with the DS4600 and its foibles, lack of
-reliability, and unpredictable speed. And we&#8217;re shooting lots of video of
+reliability, and unpredictable speed. And we&rsquo;re shooting lots of video of
 Dominic, so I need somewhere big and fast to store video files. DAS no longer
 sounds like a good idea, largely because how am I going to connect it? My
 current home server, the Mac Mini, has only USB2 and Firewire 800 and those
@@ -196,13 +196,13 @@ their anointed storage bus is Thunderbolt which is (still) a tiny expensive
 low-volume ecosystem which tends to point back to Promise, and which is not
 available on any of my current machines anyway; USB3 is starting to creep into
 their machines but as of October 2012 is still inexplicably only available on
-portables; there&#8217;s just no DAS array that I could plausibly connect to my
-current server and a future server and expect good performance. Now you&#8217;re
-probably wondering why I&#8217;m talking about Apple hardware anyway; clearly they
+portables; there&rsquo;s just no DAS array that I could plausibly connect to my
+current server and a future server and expect good performance. Now you&rsquo;re
+probably wondering why I&rsquo;m talking about Apple hardware anyway; clearly they
 have no desire to let us do external storage anywhere near the price-
 performance of the PC world; I should just build my own box and run Linux or
-Nexenta and soak in the ZFS goodness and… no thanks. I&#8217;m crazy enough to
-<a href="http://blog.metamatt.com/blog/2012/03/19%0A/custom-built-linux-router-no-thanks-to-realtek/">build my own networking hardware</a>, but don&#8217;t want to deal with
+Nexenta and soak in the ZFS goodness and… no thanks. I&rsquo;m crazy enough to
+<a href="http://blog.metamatt.com/blog/2012/03/19%0A/custom-built-linux-router-no-thanks-to-realtek/">build my own networking hardware</a>, but don&rsquo;t want to deal with
 storage hardware.</p>
 
 <p>So…. back to NAS? The last day the DS4600 thoroughly irked me, a few hours
@@ -210,10 +210,10 @@ later Ars Technica ran <a href="http://arstechnica.com/gadgets/2012/09/synology-
 DS-412+</a>. Sounds good to me. I ordered one (actually the 5-bay DS-1512+,
 which cost hardly any more) and am setting it up now. Wish me luck. In first
 impressions, the hardware is well built, it runs quieter than either the
-ReadyNAS NV or the DS4600 that it&#8217;s meant to replace, and I like that they
+ReadyNAS NV or the DS4600 that it&rsquo;s meant to replace, and I like that they
 gave some thought to fan replacement and memory upgrades. The browser UI is a
 little too flashy for its own good, but is impressive in its own way. I
-haven&#8217;t done any real performance testing yet. Wish me luck.</p>
+haven&rsquo;t done any real performance testing yet. Wish me luck.</p>
 </div>
   
   
@@ -251,71 +251,71 @@ haven&#8217;t done any real performance testing yet. Wish me luck.</p>
   </header>
 
 
-  <div class="entry-content"><p>Yeah I know, this is already well known and I&#8217;m just piling on and
-complaining. Still, it&#8217;s annoying and worth noting. Airlines keep adding
+  <div class="entry-content"><p>Yeah I know, this is already well known and I&rsquo;m just piling on and
+complaining. Still, it&rsquo;s annoying and worth noting. Airlines keep adding
 arbitrary fees and reducing service quality. Boo. This is worse for us because
-now we&#8217;re flying with Dominic as a lap infant and the airlines are especially
-poorly optimized for this, at really every level. You can&#8217;t buy tickets the
-easy way, you can&#8217;t check in the easy way, and everything gets harder.</p>
+now we&rsquo;re flying with Dominic as a lap infant and the airlines are especially
+poorly optimized for this, at really every level. You can&rsquo;t buy tickets the
+easy way, you can&rsquo;t check in the easy way, and everything gets harder.</p>
 
 <p>A few recent experiences that sucked:</p>
 
-<p>Southwest: they don&#8217;t charge for a lap infant and are generally friendly,
-which is why we keep flying them. But if you have a lap infant, there&#8217;s no way
+<p>Southwest: they don&rsquo;t charge for a lap infant and are generally friendly,
+which is why we keep flying them. But if you have a lap infant, there&rsquo;s no way
 to add him to the reservation, but you do need to get a boarding pass, which
 can only be done at the full-service checkin line, which is the longest and
-slowest one. They&#8217;ve increasingly incented people to check in online and
+slowest one. They&rsquo;ve increasingly incented people to check in online and
 either skip the front-of-airport counter if not checking luggage, or use the
-faster &#8220;bag drop only&#8221; counter if checking luggage, and only people who never
-travel and don&#8217;t realize any of this, or people with unticketed infants, end
+faster &ldquo;bag drop only&rdquo; counter if checking luggage, and only people who never
+travel and don&rsquo;t realize any of this, or people with unticketed infants, end
 up in the longest slowest understaffed full-service checkin line that the rest
 of their policies are actively trying to drive us away from. Then, we need to
-gate check Dominic&#8217;s car seat, which can only be done at the gate counter. So
+gate check Dominic&rsquo;s car seat, which can only be done at the gate counter. So
 every flight involves visiting both the front checkin counter and the gate
-checkin counter. This doesn&#8217;t waste just our time, but also that of the
+checkin counter. This doesn&rsquo;t waste just our time, but also that of the
 Southwest employees and everyone behind us in line, and really nobody
 benefits.</p>
 
 <p>Aer Lingus: on our trip to Ireland, we booked our international travel from
-the US into Dublin and back from London, and left undecided how and when we&#8217;d
+the US into Dublin and back from London, and left undecided how and when we&rsquo;d
 get from Ireland back to London. We eventually booked an Aer Lingus flight
 from Waterford to London, which was easy enough (and even let us book a ticket
 for Dominic with no hassle which was a pleasant surprise), but booking this
 ticket on aerlingus.com also had an unpleasant surprise: they quoted the price
-in euros right up till the final &#8220;buy&#8221; button, when they converted it to
+in euros right up till the final &ldquo;buy&rdquo; button, when they converted it to
 dollars, at a rate about 8% worse than the going exchange rate. No way to opt
-out of this. I&#8217;d have been happy if they charged me in dollars at the current
-exchange rate, and I would have been fine if they&#8217;d charged me in euros and I
+out of this. I&rsquo;d have been happy if they charged me in dollars at the current
+exchange rate, and I would have been fine if they&rsquo;d charged me in euros and I
 paid the credit card company their foreign transaction fee (around 3%), and I
-would have been fine if they&#8217;d charged me in dollars at the current exchange
+would have been fine if they&rsquo;d charged me in dollars at the current exchange
 rate and added a 3% currency conversion surcharge. But silently pretending the
-exchange rate was significantly worse than it is: that&#8217;s just shady.</p>
+exchange rate was significantly worse than it is: that&rsquo;s just shady.</p>
 
-<p>United: trying to get to Mexico in December for a friend&#8217;s wedding, Kayak
-quoted us $830 roundtrip for 2 adult tickets on United, and there&#8217;s no way to
+<p>United: trying to get to Mexico in December for a friend&rsquo;s wedding, Kayak
+quoted us $830 roundtrip for 2 adult tickets on United, and there&rsquo;s no way to
 add a lap infant through Kayak. I tried searching for the same flights on
-United&#8217;s website, where we could add a lap infant, and it came to $915, the
+United&rsquo;s website, where we could add a lap infant, and it came to $915, the
 extra $85 breaking down as $30 for the infant seat (fine) and another $55 in
-US taxes (not fine, because they&#8217;re repeats of taxes already built into our
+US taxes (not fine, because they&rsquo;re repeats of taxes already built into our
 fare, and basically charging the same amount of tax for Dominic as for me and
-Vanessa put together). I don&#8217;t know where the tax money is going or whose
-fault this is, but it sure doesn&#8217;t seem right. So I called United to ask
+Vanessa put together). I don&rsquo;t know where the tax money is going or whose
+fault this is, but it sure doesn&rsquo;t seem right. So I called United to ask
 whether I should add Dominic to the reservation up front and pay those taxes
 or book without him and add him to the reservation after the fact, and they
-couldn&#8217;t answer the tax question but said the website won&#8217;t let me book a lap
+couldn&rsquo;t answer the tax question but said the website won&rsquo;t let me book a lap
 infant and I should definitely book without him then call back to add him.
-Even though that didn&#8217;t seem true, I was hoping the taxes would resolve
-themselves more sanely that way, so that&#8217;s what I did. Imagine my annoyance
+Even though that didn&rsquo;t seem true, I was hoping the taxes would resolve
+themselves more sanely that way, so that&rsquo;s what I did. Imagine my annoyance
 when I call back to add Dominic to our reservation and am told they will
-charge me $30 for his ticket, $55 in taxes which they can&#8217;t explain but they
+charge me $30 for his ticket, $55 in taxes which they can&rsquo;t explain but they
 are what they are, and $25 in reservation fees for not booking online, which
-they now charge even for transactions which the website can&#8217;t do. (And while
+they now charge even for transactions which the website can&rsquo;t do. (And while
 the website seemed willing to book the lap infant as part of the reservation,
-both customer service agents I talked to told me they don&#8217;t think it works,
-and that even if it doesn&#8217;t work, that isn&#8217;t cause to waive the $25 fee.)
+both customer service agents I talked to told me they don&rsquo;t think it works,
+and that even if it doesn&rsquo;t work, that isn&rsquo;t cause to waive the $25 fee.)
 Fail.</p>
 
-<p>On a less whiny and more humorous note, I&#8217;ll leave you with
+<p>On a less whiny and more humorous note, I&rsquo;ll leave you with
 <a href="http://thoughtcatalog.com/2012/a-satire-about-the-hell-that-is-taking-a%0A-commercial-flight/">this</a>. C&#8217;mon, airlines, we just want to pay a fair price for a
 fair service, no tricks or traps.</p>
 </div>
@@ -363,7 +363,7 @@ out how to pull it off — except for the company doing a mediocre copy of the
 trick. I’d argue it’s because everyone is focusing on The Pledge and The
 Prestige, but Apple is the only one focusing on The Turn.</p></blockquote>
 
-<p>Also, I&#8217;ve been meaning to see that movie.</p>
+<p>Also, I&rsquo;ve been meaning to see that movie.</p>
 </div>
   
   
@@ -403,12 +403,12 @@ Prestige, but Apple is the only one focusing on The Turn.</p></blockquote>
 
   <div class="entry-content"><p>Apple has been dabbling with <a href="http://en.wikipedia.org/wiki/Resolution_independence">resolution
 independence</a> in Mac OS
-since 2005; in 2011 they shipped double-resolution &#8220;Retina&#8221; displays in iPhone
-and iPad, and in that year&#8217;s Mac OS release (10.7 &#8220;Lion&#8221;), renamed the
-tentative resolution-independence support &#8220;HiDPI&#8221; and capped it to a 2x
+since 2005; in 2011 they shipped double-resolution &ldquo;Retina&rdquo; displays in iPhone
+and iPad, and in that year&rsquo;s Mac OS release (10.7 &ldquo;Lion&rdquo;), renamed the
+tentative resolution-independence support &ldquo;HiDPI&rdquo; and capped it to a 2x
 scaling factor, hinting strongly at the future release of Retina Macs. In
 2012, they released the Retina MacBook Pro and soon thereafter, Mac OS 10.8
-&#8220;Mountain Lion&#8221;, bringing the HiDPI modes out from behind the developer tools
+&ldquo;Mountain Lion&rdquo;, bringing the HiDPI modes out from behind the developer tools
 and debug flags.</p>
 
 <p>My question was whether Apple would ever make Mac OS usable for media-watching
@@ -416,11 +416,11 @@ purposes, connected to an HDTV, aka an
 <a href="http://en.wikipedia.org/wiki/Home_theater_PC">HTPC</a>. Connected to our living
 room 1080P LCD TV, we have an Apple TV, an Xbox 360, and a Mac Mini; the Mac
 is there as an HTPC basically to handle whatever the dedicated media devices
-can&#8217;t; the list of things the ATV and Xbox can&#8217;t handle has been shrinking
+can&rsquo;t; the list of things the ATV and Xbox can&rsquo;t handle has been shrinking
 over time, but still. The pain point in this arrangement has been that if I
 set the Mac Mini to full 1080P output, text onscreen is too small to read. If
 I set it to 720P, text is borderline readable but still on the small side, and
-images are scaled by 1.5X in the TV, so there&#8217;s some loss of picture quality
+images are scaled by 1.5X in the TV, so there&rsquo;s some loss of picture quality
 once we get into a movie.</p>
 
 <p>This scenario seems a pretty good match for the HiDPI modes — specifically
@@ -436,34 +436,34 @@ used custom text sizes, and I suppose Apple was trying to limit exposure to
 that problem by exposing such a little and late form of resolution
 independence. Did it work? Read on….)</p>
 
-<p>Note that by Apple&#8217;s definition, a 32&#8221; 1080P display from a distance of 8
-feet, across our living room, very much qualifies as a &#8220;Retina&#8221; display. You
-can&#8217;t see individual pixels, and both text and images ought to look pretty
+<p>Note that by Apple&rsquo;s definition, a 32&#8221; 1080P display from a distance of 8
+feet, across our living room, very much qualifies as a &ldquo;Retina&rdquo; display. You
+can&rsquo;t see individual pixels, and both text and images ought to look pretty
 darn great.</p>
 
-<p>In my experience with the &#8220;960x640 (HiDPI)&#8221; mode in both Mac OS 10.7 and 10.8,
+<p>In my experience with the &ldquo;960x640 (HiDPI)&rdquo; mode in both Mac OS 10.7 and 10.8,
 by forcing the 2X scaling factor and automatically pixel-doubling unaware
 apps, Apple has successfully avoided the problem with both Windows&#8217; themed UI
 font sizes and Mac OS 10.4-10.6 scaling factors where some UI elements would
 be clipped to the wrong size. On the other hand, by giving me 960x540 as the
 only resolution that both addresses every physical pixel and has readably
-larger text, they&#8217;ve introduced a new problem: nobody cares about making apps
+larger text, they&rsquo;ve introduced a new problem: nobody cares about making apps
 actually fit on screen sizes this small. (Typically, the archaic and once-
 grand XGA, 1024x768, resolution is taken as the smallest possible, and indeed
 Mac OS warns you if you select a resolution smaller than that in either
 direction that apps may not fit.)</p>
 
-<p>The problem starts with Apple&#8217;s own apps; here&#8217;s Software Update (from 10.7)
+<p>The problem starts with Apple&rsquo;s own apps; here&rsquo;s Software Update (from 10.7)
 on the 960x540 screen. (A couple notes here. First, the sad thing is this app
 is not design-intensive and does not require any special UI elements; the
-window itself and the individual panes are resizable; there&#8217;s no reason it
-couldn&#8217;t run perfectly well at 960x540. Second, in 10.8 this app has been
+window itself and the individual panes are resizable; there&rsquo;s no reason it
+couldn&rsquo;t run perfectly well at 960x540. Second, in 10.8 this app has been
 replaced with the Mac App Store app, which does a better, but still not good,
 job of fitting at 960x540.)</p>
 
 <p><a href="http://www.flickr.com/photos/67861147@N00/7839608446"><img src="http://farm9.staticflickr.com/8426/78%0A39608446_2a59f28012.jpg" alt="Screen Shot 2012-04-05 at 6.58.22 PM" /></a></p>
 
-<p>Note that the initial window size (above) doesn&#8217;t even try to use all the
+<p>Note that the initial window size (above) doesn&rsquo;t even try to use all the
 available screen height; note also that enlarging it (below) helps not at all
 with the real problem.</p>
 
@@ -477,7 +477,7 @@ Lion installer:</p>
 <p><a href="http://www.flickr.com/photos/67861147@N00/783960671%0A6"><img src="http://farm8.staticflickr.com/7267/7%0A839606716_ea7f39b90d.jpg" alt="Screen Shot 2012-08-20 at 12.58.33 PM" /></a></p>
 
 <p>Such crisply rendered text! (Click through for a high-res version.) Nice large
-cougar image! Such beautiful use of whitespace! But… where&#8217;s that promised
+cougar image! Such beautiful use of whitespace! But… where&rsquo;s that promised
 Continue button?</p>
 
 <p>(I cheated, changed display resolution to reveal the Continue button, pressed
@@ -486,7 +486,7 @@ the same problem.</p>
 
 <p><a href="http://www.flickr.com/photos/67861147@N00/7839607938"><img src="http://farm9.staticflickr.com/8294/78%0A39607938_e66ef0823c.jpg" alt="Screen Shot 2012-08-20 at 1.04.53 PM" /></a></p>
 
-<p>OK, you say, but those images are still from OS X 10.7. It&#8217;s an app designed
+<p>OK, you say, but those images are still from OS X 10.7. It&rsquo;s an app designed
 for and as part of 10.8, to be sure, but maybe 10.8 itself will be better?
 Reboot into the new OS install, and:</p>
 
@@ -503,10 +503,10 @@ local display, preventing people from upgrading their Mac OS installs
 remotely. You can do the rest over screen sharing / remote desktop, but you
 need a local display and mouse to get past these two screens.)</p>
 
-<p>The real problem here isn&#8217;t that TV-as-Retina-display-with-HiDPI couldn&#8217;t
-work, it&#8217;s that apparently nobody cares. Nobody cares about screens smaller
-than 1024x768 because nobody&#8217;s shipping those any more; nobody cares about
-making 960x540 work as a special case for TV use, because you&#8217;re just supposed
+<p>The real problem here isn&rsquo;t that TV-as-Retina-display-with-HiDPI couldn&rsquo;t
+work, it&rsquo;s that apparently nobody cares. Nobody cares about screens smaller
+than 1024x768 because nobody&rsquo;s shipping those any more; nobody cares about
+making 960x540 work as a special case for TV use, because you&rsquo;re just supposed
 to buy an Apple TV instead of hooking a Mac up to your TV, I guess.</p>
 
 <p>So close, but yet so far.</p>
@@ -636,27 +636,27 @@ extended period of highway driving is 51 mpg.</p>
   <div class="entry-content"><p>Apple <a href="https://www.google.com/search?q=%22tablet+market%22+%22ipad+market%22">pretty much owns the tablet
 market</a>
 <a href="http://thenextweb.com/apple/2012/08/10/this-people-%0Amean-say-ipad-dominating/">today with the 10&#8221; iPad</a>, but the <a href="http://www.google.com/nexus/#/7">Nexus 7</a>
-<a href="http://speirs.org/blog/2012/8/2/thoughts-on-the-google-%0Anexus-7.html">is here and good</a> (in my opinion, the first viable answer to &#8220;why buy this instead
-of an iPad&#8221;), and meanwhile, rumors of a 7-ish-inch &#8220;iPad Mini&#8221; or &#8220;iPad Air&#8221;
+<a href="http://speirs.org/blog/2012/8/2/thoughts-on-the-google-%0Anexus-7.html">is here and good</a> (in my opinion, the first viable answer to &ldquo;why buy this instead
+of an iPad&rdquo;), and meanwhile, rumors of a 7-ish-inch &ldquo;iPad Mini&rdquo; or &ldquo;iPad Air&rdquo;
 are <a href="http://daringfireball.net/2012/07/this_ipad_mini_thing">heating</a>
 <a href="http://daringfireball.net/2012/08/ipad_mini_even_througher">up</a>.</p>
 
 <p>My family has both a Nexus 7 and an iPad, and I find myself using the Nexus 7
 more than the iPad, for four reasons. This makes me think that the iPad Mini
-rumors are likely true. In a nutshell, while a 7&#8221; tablet can&#8217;t do everything a
-10&#8221; tablet can do, the 7&#8221; tablet <em>can</em> do the things where I&#8217;d choose a tablet
+rumors are likely true. In a nutshell, while a 7&#8221; tablet can&rsquo;t do everything a
+10&#8221; tablet can do, the 7&#8221; tablet <em>can</em> do the things where I&rsquo;d choose a tablet
 over a laptop or desktop, and it can often do those things better than the 10&#8221;
 tablet.</p>
 
 <p>First, the reasons that limit what I do on a tablet vs a laptop or desktop:</p>
 
-<p>1) the iPad (like all iOS and Android devices) <a href="http://lifehacker.com/5934539/the-tablet-%0Aproblem">doesn&#8217;t have user accounts,
-yet my wife and I share the iPad</a>, and I mostly leave it lying around the house. So I haven&#8217;t given it
+<p>1) the iPad (like all iOS and Android devices) <a href="http://lifehacker.com/5934539/the-tablet-%0Aproblem">doesn&rsquo;t have user accounts,
+yet my wife and I share the iPad</a>, and I mostly leave it lying around the house. So I haven&rsquo;t given it
 credentials for all the individual apps and services I use — in some cases
-because Vanessa and I would both want to use them; in some cases because I&#8217;m
-not comfortable leaving that credential cached on a device I don&#8217;t keep close
+because Vanessa and I would both want to use them; in some cases because I&rsquo;m
+not comfortable leaving that credential cached on a device I don&rsquo;t keep close
 tabs on. So some of the apps I use the most on computers and my phone, and
-would potentially use on a tablet, I don&#8217;t use on the iPad: email, Facebook,
+would potentially use on a tablet, I don&rsquo;t use on the iPad: email, Facebook,
 Evernote. The ability to have user accounts or profiles (and have <a href="http://www.schneier.com/blog/archives/2012/07/all-or-%0Anothing_1.html">some apps
 available without unlocking an identity, and other apps behind an
 identity</a>) would make a big difference here; I have to assume this will
@@ -671,7 +671,7 @@ with the previously good-enough belly slide, because he had the yearning for
 real speed. So I feel about typing on a tablet: I can do it, and if I were
 trapped on another planet with no other means of self-expression I would
 surely use it, but if I have thoughts spanning more than a sentence or two,
-I&#8217;d rather just wait till I get back to a real keyboard to pour them out
+I&rsquo;d rather just wait till I get back to a real keyboard to pour them out
 effortlessly. (And I realize I can use a separate keyboard with an iPad: it
 basically negates this disadvantage, but also the portability advantage vs a
 laptop.)</p>
@@ -679,18 +679,18 @@ laptop.)</p>
 <p>Then, the reasons the Nexus 7 succeeds handsomely at <a href="http://bitingtongue.blogspot.com/2012/07/the-simple-task-that-was-%0Amy-charge.html">the modest task that is
 its charge</a>:</p>
 
-<p>3) the form factor. It&#8217;s significantly more portable, and significantly easier
+<p>3) the form factor. It&rsquo;s significantly more portable, and significantly easier
 to hold in one hand; notably this makes it much better for reading on trains
-and reading in bed. Given the apps I&#8217;ve already stopped using (due to #1 and</p>
+and reading in bed. Given the apps I&rsquo;ve already stopped using (due to #1 and</p>
 
-<h1>2), these are the primary ways I want to use a tablet. The iPad&#8217;s bigger</h1>
+<h1>2), these are the primary ways I want to use a tablet. The iPad&rsquo;s bigger</h1>
 
 <p>screen is an advantage, but not enough to make up for the reduced
 portability/holdability.</p>
 
-<p>4) while Android as a whole doesn&#8217;t feel as fluid or natural as iOS, on both
-platforms the OS is designed to pretty much get out of the way once you&#8217;re in
-an app; that&#8217;s to say your real impression of the platform is driven by the
+<p>4) while Android as a whole doesn&rsquo;t feel as fluid or natural as iOS, on both
+platforms the OS is designed to pretty much get out of the way once you&rsquo;re in
+an app; that&rsquo;s to say your real impression of the platform is driven by the
 apps. The main apps I use on the Nexus 7 are surprisingly good. The first-
 party Google apps (gmail, Google Reader, Google Maps) are better than on iOS;
 the builtin Chrome browser is very good; the third party apps I use the most
@@ -700,10 +700,10 @@ overall impression the Nexus 7 leaves is very good.</p>
 <p>So, iPad Mini…?</p>
 
 <p>There are warts to Android — even with Jellybean, scrolling and touch
-interaction don&#8217;t feel as smooth as iOS always has. The back button is a
-disaster; you never know what it&#8217;s going to do. The app selection isn&#8217;t as
-wide as iOS, and even where equivalents are available, they&#8217;re often rougher.
-Plus, I&#8217;ve already paid for a fleet of iOS apps. While it&#8217;s a tradeoff with #4
+interaction don&rsquo;t feel as smooth as iOS always has. The back button is a
+disaster; you never know what it&rsquo;s going to do. The app selection isn&rsquo;t as
+wide as iOS, and even where equivalents are available, they&rsquo;re often rougher.
+Plus, I&rsquo;ve already paid for a fleet of iOS apps. While it&rsquo;s a tradeoff with #4
 above, I have a feeling an Apple 7&#8221; tablet could be even better than the Nexus
 7.</p>
 
@@ -748,18 +748,18 @@ Air).</p>
   </header>
 
 
-  <div class="entry-content"><p><a href="http://askavwsalesguy.com/blog/2012/07/30/volkswagen-send-tdi-%0Aowners-a-gift.html">VW&#8217;s safety/recall department just sent me these janky
+  <div class="entry-content"><p><a href="http://askavwsalesguy.com/blog/2012/07/30/volkswagen-send-tdi-%0Aowners-a-gift.html">VW&rsquo;s safety/recall department just sent me these janky
 stickers</a> for <a href="http://blog.metamatt.com/blog/2012/03/07/diesel/">my 2011 Golf
 TDI</a>. The accompanying
-notice wasn&#8217;t phrased as a recall, exactly, but given the return address, I
-can&#8217;t help but think they&#8217;re trying to avoid liability, and they must be
+notice wasn&rsquo;t phrased as a recall, exactly, but given the return address, I
+can&rsquo;t help but think they&rsquo;re trying to avoid liability, and they must be
 having a larger than normal problem with people using the wrong fuel.</p>
 
 <p><a href="http://www.flickr.com/photos/67861147@N00/7825635162"><img src="http://farm9.staticflickr.com/8303/7825%0A635162_89f9e96767.jpg" alt="Stickers for VW Golf TDI fuel door" /></a></p>
 
-<p>They specially called out loaning the car to friends or family; I haven&#8217;t had
+<p>They specially called out loaning the car to friends or family; I haven&rsquo;t had
 any problems with borrowers putting in the wrong fuel, but when I have loaned
-out the car I&#8217;ve reminded people 3 times that they shouldn&#8217;t refuel it but if
+out the car I&rsquo;ve reminded people 3 times that they shouldn&rsquo;t refuel it but if
 they do they need to use diesel (the fact the car goes 500 miles between
 refueling helps a lot here).</p>
 
@@ -767,16 +767,16 @@ refueling helps a lot here).</p>
 
 <p><a href="http://www.flickr.com/photos/67861147@N00/7825635632"><img src="http://farm9.staticflickr.com/8293/78%0A25635632_b1431ac662.jpg" alt="VW Golf TDI fuel door after stickers" /></a></p>
 
-<p>(Note how the stickers are wrinkly and poor-fitting, and this isn&#8217;t only
+<p>(Note how the stickers are wrinkly and poor-fitting, and this isn&rsquo;t only
 because I applied them poorly.)</p>
 
-<p>What I don&#8217;t understand is, why don&#8217;t they just <a href="http://forums.tdiclub.com/showthread.php?t=320751">use green plastic for the
+<p>What I don&rsquo;t understand is, why don&rsquo;t they just <a href="http://forums.tdiclub.com/showthread.php?t=320751">use green plastic for the
 fuel cap itself</a>? Not green
 as in tree hugger; green as in the color of the handle on almost all diesel
-fuel pumps in the US. (I realize the green handle isn&#8217;t a legal requirement or
-a universal convention, and notably BP doesn&#8217;t follow it, but it&#8217;s still
+fuel pumps in the US. (I realize the green handle isn&rsquo;t a legal requirement or
+a universal convention, and notably BP doesn&rsquo;t follow it, but it&rsquo;s still
 pretty widely recognized.) That would be a much more obvious visual cue to
-remember which fuel to use. Doesn&#8217;t this make more sense and look both cleaner
+remember which fuel to use. Doesn&rsquo;t this make more sense and look both cleaner
 and more obvious?</p>
 
 <p><a href="http://forums.tdiclub.com/showthread.php?t=320751"><img src="http://im1.shutterfly.com/medi%0Aa/47a1d831b3127ccefd00a357f97b00000030O08CZtXDdy5ag9vPgo/cC/f=0/ps=50/r=0/rx=7%0A20/ry=480/" alt="VW TDI fuel door with green aftermarket cap" /></a></p>
@@ -883,17 +883,17 @@ information, is what I <em>wish</em> Apple would add on the hardware side:</p>
 this DRM is somehow tied to the motherboard hardware, not the OS install or
 the disk drive hardware (more surprising).</p>
 
-<p>I wouldn&#8217;t have realized this until I &#8220;upgraded&#8221; my Mac Pro by buying a newer
+<p>I wouldn&rsquo;t have realized this until I &ldquo;upgraded&rdquo; my Mac Pro by buying a newer
 one, and plopping the SSDs from the old one into the new one. This let me
 avoid installing or configuring the OS or apps; everything ran just fine but
 faster; everything, that is, except apps from the Mac App Store, which all
-(individually) prompted for my MAS credentials with a dialog about how &#8220;this
-app was purchased on another computer&#8221;.</p>
+(individually) prompted for my MAS credentials with a dialog about how &ldquo;this
+app was purchased on another computer&rdquo;.</p>
 
 <p>(I expect this scenario and dialog are more common when copying the app
-bundles from one computer to another; that&#8217;s an obvious case of purchasing an
+bundles from one computer to another; that&rsquo;s an obvious case of purchasing an
 app on one computer and running it on another; moving the whole drive and OS
-install is less obviously a new computer — hey, it&#8217;s still got the same
+install is less obviously a new computer — hey, it&rsquo;s still got the same
 hostname — but it triggers the same scenario.)</p>
 </div>
   
@@ -936,59 +936,59 @@ hostname — but it triggers the same scenario.)</p>
 day, the order backlog went from 1 week to 3 weeks, so I just got it a week
 ago.)</p>
 
-<p><strong>The screen</strong> It&#8217;s super high resolution, as you&#8217;d expect. The front glass covering it is super thin, like on the &#8220;retina&#8221; iPad and iPhone models, giving the appearance that the (invisible) pixels are painted on the surface, instead of trapped inside. It looks great. But it&#8217;s still too glossy for my taste. (Apple says it&#8217;s 4 times less glare-prone than their previous glossy screens; I don&#8217;t know how to measure that; it may be <em>less</em> glare-prone but <a href="http://www.zdnet.com/blog/apple/macbook-pro-retina-display-only-slightly-less-glossy/13133">it&#8217;s still glare-prone</a>.)</p>
+<p><strong>The screen</strong> It&rsquo;s super high resolution, as you&rsquo;d expect. The front glass covering it is super thin, like on the &ldquo;retina&rdquo; iPad and iPhone models, giving the appearance that the (invisible) pixels are painted on the surface, instead of trapped inside. It looks great. But it&rsquo;s still too glossy for my taste. (Apple says it&rsquo;s 4 times less glare-prone than their previous glossy screens; I don&rsquo;t know how to measure that; it may be <em>less</em> glare-prone but <a href="http://www.zdnet.com/blog/apple/macbook-pro-retina-display-only-slightly-less-glossy/13133">it&rsquo;s still glare-prone</a>.)</p>
 
-<p>Apple&#8217;s using their usual pixel-doubling trick (same as on &#8220;retina&#8221;-branded
+<p>Apple&rsquo;s using their usual pixel-doubling trick (same as on &ldquo;retina&rdquo;-branded
 iOS devices) to increase the number of physical pixels while pretending not
 to, to improve compatibility with existing software; as deployed on the rMBP
-with OS X 10.7.4, it seems to work better than the experimental &#8220;hiDPI&#8221; pixel-
-doubled modes on other recent Macs running OS X 10.7. While the rMBP doesn&#8217;t
+with OS X 10.7.4, it seems to work better than the experimental &ldquo;hiDPI&rdquo; pixel-
+doubled modes on other recent Macs running OS X 10.7. While the rMBP doesn&rsquo;t
 claim a new OS version, the Displays panel in System Preferences looks
 different than on other machines running 10.7.4, with the list of pixel
-resolutions removed and replaced with a choice between &#8220;best for Retina
-display&#8221; and 5 &#8220;scaled&#8221; choices ranging from &#8220;more space&#8221; to &#8220;larger text&#8221;.
+resolutions removed and replaced with a choice between &ldquo;best for Retina
+display&rdquo; and 5 &ldquo;scaled&rdquo; choices ranging from &ldquo;more space&rdquo; to &ldquo;larger text&rdquo;.
 (The option to show the display settings in the menubar is missing, somehow,
 though the search feature in System Preferences still thinks it should be
 there.)</p>
 
-<p><strong>The physical design</strong> It&#8217;s thin. Apple achieved this thinness, controversially, by removing a bunch of components you&#8217;d expect in a high-end laptop — an optical drive, ethernet and Firewire ports — and also sacrificing upgradability by using custom components and connections to save space. I don&#8217;t care at all about the missing optical drive (in fact, in my last laptop, I removed it and replaced it with an SSD), but I do care about the lack of upgradability. Typically I&#8217;ve extended the life of my laptop by upgrading memory and replacing the hard drive with an SSD. With this machine, the RAM is soldered in, and upgrades are not gonna happen. I countered that by ordering 16GB, more than my old desktop machine had, and hopefully enough for the life of this machine. I also ordered the Thunderbolt to gigabit Ethernet adapter; the way I use laptops, Wi-Fi is usually fine but occasionally not; the performance of the external Thunderbolt dongle is just fine, as long as I have it where I need it when I need it (the perennial problem with dongles/adapters).</p>
+<p><strong>The physical design</strong> It&rsquo;s thin. Apple achieved this thinness, controversially, by removing a bunch of components you&rsquo;d expect in a high-end laptop — an optical drive, ethernet and Firewire ports — and also sacrificing upgradability by using custom components and connections to save space. I don&rsquo;t care at all about the missing optical drive (in fact, in my last laptop, I removed it and replaced it with an SSD), but I do care about the lack of upgradability. Typically I&rsquo;ve extended the life of my laptop by upgrading memory and replacing the hard drive with an SSD. With this machine, the RAM is soldered in, and upgrades are not gonna happen. I countered that by ordering 16GB, more than my old desktop machine had, and hopefully enough for the life of this machine. I also ordered the Thunderbolt to gigabit Ethernet adapter; the way I use laptops, Wi-Fi is usually fine but occasionally not; the performance of the external Thunderbolt dongle is just fine, as long as I have it where I need it when I need it (the perennial problem with dongles/adapters).</p>
 
-<p>And finally, in what may sound like a nitpick, I&#8217;m sad that Apple removed the
+<p>And finally, in what may sound like a nitpick, I&rsquo;m sad that Apple removed the
 external battery status light. I always found that useful, especially if I
-haven&#8217;t used the machine in a couple days and am about to take it somewhere
-and don&#8217;t know if I need to take the charger with me. (I guess the MacBook Air
-doesn&#8217;t have this light either, so there&#8217;s precedent, but I don&#8217;t have to like
+haven&rsquo;t used the machine in a couple days and am about to take it somewhere
+and don&rsquo;t know if I need to take the charger with me. (I guess the MacBook Air
+doesn&rsquo;t have this light either, so there&rsquo;s precedent, but I don&rsquo;t have to like
 it.)</p>
 
-<p><strong>The speed</strong> The CPU is <em>fast</em>. Most of what I (and most of us) do with computers is no longer CPU-bound, but I was coming from a dual-core Core 2 machine, and this rMBP&#8217;s Core i7 cores are palpably faster at the same clock speed, and this machine has 4 of them, and they&#8217;re hyperthreaded so Mac OS thinks it has 8 of them. The only taxing thing I&#8217;ve tried so far is telling Serato Itch to analyze an 800-song music library, which took 3 or 4 hours on my old laptop and about 15 minutes on this one. I don&#8217;t think I&#8217;ll be complaining about CPU speed for a while.</p>
+<p><strong>The speed</strong> The CPU is <em>fast</em>. Most of what I (and most of us) do with computers is no longer CPU-bound, but I was coming from a dual-core Core 2 machine, and this rMBP&rsquo;s Core i7 cores are palpably faster at the same clock speed, and this machine has 4 of them, and they&rsquo;re hyperthreaded so Mac OS thinks it has 8 of them. The only taxing thing I&rsquo;ve tried so far is telling Serato Itch to analyze an 800-song music library, which took 3 or 4 hours on my old laptop and about 15 minutes on this one. I don&rsquo;t think I&rsquo;ll be complaining about CPU speed for a while.</p>
 
-<p>Meanwhile, while <a href="http://blog.metamatt.com/blog/2012/01/20/nothing-is-as-easy-as-it-%0Ashould-be-ssd-upgrades/">I&#8217;ve been all-SSD for a
-while</a>, this is the first time I&#8217;ve had Apple install the
+<p>Meanwhile, while <a href="http://blog.metamatt.com/blog/2012/01/20/nothing-is-as-easy-as-it-%0Ashould-be-ssd-upgrades/">I&rsquo;ve been all-SSD for a
+while</a>, this is the first time I&rsquo;ve had Apple install the
 SSD as a factory option instead of going aftermarket and choosing and
 installing it myself. Mostly because I had no choice, but also because <a href="http://www.anandtech.com/show/5997/ssd-and-usb-30-performance-of-the-%0Aretina-display-macbook-pro">it
 looks like Apple finally chose a top-shelf
 model</a>.</p>
 
-<p><strong>The software</strong> Given the pixel-doubling trick Apple is using on all their retina-branded models to avoid text and UI elements getting too small to see/interact with normally, software needs to be updated to actually take advantage of the additional resolution. Otherwise, it&#8217;ll run as well as before but at the old resolution, and look somewhat blocky/pixelated. Apps that are mostly text and standard UI widgets using Apple&#8217;s text rendering and widget libraries turn out fine; apps with a lot of custom graphical UI elements need to provide double-resolution versions of their images but look mostly okay in the meantime; apps that do their own text rendering look pretty much horrible without an update.</p>
+<p><strong>The software</strong> Given the pixel-doubling trick Apple is using on all their retina-branded models to avoid text and UI elements getting too small to see/interact with normally, software needs to be updated to actually take advantage of the additional resolution. Otherwise, it&rsquo;ll run as well as before but at the old resolution, and look somewhat blocky/pixelated. Apps that are mostly text and standard UI widgets using Apple&rsquo;s text rendering and widget libraries turn out fine; apps with a lot of custom graphical UI elements need to provide double-resolution versions of their images but look mostly okay in the meantime; apps that do their own text rendering look pretty much horrible without an update.</p>
 
 <p>I normally use Google Chrome as my web browser. Chrome (and Firefox) is one of
 those rare apps that does its own text rendering, which means it severely
-needs an update, not just to be &#8220;optimized for Retina display&#8221; but really to
+needs an update, not just to be &ldquo;optimized for Retina display&rdquo; but really to
 look good at all. <a href="http://chrome.blogspot.com/2012/06/chrome-and-new-shiny.html">This update has already
 happened</a> in the
-&#8220;Canary&#8221; channel (12 weeks into the future of the stable version, because
+&ldquo;Canary&rdquo; channel (12 weeks into the future of the stable version, because
 Chrome updates every 6 weeks, and updates flow from the Canary double-beta
 version to the beta version to the stable version); this means if you want
 text to look good, you can wait 12 weeks, use Safari, or use Chrome Canary.
-I&#8217;m using Canary, and for the most part it works fine, but Google Maps doesn&#8217;t
+I&rsquo;m using Canary, and for the most part it works fine, but Google Maps doesn&rsquo;t
 work. At all. (And more into nitpick territory, the Canary version is clearly
-not intended for daily use; the yellow dock icon is an eyesore, and it won&#8217;t
+not intended for daily use; the yellow dock icon is an eyesore, and it won&rsquo;t
 allow you to set it as the default system browser without <a href="http://justinlee.sg/2011/05/09/setting-google-chrome-canary-%0Abuild-for-mac-as-default-browser/">resorting to
-external means</a>.) So I&#8217;ve got Chrome Canary for most
-things, and normal Chrome and Safari as fallbacks for whatever doesn&#8217;t work in
+external means</a>.) So I&rsquo;ve got Chrome Canary for most
+things, and normal Chrome and Safari as fallbacks for whatever doesn&rsquo;t work in
 Canary, which so far is just Google Maps.</p>
 
-<p><strong>The summary</strong> It&#8217;s got the highest resolution screen most of us have ever seen; it&#8217;s thin and light given that screen size; it&#8217;s fast, packing very respectable compute+storage hardware; it&#8217;s basically the right silicon wrapped around an amazing screen in an amazingly tiny package. I&#8217;m theoretically annoyed by the need for an Ethernet dongle, but I expect it won&#8217;t be a real problem. I&#8217;m theoretically annoyed by the non-upgradable RAM, but 16GB should be enough for anybody. Seriously, over the years usually RAM upgrades are the last straw that force me to upgrade laptops; it&#8217;s hitting the RAM ceiling that forces me to upgrade the whole machine; time will tell if this rMBP model is a good or bad decision for me, but by ordering it with the maximum (in place of starting lower and upgrading later) it feels relatively well future-proofed.</p>
+<p><strong>The summary</strong> It&rsquo;s got the highest resolution screen most of us have ever seen; it&rsquo;s thin and light given that screen size; it&rsquo;s fast, packing very respectable compute+storage hardware; it&rsquo;s basically the right silicon wrapped around an amazing screen in an amazingly tiny package. I&rsquo;m theoretically annoyed by the need for an Ethernet dongle, but I expect it won&rsquo;t be a real problem. I&rsquo;m theoretically annoyed by the non-upgradable RAM, but 16GB should be enough for anybody. Seriously, over the years usually RAM upgrades are the last straw that force me to upgrade laptops; it&rsquo;s hitting the RAM ceiling that forces me to upgrade the whole machine; time will tell if this rMBP model is a good or bad decision for me, but by ordering it with the maximum (in place of starting lower and upgrading later) it feels relatively well future-proofed.</p>
 
 <p>I like it. I have a hard time imagining a better 4½ pound computer today.</p>
 </div>

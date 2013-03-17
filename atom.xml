@@ -4,7 +4,7 @@
   <title><![CDATA[Step 2 is the hard part.]]></title>
   <link href="http://blog.metamatt.com/atom.xml" rel="self"/>
   <link href="http://blog.metamatt.com/"/>
-  <updated>2013-03-05T17:44:12-08:00</updated>
+  <updated>2013-03-16T21:58:56-07:00</updated>
   <id>http://blog.metamatt.com/</id>
   <author>
     <name><![CDATA[Matt Ginzton]]></name>
@@ -18,8 +18,8 @@
     <link href="http://blog.metamatt.com/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/"/>
     <updated>2013-02-25T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner</id>
-    <content type="html"><![CDATA[<p>Here&#8217;s a bonus on top of a bonus: OS X 10.8 (Mountain Lion) adds a really
-useful &#8220;Wi-Fi&#8221; scan feature, buried inside a utility I didn&#8217;t know existed.</p>
+    <content type="html"><![CDATA[<p>Here&rsquo;s a bonus on top of a bonus: OS X 10.8 (Mountain Lion) adds a really
+useful &ldquo;Wi-Fi&rdquo; scan feature, buried inside a utility I didn&rsquo;t know existed.</p>
 
 <p>I wanted a Wi-Fi scan tool to show me a list of nearby wireless networks and
 strengths, so I could avoid interference from existing networks when placing
@@ -29,22 +29,22 @@ iStumbler, but these utilities seem to have stopped working over time, either
 as a result of newer hardware or newer OSes.</p>
 
 <p>Googling for new alternatives to these utilities, I found that <a href="http://osxdaily.com/2012/07/31/wi-%0Afi-scanner-mac-os-x-mountain-lion/">Mountain Lion
-actually has this functionality built in</a>. There&#8217;s a &#8220;Wi-Fi Diagnostics&#8221; app buried
-in /System/Library/CoreServices (where, annoyingly, Spotlight can&#8217;t find it
-and the Finder by default won&#8217;t show it); at launch it presents a very
+actually has this functionality built in</a>. There&rsquo;s a &ldquo;Wi-Fi Diagnostics&rdquo; app buried
+in /System/Library/CoreServices (where, annoyingly, Spotlight can&rsquo;t find it
+and the Finder by default won&rsquo;t show it); at launch it presents a very
 limited-looking wizard interface, but in the menubar the File:New command and
-command-N keyboard shortcut have been replaced by an unassuming &#8220;Network
-Utilities&#8221; command.</p>
+command-N keyboard shortcut have been replaced by an unassuming &ldquo;Network
+Utilities&rdquo; command.</p>
 
-<p>This brings up a &#8220;Network Utilities&#8221; window, not to be confused with
+<p>This brings up a &ldquo;Network Utilities&rdquo; window, not to be confused with
 /Applications/Utilities/Network Utility.app, with a bunch of really useful
 utilities (which look like a strict superset of the old Network Utility, have
-a more modern UI and additional functionality, and except for the &#8220;Wi-Fi Scan&#8221;
+a more modern UI and additional functionality, and except for the &ldquo;Wi-Fi Scan&rdquo;
 tab, have no reason to be restricted to Wi-Fi networks).</p>
 
 <p>I only wish this thing were easier to find; it should probably replace the old
-Network Utility app. I don&#8217;t remember seeing it mentioned in most what&#8217;s-new-
-and-why-to-upgrade articles about Mountain Lion. For me, it&#8217;s a pretty nice
+Network Utility app. I don&rsquo;t remember seeing it mentioned in most what&rsquo;s-new-
+and-why-to-upgrade articles about Mountain Lion. For me, it&rsquo;s a pretty nice
 bonus to having upgraded and deserves wider mention.</p>
 ]]></content>
   </entry>
@@ -54,19 +54,17 @@ bonus to having upgraded and deserves wider mention.</p>
     <link href="http://blog.metamatt.com/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/"/>
     <updated>2013-02-25T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction</id>
-    <content type="html"><![CDATA[<p>In <a href="http://arstechnica.com/gadgets/2013/02/sony-unveils-thinnest-10-1%0A-tablet-ever-the-xperia-tablet-z/">this announcement of a new Sony tablet for
-Android</a>, the following bit stood out to me:</p>
+    <content type="html"><![CDATA[<p>In <a href="http://arstechnica.com/gadgets/2013/02/sony-unveils-thinnest-10-1-tablet-ever-the-xperia-tablet-z/">this announcement of a new Sony tablet for Android</a>, the following bit stood out to me:</p>
 
 <blockquote><p>The company claims the tablet is not only the “world’s thinnest 10.1-inch
-tablet” at 6.9 millimeters, but it&#8217;s apparently waterproof in up to three feet
+tablet” at 6.9 millimeters, but it&rsquo;s apparently waterproof in up to three feet
 of water for 30 minutes.</p></blockquote>
 
 <p>The water resistance is a lot more notable to me than the thinness, in an
-industry obsessed with thin fragile things, given how many phones I&#8217;ve seen
-destroyed by water, and given how <a href="http://blog.metamatt.com/blog/2012/08/20/iphone-hardware-wishlist/">I put this on my wishlist for the iPhone
-5</a> last
-fall. But phones see a lot more exposure to dangerous circumstances than
-tablets do, I wager, so I&#8217;d still like to see this feature make its way over
+industry obsessed with thin fragile things, given how many phones I&rsquo;ve seen
+destroyed by water, and given how <a href="http://blog.metamatt.com/blog/2012/08/20/iphone-hardware-wishlist/">I put this on my wishlist for the iPhone 5</a>
+last fall. But phones see a lot more exposure to dangerous circumstances than
+tablets do, I wager, so I&rsquo;d still like to see this feature make its way over
 to phones.</p>
 ]]></content>
   </entry>
@@ -84,12 +82,12 @@ never drops the Wi-Fi connection on wakeup, and is on the network and ready
 for me to type almost as soon as I open the lid. Almost like what we expect
 from a tablet or smartphone.</p>
 
-<p>That&#8217;s the dream, anyway. I&#8217;ve never owned or used a Windows laptop (or Linux
+<p>That&rsquo;s the dream, anyway. I&rsquo;ve never owned or used a Windows laptop (or Linux
 laptop, for that matter) that pulled that off, and not for lack of trying. It
 was much truer of Apple laptops running Mac OS X, ever since their
 introduction in 2001. It remained one of my favorite things about more recent
-Macbooks, but I&#8217;ve found it getting less true over time, culminating in my
-2012 &#8220;Macbook Pro with Retina Display&#8221; (henceforth rMBP), which seems to take
+Macbooks, but I&rsquo;ve found it getting less true over time, culminating in my
+2012 &ldquo;Macbook Pro with Retina Display&rdquo; (henceforth rMBP), which seems to take
 like 30 seconds to wake from sleep, then sometimes crashes immediately as the
 crowning touch.</p>
 
@@ -97,42 +95,45 @@ crowning touch.</p>
 of it, I think there are 3 pieces to the puzzle.</p>
 
 <ol>
-<li><p>The rMBP (like Macbook Air models) has no external status lights. No charge level indicator on the battery like older models with removable batteries, no charge level indicator on the side of the unit like previous unibody Macbook Pro models, no power light that winks while asleep and glows while awake like all previous Macbook models. So when you open the lid, if it wakes up and is ready for use, great, but if not, you don&#8217;t know whether it&#8217;s powered off, has a dead battery, or is already trying to wake up and just taking its sweet time.</p></li>
-<li><p>The default power-management plan is &#8220;Safe Sleep&#8221;, which means that when you close the lid the computer writes a suspend image to disk, then suspends to RAM1. Then wakeup is normally fast because RAM contents are still present, but if power is lost for any reason (battery dies, battery is removed on models where that&#8217;s possible, or the computer decides to power itself off to stop expending battery power to support the RAM), it can still resume from where you left it, just more slowly, by reading from disk. This last bit about deciding to power itself off is crucial; it&#8217;s controlled by a parameter known as <code>standbydelay</code>, and on this computer at least (rMBP running OS X 10.8) the default value of <code>standbydelay</code> was 4200 seconds, or 70 minutes, just over an hour. This means if you suspend the computer and wake it up again within 70 minutes, it will resume from RAM, but if you leave it asleep for more than 70 minutes, it will have powered off entirely, and will resume from disk. On my previous laptop (a 13&#8221; Macbook Pro from 2010, also now running OS X 10.8), <code>standbydelay</code> was not set at all, which I assume means it will try to keep RAM supplied with power until the battery dies. I don&#8217;t know the reason for the different defaults.</p></li>
-<li><p>This rMBP has 16 gigabytes of RAM, more than any laptop I&#8217;ve owned in the past. Now, it also has a fast SSD, so I wouldn&#8217;t have thought it would take that much longer to resume from disk vs RAM (and in actual usage it shouldn&#8217;t have to save and restore all of it anyway) but it&#8217;s likely a factor: if it had to transfer the entire 16GB, even at 500 MB/sec that would be 32 seconds. It actually only needs to save/restore the active pages; say on average that&#8217;s 60% of memory and add a few seconds to get the hardware devices from cold boot to powered on, and you&#8217;re in the 20 second ballpark that is long enough to annoy me.</p></li>
+<li><p> The rMBP (like Macbook Air models) has no external status lights. No charge level indicator on the battery like older models with removable batteries, no charge level indicator on the side of the unit like previous unibody Macbook Pro models, no power light that winks while asleep and glows while awake like all previous Macbook models. So when you open the lid, if it wakes up and is ready for use, great, but if not, you don&rsquo;t know whether it&rsquo;s powered off, has a dead battery, or is already trying to wake up and just taking its sweet time.</p></li>
+<li><p> The default power-management plan is &ldquo;Safe Sleep&rdquo;, which means that when you close the lid the computer writes a suspend image to disk, then suspends to RAM<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. Then wakeup is normally fast because RAM contents are still present, but if power is lost for any reason (battery dies, battery is removed on models where that&rsquo;s possible, or the computer decides to power itself off to stop expending battery power to support the RAM), it can still resume from where you left it, just more slowly, by reading from disk. This last bit about deciding to power itself off is crucial; it&rsquo;s controlled by a parameter known as <code>standbydelay</code>, and on this computer at least (rMBP running OS X 10.8) the default value of <code>standbydelay</code> was 4200 seconds, or 70 minutes, just over an hour. This means if you suspend the computer and wake it up again within 70 minutes, it will resume from RAM, but if you leave it asleep for more than 70 minutes, it will have powered off entirely, and will resume from disk. On my previous laptop (a 13&#8221; Macbook Pro from 2010, also now running OS X 10.8), <code>standbydelay</code> was not set at all, which I assume means it will try to keep RAM supplied with power until the battery dies. I don&rsquo;t know the reason for the different defaults.</p></li>
+<li><p> This rMBP has 16 gigabytes of RAM, more than any laptop I&rsquo;ve owned in the past. Now, it also has a fast SSD, so I wouldn&rsquo;t have thought it would take that much longer to resume from disk vs RAM (and in actual usage it shouldn&rsquo;t have to save and restore all of it anyway) but it&rsquo;s likely a factor: if it had to transfer the entire 16GB, even at 500 MB/sec that would be 32 seconds. It actually only needs to save/restore the active pages; say on average that&rsquo;s 60% of memory and add a few seconds to get the hardware devices from cold boot to powered on, and you&rsquo;re in the 20 second ballpark that is long enough to annoy me.</p></li>
 </ol>
 
 
 <p>So boiled down: this machine feels slower to resume than previous ones because
-it&#8217;s suspending to disk, has a lot of memory to restore from disk, and doesn&#8217;t
+it&rsquo;s suspending to disk, has a lot of memory to restore from disk, and doesn&rsquo;t
 show any visible signs of progress while restoring from disk.</p>
 
 <p>I changed the <code>standbydelay</code> value to 12 hours on battery (<code>sudo pmset -b
 standbydelay 43200</code>) and disabled it entirely on AC power (<code>sudo pmset -c
-standby 0</code>) and things seem much better now2.</p>
+standby 0</code>) and things seem much better now<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
 
-<p>Oh. And sleep reliability3? That&#8217;s even more important. When I first got the
-rMBP, it would kernel panic and show &#8220;Your computer must be restarted&#8221; when
+<p>Oh. And sleep reliability<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>? That&rsquo;s even more important. When I first got the
+rMBP, it would kernel panic and show &ldquo;Your computer must be restarted&rdquo; when
 resuming from sleep once in a while, roughly once a month. That was
-intolerable; at a guess I disabled PowerNap; I don&#8217;t know whether it was the
-actual problem but I haven&#8217;t had reliability problems since.</p>
+intolerable; at a guess I disabled PowerNap; I don&rsquo;t know whether it was the
+actual problem but I haven&rsquo;t had reliability problems since.</p>
 
 <p>So these are my current recommendations for power management on a rMBP or
 Macbook Air:</p>
 
 <ul>
-<li>Increase <code>standbydelay</code> value enough that you don&#8217;t notice the computer resuming from disk in normal use</li>
+<li>Increase <code>standbydelay</code> value enough that you don&rsquo;t notice the computer resuming from disk in normal use</li>
 <li>Disable PowerNap</li>
 </ul>
 
-
-<hr />
-
+<div class="footnotes">
+<hr/>
 <ol>
-<li><p>The difference between suspend-to-disk and suspend-to-RAM is that suspend-to-RAM expends battery power to keep the contents of RAM alive, so wakeup is faster, while suspend-to-disk extends battery life at the expense of slower wakeup. ↩</p></li>
-<li><p>I didn&#8217;t realize the import of this at first, but Mac OS maintains separate sleep policies for battery and AC power, and pmset can set either one (-b for battery, -c for charger) or both (-a for both, which is also the default); so there are two <code>standbydelay</code> values. I have my computer set to never sleep on AC power, but I sleep it manually by closing the lid when I&#8217;m not using it. After having applied the longer standbydelay to battery, I was annoyed to find the computer slow to wake after leaving it asleep and charging for a while. Hence the second command to entirely disable the <code>standby</code> behavior on AC power. ↩</p></li>
-<li><p>When talking about sleep reliability, what&#8217;s actually important is the ability to <em>wake back up</em> reliably, just like when talking about backup reliability, what&#8217;s important is the ability to restore from backups. It&#8217;s the round trip that matters. ↩</p></li>
+<li id="fn:1">
+<p>The difference between suspend-to-disk and suspend-to-RAM is that suspend-to-RAM expends battery power to keep the contents of RAM alive, so wakeup is faster, while suspend-to-disk extends battery life at the expense of slower wakeup.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>I didn&rsquo;t realize the import of this at first, but Mac OS maintains separate sleep policies for battery and AC power, and pmset can set either one (-b for battery, -c for charger) or both (-a for both, which is also the default); so there are two <code>standbydelay</code> values. I have my computer set to never sleep on AC power, but I sleep it manually by closing the lid when I&rsquo;m not using it. After having applied the longer standbydelay to battery, I was annoyed to find the computer slow to wake after leaving it asleep and charging for a while. Hence the second command to entirely disable the <code>standby</code> behavior on AC power.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>When talking about sleep reliability, what&rsquo;s actually important is the ability to <em>wake back up</em> reliably, just like when talking about backup reliability, what&rsquo;s important is the ability to restore from backups. It&rsquo;s the round trip that matters.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
 </ol>
+</div>
 
 ]]></content>
   </entry>
@@ -145,7 +146,7 @@ Macbook Air:</p>
     <content type="html"><![CDATA[<p>On a recent trip to Mexico, we stayed in a hotel that charged a significant
 extra fee for fairly slow Internet access. After paying for an access code, we
 could associate one device at a time to the Wi-Fi network; we could use
-multiple devices only by paying for multiple codes (which we didn&#8217;t want to do
+multiple devices only by paying for multiple codes (which we didn&rsquo;t want to do
 because for the speed, even paying once was a poor value) or by disconnecting
 the previous device.</p>
 
@@ -153,27 +154,27 @@ the previous device.</p>
 laptop, two iPads and two iPhones. Mac OS X has <a href="http://support.apple.com/kb/PH6589">built-in Internet connection
 sharing</a>, but it operates only between
 separate network adapters: you can share an Ethernet-connected Internet
-connection over Wi-Fi, or vice versa, but you can&#8217;t share Wi-Fi over Wi-Fi1.
-There&#8217;s some reason to hope that this would be possible &#8211; it&#8217;s &#8220;just&#8221; a
-software problem2; Windows and Linux generally support multiple virtual Wi-Fi
+connection over Wi-Fi, or vice versa, but you can&rsquo;t share Wi-Fi over Wi-Fi<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>.
+There&rsquo;s some reason to hope that this would be possible &mdash; it&rsquo;s &ldquo;just&rdquo; a
+software problem<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>; Windows and Linux generally support multiple virtual Wi-Fi
 interfaces from the same physical device, as used by <a href="http://www.connectify.me/hotspot/">Connectify
 Hotspot</a> for Windows or the multi-SSID
-feature in many Linux-based Wi-Fi access points &#8211; but this software feature
-doesn&#8217;t exist for Mac OS X.</p>
+feature in many Linux-based Wi-Fi access points &mdash; but this software feature
+doesn&rsquo;t exist for Mac OS X.</p>
 
-<p>So, no sharing Wi-Fi over Wi-Fi with my Mac laptop, unfortunately. But there&#8217;s
+<p>So, no sharing Wi-Fi over Wi-Fi with my Mac laptop, unfortunately. But there&rsquo;s
 another option that works without additional hardware; this is where the
 learning comes in. <strong>First new fact</strong>: you can share an Internet connection
-over Bluetooth. I&#8217;d thought this was only for sharing a cellular data
+over Bluetooth. I&rsquo;d thought this was only for sharing a cellular data
 connection from a phone to a computer (under the oxymoronic misnomer of
-&#8220;wireless tethering&#8221;), but it turns out to work in the other direction (known
-as &#8220;reverse tethering&#8221;). If you pair an iPhone or iPad with a Mac over
-Bluetooth, your Mac will grow a new network adapter called &#8220;Bluetooth PAN&#8221;
+&ldquo;wireless tethering&rdquo;), but it turns out to work in the other direction (known
+as &ldquo;reverse tethering&rdquo;). If you pair an iPhone or iPad with a Mac over
+Bluetooth, your Mac will grow a new network adapter called &ldquo;Bluetooth PAN&rdquo;
 (for Personal Area Network); you can then use the normal Sharing preference
 panel to enable Internet Sharing from Wi-Fi to Bluetooth PAN. Bingo.</p>
 
 <p>(I can claim only partial success here, but it was good enough for me at the
-time. This technique works fine for iPads, but not iPhones. I don&#8217;t know why;
+time. This technique works fine for iPads, but not iPhones. I don&rsquo;t know why;
 <a href="https://discussions.apple.com/message/20996155#20996155">nobody else seems to know why
 either</a>.)</p>
 
@@ -181,7 +182,7 @@ either</a>.)</p>
 connectivity-while-traveling toolbox. However, when we returned home, I had an
 unpleasant surprise, though it took me a while to connect the dots. My Mac
 laptop was getting really hot when I left it plugged in overnight to charge. I
-eventually realized this was because it wasn&#8217;t asleep, even with the lid
+eventually realized this was because it wasn&rsquo;t asleep, even with the lid
 closed (and with the lid closed, it generates more heat than it can
 comfortably dissipate, even at idle). This was frustrating because there are
 so many things that can keep a Mac from sleeping; this is where more learning
@@ -189,21 +190,23 @@ comes in. Googling for ways to identify causes of Mac insomnia, I learned of
 the <code>pmset -g log</code> command, which I now highly recommend. It pointed me right
 at the culprit. <strong>Second new fact</strong>: Internet connection sharing prevents the
 Mac from sleeping while plugged in. (This is actually incredibly obvious in
-retrospect; it says so right in the Sharing panel: &#8220;Computers connected to AC
-power won&#8217;t sleep while Internet Sharing is turned on.&#8221; I hadn&#8217;t read that
+retrospect; it says so right in the Sharing panel: &ldquo;Computers connected to AC
+power won&rsquo;t sleep while Internet Sharing is turned on.&rdquo; I hadn&rsquo;t read that
 while enabling Internet Sharing because I thought I already knew how to use
 it; by the time it was causing problems, the problems were too disconnected
 from the cause.)</p>
 
 <p>In summary: Internet connection sharing is useful, and the Bluetooth PAN
-variant is further useful, but don&#8217;t leave it on when you&#8217;re not using it.</p>
-
-<hr />
-
+variant is further useful, but don&rsquo;t leave it on when you&rsquo;re not using it.</p>
+<div class="footnotes">
+<hr/>
 <ol>
-<li><p>Well, you can share Wi-Fi over Wi-Fi if you have multiple physical Wi-Fi interfaces. My laptop only has the one built-in Wi-Fi interface. It might be worth carrying a cheap additional USB Wi-Fi device for this reason. That would probably be the cheapest reliable solution to this problem. ↩</p></li>
-<li><p>At the physical layer, a single Wi-Fi radio can only be tuned to a single channel, but nothing stops it from participating in multiple SSIDs as long as they&#8217;re all on that channel. ↩</p></li>
+<li id="fn:1">
+<p>Well, you can share Wi-Fi over Wi-Fi if you have multiple physical Wi-Fi interfaces. My laptop only has the one built-in Wi-Fi interface. It might be worth carrying a cheap additional USB Wi-Fi device for this reason. That would probably be the cheapest reliable solution to this problem.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>At the physical layer, a single Wi-Fi radio can only be tuned to a single channel, but nothing stops it from participating in multiple SSIDs as long as they&rsquo;re all on that channel.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
 </ol>
+</div>
 
 ]]></content>
   </entry>
@@ -213,7 +216,7 @@ variant is further useful, but don&#8217;t leave it on when you&#8217;re not usi
     <link href="http://blog.metamatt.com/blog/2013/02/13/troubleshooting-mac-sleep-problems/"/>
     <updated>2013-02-13T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2013/02/13/troubleshooting-mac-sleep-problems</id>
-    <content type="html"><![CDATA[<p>Here&#8217;s a useful nugget if you&#8217;re inclined to poke at computers to see how they
+    <content type="html"><![CDATA[<p>Here&rsquo;s a useful nugget if you&rsquo;re inclined to poke at computers to see how they
 work: <code>pmset -g log</code>.</p>
 
 <p>I had a problem where my rMBP would sleep just fine on battery power but <a href="http://blog.metamatt.com/blog/2013/02/13/two-%0Athings-i-didnt-know-about-mac-os-internet-sharing/">not
@@ -229,10 +232,10 @@ is awake with the lid closed and no external display or keyboard is attached,
 is called DarkWake and that InternetSharing was the entity requesting that
 over sleep.</p>
 
-<p>Now that I know about DarkWake, I&#8217;m curious what the relationship is between
+<p>Now that I know about DarkWake, I&rsquo;m curious what the relationship is between
 it and <a href="http://support.apple.com/kb/ht5394">PowerNap</a>. On this same rMBP, I
 disabled PowerNap because it would occasionally kernel panic when waking from
-sleep; I forget how I decided that was PowerNap but it hasn&#8217;t happened since
+sleep; I forget how I decided that was PowerNap but it hasn&rsquo;t happened since
 disabling.</p>
 ]]></content>
   </entry>
@@ -244,37 +247,37 @@ disabling.</p>
     <id>http://blog.metamatt.com/blog/2013/01/31/google-default-account-for-multiple-sign-in</id>
     <content type="html"><![CDATA[<p>Google Accounts allow you to <a href="http://support.google.com/accounts/bin/answer.py?hl=en&amp;answer=1721977">stay signed into multiple accounts at
 once</a>,
-which is hugely helpful for those of us who have multiple account, but there&#8217;s
-one thing that&#8217;s been frustrating me here.</p>
+which is hugely helpful for those of us who have multiple account, but there&rsquo;s
+one thing that&rsquo;s been frustrating me here.</p>
 
 <p>I use the browser address bar (relying heavily on its autocomplete feature) to
 do most of my navigation directly from the keyboard. If I want my document
 files in Google Docs, I open a new browser tab from the keyboard shortcut,
-then type &#8220;docs&#8221; and by that time, autocomplete has already filled in
-docs.google.com1,2.</p>
+then type &ldquo;docs&rdquo; and by that time, autocomplete has already filled in
+docs.google.com<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>,<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
 
-<p>However, I have 3 different Google Accounts that I&#8217;m usually signed into: one
-standard personal account (ending in @gmail.com), one GAFYD3 account for my
-personal email4, and one GAFYD account for work. If I navigate to
+<p>However, I have 3 different Google Accounts that I&rsquo;m usually signed into: one
+standard personal account (ending in @gmail.com), one GAFYD<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup> account for my
+personal email<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>, and one GAFYD account for work. If I navigate to
 docs.google.com, Google automatically chooses one of the accounts to redirect
 to, and at different times on different computers I end up with a different
-(seemingly arbitrary) account selected, and if it wasn&#8217;t the right one, it&#8217;s 3
+(seemingly arbitrary) account selected, and if it wasn&rsquo;t the right one, it&rsquo;s 3
 extra clicks in the account switcher to get to the right account.</p>
 
-<p>What&#8217;s controlling its choice? It turns out it&#8217;s the order you sign into the
+<p>What&rsquo;s controlling its choice? It turns out it&rsquo;s the order you sign into the
 accounts. If you look closely at the URLs, either by mousing over the links in
 the account switcher or by looking at the URL you end up at for gmail but not
-for docs5, you&#8217;ll see an &#8220;authuser&#8221; or &#8220;u&#8221; parameter which is a low-valued
+for docs<sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup>, you&rsquo;ll see an &ldquo;authuser&rdquo; or &ldquo;u&rdquo; parameter which is a low-valued
 integer. It starts at 0 for the first account you sign into, and counts up
 from there as you sign into additional accounts.</p>
 
-<p>If you navigate directly to docs.google.com (or mail.google.com, etc), you&#8217;ll
+<p>If you navigate directly to docs.google.com (or mail.google.com, etc), you&rsquo;ll
 get the account currently associated as authuser 0, which is the first account
 you signed into.</p>
 
 <p>For the GAFYD case, Google lets you <a href="http://support.google.com/a/bin/answer.py?hl=en&amp;answer=53340">set up convenient forwarding
 addresses</a> for
-domains you control, and I&#8217;ve used this to map mail.mydomain.foo and
+domains you control, and I&rsquo;ve used this to map mail.mydomain.foo and
 docs.mydomain.foo to redirect automatically to mail.google.com/a/mydomain.foo
 and docs.google.com/a/mydomain.foo. This means that for the two GAFYD domains,
 if I want the mail or docs view associated with that account, I go to
@@ -292,16 +295,21 @@ I always want my personal account selected by default.</p>
 
 <p>Thanks go to <a href="http://www.linkedin.com/pub/ramesh-dharan/1/13b/8a2">Ramesh</a> for
 helping me figure this out.</p>
-
-<hr />
-
+<div class="footnotes">
+<hr/>
 <ol>
-<li><p>Google has rebranded Google Docs as Google Drive, and docs.google.com redirects to drive.google.com. I haven&#8217;t retrained my fingers, so I always type &#8220;docs&#8221;, so I&#8217;ll keep using the old name. Both names work fine as described in this post. ↩</p></li>
-<li><p>(Everything in this post is true for other Google Accounts services like gmail, as well, but docs is the one I navigate directly to the most frequently, so I&#8217;ll stick with it for the example.) ↩</p></li>
-<li><p>Google Apps for Your Domain, back when that was a thing; since rebranded as <a href="http://www.google.com/intl/en/enterprise/apps/business/">Google Apps for Business</a> once they removed the free option. ↩</p></li>
-<li><p>Why a separate gmail.com and personal GAFYD account? I&#8217;ve long used the same personal email address at a domain I control, predating Gmail. When Google created Gmail and started tacking many other services onto your Gmail account, becoming Google Accounts, I signed up with a gmail address but didn&#8217;t use it for email, just for Google Accounts. At some point I got tired of running my own email server and dealing with reliability and spam, so I decided to let Google host it via the then-free GAFYD. I could have just forwarded mail from the vanity address to the gmail address without setting up another mailbox, but it seemed simpler to keep them separate. That may have been a mistake. ↩</p></li>
-<li><p>The URLs vary by service, so this isn&#8217;t as obvious as it could be. Docs/Drive uses URLs like drive.google.com/?authuser=N in the account switcher, but for a GAFYD account, you actually end up at drive.google.com/a/mydomain.foo. Gmail uses URLs like mail.google.com/u/N, both in the account switcher and where you actually end up, though for a GAFYD account you can also navigate to mail.google.com/a/mydomain.foo (and you&#8217;ll be redirected to mail.google.com/u/N for the correct value of N if you&#8217;re already signed into that account, and to the login page if you&#8217;re not). ↩</p></li>
+<li id="fn:1">
+<p>Google has rebranded Google Docs as Google Drive, and docs.google.com redirects to drive.google.com. I haven&rsquo;t retrained my fingers, so I always type &ldquo;docs&rdquo;, so I&rsquo;ll keep using the old name. Both names work fine as described in this post.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>(Everything in this post is true for other Google Accounts services like gmail, as well, but docs is the one I navigate directly to the most frequently, so I&rsquo;ll stick with it for the example.)<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>Google Apps for Your Domain, back when that was a thing; since rebranded as <a href="http://www.google.com/intl/en/enterprise/apps/business/">Google Apps for Business</a> once they removed the free option.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>Why a separate gmail.com and personal GAFYD account? I&rsquo;ve long used the same personal email address at a domain I control, predating Gmail. When Google created Gmail and started tacking many other services onto your Gmail account, becoming Google Accounts, I signed up with a gmail address but didn&rsquo;t use it for email, just for Google Accounts. At some point I got tired of running my own email server and dealing with reliability and spam, so I decided to let Google host it via the then-free GAFYD. I could have just forwarded mail from the vanity address to the gmail address without setting up another mailbox, but it seemed simpler to keep them separate. That may have been a mistake.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+<li id="fn:5">
+<p>The URLs vary by service, so this isn&rsquo;t as obvious as it could be. Docs/Drive uses URLs like drive.google.com/?authuser=N in the account switcher, but for a GAFYD account, you actually end up at drive.google.com/a/mydomain.foo. Gmail uses URLs like mail.google.com/u/N, both in the account switcher and where you actually end up, though for a GAFYD account you can also navigate to mail.google.com/a/mydomain.foo (and you&rsquo;ll be redirected to mail.google.com/u/N for the correct value of N if you&rsquo;re already signed into that account, and to the login page if you&rsquo;re not).<a href="#fnref:5" rev="footnote">&#8617;</a></p></li>
 </ol>
+</div>
 
 ]]></content>
   </entry>
@@ -311,37 +319,37 @@ helping me figure this out.</p>
     <link href="http://blog.metamatt.com/blog/2013/01/23/restore-from-backup/"/>
     <updated>2013-01-23T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2013/01/23/restore-from-backup</id>
-    <content type="html"><![CDATA[<p>The SSD in Vanessa&#8217;s iMac died and needed to be replaced. In theory, this is
+    <content type="html"><![CDATA[<p>The SSD in Vanessa&rsquo;s iMac died and needed to be replaced. In theory, this is
 pretty simple since we have backups — replace the faulty hardware, restore the
 backup, and get on with life.</p>
 
-<p>In reality, it&#8217;s a little more complicated. I suppose these are small
-complaints since in the big picture, she didn&#8217;t lose any data. Still.</p>
+<p>In reality, it&rsquo;s a little more complicated. I suppose these are small
+complaints since in the big picture, she didn&rsquo;t lose any data. Still.</p>
 
 <p>The way I carried out the restore was to</p>
 
 <ul>
-<li>Attach the replacement SSD in an external USB enclosure (the &#8220;drive toaster&#8221;)</li>
+<li>Attach the replacement SSD in an external USB enclosure (the &ldquo;drive toaster&rdquo;)</li>
 <li>Boot off the recovery partition of the failing SSD, which still worked well enough for this purpose (otherwise I would have had to make a bootable USB stick or DVD)</li>
 <li>Invoke restore from Time Machine onto the new drive</li>
 <li>Power down, open the computer, and install the new SSD in place of the old one. (This is the hard part on a recent iMac, involving taking the screen off with suction cups, and so on.)</li>
 </ul>
 
 
-<p>And we&#8217;re done, right? Not quite. Even after the Time Machine restore, a bunch
+<p>And we&rsquo;re done, right? Not quite. Even after the Time Machine restore, a bunch
 of things were wonky:</p>
 
 <ul>
-<li>There&#8217;s no recovery partition on the new drive. You&#8217;d think Time Machine would recreate that, too, but it doesn&#8217;t. Internet wisdom says all you need to do is reinstall the current version of Mac OS X over itself and it will automatically recreate the recovery partition; I tried it and that wasn&#8217;t the case. What this means is the next failure will be harder to deal with because I&#8217;ll need alternate boot media; the manual means of creating the recovery partition at this point seem just as hard as dealing with that problem when it arises, so I&#8217;m ignoring it for now.</li>
-<li>Legitimate licensed Adobe CreativeSuite apps had their copy protection crap out, and refused to run with scary messages from the licensing subsystem using the word &#8220;catastrophic&#8221;. I called Adobe tech support, and they took 20 minutes to tell me to uninstall and reinstall the apps, which took another 20 minutes but worked.</li>
-<li>CrashPlan backups weren&#8217;t running because their software uses Java and Mac OS X ships without Java until you launch an interactive Java app at which point you&#8217;re prompted whether you want to automatically install a Java runtime.</li>
-<li>Time Machine backups weren&#8217;t running because who knows why, until I went into System Preferences and manually prodded them to run once, after which they kept running fine automatically.</li>
-<li>Mac App Store wasn&#8217;t automatically updating software until I launched it and manually signed in.</li>
+<li>There&rsquo;s no recovery partition on the new drive. You&rsquo;d think Time Machine would recreate that, too, but it doesn&rsquo;t. Internet wisdom says all you need to do is reinstall the current version of Mac OS X over itself and it will automatically recreate the recovery partition; I tried it and that wasn&rsquo;t the case. What this means is the next failure will be harder to deal with because I&rsquo;ll need alternate boot media; the manual means of creating the recovery partition at this point seem just as hard as dealing with that problem when it arises, so I&rsquo;m ignoring it for now.</li>
+<li>Legitimate licensed Adobe CreativeSuite apps had their copy protection crap out, and refused to run with scary messages from the licensing subsystem using the word &ldquo;catastrophic&rdquo;. I called Adobe tech support, and they took 20 minutes to tell me to uninstall and reinstall the apps, which took another 20 minutes but worked.</li>
+<li>CrashPlan backups weren&rsquo;t running because their software uses Java and Mac OS X ships without Java until you launch an interactive Java app at which point you&rsquo;re prompted whether you want to automatically install a Java runtime.</li>
+<li>Time Machine backups weren&rsquo;t running because who knows why, until I went into System Preferences and manually prodded them to run once, after which they kept running fine automatically.</li>
+<li>Mac App Store wasn&rsquo;t automatically updating software until I launched it and manually signed in.</li>
 </ul>
 
 
 <p>These problems could have been caused by the hard drive replacement, the
-restore from backup, or the OS reinstall; I don&#8217;t really know which. I just
+restore from backup, or the OS reinstall; I don&rsquo;t really know which. I just
 know there was a lot more to getting a working system back than letting Time
 Machine restore the files.</p>
 ]]></content>
@@ -352,12 +360,12 @@ Machine restore the files.</p>
     <link href="http://blog.metamatt.com/blog/2013/01/23/google-account-access-from-an-iphone/"/>
     <updated>2013-01-23T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2013/01/23/google-account-access-from-an-iphone</id>
-    <content type="html"><![CDATA[<p>Google recently announced that after January 2013, they&#8217;ll be <a href="http://support.google.com/a/bin/answer.py?hl=en&amp;answer=2716936">deprecating EAS
+    <content type="html"><![CDATA[<p>Google recently announced that after January 2013, they&rsquo;ll be <a href="http://support.google.com/a/bin/answer.py?hl=en&amp;answer=2716936">deprecating EAS
 access to
 Gmail</a> (and
 calendar, and address book) for free customers (addresses ending in
-@gmail.com, and free Google Apps accounts). It&#8217;ll still be available for paid
-Google Apps customers, and it&#8217;ll keep working for normal customers who are
+@gmail.com, and free Google Apps accounts). It&rsquo;ll still be available for paid
+Google Apps customers, and it&rsquo;ll keep working for normal customers who are
 already using it, but only on their existing devices.</p>
 
 <p>This is bad news because EAS (aka Google Sync) has been and continues to be
@@ -368,27 +376,27 @@ services, but this change makes them work a little less well together.</p>
 <p>Google Sync (EAS) is the best way to connect iOS to Google services because</p>
 
 <ul>
-<li>One &#8220;account&#8221; (setup step in iOS) handles mail, contacts and calendars.</li>
+<li>One &ldquo;account&rdquo; (setup step in iOS) handles mail, contacts and calendars.</li>
 <li>Until September 2012, this was the only way to sync contacts between iOS and Google.</li>
-<li>Mail works better: Push works, and the delete button works the way you&#8217;d expect. (Supposedly both iOS mail client and Gimap mail server support IMAP IDLE, but they disagree on how, or something, because the result doesn&#8217;t work.)</li>
-<li>Also, if you enable Google&#8217;s 2-factor authentication, you need to generate fallback &#8220;app-specific&#8221; passwords for all your devices1, and for EAS this is one per device, and without EAS it&#8217;s at least two2.</li>
+<li>Mail works better: Push works, and the delete button works the way you&rsquo;d expect. (Supposedly both iOS mail client and Gimap mail server support IMAP IDLE, but they disagree on how, or something, because the result doesn&rsquo;t work.)</li>
+<li>Also, if you enable Google&rsquo;s 2-factor authentication, you need to generate fallback &ldquo;app-specific&rdquo; passwords for all your devices<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>, and for EAS this is one per device, and without EAS it&rsquo;s at least two<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</li>
 </ul>
 
 
-<p>For these reasons, especially the second one, I&#8217;ve been using — and
+<p>For these reasons, especially the second one, I&rsquo;ve been using — and
 recommending to friends and family — EAS as the preferred way of connecting to
-Google accounts. In fact, I didn&#8217;t even realize that contact sync was now
+Google accounts. In fact, I didn&rsquo;t even realize that contact sync was now
 possible without it (Google just added CardDAV support in September 2012).</p>
 
-<p>Similarly, I&#8217;ve been using — and recommending to friends and family — Google
+<p>Similarly, I&rsquo;ve been using — and recommending to friends and family — Google
 Apps (Gmail and friends) as my preferred provider for cloud
-mail/contacts/calendars. Apple&#8217;s track record for cloud mail services is
-spotty; even if iCloud is improving, I just don&#8217;t see the advantage over
-Google, especially if you don&#8217;t want to tie yourself to Apple devices
-forever3.</p>
+mail/contacts/calendars. Apple&rsquo;s track record for cloud mail services is
+spotty; even if iCloud is improving, I just don&rsquo;t see the advantage over
+Google, especially if you don&rsquo;t want to tie yourself to Apple devices
+forever<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>.</p>
 
-<p>That leaves us trying to connect iOS to Google&#8217;s services as best we can.
-Which to be fair is pretty good, but losing EAS is a step back4. This speaks
+<p>That leaves us trying to connect iOS to Google&rsquo;s services as best we can.
+Which to be fair is pretty good, but losing EAS is a step back<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>. This speaks
 to <a href="http://levelsofdetail.kendeeter.com/post/31926718063/maps">something my friend Ken wrote months
 ago</a> (in the
 context of the maps kerfuffle):</p>
@@ -400,8 +408,8 @@ user?</p></blockquote>
 <p>This has been a bright spot in this regard, which is getting a little less
 bright at the end of January.</p>
 
-<p>Google probably doesn&#8217;t care about keeping free EAS working because, in order
-of preference, they&#8217;d like to see</p>
+<p>Google probably doesn&rsquo;t care about keeping free EAS working because, in order
+of preference, they&rsquo;d like to see</p>
 
 <ul>
 <li>You using an Android device to connect to Gmail+friends</li>
@@ -413,29 +421,33 @@ of preference, they&#8217;d like to see</p>
 <p>Apple may not care about optimizing the Gmail experience for iOS users because</p>
 
 <ul>
-<li>They&#8217;d like to see you using iCloud for mail+contacts+calendars</li>
-<li>Plus they&#8217;ve already connected you to Google services using EAS, so why should they have to do it again differently.</li>
+<li>They&rsquo;d like to see you using iCloud for mail+contacts+calendars</li>
+<li>Plus they&rsquo;ve already connected you to Google services using EAS, so why should they have to do it again differently.</li>
 </ul>
 
 
-<p>In fairness to Apple, adding a &#8220;Gmail&#8221; account to iOS adds both mail and
+<p>In fairness to Apple, adding a &ldquo;Gmail&rdquo; account to iOS adds both mail and
 calendars (IMAP + CalDAV), and Google only added CardDAV support on the server
 side in September 2012 (i.e. after the current iOS release). Maybe, hopefully,
-Apple will make iOS &#8220;Gmail&#8221; accounts start supporting calendars via CardDAV in
+Apple will make iOS &ldquo;Gmail&rdquo; accounts start supporting calendars via CardDAV in
 the next release. In the meantime, you have to do it manually.</p>
 
-<p>I don&#8217;t see any reason why the open-protocol support from iOS to Google
-services couldn&#8217;t work just as well as EAS — if one setup step added all 3
-protocols, and if push were made to work — but it&#8217;s not the case now.</p>
-
-<hr />
-
+<p>I don&rsquo;t see any reason why the open-protocol support from iOS to Google
+services couldn&rsquo;t work just as well as EAS — if one setup step added all 3
+protocols, and if push were made to work — but it&rsquo;s not the case now.</p>
+<div class="footnotes">
+<hr/>
 <ol>
-<li><p>It&#8217;s too bad that native device clients basically negate the advantage of 2-factor authentication, since they aren&#8217;t compatible and force you to use the fallback mechanism. ↩</p></li>
-<li><p>One for the &#8220;Gmail&#8221; account supporting IMAP and CalDAV, and one for the separate CardDAV account you have to add. And I don&#8217;t know whether/how &#8220;app-specific&#8221; password authentication actually works for the Gmail account type, given that it&#8217;s a hybrid of two protocols; it&#8217;s possible that doesn&#8217;t work in which case you would have to avoid the Gmail account type, generate 3 fallback passwords, and set up IMAP and CardDAV and CalDav separately. ↩</p></li>
-<li><p>I&#8217;m complaining here about the flaws in the relatively good iOS support for Google services; I suspect that anyone trying to connect to iCloud from Android or Windows apps has it far worse. ↩</p></li>
-<li><p>There&#8217;s some irony here in that the best way to connect some Apple software to some Google software is using protocols designed by Microsoft. ↩</p></li>
+<li id="fn:1">
+<p>It&rsquo;s too bad that native device clients basically negate the advantage of 2-factor authentication, since they aren&rsquo;t compatible and force you to use the fallback mechanism.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>One for the &ldquo;Gmail&rdquo; account supporting IMAP and CalDAV, and one for the separate CardDAV account you have to add. And I don&rsquo;t know whether/how &ldquo;app-specific&rdquo; password authentication actually works for the Gmail account type, given that it&rsquo;s a hybrid of two protocols; it&rsquo;s possible that doesn&rsquo;t work in which case you would have to avoid the Gmail account type, generate 3 fallback passwords, and set up IMAP and CardDAV and CalDav separately.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>I&rsquo;m complaining here about the flaws in the relatively good iOS support for Google services; I suspect that anyone trying to connect to iCloud from Android or Windows apps has it far worse.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>There&rsquo;s some irony here in that the best way to connect some Apple software to some Google software is using protocols designed by Microsoft.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
 </ol>
+</div>
 
 ]]></content>
   </entry>
@@ -445,17 +457,17 @@ protocols, and if push were made to work — but it&#8217;s not the case now.</p
     <link href="http://blog.metamatt.com/blog/2013/01/09/previewing-markdown-files-from-the-terminal/"/>
     <updated>2013-01-09T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2013/01/09/previewing-markdown-files-from-the-terminal</id>
-    <content type="html"><![CDATA[<p>I&#8217;ve been wanting a way to preview
+    <content type="html"><![CDATA[<p>I&rsquo;ve been wanting a way to preview
 <a href="http://daringfireball.net/projects/markdown/">Markdown</a>-formatted text files
 from the terminal, ideally via <a href="http://www.greenwoodsoftware.com/less/">less</a>.
 Primarily, I think, because Github encourages it, a lot of open source
 projects are starting to include a
 <a href="https://www.google.com/search?q=+readme.md">README.md</a> instead of a plain old
-<a href="http://en.wikipedia.org/wiki/README">README</a>12; these marked-down READMEs are
-easy to view in Github&#8217;s web interface but not after (or before) you clone the
+<a href="http://en.wikipedia.org/wiki/README">README</a><sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>,<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>; these marked-down READMEs are
+easy to view in Github&rsquo;s web interface but not after (or before) you clone the
 repo into your own filesystem.</p>
 
-<p>There&#8217;s <code>zless</code> that can understand compressed files; why not <code>mdless</code> that
+<p>There&rsquo;s <code>zless</code> that can understand compressed files; why not <code>mdless</code> that
 can understand Markdown files?</p>
 
 <p>I went looking and stackoverflow came to the rescue with this question and
@@ -463,13 +475,13 @@ answer about a <a href="http://stackoverflow.com/a/7603703/275581">less-style ma
 systems</a>, suggesting
 <a href="http://johnmacfarlane.net/pandoc/">pandoc</a> as the tool to translate from
 Markdown format to troff format. The suggested incantation there works for me
-under Debian Linux but not under Mac OS X because it relies on <code>man</code>&#8217;s <code>-l</code>
-option, which I&#8217;m guessing is a GNU addition not supported by BSD <code>man</code>. I had
+under Debian Linux but not under Mac OS X because it relies on <code>man</code>&rsquo;s <code>-l</code>
+option, which I&rsquo;m guessing is a GNU addition not supported by BSD <code>man</code>. I had
 to figure out how to duplicate the processing that <code>man -l</code> does, which I knew
 involved <code>troff</code> (or <code>groff</code>); it turns out that <code>groff</code> understands a <code>-man</code>
 flag which predefines the macros used by manpages. The version using <code>groff</code>
 instead of <code>man -l</code> seems more portable (it works fine under Linux as well as
-Mac OS X), so that&#8217;s what I&#8217;ll use.</p>
+Mac OS X), so that&rsquo;s what I&rsquo;ll use.</p>
 
 <p>Hence, the following incantation to view a README.md file:</p>
 
@@ -478,13 +490,15 @@ Mac OS X), so that&#8217;s what I&#8217;ll use.</p>
 <p>Or, a <code>mdless</code> command implemented as a tcsh alias:</p>
 
 <p><code>alias mdless "pandoc -s -f markdown -t man \!* | groff -T utf8 -man | less"</code></p>
-
-<hr />
-
+<div class="footnotes">
+<hr/>
 <ol>
-<li><p>As one data point for when this became common, README.md was added to the short list of common readme file names in this Wikipedia article on <a href="http://en.wikipedia.org/w/index.php?title=README&amp;oldid=480712255">March 7, 2012</a>. ↩</p></li>
-<li><p>Not to be confused with <a href="http://www.amazon.com/gp/product/0062191497/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=metamatt-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0062191497">REAMDE</a>. ↩</p></li>
+<li id="fn:1">
+<p>As one data point for when this became common, README.md was added to the short list of common readme file names in this Wikipedia article on <a href="http://en.wikipedia.org/w/index.php?title=README&amp;oldid=480712255">March 7, 2012</a>.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>Not to be confused with <a href="http://www.amazon.com/gp/product/0062191497/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=metamatt-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0062191497">REAMDE</a>.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
 </ol>
+</div>
 
 ]]></content>
   </entry>
@@ -494,50 +508,54 @@ Mac OS X), so that&#8217;s what I&#8217;ll use.</p>
     <link href="http://blog.metamatt.com/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard/"/>
     <updated>2012-12-27T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard</id>
-    <content type="html"><![CDATA[<p>Twice in the last few months1 I&#8217;ve had to do troubleshooting steps on
-Vanessa&#8217;s iMac that involved booting from alternate volumes2. This is normally
+    <content type="html"><![CDATA[<p>Twice in the last few months<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> I&rsquo;ve had to do troubleshooting steps on
+Vanessa&rsquo;s iMac that involved booting from alternate volumes<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>. This is normally
 easy on a Mac, but not quite so easy on a Mac with a wireless Bluetooth
-keyboard3.</p>
+keyboard<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>.</p>
 
 <p>Both times, it was an exercise in frustration, as I give the reboot command
 and wait about 10 seconds for the reboot to actually happen; then I hold
 Command-R, watch the screen blink black, wait, watch it blink white, wait,
-chime, wait, Apple logo, wait, and… oh hello, login screen! That&#8217;s not right.
-I&#8217;ve just wasted a minute and I&#8217;m back where I started.</p>
+chime, wait, Apple logo, wait, and… oh hello, login screen! That&rsquo;s not right.
+I&rsquo;ve just wasted a minute and I&rsquo;m back where I started.</p>
 
-<p>Apple&#8217;s <a href="http://support.apple.com/kb/HT4718">support document on recovery
+<p>Apple&rsquo;s <a href="http://support.apple.com/kb/HT4718">support document on recovery
 mode</a> makes it sound so easy:</p>
 
 <blockquote><p>Restart your Mac and hold down the Command key and the R key (Command-R),
 and keep holding them until the Apple icon appears, indicating that your Mac
 is starting up. After the Recovery System is finished starting up, you should
-see a desktop with a OS X menu bar and a &#8220;Mac OS X Utilities&#8221; application
+see a desktop with a OS X menu bar and a &ldquo;Mac OS X Utilities&rdquo; application
 window. Note: If you see a login window or your own desktop and icons, it is
-possible that you didn&#8217;t hold Command-R early enough. Restart and try again.</p></blockquote>
+possible that you didn&rsquo;t hold Command-R early enough. Restart and try again.</p></blockquote>
 
 <p>After reading and rereading that, I try a few more times, holding Command-R
-earlier and earlier as Apple recommends, and, no luck. Wait a minute, I&#8217;m
+earlier and earlier as Apple recommends, and, no luck. Wait a minute, I&rsquo;m
 using a Bluetooth keyboard. Does that cause complications, like, the computer
-and keyboard aren&#8217;t able to communicate right at the beginning of the boot
-process? Yes4. Do I need to go find a USB keyboard to plug in? Not quite.</p>
+and keyboard aren&rsquo;t able to communicate right at the beginning of the boot
+process? Yes<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>. Do I need to go find a USB keyboard to plug in? Not quite.</p>
 
 <p>It turns out the magic answer is to reboot the computer, wait for the LED on
 the keyboard to flash (which is after the computer starts booting and chimes
 and does a self-test which on this iMac with 12GB of memory all takes about 20
 seconds), and <em>then</em> immediately press and hold Command-R. Any earlier than
-that, and you&#8217;ll be ignored.</p>
+that, and you&rsquo;ll be ignored.</p>
 
-<p>You&#8217;d think Apple&#8217;s help docs could mention this, since they&#8217;ve been shipping
+<p>You&rsquo;d think Apple&rsquo;s help docs could mention this, since they&rsquo;ve been shipping
 Bluetooth keyboards by default with all their desktop machines for years now.</p>
-
-<hr />
-
+<div class="footnotes">
+<hr/>
 <ol>
-<li><p>Both of these occasions involved disk failures in the <a href="http://blog.metamatt.com/blog/2012/01/20/nothing-is-as-easy-as-it-should-be-ssd-upgrades/">Crucial M4 SSD I installed a year ago</a>. You can probably guess that I&#8217;m not quite as happy with these as I wanted to be. ↩</p></li>
-<li><p><a href="http://support.apple.com/kb/HT1533">Booting from CD</a> to upgrade firmware, or <a href="http://support.apple.com/kb/HT4718">booting from the recovery partition</a> to attempt disk repair. Each of these requires holding a certain key down while the computer is booting. ↩</p></li>
-<li><p>I put the same SSD model in my own computer, a Mac Pro tower with easily accessible drive bays and an old-school wired keyboard. It&#8217;s a lot easier to troubleshoot and a lot easier to repair. Murphy&#8217;s Law dictates that if we&#8217;re going to have problems with one SSD, it&#8217;ll be the one <a href="http://www.ifixit.com/Guide/iMac+Intel+27-Inch+EMC+2309+and+2374+Hard+Drive+Replacement/1634/1">tucked away under the glass front of the iMac</a>. ↩</p></li>
-<li><p>Try googling for &#8221;<a href="https://www.google.com/search?q=boot+mac+from+cd">boot Mac from CD</a>&#8221; versus &#8221;<a href="https://www.google.com/search?q=boot+mac+from+cd+bluetooth">boot Mac from CD bluetooth</a>&#8221;. Big difference. The first one leads you to a simple answer (but deceptively simple in the case you have a Bluetooth keyboard); the second one leads you through a muddle of hundreds of confused people. ↩</p></li>
+<li id="fn:1">
+<p>Both of these occasions involved disk failures in the <a href="http://blog.metamatt.com/blog/2012/01/20/nothing-is-as-easy-as-it-should-be-ssd-upgrades/">Crucial M4 SSD I installed a year ago</a>. You can probably guess that I&rsquo;m not quite as happy with these as I wanted to be.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p><a href="http://support.apple.com/kb/HT1533">Booting from CD</a> to upgrade firmware, or <a href="http://support.apple.com/kb/HT4718">booting from the recovery partition</a> to attempt disk repair. Each of these requires holding a certain key down while the computer is booting.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>I put the same SSD model in my own computer, a Mac Pro tower with easily accessible drive bays and an old-school wired keyboard. It&rsquo;s a lot easier to troubleshoot and a lot easier to repair. Murphy&rsquo;s Law dictates that if we&rsquo;re going to have problems with one SSD, it&rsquo;ll be the one <a href="http://www.ifixit.com/Guide/iMac+Intel+27-Inch+EMC+2309+and+2374+Hard+Drive+Replacement/1634/1">tucked away under the glass front of the iMac</a>.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>Try googling for &ldquo;<a href="https://www.google.com/search?q=boot+mac+from+cd">boot Mac from CD</a>&rdquo; versus &ldquo;<a href="https://www.google.com/search?q=boot+mac+from+cd+bluetooth">boot Mac from CD bluetooth</a>&rdquo;. Big difference. The first one leads you to a simple answer (but deceptively simple in the case you have a Bluetooth keyboard); the second one leads you through a muddle of hundreds of confused people.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
 </ol>
+</div>
 
 ]]></content>
   </entry>
@@ -553,26 +571,26 @@ would be impossible, but it was hard to visualize, so we had to try.</p>
 
 <p>We settled on Ireland as the destination based on two propositions: we can
 take the baby to the pub, and the people love babies. (These were the actual
-reasons recommended by an Irish friend of Vanessa.) OK, not that we&#8217;re such
-raging alcoholics that we can only travel to pubs, but &#8220;can take the baby to
-the pub&#8221; is actually a pretty good proxy for &#8220;is not uptight, and will be
-forgiving of people traveling with a baby&#8221;, which turned out to be true. Also
+reasons recommended by an Irish friend of Vanessa.) OK, not that we&rsquo;re such
+raging alcoholics that we can only travel to pubs, but &ldquo;can take the baby to
+the pub&rdquo; is actually a pretty good proxy for &ldquo;is not uptight, and will be
+forgiving of people traveling with a baby&rdquo;, which turned out to be true. Also
 true is that the Irish were not only gracious and charming hosts, but that
 many of them indeed like babies and know how to show it. For us, this
 translated to both people being prepared and understanding, but also to a lot
 of free entertainment. Dominic likes a lot of stimulation, and he got it.</p>
 
-<p>I&#8217;m pretty proud of our itinerary, in retrospect, because we were making it up
+<p>I&rsquo;m pretty proud of our itinerary, in retrospect, because we were making it up
 as we went along and it turned out really easy. No doubt it helps that Ireland
 is a small country, native English speaking (almost), and the people and
 culture are easygoing, so probably anything you do there is likely to go well.
 Still, for us it turned out remarkably easy to travel.</p>
 
-<p>Here&#8217;s where we went:</p>
+<p>Here&rsquo;s where we went:</p>
 
 <p><a href="http://www.flickr.com/photos/67861147@N00/8219093821"><img src="http://farm9.staticflickr.com/8482/8219093821_5003d3ab9%0A0.jpg" alt="Ireland travel map" /></a></p>
 
-<p>The itinerary, of which I&#8217;m proud because the transfers were so easy and
+<p>The itinerary, of which I&rsquo;m proud because the transfers were so easy and
 involved only public transit: We flew from San Francisco to London and then
 immediately to Dublin and caught the city bus to our hotel. Dublin: 3 days
 walking around, with a side DART trip to Howth. Then we walked from our hotel
@@ -599,15 +617,15 @@ neighborhood we were staying in.</p>
 
 <p><a href="h%0Attp://www.flickr.com/photos/67861147@N00/8052048779"><img src="http://farm9.staticflickr.com/8037/8052048779_909def3212_z.jpg" alt="Psyched" /></a></p>
 
-<p>Galway&#8217;s Dominick Street:</p>
+<p>Galway&rsquo;s Dominick Street:</p>
 
 <p><a href="http%0A://www.flickr.com/photos/67861147@N00/8052051235"><img src="http://farm9.staticflickr.com/8309/8052051235_ced4aefd1a.jpg" alt="Cheery" /></a></p>
 
-<p>O&#8217;Brien&#8217;s Castle above the Cliffs of Moher:</p>
+<p>O&#8217;Brien&rsquo;s Castle above the Cliffs of Moher:</p>
 
 <p><a href="http%0A://www.flickr.com/photos/67861147@N00/8052052633"><img src="http://farm9.staticflickr.com/8032/8052052633_ddc755cdaa.jpg" alt="Castle" /></a></p>
 
-<p>Dominic playing in the window seat at Murphy&#8217;s ice cream shop in Dingle:</p>
+<p>Dominic playing in the window seat at Murphy&rsquo;s ice cream shop in Dingle:</p>
 
 <p><a href="http://www.flickr.com/photos/67861147@N00/8052057411"><img src="http://farm9.staticflickr.com/8037/8052057411_521e317ef2.j%0Apg" alt="Window shopping" /></a></p>
 
@@ -627,7 +645,7 @@ pictures</a>.</p>
     <id>http://blog.metamatt.com/blog/2012/11/13/the-effect-of-time-shifting-electrical-usage-on-nem-billing</id>
     <content type="html"><![CDATA[<p>One more post on the topic of PG&amp;E bills for solar (NEM) customers.</p>
 
-<p>PGE&#8217;s NEM billing scheme <a href="http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/">blends usage across
+<p>PGE&rsquo;s NEM billing scheme <a href="http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/">blends usage across
 seasons</a> to
 allow for seasonal variation in generated power, and their E-6 billing scheme
 <a href="http://blog.metamatt.com/blog/2012/11/11/e-1-vs-e-6-for-residential-%0Asolar-customers/">separates usage into 5 time-of-use
@@ -638,50 +656,50 @@ periods.</p>
 results by time-shifting usage around inside the same true-up period, between
 TOU zones, months, or even seasons.</p>
 
-<p>It&#8217;s pretty easy to move usage between TOU zones of the same day (say between
+<p>It&rsquo;s pretty easy to move usage between TOU zones of the same day (say between
 summer on-peak and summer off-peak) by delaying energy-hungry activities like
-baking pies until night; that&#8217;s both tractable for a home customer and exactly
+baking pies until night; that&rsquo;s both tractable for a home customer and exactly
 the kind of behavior the E-6 TOU billing rates are designed to encourage.
 Moving usage between TOU zones of different seasons (say between summer on-
 peak and winter off-peak), or even from one monthly billing cycle to another,
-would be more difficult (it&#8217;s possible in theory but doesn&#8217;t really match
+would be more difficult (it&rsquo;s possible in theory but doesn&rsquo;t really match
 human activity patterns to delay all your energy-hungry activities for months
-and then execute them in a big batch months later; alternatively you&#8217;d need a
-really big battery which is exactly what grid tie-in lets you avoid), but I&#8217;m
+and then execute them in a big batch months later; alternatively you&rsquo;d need a
+really big battery which is exactly what grid tie-in lets you avoid), but I&rsquo;m
 still curious if it would be advantageous in some circumstances.</p>
 
-<p>Again drawing on the example of my last year&#8217;s experience, the answer turns
-out to be yes for both forms of time-shifting. Say you&#8217;re going to bake a
+<p>Again drawing on the example of my last year&rsquo;s experience, the answer turns
+out to be yes for both forms of time-shifting. Say you&rsquo;re going to bake a
 bunch of pies, and need to run the oven at 3KW for a little over 3 hours,
 consuming 10 KWh of electricity. (The 3 KW figure is realistic for an electric
 oven; the heating element running continuously is not; ignore that in the
-service of an example.) If you&#8217;re going to consume that 10 KWh, does it matter
-<em>when</em> you consume it; what&#8217;s the effect on your final true-up bill of adding
+service of an example.) If you&rsquo;re going to consume that 10 KWh, does it matter
+<em>when</em> you consume it; what&rsquo;s the effect on your final true-up bill of adding
 10 KWh at various different times?</p>
 
 <p>If you can move that 10 KWh from a higher-value TOU period to a lower-value
 TOU period in the same day, you win; this turns out to be independent of
-tiering, consumption, or which month or season you&#8217;re in, which is a nice
-property. It won&#8217;t change your overall consumption for that day or month, so
-it won&#8217;t change your tiering calculation. If you had a surplus in the higher-
-value TOU period, you&#8217;ll now have a bigger surplus, which at the higher rate
+tiering, consumption, or which month or season you&rsquo;re in, which is a nice
+property. It won&rsquo;t change your overall consumption for that day or month, so
+it won&rsquo;t change your tiering calculation. If you had a surplus in the higher-
+value TOU period, you&rsquo;ll now have a bigger surplus, which at the higher rate
 is more than enough to buy the same electricity back from PG&amp;E later in the
-day, even if the solar cells aren&#8217;t producing at that time. (Basically, it
-wasn&#8217;t immediately obvious to me what the credit/charge calculations do in
-this case, because my intuition keeps wanting to tell me it&#8217;s better to
-consume energy when I&#8217;m getting it free from my solar panels than when I&#8217;m
+day, even if the solar cells aren&rsquo;t producing at that time. (Basically, it
+wasn&rsquo;t immediately obvious to me what the credit/charge calculations do in
+this case, because my intuition keeps wanting to tell me it&rsquo;s better to
+consume energy when I&rsquo;m getting it free from my solar panels than when I&rsquo;m
 buying it from PG&amp;E. That turns out not to be true; the NEM system means if
-you buy and sell the same amount of electricity at a given rate, it&#8217;s a wash,
+you buy and sell the same amount of electricity at a given rate, it&rsquo;s a wash,
 and the TOU system actually rewards you for selling it at a higher rate and
-buying it back at a lower rate.) So yes, you can &#8220;game&#8221; the E-6 billing system
-by moving usage from peak times to off-peak times, which use of &#8220;game&#8221; gets
-scare quotes because it&#8217;s actually the behavior they want to encourage.</p>
+buying it back at a lower rate.) So yes, you can &ldquo;game&rdquo; the E-6 billing system
+by moving usage from peak times to off-peak times, which use of &ldquo;game&rdquo; gets
+scare quotes because it&rsquo;s actually the behavior they want to encourage.</p>
 
 <p>Meanwhile, if you could move that same 10 KWh across months, the story is a
 lot more complicated. Due to tiering, you may be paying more than the baseline
 rate for some of your electricity, and since PG&amp;E applies the tiering
-calculations entirely inside each month, based on that month&#8217;s usage, you can
-actually get crossover between &#8220;high-value&#8221; and &#8220;low-value&#8221; TOU periods. More
+calculations entirely inside each month, based on that month&rsquo;s usage, you can
+actually get crossover between &ldquo;high-value&rdquo; and &ldquo;low-value&rdquo; TOU periods. More
 concretely: as a solar generator, you may be paying more for winter off-peak
 electricity at 3rd-tier rates than you are for summer part-peak electricity
 where you never exceed the first tier. This is exactly what happened to me
@@ -690,24 +708,24 @@ schedule</a> that winter
 off-peak and part-peak above 130% of baseline cost about what summer on-peak
 baseline usage does, and winter off-peak and part-peak above 200% of baseline
 cost more than the summer on-peak baseline). While from the previous example
-you&#8217;d expect the result of time-shifting your usage to depend on the TOU rates
+you&rsquo;d expect the result of time-shifting your usage to depend on the TOU rates
 (and you would win by shifting from a high-rate TOU to a low-rate TOU, and
 lose by doing the reverse), in fact it also depends on the tiering
 calculations, and you can also win by shifting usage out of a month where you
-had higher-tier usage into a month where you didn&#8217;t, and this can even be true
+had higher-tier usage into a month where you didn&rsquo;t, and this can even be true
 if it involves shifting that usage from a low-rate TOU to a higher-rate TOU.
 So, surprisingly, you could see a net benefit from moving usage from winter to
-summer; it&#8217;s pretty easy to make the numbers work out if moving from winter
+summer; it&rsquo;s pretty easy to make the numbers work out if moving from winter
 part-peak to summer part-peak, and in extreme cases, you could even win by
 moving from winter off-peak to summer on-peak. This is decidedly not the
-result they want to encourage, so I&#8217;d call it gaming the system. (Of course,
-you&#8217;d need a way to actually buffer your usage across months; a better way to
+result they want to encourage, so I&rsquo;d call it gaming the system. (Of course,
+you&rsquo;d need a way to actually buffer your usage across months; a better way to
 lower your winter bills is to simply use less electricity, without
 compensating in the opposite direction in the summer.)</p>
 
-<p>I&#8217;ll note again that this perverse result derives from the fact that PG&amp;E
+<p>I&rsquo;ll note again that this perverse result derives from the fact that PG&amp;E
 calculates and finalizes the tiering calculations entirely inside each month,
-instead of smoothing them across the true-up period, so it&#8217;s actually possible
+instead of smoothing them across the true-up period, so it&rsquo;s actually possible
 for a big energy user with an even bigger solar array to generate a net
 surplus for the year but be paying 4th-tier rates for winter electricity when
 the array is underperforming.</p>
@@ -722,27 +740,27 @@ the array is underperforming.</p>
     <content type="html"><![CDATA[<p>As a follow-on to my <a href="http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/">article on understanding the PG&amp;E NEM
 bill</a>, I
 decided to go back and recalculate our usage charges for the normal E-1
-billing schedule, in addition to the E-6 I&#8217;m actually using.</p>
+billing schedule, in addition to the E-6 I&rsquo;m actually using.</p>
 
 <p>I also threw in the calculation for the E-1 value of the electricity we
 generated instead of buying from PG&amp;E, that is, how much we would have spent
-to buy all the electricity we used from PG&amp;E if we hadn&#8217;t installed the solar
+to buy all the electricity we used from PG&amp;E if we hadn&rsquo;t installed the solar
 array.</p>
 
 <p>In short, E-6 was a solid win for us: a usage charge of $64.54 would have been
-$275.10 with E-11.</p>
+$275.10 with E-1<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>.</p>
 
 <p>The results:</p>
 
 <p>E-6 was a solid win for us. In the 6 winter months where we had a usage
-charge, the usage charge was about $10/month higher with E-12. In the 6 summer
+charge, the usage charge was about $10/month higher with E-1<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>. In the 6 summer
 months where we had a usage credit, the usage credit was about $30/month lower
-with E-13.</p>
+with E-1<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>.</p>
 
-<p>On the flip side, E-6 has a &#8220;meter charge&#8221; of approximately 25 cents per day,
-or $92 per year4, which E-1 does not. So our true E-6 cost (for electrical
+<p>On the flip side, E-6 has a &ldquo;meter charge&rdquo; of approximately 25 cents per day,
+or $92 per year<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>, which E-1 does not. So our true E-6 cost (for electrical
 usage, plus the privilege of E-6 TOU billing) is $156.88 for the year, and
-E-1&#8217;s true cost remains at $275.10.</p>
+E-1&rsquo;s true cost remains at $275.10.</p>
 
 <p>It seems like E-6 would be an easy win for anyone who can generate all of
 their summer on-peak electricity, or especially all of their summer on-peak
@@ -752,18 +770,22 @@ rates are lower than E-1 rates; E-6 summer part-peak rates are a little higher
 than E-1 rates; E-6 summer on-peak rates are a lot higher than E-1 rates.)</p>
 
 <p>I also remember being told that PG&amp;E will let you switch from E-1 to E-6 and
-then at the end of the first year, if you didn&#8217;t save money, you can take a
-mulligan and retroactively undo the switch and pay the E-1 rate. I can&#8217;t find
-confirmation of that on PG&amp;E&#8217;s website today, though.</p>
-
-<hr />
-
+then at the end of the first year, if you didn&rsquo;t save money, you can take a
+mulligan and retroactively undo the switch and pay the E-1 rate. I can&rsquo;t find
+confirmation of that on PG&amp;E&rsquo;s website today, though.</p>
+<div class="footnotes">
+<hr/>
 <ol>
-<li><p>You may notice that my earlier article lists our usage charge for the year as $60.22 and here it&#8217;s $64.54; the difference is that $60.22 is PG&amp;E&#8217;s number and $64.54 is my calculation for what it should be (and I had to fudge the numbers for October 2011 where PG&amp;E switched me from the old plan to NEM midway through the billing cycle, plus we may round differently, plus there may be other errors in my calculations). This seemed close enough to go through the rest of the exercise, and the technique used to calculate this number is the same one I&#8217;ll use for the E-1 number, so this seemed like the one to use for this comparison. ↩</p></li>
-<li><p>E-6 is always a win in the winter, because there&#8217;s no winter peak zone; winter part-peak and winter off-peak are both cheaper than the E-1 rate. And between the solar array and our usage patterns, the vast majority of our PG&amp;E usage was in the off-peak time anyway. ↩</p></li>
-<li><p>Between the solar array and our usage patterns, we ran a surplus in summer on-peak and summer part-peak for nearly the entire summer, and had to buy summer electricity only off-peak. This is exactly the behavior that E-6 is designed to encourage, and it rewarded us correspondingly. ↩</p></li>
-<li><p>So if you want a true zero bill from E-6, you need to generate enough of a surplus that it would counterbalance this $92/year &#8220;meter charge&#8221;. That would take 495 KWh of summer on-peak surplus or 1028 KWh of summer part-peak surplus, paid out at the &#8220;generation&#8221; rate due to the NSC rules. ↩</p></li>
+<li id="fn:1">
+<p>You may notice that my earlier article lists our usage charge for the year as $60.22 and here it&rsquo;s $64.54; the difference is that $60.22 is PG&amp;E&rsquo;s number and $64.54 is my calculation for what it should be (and I had to fudge the numbers for October 2011 where PG&amp;E switched me from the old plan to NEM midway through the billing cycle, plus we may round differently, plus there may be other errors in my calculations). This seemed close enough to go through the rest of the exercise, and the technique used to calculate this number is the same one I&rsquo;ll use for the E-1 number, so this seemed like the one to use for this comparison.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>E-6 is always a win in the winter, because there&rsquo;s no winter peak zone; winter part-peak and winter off-peak are both cheaper than the E-1 rate. And between the solar array and our usage patterns, the vast majority of our PG&amp;E usage was in the off-peak time anyway.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>Between the solar array and our usage patterns, we ran a surplus in summer on-peak and summer part-peak for nearly the entire summer, and had to buy summer electricity only off-peak. This is exactly the behavior that E-6 is designed to encourage, and it rewarded us correspondingly.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>So if you want a true zero bill from E-6, you need to generate enough of a surplus that it would counterbalance this $92/year &ldquo;meter charge&rdquo;. That would take 495 KWh of summer on-peak surplus or 1028 KWh of summer part-peak surplus, paid out at the &ldquo;generation&rdquo; rate due to the NSC rules.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
 </ol>
+</div>
 
 ]]></content>
   </entry>
@@ -775,57 +797,57 @@ confirmation of that on PG&amp;E&#8217;s website today, though.</p>
     <id>http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power</id>
     <content type="html"><![CDATA[<p>When I got solar panels installed on the roof of our house last fall, friends
 immediately started asking how well they were working out, and my answer had
-to be that while they&#8217;re <a href="https://enlighten.enphaseenergy.com/public/systems/g8ah32261">generating a nice amount of
+to be that while they&rsquo;re <a href="https://enlighten.enphaseenergy.com/public/systems/g8ah32261">generating a nice amount of
 power</a>, I
-wouldn&#8217;t know how well they were doing on the actual goal of zeroing our
-electric bill until a year had passed. That year has now passed, and it&#8217;s time
+wouldn&rsquo;t know how well they were doing on the actual goal of zeroing our
+electric bill until a year had passed. That year has now passed, and it&rsquo;s time
 to answer the question.</p>
 
-<p>If you add solar power to your grid energy, at least the way it&#8217;s done in
+<p>If you add solar power to your grid energy, at least the way it&rsquo;s done in
 California, two things will happen:</p>
 
 <ol>
-<li>Your electric bills will be lower, but</li>
-<li>You won&#8217;t understand them.</li>
+<li> Your electric bills will be lower, but</li>
+<li> You won&rsquo;t understand them.</li>
 </ol>
 
 
 <h2>The problem:</h2>
 
-<p>California electric rates are confusing because they&#8217;re complicated and
-variable. You pay a different rate depending on how much you use (tiering)1.
-You can opt into time-of-use (TOU) billing2, which makes electricity more
+<p>California electric rates are confusing because they&rsquo;re complicated and
+variable. You pay a different rate depending on how much you use (tiering)<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>.
+You can opt into time-of-use (TOU) billing<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>, which makes electricity more
 expensive at peak times and cheaper the rest of the time to encourage you to
 shift usage away from peak times. The normal residential billing schedule is
-called <a href="http://www.pge.com/tariffs/tm2/pdf/ELEC_SCHEDS_E-1.pdf">E-1 (&#8220;residential
-services&#8221;)</a> and shows
+called <a href="http://www.pge.com/tariffs/tm2/pdf/ELEC_SCHEDS_E-1.pdf">E-1 (&ldquo;residential
+services&rdquo;)</a> and shows
 5 different rates according to tier; the TOU residential schedule is called
-<a href="http://www.pge.com/tariffs/tm2/pdf/ELEC_SCHEDS_E-6.pdf">E-6 (&#8220;residential time-of-use
-service&#8221;)</a> and shows
+<a href="http://www.pge.com/tariffs/tm2/pdf/ELEC_SCHEDS_E-6.pdf">E-6 (&ldquo;residential time-of-use
+service&rdquo;)</a> and shows
 25 different rates according to tier and time.</p>
 
 <p>Once you introduce solar (or other generation capabilities) into the mix,
-there&#8217;s another wrinkle. Assuming you stay connected to the grid, PG&amp;E will
+there&rsquo;s another wrinkle. Assuming you stay connected to the grid, PG&amp;E will
 convert your billing to what they call <a href="http://www.pge.com/standardnem/">NEM</a>
 (Net Energy Metering), which means your electric meter will measure the flow
-of power in both directions — from the grid into your house when you&#8217;re using
-more than you&#8217;re generating, and from your house back to the grid when you&#8217;re
-generating more than you&#8217;re using. But solar panel output varies by season and
+of power in both directions — from the grid into your house when you&rsquo;re using
+more than you&rsquo;re generating, and from your house back to the grid when you&rsquo;re
+generating more than you&rsquo;re using. But solar panel output varies by season and
 with weather, in addition to the obvious day/night cycle. To account for this
 seasonal variation, PG&amp;E bills NEM customers on a yearly cycle called the
 <a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/">true-up period</a>.
 Your monthly bills are only an approximation, and at the end of the year they
 calculate the actual balance owed compared to what you already paid, and have
-you &#8220;true up&#8221; to that amount, hence the name.</p>
+you &ldquo;true up&rdquo; to that amount, hence the name.</p>
 
-<p>For NEM customers, that&#8217;s 3 different axes of variation3: tiered rates based
+<p>For NEM customers, that&rsquo;s 3 different axes of variation<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>: tiered rates based
 on total consumption, variable rates due to time-of-use, and true-up billing
 to account for seasonal variation of generated output.</p>
 
 <h2>Before adding solar generation</h2>
 
 <p>You have to calculate how much electricity you want to generate to produce the
-desired effect (economically or ecologically or both4), and then you need to
+desired effect (economically or ecologically or both<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>), and then you need to
 calculate the size of a PV solar array that will produce that effect.</p>
 
 <p>Both of these calculations actually turn out to involve a fair amount of
@@ -833,54 +855,54 @@ prediction. Companies that specialize in solar installations (for example,
 <a href="http://www.luminalt.com/meet-luminalt/about-us">Luminalt</a>, who installed
 ours) can help you with these predictions and calculations.</p>
 
-<p>But even after you&#8217;ve done the calculations, decided to go solar, and had the
-array installed and it&#8217;s live, you still won&#8217;t know if you were right, at
-least for a while. That&#8217;s what this post is about. I wanted to know if we&#8217;d
-predicted correctly, and I also wanted to know if PG&amp;E&#8217;s billing methods
+<p>But even after you&rsquo;ve done the calculations, decided to go solar, and had the
+array installed and it&rsquo;s live, you still won&rsquo;t know if you were right, at
+least for a while. That&rsquo;s what this post is about. I wanted to know if we&rsquo;d
+predicted correctly, and I also wanted to know if PG&amp;E&rsquo;s billing methods
 fairly account for the seasonal variation. (If I have a large surplus in
 summer on-peak in July, and a big deficit in winter off-peak in January, do
 these cancel out, and how?)</p>
 
 <h2>After adding solar generation</h2>
 
-<p>I said that after activating a solar array and switching over to PG&amp;E&#8217;s NEM
-program, you&#8217;ll get lower bills that you won&#8217;t understand. Here&#8217;s what I mean.
-Each month with my electric bill5, I get a separate &#8220;Net energy metering
-electric statement&#8221;. It includes three amounts:</p>
+<p>I said that after activating a solar array and switching over to PG&amp;E&rsquo;s NEM
+program, you&rsquo;ll get lower bills that you won&rsquo;t understand. Here&rsquo;s what I mean.
+Each month with my electric bill<sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup>, I get a separate &ldquo;Net energy metering
+electric statement&rdquo;. It includes three amounts:</p>
 
 <ol>
-<li>&#8220;total current month&#8217;s billed amount&#8221;, which is always in the neighborhood of $12.</li>
-<li>&#8220;current month energy charge or credit&#8221;, which is the actual charge for electricity I used, or credit for electricity I produced, after accounting for tiered TOU rates.</li>
-<li>&#8220;cumulative energy charges or credits for the current true-up period&#8221;, which is the sum of the #2 values.</li>
+<li> &ldquo;total current month&rsquo;s billed amount&rdquo;, which is always in the neighborhood of $12.</li>
+<li> &ldquo;current month energy charge or credit&rdquo;, which is the actual charge for electricity I used, or credit for electricity I produced, after accounting for tiered TOU rates.</li>
+<li> &ldquo;cumulative energy charges or credits for the current true-up period&rdquo;, which is the sum of the #2 values.</li>
 </ol>
 
 
-<p>This is hard to interpret month by month, partly because there&#8217;s no
-relationship between what I&#8217;m asked to pay (#1) and what I used (#2), and #3
-will swing wildly one direction6 and then correct over the course of the year.
+<p>This is hard to interpret month by month, partly because there&rsquo;s no
+relationship between what I&rsquo;m asked to pay (#1) and what I used (#2), and #3
+will swing wildly one direction<sup id="fnref:6"><a href="#fn:6" rel="footnote">6</a></sup> and then correct over the course of the year.
 All of this evens out at the end of the year, which is the reason for the
 1-year true-up method of billing.</p>
 
 <p>But when the 1-year anniversary arrives, and with it the final true-up
-payment, there&#8217;s a new confusing quantity: &#8220;total current month&#8217;s billed
-amount&#8221; is replaced with &#8220;total true-up billed amount&#8221;. This amount, which is
+payment, there&rsquo;s a new confusing quantity: &ldquo;total current month&rsquo;s billed
+amount&rdquo; is replaced with &ldquo;total true-up billed amount&rdquo;. This amount, which is
 your actual bill for the 12th month, is not the usual $12, bears no obvious
-relationship to the cumulative energy charge, and isn&#8217;t explained or derived
-by PG&amp;E on the bill or elsewhere that I could find7. (In my case: my
-cumulative energy charge after 12 months was $60.22, and the &#8220;total true-up
-billed amount&#8221; was $22.02.) Why?</p>
+relationship to the cumulative energy charge, and isn&rsquo;t explained or derived
+by PG&amp;E on the bill or elsewhere that I could find<sup id="fnref:7"><a href="#fn:7" rel="footnote">7</a></sup>. (In my case: my
+cumulative energy charge after 12 months was $60.22, and the &ldquo;total true-up
+billed amount&rdquo; was $22.02.) Why?</p>
 
-<p>There&#8217;s a method to their madness, but I had to dig deep into PG&amp;E&#8217;s rate
+<p>There&rsquo;s a method to their madness, but I had to dig deep into PG&amp;E&rsquo;s rate
 documentation and then spend a few hours messing with a spreadsheet to try to
 derive the calculations that would map my usage to my bills.</p>
 
 <h2>Understanding true-up billing</h2>
 
 <p>First, the monthly bill. Where does this $12 come from? It turns out PG&amp;E
-charges E-6 (TOU) customers a &#8220;meter charge&#8221; of approximately $0.25 per day.
-E6 and E-1 both also have a &#8220;minimum charge&#8221; of approximately $0.15 per day;
-they don&#8217;t explain what this means, but if my reverse engineering of my bills
-is correct, for NEM customers it&#8217;s essentially a placeholder for your usage
+charges E-6 (TOU) customers a &ldquo;meter charge&rdquo; of approximately $0.25 per day.
+E6 and E-1 both also have a &ldquo;minimum charge&rdquo; of approximately $0.15 per day;
+they don&rsquo;t explain what this means, but if my reverse engineering of my bills
+is correct, for NEM customers it&rsquo;s essentially a placeholder for your usage
 before they know what your usage is. These fees added together and multiplied
 by the number of days in a billing cycle yield the approximately $12 amount
 that I was billed for each month (billing cycles ranged from 28 to 32 days, so
@@ -889,37 +911,37 @@ $12.02 for a 30-day billing cycle).</p>
 
 <p>Second, the usage charges. These are not simple (since they involve both the
 tiering and TOU calculations), but they are actually decently explained on the
-monthly NEM statement itself, and with one nitpicky exception8, they&#8217;re the
-same as what you had before you added NEM, and the true-up calculation doesn&#8217;t
+monthly NEM statement itself, and with one nitpicky exception<sup id="fnref:8"><a href="#fn:8" rel="footnote">8</a></sup>, they&rsquo;re the
+same as what you had before you added NEM, and the true-up calculation doesn&rsquo;t
 affect them.</p>
 
 <p>Third, the cumulative usage charge. This one is completely straightforward:
 add the usage charges for the current true-up period, to date. Each NEM
 statement shows the current cumulative charge (this amount) and the amount by
-which it changed (the month&#8217;s usage charge), and you can verify that the
-current cumulative balance is equal to the previous month&#8217;s balance plus/minus
-the current month&#8217;s usage charge/credit. However, as mentioned above, this
+which it changed (the month&rsquo;s usage charge), and you can verify that the
+current cumulative balance is equal to the previous month&rsquo;s balance plus/minus
+the current month&rsquo;s usage charge/credit. However, as mentioned above, this
 amount will swing one direction and then correct due to seasonal variation,</p>
 
 <p>Fourth, the true-up amount. This is a simple calculation if you know where it
-comes from, but PG&amp;E doesn&#8217;t explain it, so I had to reverse engineer it,
+comes from, but PG&amp;E doesn&rsquo;t explain it, so I had to reverse engineer it,
 learning to understand the daily meter and minimum charges. What it boils down
-to is that the $0.15 &#8220;minimum charge&#8221; is not a real charge once the true-up
-period is over, but a provisional placeholder: you pay this with each month&#8217;s
+to is that the $0.15 &ldquo;minimum charge&rdquo; is not a real charge once the true-up
+period is over, but a provisional placeholder: you pay this with each month&rsquo;s
 $12 bill, but at the end of the year, when your real usage is known, you get
 back the provisional amount and pay the real amount. At the end of the year,
 you take your usage charge/credit, and add the meter charge ($0.25 per day or
-about $7.50 per monthly bill or $92.33 in a full year9), and that&#8217;s what you
-owe for the year. Except you&#8217;ve already paid that meter charge, plus you&#8217;ve
-paid the &#8220;minimum&#8221; usage charge as a provisional placeholder. So subtract the
+about $7.50 per monthly bill or $92.33 in a full year<sup id="fnref:9"><a href="#fn:9" rel="footnote">9</a></sup>), and that&rsquo;s what you
+owe for the year. Except you&rsquo;ve already paid that meter charge, plus you&rsquo;ve
+paid the &ldquo;minimum&rdquo; usage charge as a provisional placeholder. So subtract the
 provisional usage charge ($0.15 per day or about $4.50 per monthly bill or
-$53.96 in a full year), and you have the amount that&#8217;s unpaid, that you must
+$53.96 in a full year), and you have the amount that&rsquo;s unpaid, that you must
 still pay in order to True Up. So, your first 11 bills are for 30-ish days of
 meter charges and minimum charges, totaling about $12; your 12th bill is for
 30-ish days of meter charges, minus 335-ish days of minimum charges, plus your
 cumulative usage charge for the whole year. In my case, actual usage at the
 end of the year was $60.22, of which $46.27 had already been paid monthly as
-that &#8220;minimum&#8221; charge, so what I&#8217;d call the actual true-up component was
+that &ldquo;minimum&rdquo; charge, so what I&rsquo;d call the actual true-up component was
 $13.95; add in $8.07 in meter fees (32 days at $0.25/day) for the final
 billing period and we have what PG&amp;E calls my true-up bill of $22.02.</p>
 
@@ -929,10 +951,10 @@ billing period and we have what PG&amp;E calls my true-up bill of $22.02.</p>
 peak, which is likely the best case for residential solar customers) can
 partially or wholly cancel a deficit in another TOU period (for example,
 winter off-peak, which is pretty much entirely dark, and thus worst-case for
-solar customers). As it turns out, PG&amp;E doesn&#8217;t directly add and subtract
+solar customers). As it turns out, PG&amp;E doesn&rsquo;t directly add and subtract
 usage across TOU periods; they convert usage to a dollar amount every month
 (based on TOU periods and tiering), then add and subtract the monthly dollar
-amounts. This is a clever way of accounting, since it&#8217;s pretty easy to
+amounts. This is a clever way of accounting, since it&rsquo;s pretty easy to
 understand, and does a pretty fair job of reconciling the amounts from
 different TOU periods. (In fact, it works out pretty well for residential
 solar customers, since your summer on-peak surplus is credited at a higher
@@ -953,9 +975,9 @@ concrete, and/or planning your own PV solar system.</p>
 <li>Months with positive grid usage, resulting in PGE charge: 6 (Oct-Mar)</li>
 <li>Months with negative grid usage, resulting in PG&amp;E credit: 6 (Apr-Sept)</li>
 <li>Whole-year usage charge: $60.22</li>
-<li>Value of electricity consumed if I had to buy it all from PG&amp;E: $2052.34 (assuming E-1 and not E-6 billing, since I don&#8217;t have the generated KWh broken out by TOU period)</li>
+<li>Value of electricity consumed if I had to buy it all from PG&amp;E: $2052.34 (assuming E-1 and not E-6 billing, since I don&rsquo;t have the generated KWh broken out by TOU period)</li>
 <li>Prior-year electric bill: $1403.77</li>
-<li>Granular usage (from PG&amp;E&#8217;s point of view), broken down by month and TOU billing period:</li>
+<li>Granular usage (from PG&amp;E&rsquo;s point of view), broken down by month and TOU billing period:</li>
 </ul>
 
 
@@ -976,22 +998,31 @@ size is what brings you very close to even for the year, offsetting your usage
 without generating much of a surplus. However, due to the way usage tiers are
 finalized each month instead of across the true-up period, sizing your array
 slightly larger than this may pay off by reducing higher-tier winter bills,
-even though the net surplus KWh aren&#8217;t themselves valuable in the NCS
+even though the net surplus KWh aren&rsquo;t themselves valuable in the NCS
 calculation.</p>
-
-<hr />
-
+<div class="footnotes">
+<hr/>
 <ol>
-<li><p>The baseline usage, which determines the details of the tiering calculation, further varies by where you live in California and whether your home has a gas or electric primary heat source. ↩</p></li>
-<li><p>You can opt into TOU billing regardless of whether you have solar or other generation facilities, but in general, it makes a lot of sense if you have generation capabilities and less sense if you don&#8217;t, plus most people not planning on adding solar won&#8217;t have the TOU option waved in their face and probably don&#8217;t even know about it. I don&#8217;t know the exact numbers, but I presume most NEM customers opt for TOU billing, and most grid-only customers do not. ↩</p></li>
-<li><p>There&#8217;s another confusing way they split things up, but I&#8217;m not denoting it as an axis because it&#8217;s not orthogonal to the others. PG&amp;E separates the rate into separate quantities for &#8220;generation&#8221;, &#8220;transmission&#8221;, &#8220;distribution&#8221;, and &#8220;the funding of public purpose programs&#8221;. We&#8217;ll come back to the reason for this bookkeeping sleight-of-hand later; it doesn&#8217;t really matter unless you generate a surplus, but if you do, look for this to raise its head in the Net Surplus Compensation calculation. ↩</p></li>
-<li><p>If you believe solar power is cleaner than grid power, the ecologically optimal size for your home array is &#8220;as large as possible&#8221;, though of course there&#8217;s some ecological cost to PV panel manufacturing too. But if you&#8217;re trying to make your solar array economically viable, you&#8217;ll want to compare actual costs and benefits; the costs depend on the cost and output of the array and how long you plan to keep it and whether you buy or lease and the details of the financing, all things you can find <a href="http://www.gosolarnow.com/NetMetering.html">companies or calculators</a> to help with. The benefits depend on what you&#8217;re actually paying for grid electricity, which follows the complicated calculations already described. If you&#8217;re a light user paying baseline $0.12/KWh rates, you&#8217;ll save less than a heavy user paying 4th-tier $0.34/KWh rates. While the specifics vary, it&#8217;s probably easy to generate solar power for less than $0.34/KWh and somewhat hard to generate solar power for less than $0.12/KWh. What this means is most solar customers try to offset most but not all of their own usage, to get back down in the baseline tier. It&#8217;s often not cost-effective to compete with PG&amp;E&#8217;s baseline rates. It&#8217;s especially cost-ineffective to operate at a net surplus, because of the way PG&amp;E values the surplus: read their <a href="http://www.pge.com/myhome/saveenergymoney/solarenergy/afterinstalling/ab920/">Net Surplus Compensation</a> rules, paying special attention to the last section, &#8220;Why is NSC less than the credit on my NEM statement?&#8221;. In short, PG&amp;E splits the &#8220;retail&#8221; rates that you&#8217;re used to seeing into separate components for generation, transmission, distribution, and the funding of public programs like nuclear plant decommissioning; your NEM credits come back at the retail rate until you hit break-even; however if you operate at a surplus, PG&amp;E pays only a &#8220;wholesale-type rate for generation&#8221;. You can see the actual breakdown on the E-1 or E-6 billing schedules; I don&#8217;t actually know how to calculate the breakdown for E-6 since your surplus is for the year and it&#8217;s not clear which TOU rate to apply; in any case generation is less than half of the total. ↩</p></li>
-<li><p>Actually not <em>with</em> my electric bill, because I&#8217;ve opted for paperless billing and told PG&amp;E to stop sending me paperless bills, and I can look at the details on the website. But none of the NEM details are available on their website, nor is there an option to go paperless for the NEM data. So what actually happens is the NEM data shows up on paper in my mailbox a few days after I get the bill itself electronically. ↩</p></li>
-<li><p>Which direction it swings will depend on when your true-up period starts. Mine starts in October and so the first few months are fall and winter, and I accumulated quite a large charge before April when I started getting credits. By the following October, it was nearly back to 0. If your true-up period starts in April, you&#8217;d presumably see the reverse, amassing a series of credits and a large negative balance over the summer before winter charges start to eat away at the credit balance. ↩</p></li>
-<li><p>PG&amp;E&#8217;s explanation of how to read this is split into four pages on their website, for the <a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/">monthly statement</a>, <a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/monthlybill/">monthly bill</a>, <a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/trueupstatement/">true-up-statement</a>, and <a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/trueupstatement/">true-up bill</a>. These pages explain the meaning of each item on the bill, but don&#8217;t explain how the amounts are calculated, or why you owe what you owe. ↩</p></li>
-<li><p>The true-up calculation doesn&#8217;t affect the monthly usage charge calculation, but arguably it should, because the rates depend on tiering, the tiering depends on usage, and usage is supposed to be smoothed over the entire true-up period. But actually, the tiering calculations are done entirely inside each month. What this means is that in the winter when your solar array is underperforming, higher usage might push you into the upper tiers, and you&#8217;ll pay more for your grid electricity because of this, and no amount of summer credits can offset these higher rates. Again using my first-year numbers as an example, my assigned baseline value for the year sums to 2878 units, and my actual cumulative usage was 1601 KWh. (Or: the average of the monthly baselines was 240, and my average monthly usage was 133.) I&#8217;d argue that this means I should be paying only first-tier rates. However, because of the seasonal variation expected with solar generation, my usage from PG&amp;E&#8217;s point of view is skewed heavily toward winter, and in fact I had above-baseline usage in only the 4 shortest months: November through February. Because PG&amp;E applies the baseline-to-tier calculation on each month&#8217;s usage individually, instead of across the true-up period, I paid substantially more for electricity in those 4 months. In my case, I was charged $60.22 for my electricity usage, but if it had all been at baseline rates, I would have been owed a $5 credit. ↩</p></li>
-<li><p>I&#8217;m writing this after my first year of NEM, and the PGE switched me over to NEM billing in the middle of a billing month without changing the billing cycle, so my first month&#8217;s NEM bill only included 9 days, and so my first true-up period of 12 bills is only 11 1/3 months or 345 days. Presumably, future true-up periods will be a full year. ↩</p></li>
+<li id="fn:1">
+<p>The baseline usage, which determines the details of the tiering calculation, further varies by where you live in California and whether your home has a gas or electric primary heat source.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>You can opt into TOU billing regardless of whether you have solar or other generation facilities, but in general, it makes a lot of sense if you have generation capabilities and less sense if you don&rsquo;t, plus most people not planning on adding solar won&rsquo;t have the TOU option waved in their face and probably don&rsquo;t even know about it. I don&rsquo;t know the exact numbers, but I presume most NEM customers opt for TOU billing, and most grid-only customers do not.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>There&rsquo;s another confusing way they split things up, but I&rsquo;m not denoting it as an axis because it&rsquo;s not orthogonal to the others. PG&amp;E separates the rate into separate quantities for &ldquo;generation&rdquo;, &ldquo;transmission&rdquo;, &ldquo;distribution&rdquo;, and &ldquo;the funding of public purpose programs&rdquo;. We&rsquo;ll come back to the reason for this bookkeeping sleight-of-hand later; it doesn&rsquo;t really matter unless you generate a surplus, but if you do, look for this to raise its head in the Net Surplus Compensation calculation.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>If you believe solar power is cleaner than grid power, the ecologically optimal size for your home array is &ldquo;as large as possible&rdquo;, though of course there&rsquo;s some ecological cost to PV panel manufacturing too. But if you&rsquo;re trying to make your solar array economically viable, you&rsquo;ll want to compare actual costs and benefits; the costs depend on the cost and output of the array and how long you plan to keep it and whether you buy or lease and the details of the financing, all things you can find <a href="http://www.gosolarnow.com/NetMetering.html">companies or calculators</a> to help with. The benefits depend on what you&rsquo;re actually paying for grid electricity, which follows the complicated calculations already described. If you&rsquo;re a light user paying baseline $0.12/KWh rates, you&rsquo;ll save less than a heavy user paying 4th-tier $0.34/KWh rates. While the specifics vary, it&rsquo;s probably easy to generate solar power for less than $0.34/KWh and somewhat hard to generate solar power for less than $0.12/KWh. What this means is most solar customers try to offset most but not all of their own usage, to get back down in the baseline tier. It&rsquo;s often not cost-effective to compete with PG&amp;E&rsquo;s baseline rates. It&rsquo;s especially cost-ineffective to operate at a net surplus, because of the way PG&amp;E values the surplus: read their <a href="http://www.pge.com/myhome/saveenergymoney/solarenergy/afterinstalling/ab920/">Net Surplus Compensation</a> rules, paying special attention to the last section, &ldquo;Why is NSC less than the credit on my NEM statement?&rdquo;. In short, PG&amp;E splits the &ldquo;retail&rdquo; rates that you&rsquo;re used to seeing into separate components for generation, transmission, distribution, and the funding of public programs like nuclear plant decommissioning; your NEM credits come back at the retail rate until you hit break-even; however if you operate at a surplus, PG&amp;E pays only a &ldquo;wholesale-type rate for generation&rdquo;. You can see the actual breakdown on the E-1 or E-6 billing schedules; I don&rsquo;t actually know how to calculate the breakdown for E-6 since your surplus is for the year and it&rsquo;s not clear which TOU rate to apply; in any case generation is less than half of the total.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+<li id="fn:5">
+<p>Actually not <em>with</em> my electric bill, because I&rsquo;ve opted for paperless billing and told PG&amp;E to stop sending me paperless bills, and I can look at the details on the website. But none of the NEM details are available on their website, nor is there an option to go paperless for the NEM data. So what actually happens is the NEM data shows up on paper in my mailbox a few days after I get the bill itself electronically.<a href="#fnref:5" rev="footnote">&#8617;</a></p></li>
+<li id="fn:6">
+<p>Which direction it swings will depend on when your true-up period starts. Mine starts in October and so the first few months are fall and winter, and I accumulated quite a large charge before April when I started getting credits. By the following October, it was nearly back to 0. If your true-up period starts in April, you&rsquo;d presumably see the reverse, amassing a series of credits and a large negative balance over the summer before winter charges start to eat away at the credit balance.<a href="#fnref:6" rev="footnote">&#8617;</a></p></li>
+<li id="fn:7">
+<p>PG&amp;E&rsquo;s explanation of how to read this is split into four pages on their website, for the <a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/">monthly statement</a>, <a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/monthlybill/">monthly bill</a>, <a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/trueupstatement/">true-up-statement</a>, and <a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/trueupstatement/">true-up bill</a>. These pages explain the meaning of each item on the bill, but don&rsquo;t explain how the amounts are calculated, or why you owe what you owe.<a href="#fnref:7" rev="footnote">&#8617;</a></p></li>
+<li id="fn:8">
+<p>The true-up calculation doesn&rsquo;t affect the monthly usage charge calculation, but arguably it should, because the rates depend on tiering, the tiering depends on usage, and usage is supposed to be smoothed over the entire true-up period. But actually, the tiering calculations are done entirely inside each month. What this means is that in the winter when your solar array is underperforming, higher usage might push you into the upper tiers, and you&rsquo;ll pay more for your grid electricity because of this, and no amount of summer credits can offset these higher rates. Again using my first-year numbers as an example, my assigned baseline value for the year sums to 2878 units, and my actual cumulative usage was 1601 KWh. (Or: the average of the monthly baselines was 240, and my average monthly usage was 133.) I&rsquo;d argue that this means I should be paying only first-tier rates. However, because of the seasonal variation expected with solar generation, my usage from PG&amp;E&rsquo;s point of view is skewed heavily toward winter, and in fact I had above-baseline usage in only the 4 shortest months: November through February. Because PG&amp;E applies the baseline-to-tier calculation on each month&rsquo;s usage individually, instead of across the true-up period, I paid substantially more for electricity in those 4 months. In my case, I was charged $60.22 for my electricity usage, but if it had all been at baseline rates, I would have been owed a $5 credit.<a href="#fnref:8" rev="footnote">&#8617;</a></p></li>
+<li id="fn:9">
+<p>I&rsquo;m writing this after my first year of NEM, and the PGE switched me over to NEM billing in the middle of a billing month without changing the billing cycle, so my first month&rsquo;s NEM bill only included 9 days, and so my first true-up period of 12 bills is only 11 1/3 months or 345 days. Presumably, future true-up periods will be a full year.<a href="#fnref:9" rev="footnote">&#8617;</a></p></li>
 </ol>
+</div>
 
 ]]></content>
   </entry>
@@ -1001,43 +1032,46 @@ calculation.</p>
     <link href="http://blog.metamatt.com/blog/2012/11/07/one-year-of-cellular-data/"/>
     <updated>2012-11-07T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2012/11/07/one-year-of-cellular-data</id>
-    <content type="html"><![CDATA[<p>Here are the stats on my cellular data usage over one year on Sprint&#8217;s
-network1. (I got the phone on Halloween of 2011, and took this screenshot on
+    <content type="html"><![CDATA[<p>Here are the stats on my cellular data usage over one year on Sprint&rsquo;s
+network<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. (I got the phone on Halloween of 2011, and took this screenshot on
 Halloween of 2012.)</p>
 
 <p><a href="http://www.flickr.com/photos/67861147@N00/8163380863"><img src="http://farm8.staticflickr.com/7120/816338086%0A3_21996345ca.jpg" alt="1 year of cellular data usage" /></a></p>
 
 <p>7 GB down and 1 GB up; 8 GB total; that averages to 666 MB per month. Clearly
-I&#8217;m not a heavy cellular data user and not making the most out of Sprint&#8217;s
+I&rsquo;m not a heavy cellular data user and not making the most out of Sprint&rsquo;s
 unlimited data allotment; this would fit comfortably within the other
-carriers&#8217; smallest real2 data plans (1GB/month).</p>
+carriers&#8217; smallest real<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup> data plans (1GB/month).</p>
 
 <p>Speaking of unlimited data plans: this might sound heretical to some, but I
-really wouldn&#8217;t mind metered data at a fair price. Say a penny a megabyte,
+really wouldn&rsquo;t mind metered data at a fair price. Say a penny a megabyte,
 billing you only for what you use. That comes out to $10 per gigabyte, which
 is actually the marginal rate that AT&amp;T and Verizon are charging now anyway,
 except first they make you pay a minimum $30/month commitment and then they
 round up to the next gigabyte.</p>
 
-<p>Of course, I also wouldn&#8217;t mind an unlimited plan that was cheap and fast and
-allowed tethering3.</p>
+<p>Of course, I also wouldn&rsquo;t mind an unlimited plan that was cheap and fast and
+allowed tethering<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>.</p>
 
 <p>In the meantime, here in the US we have Sprint offering unlimited data at a
-price that&#8217;s fair for heavy users but not especially cheap for light users,
-and their network isn&#8217;t the fastest and they have surcharge for tethering.
-Then we have AT&amp;T and Verizon saying unlimited plans don&#8217;t incent them to
-invest in their networks so they&#8217;ve moved to metered plans; on the plus side
-their networks have gotten markedly faster and they don&#8217;t charge extra for
-tethering on the metered plans; however their metering methods don&#8217;t meet my
+price that&rsquo;s fair for heavy users but not especially cheap for light users,
+and their network isn&rsquo;t the fastest and they have surcharge for tethering.
+Then we have AT&amp;T and Verizon saying unlimited plans don&rsquo;t incent them to
+invest in their networks so they&rsquo;ve moved to metered plans; on the plus side
+their networks have gotten markedly faster and they don&rsquo;t charge extra for
+tethering on the metered plans; however their metering methods don&rsquo;t meet my
 definition of fair.</p>
-
-<hr />
-
+<div class="footnotes">
+<hr/>
 <ol>
-<li><p>Actually 11 1/2 months on Sprint&#8217;s network, and 10 days on O2 Ireland and 3 days on Three UK during a trip to Europe. Both of their data networks, but especially Three&#8217;s, were better than what I&#8217;m accustomed to in the US; ↩</p></li>
-<li><p>Ignoring AT&amp;T&#8217;s toy 250 MB/month plan. ↩</p></li>
-<li><p>Which actually exists in much of the world, but not in the US. ↩</p></li>
+<li id="fn:1">
+<p>Actually 11 1/2 months on Sprint&rsquo;s network, and 10 days on O2 Ireland and 3 days on Three UK during a trip to Europe. Both of their data networks, but especially Three&rsquo;s, were better than what I&rsquo;m accustomed to in the USA, which is especially infuriating given they&rsquo;re also much cheaper.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>Ignoring AT&amp;T&rsquo;s toy 250 MB/month plan.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>Which actually exists in much of the world, but not in the USA.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
 </ol>
+</div>
 
 ]]></content>
   </entry>
@@ -1053,31 +1087,33 @@ again.</p>
 
 <p>The big change is that it now uses <a href="http://dev.evernote.com/documentation/cloud/chapters/Authentication.ph%0Ap">OAuth for authentication to the Evernote s
 ervice</a>, instead of asking you for Evernote account credentials directly. This is a
-step forward in general; utilities like this one shouldn&#8217;t have unrestricted
+step forward in general; utilities like this one shouldn&rsquo;t have unrestricted
 access to your entire account, nor should they know your actual password in
-case you use the same password for other services1. <a href="http://blog.evernote.com/tech/2012/11/01/third-party-authentication-%0Atransition-to-oauth-complete/">Evernote has disabled
+case you use the same password for other services<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. <a href="http://blog.evernote.com/tech/2012/11/01/third-party-authentication-%0Atransition-to-oauth-complete/">Evernote has disabled
 username/password logins for third party
 apps</a> to force them to use OAuth, a move which I
-think more services should make2.</p>
+think more services should make<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
 
 <p>I also made some smaller changes to further improve the chance of success for
 people outside the USA, using nondefault character encoding or locale
 settings.</p>
 
-<p>Finally, I added the <a href="https://github.com/metamatt%0A/evernote-palmimport">public source repository</a> to my github account. (I&#8217;ve always made the source code
+<p>Finally, I added the <a href="https://github.com/metamatt%0A/evernote-palmimport">public source repository</a> to my github account. (I&rsquo;ve always made the source code
 for the current version available, but now the complete repository with
 history is public.)</p>
 
 <p>Download here: <a href="http://www.maddogsw.com/evernote-utilities/evernote-palm-%0Aimporter/">[http://www.maddogsw.com/evernote-utilities/evernote-palm-
 importer/](http://www.maddogsw.com/evernote-utilities/evernote-palm-
 importer/)</a>.</p>
-
-<hr />
-
+<div class="footnotes">
+<hr/>
 <ol>
-<li><p>Which you shouldn&#8217;t do, but lots of people do anyway. ↩</p></li>
-<li><p>I&#8217;m looking at you, Google Reader clients. ↩</p></li>
+<li id="fn:1">
+<p>Which you shouldn&rsquo;t do, but lots of people do anyway.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>I&rsquo;m looking at you, Google Reader clients.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
 </ol>
+</div>
 
 ]]></content>
   </entry>
@@ -1105,11 +1141,11 @@ where certain rhythms would trigger race conditions just so, and kaboom, while
 other rhythms would dance around the same bugs without triggering them. And,
 the theory went, people would subconsciously learn what sequences of inputs
 would crash their computer, learn to avoid those patterns, and compute along
-happily on whichever platform they&#8217;d learned to get along with: then upon
+happily on whichever platform they&rsquo;d learned to get along with: then upon
 trying the other platform, kaboom again.</p>
 
-<p>It was with this in mind that I read <a href="http://verynicewebsite.net/2012/10/surface-impressions/">John Moltz&#8217;s impressions of Microsoft
-Surface</a>. He&#8217;s
+<p>It was with this in mind that I read <a href="http://verynicewebsite.net/2012/10/surface-impressions/">John Moltz&rsquo;s impressions of Microsoft
+Surface</a>. He&rsquo;s
 generally pretty fair about giving it a chance, but then he dings it for
 screen-rotation flakiness:</p>
 
@@ -1117,11 +1153,11 @@ screen-rotation flakiness:</p>
 seem to realize it. I had to pick it up and turn it over and then back again
 to get it the right way.</p></blockquote>
 
-<p>I&#8217;m sure that happened, but hey, every Apple device with automatic rotation
-(iPhone, iPod Touch, iPad) I&#8217;ve ever owned occasionally does that too. Come to
-think of it, so do the various digital cameras I&#8217;ve owned (from Canon, Nikon
-and Panasonic). I can&#8217;t think of anything that has a similar feature that I
-haven&#8217;t seen flake out that way.</p>
+<p>I&rsquo;m sure that happened, but hey, every Apple device with automatic rotation
+(iPhone, iPod Touch, iPad) I&rsquo;ve ever owned occasionally does that too. Come to
+think of it, so do the various digital cameras I&rsquo;ve owned (from Canon, Nikon
+and Panasonic). I can&rsquo;t think of anything that has a similar feature that I
+haven&rsquo;t seen flake out that way.</p>
 
 <p>But maybe if I could just learn to <a href="https://www.google.com/search?q=holding+it+wrong">hold it
 right</a>…</p>
@@ -1141,124 +1177,124 @@ this seemed to be our iPad. What could go wrong? Lots, it turns out.</p>
 <a href="http://www.imdb.com/title/tt1862079/">Safety Not Guaranteed</a> which looked
 interesting so clicked Buy, waited for it to start downloading, watched the
 progress bar long enough to verify it looked like it would take about 40
-minutes to download, and took Dominic out for a walk so he&#8217;d fall asleep, with
-the idea that in 40 minutes we&#8217;d have a sleeping baby and a watchable movie.</p>
+minutes to download, and took Dominic out for a walk so he&rsquo;d fall asleep, with
+the idea that in 40 minutes we&rsquo;d have a sleeping baby and a watchable movie.</p>
 
-<p>Dominic behaved as I&#8217;d hoped; the iPad didn&#8217;t; after about an hour I grabbed
-the iPad to find absolutely no sign of the movie. The Videos app said &#8220;no
-videos, but you can cruise over to the store to buy one&#8221;. The iTunes store app
-didn&#8217;t have any downloads in progress, and going back to the Purchases tab, it
-had the cloud icon next to our movie. Upon clicking that, it told me it can&#8217;t
-download it because there&#8217;s not enough storage available.</p>
+<p>Dominic behaved as I&rsquo;d hoped; the iPad didn&rsquo;t; after about an hour I grabbed
+the iPad to find absolutely no sign of the movie. The Videos app said &ldquo;no
+videos, but you can cruise over to the store to buy one&rdquo;. The iTunes store app
+didn&rsquo;t have any downloads in progress, and going back to the Purchases tab, it
+had the cloud icon next to our movie. Upon clicking that, it told me it can&rsquo;t
+download it because there&rsquo;s not enough storage available.</p>
 
 <p>So apparently when I first purchased the movie, there was enough storage to
 download it, but then something went wrong with the download, it silently
 canceled the download without showing me any error message whatsoever, and now
-there&#8217;s not enough space for it? That&#8217;s hard to explain, but whatever, there&#8217;s
+there&rsquo;s not enough space for it? That&rsquo;s hard to explain, but whatever, there&rsquo;s
 nothing to do but try to clear space and download it again. I go to Settings:
-General: Usage and look at the breakdown of what&#8217;s using how much space, and
-the individual app usage doesn&#8217;t add up to anywhere close to what it says is
-used, but I don&#8217;t have many options here. So I deleted Infinity Blade to free
+General: Usage and look at the breakdown of what&rsquo;s using how much space, and
+the individual app usage doesn&rsquo;t add up to anywhere close to what it says is
+used, but I don&rsquo;t have many options here. So I deleted Infinity Blade to free
 up a gigabyte, invoked the download, and waited another 40 minutes while it
 downloaded the movie again. At the end of the download, the iPad spent another
-5 minutes saying &#8220;processing&#8221;, then gave me a generic error message, and
+5 minutes saying &ldquo;processing&rdquo;, then gave me a generic error message, and
 kicked me back to the state where the movie is not available for playback but
-is available for download. And again trying to download it says there&#8217;s no
-space available, and going back to Settings: General: Usage, there&#8217;s 2.7GB
+is available for download. And again trying to download it says there&rsquo;s no
+space available, and going back to Settings: General: Usage, there&rsquo;s 2.7GB
 (the size of the movie) less than there had been when I started the download.
-Something very weird is going on. I can&#8217;t fix this problem on the iPad itself
+Something very weird is going on. I can&rsquo;t fix this problem on the iPad itself
 (so much for the post-PC era: you need a PC to configure or troubleshoot your
-post-PC device!) and now it&#8217;s been 2 hours and we don&#8217;t have time to watch a
+post-PC device!) and now it&rsquo;s been 2 hours and we don&rsquo;t have time to watch a
 movie anyway.</p>
 
 <p>When I got back home from the trip, I plugged the iPad into my Mac and
-launched iTunes and iTunes told me that there&#8217;s 10GB of &#8220;other&#8221; content. Given
+launched iTunes and iTunes told me that there&rsquo;s 10GB of &ldquo;other&rdquo; content. Given
 that this is the 16GB model (whose actual capacity is 13.8GB; go figure), that
-doesn&#8217;t leave room for very many 2.7GB movie downloads. That also explains why
+doesn&rsquo;t leave room for very many 2.7GB movie downloads. That also explains why
 the total usage was so much higher than the sum of the space used by each app.
-But it doesn&#8217;t at all help explain what &#8220;other&#8221; actually means; <a href="https://www.google.com/search?q=itunes+capacity+other">the Internet
-isn&#8217;t much help here
+But it doesn&rsquo;t at all help explain what &ldquo;other&rdquo; actually means; <a href="https://www.google.com/search?q=itunes+capacity+other">the Internet
+isn&rsquo;t much help here
 either</a>. Trying to get
 this to go away or at least explain itself, I tried syncing the iPad with the
 Mac a couple times. The first thing I got for my trouble was that iTunes
-decided I had 7.1GB of video on the iPad, and now I&#8217;m over capacity by 6GB
+decided I had 7.1GB of video on the iPad, and now I&rsquo;m over capacity by 6GB
 (this without me having added any additional content to the iPad, actually).
 The second thing I got for my trouble was that iTunes decided to sync that
 video content back to the Mac, which took all night, and resulted in 70GB of
 corrupt data: it created 3 .m4v files which were actually directories
 containing what looks like the entire iPad filesystem, 2 of which were named
 after the movie that caused/revealed all this trouble (Safety Not Guaranteed)
-and the 3rd of which was an episode of Breaking Bad which I didn&#8217;t realize was
-on the iPad in the first place. I&#8217;ll repeat: what got synced back to my
+and the 3rd of which was an episode of Breaking Bad which I didn&rsquo;t realize was
+on the iPad in the first place. I&rsquo;ll repeat: what got synced back to my
 computer in each case was not a valid .m4v file, but an entire directory
-structure whose top level ended in &#8220;.m4v&#8221;; one of these was 10GB, one was
-20GB, and one was 40GB. Clearly, these weren&#8217;t actually on the iPad, and no,
-my Mac didn&#8217;t really like the resulting 70GB of garbage data either.
+structure whose top level ended in &ldquo;.m4v&rdquo;; one of these was 10GB, one was
+20GB, and one was 40GB. Clearly, these weren&rsquo;t actually on the iPad, and no,
+my Mac didn&rsquo;t really like the resulting 70GB of garbage data either.
 (Something created what should have been .m4v files on the iPad as symbolic
 links to /, maybe? <a href="http://metamatt.com/static/2012/10/crazy-ipad-movie-sync.txt">The entire directory listing is
 here</a> if anyone
 finds this edifying.)</p>
 
-<p>Back to reality. Apparently the fix for this <a href="https://discussions.apple.com/thread/2562027?start=90&amp;tstart=0">runaway &#8220;Other&#8221;
+<p>Back to reality. Apparently the fix for this <a href="https://discussions.apple.com/thread/2562027?start=90&amp;tstart=0">runaway &ldquo;Other&rdquo;
 usage</a> is to
 back up the iPad, then restore it from backup. So I did this, and after half
-an hour, I had a working iPad with 2.2GB of apps, 3.3GB of &#8220;other&#8221;, and 7.3GB
-free. That&#8217;s still not very satisfying, though &#8211; what is this 3.3GB and how
+an hour, I had a working iPad with 2.2GB of apps, 3.3GB of &ldquo;other&rdquo;, and 7.3GB
+free. That&rsquo;s still not very satisfying, though &mdash; what is this 3.3GB and how
 do I get it back?</p>
 
 <p>So then I tried completely erasing and restoring the iPad (restoring the
 firmware, not just the user data, which is a similarly named but differently
 implemented operation in iTunes). This worked a little too well — the iPad
-came back with only 0.62GB of &#8220;other&#8221; and 13.2GB free, because it has no apps
-installed. Um, that&#8217;s partially my fault, because I&#8217;d turned off syncing of
+came back with only 0.62GB of &ldquo;other&rdquo; and 13.2GB free, because it has no apps
+installed. Um, that&rsquo;s partially my fault, because I&rsquo;d turned off syncing of
 apps in iTunes (in my experience, leaving app syncing enabled makes syncing
-take much longer and sometimes forever, and it shouldn&#8217;t be necessary in the
-post-PC mode where you manage the device on the device itself); I don&#8217;t find
+take much longer and sometimes forever, and it shouldn&rsquo;t be necessary in the
+post-PC mode where you manage the device on the device itself); I don&rsquo;t find
 it obvious, but apparently if you disable the syncing of apps in iTunes, that
-also means that local restores via iTunes don&#8217;t restore apps either.</p>
+also means that local restores via iTunes don&rsquo;t restore apps either.</p>
 
 <p>But oh whatever, I have a recent iCloud backup which should have all the apps
 backed up. I do another complete erase of the iPad, and this time when it
 boots up, instead of driving the restore from iTunes on the Mac, I walk
 through the on-device setup and select my iCloud backup. It chews for a while,
 reboots, and then gets stuck forever at the boot screen (Apple logo with
-progress bar). <a href="https://discussions.apple.com/thread/4372003?start=0&amp;tstart=0">Apparently I&#8217;m not the only one with this problem
+progress bar). <a href="https://discussions.apple.com/thread/4372003?start=0&amp;tstart=0">Apparently I&rsquo;m not the only one with this problem
 either</a>. I
 tried again and got the same result.</p>
 
-<p>So apparently the iCloud backup is corrupt and can&#8217;t be used; the local backup
+<p>So apparently the iCloud backup is corrupt and can&rsquo;t be used; the local backup
 works but leaves me with extra work to do.</p>
 
 <p>In the big picture, this is just another internet rant about a bug which
-happened to one person and probably isn&#8217;t generally applicable, and while I
+happened to one person and probably isn&rsquo;t generally applicable, and while I
 can describe it as 6 separate problems (iPad aborts my download without
-showing an error message, iPad downloads movie to bit bucket and won&#8217;t play it
-back, iPad runs out of space, iTunes can&#8217;t sanely describe space usage, iTunes
-syncs garbage from iPad back to my computer, iCloud backup is corrupt) it&#8217;s
+showing an error message, iPad downloads movie to bit bucket and won&rsquo;t play it
+back, iPad runs out of space, iTunes can&rsquo;t sanely describe space usage, iTunes
+syncs garbage from iPad back to my computer, iCloud backup is corrupt) it&rsquo;s
 likely all one root cause, where some data structure got corrupted and caused
 the rest of the failures downstream from there. And computers are complicated,
 and not that expensive given the complexity, and hard and expensive to get
 right.</p>
 
-<p>But what&#8217;s frustrating about this is that Apple&#8217;s moved the openness needle
+<p>But what&rsquo;s frustrating about this is that Apple&rsquo;s moved the openness needle
 pretty far back toward walled garden, in the name of preventing problems.
 Problems like malware, yes, but also problems due to misconfigurations, and
 problems due to third party software that causes finger-pointing instead of
 solutions. This was all first-party software; Apple content in Apple software
 on an Apple device synced and controlled from another Apple device. No
-jailbreaking, and I didn&#8217;t even commit the minor sin of trying to run iTunes
-on Windows. This is the case that we should be getting right; that&#8217;s the
-benefit that we&#8217;re paying the walled-garden cost for.</p>
+jailbreaking, and I didn&rsquo;t even commit the minor sin of trying to run iTunes
+on Windows. This is the case that we should be getting right; that&rsquo;s the
+benefit that we&rsquo;re paying the walled-garden cost for.</p>
 
-<p>Apple is often applauded for bringing us technology that &#8220;just works&#8221;, but
-I&#8217;ve been having more and more experiences lately that are pretty far from
-&#8220;just works&#8221;. The moral of the story is that Apple&#8217;s devices are computers
-just like other computers; they&#8217;re still a stack of fiendishly complex
+<p>Apple is often applauded for bringing us technology that &ldquo;just works&rdquo;, but
+I&rsquo;ve been having more and more experiences lately that are pretty far from
+&ldquo;just works&rdquo;. The moral of the story is that Apple&rsquo;s devices are computers
+just like other computers; they&rsquo;re still a stack of fiendishly complex
 hardware and software components; also with iOS in version 6 and <a href="http://en.wikipedia.org/wiki/ITunes_version_history#Version_history">iTunes in
 version
 10.7</a>
-there&#8217;s a lot of untestable legacy cruft. &#8220;Just works&#8221; sounds nice, but we&#8217;re
-not really there yet, or maybe we&#8217;ve been there but don&#8217;t know how to stay
+there&rsquo;s a lot of untestable legacy cruft. &ldquo;Just works&rdquo; sounds nice, but we&rsquo;re
+not really there yet, or maybe we&rsquo;ve been there but don&rsquo;t know how to stay
 there for long.</p>
 ]]></content>
   </entry>
@@ -1268,14 +1304,14 @@ there for long.</p>
     <link href="http://blog.metamatt.com/blog/2012/10/24/playing-by-the-rules/"/>
     <updated>2012-10-24T00:00:00-07:00</updated>
     <id>http://blog.metamatt.com/blog/2012/10/24/playing-by-the-rules</id>
-    <content type="html"><![CDATA[<p>I read two extensive reviews of Microsoft&#8217;s new Surface tablets today.</p>
+    <content type="html"><![CDATA[<p>I read two extensive reviews of Microsoft&rsquo;s new Surface tablets today.</p>
 
 <p><a href="http://arstechnica.com/gadgets/2012/10/microsofts-first-stab-at-a%0A-pc-surface-reviewed/">Peter Bright, writing for Ars
 Technica</a>:</p>
 
-<blockquote><p>They&#8217;re covered in polyurethane that should prove hard-wearing and water
+<blockquote><p>They&rsquo;re covered in polyurethane that should prove hard-wearing and water
 resistant (I was told that they should withstand scouring pads, though I admit
-I&#8217;m too chicken to try—we had to promise to return our review units unharmed)</p></blockquote>
+I&rsquo;m too chicken to try—we had to promise to return our review units unharmed)</p></blockquote>
 
 <p><a href="http://www.wired.com/reviews/2012/10%0A/microsoft-surface/all/">Mathew Honan, writing for Wired</a>:</p>
 
@@ -1302,7 +1338,7 @@ that much trouble for taking a Brillo pad to his Touch Cover. Oh well.</p>
     <link href="http://blog.metamatt.com/blog/2012/10/03/those-ios-6-maps/"/>
     <updated>2012-10-03T00:00:00-07:00</updated>
     <id>http://blog.metamatt.com/blog/2012/10/03/those-ios-6-maps</id>
-    <content type="html"><![CDATA[<p>So, it&#8217;s come to this:</p>
+    <content type="html"><![CDATA[<p>So, it&rsquo;s come to this:</p>
 
 <p><a href="ht%0Atp://www.flickr.com/photos/67861147@N00/8052630604"><img src="http://farm9.staticflickr.com/8031/8052630604_7c3946ed99.jpg" alt="IMG_1136" /></a></p>
 
@@ -1314,27 +1350,27 @@ depend on daily, so I upgraded my iPad instead.</p>
 
 <p>Actually, the new 3D view is very cool where the data is good, and here in San
 Francisco the data is good. Zooming around my neighborhood is fun and looks
-great; that&#8217;s a real win. In fact the maps overall look great, and the zooming
-is much smoother than what we&#8217;re used to with the Google-powered maps in
+great; that&rsquo;s a real win. In fact the maps overall look great, and the zooming
+is much smoother than what we&rsquo;re used to with the Google-powered maps in
 previous versions of iOS. How about the underlying data? Um, not so good.
 Roads are (in my experience) where they belong, but addresses and landmarks
-and businesses are often not. I don&#8217;t know why anyone is surprised by this;
-it&#8217;s a very hard problem, and <a href="http://www.theatlantic.com/technology/archive/2012/09/how-google-builds-%0Aits-maps-and-what-it-means-for-the-future-of-everything/261913/">Google has worked incredibly
+and businesses are often not. I don&rsquo;t know why anyone is surprised by this;
+it&rsquo;s a very hard problem, and <a href="http://www.theatlantic.com/technology/archive/2012/09/how-google-builds-%0Aits-maps-and-what-it-means-for-the-future-of-everything/261913/">Google has worked incredibly
 hard</a> (and thrown a
 lot of money, human time, and computer time at acquiring and massaging the
 data) to get their maps to the point we all take for granted now. The world is
 very big.</p>
 
-<p>That doesn&#8217;t mean it&#8217;s pleasant when I search for an address a mile from where
-I&#8217;m standing and get a search result for a similarly named street 1000 miles
-away in Texas. That&#8217;s what happened to me the first time I tried actually
-using Maps for real, i.e. to find something whose location I didn&#8217;t already
+<p>That doesn&rsquo;t mean it&rsquo;s pleasant when I search for an address a mile from where
+I&rsquo;m standing and get a search result for a similarly named street 1000 miles
+away in Texas. That&rsquo;s what happened to me the first time I tried actually
+using Maps for real, i.e. to find something whose location I didn&rsquo;t already
 know. I also tried plugging in a few locations I remember from our trip to
 Ireland, where iOS 5 maps (i.e. Google maps) got us everywhere we needed to
-be, and Apple maps didn&#8217;t know them; that trip would have been much harder.</p>
+be, and Apple maps didn&rsquo;t know them; that trip would have been much harder.</p>
 
-<p>But luckily, the built-in Maps app powered by Apple&#8217;s fledgling data set isn&#8217;t
-your only choice, and that&#8217;s what my screen shot above reflects. I tried the
+<p>But luckily, the built-in Maps app powered by Apple&rsquo;s fledgling data set isn&rsquo;t
+your only choice, and that&rsquo;s what my screen shot above reflects. I tried the
 various alternatives shown here before upgrading, and came to roughly the same
 conclusions as <a href="http://arstechnica.com/apple/2012/10/replacing-ios-6-maps-hands-on-%0Awith-mapquest-bing-waze-google-nokia/">this Ars Technica
 article</a>: Waze is neat for navigation but not a
@@ -1342,16 +1378,16 @@ replacement map; MapQuest is pretty unpleasant to use; the Google Maps website
 actually works just fine; upon confirming that last, I decided it was fine to
 upgrade.</p>
 
-<p>More surprising to me is that it&#8217;s Nokia who has the second-best map
+<p>More surprising to me is that it&rsquo;s Nokia who has the second-best map
 experience — both data quality and interaction design — after Google. (Maybe I
-shouldn&#8217;t have been surprised. I remember reading about <a href="http://arstechnica.com/gadgets/2011/02/calling-all-cars-%0Ameasuring-traffic-using-cell-phone-data/">Nokia&#8217;s Mobile
+shouldn&rsquo;t have been surprised. I remember reading about <a href="http://arstechnica.com/gadgets/2011/02/calling-all-cars-%0Ameasuring-traffic-using-cell-phone-data/">Nokia&rsquo;s Mobile
 Millenium project</a> and thinking that while their
 approach seemed more like academia than industry and Google is probably
 leaving them in the dust in terms of speed of deploying new features, their
 very thoughtful approach especially with respect to privacy is commendable.
-Clearly, they&#8217;ve been taking this seriously.) I tried, again, punching in some
+Clearly, they&rsquo;ve been taking this seriously.) I tried, again, punching in some
 of the hotels we stayed in in Ireland, which Google could locate and Apple
-couldn&#8217;t, and Nokia found them just fine. That test involves just a few data
+couldn&rsquo;t, and Nokia found them just fine. That test involves just a few data
 points, but is in keeping with a general reputation that only Google and Nokia
 have decent place data outside the US.</p>
 

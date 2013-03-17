@@ -110,25 +110,25 @@ ReadyNAS NV. It was medium-expensive for its time, well-built, and at first I
 liked it a lot. However a few missteps by Infrant (one about spending years
 stonewalling user requests for ssh access while sitting on a MAC-address-based
 backdoor password, one about essentially a product recall of the fan which if
-you read between the lines just meant they&#8217;d installed it backwards and
+you read between the lines just meant they&rsquo;d installed it backwards and
 customers who want proper cooling should flip it around but it will get
 louder), one power supply failure, and some mediocre experiences with their
 generally well regarded tech support around buggy CIFS and AFP coexistence,
 then the fact that Infrant sold itself to Netgear (the conventional wisdom on
-which had it that there goes their tech support, although I didn&#8217;t notice any
+which had it that there goes their tech support, although I didn&rsquo;t notice any
 difference, and their jedi council is still at it today), combined with
 extremely middling performance, meant when I needed more space, I went
-elsewhere. (As you&#8217;ll see, in hindsight this feels misguided; 6 years later
+elsewhere. (As you&rsquo;ll see, in hindsight this feels misguided; 6 years later
 and the little ReadyNAS NV is still humming along fine, Infrant continues to
-support it with software updates, and it&#8217;s been far less frustrating and more
+support it with software updates, and it&rsquo;s been far less frustrating and more
 useful than my next couple purchases.)</p>
 
 <p>2008: Elsewhere meant Promise; I bought an NS4300N. It offered a fairly
 similar feature set to the ReadyNAS, but was half the price and slightly
 faster. It was also of notably lower build quality, a lot more rickety and a
 lot louder. Over time the firmware situation got sketchier; the product
-stopped evolving; I moved it to a friend&#8217;s house to use as offsite backup,
-then slowly stopped using it; now it&#8217;s gathering dust.</p>
+stopped evolving; I moved it to a friend&rsquo;s house to use as offsite backup,
+then slowly stopped using it; now it&rsquo;s gathering dust.</p>
 
 <p>2010: Soured on the consumer-priced NAS market mostly due to poor performance
 (Infrant and Promise had both claimed speeds of around 30MB/second but that
@@ -142,7 +142,7 @@ tried a DAS solution next. The Promise DS4600, cabled via Firewire 800 to a
 Mac Mini which is on all the time anyways. (The decision calculus that lead to
 my original NAS purchase in 2006 involved servers that drew 100+ watts and
 marketing claims that the consumer NAS units performed fine and had reasonable
-AFP implementations; here in 2010 I was betting that I&#8217;d get better
+AFP implementations; here in 2010 I was betting that I&rsquo;d get better
 performance and correctness from the real Apple AFP server on a real (Intel
 Core 2 Duo) CPU and now that only draws 10 watts.) In retrospect, this was the
 worst of the bunch. On a good day it reads and writes at 50MB/sec, but on the
@@ -152,16 +152,16 @@ and need rebooting every few days, spending all its time in unbillable kernel
 space (how a Firewire device accomplishes this, I have no idea); a firmware
 update eventually fixed that, but to this day years later, performance is
 unpredictable and generally slow, especially for small random writes, and if I
-reboot the host computer, the DS4600 array won&#8217;t be visible until several
+reboot the host computer, the DS4600 array won&rsquo;t be visible until several
 minutes after boot. Also twice the array thought there was no volume
-configured (and it came back up reboot, but that&#8217;s still pretty scary, and
+configured (and it came back up reboot, but that&rsquo;s still pretty scary, and
 meant I had to stop using this for anything important).</p>
 
 <p>Oh, and the configuration app for Mac OS that ships with the DS4600 creates
 1024 threads (for what unholy purpose, I have no idea) and causes 16 identical
 copies of the mouse cursor to appear onscreen, offset vertically by 64 pixels.
-Keep in mind that while I didn&#8217;t buy this from Apple, this is a product that
-Apple actually stocked and sold specifically for use with Macs, so I shouldn&#8217;t
+Keep in mind that while I didn&rsquo;t buy this from Apple, this is a product that
+Apple actually stocked and sold specifically for use with Macs, so I shouldn&rsquo;t
 have been that far off the beaten path here. (This is tied with another
 Promise software disaster inflicted on me a few years ago for reasons not to
 keep buying their products. Their hardware seems to perform well for a low
@@ -181,10 +181,10 @@ UI, but not quite, and in no case does that excuse making me run tcpview to
 figure out where to point the browser. Though to bring this full circle, this
 division of labor between the embedded software development and real-OS
 software development, or lack thereof, probably explains the 1024 threads the
-&#8220;SmartNAVI&#8221; app creates, somehow.)</p>
+&ldquo;SmartNAVI&rdquo; app creates, somehow.)</p>
 
 <p>2012: Thoroughly frustrated with the DS4600 and its foibles, lack of
-reliability, and unpredictable speed. And we&#8217;re shooting lots of video of
+reliability, and unpredictable speed. And we&rsquo;re shooting lots of video of
 Dominic, so I need somewhere big and fast to store video files. DAS no longer
 sounds like a good idea, largely because how am I going to connect it? My
 current home server, the Mac Mini, has only USB2 and Firewire 800 and those
@@ -193,13 +193,13 @@ their anointed storage bus is Thunderbolt which is (still) a tiny expensive
 low-volume ecosystem which tends to point back to Promise, and which is not
 available on any of my current machines anyway; USB3 is starting to creep into
 their machines but as of October 2012 is still inexplicably only available on
-portables; there&#8217;s just no DAS array that I could plausibly connect to my
-current server and a future server and expect good performance. Now you&#8217;re
-probably wondering why I&#8217;m talking about Apple hardware anyway; clearly they
+portables; there&rsquo;s just no DAS array that I could plausibly connect to my
+current server and a future server and expect good performance. Now you&rsquo;re
+probably wondering why I&rsquo;m talking about Apple hardware anyway; clearly they
 have no desire to let us do external storage anywhere near the price-
 performance of the PC world; I should just build my own box and run Linux or
-Nexenta and soak in the ZFS goodness and… no thanks. I&#8217;m crazy enough to
-<a href="http://blog.metamatt.com/blog/2012/03/19%0A/custom-built-linux-router-no-thanks-to-realtek/">build my own networking hardware</a>, but don&#8217;t want to deal with
+Nexenta and soak in the ZFS goodness and… no thanks. I&rsquo;m crazy enough to
+<a href="http://blog.metamatt.com/blog/2012/03/19%0A/custom-built-linux-router-no-thanks-to-realtek/">build my own networking hardware</a>, but don&rsquo;t want to deal with
 storage hardware.</p>
 
 <p>So…. back to NAS? The last day the DS4600 thoroughly irked me, a few hours
@@ -207,10 +207,10 @@ later Ars Technica ran <a href="http://arstechnica.com/gadgets/2012/09/synology-
 DS-412+</a>. Sounds good to me. I ordered one (actually the 5-bay DS-1512+,
 which cost hardly any more) and am setting it up now. Wish me luck. In first
 impressions, the hardware is well built, it runs quieter than either the
-ReadyNAS NV or the DS4600 that it&#8217;s meant to replace, and I like that they
+ReadyNAS NV or the DS4600 that it&rsquo;s meant to replace, and I like that they
 gave some thought to fan replacement and memory upgrades. The browser UI is a
 little too flashy for its own good, but is impressive in its own way. I
-haven&#8217;t done any real performance testing yet. Wish me luck.</p>
+haven&rsquo;t done any real performance testing yet. Wish me luck.</p>
 </div>
 
 

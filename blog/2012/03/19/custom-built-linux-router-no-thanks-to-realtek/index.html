@@ -111,8 +111,8 @@ me run and control dnsmasq, tcpdump, and VLANs.</p>
 
 <p>When I realized I was seeing so much weirdness at once from my OpenWrt router
 as to be circumstantial evidence against OpenWrt itself, I mentioned this to
-my officemate and he said &#8220;why don&#8217;t you stop screwing around and install
-full-blown Linux?&#8221; Sure, I thought, but that brings up two problems: it
+my officemate and he said &ldquo;why don&rsquo;t you stop screwing around and install
+full-blown Linux?&rdquo; Sure, I thought, but that brings up two problems: it
 sounded like a huge time suck, and where am I going to find appropriate
 hardware to use as a router?</p>
 
@@ -123,13 +123,13 @@ that story.</p>
 <p>On the time suck question, it seemed like I would have to learn a lot of new
 things to set up and, possibly, maintain a lot of tasks that I was accustomed
 to having OpenWrt do for me. I already knew how to install and administer
-Linux for standard desktop or server use, but I&#8217;d never myself configured any
+Linux for standard desktop or server use, but I&rsquo;d never myself configured any
 advanced networking topologies and my few interactions with iptables had been
 painful, so configuring NAT and firewalling and routing and dealing with
 multiple network interfaces was daunting (and this box is by definition going
-to be exposed to the Internet, so I&#8217;d better get the firewall right). I poked
+to be exposed to the Internet, so I&rsquo;d better get the firewall right). I poked
 around and found <a href="http://www.shorewall.net/">shorewall</a>, which exists
-basically to configure the parts that I didn&#8217;t already know how to do, and the
+basically to configure the parts that I didn&rsquo;t already know how to do, and the
 more I read about it, the more it seemed a good match for what I was trying to
 do.</p>
 
@@ -147,8 +147,8 @@ it routes between, so at the minimum, one for the LAN and one for the WAN. The
 scenario I had in mind was more complicated, with two separate LANs (one for
 my family and one for guests who just want to get their tablet on the
 internet), and leaving room for the possibility of multiple internet
-providers, so I&#8217;d need at least 3 interfaces, with the option to expand to 4
-or more in the future. Now, these don&#8217;t all have to be physical interfaces
+providers, so I&rsquo;d need at least 3 interfaces, with the option to expand to 4
+or more in the future. Now, these don&rsquo;t all have to be physical interfaces
 built into the router. If the router has USB ports, you can add more that way;
 also if you have other physical infrastructure supporting VLANs, you can
 multiplex several networks over one physical port. (Again as a comparison to
@@ -159,12 +159,12 @@ to the other 4 ports, which by default are bridged onto a single VLAN but
 which can be configured for 4 separate VLANs if that floats your boat.)</p>
 
 <p>After getting some advice from friends and discussing it ad nauseum, I ended
-up buying a <a href="http://www.fit-pc.com/web/fit-pc/fit-pc2i-%0Aspecifications/">fit-pc2i</a>, notable because it&#8217;s a standard x86 PC (so I can choose
+up buying a <a href="http://www.fit-pc.com/web/fit-pc/fit-pc2i-%0Aspecifications/">fit-pc2i</a>, notable because it&rsquo;s a standard x86 PC (so I can choose
 really any standard Linux distribution or even Windows to run on it), in a
 tiny passively cooled case, drawing 6W, and with 2 physical network
-interfaces. (I didn&#8217;t like the idea of depending on a bunch of USB network
-adapters, and I wasn&#8217;t sure I could rely only on VLAN support to get extra
-ports, so I wanted a 2nd port for insurance. Now that I&#8217;ve used it, I think a
+interfaces. (I didn&rsquo;t like the idea of depending on a bunch of USB network
+adapters, and I wasn&rsquo;t sure I could rely only on VLAN support to get extra
+ports, so I wanted a 2nd port for insurance. Now that I&rsquo;ve used it, I think a
 single reliable physical network interface + VLAN support would work out
 fine.) Those 2 network ports are not enough for my scenario, so I also bought
 a <a href="http://www.cisco.com/en/US/products/ps11229/index.html">Cisco SG200-08</a>
@@ -176,18 +176,18 @@ router and switch so that various switch ports acted like they were connected
 to additional eth1.x interfaces in the router, and started testing things. It
 worked fine until I tried a speed test (from a client connected through the
 new router which was connected behind my old router); the speed test promptly
-hung from the client&#8217;s point of view, and I couldn&#8217;t access the new router
+hung from the client&rsquo;s point of view, and I couldn&rsquo;t access the new router
 over the network at all. I power cycled the new router, tried again, same
 result. I poked around log files, tried to enable the Linux NMI watchdog, and
 generally looked for clues without finding anything until I visited the fit-pc
-forums and read <a href="http://www.fit-pc.com/forum/viewtopic.php?f=9&amp;t=2383">&#8220;solution for freezes when scp/ftp/nfs with most Linux
-dist&#8221;</a>. This pointed the
+forums and read <a href="http://www.fit-pc.com/forum/viewtopic.php?f=9&amp;t=2383">&ldquo;solution for freezes when scp/ftp/nfs with most Linux
+dist&rdquo;</a>. This pointed the
 blame squarely at the Realtek network interfaces, and suggested an alternate
 driver as a solution. Once I started investigating fixes for this, I got
-really pessimistic at first: <a href="https://www.google.com/search?q=r8169+freeze">a Google query for &#8220;r8169
-freeze&#8221;</a> shows a dismaying
+really pessimistic at first: <a href="https://www.google.com/search?q=r8169+freeze">a Google query for &ldquo;r8169
+freeze&rdquo;</a> shows a dismaying
 number of hits, many in distribution-specific bug reports going back years and
-years. I&#8217;d been under the assumption that networking is Linux&#8217;s lifeblood and
+years. I&rsquo;d been under the assumption that networking is Linux&rsquo;s lifeblood and
 that wired networking has long been a solved problem — wireless network
 hardware flaky under Linux, sure, any network hardware flaky under Windows,
 sure, but wired network hardware flaky under Linux? That was a rude surprise.</p>
@@ -196,12 +196,12 @@ sure, but wired network hardware flaky under Linux? That was a rude surprise.</p
 kernels) for this class of Realtek hardware is named r8169. It actually
 supports a family of Realtek chips named RTL8111/RTL8168, of which there are
 apparently many variants with important programming differences even inside
-the same PCI ID, so using lspci won&#8217;t necessarily tell you enough about which
+the same PCI ID, so using lspci won&rsquo;t necessarily tell you enough about which
 one you have. Realtek also has their own driver, also ostensibly open source
 but not included in the standard Linux kernel, called r8168. For years now,
-you can find blog posts saying &#8220;I had such and such a problem with r8169 and I
-switched to r8168 and it worked better.&#8221; So naturally, I tried r8168, and
-found it didn&#8217;t work at all. Upon further investigation, it has completely
+you can find blog posts saying &ldquo;I had such and such a problem with r8169 and I
+switched to r8168 and it worked better.&rdquo; So naturally, I tried r8168, and
+found it didn&rsquo;t work at all. Upon further investigation, it has completely
 broken VLAN support (at least on my hardware, in the 8.027 driver that was
 current at the time, in the phase of the moon that obtained at the time): on a
 non-virtual interface it worked fine (and without freezing the kernel); frames
@@ -212,7 +212,7 @@ fitpc on the raw interface, on the fitpc on the virtual interface, and on a
 separate machine plugged into a switch port on the SG200 mapped to the same
 VLAN), I could characterize the problem: outgoing frames were transmitted with
 no tag, and get dropped by the switch. Incoming frames with a tag actually had
-it stripped and were dispatched properly. I found out about &#8220;ethtool -K&#8221; to
+it stripped and were dispatched properly. I found out about &ldquo;ethtool -K&rdquo; to
 control hardware acceleration of VLAN tagging (does this really benefit from
 hardware acceleration? More than it loses from the possibility of someone
 screwing it up?), disabled VLAN tag hardware acceleration in both directions,
@@ -221,15 +221,15 @@ hardware acceleration for VLAN tagging only on the RX path, and things started
 working. But only on certain ports.</p>
 
 <p>As a recap of what I found to be broken with r8169 and 802.1Q: as the driver
-loads by default, it improperly tags packets on the TX path. If I use &#8220;ethtool
--K txvlan off&#8221;, TX works but RX packets are ignored. If I use &#8220;ethtool -K
-txvlan off rxvlan off&#8221; followed by &#8220;ethtool -K txvlan off rxvlan on&#8221;, TX and
-RX both work, but flakily — some ports and protocols work, some don&#8217;t, and I
-don&#8217;t know why but I&#8217;ve spent too much time staring at packet traces and I
-don&#8217;t care any more. The driver is broken out of the box, can be made to
+loads by default, it improperly tags packets on the TX path. If I use &ldquo;ethtool
+-K txvlan off&rdquo;, TX works but RX packets are ignored. If I use &ldquo;ethtool -K
+txvlan off rxvlan off&rdquo; followed by &ldquo;ethtool -K txvlan off rxvlan on&rdquo;, TX and
+RX both work, but flakily — some ports and protocols work, some don&rsquo;t, and I
+don&rsquo;t know why but I&rsquo;ve spent too much time staring at packet traces and I
+don&rsquo;t care any more. The driver is broken out of the box, can be made to
 almost work by enabling and disabling VLAN tag acceleration in the right order
 through an order-dependent set of transitions reminiscent of port knocking,
-but still doesn&#8217;t entirely work, and I&#8217;m not going to trust it.</p>
+but still doesn&rsquo;t entirely work, and I&rsquo;m not going to trust it.</p>
 
 <p>Then, back in r8169-land, I found an Ubuntu bug report, <a href="https://bugs.launchpad.net/ubuntu/+source%0A/linux-backports-modules-3.0.0/+bug/839393?comments=all">Network problem with
 the r8169 driver and RTL8111/8168B</a>, in response to which
@@ -241,27 +241,27 @@ system.log, there was no freeze.</p>
 
 <p>At this point, I reported my findings to both the r8168 maintainers (Realtek)
 and the r8169 drivers (Linux netdev mailing list and Francois Romieu). Realtek
-didn&#8217;t respond at all. Francois did reply, saying he&#8217;d been fixing a bunch of
+didn&rsquo;t respond at all. Francois did reply, saying he&rsquo;d been fixing a bunch of
 problems in this area recently, and the 3.2 driver should work even better
 (this was last December, in the final throes of the 3.2 kernel release). I
 grabbed a 3.2RC7 kernel, installed it under the Ubuntu 11.10 install I was
 using, and it worked fine. No warnings, no backtraces, no freezes.</p>
 
-<p>I haven&#8217;t touched the configuration since; after another week or so of testing
+<p>I haven&rsquo;t touched the configuration since; after another week or so of testing
 I installed the fitpc + Ubuntu 11.10 + the 3.2RC7 kernel as our main router,
-and we haven&#8217;t had any problems with it. Hopefully, the Ubuntu 12.04 release
-(which already uses a 3.2 kernel) will install and run fine, and I won&#8217;t have
+and we haven&rsquo;t had any problems with it. Hopefully, the Ubuntu 12.04 release
+(which already uses a 3.2 kernel) will install and run fine, and I won&rsquo;t have
 to worry about this for another another 5 years since 12.04 is an LTS release.</p>
 
 <p>Lessons learned here:</p>
 
 <ul>
-<li>VLANs are cool, and I don&#8217;t really need more than one physical interface on the router the way I&#8217;m using it. I recommend the VLAN + separate switch as port splitter technique. But you do want a gigabit network interface if you&#8217;re going to do that.</li>
-<li>Realtek was the bane of my existence for a few weeks in December. It looks like I just had bad timing, and if I&#8217;d done the same setup in April using Ubuntu 12.04 with a Linux 3.2 kernel I wouldn&#8217;t have had to learn any of this r8168/r8169 business. But given the history, I wouldn&#8217;t recommend their products. I went so far as to reconsider the whole fitpc choice. But in this form factor, it seems all the alternatives (including other fitpc products) use Realtec NICs.</li>
+<li>VLANs are cool, and I don&rsquo;t really need more than one physical interface on the router the way I&rsquo;m using it. I recommend the VLAN + separate switch as port splitter technique. But you do want a gigabit network interface if you&rsquo;re going to do that.</li>
+<li>Realtek was the bane of my existence for a few weeks in December. It looks like I just had bad timing, and if I&rsquo;d done the same setup in April using Ubuntu 12.04 with a Linux 3.2 kernel I wouldn&rsquo;t have had to learn any of this r8168/r8169 business. But given the history, I wouldn&rsquo;t recommend their products. I went so far as to reconsider the whole fitpc choice. But in this form factor, it seems all the alternatives (including other fitpc products) use Realtec NICs.</li>
 <li>shorewall makes configuration of NAT routing, firewalling, and traffic shaping much easier, in my opinion, than raw iptables and tc.</li>
 <li>Aside from dealing with the Realtek issue, this was less of a time suck than I was expecting.</li>
 <li>Including dealing with the Realtek issue, this was more of a time suck than I was expecting.</li>
-<li>I&#8217;m happy with the result, though. Treating the fitpc-2i and SG200 as one unit, I have something that&#8217;s about the size and power consumption of the OpenWrt router, except now it&#8217;s got a 1 GHz x86 CPU, 1GB of RAM, 32GB of flash storage, 9 individually addressable network ports, and is still entirely solid state. Those hardware specs only matter inasmuchas they give me plenty of breathing room for future expansion (I don&#8217;t think my actual usage was taxing the much-lower-speced OpenWrt router), but the real bonus is it&#8217;s stable: OpenVPN, dnsmasq and miniupnpd are all behaving as they ought to.</li>
+<li>I&rsquo;m happy with the result, though. Treating the fitpc-2i and SG200 as one unit, I have something that&rsquo;s about the size and power consumption of the OpenWrt router, except now it&rsquo;s got a 1 GHz x86 CPU, 1GB of RAM, 32GB of flash storage, 9 individually addressable network ports, and is still entirely solid state. Those hardware specs only matter inasmuchas they give me plenty of breathing room for future expansion (I don&rsquo;t think my actual usage was taxing the much-lower-speced OpenWrt router), but the real bonus is it&rsquo;s stable: OpenVPN, dnsmasq and miniupnpd are all behaving as they ought to.</li>
 </ul>
 
 </div>
