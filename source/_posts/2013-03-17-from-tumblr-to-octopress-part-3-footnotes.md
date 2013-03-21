@@ -16,9 +16,22 @@ First: The post content generated in Markdown format from tumblr.rb, in its trip
 
 So I had to go edit all the posts in which I used footnotes, and manually redo the footnote links using PHP Markdown Extra syntax.
 
-Second: Having done that and told Jekyll to regenerate the blog, I found myself looking at a bunch of raw unconverted PHP Markdown Extra footnote tags. That's because Jekyll's markdown processing is done by RDiscount, and the version of RDiscount specified by Octopress's Gemfile (1.6.8) does not support footnotes at all; footnotes using PHP Markdown Extra syntax were added as a feature of RDiscount 2.0.7.
+Second: Having done that and told Jekyll to regenerate the blog, I found myself looking at a bunch of raw unconverted PHP Markdown Extra footnote tags. That's because Jekyll's markdown processing is done by RDiscount, and the version of RDiscount specified by Octopress's Gemfile (1.6.8) does not support footnotes at all; footnotes using PHP Markdown Extra syntax were added as a feature of RDiscount 2.0.7, as an optional extension named `footnotes`.
 
-So I had to edit the Gemfile to specify RDiscount 2.0.7.
+So I had to edit the Gemfile to specify RDiscount 2.0.7, and edit _config.yml to enable the footnotes extension. These changes look like:
+
+`Gemfile`:
+```
+-  gem 'rdiscount', '~> 1.6.8'
++  gem 'rdiscount', '~> 2.0.7'
+```
+
+`_config.yml`:
+```
+ markdown: rdiscount
++rdiscount:
++  extensions: [ footnotes ]
+```
 
 Third: Having done that and told Jekyll to regenerate the blog, some posts looked fine, but others had chunks of footnote definition content floating near the end of the post body but before the footnotes, and completely out of order. Some trial and error led me to deduce that RDiscount 2.0.7 does not actually honor the documented PHP Markdown Extra syntax, which allows you to hard-wrap the footnotes or even place the definition offset from the footnote number[^3]; RDiscount is happy only if the footnote number and entire body are on one logical line with no hard line breaks. Since I'm doing all this posting from a colocated Linux VM on which I don't run X, and thus use text editors in old-school terminal windows, I tend to hard-break my posts (and in fact, the posts I imported from Tumblr tended to be hard-wrapped at 76 columns by something somewhere along the write/post/import pipeline). RDiscount doesn't play well with these hard breaks.
 
@@ -27,6 +40,7 @@ So I had to edit all the footnoted posts again to comply with RDiscount's actual
 Summary: you can get nice footnotes from Octopress/Jekyll if you
 
 * Update to RDiscount 2.0.7
+* Enable RDiscount's footnotes extension
 * Use the footnote syntax that RDiscount actually supports, which is like PHP Markdown Extra except each footnote definition must stay on one line without hard line breaks
 * If importing your blog from a previous home using a script like tumblr.rb, verify that the conversion actually generates footnote markup
 
