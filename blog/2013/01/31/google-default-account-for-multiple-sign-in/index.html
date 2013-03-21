@@ -9,9 +9,7 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="Google Accounts allow you to stay signed into multiple accounts at
-once,
-which is hugely helpful for those of us who have multiple account, but there &hellip;">
+  <meta name="description" content="Google Accounts allow you to stay signed into multiple accounts at once, which is hugely helpful for those of us who have multiple account, but there &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -106,44 +104,17 @@ which is hugely helpful for those of us who have multiple account, but there &he
   </header>
 
 
-<div class="entry-content"><p>Google Accounts allow you to <a href="http://support.google.com/accounts/bin/answer.py?hl=en&amp;answer=1721977">stay signed into multiple accounts at
-once</a>,
-which is hugely helpful for those of us who have multiple account, but there&rsquo;s
-one thing that&rsquo;s been frustrating me here.</p>
+<div class="entry-content"><p>Google Accounts allow you to <a href="http://support.google.com/accounts/bin/answer.py?hl=en&amp;answer=1721977">stay signed into multiple accounts at once</a>, which is hugely helpful for those of us who have multiple account, but there&rsquo;s one thing that&rsquo;s been frustrating me here.</p>
 
-<p>I use the browser address bar (relying heavily on its autocomplete feature) to
-do most of my navigation directly from the keyboard. If I want my document
-files in Google Docs, I open a new browser tab from the keyboard shortcut,
-then type &ldquo;docs&rdquo; and by that time, autocomplete has already filled in
-docs.google.com<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>,<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
+<p>I use the browser address bar (relying heavily on its autocomplete feature) to do most of my navigation directly from the keyboard. If I want my document files in Google Docs, I open a new browser tab from the keyboard shortcut, then type &ldquo;docs&rdquo; and by that time, autocomplete has already filled in docs.google.com<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>,<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
 
-<p>However, I have 3 different Google Accounts that I&rsquo;m usually signed into: one
-standard personal account (ending in @gmail.com), one GAFYD<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup> account for my
-personal email<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>, and one GAFYD account for work. If I navigate to
-docs.google.com, Google automatically chooses one of the accounts to redirect
-to, and at different times on different computers I end up with a different
-(seemingly arbitrary) account selected, and if it wasn&rsquo;t the right one, it&rsquo;s 3
-extra clicks in the account switcher to get to the right account.</p>
+<p>However, I have 3 different Google Accounts that I&rsquo;m usually signed into: one standard personal account (ending in @gmail.com), one GAFYD<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup> account for my personal email<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>, and one GAFYD account for work. If I navigate to docs.google.com, Google automatically chooses one of the accounts to redirect to, and at different times on different computers I end up with a different (seemingly arbitrary) account selected, and if it wasn&rsquo;t the right one, it&rsquo;s 3 extra clicks in the account switcher to get to the right account.</p>
 
-<p>What&rsquo;s controlling its choice? It turns out it&rsquo;s the order you sign into the
-accounts. If you look closely at the URLs, either by mousing over the links in
-the account switcher or by looking at the URL you end up at for gmail but not
-for docs<sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup>, you&rsquo;ll see an &ldquo;authuser&rdquo; or &ldquo;u&rdquo; parameter which is a low-valued
-integer. It starts at 0 for the first account you sign into, and counts up
-from there as you sign into additional accounts.</p>
+<p>What&rsquo;s controlling its choice? It turns out it&rsquo;s the order you sign into the accounts. If you look closely at the URLs, either by mousing over the links in the account switcher or by looking at the URL you end up at for gmail but not for docs<sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup>, you&rsquo;ll see an &ldquo;authuser&rdquo; or &ldquo;u&rdquo; parameter which is a low-valued integer. It starts at 0 for the first account you sign into, and counts up from there as you sign into additional accounts.</p>
 
-<p>If you navigate directly to docs.google.com (or mail.google.com, etc), you&rsquo;ll
-get the account currently associated as authuser 0, which is the first account
-you signed into.</p>
+<p>If you navigate directly to docs.google.com (or mail.google.com, etc), you&rsquo;ll get the account currently associated as authuser 0, which is the first account you signed into.</p>
 
-<p>For the GAFYD case, Google lets you <a href="http://support.google.com/a/bin/answer.py?hl=en&amp;answer=53340">set up convenient forwarding
-addresses</a> for
-domains you control, and I&rsquo;ve used this to map mail.mydomain.foo and
-docs.mydomain.foo to redirect automatically to mail.google.com/a/mydomain.foo
-and docs.google.com/a/mydomain.foo. This means that for the two GAFYD domains,
-if I want the mail or docs view associated with that account, I go to
-docs.mydomain.foo, which in turn means that if I navigate to docs.google.com,
-I always want my personal account selected by default.</p>
+<p>For the GAFYD case, Google lets you <a href="http://support.google.com/a/bin/answer.py?hl=en&amp;answer=53340">set up convenient forwarding addresses</a> for domains you control, and I&rsquo;ve used this to map mail.mydomain.foo and docs.mydomain.foo to redirect automatically to mail.google.com/a/mydomain.foo and docs.google.com/a/mydomain.foo. This means that for the two GAFYD domains, if I want the mail or docs view associated with that account, I go to docs.mydomain.foo, which in turn means that if I navigate to docs.google.com, I always want my personal account selected by default.</p>
 
 <p>For me, the solution to get the behavior I wanted boils down to:</p>
 
@@ -154,8 +125,7 @@ I always want my personal account selected by default.</p>
 </ul>
 
 
-<p>Thanks go to <a href="http://www.linkedin.com/pub/ramesh-dharan/1/13b/8a2">Ramesh</a> for
-helping me figure this out.</p>
+<p>Thanks go to <a href="http://www.linkedin.com/pub/ramesh-dharan/1/13b/8a2">Ramesh</a> for helping me figure this out.</p>
 <div class="footnotes">
 <hr/>
 <ol>

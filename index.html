@@ -368,26 +368,34 @@ OS X 10.6 and subsequently upgraded to 10.7 and then 10.8) never had <code>stand
 
 <p>Octopress is basically a convenience framework around Jekyll, adding a nice-by-default theme and some convenience wrappers for starting new posts, invoking Jekyll to generate the site, and deploying the site. You could probably use Octopress quite happily without touching Jekyll directly, unless you want to import an existing blog; then you end up at <a href="https://github.com/mojombo/jekyll/wiki/blog-migrations">Jekyll&rsquo;s Blog Migrations tool</a>, which has options for a number of popular blog engines, including Tumblr.</p>
 
-<p>The instructions for <a href="http://octopress.org/docs/setup/">setting up Octopress</a> are pretty simple and <a href="http://octopress.org/docs/setup/">well documented</a>:
-* git and ruby (and probably rvm or rbenv) are prerequisites
-* obtain octopress itself via &ldquo;git clone&rdquo;
-* install dependencies via &ldquo;gem install bundler; bundle install&rdquo;
-* install the default Octopress theme (which also generates the skeleton site layout) via &ldquo;rake install&rdquo;</p>
+<p>The instructions for <a href="http://octopress.org/docs/setup/">setting up Octopress</a> are pretty simple and <a href="http://octopress.org/docs/setup/">well documented</a>:</p>
 
-<p>At this point, you&rsquo;ve got a working Octopress installation and you could use its rake task-based interface to write and publish posts. However, if you want to migrate an existing blog, you have more setup steps which are also <a href="https://github.com/mojombo/jekyll/wiki/blog-migrations">well documented</a>:
-* assuming you want to keep your raw posts in markdown format instead of raw HTML, Jekyll&rsquo;s Tumblr migrator needs nokogiri: <code>gem install nokogiri</code>
-* invoke the Tumblr migrator (<code>ruby -rubygems -e 'require "jekyll/migrators/tumblr"; Jekyll::Tumblr.process("http://www.your_blog_url.com", "md")'</code>). Note that this doesn&rsquo;t require any account information or credentials, because the Tumblr API will provide enough information to do this anonymously. Heck, if you&rsquo;re evil, you could convert someone else&rsquo;s blog (don&rsquo;t do that). On the topic of Tumblr reliability, I ran this step a few dozen times while I was figuring out how it works and fixing some bugs in tumblr.rb, and ~90% of the time, it downloaded my ~165 posts almost instantly, but palpably often, it would get stuck halfway as the Tumblr API stopped sending it network traffic. Oh well. Ctrl-C and restart if this happens to you.</p>
+<ul>
+<li>git and ruby (and probably rvm or rbenv) are prerequisites</li>
+<li>obtain octopress itself via &ldquo;git clone&rdquo;</li>
+<li>install dependencies via &ldquo;gem install bundler; bundle install&rdquo;</li>
+<li>install the default Octopress theme (which also generates the skeleton site layout) via &ldquo;rake install&rdquo;</li>
+</ul>
 
-<p>What neither the Jekyll nor Octopress documentation tells you is what happens next. Assuming you run all the above commands from the octopress directory: Octopress setup (the <code>rake install</code> step) created a directory called &ldquo;source&rdquo;, under which the (initially empty) &ldquo;_posts&rdquo; directory is where Jekyll will look for posts. Meanwhile, Jekyll&rsquo;s tumblr.rb will create and populate a &ldquo;<em>\posts/tumblr&rdquo; directory with your posts, and a &ldquo;posts&rdquo; directory with redirects from the old Tumblr-style post URLs to new Octopress-style URLs<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>,<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>. Neither the &ldquo;</em>\posts&rdquo; nor &ldquo;posts&rdquo; directory spit out by tumblr.rb are under &ldquo;source&rdquo; where Jekyll will look for them. What this means is that without additional effort on your part, Jekyll as invoked by Octopress won&rsquo;t see the files you just imported.</p>
 
-<p>Again: your blog posts go in &ldquo;octopress/source/<em>posts&rdquo;. The Tumblr migrator will create &ldquo;octopress/posts&rdquo; and &ldquo;octopress/</em>posts&rdquo;. Just move these two directories under &ldquo;octopress/source&rdquo; once you&rsquo;ve verified they look OK. (NB: the migrator actually dumped all its files under &ldquo;octopress/<em>posts/tumblr&rdquo;; it&rsquo;s fine to leave them there, so they end up in &ldquo;octopress/source/</em>posts/tumblr&rdquo;; Octopress doesn&rsquo;t seem to care about the organization of your files inside the source/_posts directory.)</p>
+<p>At this point, you&rsquo;ve got a working Octopress installation and you could use its rake task-based interface to write and publish posts. However, if you want to migrate an existing blog, you have more setup steps which are also <a href="https://github.com/mojombo/jekyll/wiki/blog-migrations">well documented</a>:</p>
+
+<ul>
+<li>assuming you want to keep your raw posts in markdown format instead of raw HTML, Jekyll&rsquo;s Tumblr migrator needs nokogiri: <code>gem install nokogiri</code></li>
+<li>invoke the Tumblr migrator:<code>ruby -rubygems -e 'require "jekyll/migrators/tumblr"; Jekyll::Tumblr.process("http://www.your_blog_url.com", "md")'</code> Note that this doesn&rsquo;t require any account information or credentials, because the Tumblr API will provide enough information to do this anonymously. Heck, if you&rsquo;re evil, you could convert someone else&rsquo;s blog (don&rsquo;t do that). On the topic of Tumblr reliability, I ran this step a few dozen times while I was figuring out how it works and fixing some bugs in tumblr.rb, and ~90% of the time, it downloaded my ~165 posts almost instantly, but palpably often, it would get stuck halfway as the Tumblr API stopped sending it network traffic. Oh well. Ctrl-C and restart if this happens to you.</li>
+</ul>
+
+
+<p>What neither the Jekyll nor Octopress documentation tells you is what happens next. Assuming you run all the above commands from the octopress directory: Octopress setup (the <code>rake install</code> step) created a directory called &ldquo;source&rdquo;, under which the (initially empty) &ldquo;_posts&rdquo; directory is where Jekyll will look for posts. Meanwhile, Jekyll&rsquo;s tumblr.rb will create and populate a &ldquo;_posts/tumblr&rdquo; directory with your posts, and a &ldquo;posts&rdquo; directory with redirects from the old Tumblr-style post URLs to new Octopress-style URLs<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>,<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>. Neither the &ldquo;_posts&rdquo; nor &ldquo;posts&rdquo; directory spit out by tumblr.rb are under &ldquo;source&rdquo; where Jekyll will look for them. What this means is that without additional effort on your part, Jekyll as invoked by Octopress won&rsquo;t see the files you just imported.</p>
+
+<p>Again: your blog posts go in &ldquo;octopress/source/_posts&rdquo;. The Tumblr migrator will create &ldquo;octopress/posts&rdquo; and &ldquo;octopress/_posts&rdquo;. Just move these two directories under &ldquo;octopress/source&rdquo; once you&rsquo;ve verified they look OK. (NB: the migrator actually dumped all its files under &ldquo;octopress/_posts/tumblr&rdquo;; it&rsquo;s fine to leave them there, so they end up in &ldquo;octopress/source/_posts/tumblr&rdquo;; Octopress doesn&rsquo;t seem to care about the organization of your files inside the source/_posts directory.)</p>
 
 <p>Now, you can tell Octopress to generate the site: &ldquo;rake generate&rdquo;.</p>
 
 <p>If you&rsquo;re reading this at the right point of relative stability, lucky you; you win. I ran into several more issues, due to the fact that Jekyll and Octopress are prerelease open source software intended for an audience of hackers; some assembly definitely required:</p>
 
 <ul>
-<li>At the point I was performing this migration (January 2013), Jekyll was at version 0.12 and the tumblr.rb migrator script was broken in a <a href="https://github.com/mojombo/jekyll/commit/863643c7e8080c73a7968caabfc9c7e9b18c6b95">couple</a> <a href="https://github.com/mojombo/jekyll/commit/fbc9d0c66397234ab85e03a55955602e0ce40356">respects</a> which I submitted patches for.</li>
+<li>At the point I was performing this migration (January 2013), Jekyll was at version 0.12 and the tumblr.rb migrator script was broken in a <a href="https://githubcom/mojombo/jekyll/commit/863643c7e8080c73a7968caabfc9c7e9b18c6b95">couple</a> <a href="https://github.com/mojombo/jekyll/commit/fbc9d0c66397234ab85e03a55955602e0ce40356">respects</a> which I submitted patches for.</li>
 <li>After my patches were merged upstream, I tried running with Jekyll&rsquo;s head version in mid-February, to find that tumblr.rb had been deleted from the Jekyll repository entirely, and moved to a separate <a href="https://github.com/jekyll/jekyll-import">jekyll-import</a> project, which at the time had no documentation and appeared to have little chance of running.</li>
 <li>Meanwhile, using any version of Jekyll newer than 0.12 broke Octopress in a trivial way; the :generate rule in Octopress&rsquo;s Rakefile finishes by invoking Jekyll as <code>system 'jekyll'</code>, with no arguments, and newer versions of Jekyll expect a <code>build</code> argument. Octopress will fix this when Jekyll actually releases a new version (which may have already happened between me finding this and posting this); it makes no sense to fix it sooner.</li>
 </ul>
@@ -501,34 +509,15 @@ OS X 10.6 and subsequently upgraded to 10.7 and then 10.8) never had <code>stand
   </header>
 
 
-  <div class="entry-content"><p>Here&rsquo;s a bonus on top of a bonus: OS X 10.8 (Mountain Lion) adds a really
-useful &ldquo;Wi-Fi&rdquo; scan feature, buried inside a utility I didn&rsquo;t know existed.</p>
+  <div class="entry-content"><p>Here&rsquo;s a bonus on top of a bonus: OS X 10.8 (Mountain Lion) adds a really useful &ldquo;Wi-Fi&rdquo; scan feature, buried inside a utility I didn&rsquo;t know existed.</p>
 
-<p>I wanted a Wi-Fi scan tool to show me a list of nearby wireless networks and
-strengths, so I could avoid interference from existing networks when placing
-and choosing a channel for a new access point, and verify the new access point
-is operating properly. A few years ago I did this with KisMAC, MacStumbler or
-iStumbler, but these utilities seem to have stopped working over time, either
-as a result of newer hardware or newer OSes.</p>
+<p>I wanted a Wi-Fi scan tool to show me a list of nearby wireless networks and strengths, so I could avoid interference from existing networks when placing and choosing a channel for a new access point, and verify the new access point is operating properly. A few years ago I did this with KisMAC, MacStumbler or iStumbler, but these utilities seem to have stopped working over time, either as a result of newer hardware or newer OSes.</p>
 
-<p>Googling for new alternatives to these utilities, I found that <a href="http://osxdaily.com/2012/07/31/wi-%0Afi-scanner-mac-os-x-mountain-lion/">Mountain Lion
-actually has this functionality built in</a>. There&rsquo;s a &ldquo;Wi-Fi Diagnostics&rdquo; app buried
-in /System/Library/CoreServices (where, annoyingly, Spotlight can&rsquo;t find it
-and the Finder by default won&rsquo;t show it); at launch it presents a very
-limited-looking wizard interface, but in the menubar the File:New command and
-command-N keyboard shortcut have been replaced by an unassuming &ldquo;Network
-Utilities&rdquo; command.</p>
+<p>Googling for new alternatives to these utilities, I found that <a href="http://osxdaily.com/2012/07/31/wi-fi-scanner-mac-os-x-mountain-lion/">Mountain Lion actually has this functionality built in</a>. There&rsquo;s a &ldquo;Wi-Fi Diagnostics&rdquo; app buried in /System/Library/CoreServices (where, annoyingly, Spotlight can&rsquo;t find it and the Finder by default won&rsquo;t show it); at launch it presents a very limited-looking wizard interface, but in the menubar the File:New command and command-N keyboard shortcut have been replaced by an unassuming &ldquo;Network Utilities&rdquo; command.</p>
 
-<p>This brings up a &ldquo;Network Utilities&rdquo; window, not to be confused with
-/Applications/Utilities/Network Utility.app, with a bunch of really useful
-utilities (which look like a strict superset of the old Network Utility, have
-a more modern UI and additional functionality, and except for the &ldquo;Wi-Fi Scan&rdquo;
-tab, have no reason to be restricted to Wi-Fi networks).</p>
+<p>This brings up a &ldquo;Network Utilities&rdquo; window, not to be confused with <code>/Applications/Utilities/Network Utility.app</code>, with a bunch of really useful utilities (which look like a strict superset of the old Network Utility, have a more modern UI and additional functionality, and except for the &ldquo;Wi-Fi Scan&rdquo; tab, have no reason to be restricted to Wi-Fi networks).</p>
 
-<p>I only wish this thing were easier to find; it should probably replace the old
-Network Utility app. I don&rsquo;t remember seeing it mentioned in most what&rsquo;s-new-
-and-why-to-upgrade articles about Mountain Lion. For me, it&rsquo;s a pretty nice
-bonus to having upgraded and deserves wider mention.</p>
+<p>I only wish this thing were easier to find; it should probably replace the old <code>Network Utility app</code>. I don&rsquo;t remember seeing it mentioned in most what&rsquo;s-new-and-why-to-upgrade articles about Mountain Lion. For me, it&rsquo;s a pretty nice bonus to having upgraded and deserves wider mention.</p>
 </div>
   
   
@@ -713,61 +702,17 @@ Macbook Air:</p>
   </header>
 
 
-  <div class="entry-content"><p>On a recent trip to Mexico, we stayed in a hotel that charged a significant
-extra fee for fairly slow Internet access. After paying for an access code, we
-could associate one device at a time to the Wi-Fi network; we could use
-multiple devices only by paying for multiple codes (which we didn&rsquo;t want to do
-because for the speed, even paying once was a poor value) or by disconnecting
-the previous device.</p>
+  <div class="entry-content"><p>On a recent trip to Mexico, we stayed in a hotel that charged a significant extra fee for fairly slow Internet access. After paying for an access code, we could associate one device at a time to the Wi-Fi network; we could use multiple devices only by paying for multiple codes (which we didn&rsquo;t want to do because for the speed, even paying once was a poor value) or by disconnecting the previous device.</p>
 
-<p>Of course, I went looking for ways around this. We had at our disposal a Mac
-laptop, two iPads and two iPhones. Mac OS X has <a href="http://support.apple.com/kb/PH6589">built-in Internet connection
-sharing</a>, but it operates only between
-separate network adapters: you can share an Ethernet-connected Internet
-connection over Wi-Fi, or vice versa, but you can&rsquo;t share Wi-Fi over Wi-Fi<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>.
-There&rsquo;s some reason to hope that this would be possible &mdash; it&rsquo;s &ldquo;just&rdquo; a
-software problem<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>; Windows and Linux generally support multiple virtual Wi-Fi
-interfaces from the same physical device, as used by <a href="http://www.connectify.me/hotspot/">Connectify
-Hotspot</a> for Windows or the multi-SSID
-feature in many Linux-based Wi-Fi access points &mdash; but this software feature
-doesn&rsquo;t exist for Mac OS X.</p>
+<p>Of course, I went looking for ways around this. We had at our disposal a Mac laptop, two iPads and two iPhones. Mac OS X has <a href="http://support.apple.com/kb/PH6589">built-in Internet connection sharing</a>, but it operates only between separate network adapters: you can share an Ethernet-connected Internet connection over Wi-Fi, or vice versa, but you can&rsquo;t share Wi-Fi over Wi-Fi<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. There&rsquo;s some reason to hope that this would be possible &mdash; it&rsquo;s &ldquo;just&rdquo; a software problem<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>; Windows and Linux generally support multiple virtual Wi-Fi interfaces from the same physical device, as used by <a href="http://www.connectify.me/hotspot/">Connectify Hotspot</a> for Windows or the multi-SSID feature in many Linux-based Wi-Fi access points &mdash; but this software feature doesn&rsquo;t exist for Mac OS X.</p>
 
-<p>So, no sharing Wi-Fi over Wi-Fi with my Mac laptop, unfortunately. But there&rsquo;s
-another option that works without additional hardware; this is where the
-learning comes in. <strong>First new fact</strong>: you can share an Internet connection
-over Bluetooth. I&rsquo;d thought this was only for sharing a cellular data
-connection from a phone to a computer (under the oxymoronic misnomer of
-&ldquo;wireless tethering&rdquo;), but it turns out to work in the other direction (known
-as &ldquo;reverse tethering&rdquo;). If you pair an iPhone or iPad with a Mac over
-Bluetooth, your Mac will grow a new network adapter called &ldquo;Bluetooth PAN&rdquo;
-(for Personal Area Network); you can then use the normal Sharing preference
-panel to enable Internet Sharing from Wi-Fi to Bluetooth PAN. Bingo.</p>
+<p>So, no sharing Wi-Fi over Wi-Fi with my Mac laptop, unfortunately. But there&rsquo;s another option that works without additional hardware; this is where the learning comes in. <strong>First new fact</strong>: you can share an Internet connection over Bluetooth. I&rsquo;d thought this was only for sharing a cellular data connection from a phone to a computer (under the oxymoronic misnomer of &ldquo;wireless tethering&rdquo;), but it turns out to work in the other direction (known as &ldquo;reverse tethering&rdquo;). If you pair an iPhone or iPad with a Mac over Bluetooth, your Mac will grow a new network adapter called &ldquo;Bluetooth PAN&rdquo; (for Personal Area Network); you can then use the normal Sharing preference panel to enable Internet Sharing from Wi-Fi to Bluetooth PAN. Bingo.</p>
 
-<p>(I can claim only partial success here, but it was good enough for me at the
-time. This technique works fine for iPads, but not iPhones. I don&rsquo;t know why;
-<a href="https://discussions.apple.com/message/20996155#20996155">nobody else seems to know why
-either</a>.)</p>
+<p>(I can claim only partial success here, but it was good enough for me at the time. This technique works fine for iPads, but not iPhones. I don&rsquo;t know why; <a href="https://discussions.apple.com/message/20996155#20996155">nobody else seems to know why either</a>.)</p>
 
-<p>That got us past our trip, and I was happy to have a new tool for my cheap-
-connectivity-while-traveling toolbox. However, when we returned home, I had an
-unpleasant surprise, though it took me a while to connect the dots. My Mac
-laptop was getting really hot when I left it plugged in overnight to charge. I
-eventually realized this was because it wasn&rsquo;t asleep, even with the lid
-closed (and with the lid closed, it generates more heat than it can
-comfortably dissipate, even at idle). This was frustrating because there are
-so many things that can keep a Mac from sleeping; this is where more learning
-comes in. Googling for ways to identify causes of Mac insomnia, I learned of
-the <code>pmset -g log</code> command, which I now highly recommend. It pointed me right
-at the culprit. <strong>Second new fact</strong>: Internet connection sharing prevents the
-Mac from sleeping while plugged in. (This is actually incredibly obvious in
-retrospect; it says so right in the Sharing panel: &ldquo;Computers connected to AC
-power won&rsquo;t sleep while Internet Sharing is turned on.&rdquo; I hadn&rsquo;t read that
-while enabling Internet Sharing because I thought I already knew how to use
-it; by the time it was causing problems, the problems were too disconnected
-from the cause.)</p>
+<p>That got us past our trip, and I was happy to have a new tool for my cheap-connectivity-while-traveling toolbox. However, when we returned home, I had an unpleasant surprise, though it took me a while to connect the dots. My Mac laptop was getting really hot when I left it plugged in overnight to charge. I eventually realized this was because it wasn&rsquo;t asleep, even with the lid closed (and with the lid closed, it generates more heat than it can comfortably dissipate, even at idle). This was frustrating because there are so many things that can keep a Mac from sleeping; this is where more learning comes in. Googling for ways to identify causes of Mac insomnia, I learned of the <code>pmset -g log</code> command, which I now highly recommend. It pointed me right at the culprit. <strong>Second new fact</strong>: Internet connection sharing prevents the Mac from sleeping while plugged in. (This is actually incredibly obvious in retrospect; it says so right in the Sharing panel: &ldquo;Computers connected to AC power won&rsquo;t sleep while Internet Sharing is turned on.&rdquo; I hadn&rsquo;t read that while enabling Internet Sharing because I thought I already knew how to use it; by the time it was causing problems, the problems were too disconnected from the cause.)</p>
 
-<p>In summary: Internet connection sharing is useful, and the Bluetooth PAN
-variant is further useful, but don&rsquo;t leave it on when you&rsquo;re not using it.</p>
+<p>In summary: Internet connection sharing is useful, and the Bluetooth PAN variant is further useful, but don&rsquo;t leave it on when you&rsquo;re not using it.</p>
 <div class="footnotes">
 <hr/>
 <ol>
@@ -815,27 +760,13 @@ variant is further useful, but don&rsquo;t leave it on when you&rsquo;re not usi
   </header>
 
 
-  <div class="entry-content"><p>Here&rsquo;s a useful nugget if you&rsquo;re inclined to poke at computers to see how they
-work: <code>pmset -g log</code>.</p>
+  <div class="entry-content"><p>Here&rsquo;s a useful nugget if you&rsquo;re inclined to poke at computers to see how they work: <code>pmset -g log</code>.</p>
 
-<p>I had a problem where my rMBP would sleep just fine on battery power but <a href="http://blog.metamatt.com/blog/2013/02/13/two-%0Athings-i-didnt-know-about-mac-os-internet-sharing/">not
-when plugged into its charger</a>. Even with the lid closed,
-and even if I explicitly poked the Sleep button first. This meant my chair got
-really warm if I left the computer sitting there plugged in to charge
-overnight. (NB: I did have the slider in energy saver preferences set to
-sleep:never for AC, but that should only affect sleep-after-idle, not lid-
-close or explicit sleep request.)</p>
+<p>I had a problem where my rMBP would sleep just fine on battery power but <a href="http://blog.metamatt.com/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">not when plugged into its charger</a>. Even with the lid closed, and even if I explicitly poked the Sleep button first. This meant my chair got really warm if I left the computer sitting there plugged in to charge overnight. (NB: I did have the slider in energy saver preferences set to sleep:never for AC, but that should only affect sleep-after-idle, not lid-close or explicit sleep request.)</p>
 
-<p>The command <code>pmset -g log</code> helped me learn that this state, where the computer
-is awake with the lid closed and no external display or keyboard is attached,
-is called DarkWake and that InternetSharing was the entity requesting that
-over sleep.</p>
+<p>The command <code>pmset -g log</code> helped me learn that this state, where the computer is awake with the lid closed and no external display or keyboard is attached, is called DarkWake and that InternetSharing was the entity requesting that over sleep.</p>
 
-<p>Now that I know about DarkWake, I&rsquo;m curious what the relationship is between
-it and <a href="http://support.apple.com/kb/ht5394">PowerNap</a>. On this same rMBP, I
-disabled PowerNap because it would occasionally kernel panic when waking from
-sleep; I forget how I decided that was PowerNap but it hasn&rsquo;t happened since
-disabling.</p>
+<p>Now that I know about DarkWake, I&rsquo;m curious what the relationship is between it and <a href="http://support.apple.com/kb/ht5394">PowerNap</a>. On this same rMBP, I disabled PowerNap because it would occasionally kernel panic when waking from sleep; I forget how I decided that was PowerNap but it hasn&rsquo;t happened since disabling.</p>
 </div>
   
   
@@ -873,44 +804,17 @@ disabling.</p>
   </header>
 
 
-  <div class="entry-content"><p>Google Accounts allow you to <a href="http://support.google.com/accounts/bin/answer.py?hl=en&amp;answer=1721977">stay signed into multiple accounts at
-once</a>,
-which is hugely helpful for those of us who have multiple account, but there&rsquo;s
-one thing that&rsquo;s been frustrating me here.</p>
+  <div class="entry-content"><p>Google Accounts allow you to <a href="http://support.google.com/accounts/bin/answer.py?hl=en&amp;answer=1721977">stay signed into multiple accounts at once</a>, which is hugely helpful for those of us who have multiple account, but there&rsquo;s one thing that&rsquo;s been frustrating me here.</p>
 
-<p>I use the browser address bar (relying heavily on its autocomplete feature) to
-do most of my navigation directly from the keyboard. If I want my document
-files in Google Docs, I open a new browser tab from the keyboard shortcut,
-then type &ldquo;docs&rdquo; and by that time, autocomplete has already filled in
-docs.google.com<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>,<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
+<p>I use the browser address bar (relying heavily on its autocomplete feature) to do most of my navigation directly from the keyboard. If I want my document files in Google Docs, I open a new browser tab from the keyboard shortcut, then type &ldquo;docs&rdquo; and by that time, autocomplete has already filled in docs.google.com<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>,<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
 
-<p>However, I have 3 different Google Accounts that I&rsquo;m usually signed into: one
-standard personal account (ending in @gmail.com), one GAFYD<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup> account for my
-personal email<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>, and one GAFYD account for work. If I navigate to
-docs.google.com, Google automatically chooses one of the accounts to redirect
-to, and at different times on different computers I end up with a different
-(seemingly arbitrary) account selected, and if it wasn&rsquo;t the right one, it&rsquo;s 3
-extra clicks in the account switcher to get to the right account.</p>
+<p>However, I have 3 different Google Accounts that I&rsquo;m usually signed into: one standard personal account (ending in @gmail.com), one GAFYD<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup> account for my personal email<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>, and one GAFYD account for work. If I navigate to docs.google.com, Google automatically chooses one of the accounts to redirect to, and at different times on different computers I end up with a different (seemingly arbitrary) account selected, and if it wasn&rsquo;t the right one, it&rsquo;s 3 extra clicks in the account switcher to get to the right account.</p>
 
-<p>What&rsquo;s controlling its choice? It turns out it&rsquo;s the order you sign into the
-accounts. If you look closely at the URLs, either by mousing over the links in
-the account switcher or by looking at the URL you end up at for gmail but not
-for docs<sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup>, you&rsquo;ll see an &ldquo;authuser&rdquo; or &ldquo;u&rdquo; parameter which is a low-valued
-integer. It starts at 0 for the first account you sign into, and counts up
-from there as you sign into additional accounts.</p>
+<p>What&rsquo;s controlling its choice? It turns out it&rsquo;s the order you sign into the accounts. If you look closely at the URLs, either by mousing over the links in the account switcher or by looking at the URL you end up at for gmail but not for docs<sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup>, you&rsquo;ll see an &ldquo;authuser&rdquo; or &ldquo;u&rdquo; parameter which is a low-valued integer. It starts at 0 for the first account you sign into, and counts up from there as you sign into additional accounts.</p>
 
-<p>If you navigate directly to docs.google.com (or mail.google.com, etc), you&rsquo;ll
-get the account currently associated as authuser 0, which is the first account
-you signed into.</p>
+<p>If you navigate directly to docs.google.com (or mail.google.com, etc), you&rsquo;ll get the account currently associated as authuser 0, which is the first account you signed into.</p>
 
-<p>For the GAFYD case, Google lets you <a href="http://support.google.com/a/bin/answer.py?hl=en&amp;answer=53340">set up convenient forwarding
-addresses</a> for
-domains you control, and I&rsquo;ve used this to map mail.mydomain.foo and
-docs.mydomain.foo to redirect automatically to mail.google.com/a/mydomain.foo
-and docs.google.com/a/mydomain.foo. This means that for the two GAFYD domains,
-if I want the mail or docs view associated with that account, I go to
-docs.mydomain.foo, which in turn means that if I navigate to docs.google.com,
-I always want my personal account selected by default.</p>
+<p>For the GAFYD case, Google lets you <a href="http://support.google.com/a/bin/answer.py?hl=en&amp;answer=53340">set up convenient forwarding addresses</a> for domains you control, and I&rsquo;ve used this to map mail.mydomain.foo and docs.mydomain.foo to redirect automatically to mail.google.com/a/mydomain.foo and docs.google.com/a/mydomain.foo. This means that for the two GAFYD domains, if I want the mail or docs view associated with that account, I go to docs.mydomain.foo, which in turn means that if I navigate to docs.google.com, I always want my personal account selected by default.</p>
 
 <p>For me, the solution to get the behavior I wanted boils down to:</p>
 
@@ -921,8 +825,7 @@ I always want my personal account selected by default.</p>
 </ul>
 
 
-<p>Thanks go to <a href="http://www.linkedin.com/pub/ramesh-dharan/1/13b/8a2">Ramesh</a> for
-helping me figure this out.</p>
+<p>Thanks go to <a href="http://www.linkedin.com/pub/ramesh-dharan/1/13b/8a2">Ramesh</a> for helping me figure this out.</p>
 <div class="footnotes">
 <hr/>
 <ol>

@@ -9,8 +9,7 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="On a recent trip to Mexico, we stayed in a hotel that charged a significant
-extra fee for fairly slow Internet access. After paying for an access &hellip;">
+  <meta name="description" content="On a recent trip to Mexico, we stayed in a hotel that charged a significant extra fee for fairly slow Internet access. After paying for an access &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -105,61 +104,17 @@ extra fee for fairly slow Internet access. After paying for an access &hellip;">
   </header>
 
 
-<div class="entry-content"><p>On a recent trip to Mexico, we stayed in a hotel that charged a significant
-extra fee for fairly slow Internet access. After paying for an access code, we
-could associate one device at a time to the Wi-Fi network; we could use
-multiple devices only by paying for multiple codes (which we didn&rsquo;t want to do
-because for the speed, even paying once was a poor value) or by disconnecting
-the previous device.</p>
+<div class="entry-content"><p>On a recent trip to Mexico, we stayed in a hotel that charged a significant extra fee for fairly slow Internet access. After paying for an access code, we could associate one device at a time to the Wi-Fi network; we could use multiple devices only by paying for multiple codes (which we didn&rsquo;t want to do because for the speed, even paying once was a poor value) or by disconnecting the previous device.</p>
 
-<p>Of course, I went looking for ways around this. We had at our disposal a Mac
-laptop, two iPads and two iPhones. Mac OS X has <a href="http://support.apple.com/kb/PH6589">built-in Internet connection
-sharing</a>, but it operates only between
-separate network adapters: you can share an Ethernet-connected Internet
-connection over Wi-Fi, or vice versa, but you can&rsquo;t share Wi-Fi over Wi-Fi<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>.
-There&rsquo;s some reason to hope that this would be possible &mdash; it&rsquo;s &ldquo;just&rdquo; a
-software problem<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>; Windows and Linux generally support multiple virtual Wi-Fi
-interfaces from the same physical device, as used by <a href="http://www.connectify.me/hotspot/">Connectify
-Hotspot</a> for Windows or the multi-SSID
-feature in many Linux-based Wi-Fi access points &mdash; but this software feature
-doesn&rsquo;t exist for Mac OS X.</p>
+<p>Of course, I went looking for ways around this. We had at our disposal a Mac laptop, two iPads and two iPhones. Mac OS X has <a href="http://support.apple.com/kb/PH6589">built-in Internet connection sharing</a>, but it operates only between separate network adapters: you can share an Ethernet-connected Internet connection over Wi-Fi, or vice versa, but you can&rsquo;t share Wi-Fi over Wi-Fi<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. There&rsquo;s some reason to hope that this would be possible &mdash; it&rsquo;s &ldquo;just&rdquo; a software problem<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>; Windows and Linux generally support multiple virtual Wi-Fi interfaces from the same physical device, as used by <a href="http://www.connectify.me/hotspot/">Connectify Hotspot</a> for Windows or the multi-SSID feature in many Linux-based Wi-Fi access points &mdash; but this software feature doesn&rsquo;t exist for Mac OS X.</p>
 
-<p>So, no sharing Wi-Fi over Wi-Fi with my Mac laptop, unfortunately. But there&rsquo;s
-another option that works without additional hardware; this is where the
-learning comes in. <strong>First new fact</strong>: you can share an Internet connection
-over Bluetooth. I&rsquo;d thought this was only for sharing a cellular data
-connection from a phone to a computer (under the oxymoronic misnomer of
-&ldquo;wireless tethering&rdquo;), but it turns out to work in the other direction (known
-as &ldquo;reverse tethering&rdquo;). If you pair an iPhone or iPad with a Mac over
-Bluetooth, your Mac will grow a new network adapter called &ldquo;Bluetooth PAN&rdquo;
-(for Personal Area Network); you can then use the normal Sharing preference
-panel to enable Internet Sharing from Wi-Fi to Bluetooth PAN. Bingo.</p>
+<p>So, no sharing Wi-Fi over Wi-Fi with my Mac laptop, unfortunately. But there&rsquo;s another option that works without additional hardware; this is where the learning comes in. <strong>First new fact</strong>: you can share an Internet connection over Bluetooth. I&rsquo;d thought this was only for sharing a cellular data connection from a phone to a computer (under the oxymoronic misnomer of &ldquo;wireless tethering&rdquo;), but it turns out to work in the other direction (known as &ldquo;reverse tethering&rdquo;). If you pair an iPhone or iPad with a Mac over Bluetooth, your Mac will grow a new network adapter called &ldquo;Bluetooth PAN&rdquo; (for Personal Area Network); you can then use the normal Sharing preference panel to enable Internet Sharing from Wi-Fi to Bluetooth PAN. Bingo.</p>
 
-<p>(I can claim only partial success here, but it was good enough for me at the
-time. This technique works fine for iPads, but not iPhones. I don&rsquo;t know why;
-<a href="https://discussions.apple.com/message/20996155#20996155">nobody else seems to know why
-either</a>.)</p>
+<p>(I can claim only partial success here, but it was good enough for me at the time. This technique works fine for iPads, but not iPhones. I don&rsquo;t know why; <a href="https://discussions.apple.com/message/20996155#20996155">nobody else seems to know why either</a>.)</p>
 
-<p>That got us past our trip, and I was happy to have a new tool for my cheap-
-connectivity-while-traveling toolbox. However, when we returned home, I had an
-unpleasant surprise, though it took me a while to connect the dots. My Mac
-laptop was getting really hot when I left it plugged in overnight to charge. I
-eventually realized this was because it wasn&rsquo;t asleep, even with the lid
-closed (and with the lid closed, it generates more heat than it can
-comfortably dissipate, even at idle). This was frustrating because there are
-so many things that can keep a Mac from sleeping; this is where more learning
-comes in. Googling for ways to identify causes of Mac insomnia, I learned of
-the <code>pmset -g log</code> command, which I now highly recommend. It pointed me right
-at the culprit. <strong>Second new fact</strong>: Internet connection sharing prevents the
-Mac from sleeping while plugged in. (This is actually incredibly obvious in
-retrospect; it says so right in the Sharing panel: &ldquo;Computers connected to AC
-power won&rsquo;t sleep while Internet Sharing is turned on.&rdquo; I hadn&rsquo;t read that
-while enabling Internet Sharing because I thought I already knew how to use
-it; by the time it was causing problems, the problems were too disconnected
-from the cause.)</p>
+<p>That got us past our trip, and I was happy to have a new tool for my cheap-connectivity-while-traveling toolbox. However, when we returned home, I had an unpleasant surprise, though it took me a while to connect the dots. My Mac laptop was getting really hot when I left it plugged in overnight to charge. I eventually realized this was because it wasn&rsquo;t asleep, even with the lid closed (and with the lid closed, it generates more heat than it can comfortably dissipate, even at idle). This was frustrating because there are so many things that can keep a Mac from sleeping; this is where more learning comes in. Googling for ways to identify causes of Mac insomnia, I learned of the <code>pmset -g log</code> command, which I now highly recommend. It pointed me right at the culprit. <strong>Second new fact</strong>: Internet connection sharing prevents the Mac from sleeping while plugged in. (This is actually incredibly obvious in retrospect; it says so right in the Sharing panel: &ldquo;Computers connected to AC power won&rsquo;t sleep while Internet Sharing is turned on.&rdquo; I hadn&rsquo;t read that while enabling Internet Sharing because I thought I already knew how to use it; by the time it was causing problems, the problems were too disconnected from the cause.)</p>
 
-<p>In summary: Internet connection sharing is useful, and the Bluetooth PAN
-variant is further useful, but don&rsquo;t leave it on when you&rsquo;re not using it.</p>
+<p>In summary: Internet connection sharing is useful, and the Bluetooth PAN variant is further useful, but don&rsquo;t leave it on when you&rsquo;re not using it.</p>
 <div class="footnotes">
 <hr/>
 <ol>
