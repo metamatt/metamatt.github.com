@@ -4,6 +4,10 @@ title: "Apple is getting really aggressive about this sleepdelay thing"
 date: 2013-03-20 09:01
 comments: true
 categories: 
+tags:
+- apple
+- power
+- pmset
 ---
 Last night I installed the OS X 10.8.3 update on my laptop (updating from 10.8.2). This morning,
 upon plugging my laptop into the external Thunderbolt display as I always do, and it didn't wake
