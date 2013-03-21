@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Apple is getting really aggressive about this sleepdelay thing - Step 2 is the hard part.</title>
+  <meta name="author" content="Matt Ginzton">
+
+  
+  <meta name="description" content="Last night I installed the OS X 10.8.3 update on my laptop (updating from 10.8.2). This morning,
+upon plugging my laptop into the external &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.metamatt.com/blog/2013/03/20/apple-is-getting-really-aggressive-about-this-sleepdelay-thing/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Step 2 is the hard part." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19563060-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Step 2 is the hard part.</a></h1>
+  
+    <h2>Matt Ginzton writes here.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.metamatt.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Apple Is Getting Really Aggressive About This Sleepdelay Thing</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-20T09:01:00-07:00" pubdate data-updated="true">Mar 20<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Last night I installed the OS X 10.8.3 update on my laptop (updating from 10.8.2). This morning,
+upon plugging my laptop into the external Thunderbolt display as I always do, and it didn&rsquo;t wake
+up when I opened the lid, nor when I started tapping on the external keyboard.</p>
+
+<p><a href="http://blog.metamatt.com/blog/2013/02/21/speedy-resume/">As I noted before</a>, a retina MBP
+(or MacBook Air) that doesn&rsquo;t immediately wake when you open the lid is annoying not only because
+it slows you down, but because Apple&rsquo;s removed all the battery indicator buttons, and there&rsquo;s
+absolutely no sign of life from a powered off (or hibernating) machine until you press the power
+button.</p>
+
+<p>So I woke it up with the power button on the builtin keyboard, and watched it boot to the preboot
+login screen associated with an encrypted boot drive<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>, and was further annoyed that at this
+screen it was still ignoring the external keyboard plugged into the Thunderbolt display. Having
+to use the builtin keyboard for a docked laptop is suboptimal. Anyway.</p>
+
+<p>When it finished booting, I fired up pmset to ask it what&rsquo;s going on, first on AC power:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>magi@duality ~&gt; pmset -g
+</span><span class='line'>Active Profiles:
+</span><span class='line'>Battery Power     -1
+</span><span class='line'>AC Power          -1*
+</span><span class='line'>Currently in use:
+</span><span class='line'> standbydelay         4200
+</span><span class='line'> standby              0
+</span><span class='line'> womp                 1
+</span><span class='line'> halfdim              1
+</span><span class='line'> hibernatefile        /var/vm/sleepimage
+</span><span class='line'> darkwakes            0
+</span><span class='line'> gpuswitch            2
+</span><span class='line'> networkoversleep     0
+</span><span class='line'> disksleep            10
+</span><span class='line'> sleep                0
+</span><span class='line'> autopoweroffdelay    14400
+</span><span class='line'> hibernatemode        3
+</span><span class='line'> autopoweroff         1
+</span><span class='line'> ttyskeepawake        1
+</span><span class='line'> displaysleep         10
+</span><span class='line'> acwake               0
+</span><span class='line'> lidwake              1</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And then again<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup> on battery:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>magi@duality ~&gt; pmset -g
+</span><span class='line'>Active Profiles:
+</span><span class='line'>Battery Power     -1*
+</span><span class='line'>AC Power          -1
+</span><span class='line'>Currently in use:
+</span><span class='line'> standbydelay         4200
+</span><span class='line'> standby              1
+</span><span class='line'> halfdim              1
+</span><span class='line'> hibernatefile        /var/vm/sleepimage
+</span><span class='line'> darkwakes            0
+</span><span class='line'> gpuswitch            2
+</span><span class='line'> disksleep            10
+</span><span class='line'> sleep                10
+</span><span class='line'> autopoweroffdelay    14400
+</span><span class='line'> hibernatemode        3
+</span><span class='line'> autopoweroff         1
+</span><span class='line'> ttyskeepawake        1
+</span><span class='line'> displaysleep         2
+</span><span class='line'> acwake               0
+</span><span class='line'> lidwake              1</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As <a href="http://blog.metamatt.com/blog/2013/02/21/speedy-resume/">posted before</a>, I&rsquo;d previously changed <code>standbydelay</code>
+to 43200 seconds on battery power, and disabled <code>standby</code> entirely on AC power. Apparently the 10.8.3
+upgrade reverted the former change to Apple&rsquo;s new default of 4200 seconds, though it left the latter
+change alone.</p>
+
+<p>Note that&rsquo;s not quite consistent with my observation that my rMBP (bought in 2012 and shipped with
+OS X 10.8) had <code>standby</code> enabled by default, while my previous MBP (bought in 2010 and shipped with
+OS X 10.6 and subsequently upgraded to 10.7 and then 10.8) never had <code>standby</code> enabled at all.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>The FileVault preboot login screen also annoys me because it&rsquo;s got a pretty poor keyboard driver, and if I type my password at natural speed, it reproducibly detects one keystroke more than I intended to make. The same sequence of keystrokes is interpreted correctly by the real OS X keyboard stack. I reported this bug to Apple and they said they know and don&rsquo;t care.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>As an aside: anyone know how to get pmset to report the profile that&rsquo;s not active? <code>pmset -g</code> reports all settings for battery when on batter, and all settings for charger/AC when plugged into AC, and I have found no way to get all settings for both profiles short of running pmset twice, and physically plugging or unplugging the power connector between runs. Note that the set mode of pmset takes an optional <code>-a</code>/<code>-b</code>/<code>-c</code> argument to specify whether to change the values for battery, charger, or both profiles, but those aren&rsquo;t honored in conjunction with <code>-g</code>.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Matt Ginzton</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-20T09:01:00-07:00" pubdate data-updated="true">Mar 20<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.metamatt.com/blog/2013/03/20/apple-is-getting-really-aggressive-about-this-sleepdelay-thing/" data-via="metamatt" data-counturl="http://blog.metamatt.com/blog/2013/03/20/apple-is-getting-really-aggressive-about-this-sleepdelay-thing/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/" title="Previous Post: From Tumblr to Octopress, part 3: footnotes">&laquo; From Tumblr to Octopress, part 3: footnotes</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/03/20/apple-is-getting-really-aggressive-about-this-sleepdelay-thing/">Apple is getting really aggressive about this sleepdelay thing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/">From Tumblr to Octopress, part 3: footnotes</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/">From Tumblr to Octopress, part 2: how</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-1-why/">From Tumblr to Octopress, part 1: why</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/metamatt">@metamatt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'metamatt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("metamatt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/metamatt" class="twitter-follow-button" data-show-count="false">Follow @metamatt</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117348958487049022391?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Matt Ginzton -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'metamatt';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.metamatt.com/blog/2013/03/20/apple-is-getting-really-aggressive-about-this-sleepdelay-thing/';
+        var disqus_url = 'http://blog.metamatt.com/blog/2013/03/20/apple-is-getting-really-aggressive-about-this-sleepdelay-thing/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

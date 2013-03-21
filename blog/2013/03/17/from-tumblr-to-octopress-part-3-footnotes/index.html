@@ -95,7 +95,7 @@
   
 
 
-<time datetime="2013-03-17T01:42:00-04:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
+<time datetime="2013-03-17T01:42:00-07:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -112,9 +112,27 @@
 
 <p>So I had to go edit all the posts in which I used footnotes, and manually redo the footnote links using PHP Markdown Extra syntax.</p>
 
-<p>Second: Having done that and told Jekyll to regenerate the blog, I found myself looking at a bunch of raw unconverted PHP Markdown Extra footnote tags. That&rsquo;s because Jekyll&rsquo;s markdown processing is done by RDiscount, and the version of RDiscount specified by Octopress&rsquo;s Gemfile (1.6.8) does not support footnotes at all; footnotes using PHP Markdown Extra syntax were added as a feature of RDiscount 2.0.7.</p>
+<p>Second: Having done that and told Jekyll to regenerate the blog, I found myself looking at a bunch of raw unconverted PHP Markdown Extra footnote tags. That&rsquo;s because Jekyll&rsquo;s markdown processing is done by RDiscount, and the version of RDiscount specified by Octopress&rsquo;s Gemfile (1.6.8) does not support footnotes at all; footnotes using PHP Markdown Extra syntax were added as a feature of RDiscount 2.0.7, as an optional extension named <code>footnotes</code>.</p>
 
-<p>So I had to edit the Gemfile to specify RDiscount 2.0.7.</p>
+<p>So I had to edit the Gemfile to specify RDiscount 2.0.7, and edit _config.yml to enable the footnotes extension. These changes look like:</p>
+
+<p><code>Gemfile</code>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-  gem 'rdiscount', '~&gt; 1.6.8'
+</span><span class='line'>+  gem 'rdiscount', '~&gt; 2.0.7'</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>_config.yml</code>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> markdown: rdiscount
+</span><span class='line'>+rdiscount:
+</span><span class='line'>+  extensions: [ footnotes ]</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Third: Having done that and told Jekyll to regenerate the blog, some posts looked fine, but others had chunks of footnote definition content floating near the end of the post body but before the footnotes, and completely out of order. Some trial and error led me to deduce that RDiscount 2.0.7 does not actually honor the documented PHP Markdown Extra syntax, which allows you to hard-wrap the footnotes or even place the definition offset from the footnote number<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>; RDiscount is happy only if the footnote number and entire body are on one logical line with no hard line breaks. Since I&rsquo;m doing all this posting from a colocated Linux VM on which I don&rsquo;t run X, and thus use text editors in old-school terminal windows, I tend to hard-break my posts (and in fact, the posts I imported from Tumblr tended to be hard-wrapped at 76 columns by something somewhere along the write/post/import pipeline). RDiscount doesn&rsquo;t play well with these hard breaks.</p>
 
@@ -124,6 +142,7 @@
 
 <ul>
 <li>Update to RDiscount 2.0.7</li>
+<li>Enable RDiscount&rsquo;s footnotes extension</li>
 <li>Use the footnote syntax that RDiscount actually supports, which is like PHP Markdown Extra except each footnote definition must stay on one line without hard line breaks</li>
 <li>If importing your blog from a previous home using a script like tumblr.rb, verify that the conversion actually generates footnote markup</li>
 </ul>
@@ -164,7 +183,7 @@
   
 
 
-<time datetime="2013-03-17T01:42:00-04:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
+<time datetime="2013-03-17T01:42:00-07:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
       
 
 
@@ -183,6 +202,8 @@
       
         <a class="basic-alignment left" href="/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/" title="Previous Post: From Tumblr to Octopress, part 2: how">&laquo; From Tumblr to Octopress, part 2: how</a>
       
+      
+        <a class="basic-alignment right" href="/blog/2013/03/20/apple-is-getting-really-aggressive-about-this-sleepdelay-thing/" title="Next Post: Apple is getting really aggressive about this sleepdelay thing">Apple is getting really aggressive about this sleepdelay thing &raquo;</a>
       
     </p>
   </footer>
@@ -203,6 +224,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/20/apple-is-getting-really-aggressive-about-this-sleepdelay-thing/">Apple is getting really aggressive about this sleepdelay thing</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/">From Tumblr to Octopress, part 3: footnotes</a>
       </li>
     
@@ -216,10 +241,6 @@
     
       <li class="post">
         <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
       </li>
     
   </ul>

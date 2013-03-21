@@ -9,10 +9,8 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="Google recently announced that after January 2013, they&rsquo;ll be deprecating EAS
-access to
-Gmail (and
-calendar, and address book) for free &hellip;">
+  <meta name="description" content="The SSD in Vanessa&rsquo;s iMac died and needed to be replaced. In theory, this is
+pretty simple since we have backups — replace the faulty hardware &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +83,76 @@ calendar, and address book) for free &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/01/23/restore-from-backup/">Restore From Backup</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-23T00:00:00-08:00" pubdate data-updated="true">Jan 23<span>rd</span>, 2013</time>
+        
+         | <a href="/blog/2013/01/23/restore-from-backup/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>The SSD in Vanessa&rsquo;s iMac died and needed to be replaced. In theory, this is
+pretty simple since we have backups — replace the faulty hardware, restore the
+backup, and get on with life.</p>
+
+<p>In reality, it&rsquo;s a little more complicated. I suppose these are small
+complaints since in the big picture, she didn&rsquo;t lose any data. Still.</p>
+
+<p>The way I carried out the restore was to</p>
+
+<ul>
+<li>Attach the replacement SSD in an external USB enclosure (the &ldquo;drive toaster&rdquo;)</li>
+<li>Boot off the recovery partition of the failing SSD, which still worked well enough for this purpose (otherwise I would have had to make a bootable USB stick or DVD)</li>
+<li>Invoke restore from Time Machine onto the new drive</li>
+<li>Power down, open the computer, and install the new SSD in place of the old one. (This is the hard part on a recent iMac, involving taking the screen off with suction cups, and so on.)</li>
+</ul>
+
+
+<p>And we&rsquo;re done, right? Not quite. Even after the Time Machine restore, a bunch
+of things were wonky:</p>
+
+<ul>
+<li>There&rsquo;s no recovery partition on the new drive. You&rsquo;d think Time Machine would recreate that, too, but it doesn&rsquo;t. Internet wisdom says all you need to do is reinstall the current version of Mac OS X over itself and it will automatically recreate the recovery partition; I tried it and that wasn&rsquo;t the case. What this means is the next failure will be harder to deal with because I&rsquo;ll need alternate boot media; the manual means of creating the recovery partition at this point seem just as hard as dealing with that problem when it arises, so I&rsquo;m ignoring it for now.</li>
+<li>Legitimate licensed Adobe CreativeSuite apps had their copy protection crap out, and refused to run with scary messages from the licensing subsystem using the word &ldquo;catastrophic&rdquo;. I called Adobe tech support, and they took 20 minutes to tell me to uninstall and reinstall the apps, which took another 20 minutes but worked.</li>
+<li>CrashPlan backups weren&rsquo;t running because their software uses Java and Mac OS X ships without Java until you launch an interactive Java app at which point you&rsquo;re prompted whether you want to automatically install a Java runtime.</li>
+<li>Time Machine backups weren&rsquo;t running because who knows why, until I went into System Preferences and manually prodded them to run once, after which they kept running fine automatically.</li>
+<li>Mac App Store wasn&rsquo;t automatically updating software until I launched it and manually signed in.</li>
+</ul>
+
+
+<p>These problems could have been caused by the hard drive replacement, the
+restore from backup, or the OS reinstall; I don&rsquo;t really know which. I just
+know there was a lot more to getting a working system back than letting Time
+Machine restore the files.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/01/23/google-account-access-from-an-iphone/">Google Account Access From an iPhone</a></h1>
     
     
@@ -101,7 +169,7 @@ calendar, and address book) for free &hellip;">
   
 
 
-<time datetime="2013-01-23T00:00:00-05:00" pubdate data-updated="true">Jan 23<span>rd</span>, 2013</time>
+<time datetime="2013-01-23T00:00:00-08:00" pubdate data-updated="true">Jan 23<span>rd</span>, 2013</time>
         
          | <a href="/blog/2013/01/23/google-account-access-from-an-iphone/#disqus_thread">Comments</a>
         
@@ -227,7 +295,7 @@ protocols, and if push were made to work — but it&rsquo;s not the case now.</p
   
 
 
-<time datetime="2013-01-09T00:00:00-05:00" pubdate data-updated="true">Jan 9<span>th</span>, 2013</time>
+<time datetime="2013-01-09T00:00:00-08:00" pubdate data-updated="true">Jan 9<span>th</span>, 2013</time>
         
          | <a href="/blog/2013/01/09/previewing-markdown-files-from-the-terminal/#disqus_thread">Comments</a>
         
@@ -307,7 +375,7 @@ Mac OS X), so that&rsquo;s what I&rsquo;ll use.</p>
   
 
 
-<time datetime="2012-12-27T00:00:00-05:00" pubdate data-updated="true">Dec 27<span>th</span>, 2012</time>
+<time datetime="2012-12-27T00:00:00-08:00" pubdate data-updated="true">Dec 27<span>th</span>, 2012</time>
         
          | <a href="/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard/#disqus_thread">Comments</a>
         
@@ -393,7 +461,7 @@ Bluetooth keyboards by default with all their desktop machines for years now.</p
   
 
 
-<time datetime="2012-11-28T00:00:00-05:00" pubdate data-updated="true">Nov 28<span>th</span>, 2012</time>
+<time datetime="2012-11-28T00:00:00-08:00" pubdate data-updated="true">Nov 28<span>th</span>, 2012</time>
         
          | <a href="/blog/2012/11/28/visiting-ireland-with-baby-dominic/#disqus_thread">Comments</a>
         
@@ -500,7 +568,7 @@ pictures</a>.</p>
   
 
 
-<time datetime="2012-11-13T00:00:00-05:00" pubdate data-updated="true">Nov 13<span>th</span>, 2012</time>
+<time datetime="2012-11-13T00:00:00-08:00" pubdate data-updated="true">Nov 13<span>th</span>, 2012</time>
         
          | <a href="/blog/2012/11/13/the-effect-of-time-shifting-electrical-usage-on-nem-billing/#disqus_thread">Comments</a>
         
@@ -623,7 +691,7 @@ the array is underperforming.</p>
   
 
 
-<time datetime="2012-11-11T00:00:00-05:00" pubdate data-updated="true">Nov 11<span>th</span>, 2012</time>
+<time datetime="2012-11-11T00:00:00-08:00" pubdate data-updated="true">Nov 11<span>th</span>, 2012</time>
         
          | <a href="/blog/2012/11/11/e-1-vs-e-6-for-residential-solar-customers/#disqus_thread">Comments</a>
         
@@ -710,7 +778,7 @@ confirmation of that on PG&amp;E&rsquo;s website today, though.</p>
   
 
 
-<time datetime="2012-11-09T00:00:00-05:00" pubdate data-updated="true">Nov 9<span>th</span>, 2012</time>
+<time datetime="2012-11-09T00:00:00-08:00" pubdate data-updated="true">Nov 9<span>th</span>, 2012</time>
         
          | <a href="/blog/2012/11/09/one-year-of-solar-power/#disqus_thread">Comments</a>
         
@@ -976,7 +1044,7 @@ calculation.</p>
   
 
 
-<time datetime="2012-11-07T00:00:00-05:00" pubdate data-updated="true">Nov 7<span>th</span>, 2012</time>
+<time datetime="2012-11-07T00:00:00-08:00" pubdate data-updated="true">Nov 7<span>th</span>, 2012</time>
         
          | <a href="/blog/2012/11/07/one-year-of-cellular-data/#disqus_thread">Comments</a>
         
@@ -1054,7 +1122,7 @@ definition of fair.</p>
   
 
 
-<time datetime="2012-11-06T00:00:00-05:00" pubdate data-updated="true">Nov 6<span>th</span>, 2012</time>
+<time datetime="2012-11-06T00:00:00-08:00" pubdate data-updated="true">Nov 6<span>th</span>, 2012</time>
         
          | <a href="/blog/2012/11/06/oauth-and-localization-fixes-for-palm-evernote-importer/#disqus_thread">Comments</a>
         
@@ -1104,81 +1172,6 @@ importer/)</a>.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/29/platform-preferences-and-rolling-with-punches/">Platform Preferences and Rolling With Punches</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-29T00:00:00-04:00" pubdate data-updated="true">Oct 29<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/10/29/platform-preferences-and-rolling-with-punches/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>When I worked on my high school paper, I spent many hours working on the
-newsroom Macs, but I had a Windows machine at home, and I was pretty
-comfortable going back and forth. I noticed a few people who had more trouble:
-Windows users who would swear a Mac would crash as soon as they touched it,
-and symmetrically, Mac users who if using a Windows machine would crash it
-right away.</p>
-
-<p>This was in the bad old days of Windows 3.1 and System 7, before MMUs and
-memory protection, and crashing neither OS was particularly hard or uncommon.
-Still, there seemed to be something to this cross-platform-and-crash
-phenomenon. A friend and I came up with a half-serious theory that these
-crashes had to do with natural rhythms of human-user activity — mouse and
-keyboard input would arrive and trigger interrupts and Mac OS and Windows
-might have different preferences for the intervals between these interrupts
-where certain rhythms would trigger race conditions just so, and kaboom, while
-other rhythms would dance around the same bugs without triggering them. And,
-the theory went, people would subconsciously learn what sequences of inputs
-would crash their computer, learn to avoid those patterns, and compute along
-happily on whichever platform they&rsquo;d learned to get along with: then upon
-trying the other platform, kaboom again.</p>
-
-<p>It was with this in mind that I read <a href="http://verynicewebsite.net/2012/10/surface-impressions/">John Moltz&rsquo;s impressions of Microsoft
-Surface</a>. He&rsquo;s
-generally pretty fair about giving it a chance, but then he dings it for
-screen-rotation flakiness:</p>
-
-<blockquote><p>Once when I set it down the screen orientation was upside down and it didn’t
-seem to realize it. I had to pick it up and turn it over and then back again
-to get it the right way.</p></blockquote>
-
-<p>I&rsquo;m sure that happened, but hey, every Apple device with automatic rotation
-(iPhone, iPod Touch, iPad) I&rsquo;ve ever owned occasionally does that too. Come to
-think of it, so do the various digital cameras I&rsquo;ve owned (from Canon, Nikon
-and Panasonic). I can&rsquo;t think of anything that has a similar feature that I
-haven&rsquo;t seen flake out that way.</p>
-
-<p>But maybe if I could just learn to <a href="https://www.google.com/search?q=holding+it+wrong">hold it
-right</a>…</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -1196,6 +1189,10 @@ right</a>…</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/20/apple-is-getting-really-aggressive-about-this-sleepdelay-thing/">Apple is getting really aggressive about this sleepdelay thing</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/">From Tumblr to Octopress, part 3: footnotes</a>
       </li>
     
@@ -1209,10 +1206,6 @@ right</a>…</p>
     
       <li class="post">
         <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
       </li>
     
   </ul>

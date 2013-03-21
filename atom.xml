@@ -4,7 +4,7 @@
   <title><![CDATA[Step 2 is the hard part.]]></title>
   <link href="http://blog.metamatt.com/atom.xml" rel="self"/>
   <link href="http://blog.metamatt.com/"/>
-  <updated>2013-03-17T01:55:15-04:00</updated>
+  <updated>2013-03-20T11:28:15-07:00</updated>
   <id>http://blog.metamatt.com/</id>
   <author>
     <name><![CDATA[Matt Ginzton]]></name>
@@ -14,9 +14,142 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Apple is getting really aggressive about this sleepdelay thing]]></title>
+    <link href="http://blog.metamatt.com/blog/2013/03/20/apple-is-getting-really-aggressive-about-this-sleepdelay-thing/"/>
+    <updated>2013-03-20T09:01:00-07:00</updated>
+    <id>http://blog.metamatt.com/blog/2013/03/20/apple-is-getting-really-aggressive-about-this-sleepdelay-thing</id>
+    <content type="html"><![CDATA[<p>Last night I installed the OS X 10.8.3 update on my laptop (updating from 10.8.2). This morning,
+upon plugging my laptop into the external Thunderbolt display as I always do, and it didn&rsquo;t wake
+up when I opened the lid, nor when I started tapping on the external keyboard.</p>
+
+<p><a href="http://blog.metamatt.com/blog/2013/02/21/speedy-resume/">As I noted before</a>, a retina MBP
+(or MacBook Air) that doesn&rsquo;t immediately wake when you open the lid is annoying not only because
+it slows you down, but because Apple&rsquo;s removed all the battery indicator buttons, and there&rsquo;s
+absolutely no sign of life from a powered off (or hibernating) machine until you press the power
+button.</p>
+
+<p>So I woke it up with the power button on the builtin keyboard, and watched it boot to the preboot
+login screen associated with an encrypted boot drive<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>, and was further annoyed that at this
+screen it was still ignoring the external keyboard plugged into the Thunderbolt display. Having
+to use the builtin keyboard for a docked laptop is suboptimal. Anyway.</p>
+
+<p>When it finished booting, I fired up pmset to ask it what&rsquo;s going on, first on AC power:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>magi@duality ~&gt; pmset -g
+</span><span class='line'>Active Profiles:
+</span><span class='line'>Battery Power     -1
+</span><span class='line'>AC Power          -1*
+</span><span class='line'>Currently in use:
+</span><span class='line'> standbydelay         4200
+</span><span class='line'> standby              0
+</span><span class='line'> womp                 1
+</span><span class='line'> halfdim              1
+</span><span class='line'> hibernatefile        /var/vm/sleepimage
+</span><span class='line'> darkwakes            0
+</span><span class='line'> gpuswitch            2
+</span><span class='line'> networkoversleep     0
+</span><span class='line'> disksleep            10
+</span><span class='line'> sleep                0
+</span><span class='line'> autopoweroffdelay    14400
+</span><span class='line'> hibernatemode        3
+</span><span class='line'> autopoweroff         1
+</span><span class='line'> ttyskeepawake        1
+</span><span class='line'> displaysleep         10
+</span><span class='line'> acwake               0
+</span><span class='line'> lidwake              1</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And then again<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup> on battery:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>magi@duality ~&gt; pmset -g
+</span><span class='line'>Active Profiles:
+</span><span class='line'>Battery Power     -1*
+</span><span class='line'>AC Power          -1
+</span><span class='line'>Currently in use:
+</span><span class='line'> standbydelay         4200
+</span><span class='line'> standby              1
+</span><span class='line'> halfdim              1
+</span><span class='line'> hibernatefile        /var/vm/sleepimage
+</span><span class='line'> darkwakes            0
+</span><span class='line'> gpuswitch            2
+</span><span class='line'> disksleep            10
+</span><span class='line'> sleep                10
+</span><span class='line'> autopoweroffdelay    14400
+</span><span class='line'> hibernatemode        3
+</span><span class='line'> autopoweroff         1
+</span><span class='line'> ttyskeepawake        1
+</span><span class='line'> displaysleep         2
+</span><span class='line'> acwake               0
+</span><span class='line'> lidwake              1</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As <a href="http://blog.metamatt.com/blog/2013/02/21/speedy-resume/">posted before</a>, I&rsquo;d previously changed <code>standbydelay</code>
+to 43200 seconds on battery power, and disabled <code>standby</code> entirely on AC power. Apparently the 10.8.3
+upgrade reverted the former change to Apple&rsquo;s new default of 4200 seconds, though it left the latter
+change alone.</p>
+
+<p>Note that&rsquo;s not quite consistent with my observation that my rMBP (bought in 2012 and shipped with
+OS X 10.8) had <code>standby</code> enabled by default, while my previous MBP (bought in 2010 and shipped with
+OS X 10.6 and subsequently upgraded to 10.7 and then 10.8) never had <code>standby</code> enabled at all.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>The FileVault preboot login screen also annoys me because it&rsquo;s got a pretty poor keyboard driver, and if I type my password at natural speed, it reproducibly detects one keystroke more than I intended to make. The same sequence of keystrokes is interpreted correctly by the real OS X keyboard stack. I reported this bug to Apple and they said they know and don&rsquo;t care.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>As an aside: anyone know how to get pmset to report the profile that&rsquo;s not active? <code>pmset -g</code> reports all settings for battery when on batter, and all settings for charger/AC when plugged into AC, and I have found no way to get all settings for both profiles short of running pmset twice, and physically plugging or unplugging the power connector between runs. Note that the set mode of pmset takes an optional <code>-a</code>/<code>-b</code>/<code>-c</code> argument to specify whether to change the values for battery, charger, or both profiles, but those aren&rsquo;t honored in conjunction with <code>-g</code>.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[From Tumblr to Octopress, part 3: footnotes]]></title>
     <link href="http://blog.metamatt.com/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/"/>
-    <updated>2013-03-17T01:42:00-04:00</updated>
+    <updated>2013-03-17T01:42:00-07:00</updated>
     <id>http://blog.metamatt.com/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes</id>
     <content type="html"><![CDATA[<p>Once I got Jekyll and Octopress to import my blog from Tumblr and generate it in its new format, almost everything was formatted correctly, with the marked exception of footnotes. Like a certain furious Canadian<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>, I&rsquo;ve become a fan of footnotes for adding detail without littering my posts with parenthetical expressions. In the migrated posts, the footnotes were there at the bottom, but the links to them were all wrong — full-sized unlinked numbers, instead of superscripted hyperlinks.</p>
 
@@ -26,9 +159,27 @@
 
 <p>So I had to go edit all the posts in which I used footnotes, and manually redo the footnote links using PHP Markdown Extra syntax.</p>
 
-<p>Second: Having done that and told Jekyll to regenerate the blog, I found myself looking at a bunch of raw unconverted PHP Markdown Extra footnote tags. That&rsquo;s because Jekyll&rsquo;s markdown processing is done by RDiscount, and the version of RDiscount specified by Octopress&rsquo;s Gemfile (1.6.8) does not support footnotes at all; footnotes using PHP Markdown Extra syntax were added as a feature of RDiscount 2.0.7.</p>
+<p>Second: Having done that and told Jekyll to regenerate the blog, I found myself looking at a bunch of raw unconverted PHP Markdown Extra footnote tags. That&rsquo;s because Jekyll&rsquo;s markdown processing is done by RDiscount, and the version of RDiscount specified by Octopress&rsquo;s Gemfile (1.6.8) does not support footnotes at all; footnotes using PHP Markdown Extra syntax were added as a feature of RDiscount 2.0.7, as an optional extension named <code>footnotes</code>.</p>
 
-<p>So I had to edit the Gemfile to specify RDiscount 2.0.7.</p>
+<p>So I had to edit the Gemfile to specify RDiscount 2.0.7, and edit _config.yml to enable the footnotes extension. These changes look like:</p>
+
+<p><code>Gemfile</code>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-  gem 'rdiscount', '~&gt; 1.6.8'
+</span><span class='line'>+  gem 'rdiscount', '~&gt; 2.0.7'</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>_config.yml</code>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> markdown: rdiscount
+</span><span class='line'>+rdiscount:
+</span><span class='line'>+  extensions: [ footnotes ]</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Third: Having done that and told Jekyll to regenerate the blog, some posts looked fine, but others had chunks of footnote definition content floating near the end of the post body but before the footnotes, and completely out of order. Some trial and error led me to deduce that RDiscount 2.0.7 does not actually honor the documented PHP Markdown Extra syntax, which allows you to hard-wrap the footnotes or even place the definition offset from the footnote number<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>; RDiscount is happy only if the footnote number and entire body are on one logical line with no hard line breaks. Since I&rsquo;m doing all this posting from a colocated Linux VM on which I don&rsquo;t run X, and thus use text editors in old-school terminal windows, I tend to hard-break my posts (and in fact, the posts I imported from Tumblr tended to be hard-wrapped at 76 columns by something somewhere along the write/post/import pipeline). RDiscount doesn&rsquo;t play well with these hard breaks.</p>
 
@@ -38,6 +189,7 @@
 
 <ul>
 <li>Update to RDiscount 2.0.7</li>
+<li>Enable RDiscount&rsquo;s footnotes extension</li>
 <li>Use the footnote syntax that RDiscount actually supports, which is like PHP Markdown Extra except each footnote definition must stay on one line without hard line breaks</li>
 <li>If importing your blog from a previous home using a script like tumblr.rb, verify that the conversion actually generates footnote markup</li>
 </ul>
@@ -62,7 +214,7 @@
   <entry>
     <title type="html"><![CDATA[From Tumblr to Octopress, part 2: how]]></title>
     <link href="http://blog.metamatt.com/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/"/>
-    <updated>2013-03-17T01:40:00-04:00</updated>
+    <updated>2013-03-17T01:40:00-07:00</updated>
     <id>http://blog.metamatt.com/blog/2013/03/17/from-tumblr-to-octopress-part-2-how</id>
     <content type="html"><![CDATA[<p>Having decided to move this blog from Tumblr to Octopress, there remained the matter of migrating it<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>.</p>
 
@@ -112,7 +264,7 @@
   <entry>
     <title type="html"><![CDATA[From Tumblr to Octopress, part 1: why]]></title>
     <link href="http://blog.metamatt.com/blog/2013/03/17/from-tumblr-to-octopress-part-1-why/"/>
-    <updated>2013-03-17T01:37:00-04:00</updated>
+    <updated>2013-03-17T01:37:00-07:00</updated>
     <id>http://blog.metamatt.com/blog/2013/03/17/from-tumblr-to-octopress-part-1-why</id>
     <content type="html"><![CDATA[<p>When I first started this blog, I set it up at Tumblr so I wouldn&rsquo;t have to think about hosting it and could concentrate on writing.</p>
 
@@ -141,7 +293,7 @@
   <entry>
     <title type="html"><![CDATA[OS X has a builtin Wi-Fi network scanner]]></title>
     <link href="http://blog.metamatt.com/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/"/>
-    <updated>2013-02-25T00:00:00-05:00</updated>
+    <updated>2013-02-25T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner</id>
     <content type="html"><![CDATA[<p>Here&rsquo;s a bonus on top of a bonus: OS X 10.8 (Mountain Lion) adds a really
 useful &ldquo;Wi-Fi&rdquo; scan feature, buried inside a utility I didn&rsquo;t know existed.</p>
@@ -177,7 +329,7 @@ bonus to having upgraded and deserves wider mention.</p>
   <entry>
     <title type="html"><![CDATA[A waterproof tablet! A step in in the right direction]]></title>
     <link href="http://blog.metamatt.com/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/"/>
-    <updated>2013-02-25T00:00:00-05:00</updated>
+    <updated>2013-02-25T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction</id>
     <content type="html"><![CDATA[<p>In <a href="http://arstechnica.com/gadgets/2013/02/sony-unveils-thinnest-10-1-tablet-ever-the-xperia-tablet-z/">this announcement of a new Sony tablet for Android</a>, the following bit stood out to me:</p>
 
@@ -197,7 +349,7 @@ to phones.</p>
   <entry>
     <title type="html"><![CDATA[Speedy resume]]></title>
     <link href="http://blog.metamatt.com/blog/2013/02/21/speedy-resume/"/>
-    <updated>2013-02-21T00:00:00-05:00</updated>
+    <updated>2013-02-21T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2013/02/21/speedy-resume</id>
     <content type="html"><![CDATA[<p>My initial reason for switching from Windows laptops to Mac laptops 7 years
 ago — which has remained a primary benefit across those 7 years — was better
@@ -266,7 +418,7 @@ Macbook Air:</p>
   <entry>
     <title type="html"><![CDATA[Two things I didn't know about Mac OS internet sharing]]></title>
     <link href="http://blog.metamatt.com/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/"/>
-    <updated>2013-02-13T00:00:00-05:00</updated>
+    <updated>2013-02-13T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing</id>
     <content type="html"><![CDATA[<p>On a recent trip to Mexico, we stayed in a hotel that charged a significant
 extra fee for fairly slow Internet access. After paying for an access code, we
@@ -339,7 +491,7 @@ variant is further useful, but don&rsquo;t leave it on when you&rsquo;re not usi
   <entry>
     <title type="html"><![CDATA[Troubleshooting Mac sleep problems]]></title>
     <link href="http://blog.metamatt.com/blog/2013/02/13/troubleshooting-mac-sleep-problems/"/>
-    <updated>2013-02-13T00:00:00-05:00</updated>
+    <updated>2013-02-13T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2013/02/13/troubleshooting-mac-sleep-problems</id>
     <content type="html"><![CDATA[<p>Here&rsquo;s a useful nugget if you&rsquo;re inclined to poke at computers to see how they
 work: <code>pmset -g log</code>.</p>
@@ -368,7 +520,7 @@ disabling.</p>
   <entry>
     <title type="html"><![CDATA[Google default account for multiple sign in]]></title>
     <link href="http://blog.metamatt.com/blog/2013/01/31/google-default-account-for-multiple-sign-in/"/>
-    <updated>2013-01-31T00:00:00-05:00</updated>
+    <updated>2013-01-31T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2013/01/31/google-default-account-for-multiple-sign-in</id>
     <content type="html"><![CDATA[<p>Google Accounts allow you to <a href="http://support.google.com/accounts/bin/answer.py?hl=en&amp;answer=1721977">stay signed into multiple accounts at
 once</a>,
@@ -442,7 +594,7 @@ helping me figure this out.</p>
   <entry>
     <title type="html"><![CDATA[Restore from backup]]></title>
     <link href="http://blog.metamatt.com/blog/2013/01/23/restore-from-backup/"/>
-    <updated>2013-01-23T00:00:00-05:00</updated>
+    <updated>2013-01-23T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2013/01/23/restore-from-backup</id>
     <content type="html"><![CDATA[<p>The SSD in Vanessa&rsquo;s iMac died and needed to be replaced. In theory, this is
 pretty simple since we have backups — replace the faulty hardware, restore the
@@ -483,7 +635,7 @@ Machine restore the files.</p>
   <entry>
     <title type="html"><![CDATA[Google account access from an iPhone]]></title>
     <link href="http://blog.metamatt.com/blog/2013/01/23/google-account-access-from-an-iphone/"/>
-    <updated>2013-01-23T00:00:00-05:00</updated>
+    <updated>2013-01-23T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2013/01/23/google-account-access-from-an-iphone</id>
     <content type="html"><![CDATA[<p>Google recently announced that after January 2013, they&rsquo;ll be <a href="http://support.google.com/a/bin/answer.py?hl=en&amp;answer=2716936">deprecating EAS
 access to
@@ -580,7 +732,7 @@ protocols, and if push were made to work — but it&rsquo;s not the case now.</p
   <entry>
     <title type="html"><![CDATA[Previewing Markdown files from the terminal]]></title>
     <link href="http://blog.metamatt.com/blog/2013/01/09/previewing-markdown-files-from-the-terminal/"/>
-    <updated>2013-01-09T00:00:00-05:00</updated>
+    <updated>2013-01-09T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2013/01/09/previewing-markdown-files-from-the-terminal</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve been wanting a way to preview
 <a href="http://daringfireball.net/projects/markdown/">Markdown</a>-formatted text files
@@ -631,7 +783,7 @@ Mac OS X), so that&rsquo;s what I&rsquo;ll use.</p>
   <entry>
     <title type="html"><![CDATA[Mac boot drive selection from Bluetooth keyboard]]></title>
     <link href="http://blog.metamatt.com/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard/"/>
-    <updated>2012-12-27T00:00:00-05:00</updated>
+    <updated>2012-12-27T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard</id>
     <content type="html"><![CDATA[<p>Twice in the last few months<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> I&rsquo;ve had to do troubleshooting steps on
 Vanessa&rsquo;s iMac that involved booting from alternate volumes<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>. This is normally
@@ -688,7 +840,7 @@ Bluetooth keyboards by default with all their desktop machines for years now.</p
   <entry>
     <title type="html"><![CDATA[Visiting Ireland with baby Dominic]]></title>
     <link href="http://blog.metamatt.com/blog/2012/11/28/visiting-ireland-with-baby-dominic/"/>
-    <updated>2012-11-28T00:00:00-05:00</updated>
+    <updated>2012-11-28T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2012/11/28/visiting-ireland-with-baby-dominic</id>
     <content type="html"><![CDATA[<p>Vanessa and I wanted to take a real destination trip with Dominic, kinda sorta
 just to see if we could do it. Not that we were hoping or envisioning that it
@@ -766,7 +918,7 @@ pictures</a>.</p>
   <entry>
     <title type="html"><![CDATA[The effect of time-shifting electrical usage on NEM billing]]></title>
     <link href="http://blog.metamatt.com/blog/2012/11/13/the-effect-of-time-shifting-electrical-usage-on-nem-billing/"/>
-    <updated>2012-11-13T00:00:00-05:00</updated>
+    <updated>2012-11-13T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2012/11/13/the-effect-of-time-shifting-electrical-usage-on-nem-billing</id>
     <content type="html"><![CDATA[<p>One more post on the topic of PG&amp;E bills for solar (NEM) customers.</p>
 
@@ -860,7 +1012,7 @@ the array is underperforming.</p>
   <entry>
     <title type="html"><![CDATA[E-1 vs E-6 for residential solar customers]]></title>
     <link href="http://blog.metamatt.com/blog/2012/11/11/e-1-vs-e-6-for-residential-solar-customers/"/>
-    <updated>2012-11-11T00:00:00-05:00</updated>
+    <updated>2012-11-11T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2012/11/11/e-1-vs-e-6-for-residential-solar-customers</id>
     <content type="html"><![CDATA[<p>As a follow-on to my <a href="http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/">article on understanding the PG&amp;E NEM
 bill</a>, I
@@ -918,7 +1070,7 @@ confirmation of that on PG&amp;E&rsquo;s website today, though.</p>
   <entry>
     <title type="html"><![CDATA[One year of solar power]]></title>
     <link href="http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/"/>
-    <updated>2012-11-09T00:00:00-05:00</updated>
+    <updated>2012-11-09T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power</id>
     <content type="html"><![CDATA[<p>When I got solar panels installed on the roof of our house last fall, friends
 immediately started asking how well they were working out, and my answer had
@@ -1155,7 +1307,7 @@ calculation.</p>
   <entry>
     <title type="html"><![CDATA[One year of cellular data]]></title>
     <link href="http://blog.metamatt.com/blog/2012/11/07/one-year-of-cellular-data/"/>
-    <updated>2012-11-07T00:00:00-05:00</updated>
+    <updated>2012-11-07T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2012/11/07/one-year-of-cellular-data</id>
     <content type="html"><![CDATA[<p>Here are the stats on my cellular data usage over one year on Sprint&rsquo;s
 network<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. (I got the phone on Halloween of 2011, and took this screenshot on
@@ -1204,7 +1356,7 @@ definition of fair.</p>
   <entry>
     <title type="html"><![CDATA[OAuth and localization fixes for Palm-Evernote importer]]></title>
     <link href="http://blog.metamatt.com/blog/2012/11/06/oauth-and-localization-fixes-for-palm-evernote-importer/"/>
-    <updated>2012-11-06T00:00:00-05:00</updated>
+    <updated>2012-11-06T00:00:00-08:00</updated>
     <id>http://blog.metamatt.com/blog/2012/11/06/oauth-and-localization-fixes-for-palm-evernote-importer</id>
     <content type="html"><![CDATA[<p>I’ve updated my <a href="http://www.maddogsw.com/evernote-utilities/evernote-palm-importer/">utility for importing notes from Palm Desktop into
 Evernote</a>
@@ -1240,52 +1392,6 @@ importer/)</a>.</p>
 </ol>
 </div>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Platform preferences and rolling with punches]]></title>
-    <link href="http://blog.metamatt.com/blog/2012/10/29/platform-preferences-and-rolling-with-punches/"/>
-    <updated>2012-10-29T00:00:00-04:00</updated>
-    <id>http://blog.metamatt.com/blog/2012/10/29/platform-preferences-and-rolling-with-punches</id>
-    <content type="html"><![CDATA[<p>When I worked on my high school paper, I spent many hours working on the
-newsroom Macs, but I had a Windows machine at home, and I was pretty
-comfortable going back and forth. I noticed a few people who had more trouble:
-Windows users who would swear a Mac would crash as soon as they touched it,
-and symmetrically, Mac users who if using a Windows machine would crash it
-right away.</p>
-
-<p>This was in the bad old days of Windows 3.1 and System 7, before MMUs and
-memory protection, and crashing neither OS was particularly hard or uncommon.
-Still, there seemed to be something to this cross-platform-and-crash
-phenomenon. A friend and I came up with a half-serious theory that these
-crashes had to do with natural rhythms of human-user activity — mouse and
-keyboard input would arrive and trigger interrupts and Mac OS and Windows
-might have different preferences for the intervals between these interrupts
-where certain rhythms would trigger race conditions just so, and kaboom, while
-other rhythms would dance around the same bugs without triggering them. And,
-the theory went, people would subconsciously learn what sequences of inputs
-would crash their computer, learn to avoid those patterns, and compute along
-happily on whichever platform they&rsquo;d learned to get along with: then upon
-trying the other platform, kaboom again.</p>
-
-<p>It was with this in mind that I read <a href="http://verynicewebsite.net/2012/10/surface-impressions/">John Moltz&rsquo;s impressions of Microsoft
-Surface</a>. He&rsquo;s
-generally pretty fair about giving it a chance, but then he dings it for
-screen-rotation flakiness:</p>
-
-<blockquote><p>Once when I set it down the screen orientation was upside down and it didn’t
-seem to realize it. I had to pick it up and turn it over and then back again
-to get it the right way.</p></blockquote>
-
-<p>I&rsquo;m sure that happened, but hey, every Apple device with automatic rotation
-(iPhone, iPod Touch, iPad) I&rsquo;ve ever owned occasionally does that too. Come to
-think of it, so do the various digital cameras I&rsquo;ve owned (from Canon, Nikon
-and Panasonic). I can&rsquo;t think of anything that has a similar feature that I
-haven&rsquo;t seen flake out that way.</p>
-
-<p>But maybe if I could just learn to <a href="https://www.google.com/search?q=holding+it+wrong">hold it
-right</a>…</p>
 ]]></content>
   </entry>
   

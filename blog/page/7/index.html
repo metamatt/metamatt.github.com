@@ -9,8 +9,8 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="I&rsquo;m giving up on DSL. There are really 3 separate reasons that it&rsquo;s not
-performing as I&rsquo;d hoped and expected: Reliance on AT&amp;T& &hellip;">
+  <meta name="description" content="In response to my previous articles about frustrations with my DSL modem,
+Sonic.net sent me a replacement modem to see if it would fare better. It &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +83,99 @@ performing as I&rsquo;d hoped and expected: Reliance on AT&amp;T& &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2011/05/03/misleading-dsl-sync-speeds-revisited/">Misleading DSL Sync Speeds, Revisited</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-03T00:00:00-07:00" pubdate data-updated="true">May 3<span>rd</span>, 2011</time>
+        
+         | <a href="/blog/2011/05/03/misleading-dsl-sync-speeds-revisited/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In response to my previous articles about frustrations with my DSL modem,
+Sonic.net sent me a replacement modem to see if it would fare better. It had
+one specific improvement but for the most part duplicated the previous
+results; however I promised to post an update, and during the extra testing I
+learned one more useful fact, so this is that update with that one useful
+fact.</p>
+
+<p>That useful fact: if you have two DSL lines in bonded mode, but the DSL lines
+sync at different speeds, the Comtrend 5361 modem cares a lot about which
+order you connect the lines (which of the fast/slow lines is master and which
+is slave).</p>
+
+<p>In more detail: the testing I was doing involved different ways of connecting
+the modem to the DSL lines (one line at a time or both lines bonded, if bonded
+then testing both ways to pair the incoming lines with the modem, with and
+without DSL filters, with and without additional indoor wiring, and with both
+Annex A and Annex M spectrum allocation modes).</p>
+
+<p>If the modem is configured for Annex A operation and is connected to the MPOE
+with no filter and minimal indoor wiring, I see it provide the good results
+you&rsquo;d expect: on either line alone, it transfers real bits at about 85% of
+that line&rsquo;s claimed sync speed, and connecting both lines together, I get the
+sum of the individual speeds (or 85% of the combined sync speed, which is the
+same thing), and it doesn&rsquo;t matter which line is master and which line is
+slave.</p>
+
+<p>That&rsquo;s all as it should be. Where it gets weird is if I deviate from that
+exact configuration. If I add a DSL filter, or enable Annex M, then the modem
+may deliver only 1/3 of the claimed sync speed, depending on the way I connect
+the 2 lines for bonded operation. Single-line operation still yields data
+transfers at 85% of sync speed, and if I connect it for bonded operation with
+the fast line as the master and slow line as slave I get the expected combined
+rate, but if I connect the slow line as the master and the fast line as the
+slave, real-world performance drops drastically. This is extra weird because
+the line order doesn&rsquo;t affect the sync speed; in the bad ordering, the modem
+still claims a nice fast sync speed and just can&rsquo;t transfer data nearly as
+fast as it should. I&rsquo;m still at a loss to know where the performance is going
+or why.</p>
+
+<p>Now, if you know this is a problem and know how to fix it, you can route
+around it. And most people probably don&rsquo;t end up with 2 DSL lines that sync at
+different speeds, and I presume that if they sync at the same speed the modem
+doesn&rsquo;t care how you connect them. But this weird behavior sure caused me a
+lot of grief and lost time.</p>
+
+<p>On the bright side, the newer modem did perform correctly for single-line
+operation on either line, which does address my initial complaint.</p>
+
+<p>Previously:</p>
+
+<ul>
+<li><a href="http://blog.metamatt.com/blog/2011/04/13/dsl-modem-annoyances/">DSL Modem Annoyances</a></li>
+<li><a href="http://blog.metamatt.com/blog/2011/04/18/dsl-disappointments-annex-m-edition/">DSL Disappointments: Annex M edition</a></li>
+<li><a href="http://blog.metamatt.com/blog/2011/04/18/dsl-disappointments-misleading-sync-speed-edition/">DSL Disappointments: Misleading sync speed edition</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2011/04/21/dsl-disappointments-too-bad-that-didnt-work/">DSL Disappointments: Too Bad That Didn&#8217;t Work</a></h1>
     
     
@@ -99,7 +192,7 @@ performing as I&rsquo;d hoped and expected: Reliance on AT&amp;T& &hellip;">
   
 
 
-<time datetime="2011-04-21T00:00:00-04:00" pubdate data-updated="true">Apr 21<span>st</span>, 2011</time>
+<time datetime="2011-04-21T00:00:00-07:00" pubdate data-updated="true">Apr 21<span>st</span>, 2011</time>
         
          | <a href="/blog/2011/04/21/dsl-disappointments-too-bad-that-didnt-work/#disqus_thread">Comments</a>
         
@@ -163,7 +256,7 @@ phone wiring, I&rsquo;d certainly consider it.</p>
   
 
 
-<time datetime="2011-04-20T00:00:00-04:00" pubdate data-updated="true">Apr 20<span>th</span>, 2011</time>
+<time datetime="2011-04-20T00:00:00-07:00" pubdate data-updated="true">Apr 20<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/04/20/dont-override-keys-that-already-have-a-meaning-in-your-scope/#disqus_thread">Comments</a>
         
@@ -250,7 +343,7 @@ Player or browser level &mdash; it&rsquo;s up to the applet).</p>
   
 
 
-<time datetime="2011-04-18T00:00:00-04:00" pubdate data-updated="true">Apr 18<span>th</span>, 2011</time>
+<time datetime="2011-04-18T00:00:00-07:00" pubdate data-updated="true">Apr 18<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/04/18/dsl-disappointments-misleading-sync-speed-edition/#disqus_thread">Comments</a>
         
@@ -390,7 +483,7 @@ all data points at both locations.)</p>
   
 
 
-<time datetime="2011-04-18T00:00:00-04:00" pubdate data-updated="true">Apr 18<span>th</span>, 2011</time>
+<time datetime="2011-04-18T00:00:00-07:00" pubdate data-updated="true">Apr 18<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/04/18/dsl-disappointments-annex-m-edition/#disqus_thread">Comments</a>
         
@@ -562,7 +655,7 @@ for me, bring DSL back into the realm of competitive upload speeds.</p>
   
 
 
-<time datetime="2011-04-15T00:00:00-04:00" pubdate data-updated="true">Apr 15<span>th</span>, 2011</time>
+<time datetime="2011-04-15T00:00:00-07:00" pubdate data-updated="true">Apr 15<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/04/15/how-to-search-your-own-activity-streams-greplin/#disqus_thread">Comments</a>
         
@@ -643,7 +736,7 @@ necessary and they would need only the index on their side.</p>
   
 
 
-<time datetime="2011-04-14T00:00:00-04:00" pubdate data-updated="true">Apr 14<span>th</span>, 2011</time>
+<time datetime="2011-04-14T00:00:00-07:00" pubdate data-updated="true">Apr 14<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/04/14/tumblr-editor-bug-leaves-css-metadata-in-my-data/#disqus_thread">Comments</a>
         
@@ -696,7 +789,7 @@ maybe something like 5% of the time.</p>
   
 
 
-<time datetime="2011-04-13T00:00:00-04:00" pubdate data-updated="true">Apr 13<span>th</span>, 2011</time>
+<time datetime="2011-04-13T00:00:00-07:00" pubdate data-updated="true">Apr 13<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/04/13/on-searching-ones-own-activity-streams/#disqus_thread">Comments</a>
         
@@ -793,7 +886,7 @@ posts</a>.</p>
   
 
 
-<time datetime="2011-04-13T00:00:00-04:00" pubdate data-updated="true">Apr 13<span>th</span>, 2011</time>
+<time datetime="2011-04-13T00:00:00-07:00" pubdate data-updated="true">Apr 13<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/04/13/dsl-modem-annoyances/#disqus_thread">Comments</a>
         
@@ -912,7 +1005,7 @@ being proactive.</p>
   
 
 
-<time datetime="2011-04-11T00:00:00-04:00" pubdate data-updated="true">Apr 11<span>th</span>, 2011</time>
+<time datetime="2011-04-11T00:00:00-07:00" pubdate data-updated="true">Apr 11<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/04/11/this-is-why-you-need-a-groklaw/#disqus_thread">Comments</a>
         
@@ -926,49 +1019,6 @@ computer history, so when people talk like this, you have a place to send
 people to find what really happened.</p></blockquote>
 
 <p><a href="http://www.grokla%0Aw.net/article.php?story=20110402143136766">http://www.groklaw.net/article.php?story=20110402143136766</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/11/open-for-business/">Open for Business</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-11T00:00:00-04:00" pubdate data-updated="true">Apr 11<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/04/11/open-for-business/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><blockquote><p>Nokia says that Symbian is no longer open source, just &ldquo;open for business.&rdquo;
-The definition of &ldquo;open&rdquo; in the mobile space is apparently completely
-different than it is everywhere else in the software industry.</p></blockquote>
-
-<p>Ryan Paul, <a href="http://arstechnica.com/gadgets/news/2011/04/nokia-transitions-%0Asymbian-source-to-non-open-license.ars">Nokia transitions Symbian source to non-open
-license</a></p>
 </div>
   
   
@@ -993,6 +1043,10 @@ license</a></p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/20/apple-is-getting-really-aggressive-about-this-sleepdelay-thing/">Apple is getting really aggressive about this sleepdelay thing</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/">From Tumblr to Octopress, part 3: footnotes</a>
       </li>
     
@@ -1006,10 +1060,6 @@ license</a></p>
     
       <li class="post">
         <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
       </li>
     
   </ul>

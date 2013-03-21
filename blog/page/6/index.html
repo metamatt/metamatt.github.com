@@ -9,8 +9,8 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="My first impressions after playing with the Kindle Fire for an hour or so: it&rsquo;s basically a color, video-happy, app-happy Kindle.
-fine for &hellip;">
+  <meta name="description" content="I&rsquo;ve been wishing and waiting and watching and waiting, with an idea in my
+head of what I want: from computers and the internet, regarding &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +83,179 @@ fine for &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2011/11/24/how-photo-sync-would-be-done-right/">How Photo Sync Would Be Done Right</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-24T00:00:00-08:00" pubdate data-updated="true">Nov 24<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/11/24/how-photo-sync-would-be-done-right/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;ve been wishing and waiting and watching and waiting, with an idea in my
+head of what I want: from computers and the internet, regarding photos and
+photo management, and connecting all the computers I use. Some of this is very
+specific to photos, and some of this is general multi-computer file
+management, and after years of watching and waiting, little of it is done the
+way I wish it was.</p>
+
+<p>I take photos with digital cameras. I want all of those photos accessible to
+me wherever I go, on all the computers and smart devices I own and any I
+happen to use temporarily; I want them backed up for safety; I want some of
+them shared with my friends or the whole internet. In short: I want my
+memories protected, accessible to me, and selectively shared with those I
+choose to share them with.</p>
+
+<p>There exist good file sync solutions, and there exist good backup solutions,
+and there exist good photo sharing solutions, but all of them have drawbacks,
+not least of which is that they&rsquo;re separate and don&rsquo;t really work together, so
+I need to do more to get these combined benefits.</p>
+
+<p>Ideally, I&rsquo;d like all photos I take immediately uploaded to a private site in
+the cloud, automatically, which acts as backup and also automatically syncs
+them between all my devices, and which also offers a web interface capable of
+giving me full access to the collection, and selecting some photos for sharing
+in a nice way, with or without authentication.</p>
+
+<p>Since upload bandwidth is generally too slow and expensive, I want the cloud
+upload to happen once, automatically and asynchronously in the background, as
+soon as possible; the photo is now backed up and syncable; if I choose to
+share it, there&rsquo;s no further waiting for upload.</p>
+
+<p>I want flexible organization (which should work well with as much metadata as
+I want to add, or as little), to scale to my collection of thousands of photos
+over many years, and grow into the future. I want the sync solution to play
+promiscuously well with other apps I choose to use, and not enforce a
+particular filesystem or logical organization scheme, but I want it to offer
+optional organization features which help me keep a well-groomed collection if
+I can use the help. And the sync part of the solution means that any
+organizational changes I make, on any connected device and in any app, is
+reflected everywhere.</p>
+
+<p>I want this to work with full-resolution photos, and raw photos, and I want it
+to work with arbitrary metadata. And I want it to be promiscuously
+crossplatform: on Mac and Windows and Linux desktops, and iOS and Android and
+whichever other mobile platforms manage to prove their relevance.</p>
+
+<p>I want the mobile device version to realize and revel in the constraints of
+the platform, acknowledging that connectivity is ubiquitous but not always
+fast or reliable, that memory is limited, and that snappy touch interactions
+feel good. Thus, if I&rsquo;m using a device that combines a camera and a network
+interface (any smartphone) I want every photo I take immediately sent to the
+cloud for backup and syncability. I also want my entire collection synced down
+to my device as a photo wallet, but, acknowledging local storage limits, I
+want this to automatically downscale to an appropriate resolution, and I want
+to be able to select per-device subsets of the entire collection to subscribe
+to.</p>
+
+<p>It would be great if the sync/backup/share features work with non-photo files
+&mdash; the solution I envision would be file-based, and have a bunch of special
+sugar for image files, but would be useful even for other files &mdash; but that&rsquo;s
+not necessary. Non-photo files are already handled pretty well by services
+like DropBox.</p>
+
+<p>In fact, my continuing desire for the magic super photo cloud service is
+driven by noting that by and large, photos are the only remaining file type I
+have to really care about on my computer, meaning data I create that isn&rsquo;t
+already well handled by cloud services. Examples that are already well
+handled: Email (tons of cloud services including Gmail);  office documents
+(Google Docs); unstructured notes and clippings (Evernote); miscellaneous
+files that don&rsquo;t fall into the above buckets but are small (Dropbox): what&rsquo;s
+left? Well, photos, music and video. But music is a special beast, which like
+photos also involves largish files but unlike photos is something I buy
+instead of create, meaning any individual file I want already exists in some
+canonical form I can get from lots of other sources; anyway it&rsquo;s well handled:
+Amazon, Apple, and Google have cloud sync; the file-based approach is somewhat
+displaced by subscription services like Rhapsody and Spotify. Video is a
+combination of photos and music which, in the case of video we record
+ourselves, I think will end up having the same properties as photos: large
+files we create, embodying our memories, that we want to sync and backup and
+share. So it&rsquo;s the photos we take (and by extension I include video we take)
+that we care about managing with computers, better than it&rsquo;s currently done.</p>
+
+<p>Here&rsquo;s a smattering of things that exist now, attacking some of the above
+problems and illustrating a variety of different approaches. I&rsquo;ll call out
+what they do right, and what I find lacking:</p>
+
+<ul>
+<li><a href="https://www.dropbox.com/">Dropbox</a> (file sync and then some): can do most of what I&rsquo;m asking for, but it&rsquo;s not photo-specific (which could be bug or feature or both). The price is high (compared to photo sharing and backup services which usually offer unlimited storage). They have a sharing UI which has been somewhat customized for photo albums, but it&rsquo;s pretty bare bones compared to full-blown photo sharing sites. The syncing is good but not perfect; p2p sync first requires an upload to the cloud (so it makes you wait for the slow hop then skips the fast hop); it enforces a certain filesystem layout on computer clients; it doesn&rsquo;t have an appropriate mode for syncing all photos to/from smart devices at suitable resolution. All this said, Dropbox is probably the closest existing thing to what I want, and it offers good 3rd party APIs allowing others to extend it &mdash; I think they see themselves more as storage infrastructure for the web than any specific application &mdash; so if the interoperability and pricing concerns don&rsquo;t bother you, maybe it&rsquo;s already the right answer.</li>
+<li><a href="http://www.apple.com/icloud/features/photo-stream.html">Photo Stream</a> (photo sync): gets the sync right (the first I&rsquo;ve seen that automatically adds photos as they&rsquo;re taken). However, it has very strict and arbitrary limits: no deletion, no organization, and includes only the last 1000 photos or 30 days, so it&rsquo;s basically this write-only temporary repository that syncs across devices but which you need to manually fish the things you care about out of, and manage separately. It does have the magic auto-upload feature for network-connected cameras, and it does deal with RAW images. I see this as a promising demo of one aspect of what I&rsquo;m looking for, but it doesn&rsquo;t even touch the others (organization, backup, or sharing).</li>
+<li><a href="http://www.adobe.com/products/carousel.html">Adobe Carousel</a> (photo sync and sharing): haven&rsquo;t tried it yet, and it looks promising but with limited platform support and doesn&rsquo;t handle raw files. Pricing may be a turnoff (monthly fee and limited number of carousels). Should handle sharing, both public and private. But not suitable for my entire photo library, as far as I can tell.</li>
+<li><a href="http://www.crashplan.com/">CrashPlan</a> (online backup, also see Mozy, Carbonite, BackBlaze): cheap unlimited-size cloud backup, which can also let you retrieve individual files from the cloud via a web interface, which in a pinch means you can get at your files from anywhere. The web interface isn&rsquo;t optimized for this case though, nor is it optimized for photo display, and there are no suitable features for sharing (albums, delegatable access control).</li>
+<li><a href="http://www.flickr.com/">Flickr</a> (photo sharing): Flickr is great for photo hosting and sharing; it has great organizational features and a good community. The pro version offers effectively unlimited storage and has neat tracking features so you can see the popularity of what you post. However, Flickr doesn&rsquo;t itself handle uploads or, really, client software in general, so it doesn&rsquo;t handle sync (it does have an API with good 3rd party adoption, addressing this somewhat). It doesn&rsquo;t handle RAW files, and it&rsquo;s not suitable for backup. The sharing features allow flexible public and private sharing, but with not a lot of flexibility for album display. In general, the evolution of the site has been slow since Yahoo! bought them out. I think the site was originally designed with a forward-looking vision that in the near future, nobody would need any local photo software, and you could just upload everything to Flickr, edit and organize it there, share it there, and you wouldn&rsquo;t need sync or backup. And maybe if the site had continued on its original trajectory and pace, this would have happened by now &mdash; but I find it&rsquo;s anything but true in the real world.</li>
+<li><a href="https://www.facebook.com/">Facebook</a> (photo sharing): Facebook has huge adoption, and I&rsquo;ve found that photos I post there get seen (and &ldquo;liked&rdquo; and commented on) more than anywhere else, including Flickr. But, Facebook is a walled garden (it may be possible to use it for public photo sharing but I don&rsquo;t see people doing that in practice); content hosted there is not search engine friendly; you as the photographer also get zero control over photo presentation, zero insight into who&rsquo;s viewing your photos, and only very limited organizational features (albums with a size limit which can&rsquo;t be nested hierarchically). Person tagging and automatic face recognition make up for some of this; general ease of use and speed and reach make Facebook a good solution for sharing your photos as long as your needs are simple; however on my list of big top-level wishes (handle sync, backup, and sharing) it only touches sharing, and honestly, given the limited control over organization and presentation, I&rsquo;d prefer to use Flickr if I could get the same reach. Given the name of the site (it&rsquo;s the book of faces, after all) and the mandate implied therein, I feel like they could take this feature much much farther, but it also seems like the backup/syncing aspect I want is not part of this &ldquo;book of faces&rdquo; mandate and cries out for a dedicated solution. Note that Facebook is free and offers unlimited storage (as far as I know); the platform scales well (and is, I believe, by far the world&rsquo;s largest-volume photo server); it doesn&rsquo;t handle RAW files, or even particularly high-resolution images.</li>
+<li><a href="https://picasaweb.google.com/">Google&rsquo;s photo suite</a> (photo organization and sharing): Google has nice desktop client software for photo organization and editing (Picasa), which they eventually built an online companion for with sharing and automatic sync features (Picasaweb), and then integrated into their new social network, Google+. Taken together, this provides a pretty good start-to-finish solution for taking, editing, uploading, and sharing photos. However the upload/sync solution based on Picasa is not flexible or pervasive enough to serve as backup or sync files managed outside Picasa, and the website is certainly not designed to serve as a central hub for managing and syncing my entire photo library. I&rsquo;m not even sure if the sync is bidirectional; it may be upload-only.</li>
+<li><a href="http://evernote.com/">Evernote</a> (generic unstructured data sync): Evernote has a good web service, with client apps and a web app for access, automatic syncing for offline access, and attractive pricing. However it doesn&rsquo;t offer any of the organization or sharing features you&rsquo;d really want for photo management, nor does it integrate with other apps via the filesystem (stuff stored in and synced via Evernote is available via the Evernote API, but not via older integration points, namely local filesystems).</li>
+<li>File sync in general: Beyond Dropbox, described above, I haven&rsquo;t seen anything that really scratches this itch in the way I&rsquo;m envisioning.</li>
+<li>Photo sharing in general: there are tons more photo sharing services, but by and large, they have the same properties I ascribed to Flickr above, but are less good at it. You might have a favorite that you think I&rsquo;m giving short shrift to here; fine; let me know if you know of any that are qualitatively better than Flickr on the list of things I&rsquo;m wishing for in this post.</li>
+<li>Other things not mentioned here: This list is intended to show examples, not be exhaustive, so I&rsquo;ve collapsed whole categories onto one exemplar; for example, while I&rsquo;m aware of SpiderOak and see it having certain advantages over Dropbox, for my purposes here it&rsquo;s essentially the same. There are probably many other sync, backup and photo sharing services that have their own advantages but don&rsquo;t break new ground on the aspects I care about; if you know about something I missed that does address my wish list, please let me know.</li>
+</ul>
+
+
+<p>How I&rsquo;d build this: I&rsquo;d want the following pieces:</p>
+
+<ol>
+<li> The central cloud service which stores files securely for backup, and handles sync to any clients I&rsquo;ve authorized.</li>
+<li> Client software for every platform which matters, which handles sync, automatically in the background: new files appearing first on this device are uploaded to the cloud service; new files announced from the cloud service are synced (at an appropriate resolution) down to this device&rsquo;s local library; changes to existing files (including filesystem metadata like name and location, picture-specific metadata like that encoded in EXIF and IPTC mechanisms, and image data itself) are also automatically synced in both directions.</li>
+<li> Web app atop the first cloud service which handles organization and management &mdash; letting me move files between folders or albums, apply tags, and designate what to share with whom.</li>
+<li> Web app for sharing, pulling authorized files from the cloud service, and displaying them with nice presentation and according to whatever organization (individual file, album, by tag, etc) I&rsquo;ve chosen.</li>
+<li> Client local versions of #3 (optional and lower priority, since I should be able to use the web version or any local software I want to most things this could do).</li>
+</ol>
+
+
+<p>(I think Evernote, top to bottom, service to applications, is a great example
+of this architecture &mdash; handling what they call &ldquo;notes&rdquo;, which basically means
+document snippets with attachments &mdash; but, as described above, it doesn&rsquo;t
+solve my photo sync problem, since the client local apps don&rsquo;t integrate my
+local filesystem and provide an integration point for other local apps, and
+the web interface doesn&rsquo;t have theorganization and display features I&rsquo;d want
+for photos.)</p>
+
+<p>I don&rsquo;t know what this should cost or what I&rsquo;d be willing to pay for it &mdash;
+more than free (Google and Facebook); probably more than Flickr&rsquo;s $25/year and
+more than the unlimited backup companies&#8217; $5/month; probably less than
+Dropbox&rsquo;s per-GB-per-month fees. For this to be done right, the storage and
+bandwidth would probably have significant cost, and most of the data is
+private so can&rsquo;t be de-duped.</p>
+
+<p>Clearly this isn&rsquo;t easy &mdash; the inherent challenges of handling and
+transporting and scaling to this much data, and designing good interfaces for
+all the services and applications, are real, and for anyone but the
+incumbents, there are also the additional challenges of integrating with 3rd
+party software and OS platforms, especially less open and less flexible mobile
+platforms (given the sandboxing and multitasking restrictions in iOS, for
+example, I&rsquo;m not sure anyone but Apple is in a position to implement Photo
+Stream for iOS right now).</p>
+
+<p>But it would be nice.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2011/11/17/kindle-fire-first-impressions/">Kindle Fire First Impressions</a></h1>
     
     
@@ -99,7 +272,7 @@ fine for &hellip;">
   
 
 
-<time datetime="2011-11-17T00:00:00-05:00" pubdate data-updated="true">Nov 17<span>th</span>, 2011</time>
+<time datetime="2011-11-17T00:00:00-08:00" pubdate data-updated="true">Nov 17<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/11/17/kindle-fire-first-impressions/#disqus_thread">Comments</a>
         
@@ -162,7 +335,7 @@ updates, though.</p>
   
 
 
-<time datetime="2011-11-17T00:00:00-05:00" pubdate data-updated="true">Nov 17<span>th</span>, 2011</time>
+<time datetime="2011-11-17T00:00:00-08:00" pubdate data-updated="true">Nov 17<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/11/17/how-much-can-the-kindle-fire-improve-with-software-updates/#disqus_thread">Comments</a>
         
@@ -291,7 +464,7 @@ big gaming success, the way the iPod Touch has been, for example.</p>
   
 
 
-<time datetime="2011-11-08T00:00:00-05:00" pubdate data-updated="true">Nov 8<span>th</span>, 2011</time>
+<time datetime="2011-11-08T00:00:00-08:00" pubdate data-updated="true">Nov 8<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/11/08/nyc-marathon-results/#disqus_thread">Comments</a>
         
@@ -388,7 +561,7 @@ click on for the details.</p>
   
 
 
-<time datetime="2011-10-09T00:00:00-04:00" pubdate data-updated="true">Oct 9<span>th</span>, 2011</time>
+<time datetime="2011-10-09T00:00:00-07:00" pubdate data-updated="true">Oct 9<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/10/09/growing-up-with-apple/#disqus_thread">Comments</a>
         
@@ -533,7 +706,7 @@ a Mac.</p>
   
 
 
-<time datetime="2011-07-29T00:00:00-04:00" pubdate data-updated="true">Jul 29<span>th</span>, 2011</time>
+<time datetime="2011-07-29T00:00:00-07:00" pubdate data-updated="true">Jul 29<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/07/29/sf-12-marathon-challenge/#disqus_thread">Comments</a>
         
@@ -614,7 +787,7 @@ pigeon…) with your bet amount.</p>
   
 
 
-<time datetime="2011-07-26T00:00:00-04:00" pubdate data-updated="true">Jul 26<span>th</span>, 2011</time>
+<time datetime="2011-07-26T00:00:00-07:00" pubdate data-updated="true">Jul 26<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/07/26/nyc-marathon/#disqus_thread">Comments</a>
         
@@ -667,7 +840,7 @@ page</a>. Thank you.</p>
   
 
 
-<time datetime="2011-06-23T00:00:00-04:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2011</time>
+<time datetime="2011-06-23T00:00:00-07:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2011</time>
         
          | <a href="/blog/2011/06/23/not-the-modem-after-all/#disqus_thread">Comments</a>
         
@@ -726,7 +899,7 @@ the mii-tool reset whenever it doesn&rsquo;t see a response.</p>
   
 
 
-<time datetime="2011-06-13T00:00:00-04:00" pubdate data-updated="true">Jun 13<span>th</span>, 2011</time>
+<time datetime="2011-06-13T00:00:00-07:00" pubdate data-updated="true">Jun 13<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/06/13/update-on-mac-os-x-headless-fast-user-switching-bug/#disqus_thread">Comments</a>
         
@@ -783,7 +956,7 @@ primary/supported use case in Apple&rsquo;s eyes.</p>
   
 
 
-<time datetime="2011-06-13T00:00:00-04:00" pubdate data-updated="true">Jun 13<span>th</span>, 2011</time>
+<time datetime="2011-06-13T00:00:00-07:00" pubdate data-updated="true">Jun 13<span>th</span>, 2011</time>
         
          | <a href="/blog/2011/06/13/update-on-comcast-last-mile-isp-connection/#disqus_thread">Comments</a>
         
@@ -876,99 +1049,6 @@ within minutes.)</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/05/03/misleading-dsl-sync-speeds-revisited/">Misleading DSL Sync Speeds, Revisited</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-03T00:00:00-04:00" pubdate data-updated="true">May 3<span>rd</span>, 2011</time>
-        
-         | <a href="/blog/2011/05/03/misleading-dsl-sync-speeds-revisited/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>In response to my previous articles about frustrations with my DSL modem,
-Sonic.net sent me a replacement modem to see if it would fare better. It had
-one specific improvement but for the most part duplicated the previous
-results; however I promised to post an update, and during the extra testing I
-learned one more useful fact, so this is that update with that one useful
-fact.</p>
-
-<p>That useful fact: if you have two DSL lines in bonded mode, but the DSL lines
-sync at different speeds, the Comtrend 5361 modem cares a lot about which
-order you connect the lines (which of the fast/slow lines is master and which
-is slave).</p>
-
-<p>In more detail: the testing I was doing involved different ways of connecting
-the modem to the DSL lines (one line at a time or both lines bonded, if bonded
-then testing both ways to pair the incoming lines with the modem, with and
-without DSL filters, with and without additional indoor wiring, and with both
-Annex A and Annex M spectrum allocation modes).</p>
-
-<p>If the modem is configured for Annex A operation and is connected to the MPOE
-with no filter and minimal indoor wiring, I see it provide the good results
-you&rsquo;d expect: on either line alone, it transfers real bits at about 85% of
-that line&rsquo;s claimed sync speed, and connecting both lines together, I get the
-sum of the individual speeds (or 85% of the combined sync speed, which is the
-same thing), and it doesn&rsquo;t matter which line is master and which line is
-slave.</p>
-
-<p>That&rsquo;s all as it should be. Where it gets weird is if I deviate from that
-exact configuration. If I add a DSL filter, or enable Annex M, then the modem
-may deliver only 1/3 of the claimed sync speed, depending on the way I connect
-the 2 lines for bonded operation. Single-line operation still yields data
-transfers at 85% of sync speed, and if I connect it for bonded operation with
-the fast line as the master and slow line as slave I get the expected combined
-rate, but if I connect the slow line as the master and the fast line as the
-slave, real-world performance drops drastically. This is extra weird because
-the line order doesn&rsquo;t affect the sync speed; in the bad ordering, the modem
-still claims a nice fast sync speed and just can&rsquo;t transfer data nearly as
-fast as it should. I&rsquo;m still at a loss to know where the performance is going
-or why.</p>
-
-<p>Now, if you know this is a problem and know how to fix it, you can route
-around it. And most people probably don&rsquo;t end up with 2 DSL lines that sync at
-different speeds, and I presume that if they sync at the same speed the modem
-doesn&rsquo;t care how you connect them. But this weird behavior sure caused me a
-lot of grief and lost time.</p>
-
-<p>On the bright side, the newer modem did perform correctly for single-line
-operation on either line, which does address my initial complaint.</p>
-
-<p>Previously:</p>
-
-<ul>
-<li><a href="http://blog.metamatt.com/blog/2011/04/13/dsl-modem-annoyances/">DSL Modem Annoyances</a></li>
-<li><a href="http://blog.metamatt.com/blog/2011/04/18/dsl-disappointments-annex-m-edition/">DSL Disappointments: Annex M edition</a></li>
-<li><a href="http://blog.metamatt.com/blog/2011/04/18/dsl-disappointments-misleading-sync-speed-edition/">DSL Disappointments: Misleading sync speed edition</a></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/7/">&larr; Older</a>
@@ -986,6 +1066,10 @@ operation on either line, which does address my initial complaint.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/20/apple-is-getting-really-aggressive-about-this-sleepdelay-thing/">Apple is getting really aggressive about this sleepdelay thing</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/">From Tumblr to Octopress, part 3: footnotes</a>
       </li>
     
@@ -999,10 +1083,6 @@ operation on either line, which does address my initial complaint.</p>
     
       <li class="post">
         <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
       </li>
     
   </ul>

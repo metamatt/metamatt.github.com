@@ -9,7 +9,8 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="Once I got Jekyll and Octopress to import my blog from Tumblr and generate it in its new format, almost everything was formatted correctly, with the &hellip;">
+  <meta name="description" content="Last night I installed the OS X 10.8.3 update on my laptop (updating from 10.8.2). This morning,
+upon plugging my laptop into the external &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,6 +83,168 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/03/20/apple-is-getting-really-aggressive-about-this-sleepdelay-thing/">Apple Is Getting Really Aggressive About This Sleepdelay Thing</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-20T09:01:00-07:00" pubdate data-updated="true">Mar 20<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/03/20/apple-is-getting-really-aggressive-about-this-sleepdelay-thing/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Last night I installed the OS X 10.8.3 update on my laptop (updating from 10.8.2). This morning,
+upon plugging my laptop into the external Thunderbolt display as I always do, and it didn&rsquo;t wake
+up when I opened the lid, nor when I started tapping on the external keyboard.</p>
+
+<p><a href="http://blog.metamatt.com/blog/2013/02/21/speedy-resume/">As I noted before</a>, a retina MBP
+(or MacBook Air) that doesn&rsquo;t immediately wake when you open the lid is annoying not only because
+it slows you down, but because Apple&rsquo;s removed all the battery indicator buttons, and there&rsquo;s
+absolutely no sign of life from a powered off (or hibernating) machine until you press the power
+button.</p>
+
+<p>So I woke it up with the power button on the builtin keyboard, and watched it boot to the preboot
+login screen associated with an encrypted boot drive<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>, and was further annoyed that at this
+screen it was still ignoring the external keyboard plugged into the Thunderbolt display. Having
+to use the builtin keyboard for a docked laptop is suboptimal. Anyway.</p>
+
+<p>When it finished booting, I fired up pmset to ask it what&rsquo;s going on, first on AC power:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>magi@duality ~&gt; pmset -g
+</span><span class='line'>Active Profiles:
+</span><span class='line'>Battery Power     -1
+</span><span class='line'>AC Power          -1*
+</span><span class='line'>Currently in use:
+</span><span class='line'> standbydelay         4200
+</span><span class='line'> standby              0
+</span><span class='line'> womp                 1
+</span><span class='line'> halfdim              1
+</span><span class='line'> hibernatefile        /var/vm/sleepimage
+</span><span class='line'> darkwakes            0
+</span><span class='line'> gpuswitch            2
+</span><span class='line'> networkoversleep     0
+</span><span class='line'> disksleep            10
+</span><span class='line'> sleep                0
+</span><span class='line'> autopoweroffdelay    14400
+</span><span class='line'> hibernatemode        3
+</span><span class='line'> autopoweroff         1
+</span><span class='line'> ttyskeepawake        1
+</span><span class='line'> displaysleep         10
+</span><span class='line'> acwake               0
+</span><span class='line'> lidwake              1</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And then again<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup> on battery:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>magi@duality ~&gt; pmset -g
+</span><span class='line'>Active Profiles:
+</span><span class='line'>Battery Power     -1*
+</span><span class='line'>AC Power          -1
+</span><span class='line'>Currently in use:
+</span><span class='line'> standbydelay         4200
+</span><span class='line'> standby              1
+</span><span class='line'> halfdim              1
+</span><span class='line'> hibernatefile        /var/vm/sleepimage
+</span><span class='line'> darkwakes            0
+</span><span class='line'> gpuswitch            2
+</span><span class='line'> disksleep            10
+</span><span class='line'> sleep                10
+</span><span class='line'> autopoweroffdelay    14400
+</span><span class='line'> hibernatemode        3
+</span><span class='line'> autopoweroff         1
+</span><span class='line'> ttyskeepawake        1
+</span><span class='line'> displaysleep         2
+</span><span class='line'> acwake               0
+</span><span class='line'> lidwake              1</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As <a href="http://blog.metamatt.com/blog/2013/02/21/speedy-resume/">posted before</a>, I&rsquo;d previously changed <code>standbydelay</code>
+to 43200 seconds on battery power, and disabled <code>standby</code> entirely on AC power. Apparently the 10.8.3
+upgrade reverted the former change to Apple&rsquo;s new default of 4200 seconds, though it left the latter
+change alone.</p>
+
+<p>Note that&rsquo;s not quite consistent with my observation that my rMBP (bought in 2012 and shipped with
+OS X 10.8) had <code>standby</code> enabled by default, while my previous MBP (bought in 2010 and shipped with
+OS X 10.6 and subsequently upgraded to 10.7 and then 10.8) never had <code>standby</code> enabled at all.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>The FileVault preboot login screen also annoys me because it&rsquo;s got a pretty poor keyboard driver, and if I type my password at natural speed, it reproducibly detects one keystroke more than I intended to make. The same sequence of keystrokes is interpreted correctly by the real OS X keyboard stack. I reported this bug to Apple and they said they know and don&rsquo;t care.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>As an aside: anyone know how to get pmset to report the profile that&rsquo;s not active? <code>pmset -g</code> reports all settings for battery when on batter, and all settings for charger/AC when plugged into AC, and I have found no way to get all settings for both profiles short of running pmset twice, and physically plugging or unplugging the power connector between runs. Note that the set mode of pmset takes an optional <code>-a</code>/<code>-b</code>/<code>-c</code> argument to specify whether to change the values for battery, charger, or both profiles, but those aren&rsquo;t honored in conjunction with <code>-g</code>.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/">From Tumblr to Octopress, Part 3: Footnotes</a></h1>
     
     
@@ -98,7 +261,7 @@
   
 
 
-<time datetime="2013-03-17T01:42:00-04:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
+<time datetime="2013-03-17T01:42:00-07:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
         
          | <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/#disqus_thread">Comments</a>
         
@@ -115,9 +278,27 @@
 
 <p>So I had to go edit all the posts in which I used footnotes, and manually redo the footnote links using PHP Markdown Extra syntax.</p>
 
-<p>Second: Having done that and told Jekyll to regenerate the blog, I found myself looking at a bunch of raw unconverted PHP Markdown Extra footnote tags. That&rsquo;s because Jekyll&rsquo;s markdown processing is done by RDiscount, and the version of RDiscount specified by Octopress&rsquo;s Gemfile (1.6.8) does not support footnotes at all; footnotes using PHP Markdown Extra syntax were added as a feature of RDiscount 2.0.7.</p>
+<p>Second: Having done that and told Jekyll to regenerate the blog, I found myself looking at a bunch of raw unconverted PHP Markdown Extra footnote tags. That&rsquo;s because Jekyll&rsquo;s markdown processing is done by RDiscount, and the version of RDiscount specified by Octopress&rsquo;s Gemfile (1.6.8) does not support footnotes at all; footnotes using PHP Markdown Extra syntax were added as a feature of RDiscount 2.0.7, as an optional extension named <code>footnotes</code>.</p>
 
-<p>So I had to edit the Gemfile to specify RDiscount 2.0.7.</p>
+<p>So I had to edit the Gemfile to specify RDiscount 2.0.7, and edit _config.yml to enable the footnotes extension. These changes look like:</p>
+
+<p><code>Gemfile</code>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-  gem 'rdiscount', '~&gt; 1.6.8'
+</span><span class='line'>+  gem 'rdiscount', '~&gt; 2.0.7'</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>_config.yml</code>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> markdown: rdiscount
+</span><span class='line'>+rdiscount:
+</span><span class='line'>+  extensions: [ footnotes ]</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Third: Having done that and told Jekyll to regenerate the blog, some posts looked fine, but others had chunks of footnote definition content floating near the end of the post body but before the footnotes, and completely out of order. Some trial and error led me to deduce that RDiscount 2.0.7 does not actually honor the documented PHP Markdown Extra syntax, which allows you to hard-wrap the footnotes or even place the definition offset from the footnote number<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>; RDiscount is happy only if the footnote number and entire body are on one logical line with no hard line breaks. Since I&rsquo;m doing all this posting from a colocated Linux VM on which I don&rsquo;t run X, and thus use text editors in old-school terminal windows, I tend to hard-break my posts (and in fact, the posts I imported from Tumblr tended to be hard-wrapped at 76 columns by something somewhere along the write/post/import pipeline). RDiscount doesn&rsquo;t play well with these hard breaks.</p>
 
@@ -127,6 +308,7 @@
 
 <ul>
 <li>Update to RDiscount 2.0.7</li>
+<li>Enable RDiscount&rsquo;s footnotes extension</li>
 <li>Use the footnote syntax that RDiscount actually supports, which is like PHP Markdown Extra except each footnote definition must stay on one line without hard line breaks</li>
 <li>If importing your blog from a previous home using a script like tumblr.rb, verify that the conversion actually generates footnote markup</li>
 </ul>
@@ -173,7 +355,7 @@
   
 
 
-<time datetime="2013-03-17T01:40:00-04:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
+<time datetime="2013-03-17T01:40:00-07:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
         
          | <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/#disqus_thread">Comments</a>
         
@@ -252,7 +434,7 @@
   
 
 
-<time datetime="2013-03-17T01:37:00-04:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
+<time datetime="2013-03-17T01:37:00-07:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
         
          | <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-1-why/#disqus_thread">Comments</a>
         
@@ -310,7 +492,7 @@
   
 
 
-<time datetime="2013-02-25T00:00:00-05:00" pubdate data-updated="true">Feb 25<span>th</span>, 2013</time>
+<time datetime="2013-02-25T00:00:00-08:00" pubdate data-updated="true">Feb 25<span>th</span>, 2013</time>
         
          | <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/#disqus_thread">Comments</a>
         
@@ -375,7 +557,7 @@ bonus to having upgraded and deserves wider mention.</p>
   
 
 
-<time datetime="2013-02-25T00:00:00-05:00" pubdate data-updated="true">Feb 25<span>th</span>, 2013</time>
+<time datetime="2013-02-25T00:00:00-08:00" pubdate data-updated="true">Feb 25<span>th</span>, 2013</time>
         
          | <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/#disqus_thread">Comments</a>
         
@@ -424,7 +606,7 @@ to phones.</p>
   
 
 
-<time datetime="2013-02-21T00:00:00-05:00" pubdate data-updated="true">Feb 21<span>st</span>, 2013</time>
+<time datetime="2013-02-21T00:00:00-08:00" pubdate data-updated="true">Feb 21<span>st</span>, 2013</time>
         
          | <a href="/blog/2013/02/21/speedy-resume/#disqus_thread">Comments</a>
         
@@ -522,7 +704,7 @@ Macbook Air:</p>
   
 
 
-<time datetime="2013-02-13T00:00:00-05:00" pubdate data-updated="true">Feb 13<span>th</span>, 2013</time>
+<time datetime="2013-02-13T00:00:00-08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2013</time>
         
          | <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/#disqus_thread">Comments</a>
         
@@ -624,7 +806,7 @@ variant is further useful, but don&rsquo;t leave it on when you&rsquo;re not usi
   
 
 
-<time datetime="2013-02-13T00:00:00-05:00" pubdate data-updated="true">Feb 13<span>th</span>, 2013</time>
+<time datetime="2013-02-13T00:00:00-08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2013</time>
         
          | <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/#disqus_thread">Comments</a>
         
@@ -682,7 +864,7 @@ disabling.</p>
   
 
 
-<time datetime="2013-01-31T00:00:00-05:00" pubdate data-updated="true">Jan 31<span>st</span>, 2013</time>
+<time datetime="2013-01-31T00:00:00-08:00" pubdate data-updated="true">Jan 31<span>st</span>, 2013</time>
         
          | <a href="/blog/2013/01/31/google-default-account-for-multiple-sign-in/#disqus_thread">Comments</a>
         
@@ -764,76 +946,6 @@ helping me figure this out.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/23/restore-from-backup/">Restore From Backup</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-23T00:00:00-05:00" pubdate data-updated="true">Jan 23<span>rd</span>, 2013</time>
-        
-         | <a href="/blog/2013/01/23/restore-from-backup/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>The SSD in Vanessa&rsquo;s iMac died and needed to be replaced. In theory, this is
-pretty simple since we have backups — replace the faulty hardware, restore the
-backup, and get on with life.</p>
-
-<p>In reality, it&rsquo;s a little more complicated. I suppose these are small
-complaints since in the big picture, she didn&rsquo;t lose any data. Still.</p>
-
-<p>The way I carried out the restore was to</p>
-
-<ul>
-<li>Attach the replacement SSD in an external USB enclosure (the &ldquo;drive toaster&rdquo;)</li>
-<li>Boot off the recovery partition of the failing SSD, which still worked well enough for this purpose (otherwise I would have had to make a bootable USB stick or DVD)</li>
-<li>Invoke restore from Time Machine onto the new drive</li>
-<li>Power down, open the computer, and install the new SSD in place of the old one. (This is the hard part on a recent iMac, involving taking the screen off with suction cups, and so on.)</li>
-</ul>
-
-
-<p>And we&rsquo;re done, right? Not quite. Even after the Time Machine restore, a bunch
-of things were wonky:</p>
-
-<ul>
-<li>There&rsquo;s no recovery partition on the new drive. You&rsquo;d think Time Machine would recreate that, too, but it doesn&rsquo;t. Internet wisdom says all you need to do is reinstall the current version of Mac OS X over itself and it will automatically recreate the recovery partition; I tried it and that wasn&rsquo;t the case. What this means is the next failure will be harder to deal with because I&rsquo;ll need alternate boot media; the manual means of creating the recovery partition at this point seem just as hard as dealing with that problem when it arises, so I&rsquo;m ignoring it for now.</li>
-<li>Legitimate licensed Adobe CreativeSuite apps had their copy protection crap out, and refused to run with scary messages from the licensing subsystem using the word &ldquo;catastrophic&rdquo;. I called Adobe tech support, and they took 20 minutes to tell me to uninstall and reinstall the apps, which took another 20 minutes but worked.</li>
-<li>CrashPlan backups weren&rsquo;t running because their software uses Java and Mac OS X ships without Java until you launch an interactive Java app at which point you&rsquo;re prompted whether you want to automatically install a Java runtime.</li>
-<li>Time Machine backups weren&rsquo;t running because who knows why, until I went into System Preferences and manually prodded them to run once, after which they kept running fine automatically.</li>
-<li>Mac App Store wasn&rsquo;t automatically updating software until I launched it and manually signed in.</li>
-</ul>
-
-
-<p>These problems could have been caused by the hard drive replacement, the
-restore from backup, or the OS reinstall; I don&rsquo;t really know which. I just
-know there was a lot more to getting a working system back than letting Time
-Machine restore the files.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -849,6 +961,10 @@ Machine restore the files.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/20/apple-is-getting-really-aggressive-about-this-sleepdelay-thing/">Apple is getting really aggressive about this sleepdelay thing</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/">From Tumblr to Octopress, part 3: footnotes</a>
       </li>
     
@@ -862,10 +978,6 @@ Machine restore the files.</p>
     
       <li class="post">
         <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A waterproof tablet! A step in in the right direction</a>
       </li>
     
   </ul>
