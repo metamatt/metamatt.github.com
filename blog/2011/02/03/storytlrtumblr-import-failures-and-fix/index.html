@@ -113,25 +113,12 @@ to add Tumblr at all. Every attempt yielded an error message that just said to
 try again later; looking in Storytlr&rsquo;s messages.log, I saw more detailed
 errors like</p>
 
-<p>2010-12-24T03:50:55+01:00 ERR (3): Exception updating tumblr (21): Tumblr API
-returned http status 503 for url: <a href="http://metamatt.tumblr.com/api/read/json?callback=%0Awrap&amp;num=50&amp;start=0">http://metamatt.tumblr.com/api/read/json?ca
-llback=wrap&amp;num=50&amp;start=0</a></p>
-
-<p>2010-12-24T20:07:38+01:00 ERR (3): Exception updating tumblr (22): Tumblr API
-returned http status 503 for url: <a href="http://metamatt.tumblr.com/api/read/json?callbac%0Ak=wrap&amp;num=50&amp;start=550">http://metamatt.tumblr.com/api/read/json?ca
-llback=wrap&amp;num=50&amp;start=550</a></p>
-
-<p>2010-12-24T20:08:10+01:00 ERR (3): Exception updating tumblr (23): Tumblr API
-returned http status 503 for url: <a href="http://metamatt.tumblr.com/api/read/json?callback=%0Awrap&amp;num=50&amp;start=0">http://metamatt.tumblr.com/api/read/json?ca
-llback=wrap&amp;num=50&amp;start=0</a></p>
-
-<p>2010-12-24T20:09:28+01:00 ERR (3): Exception updating tumblr (24): Tumblr API
-returned http status 503 for url: <a href="http://metamatt.tumblr.com/api/read/json?callback%0A=wrap&amp;num=50&amp;start=50">http://metamatt.tumblr.com/api/read/json?ca
-llback=wrap&amp;num=50&amp;start=50</a></p>
-
-<p>2010-12-24T20:27:05+01:00 ERR (3): Exception updating tumblr (25): Tumblr API
-returned http status 503 for url: <a href="http://metamatt.tumblr.com/api/read/json?callba%0Ack=wrap&amp;num=50&amp;start=1150">http://metamatt.tumblr.com/api/read/json?ca
-llback=wrap&amp;num=50&amp;start=1150</a></p>
+<pre><code>2010-12-24T03:50:55+01:00 ERR (3): Exception updating tumblr (21): Tumblr API returned http status 503 for url: [http://metamatt.tumblr.com/api/read/json?callback=wrap&amp;num=50&amp;start=0](http://metamatt.tumblr.com/api/read/json?callback=wrap&amp;num=50&amp;start=0)
+2010-12-24T20:07:38+01:00 ERR (3): Exception updating tumblr (22): Tumblr API returned http status 503 for url: [http://metamatt.tumblr.com/api/read/json?callback=wrap&amp;num=50&amp;start=550](http://metamatt.tumblr.com/api/read/json?callback=wrap&amp;num=50&amp;start=550)
+2010-12-24T20:08:10+01:00 ERR (3): Exception updating tumblr (23): Tumblr API returned http status 503 for url: [http://metamatt.tumblr.com/api/read/json?callback=wrap&amp;num=50&amp;start=0](http://metamatt.tumblr.com/api/read/json?callback=wrap&amp;num=50&amp;start=0)
+2010-12-24T20:09:28+01:00 ERR (3): Exception updating tumblr (24): Tumblr API returned http status 503 for url: [http://metamatt.tumblr.com/api/read/json?callback=wrap&amp;num=50&amp;start=50](http://metamatt.tumblr.com/api/read/json?callback=wrap&amp;num=50&amp;start=50)
+2010-12-24T20:27:05+01:00 ERR (3): Exception updating tumblr (25): Tumblr API returned http status 503 for url: [http://metamatt.tumblr.com/api/read/json?callback=wrap&amp;num=50&amp;start=1150](http://metamatt.tumblr.com/api/read/json?callback=wrap&amp;num=50&amp;start=1150)
+</code></pre>
 
 <p>Note that the &ldquo;start&rdquo; parameter in the request varies each time, and sometimes
 got quite large &mdash; Obviously it&rsquo;s looking for too many posts and doesn&rsquo;t know
@@ -171,8 +158,7 @@ retry, it&rsquo;s important to only ask for what you really need.)</p>
 posts; a better fix would query Tumblr for the actual number of posts, and
 stop there, and/or just recognize an empty response and stop there.</p>
 
-<p>(Note: I tried posting this to the <a href="http://groups.google.com/group/storytlr-discuss">Storytlr-discuss mailing
-list</a>, which is backed by a
+<p>(Note: I tried posting this to the <a href="http://groups.google.com/group/storytlr-discuss">Storytlr-discuss mailing list</a>, which is backed by a
 Google Group, but the group is broken or a moderator is eating the post,
 because it will temporarily show up and then disappear, with commensurate bugs
 in the unread-post count. So I&rsquo;m posting it here.)</p>

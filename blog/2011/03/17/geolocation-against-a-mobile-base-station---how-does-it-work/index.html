@@ -9,8 +9,7 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="I just saw these two posts describing how an iPad tethered to an iPhone still gets accurate
-and up-to-date location information without GPS (via DF, &hellip;">
+  <meta name="description" content="I just saw these two posts describing how an iPad tethered to an iPhone still gets accurate and up-to-date location information without GPS (via DF, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -105,10 +104,7 @@ and up-to-date location information without GPS (via DF, &hellip;">
   </header>
 
 
-<div class="entry-content"><p>I just saw these <a href="http://blog.urbanape.com/post/3798485232/show-me-the-%0Away">two</a> <a href="http://www.tabletmonsters.com/news/video-wi-fi-only-ipad-2-gps-%0Anavigation">posts</a> describing how an iPad tethered to an iPhone still gets accurate
-and up-to-date location information without GPS (via DF, citing this ability
-as &ldquo;<a href="http://daringfireball.net/linked/2011/03/16/gps-tethering">another reason to consider a Wi-Fi-only
-iPad</a>&rdquo;).</p>
+<div class="entry-content"><p>I just saw these <a href="http://blog.urbanape.com/post/3798485232/show-me-the-way">two</a> <a href="http://www.tabletmonsters.com/news/video-wi-fi-only-ipad-2-gps-navigation">posts</a> describing how an iPad tethered to an iPhone still gets accurate and up-to-date location information without GPS (via DF, citing this ability as &ldquo;<a href="http://daringfireball.net/linked/2011/03/16/gps-tethering">another reason to consider a Wi-Fi-only iPad</a>&rdquo;).</p>
 
 <p>(As background, location information on mobile devices generally comes from
 some combination of 3 sources, each of which may or may not be available: (1)
@@ -147,7 +143,8 @@ it does work is news.</p>
 <p>After brainstorming with friends we came up with 4 possible ways this could
 work:</p>
 
-<p>1) Collusion between the iPad and the hotspot: Some new protocol/secret
+<ol>
+<li><p>Collusion between the iPad and the hotspot: Some new protocol/secret
 channel between the iPad and the mobile hotspot, where without using any of
 the standard techniques listed above, the iPad can just ask the mobile hotspot
 where it is. (The mobile hotspot has access at least to technique #2, and
@@ -156,9 +153,8 @@ somebody would probably have noticed if there was a new network service on the
 iPhone whereby you could query its location. (NB 1: this might have privacy
 concerns, though if all you can do is ask an iPhone where it is when you&rsquo;re
 already right next to it, these concerns are minimal. NB 2: this would only
-work with Apple hotspots, not, say, a Mi-Fi.)</p>
-
-<p>2) Collusion between the hotspot and the service that implements base station
+work with Apple hotspots, not, say, a Mi-Fi.)</p></li>
+<li><p>Collusion between the hotspot and the service that implements base station
 &ndash;> location lookups: This would make modify technique #3 to cooperate with
 base stations that move around frequently, i.e. mobile hotspots. This is
 believable, since Apple originally licensed said service from Skyhook and then
@@ -167,9 +163,7 @@ mode is constantly updating Apple with its location, and the iPad can then do
 the normal &ldquo;where is base station with this MAC address&rdquo; query and actually
 get up-to-date results. (NB 1: this might also have privacy concerns, if
 anybody can query the database by MAC address and follow your iPhone around.
-NB 2: this would also work only with Apple hotspots, at least initially.)</p>
-
-<ol>
+NB 2: this would also work only with Apple hotspots, at least initially.)</p></li>
 <li><p>Collusion between the location service and the cellular network: the cell
 network knows where your mobile hotspot is (using technique #2), and it knows
 what IP address it&rsquo;s assigned to your mobile hotspot. All of the data from

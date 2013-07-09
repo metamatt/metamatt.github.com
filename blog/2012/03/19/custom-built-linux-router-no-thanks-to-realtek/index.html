@@ -159,7 +159,8 @@ to the other 4 ports, which by default are bridged onto a single VLAN but
 which can be configured for 4 separate VLANs if that floats your boat.)</p>
 
 <p>After getting some advice from friends and discussing it ad nauseum, I ended
-up buying a <a href="http://www.fit-pc.com/web/fit-pc/fit-pc2i-%0Aspecifications/">fit-pc2i</a>, notable because it&rsquo;s a standard x86 PC (so I can choose
+up buying a <a href="http://www.fit-pc.com/web/fit-pc/fit-pc2i-specifications/">fit-pc2i</a>,
+notable because it&rsquo;s a standard x86 PC (so I can choose
 really any standard Linux distribution or even Windows to run on it), in a
 tiny passively cooled case, drawing 6W, and with 2 physical network
 interfaces. (I didn&rsquo;t like the idea of depending on a bunch of USB network
@@ -180,12 +181,11 @@ hung from the client&rsquo;s point of view, and I couldn&rsquo;t access the new 
 over the network at all. I power cycled the new router, tried again, same
 result. I poked around log files, tried to enable the Linux NMI watchdog, and
 generally looked for clues without finding anything until I visited the fit-pc
-forums and read <a href="http://www.fit-pc.com/forum/viewtopic.php?f=9&amp;t=2383">&ldquo;solution for freezes when scp/ftp/nfs with most Linux
-dist&rdquo;</a>. This pointed the
+forums and read
+<a href="http://www.fit-pc.com/forum/viewtopic.php?f=9&amp;t=2383">&ldquo;solution for freezes when scp/ftp/nfs with most Linux dist&rdquo;</a>. This pointed the
 blame squarely at the Realtek network interfaces, and suggested an alternate
 driver as a solution. Once I started investigating fixes for this, I got
-really pessimistic at first: <a href="https://www.google.com/search?q=r8169+freeze">a Google query for &ldquo;r8169
-freeze&rdquo;</a> shows a dismaying
+really pessimistic at first: <a href="https://www.google.com/search?q=r8169+freeze">a Google query for &ldquo;r8169 freeze&rdquo;</a> shows a dismaying
 number of hits, many in distribution-specific bug reports going back years and
 years. I&rsquo;d been under the assumption that networking is Linux&rsquo;s lifeblood and
 that wired networking has long been a solved problem — wireless network
@@ -231,8 +231,8 @@ almost work by enabling and disabling VLAN tag acceleration in the right order
 through an order-dependent set of transitions reminiscent of port knocking,
 but still doesn&rsquo;t entirely work, and I&rsquo;m not going to trust it.</p>
 
-<p>Then, back in r8169-land, I found an Ubuntu bug report, <a href="https://bugs.launchpad.net/ubuntu/+source%0A/linux-backports-modules-3.0.0/+bug/839393?comments=all">Network problem with
-the r8169 driver and RTL8111/8168B</a>, in response to which
+<p>Then, back in r8169-land, I found an Ubuntu bug report,
+<a href="https://bugs.launchpad.net/ubuntu/+source/linux-backports-modules-3.0.0/+bug/839393?comments=all">Network problem with the r8169 driver and RTL8111/8168B</a>, in response to which
 people said the 3.1 kernel driver seems to work better than the 3.0 kernel
 driver, and Leann Ogasawara produced a 3.0 kernel with the 3.1 r8169 driver
 grafted in for people to try. So I tried it, and: lo and behold, while my
