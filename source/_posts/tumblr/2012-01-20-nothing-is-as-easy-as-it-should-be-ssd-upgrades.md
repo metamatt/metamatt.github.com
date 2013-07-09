@@ -12,8 +12,7 @@ spinning up and down in the night, and decided to help me out by bringing me
 SSD's for my and Vanessa's computers.
 
 So, the week after Christmas, I replaced the spinning rust in my (2006) Mac
-Pro and her (2009) iMac with [Crucial M4 solid state
-drives](http://amzn.to/wUySKX).
+Pro and her (2009) iMac with [Crucial M4 solid state drives](http://amzn.to/wUySKX).
 
 This was really easy in the Mac Pro; this machine is the easiest to work on
 I've ever owned or used, and that's probably why a machine from 2006 is still
@@ -34,9 +33,7 @@ it has nice pictures, except I couldn't actually follow it because the 2009
 iMac I was working on, unlike the more recent models, doesn't have a 2nd SATA
 port. Which means I had to replace the hard drive, instead of adding the SSD
 alongside it. That was actually the goal, since I didn't want to hear drives
-spinning up and down, but it means I had to contend with the [temperature
-sensor issue](http://blog.macsales.com/2751-proprietary-cable-can-put-the-
-brakes-on-upgrading-late-09-imacs).
+spinning up and down, but it means I had to contend with the [temperature sensor issue](http://blog.macsales.com/2751-proprietary-cable-can-put-the-brakes-on-upgrading-late-09-imacs).
 
 There seem to be 5 ways people deal with this:
 
@@ -60,4 +57,3 @@ I ended up making a jumper out of a short piece of one conductor from solid-
 core Category 6 network wire. Strip that, bend it in a tight U, jam it inside
 the connector at the end of the sensor cable, and it fits nicely. Seems to be
 working fine.
-

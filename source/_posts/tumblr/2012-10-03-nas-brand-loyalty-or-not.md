@@ -99,18 +99,13 @@ probably wondering why I'm talking about Apple hardware anyway; clearly they
 have no desire to let us do external storage anywhere near the price-
 performance of the PC world; I should just build my own box and run Linux or
 Nexenta and soak in the ZFS goodness and… no thanks. I'm crazy enough to
-[build my own networking hardware](http://blog.metamatt.com/blog/2012/03/19
-/custom-built-linux-router-no-thanks-to-realtek/), but don't want to deal with
-storage hardware.
+[build my own networking hardware](http://blog.metamatt.com/blog/2012/03/19/custom-built-linux-router-no-thanks-to-realtek/), but don't want to deal with storage hardware.
 
 So…. back to NAS? The last day the DS4600 thoroughly irked me, a few hours
-later Ars Technica ran [this gushing review of the Synology
-DS-412+](http://arstechnica.com/gadgets/2012/09/synology-ds-412-is-fast-fun-
-and-flexible/). Sounds good to me. I ordered one (actually the 5-bay DS-1512+,
+later Ars Technica ran [this gushing review of the Synology DS-412+](http://arstechnica.com/gadgets/2012/09/synology-ds-412-is-fast-fun-and-flexible/). Sounds good to me. I ordered one (actually the 5-bay DS-1512+,
 which cost hardly any more) and am setting it up now. Wish me luck. In first
 impressions, the hardware is well built, it runs quieter than either the
 ReadyNAS NV or the DS4600 that it's meant to replace, and I like that they
 gave some thought to fan replacement and memory upgrades. The browser UI is a
 little too flashy for its own good, but is impressive in its own way. I
 haven't done any real performance testing yet. Wish me luck.
-

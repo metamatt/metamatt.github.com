@@ -7,14 +7,9 @@ tags:
 - kindle
 comments: true
 ---
-I wrote a [semi-positive mini-review of the Kindle
-Fire](http://blog.metamatt.com/blog/2011/11/17/kindle-fire-first-impressions/)
-this morning.
+I wrote a [semi-positive mini-review of the Kindle Fire](http://blog.metamatt.com/blog/2011/11/17/kindle-fire-first-impressions/) this morning.
 
-Then I read [Marco Arment's rather scathing "human
-review"](http://www.marco.org/2011/11/17/kindle-fire-review), and wondered:
-wait a minute, if it's that bad, should I return it, and wait for a better
-version (or save my money if no better version materializes)?
+Then I read [Marco Arment's rather scathing "human review"](http://www.marco.org/2011/11/17/kindle-fire-review), and wondered: wait a minute, if it's that bad, should I return it, and wait for a better version (or save my money if no better version materializes)?
 
 The thing is, I saw most of the same things he did and had most of the same
 complaints; I just expect Amazon to fix them. Marco sees the glass half-empty;
@@ -33,17 +28,13 @@ it from sleep, doesn't drag smoothly -- it's the first thing you see; how hard
 is it to get that right? Still, if Amazon cares -- and I hope they do -- they
 should be able to fix this.
 
-So will they (fix it)? What's the problem here, anyway? [The hardware should
-be up to the task](http://www.anandtech.com/show/5117/amazon-kindle-fire-tore-
-down-has-512mb-of-ram) --[ TI OMAP 4430
-SOC](http://en.wikipedia.org/wiki/Texas_Instruments_OMAP#OMAP_4) with two
+So will they (fix it)? What's the problem here, anyway? [The hardware should be up to the task](http://www.anandtech.com/show/5117/amazon-kindle-fire-tore-down-has-512mb-of-ram) -- [TI OMAP 4430 SOC](http://en.wikipedia.org/wiki/Texas_Instruments_OMAP#OMAP_4) with two
 gigahertz CPU cores on Cortex A9 architecture and PowerVR SGX540 GPU, 512MB of
 RAM. That compares favorably with this year's Apple devices based on the A5
 SOC (iPad 2, iPhone 4S: two comparable CPU cores and a somewhat newer GPU
 core) and very favorably with last year's Apple devices based on the A4 SOC
 (iPhone 4 and 4th-generation iPod Touch: one comparable CPU core and a
-somewhat older GPU core). I heard that [specs are
-dead](http://daringfireball.net/linked/2011/11/14/siegler-specs), but at least
+somewhat older GPU core). I heard that [specs are dead](http://daringfireball.net/linked/2011/11/14/siegler-specs), but at least
 this establishes a baseline. And note that at the Kindle Fire's 1024x600
 screen resolution, it's pushing the exact same number of pixels as the 960x640
 retina display in the iPhone 4 and 4S. So assuming they can figure out how to
@@ -85,8 +76,7 @@ Kindle Fire has the right guts to deliver a much better experience than it
 does today, and is fixable in software if Amazon has the will to improve it.
 I'm also intrigued that there's finally an Android competitor to the iPod
 Touch -- decent hardware sold contract-free and unsubsidized for an honest
-$200. (Incidentally, that's something [John Gruber called out for
-before](http://daringfireball.net/2010/11/apples_pricing_advantage).) The big
+$200. (Incidentally, that's something [John Gruber called out for before](http://daringfireball.net/2010/11/apples_pricing_advantage).) The big
 difference between the Kindle Fire and the iPod Touch, other than the
 operating system (and the responsiveness and app ecosystem that put Apple way
 ahead on the software side) is obviously the size; I'm not going to get into
@@ -100,4 +90,3 @@ interested to see what happens with the app ecosystem. I think it could be a
 big gaming success, the way the iPod Touch has been, for example.
 
 If Amazon can endow it with a major dose of missing snappiness, that is.
-

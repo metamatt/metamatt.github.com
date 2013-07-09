@@ -7,11 +7,8 @@ comments: true
 ---
 When I got solar panels installed on the roof of our house last fall, friends
 immediately started asking how well they were working out, and my answer had
-to be that while they're [generating a nice amount of
-power](https://enlighten.enphaseenergy.com/public/systems/g8ah32261), I
-wouldn't know how well they were doing on the actual goal of zeroing our
-electric bill until a year had passed. That year has now passed, and it's time
-to answer the question.
+to be that while they're [generating a nice amount of power](https://enlighten.enphaseenergy.com/public/systems/g8ah32261), I wouldn't know how well they were doing on the actual goal of zeroing our
+electric bill until a year had passed. That year has now passed, and it's time to answer the question.
 
 If you add solar power to your grid energy, at least the way it's done in
 California, two things will happen:
@@ -26,11 +23,9 @@ variable. You pay a different rate depending on how much you use (tiering)[^1].
 You can opt into time-of-use (TOU) billing[^2], which makes electricity more
 expensive at peak times and cheaper the rest of the time to encourage you to
 shift usage away from peak times. The normal residential billing schedule is
-called [E-1 ("residential
-services")](http://www.pge.com/tariffs/tm2/pdf/ELEC_SCHEDS_E-1.pdf) and shows
+called [E-1 ("residential services")](http://www.pge.com/tariffs/tm2/pdf/ELEC_SCHEDS_E-1.pdf) and shows
 5 different rates according to tier; the TOU residential schedule is called
-[E-6 ("residential time-of-use
-service")](http://www.pge.com/tariffs/tm2/pdf/ELEC_SCHEDS_E-6.pdf) and shows
+[E-6 ("residential time-of-use service")](http://www.pge.com/tariffs/tm2/pdf/ELEC_SCHEDS_E-6.pdf) and shows
 25 different rates according to tier and time.
 
 Once you introduce solar (or other generation capabilities) into the mix,

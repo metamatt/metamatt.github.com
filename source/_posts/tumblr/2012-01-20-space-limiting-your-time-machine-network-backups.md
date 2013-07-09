@@ -7,13 +7,9 @@ tags:
 - backup
 comments: true
 ---
-As part of the [aforementioned office-quieting
-project](http://blog.metamatt.com/blog/2012/01/20/nothing-is-as-easy-as-it-
-should-be-ssd-upgrades/), I wanted spinning disks out of the office, so I
+As part of the [aforementioned office-quieting project](http://blog.metamatt.com/blog/2012/01/20/nothing-is-as-easy-as-it- should-be-ssd-upgrades/), I wanted spinning disks out of the office, so I
 garbage collected 2 1TB drives from external enclosures that had served for
-Time Machine, and [moved them into a NAS
-enclosure](http://blog.metamatt.com/blog/2012/01/20/nothing-is-as-easy-as-it-
-should-be-nas-upgrades/) in the basement.
+Time Machine, and [moved them into a NAS enclosure](http://blog.metamatt.com/blog/2012/01/20/nothing-is-as-easy-as-it-should-be-nas-upgrades/) in the basement.
 
 That solved the noise problem and gave me a bunch more network-attached
 storage, but turned off Time Machine; the next step was to re-enable TIme
@@ -36,10 +32,7 @@ immediately fill the whole volume, but it will grow to do so over time. That's
 not good, since I want multiple Time Machine backups to be able to share that
 volume, and they're not the only thing that lives there.
 
-Googling for solutions to this, I found an article on how to [pre-create the
-sparseimage with whatever size you
-want](http://code.stephenmorley.org/articles/time-machine-on-a-network-
-drive/). I tried that, but when I enabled Time Machine, it ignored the
+Googling for solutions to this, I found an article on how to [pre-create the sparseimage with whatever size you want](http://code.stephenmorley.org/articles/time-machine-on-a-network- drive/). I tried that, but when I enabled Time Machine, it ignored the
 hostname_macaddress.sparseimage directory and just created a new
 hostname.sparseimage directory next to it. (Which, IMHO, is a good thing,
 since keying the backup name from the MAC address is not going to work well
@@ -60,4 +53,3 @@ Boom. Seems to work fine. After having backed up a little over 400GB, Time
 Machine now displays the backup status with "Available: 385 GB of 3 TB", so
 after backing up another 385GB, it'll start pruning the backup set, instead of
 filling the volume and getting confused.
-

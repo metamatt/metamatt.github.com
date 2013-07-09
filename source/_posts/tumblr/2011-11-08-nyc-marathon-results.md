@@ -61,9 +61,6 @@ talking about, and if you haven't and you're a runner, do consider it. It
 really was a great experience.
 
 If you're curious for any more details, the marathon website has the detailed
-splits available -- go to [[http://trackmyrunners.ingnycmarathon.org/Runners.a
-spx](http://trackmyrunners.ingnycmarathon.org/Runners.aspx)](http://trackmyrun
-ners.ingnycmarathon.org/Runners.aspx) and search for Ginzton. Then click the +
+splits available -- go to [http://trackmyrunners.ingnycmarathon.org/Runners.aspx](http://trackmyrunners.ingnycmarathon.org/Runners.aspx) and search for Ginzton. Then click the +
 button on the far right, and it'll turn my name into a link which you can
 click on for the details.
-

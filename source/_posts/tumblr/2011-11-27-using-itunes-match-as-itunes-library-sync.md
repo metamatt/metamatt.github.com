@@ -7,8 +7,7 @@ tags:
 - sync
 comments: true
 ---
-Apple recently added two new features to iTunes: "[iTunes in the
-Cloud](http://www.apple.com/icloud/features/)", which adds all your iTunes
+Apple recently added two new features to iTunes: "[iTunes in the Cloud](http://www.apple.com/icloud/features/)", which adds all your iTunes
 music purchases to a cloud library which can be streamed or downloaded as
 often as you want to any of your devices (iPhone, iPod, iPad, computer with
 iTunes), and "iTunes Match", which adds all the music you _didn't_ buy from
@@ -70,13 +69,10 @@ different name so it won't play the local file, at which point things are
 pretty broken. What's needed here is a way to stuff the file back into the
 cloud, making iTunes think there is no local copy so it will go get it from
 iCloud again the next time it's needed — I couldn't figure out how to do this
-until I read this [Q&A article at Ars
-Technica](http://arstechnica.com/apple/news/2011/11/more-itunes-match-answers-
-dj-sets-how-to-replace-music-and-more.ars,) which has the secret: select the
+until I read this [Q&A article at Ars Technica](http://arstechnica.com/apple/news/2011/11/more-itunes-match-answers-dj-sets-how-to-replace-music-and-more.ars,) which has the secret: select the
 song, hold the option key while pressing the delete key, and the normal delete
 confirmation dialog will grow a new checkbox "also delete this song from
 iCloud". Leaving that option unchecked, you can delete the local copy of the
 song (or, a broken link to a missing local copy of a song) while leaving it in
 the cloud library, the cloud icon comes back, and iTunes will go back to
 getting the data from iCloud as needed again.
-

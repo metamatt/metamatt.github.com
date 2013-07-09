@@ -6,9 +6,7 @@ tags:
 comments: true
 ---
 RIP Steve Jobs. Along with his passing, everyone in the tech world seems to be
-telling their [stories about Apple's influence on them in their formative
-years;](http://arstechnica.com/apple/news/2011/10/the-first-time-i-used-an-
-apple-computer-was.ars) here's mine.
+telling their [stories about Apple's influence on them in their formative years](http://arstechnica.com/apple/news/2011/10/the-first-time-i-used-an-apple-computer-was.ars); here's mine.
 
 Like Eric Bangeman in the above-linked Ars Technica article, my first computer
 wasn't an Apple II -- I also had contemporary experience with TRS-80, TI
@@ -114,4 +112,3 @@ something that was a total crapshoot under Windows at the time and, um, still
 mostly is another 7 years later), and, to close with another reference to
 Bangeman, every computer I've bought since that I didn't build myself has been
 a Mac.
-

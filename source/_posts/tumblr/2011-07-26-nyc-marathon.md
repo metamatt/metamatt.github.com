@@ -19,6 +19,4 @@ against any kind of cancer benefits the fight against all kinds of cancer.")
 
 If you can spare $20, or more, or less, to sponsor me and support the MMRF, I,
 the MMRF, and multiple myeloma patients present and future would all
-appreciate it: [just follow this link to my fundraising
-page](http://www.active.com/donate/2011mmrfNYC/NYFULLMGinzton). Thank you.
-
+appreciate it: [just follow this link to my fundraising page](http://www.active.com/donate/2011mmrfNYC/NYFULLMGinzton). Thank you.

@@ -72,8 +72,8 @@ seal them away from external sound and then electronically add back only what
 they think you want to hear, and that sealed design minimizes outgoing sound
 leakage too.
 
-Having learned this, I tried both of these approaches. I bought [Astro's
-Mixamp 5.8](http://www.astrogaming.com/mixamp-5-8), which has quite the bag of
+Having learned this, I tried both of these approaches. I bought
+[Astro's Mixamp 5.8](http://www.astrogaming.com/mixamp-5-8), which has quite the bag of
 tricks: it connects to any headphones and makes them wireless; it also uses
 signal processing tricks to try to make a Dolby Digital signal sound like it's
 coming from a multi-speaker surround sound system even though the headphones
@@ -83,8 +83,7 @@ audio. But you don't have to use this with a game system; you can also connect
 the transmitter to a music player, in which case "chat" will just be your own
 voice, and "game" will be the music.
 
-I also borrowed an [Impact Sport Electronic Earmuff](http://www.amazon.com
-/Howard-Leight-R-01526-Electronic-Earmuff/dp/B001T7QJ9O) from another gun-nut
+I also borrowed an [Impact Sport Electronic Earmuff](http://www.amazon.com/Howard-Leight-R-01526-Electronic-Earmuff/dp/B001T7QJ9O) from another gun-nut
 friend. It's battery powered and by default self contained; it feels like
 wearing construction earmuffs until you turn it on, at which point you hear a
 faint hiss as it channels ambient noise from external microphones into
@@ -127,4 +126,3 @@ price, of course. But they do exist.
 
 Moral of the story: these electronic earmuffs are pretty cool. And it's good
 to have gun-nut friends.
-

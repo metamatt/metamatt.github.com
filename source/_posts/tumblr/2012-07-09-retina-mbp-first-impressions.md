@@ -37,22 +37,17 @@ it.)
 
 **The speed** The CPU is _fast_. Most of what I (and most of us) do with computers is no longer CPU-bound, but I was coming from a dual-core Core 2 machine, and this rMBP's Core i7 cores are palpably faster at the same clock speed, and this machine has 4 of them, and they're hyperthreaded so Mac OS thinks it has 8 of them. The only taxing thing I've tried so far is telling Serato Itch to analyze an 800-song music library, which took 3 or 4 hours on my old laptop and about 15 minutes on this one. I don't think I'll be complaining about CPU speed for a while.
 
-Meanwhile, while [I've been all-SSD for a
-while](http://blog.metamatt.com/blog/2012/01/20/nothing-is-as-easy-as-it-
-should-be-ssd-upgrades/), this is the first time I've had Apple install the
+Meanwhile, while [I've been all-SSD for a while](http://blog.metamatt.com/blog/2012/01/20/nothing-is-as-easy-as-it-should-be-ssd-upgrades/), this is the first time I've had Apple install the
 SSD as a factory option instead of going aftermarket and choosing and
-installing it myself. Mostly because I had no choice, but also because [it
-looks like Apple finally chose a top-shelf
-model](http://www.anandtech.com/show/5997/ssd-and-usb-30-performance-of-the-
-retina-display-macbook-pro).
+installing it myself. Mostly because I had no choice, but also because
+[it looks like Apple finally chose a top-shelf model](http://www.anandtech.com/show/5997/ssd-and-usb-30-performance-of-the-retina-display-macbook-pro).
 
 **The software** Given the pixel-doubling trick Apple is using on all their retina-branded models to avoid text and UI elements getting too small to see/interact with normally, software needs to be updated to actually take advantage of the additional resolution. Otherwise, it'll run as well as before but at the old resolution, and look somewhat blocky/pixelated. Apps that are mostly text and standard UI widgets using Apple's text rendering and widget libraries turn out fine; apps with a lot of custom graphical UI elements need to provide double-resolution versions of their images but look mostly okay in the meantime; apps that do their own text rendering look pretty much horrible without an update.
 
 I normally use Google Chrome as my web browser. Chrome (and Firefox) is one of
 those rare apps that does its own text rendering, which means it severely
 needs an update, not just to be "optimized for Retina display" but really to
-look good at all. [This update has already
-happened](http://chrome.blogspot.com/2012/06/chrome-and-new-shiny.html) in the
+look good at all. [This update has already happened](http://chrome.blogspot.com/2012/06/chrome-and-new-shiny.html) in the
 "Canary" channel (12 weeks into the future of the stable version, because
 Chrome updates every 6 weeks, and updates flow from the Canary double-beta
 version to the beta version to the stable version); this means if you want
@@ -60,13 +55,10 @@ text to look good, you can wait 12 weeks, use Safari, or use Chrome Canary.
 I'm using Canary, and for the most part it works fine, but Google Maps doesn't
 work. At all. (And more into nitpick territory, the Canary version is clearly
 not intended for daily use; the yellow dock icon is an eyesore, and it won't
-allow you to set it as the default system browser without [resorting to
-external means](http://justinlee.sg/2011/05/09/setting-google-chrome-canary-
-build-for-mac-as-default-browser/).) So I've got Chrome Canary for most
+allow you to set it as the default system browser without [resorting to external means](http://justinlee.sg/2011/05/09/setting-google-chrome-canary-build-for-mac-as-default-browser/).) So I've got Chrome Canary for most
 things, and normal Chrome and Safari as fallbacks for whatever doesn't work in
 Canary, which so far is just Google Maps.
 
 **The summary** It's got the highest resolution screen most of us have ever seen; it's thin and light given that screen size; it's fast, packing very respectable compute+storage hardware; it's basically the right silicon wrapped around an amazing screen in an amazingly tiny package. I'm theoretically annoyed by the need for an Ethernet dongle, but I expect it won't be a real problem. I'm theoretically annoyed by the non-upgradable RAM, but 16GB should be enough for anybody. Seriously, over the years usually RAM upgrades are the last straw that force me to upgrade laptops; it's hitting the RAM ceiling that forces me to upgrade the whole machine; time will tell if this rMBP model is a good or bad decision for me, but by ordering it with the maximum (in place of starting lower and upgrading later) it feels relatively well future-proofed.
 
 I like it. I have a hard time imagining a better 4½ pound computer today.
-

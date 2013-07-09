@@ -6,11 +6,7 @@ tags:
 - os x
 comments: true
 ---
-After reading about [Apple's new Mountain Lion](http://www.apple.com/macosx
-/mountain-lion/), including coverage from [Daring
-Fireball](http://daringfireball.net/2012/02/mountain_lion%20) and [Ars
-Technica](http://arstechnica.com/apple/news/2012/02/apple-unleashes-mountain-
-lion-on-developers-set-for-summer-release.ars), my immediate reaction is:
+After reading about [Apple's new Mountain Lion](http://www.apple.com/macosx /mountain-lion/), including coverage from [Daring Fireball](http://daringfireball.net/2012/02/mountain_lion%20) and [Ars Technica](http://arstechnica.com/apple/news/2012/02/apple-unleashes-mountain-lion-on-developers-set-for-summer-release.ars), my immediate reaction is:
 
   * Address Book is being renamed Contacts? Great. I can't tell you how many times I've typed Command-Space, C-O-N, trying to launch Address Book via Spotlight.
   * So long Growl? I already said "so long" to Growl months ago, since I don't like the way old notifications pile up. Notification Center, at least in its iOS incarnation, is much less intrusive.
@@ -36,4 +32,3 @@ From which I conclude the meta-news here is that with a plan to update the OS
 annually and the ability to roll out these upgrades via the Mac App Store for
 $30, we should get used to regular incremental updates, not revolutions every
 blue moon. Which is a pretty sane way to develop quality software, really.
-

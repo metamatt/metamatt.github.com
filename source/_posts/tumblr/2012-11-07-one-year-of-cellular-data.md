@@ -14,8 +14,7 @@ Here are the stats on my cellular data usage over one year on Sprint's
 network[^1]. (I got the phone on Halloween of 2011, and took this screenshot on
 Halloween of 2012.)
 
-[![1 year of cellular data usage](http://farm8.staticflickr.com/7120/816338086
-3_21996345ca.jpg)](http://www.flickr.com/photos/67861147@N00/8163380863)
+[![1 year of cellular data usage](http://farm8.staticflickr.com/7120/8163380863_21996345ca.jpg)](http://www.flickr.com/photos/67861147@N00/8163380863)
 
 7 GB down and 1 GB up; 8 GB total; that averages to 666 MB per month. Clearly
 I'm not a heavy cellular data user and not making the most out of Sprint's

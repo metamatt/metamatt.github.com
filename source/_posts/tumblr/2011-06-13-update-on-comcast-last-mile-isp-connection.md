@@ -7,13 +7,7 @@ tags:
 - last-mile
 comments: true
 ---
-After [months of woe with my Comcast cable
-connection](http://blog.metamatt.com/blog/2011/04/07/state-of-the-last-mile-
-internet-connection-year-2009/), and a couple months of [flirtation with indie
-DSL](http://blog.metamatt.com/blog/2011/04/21/dsl-disappointments-too-bad-
-that-didnt-work/), I called Comcast out for a third service visit to focus on
-the external wiring. (Aside: This took some convincing from the service rep on
-the phone; more on this later.)
+After [months of woe with my Comcast cable connection](http://blog.metamatt.com/blog/2011/04/07/state-of-the-last-mile-internet-connection-year-2009/), and a couple months of [flirtation with indie DSL](http://blog.metamatt.com/blog/2011/04/21/dsl-disappointments-too-bad- that-didnt-work/), I called Comcast out for a third service visit to focus on the external wiring. (Aside: This took some convincing from the service rep on the phone; more on this later.)
 
 I realized that our house had a bunch of old exterior cable wiring including a
 dodgy splitter, left over from when we bought it, and entirely unused now.
@@ -86,4 +80,3 @@ distinct from the one I've been calling "the problem" and easily identifiable
 since the modem clearly identifies it as such; it's also a lot less annoying
 because it only seems to happen in the middle of the night and it fixes itself
 within minutes.)
-

@@ -19,10 +19,8 @@ To my thinking, it's closer to a 15" MacBook Air than a true MacBook Pro.
 
 That doesn't affect whether you should buy one, but I do find it interesting.
 
-Predictably, people are [gushing about the display and complaining about the
-price](http://daringfireball.net/2012/06/three_takeaways_wwdc). Apple
-positions it as the high-end option in the [MacBook Pro lineup](http://store.a
-pple.com/us/browse/home/shop_mac/family/macbook_pro/select) (13" starting at
+Predictably, people are [gushing about the display and complaining about the price](http://daringfireball.net/2012/06/three_takeaways_wwdc). Apple
+positions it as the high-end option in the [MacBook Pro lineup](http://store.apple.com/us/browse/home/shop_mac/family/macbook_pro/select) (13" starting at
 $1199, 15" starting at $1799, and 15" Retina model starting at $2199). No,
 that's not cheap, but let's consider: the lowest-speced Retina model has a 2.3
 GHz quad-core processor, 8GB of RAM, and a 256GB SSD for $2199; the 15" non-
@@ -44,7 +42,7 @@ model with, um, 300% more pixels, if you're into that sort of thing.
 
 This difference carries over to the higher-spec model too. In chart form:
 
-<table cellspacing="6"><tr><td>CPU</td><td>2.3 GHz quad-core
+<table><tr><td>CPU</td><td>2.3 GHz quad-core
 i7</td><td>2.6 GHz quad-core i7</td></tr><tr><td>RAM</td><td>8GB</td><td>
 8GB</td></tr><tr><td>SSD</td><td>256GB</td><td>512GB</td></tr><tr><td>Pr
 ice with 1440x900 (non-Retina)
@@ -84,4 +82,3 @@ also argue that all this proves is that the non-Retina MBPs are even more
 overpriced. But the bottom line is that for anyone already considering a high-
 end MacBook Pro with SSD anyway, the price on the Retina models is low —
 surprisingly low, even.
-

@@ -29,8 +29,7 @@ Still, for us it turned out remarkably easy to travel.
 
 Here's where we went:
 
-[![Ireland travel map](http://farm9.staticflickr.com/8482/8219093821_5003d3ab9
-0.jpg)](http://www.flickr.com/photos/67861147@N00/8219093821)
+[![Ireland travel map](http://farm9.staticflickr.com/8482/8219093821_5003d3ab90.jpg)](http://www.flickr.com/photos/67861147@N00/8219093821)
 
 The itinerary, of which I'm proud because the transfers were so easy and
 involved only public transit: We flew from San Francisco to London and then
@@ -53,34 +52,26 @@ Some photographic evidence of highlights from Ireland:
 
 Howth, a scenic day trip from Dublin:
 
-[![Picture perfect](http://farm9.staticflickr.com/8173/8052048045_5ccbedde7b.j
-pg)](http://www.flickr.com/photos/67861147@N00/8052048045)
+[![Picture perfect](http://farm9.staticflickr.com/8173/8052048045_5ccbedde7b.jpg)](http://www.flickr.com/photos/67861147@N00/8052048045)
 
 Dominic disembarking the train in Galway with aplomb:
 
-[![Psyched](http://farm9.staticflickr.com/8037/8052048779_909def3212_z.jpg)](h
-ttp://www.flickr.com/photos/67861147@N00/8052048779)
+[![Psyched](http://farm9.staticflickr.com/8037/8052048779_909def3212_z.jpg)](http://www.flickr.com/photos/67861147@N00/8052048779)
 
 Galway's Dominick Street:
 
-[![Cheery](http://farm9.staticflickr.com/8309/8052051235_ced4aefd1a.jpg)](http
-://www.flickr.com/photos/67861147@N00/8052051235)
+[![Cheery](http://farm9.staticflickr.com/8309/8052051235_ced4aefd1a.jpg)](http://www.flickr.com/photos/67861147@N00/8052051235)
 
 O'Brien's Castle above the Cliffs of Moher:
 
-[![Castle](http://farm9.staticflickr.com/8032/8052052633_ddc755cdaa.jpg)](http
-://www.flickr.com/photos/67861147@N00/8052052633)
+[![Castle](http://farm9.staticflickr.com/8032/8052052633_ddc755cdaa.jpg)](http://www.flickr.com/photos/67861147@N00/8052052633)
 
 Dominic playing in the window seat at Murphy's ice cream shop in Dingle:
 
-[![Window shopping](http://farm9.staticflickr.com/8037/8052057411_521e317ef2.j
-pg)](http://www.flickr.com/photos/67861147@N00/8052057411)
+[![Window shopping](http://farm9.staticflickr.com/8037/8052057411_521e317ef2.jpg)](http://www.flickr.com/photos/67861147@N00/8052057411)
 
 Dominic and Vanessa taking a break from hiking the Kerry Way, above Kenmare:
 
-[![Dominic and Vanessa](http://farm9.staticflickr.com/8034/8052092780_85ffdb45
-b2_z.jpg)](http://www.flickr.com/photos/67861147@N00/8052092780)
+[![Dominic and Vanessa](http://farm9.staticflickr.com/8034/8052092780_85ffdb45b2_z.jpg)](http://www.flickr.com/photos/67861147@N00/8052092780)
 
-Have a look at [the rest of our
-pictures](http://www.flickr.com/photos/metamatt/sets/72157631686525572/).
-
+Have a look at [the rest of our pictures](http://www.flickr.com/photos/metamatt/sets/72157631686525572/).

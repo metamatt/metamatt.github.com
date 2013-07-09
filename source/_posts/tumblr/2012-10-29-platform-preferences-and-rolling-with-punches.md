@@ -43,6 +43,4 @@ think of it, so do the various digital cameras I've owned (from Canon, Nikon
 and Panasonic). I can't think of anything that has a similar feature that I
 haven't seen flake out that way.
 
-But maybe if I could just learn to [hold it
-right](https://www.google.com/search?q=holding+it+wrong)…
-
+But maybe if I could just learn to [hold it right](https://www.google.com/search?q=holding+it+wrong)…

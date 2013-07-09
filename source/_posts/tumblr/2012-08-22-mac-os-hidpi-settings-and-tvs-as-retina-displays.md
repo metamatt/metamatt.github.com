@@ -7,9 +7,8 @@ tags:
 - gadgets
 comments: true
 ---
-Apple has been dabbling with [resolution
-independence](http://en.wikipedia.org/wiki/Resolution_independence) in Mac OS
-since 2005; in 2011 they shipped double-resolution "Retina" displays in iPhone
+Apple has been dabbling with [resolution independence](http://en.wikipedia.org/wiki/Resolution_independence)
+in Mac OS since 2005; in 2011 they shipped double-resolution "Retina" displays in iPhone
 and iPad, and in that year's Mac OS release (10.7 "Lion"), renamed the
 tentative resolution-independence support "HiDPI" and capped it to a 2x
 scaling factor, hinting strongly at the future release of Retina Macs. In
@@ -67,26 +66,20 @@ couldn't run perfectly well at 960x540. Second, in 10.8 this app has been
 replaced with the Mac App Store app, which does a better, but still not good,
 job of fitting at 960x540.)
 
-[![Screen Shot 2012-04-05 at 6.58.22 PM](http://farm9.staticflickr.com/8426/78
-39608446_2a59f28012.jpg)](http://www.flickr.com/photos/67861147@N00/7839608446
-)
+[![Screen Shot 2012-04-05 at 6.58.22 PM](http://farm9.staticflickr.com/8426/7839608446_2a59f28012.jpg)](http://www.flickr.com/photos/67861147@N00/7839608446)
 
 Note that the initial window size (above) doesn't even try to use all the
 available screen height; note also that enlarging it (below) helps not at all
 with the real problem.
 
-[![Screen Shot 2012-04-05 at 6.58.45 PM](http://farm8.staticflickr.com/7258/78
-39608226_95d17378a9.jpg)](http://www.flickr.com/photos/67861147@N00/7839608226
-)
+[![Screen Shot 2012-04-05 at 6.58.45 PM](http://farm8.staticflickr.com/7258/7839608226_95d17378a9.jpg)](http://www.flickr.com/photos/67861147@N00/7839608226)
 
 Hoping that 10.8 (the first OS X release conceived and shipped for Retina
 Macs) might fix this oversight, I upgraded the OS on this machine. The initial
 results are not pretty. The first thing you see when launching the Mountain
 Lion installer:
 
-[![Screen Shot 2012-08-20 at 12.58.33 PM](http://farm8.staticflickr.com/7267/7
-839606716_ea7f39b90d.jpg)](http://www.flickr.com/photos/67861147@N00/783960671
-6)
+[![Screen Shot 2012-08-20 at 12.58.33 PM](http://farm8.staticflickr.com/7267/7839606716_ea7f39b90d.jpg)](http://www.flickr.com/photos/67861147@N00/7839606716)
 
 Such crisply rendered text! (Click through for a high-res version.) Nice large
 cougar image! Such beautiful use of whitespace! But… where's that promised
@@ -96,24 +89,18 @@ Continue button?
 it, then changed resolution back to 960x540 for the next screenshot.) Again,
 the same problem.
 
-[![Screen Shot 2012-08-20 at 1.04.53 PM](http://farm9.staticflickr.com/8294/78
-39607938_e66ef0823c.jpg)](http://www.flickr.com/photos/67861147@N00/7839607938
-)
+[![Screen Shot 2012-08-20 at 1.04.53 PM](http://farm9.staticflickr.com/8294/7839607938_e66ef0823c.jpg)](http://www.flickr.com/photos/67861147@N00/7839607938)
 
 OK, you say, but those images are still from OS X 10.7. It's an app designed
 for and as part of 10.8, to be sure, but maybe 10.8 itself will be better?
 Reboot into the new OS install, and:
 
-[![Screen Shot 2012-08-21 at 9.48.12 PM](http://farm8.staticflickr.com/7117/78
-39606564_852af9b7d8.jpg)](http://www.flickr.com/photos/67861147@N00/7839606564
-)
+[![Screen Shot 2012-08-21 at 9.48.12 PM](http://farm8.staticflickr.com/7117/7839606564_852af9b7d8.jpg)](http://www.flickr.com/photos/67861147@N00/7839606564)
 
 Rats. Foiled again. At least the clickable buttons are onscreen, but the
 screen was obviously cropped, and not intentionally.
 
-[![Screen Shot 2012-08-21 at 9.48.40 PM](http://farm8.staticflickr.com/7265/78
-39606366_167da70f92.jpg)](http://www.flickr.com/photos/67861147@N00/7839606366
-)
+[![Screen Shot 2012-08-21 at 9.48.40 PM](http://farm8.staticflickr.com/7265/7839606366_167da70f92.jpg)](http://www.flickr.com/photos/67861147@N00/7839606366)
 
 No, Apple, thank _you_. (And a special extra thanks for not starting the
 screen sharing daemon until after I click these two right arrows from the
@@ -128,4 +115,3 @@ making 960x540 work as a special case for TV use, because you're just supposed
 to buy an Apple TV instead of hooking a Mac up to your TV, I guess.
 
 So close, but yet so far.
-

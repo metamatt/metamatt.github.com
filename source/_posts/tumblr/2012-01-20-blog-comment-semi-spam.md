@@ -56,4 +56,3 @@ juice, but the way comments work via Disqus, it's all Javascript and not in
 the real HTML as the page loads anyway, so I doubt indexers follow it. Plus I
 just delete it anyway. Spammers, if you're reading this, you're just wasting
 your time and mine.
-

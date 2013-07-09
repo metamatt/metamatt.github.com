@@ -6,10 +6,7 @@ tags:
 - energy
 comments: true
 ---
-As a follow-on to my [article on understanding the PG&E NEM
-bill](http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/), I
-decided to go back and recalculate our usage charges for the normal E-1
-billing schedule, in addition to the E-6 I'm actually using.
+As a follow-on to my [article on understanding the PG&E NEM bill](http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/), I decided to go back and recalculate our usage charges for the normal E-1 billing schedule, in addition to the E-6 I'm actually using.
 
 I also threw in the calculation for the E-1 value of the electricity we
 generated instead of buying from PG&E, that is, how much we would have spent

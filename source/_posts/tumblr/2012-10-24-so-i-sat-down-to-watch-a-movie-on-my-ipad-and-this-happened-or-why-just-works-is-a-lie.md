@@ -51,9 +51,8 @@ launched iTunes and iTunes told me that there's 10GB of "other" content. Given
 that this is the 16GB model (whose actual capacity is 13.8GB; go figure), that
 doesn't leave room for very many 2.7GB movie downloads. That also explains why
 the total usage was so much higher than the sum of the space used by each app.
-But it doesn't at all help explain what "other" actually means; [the Internet
-isn't much help here
-either](https://www.google.com/search?q=itunes+capacity+other). Trying to get
+But it doesn't at all help explain what "other" actually means;
+[the Internet isn't much help here either](https://www.google.com/search?q=itunes+capacity+other). Trying to get
 this to go away or at least explain itself, I tried syncing the iPad with the
 Mac a couple times. The first thing I got for my trouble was that iTunes
 decided I had 7.1GB of video on the iPad, and now I'm over capacity by 6GB
@@ -70,12 +69,9 @@ structure whose top level ended in ".m4v"; one of these was 10GB, one was
 20GB, and one was 40GB. Clearly, these weren't actually on the iPad, and no,
 my Mac didn't really like the resulting 70GB of garbage data either.
 (Something created what should have been .m4v files on the iPad as symbolic
-links to /, maybe? [The entire directory listing is
-here](http://metamatt.com/static/2012/10/crazy-ipad-movie-sync.txt) if anyone
-finds this edifying.)
+links to /, maybe? [The entire directory listing is here](http://metamatt.com/static/2012/10/crazy-ipad-movie-sync.txt) if anyone finds this edifying.)
 
-Back to reality. Apparently the fix for this [runaway "Other"
-usage](https://discussions.apple.com/thread/2562027?start=90&tstart=0) is to
+Back to reality. Apparently the fix for this [runaway "Other" usage](https://discussions.apple.com/thread/2562027?start=90&tstart=0) is to
 back up the iPad, then restore it from backup. So I did this, and after half
 an hour, I had a working iPad with 2.2GB of apps, 3.3GB of "other", and 7.3GB
 free. That's still not very satisfying, though -- what is this 3.3GB and how
@@ -97,9 +93,7 @@ backed up. I do another complete erase of the iPad, and this time when it
 boots up, instead of driving the restore from iTunes on the Mac, I walk
 through the on-device setup and select my iCloud backup. It chews for a while,
 reboots, and then gets stuck forever at the boot screen (Apple logo with
-progress bar). [Apparently I'm not the only one with this problem
-either](https://discussions.apple.com/thread/4372003?start=0&tstart=0). I
-tried again and got the same result.
+progress bar). [Apparently I'm not the only one with this problem either](https://discussions.apple.com/thread/4372003?start=0&tstart=0). I tried again and got the same result.
 
 So apparently the iCloud backup is corrupt and can't be used; the local backup
 works but leaves me with extra work to do.
@@ -129,10 +123,8 @@ Apple is often applauded for bringing us technology that "just works", but
 I've been having more and more experiences lately that are pretty far from
 "just works". The moral of the story is that Apple's devices are computers
 just like other computers; they're still a stack of fiendishly complex
-hardware and software components; also with iOS in version 6 and [iTunes in
-version
-10.7](http://en.wikipedia.org/wiki/ITunes_version_history#Version_history)
+hardware and software components; also with iOS in version 6 and
+[iTunes in version 10.7](http://en.wikipedia.org/wiki/ITunes_version_history#Version_history)
 there's a lot of untestable legacy cruft. "Just works" sounds nice, but we're
 not really there yet, or maybe we've been there but don't know how to stay
 there for long.
-

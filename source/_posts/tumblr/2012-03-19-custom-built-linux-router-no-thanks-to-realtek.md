@@ -61,8 +61,8 @@ to the other 4 ports, which by default are bridged onto a single VLAN but
 which can be configured for 4 separate VLANs if that floats your boat.)
 
 After getting some advice from friends and discussing it ad nauseum, I ended
-up buying a [fit-pc2i](http://www.fit-pc.com/web/fit-pc/fit-pc2i-
-specifications/), notable because it's a standard x86 PC (so I can choose
+up buying a [fit-pc2i](http://www.fit-pc.com/web/fit-pc/fit-pc2i-specifications/),
+notable because it's a standard x86 PC (so I can choose
 really any standard Linux distribution or even Windows to run on it), in a
 tiny passively cooled case, drawing 6W, and with 2 physical network
 interfaces. (I didn't like the idea of depending on a bunch of USB network
@@ -83,12 +83,11 @@ hung from the client's point of view, and I couldn't access the new router
 over the network at all. I power cycled the new router, tried again, same
 result. I poked around log files, tried to enable the Linux NMI watchdog, and
 generally looked for clues without finding anything until I visited the fit-pc
-forums and read ["solution for freezes when scp/ftp/nfs with most Linux
-dist"](http://www.fit-pc.com/forum/viewtopic.php?f=9&t=2383). This pointed the
+forums and read
+["solution for freezes when scp/ftp/nfs with most Linux dist"](http://www.fit-pc.com/forum/viewtopic.php?f=9&t=2383). This pointed the
 blame squarely at the Realtek network interfaces, and suggested an alternate
 driver as a solution. Once I started investigating fixes for this, I got
-really pessimistic at first: [a Google query for "r8169
-freeze"](https://www.google.com/search?q=r8169+freeze) shows a dismaying
+really pessimistic at first: [a Google query for "r8169 freeze"](https://www.google.com/search?q=r8169+freeze) shows a dismaying
 number of hits, many in distribution-specific bug reports going back years and
 years. I'd been under the assumption that networking is Linux's lifeblood and
 that wired networking has long been a solved problem — wireless network
@@ -134,9 +133,8 @@ almost work by enabling and disabling VLAN tag acceleration in the right order
 through an order-dependent set of transitions reminiscent of port knocking,
 but still doesn't entirely work, and I'm not going to trust it.
 
-Then, back in r8169-land, I found an Ubuntu bug report, [Network problem with
-the r8169 driver and RTL8111/8168B](https://bugs.launchpad.net/ubuntu/+source
-/linux-backports-modules-3.0.0/+bug/839393?comments=all), in response to which
+Then, back in r8169-land, I found an Ubuntu bug report,
+[Network problem with the r8169 driver and RTL8111/8168B](https://bugs.launchpad.net/ubuntu/+source/linux-backports-modules-3.0.0/+bug/839393?comments=all), in response to which
 people said the 3.1 kernel driver seems to work better than the 3.0 kernel
 driver, and Leann Ogasawara produced a 3.0 kernel with the 3.1 r8169 driver
 grafted in for people to try. So I tried it, and: lo and behold, while my
@@ -165,4 +163,3 @@ Lessons learned here:
   * Aside from dealing with the Realtek issue, this was less of a time suck than I was expecting.
   * Including dealing with the Realtek issue, this was more of a time suck than I was expecting.
   * I'm happy with the result, though. Treating the fitpc-2i and SG200 as one unit, I have something that's about the size and power consumption of the OpenWrt router, except now it's got a 1 GHz x86 CPU, 1GB of RAM, 32GB of flash storage, 9 individually addressable network ports, and is still entirely solid state. Those hardware specs only matter inasmuchas they give me plenty of breathing room for future expansion (I don't think my actual usage was taxing the much-lower-speced OpenWrt router), but the real bonus is it's stable: OpenVPN, dnsmasq and miniupnpd are all behaving as they ought to.
-

@@ -8,13 +8,8 @@ comments: true
 ---
 One more post on the topic of PG&E bills for solar (NEM) customers.
 
-PGE's NEM billing scheme [blends usage across
-seasons](http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/) to
-allow for seasonal variation in generated power, and their E-6 billing scheme
-[separates usage into 5 time-of-use
-periods](http://blog.metamatt.com/blog/2012/11/11/e-1-vs-e-6-for-residential-
-solar-customers/) to encourage customers to shift usage away from peak
-periods.
+PGE's NEM billing scheme [blends usage across seasons](http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/) to allow for seasonal variation in generated power, and their E-6 billing scheme
+[separates usage into 5 time-of-use periods](http://blog.metamatt.com/blog/2012/11/11/e-1-vs-e-6-for-residential-solar-customers/) to encourage customers to shift usage away from peak periods.
 
 A question that just occurred to me is whether you can game their billing
 results by time-shifting usage around inside the same true-up period, between
@@ -67,8 +62,7 @@ actually get crossover between "high-value" and "low-value" TOU periods. More
 concretely: as a solar generator, you may be paying more for winter off-peak
 electricity at 3rd-tier rates than you are for summer part-peak electricity
 where you never exceed the first tier. This is exactly what happened to me
-over the last year (note in the [E-6
-schedule](http://www.pge.com/tariffs/tm2/pdf/ELEC_SCHEDS_E-6.pdf) that winter
+over the last year (note in the [E-6 schedule](http://www.pge.com/tariffs/tm2/pdf/ELEC_SCHEDS_E-6.pdf) that winter
 off-peak and part-peak above 130% of baseline cost about what summer on-peak
 baseline usage does, and winter off-peak and part-peak above 200% of baseline
 cost more than the summer on-peak baseline). While from the previous example
@@ -93,4 +87,3 @@ instead of smoothing them across the true-up period, so it's actually possible
 for a big energy user with an even bigger solar array to generate a net
 surplus for the year but be paying 4th-tier rates for winter electricity when
 the array is underperforming.
-

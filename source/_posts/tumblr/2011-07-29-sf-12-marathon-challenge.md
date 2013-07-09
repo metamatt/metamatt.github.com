@@ -5,8 +5,7 @@ tags:
 - running
 comments: true
 ---
-I'm [planning to run the NYC Marathon in
-November](http://blog.metamatt.com/blog/2011/07/26/nyc-marathon/), as
+I'm [planning to run the NYC Marathon in November](http://blog.metamatt.com/blog/2011/07/26/nyc-marathon/), as
 described earlier.
 
 I'm also going to run the first half of the SF Marathon this coming Sunday.
@@ -43,10 +42,8 @@ opposed to, say, if I just bet you over/under 8:00, then there's no
 disincentive to run slower and they get less money).
 
 Of course, if you'd like to make a normal less complicated donation to the
-MMRF in support of my marathon bid, that's welcome too, and [my fundraising
-page is here](http://www.active.com/donate/2011mmrfNYC/NYFULLMGinzton).
+MMRF in support of my marathon bid, that's welcome too, and [my fundraising page is here](http://www.active.com/donate/2011mmrfNYC/NYFULLMGinzton).
 
 But if this complicated challenge sounds fun and/or you want to make me sweat
 more, please contact me (email, comments here, comments on Facebook, carrier
 pigeon…) with your bet amount.
-
