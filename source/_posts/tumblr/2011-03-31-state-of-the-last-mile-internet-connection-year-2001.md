@@ -33,8 +33,7 @@ downgraded to 144k IDSL. Pair Gain is the multiplexing of a certain number of
 phone conversations (signals) over a limited number of facilities. Basically
 you have a couple numbers, and so does your neighbor, but guess what? You both
 use the same CO facilities to talk on. Very bad for DSL.  If you are still
-interested in service, please see[[http://www.speakeasy.net/pricing/](http://w
-ww.speakeasy.net/pricing/)](http://www.speakeasy.net/pricing/) for the 144k
+interested in service, please see[[http://www.speakeasy.net/pricing/](http://www.speakeasy.net/pricing/)](http://www.speakeasy.net/pricing/) for the 144k
 IDSL speed and it's price difference from the service you originally
 requested.
 
@@ -54,10 +53,7 @@ customers to the old rotten wires.
 (As an aside, looking through other emails from the same time frame, I'm
 amused to see that before giving up and going with PacBell, I also tried
 signing up for two different services from Sprint which I'd forgotten existed
--- "[Sprint Broadband Direct](http://www.dslreports.com/shownews/Sprint-
-Broadband-Direct-Goes-Offline-July-31-94556)" which was a 1.5mbps line-of-
-sight wireless link, and "[Sprint
-ION](http://www.networkworld.com/archive/2001/126613_10-22-2001.html)" which
+-- "[Sprint Broadband Direct](http://www.dslreports.com/shownews/Sprint-Broadband-Direct-Goes-Offline-July-31-94556)" which was a 1.5mbps line-of-
+sight wireless link, and "[Sprint ION](http://www.networkworld.com/archive/2001/126613_10-22-2001.html)" which
 was some ill-fated ATM-over-DSL technology that was heavily touted for a short
 period but was never actually available in my area.)
-

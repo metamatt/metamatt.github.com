@@ -4,9 +4,7 @@ title: Really good take on the e-book state of the union
 tags: 
 comments: true
 ---
-[Really good take on the e-book state of the
-union](http://arstechnica.com/gadgets/reviews/2010/11/kindle-3-e-book-readers-
-go-mainstream.ars)
+[Really good take on the e-book state of the union](http://arstechnica.com/gadgets/reviews/2010/11/kindle-3-e-book-readers-go-mainstream.ars)
 
 Nate Anderson has a really good description of the current state of the e-book
 world, as shown by the Kindle 3 -- the device, and also the issues surrounding
@@ -24,4 +22,3 @@ physical and electronic."
 
 I know this matters for me -- I like reading on Kindle, but often miss having
 access to a book I already have on paper somewhere.
-

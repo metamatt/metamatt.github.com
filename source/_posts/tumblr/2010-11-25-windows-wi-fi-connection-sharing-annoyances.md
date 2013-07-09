@@ -10,8 +10,7 @@ Windows has this "internet connection sharing" feature which lets you share an
 existing network connection over one network adapter by turning on NAT,
 forwarding and DHCP services on additional network adapters.
 
-[This is really useful](http://blog.metamatt.com/blog/2010/11/24/windows-
-connection-sharing-for-travel-network-access/), but Windows' UI for
+[This is really useful](http://blog.metamatt.com/blog/2010/11/24/windows-connection-sharing-for-travel-network-access/), but Windows' UI for
 enabling/disabling it is really lacking compared to, say, Mac OS X.
 
 When I want to share the ethernet connection over wi-fi: I have to both set
@@ -35,4 +34,3 @@ setting up an AP, works far better.
 Another wart in Windows' ICS:: the result is an ad-hoc network which not
 everything is compatible with (my iPhone works until it sleeps, but loses its
 DHCP address on wake; Pre doesn't even show it).
-

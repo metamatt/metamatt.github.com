@@ -17,9 +17,8 @@ end; leave the cursor at the end of the document; invoke the Save command,
 using mouse or keyboard shortcuts, and the cursor will move back a few
 characters. The amount it moves seems to be proportional to the amount of text
 you've added since the last save; I suspect some confusion over the 2-byte
-CRLF ( ) sequence.)
+CRLF (\\r\\n) sequence.)
 
-  
 This is annoying because if you've trained yourself to press ctrl-s to save
 your document every once in a while, and you type, press ctrl-s, then keep
 typing, the later burst of typing won't append like you expect it to, it'll be
@@ -40,4 +39,3 @@ Notepad).
 (Yeah, who really uses Notepad? That's probably why these bugs survive. Still,
 it's there and the easiest thing to reach for when you want a text editor; if
 they're going to ship it they should fix the bugs!)
-

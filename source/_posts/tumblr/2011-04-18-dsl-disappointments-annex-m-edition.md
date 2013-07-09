@@ -10,9 +10,7 @@ comments: true
 Yet another disappointment with the DSL connection and/or modem from
 Sonic.net: Annex M doesn't seem to do any good at all for upload speeds.
 
-[As I wrote in my introductory post on
-Sonic.net,](http://blog.metamatt.com/blog/2011/04/09/state-of-the-last-mile-
-internet-connection-year-2011/) the whole reason I was willing to consider
+[As I wrote in my introductory post on Sonic.net,](http://blog.metamatt.com/blog/2011/04/09/state-of-the-last-mile- internet-connection-year-2011/) the whole reason I was willing to consider
 them (or DSL technology at all) was the promise of decent upload speeds. The
 last DSL connection I had was only 768kbps upstream, and even ADSL2+ promises
 only about 1mbps upstream, but Sonic.net offers this Annex M configuration
@@ -38,10 +36,7 @@ M. That would compare favorably enough with the 32mbps/7.5mbps I'm getting
 from Comcast that, given the reliability problems and caps I'm also getting
 from Comcast, I'd be happy to switch.)
 
-As described in my [earlier](http://blog.metamatt.com/blog/2011/04/09/state-
-of-the-last-mile-internet-connection-year-2011/)
-[posts](http://blog.metamatt.com/post/4719413815/dsl-modem-annoyances-
-misleading-sync-speed-edition), after two months of asking Sonic to ask AT&T
+As described in my [earlier](http://blog.metamatt.com/blog/2011/04/09/state-of-the-last-mile-internet-connection-year-2011/) [posts](http://blog.metamatt.com/post/4719413815/dsl-modem-annoyances-misleading-sync-speed-edition), after two months of asking Sonic to ask AT&T
 to provide wiring that will sustain a good ADSL2+ signal, I have one line
 syncing at 18mbps and one line syncing at only 4mbps (downstream speeds, using
 Annex A). Still, I figured I might as well see the results of the Annex M
@@ -49,9 +44,7 @@ spectrum reallocation, so last Friday I called Sonic and asked them to enable
 Annex M on both lines.
 
 Then I went to the modem's status page to see the effect on sync speeds. (If
-you followed my recent post on [sync speeds vs actual transfer
-speeds](http://blog.metamatt.com/post/4719413815/dsl-modem-annoyances-
-misleading-sync-speed-edition), all tests here were done at the MPOE with no
+you followed my recent post on [sync speeds vs actual transfer speeds](http://blog.metamatt.com/post/4719413815/dsl-modem-annoyances-misleading-sync-speed-edition), all tests here were done at the MPOE with no
 filter, that is, the best case from those earlier tests.)
 
 First annoyance: the modem wouldn't sync at all, on either line, until I
@@ -59,9 +52,7 @@ enabled Annex M on both lines. Maybe this is how it's designed to work, but
 from earlier reading of Sonic's site (2 months ago when I first signed up, all
 excited by Annex M) that's not the impression I got. Reading again now, the
 [Annex M FAQ](http://sonic.net/support/faq/advanced/annexm.shtml) doesn't say
-one way or the other, but [Dane's post introducing Annex
-M](http://corp.sonic.net/ceo/2010/04/20/fusion-annex-m-available-for-testing-
-in-santa-rosa/) seems to imply it's safe to leave it on on the network end and
+one way or the other, but [Dane's post introducing Annex M](http://corp.sonic.net/ceo/2010/04/20/fusion-annex-m-available-for-testing-in-santa-rosa/) seems to imply it's safe to leave it on on the network end and
 toggle it at will on your end. That would be more convenient, but for my
 Comtrend 5361 at least, the behavior is: if the network end is set to Annex A
 and the modem is set to Annex M, it syncs using Annex A (good), but if the
@@ -123,9 +114,7 @@ Annex M.
 Second, Annex M hurt my transfer speeds even more than the claimed sync
 speeds. Note the oddity that while bonded operation results in a faster sync
 speed than connecting the fast line only, when I measure the actual transfer
-speed, it actually got slower. (That's reminiscent of [the earlier bonding
-experiments I ran with Annex A](http://blog.metamatt.com/post/4719413815/dsl-
-modem-annoyances-misleading-sync-speed-edition).). The single-line Annex M
+speed, it actually got slower. (That's reminiscent of [the earlier bonding experiments I ran with Annex A](http://blog.metamatt.com/post/4719413815/dsl-modem-annoyances-misleading-sync-speed-edition).). The single-line Annex M
 tests both transferred data at the 85% of claimed sync speed that I've come to
 expect, but using both lines bonded together, this ratio drops to only 39%.
 
@@ -133,4 +122,3 @@ Again, I'm curious why bonding the lines results in slower operation than one
 line alone, without this effect being visible in sync speeds or ATM errors.
 And unless something is completely wrong here, it looks like Annex M does not,
 for me, bring DSL back into the realm of competitive upload speeds.
-

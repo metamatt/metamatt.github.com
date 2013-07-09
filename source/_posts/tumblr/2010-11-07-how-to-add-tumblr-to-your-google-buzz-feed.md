@@ -5,8 +5,7 @@ tags:
 - web
 comments: true
 ---
-[How to add Tumblr to your Google Buzz feed](http://waffle-
-iron.tumblr.com/post/412393314/how-to-add-tumblr-to-your-google-buzz-feed)
+[How to add Tumblr to your Google Buzz feed](http://waffle-iron.tumblr.com/post/412393314/how-to-add-tumblr-to-your-google-buzz-feed)
 
 Ah, so that's how all this Social Graph API stuff works:
 
@@ -22,4 +21,3 @@ your profile
 help pages for instructions](http://www.tumblr.com/docs/en/custom_themes).
 
 >   5. Add in the XFN magic by…
-

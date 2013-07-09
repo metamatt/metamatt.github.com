@@ -7,10 +7,7 @@ tags:
 - software
 comments: true
 ---
-Tumblr's editor turned t[his post](http://blog.metamatt.com/blog/2011/04/11
-/this-is-why-you-need-a-groklaw/) into [![](http://farm6.static.flickr.com/526
-3/5621005740_174256464b.jpg)](http://www.flickr.com/photos/metamatt/5621005740
-/in/photostream/)
+Tumblr's editor turned t[his post](http://blog.metamatt.com/blog/2011/04/11/this-is-why-you-need-a-groklaw/) into [![](http://farm6.static.flickr.com/5263/5621005740_174256464b.jpg)](http://www.flickr.com/photos/metamatt/5621005740/in/photostream/)
 
 between the time I pressed "Create Post" (at which time there was no CSS gunk
 visible) and the time it was actually published (where some CSS crept into the
@@ -26,4 +23,3 @@ the post made it into the RSS version, unlike the Facebook version.)
 
 This problem isn't incredibly common, but common enough to be annoying --
 maybe something like 5% of the time.
-

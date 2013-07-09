@@ -15,11 +15,9 @@ something I had reason to want, wondered if it were possible, and it turns out
 that it already exists.
 
 Here's the background: one of my favorite books in any language is
-[Labyrinths](http://www.amazon.com/Labyrinths-Directions-Paperbook-Jorge-
-Borges/dp/0811216993/ref=sr_1_1?ie=UTF8&qid=1290785837&sr=8-1), by Jorge Luis
+[Labyrinths](http://www.amazon.com/Labyrinths-Directions-Paperbook-Jorge-Borges/dp/0811216993/ref=sr_1_1?ie=UTF8&qid=1290785837&sr=8-1), by Jorge Luis
 Borges, an English translation of works originally published in Spanish as
-[Ficciones](http://www.amazon.com/Labyrinths-Directions-Paperbook-Jorge-
-Borges/dp/0811216993/ref=sr_1_1?ie=UTF8&qid=1290785837&sr=8-1). (OK, that's an
+[Ficciones](http://www.amazon.com/Labyrinths-Directions-Paperbook-Jorge-Borges/dp/0811216993/ref=sr_1_1?ie=UTF8&qid=1290785837&sr=8-1). (OK, that's an
 oversimplification -- Labyrinths is not exactly a translation of Ficciones;
 both are collections of short stories, but not exactly the same set of Borges
 stories. Still, Labyrinths is the preeminent English-language translation of
@@ -52,17 +50,11 @@ I did a web search for this, and immediately found some questions and answers
 indicating it is possible -- the technique boils down to: buy a dictionary
 with the translations you want, then from the Home screen's menu go to
 Settings, then from the Settings screen's menu go to Change Primary
-Dictionary, and select the new dictionary. ([This process is nicely documented
-here](http://blogkindle.com/dictionary/), but the dictionaries they link to
-are in the wrong direction. I bought the [Merriam-Webster Spanish-English
-Translation Dictionary](http://www.amazon.com/Merriam-Websters-Spanish-
-English-Translation-Dictionary-
-ebook/dp/B002ROKQUG/ref=sr_1_1?ie=UTF8&m=AG56TWVU5XWC2&s=digital-
-text&qid=1290789984&sr=1-1) instead.)
+Dictionary, and select the new dictionary. ([This process is nicely documented here](http://blogkindle.com/dictionary/), but the dictionaries they link to
+are in the wrong direction. I bought the [Merriam-Webster Spanish-English Translation Dictionary](http://www.amazon.com/Merriam-Websters-Spanish-English-Translation-Dictionary-ebook/dp/B002ROKQUG/ref=sr_1_1?ie=UTF8&m=AG56TWVU5XWC2&s=digital-text&qid=1290789984&sr=1-1) instead.)
 
 It's not perfectly seamless -- you have to pay for a separate dictionary for
 each language, buy the dictionary ahead of time, tell the Kindle to use it,
 and only one dictionary is active at a time -- but still, I expect this to be
 immensely helpful both for my reading of Ficciones and for my learning of
 Spanish overall.
-

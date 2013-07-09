@@ -8,10 +8,7 @@ tags:
 comments: true
 ---
 In 2003 when I moved to San Francisco, I didn't look around too hard but just
-signed up for the [Speakeasy DSL connection that I had wanted
-before](http://blog.metamatt.com/blog/2011/03/31/state-of-the-last-mile-
-internet-connection-year-2001/), and which was actually available at my new
-address.
+signed up for the [Speakeasy DSL connection that I had wanted before](http://blog.metamatt.com/blog/2011/03/31/state-of-the-last-mile-internet-connection-year-2001/), and which was actually available at my new address.
 
 I kept that connection for 5 years until I moved in 2008, and it worked out
 pretty well, though the speed was more impressive for 2003 than for 2008. Said
@@ -43,4 +40,3 @@ before Speakeasy was acquired by Megapath. While I haven't been a customer
 since, I don't think all of these advantages are true any more; namely, the
 DSL lines have usage caps and it's no longer possible to get a straightforward
 price quote from their web page. RIP, customer-friendly policies.)
-

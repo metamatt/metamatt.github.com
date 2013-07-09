@@ -20,8 +20,7 @@ later.
 Here's the "before" setup: note iPhone already starting to crawl out of left
 pants pocket.
 
-![Before
-sacrifice](http://farm6.static.flickr.com/5167/5262183014_9382f249cf_z.jpg)
+![Before sacrifice](http://farm6.static.flickr.com/5167/5262183014_9382f249cf_z.jpg)
 
 To make a long story short, as I stood up to leave, the iPhone launched itself
 out of my pocket, well, really, just slid a few inches, then hung on the
@@ -45,8 +44,7 @@ Here's the "after" scenario: note me sticking as much of my head and one
 shoulder as will (not much) fit through the hole under the rock, floundering
 around trying to reach the phone.
 
-![After
-sacrifice](http://farm6.static.flickr.com/5162/5262183112_114dcf5a7d_z.jpg)
+![After sacrifice](http://farm6.static.flickr.com/5162/5262183112_114dcf5a7d_z.jpg)
 
 Anyway, hopefully this is not a major international environmental disaster --
 littering in a national park, as it were -- we did try pretty hard to get it
@@ -59,4 +57,3 @@ severely compromised, probably by my repair efforts when drying it from said
 unfortunate water accident -- suffice it to say this was already on its last
 legs. RIP. With luck, it may make an interesting archaeological find for
 someone in the future.
-

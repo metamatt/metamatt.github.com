@@ -41,4 +41,3 @@ bookmarks. Since then we gained a search box and tabs, then lost most of the
 title bar and (except for on Mac OS) the menu bar, and now we're trending
 towards simplifying the control buttons to just back/forward/reload+stop, and
 merging the search box with the address bar.
-

@@ -9,8 +9,7 @@ tags:
 - ssl
 comments: true
 ---
-It's possible to [hijack an SSL connection that's forwarded through a network
-you control](http://www.thoughtcrime.org/software/sslstrip/), if the user and
+It's possible to [hijack an SSL connection that's forwarded through a network you control](http://www.thoughtcrime.org/software/sslstrip/), if the user and
 browser combination aren't extra vigilant to verify they ended up at the
 requested domain. (Actually, sslstrip can generally hijack traffic on adjacent
 networks by pretending to be the router, but it's even easier and more
@@ -59,4 +58,3 @@ Amazon not to do any of this cheating.)
 (Note 2: proxying all wireless traffic, regardless of where your device is,
 through the home datacenter is also essentially how all Blackberry network
 access works, and also how Opera Mini works, right?)
-

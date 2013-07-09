@@ -17,8 +17,7 @@ a copy of my AutoPay Enrollment Confirmation."
   
 This got me thinking.
 
-[![](http://farm6.static.flickr.com/5215/5388021994_57365e7071.jpg)](http://ww
-w.flickr.com/photos/metamatt/5388021994/)
+[![](http://farm6.static.flickr.com/5215/5388021994_57365e7071.jpg)](http://www.flickr.com/photos/metamatt/5388021994/)
 
 How's that going to work for the new, increasingly popular breed of devices
 that abstract away or eliminate local storage (most smartphones including
@@ -32,4 +31,3 @@ DropBox.
 
 Still, there's a disconnect here as everyone tries to move away from paper and
 storage at once.
-

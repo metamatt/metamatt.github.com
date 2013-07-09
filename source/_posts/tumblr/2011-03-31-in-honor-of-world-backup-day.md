@@ -7,8 +7,7 @@ tags:
 - iusethis
 comments: true
 ---
-In honor of [World Backup Day](http://arstechnica.com/gadgets/news/2011/03
-/world-backup-day-what-are-you-doing-to-make-sure-youre-covered.ars), here's a
+In honor of [World Backup Day](http://arstechnica.com/gadgets/news/2011/03/world-backup-day-what-are-you-doing-to-make-sure-youre-covered.ars), here's a
 description of my current backup strategy:
 
 My desktop computer backs up to:
@@ -46,4 +45,3 @@ have fiber your upload speeds are probably 10x faster and this is a no-
 brainer; anyway I wasn't wholly expecting 5mbps to be fast enough to make
 backups painless but was pleasantly surprised. I look forward to the day when
 we can take that level of speed for granted.
-

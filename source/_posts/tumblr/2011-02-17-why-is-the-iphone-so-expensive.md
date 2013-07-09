@@ -12,8 +12,7 @@ to its unsubsidized cousins like the iPad or iPod Touch, or to non-Apple
 devices with roughly equivalent hardware and manufacturing costs, seems
 unjustifiably high.
 
-[This chart from asymco](http://www.asymco.com/2011/01/21/the-end-of-
-exclusivity-doesnt-change-the-price-operators-pay-for-the-iphone/) shows what
+[This chart from asymco](http://www.asymco.com/2011/01/21/the-end-of-exclusivity-doesnt-change-the-price-operators-pay-for-the-iphone/) shows what
 I'm talking about: Apple gets about $200 per iPod Touch and $600 per iPad, on
 average (which price is paid directly by the real customer), and also about
 $600 per iPhone, on average (which price is paid by the network operator, and
@@ -57,4 +56,3 @@ $70/month phone now, but I would consider buying a new $15/month pocketable
 tablet. The point I want to draw attention to here is that compared to the
 iPhone, the iPod Touch is severely crippled or the iPad is priced really low
 or both.)
-

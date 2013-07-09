@@ -46,4 +46,3 @@ bugs with text input, but the touch site works fine. Hopefully Amazon will fix
 the other issues, but in the meantime, just use the touch site if you browse
 Facebook from Kindle (I changed the bookmark for "Facebook" to point to
 touch.facebook.com).
-

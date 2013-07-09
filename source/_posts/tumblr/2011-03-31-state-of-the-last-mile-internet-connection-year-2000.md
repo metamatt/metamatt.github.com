@@ -8,12 +8,7 @@ tags:
 - squirrels
 comments: true
 ---
-In the fall of 2000, my last year at Stanford, I lived with a group of friends
-in one of [Rob Levitsky's Dead Houses](http://www.paloaltoonline.com/weekly/mo
-rgue/news/1996_Sep_11.DEAD.html). While most of the Dead Houses already had
-shared DSL connections, this specific house was new to this capacity and
-didn't. We called up PacBell and asked for a DSL line; they said it would take
-3 months.
+In the fall of 2000, my last year at Stanford, I lived with a group of friends in one of [Rob Levitsky's Dead Houses](http://www.paloaltoonline.com/weekly/morgue/news/1996_Sep_11.DEAD.html). While most of the Dead Houses already had shared DSL connections, this specific house was new to this capacity and didn't. We called up PacBell and asked for a DSL line; they said it would take 3 months.
 
 (Seriously, here we are in residential Palo Alto -- in the heart of Silicon
 Valley during the tech boom -- and the fastest last-mile Internet connection
@@ -46,4 +41,3 @@ For about 6 months. Until a squirrel chewed through the cable.
 Oh well. It was fun while it lasted. I don't remember what we did after that,
 but I think the severe backlog at PacBell had eased and we were able to get
 each house its own DSL line relatively quickly.
-

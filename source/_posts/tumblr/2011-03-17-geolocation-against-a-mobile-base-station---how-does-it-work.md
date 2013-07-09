@@ -7,12 +7,7 @@ tags:
 - location
 comments: true
 ---
-I just saw these [two](http://blog.urbanape.com/post/3798485232/show-me-the-
-way) [posts](http://www.tabletmonsters.com/news/video-wi-fi-only-ipad-2-gps-
-navigation) describing how an iPad tethered to an iPhone still gets accurate
-and up-to-date location information without GPS (via DF, citing this ability
-as "[another reason to consider a Wi-Fi-only
-iPad](http://daringfireball.net/linked/2011/03/16/gps-tethering)").
+I just saw these [two](http://blog.urbanape.com/post/3798485232/show-me-the-way) [posts](http://www.tabletmonsters.com/news/video-wi-fi-only-ipad-2-gps-navigation) describing how an iPad tethered to an iPhone still gets accurate and up-to-date location information without GPS (via DF, citing this ability as "[another reason to consider a Wi-Fi-only iPad](http://daringfireball.net/linked/2011/03/16/gps-tethering)").
 
 (As background, location information on mobile devices generally comes from
 some combination of 3 sources, each of which may or may not be available: (1)
@@ -51,7 +46,7 @@ it does work is news.
 After brainstorming with friends we came up with 4 possible ways this could
 work:
 
-1) Collusion between the iPad and the hotspot: Some new protocol/secret
+1. Collusion between the iPad and the hotspot: Some new protocol/secret
 channel between the iPad and the mobile hotspot, where without using any of
 the standard techniques listed above, the iPad can just ask the mobile hotspot
 where it is. (The mobile hotspot has access at least to technique #2, and
@@ -62,7 +57,7 @@ concerns, though if all you can do is ask an iPhone where it is when you're
 already right next to it, these concerns are minimal. NB 2: this would only
 work with Apple hotspots, not, say, a Mi-Fi.)
 
-2) Collusion between the hotspot and the service that implements base station
+2. Collusion between the hotspot and the service that implements base station
 -> location lookups: This would make modify technique #3 to cooperate with
 base stations that move around frequently, i.e. mobile hotspots. This is
 believable, since Apple originally licensed said service from Skyhook and then
@@ -105,4 +100,3 @@ whether this was case #4 or one of the others.
 Further research needed: does the iPad get up-to-date location from all
 personal hotspots, or only an iPhone 4? And does this work in the boonies, or
 only in range of fixed Wi-Fi base stations whose location is already known?
-

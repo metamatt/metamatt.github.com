@@ -5,8 +5,7 @@ tags:
 - tsa
 comments: true
 ---
-[Story of TSA encounter when getting *off* a
-plane](http://noblasters.com/post/1650102322/my-tsa-encounter)
+[Story of TSA encounter when getting *off* a plane](http://noblasters.com/post/1650102322/my-tsa-encounter)
 
 The thing this, and stories like it, make me want to ask is: what purpose is
 being served here?

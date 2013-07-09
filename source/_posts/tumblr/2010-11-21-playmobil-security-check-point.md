@@ -6,8 +6,7 @@ tags:
 - tsa
 comments: true
 ---
-[Playmobil Security Check
-Point](http://www.amazon.com/exec/obidos/ASIN/B0002CYTL2)
+[Playmobil Security Check Point](http://www.amazon.com/exec/obidos/ASIN/B0002CYTL2)
 
 The reviews for this are hilarious; people are using Amazon's review system
 for social commentary (to the exclusion of any literal reviews of the product
@@ -18,4 +17,3 @@ reviews; while I've got no problem with this form of social commentary I
 wonder if it's the kind of thing Amazon would take down once the wrong people
 notice. For better or worse, the actual toy is no longer available for sale.
 Too bad; after reading the reviews I sort of want one!
-

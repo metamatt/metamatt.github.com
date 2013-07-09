@@ -9,9 +9,7 @@ comments: true
 ---
 For the time being, I have a residential cable connection from Comcast as my
 connection to the Internet. One of the things that Comcast gets a lot of
-criticism for is their [250GB monthly transfer
-limit](http://customer.comcast.com/Pages/FAQViewer.aspx?seoid=frequently-
-asked-questions-about-excessive-use), aka "cap".
+criticism for is their [250GB monthly transfer limit](http://customer.comcast.com/Pages/FAQViewer.aspx?seoid=frequently-asked-questions-about-excessive-use), aka "cap".
 
 (As an aside, the cap is pretty silly, especially because it's the same for
 all the different speeds Comcast sells. That means if you pay more for a
@@ -29,4 +27,3 @@ offer to share storage on, or, for a price, CrashPlan the company will store
 your backups for you.) In January I managed to backup over 300GB across the
 Internet to his house, and checking in Comcast's usage meter, it says I've
 only used about 100GB from my 250GB cap.
-

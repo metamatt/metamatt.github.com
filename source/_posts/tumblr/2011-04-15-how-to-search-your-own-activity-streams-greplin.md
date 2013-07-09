@@ -8,9 +8,7 @@ tags:
 - software
 comments: true
 ---
-I recently wrote a post, [On searching one's own activity
-streams](http://blog.metamatt.com/blog/2011/04/13/on-searching-ones-own-
-activity-streams/), lamenting the difficulty of finding stuff I myself had
+I recently wrote a post, [On searching one's own activity streams](http://blog.metamatt.com/blog/2011/04/13/on-searching-ones-own-activity-streams/), lamenting the difficulty of finding stuff I myself had
 posted on Facebook and Twitter. In response to that post, a friend pointed
 out: "You may be looking for [Greplin](https://www.greplin.com/)".
 
@@ -30,9 +28,7 @@ Greplin in the first place: I tried searching for a few of my own posts, and
 it didn't find them. It seems pretty good about finding tweets, mail messages,
 appointments, and pretty much everything else it's supposed to including
 Facebook messages, but not Facebook wall posts. I went looking for answers in
-Greplin's help system. From the ["which sites does Greplin index" article in
-their FAQ](http://help.greplin.com/customer/portal/articles/4766-which-sites-
-does-greplin-index-):
+Greplin's help system. From the ["which sites does Greplin index" article in their FAQ](http://help.greplin.com/customer/portal/articles/4766-which-sites-does-greplin-index-):
 
 > Please note that for news feed and wall posts, Facebook only allows us to
 collect data from a few days before you began your index on Greplin. However,
@@ -54,4 +50,3 @@ allowed to index old content, and they want to index content going forward
 them to keep a separate copy of my data, whereas if they had reasonable access
 to past data, they could rely on Facebook to store it and provide it as
 necessary and they would need only the index on their side.
-

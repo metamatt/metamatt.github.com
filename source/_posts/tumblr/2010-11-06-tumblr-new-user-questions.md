@@ -26,4 +26,3 @@ but not all of my own blog posts into the family one. And I see that Tumblr
 likes (and probably invented?) this concept of reblogging. So it seems I'd
 like to be able to reblog my personal posts into the family bog. However, the
 "reblog" button doesn't show up on my own posts.
-

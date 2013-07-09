@@ -17,9 +17,7 @@ not at all.
 First, unlike Kindle book content, periodical content has a designated device,
 and only downloads to that device, and once one Kindle device has downloaded
 one issue, other Kindle devices can't. This is pretty clear in the purchasing
-UI, e.g. [here for The Atlantic](http://www.amazon.com/The-
-Atlantic/dp/B000IMVNQU), and click "how subscriptions work" near the Subscribe
-button.
+UI, e.g. [here for The Atlantic](http://www.amazon.com/The-Atlantic/dp/B000IMVNQU), and click "how subscriptions work" near the Subscribe button.
 
 Second, also unlike Kindle book content, periodical content is only available
 on real Kindle devices, not the software app for Windows, Mac OS, iPhone,
@@ -48,7 +46,4 @@ I suspect this comes down to license revocation, and that they never built a
 revocation capability into their DRM technology, and this is just another one
 of the lame facts of life about DRM. It's not the first time that Amazon's
 Kindle DRM in particular has reminded people that you're not really buying
-content, you're just licensing it, and [the licensing party has undue control
-over what they've licensed you](http://www.informationweek.com/news/personal_t
-ech/drm/showArticle.jhtml?articleID=218501227).
-
+content, you're just licensing it, and [the licensing party has undue control over what they've licensed you](http://www.informationweekcom/news/personal_tech/drm/showArticle.jhtml?articleID=218501227).

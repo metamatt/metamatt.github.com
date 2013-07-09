@@ -8,30 +8,24 @@ tags:
 - cable
 comments: true
 ---
-In summer 2009, Comcast rolled out [DOCSIS
-3.0](http://en.wikipedia.org/wiki/DOCSIS#Speed_tables) in the Bay Area,
+In summer 2009, Comcast rolled out [DOCSIS 3.0](http://en.wikipedia.org/wiki/DOCSIS#Speed_tables) in the Bay Area,
 including my neighborhood in San Francisco. Specific offerings included speeds
 as high as 50mbps/10mbps up/down, and a pretty decent price on 30mbps/6mbps.
 
-So: I abandoned [my Astound 18/2
-connection](http://blog.metamatt.com/blog/2011/04/07/state-of-the-last-mile-
-internet-connection-year-2008/) and signed up for Comcast 30/7. That was
+So: I abandoned [my Astound 18/2 connection](http://blog.metamatt.com/blog/2011/04/07/state-of-the-last-mile-internet-connection-year-2008/) and signed up for Comcast 30/7. That was
 September 2009. Looking back, I see that it was only 4 months later that I
 signed up for [pingdom monitoring](http://pingdom.com/) of my home IP address.
 That's a bad sign -- I wouldn't need to monitor something that was working
 properly, would I?
 
 I spent a lot of time traveling in the middle of 2010 so I didn't realize
-quite how bad it was getting, but it was getting bad -- the [Comcast
-connection would drop out
-entirely](http://stats.pingdom.com/sh6fgl3lqqrd/150515/history) a couple times
+quite how bad it was getting, but it was getting bad -- the [Comcast connection would drop out entirely](http://stats.pingdom.com/sh6fgl3lqqrd/150515/history) a couple times
 a month, then a couple times a week, then almost daily, getting worse and
 worse over time. I don't remember thinking it was really bad until November
 2010, but looking back at the data, the problems dated all the way back to
 January.
 
-Click on the [Pingdom history link for the pretty
-graphs](http://stats.pingdom.com/sh6fgl3lqqrd/150515/history), which
+Click on the [Pingdom history link for the pretty graphs](http://stats.pingdom.com/sh6fgl3lqqrd/150515/history), which
 unfortunately don't tell the whole story: they show the amount of uptime (or
 downtime), but the problem is more insidious. At first, the connection
 failures would happen at night or when I wasn't home, and would fix themselves
@@ -107,8 +101,7 @@ Cons: Flaky connection; Comcast customer support and policies (no servers,
 per-month cap of 250GB, past bad behavior including throttling, entire Comcast
 address block is on the [Spamhaus PBL](http://www.spamhaus.org/pbl/) so my NAS
 can't email my Yahoo account to tell me about firmware upgrades); listening to
-[ads for pay-per-view boxing matches](http://blog.metamatt.com/blog/2011/01/26
-/reason-number-7-its-weird-getting-internet-service-from-a-cable-company/)
+[ads for pay-per-view boxing matches](http://blog.metamatt.com/blog/2011/01/26/reason-number-7-its-weird-getting-internet-service-from-a-cable-company/)
 when calling tech support; opaque pricing (between bundles and introductory
 rates, just try using Comcast's website to figure out how much it actually
 costs).
@@ -117,4 +110,3 @@ Summary: The network itself is competently run on the best technology
 available in this area, but nobody knows how to troubleshoot my problem and
 it's apparently not worth it to Comcast to care for the price of one consumer
 connection.
-

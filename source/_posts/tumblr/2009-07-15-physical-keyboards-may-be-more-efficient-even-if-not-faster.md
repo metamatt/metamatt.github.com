@@ -5,12 +5,7 @@ tags:
 - Gadgets
 comments: true
 ---
-Having read the debate between [John
-Gruber](http://daringfireball.net/2009/06/palm_saturday) and [Tim
-Bray](http://www.tbray.org/ongoing/When/200x/2009/06/08/Phone-Keyboards) and
-[Gruber again](http://daringfireball.net/2009/07/mobile_phone_keyboards) on
-the subject of physical vs onscreen keyboards for smartphones, I wanted to
-chime in.
+Having read the debate between [John Gruber](http://daringfireball.net/2009/06/palm_saturday) and [Tim Bray](http://www.tbray.org/ongoing/When/200x/2009/06/08/Phone-Keyboards) and [Gruber again](http://daringfireball.net/2009/07/mobile_phone_keyboards) on the subject of physical vs onscreen keyboards for smartphones, I wanted to chime in.
 
 Having used a Treo for 2 years, then an iPhone for 2 years, then most recently
 a Palm Pre, I have two more observations to make on the buttony-vs-glass
@@ -50,4 +45,3 @@ I also don't think this really changes Gruber's (a) and (b) conclusions in his
 second article; Apple's not going to add a hardware keyboard to the iPhone and
 they'll still have plenty of customers. That doesn't mean I have to like
 onscreen keyboards, though.
-

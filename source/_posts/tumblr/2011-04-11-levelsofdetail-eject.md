@@ -34,8 +34,7 @@ dislike that there's always an eject button staring me in the face and
 tempting me to press it, or waiting for errant clicks. I've only ever
 accidentally ejected one of these drives once, but that's still once too many.
 And in no case should the guest user be able to eject the Time Machine drive.
-([I complained about this
-before](http://www.facebook.com/metamatt/posts/10150099468713843);
+([I complained about this before](http://www.facebook.com/metamatt/posts/10150099468713843);
 unfortunately that was on Facebook and links from the public web won't work
 well so apologies if you're reading this and can't see that.) And even for
 disks you do unplug sometimes, the OS gets no guarantees as to when.
@@ -44,4 +43,3 @@ I'm fine with how Windows exposes this (though it should actually always
 work). And I wish that Mac OS had a way to say "treat this drive as
 nonremovable", or at least require admin abilities and a confirmation dialog
 before ejecting it.
-

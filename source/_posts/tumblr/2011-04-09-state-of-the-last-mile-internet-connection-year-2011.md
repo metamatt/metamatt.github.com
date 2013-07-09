@@ -10,9 +10,7 @@ tags:
 - dsl
 comments: true
 ---
-Given the reliability problems I'm experiencing with [my otherwise nicely fast
-Comcast DOCSIS 3 connection](http://blog.metamatt.com/blog/2011/04/07/state-
-of-the-last-mile-internet-connection-year-2009/), I'm looking for something
+Given the reliability problems I'm experiencing with [my otherwise nicely fast Comcast DOCSIS 3 connection](http://blog.metamatt.com/blog/2011/04/07/state-of-the-last-mile-internet-connection-year-2009/), I'm looking for something
 new. It has to be reliable, and it has to be at least competitive on speeds
 for both download and upload, though I'm willing to sacrifice some speed for
 reliability and better policies.
@@ -23,9 +21,7 @@ remove splitters, twice visited and measured the signal and said it looks good
 and once replaced a poorly wired splitter; after all this the problem is less
 frequent but still occurs multiple times per month.
 
-So what are my other options? [Astound worked ok for
-me](http://blog.metamatt.com/blog/2011/04/07/state-of-the-last-mile-internet-
-connection-year-2008/) but is too slow (esp. for uploads); AT&T's best is
+So what are my other options? [Astound worked ok for me](http://blog.metamatt.com/blog/2011/04/07/state-of-the-last-mile-internet-connection-year-2008/) but is too slow (esp. for uploads); AT&T's best is
 U-verse which also has slower upload speeds and apparently isn't available
 here anyway; other DSL options have even slower upload speeds; then there's
 this newer indie ISP, Sonic.net, with a DSL option I haven't seen before.
@@ -36,9 +32,7 @@ an optional Annex M mode where you might get can get upload speeds as high as
 3mbps by sacrificing some download speed, and it allows you to bond 2 lines
 together for double the speed in each direction. Even accounting for some
 falloff due to distance (I'm estimated to be about 3000 wire feet from the
-central office, which should be [just fine for
-ADSL2+](http://www.dslreports.com/forum/r21245835-ADSLADSL2-Speeds-VS-
-Distance)), it seems like dual-line Fusion should get me back in the ballpark
+central office, which should be [just fine for ADSL2+](http://www.dslreports.com/forum/r21245835-ADSLADSL2-Speeds-VS-Distance)), it seems like dual-line Fusion should get me back in the ballpark
 of 30mbps/6mbps like I have now. And from a company whose entire business is
 data, not trying to tie me to legacy TV or voice business models, to boot.
 
@@ -52,10 +46,8 @@ reliability.
 
 Easy in theory. In reality, signing up with Sonic was easy, but the going got
 rougher right after that. Sonic doesn't own the wires to my house; they have
-to [rent them from
-AT&T](http://en.wikipedia.org/wiki/Unbundled_Network_Element); as I found
-[last time I tried indie DSL in 2001](http://blog.metamatt.com/blog/2011/03/31
-/state-of-the-last-mile-internet-connection-year-2001/), this isn't a perfect
+to [rent them from AT&T](http://en.wikipedia.org/wiki/Unbundled_Network_Element); as I found
+[last time I tried indie DSL in 2001](http://blog.metamatt.com/blog/2011/03/31/state-of-the-last-mile-internet-connection-year-2001/), this isn't a perfect
 recipe for success. The day they were supposed to connect the wires, AT&T
 showed up 7 hours late, then told me they couldn't do the job because it was
 too late in the day and they'd have to come back the next day. The next day,
@@ -125,15 +117,12 @@ paying now; the teleworker plan is actually cheaper but relies on support from
 my employer, which may or may not exist.
 
 Backup plan 3: Stick with Comcast, but route around the crashtastic modem:
-install a USB-controlled kill switch/[STONITH
-device](http://en.wikipedia.org/wiki/STONITH), connect that to my router, and
+install a USB-controlled kill switch/[STONITH device](http://en.wikipedia.org/wiki/STONITH), connect that to my router, and
 teach the router to reboot the cable modem when necessary.
 
 Backup plan 4: A low-tech version of #3; run a pull cord toggle switch (like
 those used for lamps), controlling the cable modem's power line, from the
 modem's home in my server closet up through the furnace duct to my office.
 
-Backup plan 5: Hmm, I wonder how much [fiber from
-fastmetrics](http://fastmetrics.com/metricfiber_diagram.htm) would actually
+Backup plan 5: Hmm, I wonder how much [fiber from fastmetrics](http://fastmetrics.com/metricfiber_diagram.htm) would actually
 cost. Way too much, I'm sure. But still.
-

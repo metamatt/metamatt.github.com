@@ -11,9 +11,7 @@ Takes the best photos I've seen from any camera that will fit in a pants
 pocket, and works pretty well in low light too, so you can shoot indoors
 without a flash.
 
-Neck strap for SLR: Luma Loop ([[http://www.luma-
-labs.com/products/loop](http://www.luma-labs.com/products/loop)](http://www
-.luma-labs.com/products/loop)). Way more comfortable than a standard neck
+Neck strap for SLR: Luma Loop ([http://www.luma-labs.com/products/loop](http://www.luma-labs.com/products/loop)). Way more comfortable than a standard neck
 strap, especially for heavier camera/lens combinations, and really practical
 -- easy to slide camera from hanging position to shooting position, easy to
 detach camera to hand it to someone else.
@@ -50,4 +48,3 @@ useful zoom range on the DX camera, though, and with the reduced field of
 view, vignetting is not a problem.
 
 This is all stuff I own, would buy again and would recommend.
-

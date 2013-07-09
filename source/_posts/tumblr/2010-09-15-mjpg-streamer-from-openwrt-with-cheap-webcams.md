@@ -13,10 +13,7 @@ video from a webcam using mjpg-streamer. Pretty useful if you want to put a
 webcam in some random place.
 
 (The current version of OpenWRT, backfire, needs additional nondefault
-packages involved: see [[http://blog.bashroom.com/2010/05/04/webcam-streaming-
-with-openwrt-backfire/](http://blog.bashroom.com/2010/05/04/webcam-streaming-
-with-openwrt-backfire/)](http://blog.bashroom.com/2010/05/04/webcam-streaming-
-with-openwrt-backfire/).)
+packages involved: see [http://blog.bashroom.com/2010/05/04/webcam-streaming-with-openwrt-backfire/](http://blog.bashroom.com/2010/05/04/webcam-streaming-with-openwrt-backfire/).)
 
 I tried this with an old webcam I had lying around, but the old webcam
 predated the UVC (USB Video Class) standard, and I couldn't get it to work. So
@@ -41,11 +38,4 @@ that much choppier and still good enough for my purposes (edit /etc/config
 Moral of the story: it's probably better to buy a webcam known to support MJPG
 in hardware.
 
-(Thanks to [[https://forum.openwrt.org/viewtopic.php?pid=98294](https://forum.
-openwrt.org/viewtopic.php?pid=98294)](https://forum.openwrt.org/viewtopic.php?
-pid=98294)and [[http://arthurhong-linux.blogspot.com/2008/11/mjpgstreamer-or-
-uvcstreamer-always.html](http://arthurhong-linux.blogspot.com/2008/11
-/mjpgstreamer-or-uvcstreamer-always.html)](http://arthurhong-
-linux.blogspot.com/2008/11/mjpgstreamer-or-uvcstreamer-always.html) for
-helping me figure out the YUV format problem and solution.)
-
+(Thanks to [https://forum.openwrt.org/viewtopic.php?pid=98294](https://forum.openwrt.org/viewtopic.php?pid=98294)and [http://arthurhong-linux.blogspot.com/2008/11/mjpgstreamer-or-uvcstreamer-always.html](http://arthurhong-linux.blogspot.com/2008/11/mjpgstreamer-or-uvcstreamer-always.html) for helping me figure out the YUV format problem and solution.)

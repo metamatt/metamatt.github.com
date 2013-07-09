@@ -7,6 +7,4 @@ tags:
 - travel
 comments: true
 ---
-![](http://www.tumblr.com/photo/1280/metamatt/1547967017/1/tumblr_lbqzphryYN1q
-edkms)
-
+![](http://www.tumblr.com/photo/1280/metamatt/1547967017/1/tumblr_lbqzphryYN1qedkms)

@@ -7,13 +7,10 @@ tags:
 - last-mile
 comments: true
 ---
-Another [annoying behavior](http://blog.metamatt.com/blog/2011/04/13/dsl-
-modem-annoyances/) of the Comtrend modem I got from Sonic.net: it doesn't
+Another [annoying behavior](http://blog.metamatt.com/blog/2011/04/13/dsl-modem-annoyances/) of the Comtrend modem I got from Sonic.net: it doesn't
 always transfer real data at anywhere near the claimed "sync" speed.
 
-As noted in [my initial post about Sonic.net's Fusion
-Broadband](http://blog.metamatt.com/blog/2011/04/09/state-of-the-last-mile-
-internet-connection-year-2011/), I have 2 DSL lines from Sonic.net, which each
+As noted in [my initial post about Sonic.net's Fusion Broadband](http://blog.metamatt.com/blog/2011/04/09/state-of-the-last-mile- internet-connection-year-2011/), I have 2 DSL lines from Sonic.net, which each
 in theory should support up to 20mbps downstream, but right now one of them
 syncs at 18mbps and one of them at only 4mbps, due to overly high attenuation
 in the wiring supplied by AT&T. Still, I should be able to get a combined
@@ -21,8 +18,7 @@ in the wiring supplied by AT&T. Still, I should be able to get a combined
 
 Well, with the modem deployed the way I intend to use it (in a back room near
 my other networking equipment and my UPS, connected to a DSL filter with a
-normal telephone patch cord), according to [Sonic's own speed test
-site](http://speedtest.sonic.net/ookla/), I get about 4mbps download and
+normal telephone patch cord), according to [Sonic's own speed test site](http://speedtest.sonic.net/ookla/), I get about 4mbps download and
 1.83mbps upload. Whoa, that's a lot lower.
 
 To make things weirder, if I disconnect the slow line (the one that syncs at
@@ -40,9 +36,7 @@ filter supplied with the modem, and with different patch cables (the patch
 cable that came with the modem, the separate Y cable Sonic gave me, and an old
 patch cable I had lying around); for various combinations of each of these
 variables I tested both lines together, and where possible each line alone
-(that's easy to do at the MPOE and hard to do at the server room, [due to the
-way the modem is wired for single-line
-operation](http://blog.metamatt.com/blog/2011/04/13/dsl-modem-annoyances/)).
+(that's easy to do at the MPOE and hard to do at the server room, [due to the way the modem is wired for single-line operation](http://blog.metamatt.com/blog/2011/04/13/dsl-modem-annoyances/)).
 
 The results are pretty weird. I'll list the results, one per line, with a
 description of the test configuration, the modem's reported sync speed
@@ -107,4 +101,3 @@ all of these experiments but I'll at least see if the new modem or new filter
 does better in the cases that were worst here. (If nothing else, it should be
 easier to do apples-to-apples comparisons, using the same cables and getting
 all data points at both locations.)
-

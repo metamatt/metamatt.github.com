@@ -7,8 +7,7 @@ tags:
 - network
 comments: true
 ---
-For [my dual-line Fusion setup](http://blog.metamatt.com/blog/2011/04/09
-/state-of-the-last-mile-internet-connection-year-2011/), Sonic.net sent me a
+For [my dual-line Fusion setup](http://blog.metamatt.com/blog/2011/04/09/state-of-the-last-mile-internet-connection-year-2011/), Sonic.net sent me a
 Comtrend Nexuslink 5361.
 
 It's an ADSL2+ modem that works with one line, or two lines bonded together,
@@ -16,8 +15,7 @@ and also includes normal home wireless router functionality (NAT firewall, 4
 ethernet ports, and Wi-Fi).
 
 My specific complaint here is that the way they wired it to accept 2 DSL lines
-is annoying. It's got a single [RJ14 jack](http://en.wikipedia.org/wiki/Regist
-ered_jack#RJ11.2C_RJ14.2C_RJ25_wiring_details), so both lines enter it there,
+is annoying. It's got a single [RJ14 jack](http://en.wikipedia.org/wiki/Registered_jack#RJ11.2C_RJ14.2C_RJ25_wiring_details), so both lines enter it there,
 on the inner and outer pair of the same jack. The problem is that it considers
 the outer pair to be line 1 (primary/master) and the inner pair to be line 2
 (slave). And if you connect only the slave line, it will establish ADSL sync
@@ -37,8 +35,7 @@ with a standard phone cord (with either 1 or 2 pairs), you've connected the
 active pair to the inner pair on the modem, which is the slave line which will
 sync but will not alone carry traffic.
 
-And the way AT&T's wires [terminate at the
-MPOE](http://en.wikipedia.org/wiki/Demarcation_point), each line goes to a
+And the way AT&T's wires [terminate at the MPOE](http://en.wikipedia.org/wiki/Demarcation_point), each line goes to a
 separate test jack (an RJ11 jack, so on the inner pair), and a separate set of
 terminals, and it's up to the customer how it's wired from there. I connected
 an RJ14 jack to both lines, the inner pair connected to one phone line and the
@@ -91,4 +88,3 @@ mentioned in this post only affect troubleshooting and won't matter for real
 usage, I accepted the offer to see if the newer modem will help with any of
 the other problems I'm experiencing). +1 to Sonic.net for noticing this and
 being proactive.
-

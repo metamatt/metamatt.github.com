@@ -9,7 +9,4 @@ comments: true
 The definition of "open" in the mobile space is apparently completely
 different than it is everywhere else in the software industry.
 
-Ryan Paul, [Nokia transitions Symbian source to non-open
-license](http://arstechnica.com/gadgets/news/2011/04/nokia-transitions-
-symbian-source-to-non-open-license.ars)
-
+Ryan Paul, [Nokia transitions Symbian source to non-open license](http://arstechnica.com/gadgets/news/2011/04/nokia-transitions-symbian-source-to-non-open-license.ars)

@@ -20,8 +20,7 @@ Twitter does have a search feature and you can restrict it to your own tweets
 by adding your username but it only returns very recent tweets (like maybe the
 last week); Twitter is also indexed by the major web search engines and if you
 add "site:twitter.com username" to your queries you may or may not find what
-you're looking for with minimal additional cruft; there's also [Snap
-Bird](http://snapbird.org/) which is a 3rd party site designed to do this but
+you're looking for with minimal additional cruft; there's also [Snap Bird](http://snapbird.org/) which is a 3rd party site designed to do this but
 it's clunky and I've never seen it actually work (maybe the fault of Twitter's
 API, who knows).
 
@@ -60,16 +59,11 @@ it and you won't notice it on a busy page, and it will keep reporting "0 of 0"
 in the search status pane; you still need to do the 3-step deselect, Find,
 Find Again dance to get it to highlight.)
 
-(Side note on Facebook: there's a [metafilter question asking how to search
-your own Facebook profile](http://ask.metafilter.com/128906/How-to-search-
-through-your-own-Facebook-profile); not only do the answers there not have a
+(Side note on Facebook: there's a [metafilter question asking how to search your own Facebook profile](http://ask.metafilter.com/128906/How-to-search-through-your-own-Facebook-profile); not only do the answers there not have a
 solution, but the overall feeling is highly negative on it even being
 possible. That's not quite true; I've confirmed that using the Facebook API
 from a simple Python script I can get back anything I ever posted. They do
 keep it, and they or someone else could write an indexer and search tool.)
 
 Update: [Greplin](https://greplin.com) does a pretty good job of this, though
-[not as good a job as it could with Facebook
-posts](http://blog.metamatt.com/blog/2011/04/15/how-to-search-your-own-
-activity-streams-greplin/).
-
+[not as good a job as it could with Facebook posts](http://blog.metamatt.com/blog/2011/04/15/how-to-search-your-own-activity-streams-greplin/).

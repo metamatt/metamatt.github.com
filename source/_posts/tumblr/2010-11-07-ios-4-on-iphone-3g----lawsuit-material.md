@@ -4,9 +4,7 @@ title: iOS 4 on iPhone 3G -- lawsuit material?
 tags: 
 comments: true
 ---
-[iOS 4 on iPhone 3G -- lawsuit
-material?](http://arstechnica.com/apple/news/2010/11/lawsuit-apple-turned-
-iphone-3gs-into-ibricks-to-boost-iphone-4.ars)
+[iOS 4 on iPhone 3G -- lawsuit material?](http://arstechnica.com/apple/news/2010/11/lawsuit-apple-turned-iphone-3gs-into-ibricks-to-boost-iphone-4.ars)
 
 On the one hand, it's silly to use class action lawsuits as the tool to
 address software bugs, but on the other hand, if Apple's going to publish an
@@ -20,4 +18,3 @@ frustrated. I'm sure Apple just saw this is a bug to fix in the next update
 whose daily-use phone was horribly sluggish for a couple months while they
 waited for that upgrade, it's hard to excuse Apple for not letting them
 downgrade back to 3.1 in the meantime.
-
