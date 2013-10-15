@@ -18,6 +18,8 @@ $275.10 with E-1[^1].
 
 The results:
 
+<iframe width='800' height='400' frameborder='0' src='https://docs.google.com/spreadsheet/pub?key=0AvFfqLY9cNwzdHZUWDlROU1QNldhdm85Y1RsUXRrakE&output=html&widget=true'></iframe>
+
 E-6 was a solid win for us. In the 6 winter months where we had a usage
 charge, the usage charge was about $10/month higher with E-1[^2]. In the 6 summer
 months where we had a usage credit, the usage credit was about $30/month lower
