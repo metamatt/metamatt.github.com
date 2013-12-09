@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>State of the Last-mile Internet Connection, Year 2013 - Step 2 is the hard part.</title>
+  <meta name="author" content="Matt Ginzton">
+
+  
+  <meta name="description" content="At home: Using both Comcast and Monkeybrains for their different strengths. Comcast (aka &ldquo;the man&rdquo;): I&rsquo;m using what used to be a &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.metamatt.com/blog/2013/12/08/state-of-the-last-mile-internet-connection-year-2013/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Step 2 is the hard part." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19563060-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Step 2 is the hard part.</a></h1>
+  
+    <h2>Matt Ginzton writes here.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.metamatt.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">State of the Last-mile Internet Connection, Year 2013</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-08T21:26:00-08:00" pubdate data-updated="true">Dec 8<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>At home: Using both Comcast and <a href="http://www.monkeybrains.net/">Monkeybrains</a> for their different strengths.</p>
+
+<ul>
+<li>Comcast (aka &ldquo;the man&rdquo;): I&rsquo;m using what used to be a 30mbps down/7mbps up DOCSIS 3 connection with an onstensible 250GB/month cap for $74.95/month (ostensibly $62.95/month but with a surcharge for not buying additional services from them). Last year they removed even the threat of overage charges for exceeding the cap (this may change someday but it&rsquo;s nice for now), and sometime this year they seem to have also stopped shaping my traffic to the 30mbps tier; I now reliably get about 55mbps down and 10mbps up. (DOCSIS cable is a shared medium where you fight your neighbors for bandwidth, but I have never once seen speeds drop below the shaping cap; either Comcast does a good job of provisioning enough capacity or I&rsquo;m extraordinarily lucky.) I don&rsquo;t love Comcast&rsquo;s corporate policies, the fact they&rsquo;re always trying to upsell me TV services I don&rsquo;t want, or their &ldquo;have you tried rebooting it&rdquo; approach to tech support. But their network works well.</li>
+<li>Monkeybrains (a San Francisco local neighborhood provider): Their plan for non-businesses is $35/month over 5GHz point-to-multipoint wireless links, using roof-mounted <a href="http://www.ubnt.com/airmax#nanobridgem">Ubiquiti 5GHz dish antennas</a>. I hadn&rsquo;t realized equipment like this was generally available, or that you could do reliable long-distance wireless links in unlicensed spectrum. It works pretty well. Non-business customers get a shared medium symmetric link; Monkeybrains tells you to expect somewhere around 20mbps in each direction if you&rsquo;re lucky but less if the link is poor or congested. In practice, it&rsquo;s been reliable except during one storm, and I do get about 20mbps in each direction most of the time, though in the evenings when everyone is watching Netflix, I&rsquo;ve seen it drop to about 3mbps (so here, the shared medium effect is often visible). Also, latency is very good (around 4ms for the last-mile hop); far better than I&rsquo;ve ever seen from cable or DSL. I chose to get the additional Monkeybrains connection for 3 reasons: first to see if it could completely replace cable, second for redundancy and additional capacity especially upstream, and third to support a local business. Given the speed characteristics, it&rsquo;s a great value for upstream capacity (over the course of a month, ignoring nightly slowdowns, I could transfer more up through Monkeybrains than even a much more expensive Comcast connection), but it&rsquo;s often not good enough for streaming video in the evening, so I haven&rsquo;t chosen to replace cable entirely.</li>
+<li>Configuring multiple WAN providers is hard. I have my <a href="http://blog.metamatt.com/blog/2012/03/19/custom-built-linux-router-no-thanks-to-realtek/">custom Linux router</a> and I&rsquo;m configuring the firewall, shaping, and routing via <a href="http://shorewall.net/">shorewall</a>. I find Shorewall a lot easier to deal with than raw <a href="http://linux.die.net/man/8/tc">tc</a> and <a href="http://www.netfilter.org/">iptables</a>, but even after reading all of <a href="http://www.shorewall.net/MultiISP.html">Shorewall&rsquo;s Multi-ISP guide</a> and way too much of <a href="http://www.lartc.org/">LARTC</a>, I still haven&rsquo;t figured out how to configure things very well. In a perfect world, everything would use <a href="http://en.wikipedia.org/wiki/Multipath_TCP">Multipath TCP</a> or the equivalent, and adding additional WAN providers would immediately give you more speed, even for a single stream. In the real world, Multipath TCP is not widely deployed, and unless you run the equivalent of a VPN tunnel across all your links to a cooperating router elsewhere, single streams use only a single link. Also, you need fairly smart software watching the links and determining their health and reconfiguring routing if you want the ideal reliability case, where traffic flows as long as at least 1 link is healthy. I haven&rsquo;t tried all that hard, but I haven&rsquo;t even gotten this working. In practice, what&rsquo;s easy to set up leaves you with a combined link that&rsquo;s only as reliable as the weakest link: if any link goes down, at least some traffic stops flowing. I dabbled for a while in round-robining traffic across links (which is kind of like SMP for your CPU: it doesn&rsquo;t help at all with the max speed of an individual stream, but helps keep multiple streams from interfering, so with a large number of users, it&rsquo;s a decent approximation of the ideal case), but given the reliability problems and also the naive load balancing that would often result in slower individual streams by choosing the wrong link, I&rsquo;m now running only Crashplan backup over Monkeybrains, and everything else over Comcast.<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></li>
+</ul>
+
+
+<p>Wireless: I switched our family plan from Sprint to Verizon, despairing that Sprint&rsquo;s promised <a href="http://network.sprint.com/">&ldquo;Network Vision network upgrades</a> will ever bear fruit here in the Bay Area. I&rsquo;ve always like Sprint&rsquo;s focus on less-confusing, lower-priced plans with an emphasis on unlimited data, but Network Vision has been in progress since 2010, their 3G network has been getting slower in my experience ever since then, and their LTE network is still on the horizon. Now that they&rsquo;re finally converting Nextel&rsquo;s lower-frequency spectrum for their own purposes, this could still turn out well, but after waiting 3 years for Network Vision to yield results, I was tired of holding my breath, and I sure wasn&rsquo;t going to sign another 2 year contract under those conditions. Verizon is also The Man, but it turns out they basically don&rsquo;t charge any more for a basically equivalent<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup> 4-line family plan for 4 smartphones. So now we&rsquo;re on Verizon&rsquo;s LTE network, which ranges from awesome (20mbps down, 7mbps up) in downtown SF to barely passable (data barely trickles in each direction) around our house in the Mission District. Most of the time it works pretty well, though. Latencies on both Verizon&rsquo;s LTE and 3G networks seem substantially better than Sprint&rsquo;s 3G network (RTT on Verizon is usually around 70ms; with Sprint it was usually 200ms), which might also be a big factor in it feeling generally snappier for data. True, we had to give up unlimited data, but in practice (partly because it was so slow, partly just due to our natural usage patterns) we weren&rsquo;t using all that much data on Sprint, and given the observed tradeoff, I actually think $10/GB is a fair price to pay for reliably fast data.</p>
+
+<p>At work: A quick mention that at work, we&rsquo;ve tried both Comcast and <a href="http://webpass.net/">WebPass</a>, another local-ish wireless provider with a focus on commercial installations. I like what WebPass is offering, because they sell symmetric connections and can scale up to quite high speeds. Unfortunately the plans that are cost-competitive with Comcast are quite a bit slower downstream, and reliability has not been all that good. The wireless link layer itself seems fine, but I&rsquo;ve seen more than a few weird routing problems, and their tech support doesn&rsquo;t reliably fix these quickly when reported or even call back with promised updates.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>I could write a whole post on weird things you didn&rsquo;t expect to deal with that crop up when you add multiple ISPs to your home network, like trying to keep the weird Xbox Live UDP protocol happy, or updating multiple dyndns addresses, or why it&rsquo;s not easy to keep Shorewall happy when one link goes down. Maybe another day.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>I found it interesting that (in the fall of 2013), Sprint&rsquo;s mainstream plans all have unlimited data and messaging but still have metered voice minutes; Verizon&rsquo;s mainstream plans all have unlimited voice and messaging but metered data.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Matt Ginzton</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-08T21:26:00-08:00" pubdate data-updated="true">Dec 8<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.metamatt.com/blog/2013/12/08/state-of-the-last-mile-internet-connection-year-2013/" data-via="metamatt" data-counturl="http://blog.metamatt.com/blog/2013/12/08/state-of-the-last-mile-internet-connection-year-2013/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/12/08/everything-but-the-retina-mini/" title="Previous Post: Everything except the Retina Mini">&laquo; Everything except the Retina Mini</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/12/08/unexpected-side-effects-switching-cell-phone-providers/" title="Next Post: Unexpected side effects switching cell phone providers">Unexpected side effects switching cell phone providers &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/12/08/mail-dot-app-gmail-and-mavericks/">Mail.app and gmail in Mavericks</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/08/death-by-dueling-modal-dialog/">Death by dueling modal dialog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/08/apple-2-factor-authentication-setup/">2-factor authentication setup for AppleID</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/08/apple-shopping-cart-fail-gift-card-in-cart/">Apple shopping cart fail — gift card in cart makes gift card payment option disappear</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/08/apple-shopping-cart-fail-multiple-devices-on-new-cell-plan/">Apple shopping cart fail — multiple devices on new cell plan</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/metamatt">@metamatt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'metamatt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("metamatt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/metamatt" class="twitter-follow-button" data-show-count="false">Follow @metamatt</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117348958487049022391?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Matt Ginzton -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'metamatt';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.metamatt.com/blog/2013/12/08/state-of-the-last-mile-internet-connection-year-2013/';
+        var disqus_url = 'http://blog.metamatt.com/blog/2013/12/08/state-of-the-last-mile-internet-connection-year-2013/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Mail.app and gmail in Mavericks - Step 2 is the hard part.</title>
+  <meta name="author" content="Matt Ginzton">
+
+  
+  <meta name="description" content="I use email pretty seriously, and like a good thick client. I like what gmail is trying to do, but I&rsquo;ve never been able to get along with its &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.metamatt.com/blog/2013/12/08/mail-dot-app-gmail-and-mavericks/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Step 2 is the hard part." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19563060-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Step 2 is the hard part.</a></h1>
+  
+    <h2>Matt Ginzton writes here.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.metamatt.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Mail.app and Gmail in Mavericks</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-08T23:47:00-08:00" pubdate data-updated="true">Dec 8<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I use email pretty seriously, and like a good thick client. I like what gmail is trying to do, but I&rsquo;ve never been able to get along with its web interface. My years-old mailstore has many folders, and emulating them with labels works fine but the gmail UI for assigning labels just isn&rsquo;t as good as what any decent thick client does with folders. So.</p>
+
+<p>I see a lot of hate on the internet for <a href="http://en.wikipedia.org/wiki/Mail_(application">Mail.app</a>), but having tried many alternatives, I really like it<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. Or did until <a href="http://en.wikipedia.org/wiki/OS_X_Mavericks">Mavericks</a>, which is the point of this post.</p>
+
+<p>The Mavericks version of Mail.app made some big changes to how Mail.app talks to gimap, which I can only assume were to make things work better with gmail&rsquo;s &ldquo;labels&rdquo; system and the idea that unlike with folders, one message can be filed with multiple labels. Because it worked fine before Mavericks, at the cost of perhaps syncing multiple copies of the same message. However, immediately after the Mavericks release, <a href="https://tidbits.com/article/14219">it was well documented</a> that instead of making things better, they&rsquo;d made them worse.</p>
+
+<p>In fact, it was bad enough that <a href="http://support.apple.com/kb/HT6030">Apple took the unusual step of releasing a Mail.app-Gmail specific update</a> only a few days later.</p>
+
+<p>In my experience, it made things a little better but far from good; even after the update</p>
+
+<ul>
+<li>server-side changes (made in another client, or in the gmail web interface, or new mail arriving) may not be noticed for minutes, hours, days, or weeks, or at all</li>
+<li>if I move messages between folders in Mail.app, the message disappears from the source folder, then reappears a couple seconds later, then disappears again a couple more seconds later</li>
+<li>the &ldquo;Mailbox&rdquo; column in the message list view, which should show what folder a message is in, always shows &ldquo;All Mail&rdquo;, regardless of which more interesting folder(s) the message is actually in</li>
+</ul>
+
+
+<p>The 2nd and 3rd problems are annoying but cosmetic; the 1st problem, though, renders Mail.app entirely unusable. There doesn&rsquo;t seem to be any workaround &mdash; I&rsquo;ve tried switching folders many times, triggering Synchronize, triggering Rebuild Folder, logging out and logging back in, rebooting, quitting and restarting Mail, even deleting my entire mail cache folder and all accounts and re-adding the accounts and downloading all the mail again. Nothing helped.</p>
+
+<p>Hopefully Apple will fix this soon (there are <a href="http://appleinsider.com/articles/13/11/21/apple-seeds-second-os-x-1091-beta-to-developers-with-mail-improvements">rumored to be further Mail.app/gmail bugfixes in an upcoming 10.9.1 update</a>). As it is, it means I either can&rsquo;t upgrade to Mavericks on the machine I actually care about<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>, or I need to find a different mail client.</p>
+
+<p>So, in the past couple weeks I&rsquo;ve spent some time dabbling in alternate mail clients. I haven&rsquo;t found one I like.</p>
+
+<p><a href="http://www.postbox-inc.com/">Postbox</a>:</p>
+
+<ul>
+<li>Works well enough from a strict functionality point of view, but has enough minor problems I still prefer the OS X 10.8 version of Mail.app, and would prefer a version of Mail.app that works into the future.</li>
+<li>Sluggishness: even after enabling its offline support and telling it to cache all my folders, selecting any message the first time is still sluggish, like it wasn&rsquo;t cached until I clicked on it. The normal flow is new mail arrives and I can see it in the message list, I click on it, then nothing happens for a second or two.</li>
+<li>Key bindings: Mac OS accepts Emacs keybindings (things like Ctrl-n for down arrow) systemwide, but not in Postbox.</li>
+<li>No springloaded autocollapse for dragging and dropping messages to nested folders.</li>
+<li>Aesthetically: it&rsquo;s just not as nice as Mail.app.</li>
+</ul>
+
+
+<p><a href="http://airmailapp.com/">Airmail</a>:</p>
+
+<ul>
+<li>Doesn&rsquo;t show me all my mail. This is, obviously, a dealbreaker. I clicked around a bunch of different folders, and it only showed me a small recent smattering of messages in folders other than the inbox (for my Sent folder, only stuff for the last 2 weeks; for a lower-traffic folder, it went back about 30 months but only about 20 messages; in all cases it’s far less than the number of messages actually there).</li>
+<li>Polarizing UI. Some people seem to love it. To me, it just looks weird (dark colors, unfamiliar icon glyphs, unlabelled icons all over the place including parts of windows that don&rsquo;t normally have buttons, busy menu structure).</li>
+<li>Weird behavior with nested folders. The toplevel folders are sorted alphabetically (as one would expect); so are first-level nested folders. But folders nested more deeply than that show in an apparently arbitrary order.</li>
+</ul>
+
+
+<p>For now, I&rsquo;m sticking with OS X 10.8.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Notably, Mail.app is the only client I&rsquo;ve ever used that makes IMAP feel perfectly natural, hiding all its design foibles. Other clients want to only download headers until I actually click on a message, or make me configure which folders get cached locally, or expose a difference between &ldquo;delete&rdquo; and &ldquo;expunge&rdquo;. Mail.app&rsquo;s default settings just cache the whole IMAP mailstore in the background and make it feel like all the mail is local.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>I upgraded some machines I can live without, to see how well Mavericks works. I wasn&rsquo;t expecting any problems this big. But luckily I didn&rsquo;t upgrade the laptop I do use every day, which I need for my job; unluckily that machine is the one that would benefit the most from Mavericks banner features: better power management and better multi-monitor support.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Matt Ginzton</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-08T23:47:00-08:00" pubdate data-updated="true">Dec 8<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.metamatt.com/blog/2013/12/08/mail-dot-app-gmail-and-mavericks/" data-via="metamatt" data-counturl="http://blog.metamatt.com/blog/2013/12/08/mail-dot-app-gmail-and-mavericks/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/12/08/death-by-dueling-modal-dialog/" title="Previous Post: Death by dueling modal dialog">&laquo; Death by dueling modal dialog</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/12/08/mail-dot-app-gmail-and-mavericks/">Mail.app and gmail in Mavericks</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/08/death-by-dueling-modal-dialog/">Death by dueling modal dialog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/08/apple-2-factor-authentication-setup/">2-factor authentication setup for AppleID</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/08/apple-shopping-cart-fail-gift-card-in-cart/">Apple shopping cart fail — gift card in cart makes gift card payment option disappear</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/08/apple-shopping-cart-fail-multiple-devices-on-new-cell-plan/">Apple shopping cart fail — multiple devices on new cell plan</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/metamatt">@metamatt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'metamatt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("metamatt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/metamatt" class="twitter-follow-button" data-show-count="false">Follow @metamatt</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117348958487049022391?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Matt Ginzton -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'metamatt';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.metamatt.com/blog/2013/12/08/mail-dot-app-gmail-and-mavericks/';
+        var disqus_url = 'http://blog.metamatt.com/blog/2013/12/08/mail-dot-app-gmail-and-mavericks/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

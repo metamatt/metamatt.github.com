@@ -9,8 +9,7 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="Last night I installed the OS X 10.8.3 update on my laptop (updating from 10.8.2). This morning,
-upon plugging my laptop into the external &hellip;">
+  <meta name="description" content="I use email pretty seriously, and like a good thick client. I like what gmail is trying to do, but I&rsquo;ve never been able to get along with its &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +76,502 @@ upon plugging my laptop into the external &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/08/mail-dot-app-gmail-and-mavericks/">Mail.app and Gmail in Mavericks</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-08T23:47:00-08:00" pubdate data-updated="true">Dec 8<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/12/08/mail-dot-app-gmail-and-mavericks/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I use email pretty seriously, and like a good thick client. I like what gmail is trying to do, but I&rsquo;ve never been able to get along with its web interface. My years-old mailstore has many folders, and emulating them with labels works fine but the gmail UI for assigning labels just isn&rsquo;t as good as what any decent thick client does with folders. So.</p>
+
+<p>I see a lot of hate on the internet for <a href="http://en.wikipedia.org/wiki/Mail_(application">Mail.app</a>), but having tried many alternatives, I really like it<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. Or did until <a href="http://en.wikipedia.org/wiki/OS_X_Mavericks">Mavericks</a>, which is the point of this post.</p>
+
+<p>The Mavericks version of Mail.app made some big changes to how Mail.app talks to gimap, which I can only assume were to make things work better with gmail&rsquo;s &ldquo;labels&rdquo; system and the idea that unlike with folders, one message can be filed with multiple labels. Because it worked fine before Mavericks, at the cost of perhaps syncing multiple copies of the same message. However, immediately after the Mavericks release, <a href="https://tidbits.com/article/14219">it was well documented</a> that instead of making things better, they&rsquo;d made them worse.</p>
+
+<p>In fact, it was bad enough that <a href="http://support.apple.com/kb/HT6030">Apple took the unusual step of releasing a Mail.app-Gmail specific update</a> only a few days later.</p>
+
+<p>In my experience, it made things a little better but far from good; even after the update</p>
+
+<ul>
+<li>server-side changes (made in another client, or in the gmail web interface, or new mail arriving) may not be noticed for minutes, hours, days, or weeks, or at all</li>
+<li>if I move messages between folders in Mail.app, the message disappears from the source folder, then reappears a couple seconds later, then disappears again a couple more seconds later</li>
+<li>the &ldquo;Mailbox&rdquo; column in the message list view, which should show what folder a message is in, always shows &ldquo;All Mail&rdquo;, regardless of which more interesting folder(s) the message is actually in</li>
+</ul>
+
+
+<p>The 2nd and 3rd problems are annoying but cosmetic; the 1st problem, though, renders Mail.app entirely unusable. There doesn&rsquo;t seem to be any workaround &mdash; I&rsquo;ve tried switching folders many times, triggering Synchronize, triggering Rebuild Folder, logging out and logging back in, rebooting, quitting and restarting Mail, even deleting my entire mail cache folder and all accounts and re-adding the accounts and downloading all the mail again. Nothing helped.</p>
+
+<p>Hopefully Apple will fix this soon (there are <a href="http://appleinsider.com/articles/13/11/21/apple-seeds-second-os-x-1091-beta-to-developers-with-mail-improvements">rumored to be further Mail.app/gmail bugfixes in an upcoming 10.9.1 update</a>). As it is, it means I either can&rsquo;t upgrade to Mavericks on the machine I actually care about<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>, or I need to find a different mail client.</p>
+
+<p>So, in the past couple weeks I&rsquo;ve spent some time dabbling in alternate mail clients. I haven&rsquo;t found one I like.</p>
+
+<p><a href="http://www.postbox-inc.com/">Postbox</a>:</p>
+
+<ul>
+<li>Works well enough from a strict functionality point of view, but has enough minor problems I still prefer the OS X 10.8 version of Mail.app, and would prefer a version of Mail.app that works into the future.</li>
+<li>Sluggishness: even after enabling its offline support and telling it to cache all my folders, selecting any message the first time is still sluggish, like it wasn&rsquo;t cached until I clicked on it. The normal flow is new mail arrives and I can see it in the message list, I click on it, then nothing happens for a second or two.</li>
+<li>Key bindings: Mac OS accepts Emacs keybindings (things like Ctrl-n for down arrow) systemwide, but not in Postbox.</li>
+<li>No springloaded autocollapse for dragging and dropping messages to nested folders.</li>
+<li>Aesthetically: it&rsquo;s just not as nice as Mail.app.</li>
+</ul>
+
+
+<p><a href="http://airmailapp.com/">Airmail</a>:</p>
+
+<ul>
+<li>Doesn&rsquo;t show me all my mail. This is, obviously, a dealbreaker. I clicked around a bunch of different folders, and it only showed me a small recent smattering of messages in folders other than the inbox (for my Sent folder, only stuff for the last 2 weeks; for a lower-traffic folder, it went back about 30 months but only about 20 messages; in all cases it’s far less than the number of messages actually there).</li>
+<li>Polarizing UI. Some people seem to love it. To me, it just looks weird (dark colors, unfamiliar icon glyphs, unlabelled icons all over the place including parts of windows that don&rsquo;t normally have buttons, busy menu structure).</li>
+<li>Weird behavior with nested folders. The toplevel folders are sorted alphabetically (as one would expect); so are first-level nested folders. But folders nested more deeply than that show in an apparently arbitrary order.</li>
+</ul>
+
+
+<p>For now, I&rsquo;m sticking with OS X 10.8.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Notably, Mail.app is the only client I&rsquo;ve ever used that makes IMAP feel perfectly natural, hiding all its design foibles. Other clients want to only download headers until I actually click on a message, or make me configure which folders get cached locally, or expose a difference between &ldquo;delete&rdquo; and &ldquo;expunge&rdquo;. Mail.app&rsquo;s default settings just cache the whole IMAP mailstore in the background and make it feel like all the mail is local.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>I upgraded some machines I can live without, to see how well Mavericks works. I wasn&rsquo;t expecting any problems this big. But luckily I didn&rsquo;t upgrade the laptop I do use every day, which I need for my job; unluckily that machine is the one that would benefit the most from Mavericks banner features: better power management and better multi-monitor support.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/08/death-by-dueling-modal-dialog/">Death by Dueling Modal Dialog</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-08T23:35:00-08:00" pubdate data-updated="true">Dec 8<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/12/08/death-by-dueling-modal-dialog/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Setting up a new iPad from a backup of a previous one &mdash; which, I think, is the method de rigeur for a few million people in this season &mdash; I noticed a really annoying problem.</p>
+
+<p>When you first turn on the new device, runs a fullscreen setup program that is not the normal iOS user experience starting at the home screen (Springboard). It wants to connect to a Wi-Fi network and then it asks you if you want to set it up as a new device or from a backup (and if the latter, whether to restore from iCloud or iTunes). If you elect to restore from an iCloud backup, it chews away for a few minutes restoring your user account, then reboots, and asks you a few further questions in the fullscreen setup program before jumping to the home screen.</p>
+
+<p>As soon as the setup program exits and Springboard runs, normal background services and apps start launching and doing their thing, plus there&rsquo;s still some first-use setup stuff to take care of, which means that all of the following try to happen simultaneously:</p>
+
+<ul>
+<li>email accounts try to sync, realize they don&rsquo;t have the server credentials, and ask you for a password (for each of several email accounts)</li>
+<li>iOS wants you to set a device PIN for the unlock screen, and asks you to provide one</li>
+<li>Facebook account tries to sync, realizes it doesn&rsquo;t have the server credentials, and asks you for a password</li>
+<li>if you managed to supply a device PIN without that dialog getting clobbered by one of the other ones, it comes back and wants you to confirm it</li>
+<li>if you managed to supply your Facebook password, Facebook&rsquo;s 2-factor authentication says &ldquo;that&rsquo;s nice but we just texted you a code which you now need to provide&rdquo;</li>
+</ul>
+
+
+<p>All of these happen in modal dialogs that pop to the foreground over the active app&hellip; or over one of the other aforementioned modal dialogs. This isn&rsquo;t supposed to happen with modal dialogs. But it does, here, in the default out-of-box experience for pretty much any iOS device where the owner is upgrading from a previous one that was used for anything serious.</p>
+
+<p>In fact, these password dialogs continue to pop up even when you&rsquo;re in the middle of typing in an existing one (and if you manage to fill out and confirm one before another one takes its place, it seems like the previous ones may still be there with your previous partial input, or they may start empty when they reappear). The resultant focus stealing issues are worse than anything I&rsquo;ve seen since the late 90s versions of Windows.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/08/apple-2-factor-authentication-setup/">2-factor Authentication Setup for AppleID</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-08T23:16:00-08:00" pubdate data-updated="true">Dec 8<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/12/08/apple-2-factor-authentication-setup/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>As part of setting up my new iPad, I got tired of telling Apple I didn&rsquo;t want to add weak security questions to allow me (or would-be hackers) to reset my password, and decided to set up 2-factor authentication (which is a good idea in any case).</p>
+
+<p>This should be pretty straightforward &mdash; and it is, at other sites where I&rsquo;ve set this up (Google, Facebook, Twitter). Apple&rsquo;s setup process was a lot more complicated. Judging from the questions and admonishments during this setup process, Apple is a lot more worried than these others about people losing access to the &ldquo;thing you have&rdquo; and locking themselves out of their accounts. Which is a legitimate concern, but I think they can make the UI around this process a lot better.</p>
+
+<p>The first place this went awry is the list of devices where they can deliver authentication codes. The AppleID website shows a list of known iOS devices (those enrolled in &ldquo;Find my iPhone&rdquo;), and allows you to select any/all of these, plus optionally one or more SMS-enabled phone numbers, to receive login verification codes. The problem is, all of these devices were listed as &ldquo;offline&rdquo;, even though at least 3 of them were actually online. I spent some time trying to figure out which parts of the description was clickable (spoiler: none, though there is one part that triggers an inaccurate explanatory popup if you mouse over it and hold still) before I eventually discovered a Refresh button at the very bottom of the list (far enough down I had to scroll to see it).</p>
+
+<p>So beef #1: this page always loads stale information, and doesn&rsquo;t show you correct information until you click a Refresh button that&rsquo;s initially offscreen.</p>
+
+<p>After selecting a couple notification methods here (which involves additional careful confirmation to make sure they actually work) and clicking Next, Apple showed me a &ldquo;recovery key&rdquo; with instructions to write it down or print it, but not to store it on any computer (and to enforce that, they make it impossible to copy it to the clipboard). OK guys, I get what you&rsquo;re saying about the whole point being not exposing my keys to hackers, but if I write it on paper I&rsquo;m going to lose it. Plus the computer I&rsquo;m on doesn&rsquo;t have a printer. I&rsquo;m going to store this on my computer, thanks; I&rsquo;ll just encrypt it. So I pull out my iPhone and open an encrypted note-taking program and type in this long alphanumeric code and check it carefully to make sure I transcribed it correctly. Then back to the computer and I click Next and it starts to ask me to retype the code, when suddenly&hellip; Session Timeout! Back to the very beginning. Time to start over (and this has taken about 10 minutes so far<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>).</p>
+
+<p>So beef #2: aggressively short<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup> session timeouts are user-hostile, plus why not give me a chance to confirm I&rsquo;m still there before just kicking me out of the session, plus the website was willing to let me sit there at the first &ldquo;recovery key&rdquo; page indefinitely long, and let me keep doing the work to copy down the useless recovery key<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>, and only when I click Next does it tell me the session had already expired.</p>
+
+<p>This whole process would work a lot better if the 2 pages in question would dynamically update. AJAX in 2006 was pretty hot stuff. In late 2013, it&rsquo;s table stakes.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>OK, it won&rsquo;t take me 10 minutes the second time, now that I know what I&rsquo;m doing, notably with respect to the magic refresh button. But still, there was a lot of clicking done so far and a lot of clicking to repeat, and it&rsquo;s pretty annoying.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>The session timeout wasn&rsquo;t actually so short that I couldn&rsquo;t transcribe the recovery key, annoying as it is to type arbitrary hyphenated alphanumeric strings into the iOS keyboard. What actually happened was the AppleID website was slow and the page load between the &ldquo;configure devices&rdquo; and &ldquo;recovery key&rdquo; page took long enough I went to go do something else for a few minutes, then came back to the &ldquo;recovery key&rdquo; page, at which point the session had probably already expired before I even started dealing with transcribing the key.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>Useless, because the second time through, the randomly generated recovery key was of course different.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/08/apple-shopping-cart-fail-gift-card-in-cart/">Apple Shopping Cart Fail — Gift Card in Cart Makes Gift Card Payment Option Disappear</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-08T22:43:00-08:00" pubdate data-updated="true">Dec 8<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/12/08/apple-shopping-cart-fail-gift-card-in-cart/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>On Black Friday I was trying to buy 2 new iPads to upgrade our 2 old ones.</p>
+
+<p>And I&rsquo;d been lucky enough to win an iPad 2, which turned into an Apple Store gift card for the value of an iPad 2, as a door prize recently.</p>
+
+<p>And <a href="/blog/2013/12/08/everything-but-the-retina-mini/">Apple was giving out Apple Store gift cards with most iPads as a Black Friday promotion that day</a>.</p>
+
+<p>So I added the new desired iPads to the shopping cart, configured them appropriately, clicked along until I got to the payment page, started looking for where to enter the code from my existing gift card&hellip; and this started a 15-minute odyssey of reading Apple help pages and becoming convinced the <a href="http://en.wikipedia.org/wiki/Negroni">holiday cocktail</a> I was sipping had addled my brain.</p>
+
+<p>I mean, this is not supposed to be hard. But I couldn&rsquo;t find anywhere to tell it I had this gift card.</p>
+
+<p>First stop: Apple&rsquo;s help page describing <a href="http://store.apple.com/us/browse/home/giftcards/redeem">How to redeem Apple Store gift cards</a>.</p>
+
+<p><a href="http://www.flickr.com/photos/metamatt/11232695394/"><img src="http://farm4.staticflickr.com/3669/11232695394_85ffb02ea2_o.png" alt="Click the &quot;Apple Store Gift Card tab&quot;" /></a></p>
+
+<p>That sounds straightforward enough, but that&rsquo;s funny, I don&rsquo;t see any such option:</p>
+
+<p><a href="http://www.flickr.com/photos/metamatt/11232795053/"><img src="http://farm4.staticflickr.com/3699/11232795053_3c833b5a34_c.jpg" alt="Payment page with no &quot;gift card&quot; tab" /></a></p>
+
+<p>I delve farther into <a href="http://store.apple.com/us/help/payments#applecard">other more detailed help pages</a>, to no avail.</p>
+
+<p>Finally, feeling pretty stupid and blaming the cocktail, I clicked the &ldquo;Live chat&rdquo; help button. That popped up this window:</p>
+
+<p><a href="http://www.flickr.com/photos/metamatt/11232695584/"><img src="http://farm8.staticflickr.com/7444/11232695584_27f55ece66_c.jpg" alt="Please wait / Top Questions" /></a></p>
+
+<p>And there you have it. Q: &ldquo;How do I use a Gift Card?&rdquo; A: &ldquo;Well, we don&rsquo;t let you use gift cards on orders containing gift cards, and by the way, all orders today contain gift cards, so have fun trying to use a gift card. This was a sufficiently obvious question to make the #1 FAQ of the day, but we&rsquo;ll only tell you this after you get frustrated enough to ask for help.&rdquo;</p>
+
+<p>This was a lot more confusing than it would have been if the &ldquo;gift card&rdquo; tab had remained present, which when selected would have been a perfect opportunity to say why this order wasn&rsquo;t eligible for payment via gift card.</p>
+
+<p>Pro tip for UI designers: making sometimes-applicable-but-not-now options disappear entirely is a lot less friendly than leaving room to explain why they don&rsquo;t currently apply.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/08/apple-shopping-cart-fail-multiple-devices-on-new-cell-plan/">Apple Shopping Cart Fail — Multiple Devices on New Cell Plan</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-08T22:25:00-08:00" pubdate data-updated="true">Dec 8<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/12/08/apple-shopping-cart-fail-multiple-devices-on-new-cell-plan/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I was trying to buy new phones for everyone on our family plan — we had 2-year-old iPhone 4Ses on Sprint, and were planning on getting new iPhone 5Ses on Verizon.</p>
+
+<p>My first stop was store.apple.com, because Apple&rsquo;s website (compared to cell carrier websites) is simple<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> and easy to use and doesn&rsquo;t make you want to gouge your eyes out and doesn&rsquo;t try to upsell you multiple useless accessories during the checkout process.</p>
+
+<p>Then I hit this roadblock:</p>
+
+<p><a href="http://www.flickr.com/photos/metamatt/11232705516/"><img src="http://farm8.staticflickr.com/7323/11232705516_37ec93131d_c.jpg" alt="You can only purchase one iPhone per order on the Apple Online Store" /></a></p>
+
+<p>This was annoying because at the time (October) there was a 2 to 3 week waiting list for iPhone 5Ses. Presumably this 1-phone-per-order thing isn&rsquo;t a problem in physical stores, but due to the backlog they weren&rsquo;t actually stocking the phones in physical stores; you had to pre-order via the website. And the website&rsquo;s solution was to order one phone, wait for it to arrive and activate it, then there&rsquo;s enough of an account set up to add more phones to a family plan. But that would involve doubling the wait time, plus initially ordering a different plan than I want to end up on, and switching midmonth, which would probably involve who-knows-what kind of prorating madness. And then the phones wouldn&rsquo;t all have the same contract date, which would haunt us 2 years from now. No thanks.</p>
+
+<p>I don&rsquo;t actually know what the reason is for this, that renders Apple unable to sell multiple phones to new customers. It doesn&rsquo;t really make sense to me; that doesn&rsquo;t seem like a strange thing to want.</p>
+
+<p>Anyway, the solution was to head off to Verizon&rsquo;s website, and just hold my tongue and avoid gouging my eyeballs out when confronted with their idea of website design and the multiple clicks <em>per line</em> to skip buying a bunch of accessories I didn&rsquo;t need. But they were happy to let me sign up as a new customer and ship me 4 phones at once.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>This is admittedly less true when buying a carrier-subsidized iPhone than anything else in the entire Apple Store. Everything else, you say you want to buy it and then you pay for it. A subsidized iPhone involves entering all sorts of billing information for your current contract plan or all sorts of loan-application-style information to set up a new contract plan. I can only imagine what kind of backend integration was necessary to get Apple&rsquo;s store talking to all the cell networks&#8217; billing systems.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/08/unexpected-side-effects-switching-cell-phone-providers/">Unexpected Side Effects Switching Cell Phone Providers</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-08T22:14:00-08:00" pubdate data-updated="true">Dec 8<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/12/08/unexpected-side-effects-switching-cell-phone-providers/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I wanted to note that when switching cell phone providers, one source of trouble I had not expected was the non-portable email address associated with my phone number for email-to-SMS forwarding.</p>
+
+<p>Sprint has an email-to-SMS gateway that forwards messages sent to yournumber@messaging.sprintpcs.com. Verizon does the same thing using yournumber@vtext.com.</p>
+
+<p>I was using this mechanism for a smattering of services that know how to send notifications by email but either don&rsquo;t know how or charge extra for sending SMSes:</p>
+
+<ul>
+<li><a href="https://www.pingdom.com/">Pingdom</a> web service monitoring</li>
+<li><a href="http://www.eyezon.com/?page_id=176">Eyez-on Envisalink</a> alarm monitoring</li>
+<li><a href="https://github.com/metamatt/stargate">Custom software I wrote</a> that generates more interesting alerts from the alarm system data (like, it messages me if I leave the garage door open)</li>
+</ul>
+
+
+<p>All of these alerts stopped happening when I switched providers, and I only noticed when I realized I wasn&rsquo;t getting the alerts any more. Then I had to go back and try to remember everywhere I&rsquo;d used that messaging.sprintpcs.com address (hint: this took a couple iterations).</p>
+
+<p>A different case that ended up working out the same way is <a href="https://support.twitter.com/articles/14014-twitter-via-sms-faqs">Twitter&rsquo;s SMS integration</a>. Here, they have real support for SMS (not cheaping out and using a per-carrier email forwarding gateway). But it still broke, with the same symptoms, when I switched carriers: over time, I realized I was no longer getting SMS notifications I used to get. I don&rsquo;t know how Twitter&rsquo;s SMS integration is implemented, and whether they do it themselves or use some service like Twilio; unlike a lot of sites I&rsquo;ve seen that ask you for a phone number to SMS, they just ask for a phone number and not which carrier. Anyway, it broke and there was no obvious setting to change to fix it; I ended up deleting my phone number and re-adding it and that fixed things.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/08/state-of-the-last-mile-internet-connection-year-2013/">State of the Last-mile Internet Connection, Year 2013</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-08T21:26:00-08:00" pubdate data-updated="true">Dec 8<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/12/08/state-of-the-last-mile-internet-connection-year-2013/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>At home: Using both Comcast and <a href="http://www.monkeybrains.net/">Monkeybrains</a> for their different strengths.</p>
+
+<ul>
+<li>Comcast (aka &ldquo;the man&rdquo;): I&rsquo;m using what used to be a 30mbps down/7mbps up DOCSIS 3 connection with an onstensible 250GB/month cap for $74.95/month (ostensibly $62.95/month but with a surcharge for not buying additional services from them). Last year they removed even the threat of overage charges for exceeding the cap (this may change someday but it&rsquo;s nice for now), and sometime this year they seem to have also stopped shaping my traffic to the 30mbps tier; I now reliably get about 55mbps down and 10mbps up. (DOCSIS cable is a shared medium where you fight your neighbors for bandwidth, but I have never once seen speeds drop below the shaping cap; either Comcast does a good job of provisioning enough capacity or I&rsquo;m extraordinarily lucky.) I don&rsquo;t love Comcast&rsquo;s corporate policies, the fact they&rsquo;re always trying to upsell me TV services I don&rsquo;t want, or their &ldquo;have you tried rebooting it&rdquo; approach to tech support. But their network works well.</li>
+<li>Monkeybrains (a San Francisco local neighborhood provider): Their plan for non-businesses is $35/month over 5GHz point-to-multipoint wireless links, using roof-mounted <a href="http://www.ubnt.com/airmax#nanobridgem">Ubiquiti 5GHz dish antennas</a>. I hadn&rsquo;t realized equipment like this was generally available, or that you could do reliable long-distance wireless links in unlicensed spectrum. It works pretty well. Non-business customers get a shared medium symmetric link; Monkeybrains tells you to expect somewhere around 20mbps in each direction if you&rsquo;re lucky but less if the link is poor or congested. In practice, it&rsquo;s been reliable except during one storm, and I do get about 20mbps in each direction most of the time, though in the evenings when everyone is watching Netflix, I&rsquo;ve seen it drop to about 3mbps (so here, the shared medium effect is often visible). Also, latency is very good (around 4ms for the last-mile hop); far better than I&rsquo;ve ever seen from cable or DSL. I chose to get the additional Monkeybrains connection for 3 reasons: first to see if it could completely replace cable, second for redundancy and additional capacity especially upstream, and third to support a local business. Given the speed characteristics, it&rsquo;s a great value for upstream capacity (over the course of a month, ignoring nightly slowdowns, I could transfer more up through Monkeybrains than even a much more expensive Comcast connection), but it&rsquo;s often not good enough for streaming video in the evening, so I haven&rsquo;t chosen to replace cable entirely.</li>
+<li>Configuring multiple WAN providers is hard. I have my <a href="http://blog.metamatt.com/blog/2012/03/19/custom-built-linux-router-no-thanks-to-realtek/">custom Linux router</a> and I&rsquo;m configuring the firewall, shaping, and routing via <a href="http://shorewall.net/">shorewall</a>. I find Shorewall a lot easier to deal with than raw <a href="http://linux.die.net/man/8/tc">tc</a> and <a href="http://www.netfilter.org/">iptables</a>, but even after reading all of <a href="http://www.shorewall.net/MultiISP.html">Shorewall&rsquo;s Multi-ISP guide</a> and way too much of <a href="http://www.lartc.org/">LARTC</a>, I still haven&rsquo;t figured out how to configure things very well. In a perfect world, everything would use <a href="http://en.wikipedia.org/wiki/Multipath_TCP">Multipath TCP</a> or the equivalent, and adding additional WAN providers would immediately give you more speed, even for a single stream. In the real world, Multipath TCP is not widely deployed, and unless you run the equivalent of a VPN tunnel across all your links to a cooperating router elsewhere, single streams use only a single link. Also, you need fairly smart software watching the links and determining their health and reconfiguring routing if you want the ideal reliability case, where traffic flows as long as at least 1 link is healthy. I haven&rsquo;t tried all that hard, but I haven&rsquo;t even gotten this working. In practice, what&rsquo;s easy to set up leaves you with a combined link that&rsquo;s only as reliable as the weakest link: if any link goes down, at least some traffic stops flowing. I dabbled for a while in round-robining traffic across links (which is kind of like SMP for your CPU: it doesn&rsquo;t help at all with the max speed of an individual stream, but helps keep multiple streams from interfering, so with a large number of users, it&rsquo;s a decent approximation of the ideal case), but given the reliability problems and also the naive load balancing that would often result in slower individual streams by choosing the wrong link, I&rsquo;m now running only Crashplan backup over Monkeybrains, and everything else over Comcast.<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></li>
+</ul>
+
+
+<p>Wireless: I switched our family plan from Sprint to Verizon, despairing that Sprint&rsquo;s promised <a href="http://network.sprint.com/">&ldquo;Network Vision network upgrades</a> will ever bear fruit here in the Bay Area. I&rsquo;ve always like Sprint&rsquo;s focus on less-confusing, lower-priced plans with an emphasis on unlimited data, but Network Vision has been in progress since 2010, their 3G network has been getting slower in my experience ever since then, and their LTE network is still on the horizon. Now that they&rsquo;re finally converting Nextel&rsquo;s lower-frequency spectrum for their own purposes, this could still turn out well, but after waiting 3 years for Network Vision to yield results, I was tired of holding my breath, and I sure wasn&rsquo;t going to sign another 2 year contract under those conditions. Verizon is also The Man, but it turns out they basically don&rsquo;t charge any more for a basically equivalent<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup> 4-line family plan for 4 smartphones. So now we&rsquo;re on Verizon&rsquo;s LTE network, which ranges from awesome (20mbps down, 7mbps up) in downtown SF to barely passable (data barely trickles in each direction) around our house in the Mission District. Most of the time it works pretty well, though. Latencies on both Verizon&rsquo;s LTE and 3G networks seem substantially better than Sprint&rsquo;s 3G network (RTT on Verizon is usually around 70ms; with Sprint it was usually 200ms), which might also be a big factor in it feeling generally snappier for data. True, we had to give up unlimited data, but in practice (partly because it was so slow, partly just due to our natural usage patterns) we weren&rsquo;t using all that much data on Sprint, and given the observed tradeoff, I actually think $10/GB is a fair price to pay for reliably fast data.</p>
+
+<p>At work: A quick mention that at work, we&rsquo;ve tried both Comcast and <a href="http://webpass.net/">WebPass</a>, another local-ish wireless provider with a focus on commercial installations. I like what WebPass is offering, because they sell symmetric connections and can scale up to quite high speeds. Unfortunately the plans that are cost-competitive with Comcast are quite a bit slower downstream, and reliability has not been all that good. The wireless link layer itself seems fine, but I&rsquo;ve seen more than a few weird routing problems, and their tech support doesn&rsquo;t reliably fix these quickly when reported or even call back with promised updates.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>I could write a whole post on weird things you didn&rsquo;t expect to deal with that crop up when you add multiple ISPs to your home network, like trying to keep the weird Xbox Live UDP protocol happy, or updating multiple dyndns addresses, or why it&rsquo;s not easy to keep Shorewall happy when one link goes down. Maybe another day.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>I found it interesting that (in the fall of 2013), Sprint&rsquo;s mainstream plans all have unlimited data and messaging but still have metered voice minutes; Verizon&rsquo;s mainstream plans all have unlimited voice and messaging but metered data.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/08/everything-but-the-retina-mini/">Everything Except the Retina Mini</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-08T15:45:00-08:00" pubdate data-updated="true">Dec 8<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/12/08/everything-but-the-retina-mini/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I noticed on Black Friday (the day after Thanksgiving; this year, November 29) that Apple had discounts on seemingly all of their iPad models: iPad 2, iPad Air and iPad Mini. Usually, Apple discounts prices that day (for many products, the only time they&rsquo;re ever discounted); this year, the discount took the form of a gift card for the Apple Store. Tricksy Apple &mdash; we don&rsquo;t actually get a cheaper price, we just get more for our money.</p>
+
+<p>When I went to order the one I wanted (the new retina-display version of the iPad Mini), I realized they didn&rsquo;t have discounts on <em>quite</em> all the iPads. The &ldquo;iPad Mini with Retina Display&rdquo; is considered a different model and product than the normal &ldquo;iPad Mini&rdquo; (fair enough, I suppose) and there was no discount available.</p>
+
+<p>My question: if Apple was discounting all other iPads including the equally-new and presumably hot-selling iPad Air, but not the Retina Mini, what does this indicate about the Retina Mini?</p>
+
+<p>I have 2 theories:</p>
+
+<ol>
+<li><p>The Retina Mini is in such high demand and/or short supply they have no need to discount it to sell it faster than they can make it.</p></li>
+<li><p>The Retina Mini is already priced much closer to breakeven, and they can&rsquo;t sell it significantly cheaper without losing money.</p></li>
+</ol>
+
+
+<p>I have no idea which of these (if either) is true. I will note that, having ordered both an iPad Air and an iPad Mini with Retina Display that same day (identically configured, and given the $75 near-rebate on the Air, for nearly the same price), the Mini showed up a full week before the Air. That might put a hole in theory #1. Or it might just mean that the $75-off-an-Air promotion was such a huge hit that it created a huge backlog for the Air.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -334,521 +829,6 @@ OS X 10.6 and subsequently upgraded to 10.7 and then 10.8) never had <code>stand
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/">From Tumblr to Octopress, Part 2: How</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-17T01:40:00-07:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Having decided to move this blog from Tumblr to Octopress, there remained the matter of migrating it<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>.</p>
-
-<p>Octopress is basically a convenience framework around Jekyll, adding a nice-by-default theme and some convenience wrappers for starting new posts, invoking Jekyll to generate the site, and deploying the site. You could probably use Octopress quite happily without touching Jekyll directly, unless you want to import an existing blog; then you end up at <a href="https://github.com/mojombo/jekyll/wiki/blog-migrations">Jekyll&rsquo;s Blog Migrations tool</a>, which has options for a number of popular blog engines, including Tumblr.</p>
-
-<p>The instructions for <a href="http://octopress.org/docs/setup/">setting up Octopress</a> are pretty simple and <a href="http://octopress.org/docs/setup/">well documented</a>:</p>
-
-<ul>
-<li>git and ruby (and probably rvm or rbenv) are prerequisites</li>
-<li>obtain octopress itself via &ldquo;git clone&rdquo;</li>
-<li>install dependencies via &ldquo;gem install bundler; bundle install&rdquo;</li>
-<li>install the default Octopress theme (which also generates the skeleton site layout) via &ldquo;rake install&rdquo;</li>
-</ul>
-
-
-<p>At this point, you&rsquo;ve got a working Octopress installation and you could use its rake task-based interface to write and publish posts. However, if you want to migrate an existing blog, you have more setup steps which are also <a href="https://github.com/mojombo/jekyll/wiki/blog-migrations">well documented</a>:</p>
-
-<ul>
-<li>assuming you want to keep your raw posts in markdown format instead of raw HTML, Jekyll&rsquo;s Tumblr migrator needs nokogiri: <code>gem install nokogiri</code></li>
-<li>invoke the Tumblr migrator:<code>ruby -rubygems -e 'require "jekyll/migrators/tumblr"; Jekyll::Tumblr.process("http://www.your_blog_url.com", "md")'</code> Note that this doesn&rsquo;t require any account information or credentials, because the Tumblr API will provide enough information to do this anonymously. Heck, if you&rsquo;re evil, you could convert someone else&rsquo;s blog (don&rsquo;t do that). On the topic of Tumblr reliability, I ran this step a few dozen times while I was figuring out how it works and fixing some bugs in tumblr.rb, and ~90% of the time, it downloaded my ~165 posts almost instantly, but palpably often, it would get stuck halfway as the Tumblr API stopped sending it network traffic. Oh well. Ctrl-C and restart if this happens to you.</li>
-</ul>
-
-
-<p>What neither the Jekyll nor Octopress documentation tells you is what happens next. Assuming you run all the above commands from the octopress directory: Octopress setup (the <code>rake install</code> step) created a directory called &ldquo;source&rdquo;, under which the (initially empty) &ldquo;_posts&rdquo; directory is where Jekyll will look for posts. Meanwhile, Jekyll&rsquo;s tumblr.rb will create and populate a &ldquo;_posts/tumblr&rdquo; directory with your posts, and a &ldquo;posts&rdquo; directory with redirects from the old Tumblr-style post URLs to new Octopress-style URLs<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>,<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>. Neither the &ldquo;_posts&rdquo; nor &ldquo;posts&rdquo; directory spit out by tumblr.rb are under &ldquo;source&rdquo; where Jekyll will look for them. What this means is that without additional effort on your part, Jekyll as invoked by Octopress won&rsquo;t see the files you just imported.</p>
-
-<p>Again: your blog posts go in &ldquo;octopress/source/_posts&rdquo;. The Tumblr migrator will create &ldquo;octopress/posts&rdquo; and &ldquo;octopress/_posts&rdquo;. Just move these two directories under &ldquo;octopress/source&rdquo; once you&rsquo;ve verified they look OK. (NB: the migrator actually dumped all its files under &ldquo;octopress/_posts/tumblr&rdquo;; it&rsquo;s fine to leave them there, so they end up in &ldquo;octopress/source/_posts/tumblr&rdquo;; Octopress doesn&rsquo;t seem to care about the organization of your files inside the source/_posts directory.)</p>
-
-<p>Now, you can tell Octopress to generate the site: &ldquo;rake generate&rdquo;.</p>
-
-<p>If you&rsquo;re reading this at the right point of relative stability, lucky you; you win. I ran into several more issues, due to the fact that Jekyll and Octopress are prerelease open source software intended for an audience of hackers; some assembly definitely required:</p>
-
-<ul>
-<li>At the point I was performing this migration (January 2013), Jekyll was at version 0.12 and the tumblr.rb migrator script was broken in a <a href="https://githubcom/mojombo/jekyll/commit/863643c7e8080c73a7968caabfc9c7e9b18c6b95">couple</a> <a href="https://github.com/mojombo/jekyll/commit/fbc9d0c66397234ab85e03a55955602e0ce40356">respects</a> which I submitted patches for.</li>
-<li>After my patches were merged upstream, I tried running with Jekyll&rsquo;s head version in mid-February, to find that tumblr.rb had been deleted from the Jekyll repository entirely, and moved to a separate <a href="https://github.com/jekyll/jekyll-import">jekyll-import</a> project, which at the time had no documentation and appeared to have little chance of running.</li>
-<li>Meanwhile, using any version of Jekyll newer than 0.12 broke Octopress in a trivial way; the :generate rule in Octopress&rsquo;s Rakefile finishes by invoking Jekyll as <code>system 'jekyll'</code>, with no arguments, and newer versions of Jekyll expect a <code>build</code> argument. Octopress will fix this when Jekyll actually releases a new version (which may have already happened between me finding this and posting this); it makes no sense to fix it sooner.</li>
-</ul>
-
-
-<p>This last list of foibles is probably all related to Jekyll being in the throes of the 1.0 release process and will probably be a historical footnote afterwards.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>Many others have done this before; one post I found helpful was <a href="http://blog.assimov.net/blog/2012/03/24/tumblr-to-octopress-powered-by-jekyll-and-markdown/">Goodbye Tumblr. Hello, Octopress Powered by Jekyll and Markdown!</a>.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>The redirects spit out by tumblr.rb are under &ldquo;posts&rdquo; because Tumblr URLs are of the form example.com/posts/12341234/post-title-slug; Octopress URLs are by default of the form example.com/blog/year/month/post-title-slug; tumblr.rb creates redirects from the former to the latter, without requiring any special interaction with the webserver, by just creating a file for each post, named for the Tumblr relative URL (in this case, posts/12341234/post-title-slug/index.html) containing a browser-side meta refresh redirect to the new URL.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-<li id="fn:3">
-<p>I found the redirects created by tumblr.rb to be not quite enough. Tumblr indexes posts by number, then creates a nice search-engine-friendly SLUG such as post-title-slug, yielding a post URL like example.com/posts/12341234/post-title-slug. But actually, when receiving a request, Tumblr ignores everything after the number, and you could also load that post as example.com/posts/12341234/foobar, or just example.com/posts/12341234, and in fact the latter is the canonical URL used by Disqus. If you are running a webserver with rewrite rules, you might do well to redirect the entire URL namespace under posts/12341234 to the new URL, as Tumblr would have; I settled for copying posts/12341234/post-title-slug/index.html to posts/12341234/index.html for each post, so both number alone and number+SLUG will redirect correctly.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/17/from-tumblr-to-octopress-part-1-why/">From Tumblr to Octopress, Part 1: Why</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-17T01:37:00-07:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-1-why/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>When I first started this blog, I set it up at Tumblr so I wouldn&rsquo;t have to think about hosting it and could concentrate on writing.</p>
-
-<p>I&rsquo;ve since realized that Tumblr is a bad match. Among things that I prioritize higher than Tumblr evidently does, reliability ranks high on the list<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>, as do control over site structure and appearance. Tumblr themes allow some control over appearance — and there are some very nice ones — but not the structure<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
-
-<p>Among things that they care about that I do not are their web posting interface, iOS native clients, a plethora of post types designed to be slightly quicker if you want to post audio/picture/video/quote content<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>, and a follower system<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>.</p>
-
-<p>So. On to Octopress. I get a lot more control over site structure, a more usable form of control over visual layout, and I can host it somewhere reliable (github for now, myself if I want to, and I can move hosting providers without having to do any deeper conversion).</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>Reliability problems with Tumblr have been intermittent; sometimes it works fine, sometimes I get &ldquo;the server returned no content&rdquo; errors 10 times in a row before I can load a single page.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>Tumblr&rsquo;s main navigational construct is a list of all posts sorted in descending order by posting date. Individual posts get permalinks, and there&rsquo;s a very slow-loading calendar view which gives some semblance of an overall table of contents, but there&rsquo;s no really usable way to do monthly archives or next/previous links to stitch time back together.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-<li id="fn:3">
-<p>All Tumblr posts have a URL, a title, and a body; what goes into the body can include really anything you can embed in a webpage, including audio and video. Presumably in an attempt to move beyond text-heavy blogging, in addition to letting you embed pictures/audio/video in a normal &ldquo;text&rdquo; post, Tumblr added these separate post types that special-case the body (the &ldquo;link&rdquo; post type makes the title into a navigable link; the &ldquo;quote&rdquo; type puts quotes around the body, etc). All of these are less general than the &ldquo;text&rdquo; type; they are also poorly represented in the API and, as I&rsquo;ve found out, commensurately poorly handled by export tools. I dabbled in the special post types a few times, and am mostly sorry I did.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
-<li id="fn:4">
-<p>Readers are unlikely to be Tumblr users; that&rsquo;s what RSS is for.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X Has a Builtin Wi-Fi Network Scanner</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-02-25T00:00:00-08:00" pubdate data-updated="true">Feb 25<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Here&rsquo;s a bonus on top of a bonus: OS X 10.8 (Mountain Lion) adds a really useful &ldquo;Wi-Fi&rdquo; scan feature, buried inside a utility I didn&rsquo;t know existed.</p>
-
-<p>I wanted a Wi-Fi scan tool to show me a list of nearby wireless networks and strengths, so I could avoid interference from existing networks when placing and choosing a channel for a new access point, and verify the new access point is operating properly. A few years ago I did this with KisMAC, MacStumbler or iStumbler, but these utilities seem to have stopped working over time, either as a result of newer hardware or newer OSes.</p>
-
-<p>Googling for new alternatives to these utilities, I found that <a href="http://osxdaily.com/2012/07/31/wi-fi-scanner-mac-os-x-mountain-lion/">Mountain Lion actually has this functionality built in</a>. There&rsquo;s a &ldquo;Wi-Fi Diagnostics&rdquo; app buried in /System/Library/CoreServices (where, annoyingly, Spotlight can&rsquo;t find it and the Finder by default won&rsquo;t show it); at launch it presents a very limited-looking wizard interface, but in the menubar the File:New command and command-N keyboard shortcut have been replaced by an unassuming &ldquo;Network Utilities&rdquo; command.</p>
-
-<p>This brings up a &ldquo;Network Utilities&rdquo; window, not to be confused with <code>/Applications/Utilities/Network Utility.app</code>, with a bunch of really useful utilities (which look like a strict superset of the old Network Utility, have a more modern UI and additional functionality, and except for the &ldquo;Wi-Fi Scan&rdquo; tab, have no reason to be restricted to Wi-Fi networks).</p>
-
-<p>I only wish this thing were easier to find; it should probably replace the old <code>Network Utility app</code>. I don&rsquo;t remember seeing it mentioned in most what&rsquo;s-new-and-why-to-upgrade articles about Mountain Lion. For me, it&rsquo;s a pretty nice bonus to having upgraded and deserves wider mention.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A Waterproof Tablet! A Step in in the Right Direction</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-02-25T00:00:00-08:00" pubdate data-updated="true">Feb 25<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>In <a href="http://arstechnica.com/gadgets/2013/02/sony-unveils-thinnest-10-1-tablet-ever-the-xperia-tablet-z/">this announcement of a new Sony tablet for Android</a>, the following bit stood out to me:</p>
-
-<blockquote><p>The company claims the tablet is not only the “world’s thinnest 10.1-inch
-tablet” at 6.9 millimeters, but it&rsquo;s apparently waterproof in up to three feet
-of water for 30 minutes.</p></blockquote>
-
-<p>The water resistance is a lot more notable to me than the thinness, in an
-industry obsessed with thin fragile things, given how many phones I&rsquo;ve seen
-destroyed by water, and given how <a href="http://blog.metamatt.com/blog/2012/08/20/iphone-hardware-wishlist/">I put this on my wishlist for the iPhone 5</a>
-last fall. But phones see a lot more exposure to dangerous circumstances than
-tablets do, I wager, so I&rsquo;d still like to see this feature make its way over
-to phones.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/21/speedy-resume/">Speedy Resume</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-02-21T00:00:00-08:00" pubdate data-updated="true">Feb 21<span>st</span>, 2013</time>
-        
-         | <a href="/blog/2013/02/21/speedy-resume/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>My initial reason for switching from Windows laptops to Mac laptops 7 years
-ago — which has remained a primary benefit across those 7 years — was better
-power management. The details are many but the result is simple: a laptop that
-sleeps and wakes consistently and quickly, which never crashes on wakeup,
-never drops the Wi-Fi connection on wakeup, and is on the network and ready
-for me to type almost as soon as I open the lid. Almost like what we expect
-from a tablet or smartphone.</p>
-
-<p>That&rsquo;s the dream, anyway. I&rsquo;ve never owned or used a Windows laptop (or Linux
-laptop, for that matter) that pulled that off, and not for lack of trying. It
-was much truer of Apple laptops running Mac OS X, ever since their
-introduction in 2001. It remained one of my favorite things about more recent
-Macbooks, but I&rsquo;ve found it getting less true over time, culminating in my
-2012 &ldquo;Macbook Pro with Retina Display&rdquo; (henceforth rMBP), which seems to take
-like 30 seconds to wake from sleep, then sometimes crashes immediately as the
-crowning touch.</p>
-
-<p>After getting frustrated enough by the slow wakeup time to get to the bottom
-of it, I think there are 3 pieces to the puzzle.</p>
-
-<ol>
-<li><p> The rMBP (like Macbook Air models) has no external status lights. No charge level indicator on the battery like older models with removable batteries, no charge level indicator on the side of the unit like previous unibody Macbook Pro models, no power light that winks while asleep and glows while awake like all previous Macbook models. So when you open the lid, if it wakes up and is ready for use, great, but if not, you don&rsquo;t know whether it&rsquo;s powered off, has a dead battery, or is already trying to wake up and just taking its sweet time.</p></li>
-<li><p> The default power-management plan is &ldquo;Safe Sleep&rdquo;, which means that when you close the lid the computer writes a suspend image to disk, then suspends to RAM<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. Then wakeup is normally fast because RAM contents are still present, but if power is lost for any reason (battery dies, battery is removed on models where that&rsquo;s possible, or the computer decides to power itself off to stop expending battery power to support the RAM), it can still resume from where you left it, just more slowly, by reading from disk. This last bit about deciding to power itself off is crucial; it&rsquo;s controlled by a parameter known as <code>standbydelay</code>, and on this computer at least (rMBP running OS X 10.8) the default value of <code>standbydelay</code> was 4200 seconds, or 70 minutes, just over an hour. This means if you suspend the computer and wake it up again within 70 minutes, it will resume from RAM, but if you leave it asleep for more than 70 minutes, it will have powered off entirely, and will resume from disk. On my previous laptop (a 13&#8221; Macbook Pro from 2010, also now running OS X 10.8), <code>standbydelay</code> was not set at all, which I assume means it will try to keep RAM supplied with power until the battery dies. I don&rsquo;t know the reason for the different defaults.</p></li>
-<li><p> This rMBP has 16 gigabytes of RAM, more than any laptop I&rsquo;ve owned in the past. Now, it also has a fast SSD, so I wouldn&rsquo;t have thought it would take that much longer to resume from disk vs RAM (and in actual usage it shouldn&rsquo;t have to save and restore all of it anyway) but it&rsquo;s likely a factor: if it had to transfer the entire 16GB, even at 500 MB/sec that would be 32 seconds. It actually only needs to save/restore the active pages; say on average that&rsquo;s 60% of memory and add a few seconds to get the hardware devices from cold boot to powered on, and you&rsquo;re in the 20 second ballpark that is long enough to annoy me.</p></li>
-</ol>
-
-
-<p>So boiled down: this machine feels slower to resume than previous ones because
-it&rsquo;s suspending to disk, has a lot of memory to restore from disk, and doesn&rsquo;t
-show any visible signs of progress while restoring from disk.</p>
-
-<p>I changed the <code>standbydelay</code> value to 12 hours on battery (<code>sudo pmset -b
-standbydelay 43200</code>) and disabled it entirely on AC power (<code>sudo pmset -c
-standby 0</code>) and things seem much better now<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
-
-<p>Oh. And sleep reliability<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>? That&rsquo;s even more important. When I first got the
-rMBP, it would kernel panic and show &ldquo;Your computer must be restarted&rdquo; when
-resuming from sleep once in a while, roughly once a month. That was
-intolerable; at a guess I disabled PowerNap; I don&rsquo;t know whether it was the
-actual problem but I haven&rsquo;t had reliability problems since.</p>
-
-<p>So these are my current recommendations for power management on a rMBP or
-Macbook Air:</p>
-
-<ul>
-<li>Increase <code>standbydelay</code> value enough that you don&rsquo;t notice the computer resuming from disk in normal use</li>
-<li>Disable PowerNap</li>
-</ul>
-
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>The difference between suspend-to-disk and suspend-to-RAM is that suspend-to-RAM expends battery power to keep the contents of RAM alive, so wakeup is faster, while suspend-to-disk extends battery life at the expense of slower wakeup.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>I didn&rsquo;t realize the import of this at first, but Mac OS maintains separate sleep policies for battery and AC power, and pmset can set either one (-b for battery, -c for charger) or both (-a for both, which is also the default); so there are two <code>standbydelay</code> values. I have my computer set to never sleep on AC power, but I sleep it manually by closing the lid when I&rsquo;m not using it. After having applied the longer standbydelay to battery, I was annoyed to find the computer slow to wake after leaving it asleep and charging for a while. Hence the second command to entirely disable the <code>standby</code> behavior on AC power.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-<li id="fn:3">
-<p>When talking about sleep reliability, what&rsquo;s actually important is the ability to <em>wake back up</em> reliably, just like when talking about backup reliability, what&rsquo;s important is the ability to restore from backups. It&rsquo;s the round trip that matters.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">Two Things I Didn&#8217;t Know About Mac OS Internet Sharing</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-02-13T00:00:00-08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>On a recent trip to Mexico, we stayed in a hotel that charged a significant extra fee for fairly slow Internet access. After paying for an access code, we could associate one device at a time to the Wi-Fi network; we could use multiple devices only by paying for multiple codes (which we didn&rsquo;t want to do because for the speed, even paying once was a poor value) or by disconnecting the previous device.</p>
-
-<p>Of course, I went looking for ways around this. We had at our disposal a Mac laptop, two iPads and two iPhones. Mac OS X has <a href="http://support.apple.com/kb/PH6589">built-in Internet connection sharing</a>, but it operates only between separate network adapters: you can share an Ethernet-connected Internet connection over Wi-Fi, or vice versa, but you can&rsquo;t share Wi-Fi over Wi-Fi<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. There&rsquo;s some reason to hope that this would be possible &mdash; it&rsquo;s &ldquo;just&rdquo; a software problem<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>; Windows and Linux generally support multiple virtual Wi-Fi interfaces from the same physical device, as used by <a href="http://www.connectify.me/hotspot/">Connectify Hotspot</a> for Windows or the multi-SSID feature in many Linux-based Wi-Fi access points &mdash; but this software feature doesn&rsquo;t exist for Mac OS X.</p>
-
-<p>So, no sharing Wi-Fi over Wi-Fi with my Mac laptop, unfortunately. But there&rsquo;s another option that works without additional hardware; this is where the learning comes in. <strong>First new fact</strong>: you can share an Internet connection over Bluetooth. I&rsquo;d thought this was only for sharing a cellular data connection from a phone to a computer (under the oxymoronic misnomer of &ldquo;wireless tethering&rdquo;), but it turns out to work in the other direction (known as &ldquo;reverse tethering&rdquo;). If you pair an iPhone or iPad with a Mac over Bluetooth, your Mac will grow a new network adapter called &ldquo;Bluetooth PAN&rdquo; (for Personal Area Network); you can then use the normal Sharing preference panel to enable Internet Sharing from Wi-Fi to Bluetooth PAN. Bingo.</p>
-
-<p>(I can claim only partial success here, but it was good enough for me at the time. This technique works fine for iPads, but not iPhones. I don&rsquo;t know why; <a href="https://discussions.apple.com/message/20996155#20996155">nobody else seems to know why either</a>.)</p>
-
-<p>That got us past our trip, and I was happy to have a new tool for my cheap-connectivity-while-traveling toolbox. However, when we returned home, I had an unpleasant surprise, though it took me a while to connect the dots. My Mac laptop was getting really hot when I left it plugged in overnight to charge. I eventually realized this was because it wasn&rsquo;t asleep, even with the lid closed (and with the lid closed, it generates more heat than it can comfortably dissipate, even at idle). This was frustrating because there are so many things that can keep a Mac from sleeping; this is where more learning comes in. Googling for ways to identify causes of Mac insomnia, I learned of the <code>pmset -g log</code> command, which I now highly recommend. It pointed me right at the culprit. <strong>Second new fact</strong>: Internet connection sharing prevents the Mac from sleeping while plugged in. (This is actually incredibly obvious in retrospect; it says so right in the Sharing panel: &ldquo;Computers connected to AC power won&rsquo;t sleep while Internet Sharing is turned on.&rdquo; I hadn&rsquo;t read that while enabling Internet Sharing because I thought I already knew how to use it; by the time it was causing problems, the problems were too disconnected from the cause.)</p>
-
-<p>In summary: Internet connection sharing is useful, and the Bluetooth PAN variant is further useful, but don&rsquo;t leave it on when you&rsquo;re not using it.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>Well, you can share Wi-Fi over Wi-Fi if you have multiple physical Wi-Fi interfaces. My laptop only has the one built-in Wi-Fi interface. It might be worth carrying a cheap additional USB Wi-Fi device for this reason. That would probably be the cheapest reliable solution to this problem.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>At the physical layer, a single Wi-Fi radio can only be tuned to a single channel, but nothing stops it from participating in multiple SSIDs as long as they&rsquo;re all on that channel.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/">Troubleshooting Mac Sleep Problems</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-02-13T00:00:00-08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Here&rsquo;s a useful nugget if you&rsquo;re inclined to poke at computers to see how they work: <code>pmset -g log</code>.</p>
-
-<p>I had a problem where my rMBP would sleep just fine on battery power but <a href="http://blog.metamatt.com/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">not when plugged into its charger</a>. Even with the lid closed, and even if I explicitly poked the Sleep button first. This meant my chair got really warm if I left the computer sitting there plugged in to charge overnight. (NB: I did have the slider in energy saver preferences set to sleep:never for AC, but that should only affect sleep-after-idle, not lid-close or explicit sleep request.)</p>
-
-<p>The command <code>pmset -g log</code> helped me learn that this state, where the computer is awake with the lid closed and no external display or keyboard is attached, is called DarkWake and that InternetSharing was the entity requesting that over sleep.</p>
-
-<p>Now that I know about DarkWake, I&rsquo;m curious what the relationship is between it and <a href="http://support.apple.com/kb/ht5394">PowerNap</a>. On this same rMBP, I disabled PowerNap because it would occasionally kernel panic when waking from sleep; I forget how I decided that was PowerNap but it hasn&rsquo;t happened since disabling.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/31/google-default-account-for-multiple-sign-in/">Google Default Account for Multiple Sign In</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-31T00:00:00-08:00" pubdate data-updated="true">Jan 31<span>st</span>, 2013</time>
-        
-         | <a href="/blog/2013/01/31/google-default-account-for-multiple-sign-in/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Google Accounts allow you to <a href="http://support.google.com/accounts/bin/answer.py?hl=en&amp;answer=1721977">stay signed into multiple accounts at once</a>, which is hugely helpful for those of us who have multiple account, but there&rsquo;s one thing that&rsquo;s been frustrating me here.</p>
-
-<p>I use the browser address bar (relying heavily on its autocomplete feature) to do most of my navigation directly from the keyboard. If I want my document files in Google Docs, I open a new browser tab from the keyboard shortcut, then type &ldquo;docs&rdquo; and by that time, autocomplete has already filled in docs.google.com<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>,<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
-
-<p>However, I have 3 different Google Accounts that I&rsquo;m usually signed into: one standard personal account (ending in @gmail.com), one GAFYD<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup> account for my personal email<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>, and one GAFYD account for work. If I navigate to docs.google.com, Google automatically chooses one of the accounts to redirect to, and at different times on different computers I end up with a different (seemingly arbitrary) account selected, and if it wasn&rsquo;t the right one, it&rsquo;s 3 extra clicks in the account switcher to get to the right account.</p>
-
-<p>What&rsquo;s controlling its choice? It turns out it&rsquo;s the order you sign into the accounts. If you look closely at the URLs, either by mousing over the links in the account switcher or by looking at the URL you end up at for gmail but not for docs<sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup>, you&rsquo;ll see an &ldquo;authuser&rdquo; or &ldquo;u&rdquo; parameter which is a low-valued integer. It starts at 0 for the first account you sign into, and counts up from there as you sign into additional accounts.</p>
-
-<p>If you navigate directly to docs.google.com (or mail.google.com, etc), you&rsquo;ll get the account currently associated as authuser 0, which is the first account you signed into.</p>
-
-<p>For the GAFYD case, Google lets you <a href="http://support.google.com/a/bin/answer.py?hl=en&amp;answer=53340">set up convenient forwarding addresses</a> for domains you control, and I&rsquo;ve used this to map mail.mydomain.foo and docs.mydomain.foo to redirect automatically to mail.google.com/a/mydomain.foo and docs.google.com/a/mydomain.foo. This means that for the two GAFYD domains, if I want the mail or docs view associated with that account, I go to docs.mydomain.foo, which in turn means that if I navigate to docs.google.com, I always want my personal account selected by default.</p>
-
-<p>For me, the solution to get the behavior I wanted boils down to:</p>
-
-<ul>
-<li>Sign out (which signs you out of all acocunts)</li>
-<li>Sign into the primary account which I want as default (the one ending in gmail.com) first, then sign into the others.</li>
-<li>Always use this same signin order in the future.</li>
-</ul>
-
-
-<p>Thanks go to <a href="http://www.linkedin.com/pub/ramesh-dharan/1/13b/8a2">Ramesh</a> for helping me figure this out.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>Google has rebranded Google Docs as Google Drive, and docs.google.com redirects to drive.google.com. I haven&rsquo;t retrained my fingers, so I always type &ldquo;docs&rdquo;, so I&rsquo;ll keep using the old name. Both names work fine as described in this post.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>(Everything in this post is true for other Google Accounts services like gmail, as well, but docs is the one I navigate directly to the most frequently, so I&rsquo;ll stick with it for the example.)<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-<li id="fn:3">
-<p>Google Apps for Your Domain, back when that was a thing; since rebranded as <a href="http://www.google.com/intl/en/enterprise/apps/business/">Google Apps for Business</a> once they removed the free option.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
-<li id="fn:4">
-<p>Why a separate gmail.com and personal GAFYD account? I&rsquo;ve long used the same personal email address at a domain I control, predating Gmail. When Google created Gmail and started tacking many other services onto your Gmail account, becoming Google Accounts, I signed up with a gmail address but didn&rsquo;t use it for email, just for Google Accounts. At some point I got tired of running my own email server and dealing with reliability and spam, so I decided to let Google host it via the then-free GAFYD. I could have just forwarded mail from the vanity address to the gmail address without setting up another mailbox, but it seemed simpler to keep them separate. That may have been a mistake.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
-<li id="fn:5">
-<p>The URLs vary by service, so this isn&rsquo;t as obvious as it could be. Docs/Drive uses URLs like drive.google.com/?authuser=N in the account switcher, but for a GAFYD account, you actually end up at drive.google.com/a/mydomain.foo. Gmail uses URLs like mail.google.com/u/N, both in the account switcher and where you actually end up, though for a GAFYD account you can also navigate to mail.google.com/a/mydomain.foo (and you&rsquo;ll be redirected to mail.google.com/u/N for the correct value of N if you&rsquo;re already signed into that account, and to the login page if you&rsquo;re not).<a href="#fnref:5" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -864,23 +844,23 @@ Macbook Air:</p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/03/20/apple-is-getting-really-aggressive-about-this-sleepdelay-thing/">Apple is getting really aggressive about this sleepdelay thing</a>
+        <a href="/blog/2013/12/08/mail-dot-app-gmail-and-mavericks/">Mail.app and gmail in Mavericks</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/">From Tumblr to Octopress, part 3: footnotes</a>
+        <a href="/blog/2013/12/08/death-by-dueling-modal-dialog/">Death by dueling modal dialog</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/">From Tumblr to Octopress, part 2: how</a>
+        <a href="/blog/2013/12/08/apple-2-factor-authentication-setup/">2-factor authentication setup for AppleID</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-1-why/">From Tumblr to Octopress, part 1: why</a>
+        <a href="/blog/2013/12/08/apple-shopping-cart-fail-gift-card-in-cart/">Apple shopping cart fail — gift card in cart makes gift card payment option disappear</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+        <a href="/blog/2013/12/08/apple-shopping-cart-fail-multiple-devices-on-new-cell-plan/">Apple shopping cart fail — multiple devices on new cell plan</a>
       </li>
     
   </ul>

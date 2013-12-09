@@ -4,7 +4,7 @@
   <title><![CDATA[Step 2 is the hard part.]]></title>
   <link href="http://blog.metamatt.com/atom.xml" rel="self"/>
   <link href="http://blog.metamatt.com/"/>
-  <updated>2013-10-15T00:21:31-07:00</updated>
+  <updated>2013-12-09T00:19:51-08:00</updated>
   <id>http://blog.metamatt.com/</id>
   <author>
     <name><![CDATA[Matt Ginzton]]></name>
@@ -12,6 +12,270 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Mail.app and gmail in Mavericks]]></title>
+    <link href="http://blog.metamatt.com/blog/2013/12/08/mail-dot-app-gmail-and-mavericks/"/>
+    <updated>2013-12-08T23:47:00-08:00</updated>
+    <id>http://blog.metamatt.com/blog/2013/12/08/mail-dot-app-gmail-and-mavericks</id>
+    <content type="html"><![CDATA[<p>I use email pretty seriously, and like a good thick client. I like what gmail is trying to do, but I&rsquo;ve never been able to get along with its web interface. My years-old mailstore has many folders, and emulating them with labels works fine but the gmail UI for assigning labels just isn&rsquo;t as good as what any decent thick client does with folders. So.</p>
+
+<p>I see a lot of hate on the internet for <a href="http://en.wikipedia.org/wiki/Mail_(application">Mail.app</a>), but having tried many alternatives, I really like it<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. Or did until <a href="http://en.wikipedia.org/wiki/OS_X_Mavericks">Mavericks</a>, which is the point of this post.</p>
+
+<p>The Mavericks version of Mail.app made some big changes to how Mail.app talks to gimap, which I can only assume were to make things work better with gmail&rsquo;s &ldquo;labels&rdquo; system and the idea that unlike with folders, one message can be filed with multiple labels. Because it worked fine before Mavericks, at the cost of perhaps syncing multiple copies of the same message. However, immediately after the Mavericks release, <a href="https://tidbits.com/article/14219">it was well documented</a> that instead of making things better, they&rsquo;d made them worse.</p>
+
+<p>In fact, it was bad enough that <a href="http://support.apple.com/kb/HT6030">Apple took the unusual step of releasing a Mail.app-Gmail specific update</a> only a few days later.</p>
+
+<p>In my experience, it made things a little better but far from good; even after the update</p>
+
+<ul>
+<li>server-side changes (made in another client, or in the gmail web interface, or new mail arriving) may not be noticed for minutes, hours, days, or weeks, or at all</li>
+<li>if I move messages between folders in Mail.app, the message disappears from the source folder, then reappears a couple seconds later, then disappears again a couple more seconds later</li>
+<li>the &ldquo;Mailbox&rdquo; column in the message list view, which should show what folder a message is in, always shows &ldquo;All Mail&rdquo;, regardless of which more interesting folder(s) the message is actually in</li>
+</ul>
+
+
+<p>The 2nd and 3rd problems are annoying but cosmetic; the 1st problem, though, renders Mail.app entirely unusable. There doesn&rsquo;t seem to be any workaround &mdash; I&rsquo;ve tried switching folders many times, triggering Synchronize, triggering Rebuild Folder, logging out and logging back in, rebooting, quitting and restarting Mail, even deleting my entire mail cache folder and all accounts and re-adding the accounts and downloading all the mail again. Nothing helped.</p>
+
+<p>Hopefully Apple will fix this soon (there are <a href="http://appleinsider.com/articles/13/11/21/apple-seeds-second-os-x-1091-beta-to-developers-with-mail-improvements">rumored to be further Mail.app/gmail bugfixes in an upcoming 10.9.1 update</a>). As it is, it means I either can&rsquo;t upgrade to Mavericks on the machine I actually care about<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>, or I need to find a different mail client.</p>
+
+<p>So, in the past couple weeks I&rsquo;ve spent some time dabbling in alternate mail clients. I haven&rsquo;t found one I like.</p>
+
+<p><a href="http://www.postbox-inc.com/">Postbox</a>:</p>
+
+<ul>
+<li>Works well enough from a strict functionality point of view, but has enough minor problems I still prefer the OS X 10.8 version of Mail.app, and would prefer a version of Mail.app that works into the future.</li>
+<li>Sluggishness: even after enabling its offline support and telling it to cache all my folders, selecting any message the first time is still sluggish, like it wasn&rsquo;t cached until I clicked on it. The normal flow is new mail arrives and I can see it in the message list, I click on it, then nothing happens for a second or two.</li>
+<li>Key bindings: Mac OS accepts Emacs keybindings (things like Ctrl-n for down arrow) systemwide, but not in Postbox.</li>
+<li>No springloaded autocollapse for dragging and dropping messages to nested folders.</li>
+<li>Aesthetically: it&rsquo;s just not as nice as Mail.app.</li>
+</ul>
+
+
+<p><a href="http://airmailapp.com/">Airmail</a>:</p>
+
+<ul>
+<li>Doesn&rsquo;t show me all my mail. This is, obviously, a dealbreaker. I clicked around a bunch of different folders, and it only showed me a small recent smattering of messages in folders other than the inbox (for my Sent folder, only stuff for the last 2 weeks; for a lower-traffic folder, it went back about 30 months but only about 20 messages; in all cases it’s far less than the number of messages actually there).</li>
+<li>Polarizing UI. Some people seem to love it. To me, it just looks weird (dark colors, unfamiliar icon glyphs, unlabelled icons all over the place including parts of windows that don&rsquo;t normally have buttons, busy menu structure).</li>
+<li>Weird behavior with nested folders. The toplevel folders are sorted alphabetically (as one would expect); so are first-level nested folders. But folders nested more deeply than that show in an apparently arbitrary order.</li>
+</ul>
+
+
+<p>For now, I&rsquo;m sticking with OS X 10.8.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Notably, Mail.app is the only client I&rsquo;ve ever used that makes IMAP feel perfectly natural, hiding all its design foibles. Other clients want to only download headers until I actually click on a message, or make me configure which folders get cached locally, or expose a difference between &ldquo;delete&rdquo; and &ldquo;expunge&rdquo;. Mail.app&rsquo;s default settings just cache the whole IMAP mailstore in the background and make it feel like all the mail is local.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>I upgraded some machines I can live without, to see how well Mavericks works. I wasn&rsquo;t expecting any problems this big. But luckily I didn&rsquo;t upgrade the laptop I do use every day, which I need for my job; unluckily that machine is the one that would benefit the most from Mavericks banner features: better power management and better multi-monitor support.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Death by dueling modal dialog]]></title>
+    <link href="http://blog.metamatt.com/blog/2013/12/08/death-by-dueling-modal-dialog/"/>
+    <updated>2013-12-08T23:35:00-08:00</updated>
+    <id>http://blog.metamatt.com/blog/2013/12/08/death-by-dueling-modal-dialog</id>
+    <content type="html"><![CDATA[<p>Setting up a new iPad from a backup of a previous one &mdash; which, I think, is the method de rigeur for a few million people in this season &mdash; I noticed a really annoying problem.</p>
+
+<p>When you first turn on the new device, runs a fullscreen setup program that is not the normal iOS user experience starting at the home screen (Springboard). It wants to connect to a Wi-Fi network and then it asks you if you want to set it up as a new device or from a backup (and if the latter, whether to restore from iCloud or iTunes). If you elect to restore from an iCloud backup, it chews away for a few minutes restoring your user account, then reboots, and asks you a few further questions in the fullscreen setup program before jumping to the home screen.</p>
+
+<p>As soon as the setup program exits and Springboard runs, normal background services and apps start launching and doing their thing, plus there&rsquo;s still some first-use setup stuff to take care of, which means that all of the following try to happen simultaneously:</p>
+
+<ul>
+<li>email accounts try to sync, realize they don&rsquo;t have the server credentials, and ask you for a password (for each of several email accounts)</li>
+<li>iOS wants you to set a device PIN for the unlock screen, and asks you to provide one</li>
+<li>Facebook account tries to sync, realizes it doesn&rsquo;t have the server credentials, and asks you for a password</li>
+<li>if you managed to supply a device PIN without that dialog getting clobbered by one of the other ones, it comes back and wants you to confirm it</li>
+<li>if you managed to supply your Facebook password, Facebook&rsquo;s 2-factor authentication says &ldquo;that&rsquo;s nice but we just texted you a code which you now need to provide&rdquo;</li>
+</ul>
+
+
+<p>All of these happen in modal dialogs that pop to the foreground over the active app&hellip; or over one of the other aforementioned modal dialogs. This isn&rsquo;t supposed to happen with modal dialogs. But it does, here, in the default out-of-box experience for pretty much any iOS device where the owner is upgrading from a previous one that was used for anything serious.</p>
+
+<p>In fact, these password dialogs continue to pop up even when you&rsquo;re in the middle of typing in an existing one (and if you manage to fill out and confirm one before another one takes its place, it seems like the previous ones may still be there with your previous partial input, or they may start empty when they reappear). The resultant focus stealing issues are worse than anything I&rsquo;ve seen since the late 90s versions of Windows.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[2-factor authentication setup for AppleID]]></title>
+    <link href="http://blog.metamatt.com/blog/2013/12/08/apple-2-factor-authentication-setup/"/>
+    <updated>2013-12-08T23:16:00-08:00</updated>
+    <id>http://blog.metamatt.com/blog/2013/12/08/apple-2-factor-authentication-setup</id>
+    <content type="html"><![CDATA[<p>As part of setting up my new iPad, I got tired of telling Apple I didn&rsquo;t want to add weak security questions to allow me (or would-be hackers) to reset my password, and decided to set up 2-factor authentication (which is a good idea in any case).</p>
+
+<p>This should be pretty straightforward &mdash; and it is, at other sites where I&rsquo;ve set this up (Google, Facebook, Twitter). Apple&rsquo;s setup process was a lot more complicated. Judging from the questions and admonishments during this setup process, Apple is a lot more worried than these others about people losing access to the &ldquo;thing you have&rdquo; and locking themselves out of their accounts. Which is a legitimate concern, but I think they can make the UI around this process a lot better.</p>
+
+<p>The first place this went awry is the list of devices where they can deliver authentication codes. The AppleID website shows a list of known iOS devices (those enrolled in &ldquo;Find my iPhone&rdquo;), and allows you to select any/all of these, plus optionally one or more SMS-enabled phone numbers, to receive login verification codes. The problem is, all of these devices were listed as &ldquo;offline&rdquo;, even though at least 3 of them were actually online. I spent some time trying to figure out which parts of the description was clickable (spoiler: none, though there is one part that triggers an inaccurate explanatory popup if you mouse over it and hold still) before I eventually discovered a Refresh button at the very bottom of the list (far enough down I had to scroll to see it).</p>
+
+<p>So beef #1: this page always loads stale information, and doesn&rsquo;t show you correct information until you click a Refresh button that&rsquo;s initially offscreen.</p>
+
+<p>After selecting a couple notification methods here (which involves additional careful confirmation to make sure they actually work) and clicking Next, Apple showed me a &ldquo;recovery key&rdquo; with instructions to write it down or print it, but not to store it on any computer (and to enforce that, they make it impossible to copy it to the clipboard). OK guys, I get what you&rsquo;re saying about the whole point being not exposing my keys to hackers, but if I write it on paper I&rsquo;m going to lose it. Plus the computer I&rsquo;m on doesn&rsquo;t have a printer. I&rsquo;m going to store this on my computer, thanks; I&rsquo;ll just encrypt it. So I pull out my iPhone and open an encrypted note-taking program and type in this long alphanumeric code and check it carefully to make sure I transcribed it correctly. Then back to the computer and I click Next and it starts to ask me to retype the code, when suddenly&hellip; Session Timeout! Back to the very beginning. Time to start over (and this has taken about 10 minutes so far<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>).</p>
+
+<p>So beef #2: aggressively short<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup> session timeouts are user-hostile, plus why not give me a chance to confirm I&rsquo;m still there before just kicking me out of the session, plus the website was willing to let me sit there at the first &ldquo;recovery key&rdquo; page indefinitely long, and let me keep doing the work to copy down the useless recovery key<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>, and only when I click Next does it tell me the session had already expired.</p>
+
+<p>This whole process would work a lot better if the 2 pages in question would dynamically update. AJAX in 2006 was pretty hot stuff. In late 2013, it&rsquo;s table stakes.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>OK, it won&rsquo;t take me 10 minutes the second time, now that I know what I&rsquo;m doing, notably with respect to the magic refresh button. But still, there was a lot of clicking done so far and a lot of clicking to repeat, and it&rsquo;s pretty annoying.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>The session timeout wasn&rsquo;t actually so short that I couldn&rsquo;t transcribe the recovery key, annoying as it is to type arbitrary hyphenated alphanumeric strings into the iOS keyboard. What actually happened was the AppleID website was slow and the page load between the &ldquo;configure devices&rdquo; and &ldquo;recovery key&rdquo; page took long enough I went to go do something else for a few minutes, then came back to the &ldquo;recovery key&rdquo; page, at which point the session had probably already expired before I even started dealing with transcribing the key.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>Useless, because the second time through, the randomly generated recovery key was of course different.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Apple shopping cart fail — gift card in cart makes gift card payment option disappear]]></title>
+    <link href="http://blog.metamatt.com/blog/2013/12/08/apple-shopping-cart-fail-gift-card-in-cart/"/>
+    <updated>2013-12-08T22:43:00-08:00</updated>
+    <id>http://blog.metamatt.com/blog/2013/12/08/apple-shopping-cart-fail-gift-card-in-cart</id>
+    <content type="html"><![CDATA[<p>On Black Friday I was trying to buy 2 new iPads to upgrade our 2 old ones.</p>
+
+<p>And I&rsquo;d been lucky enough to win an iPad 2, which turned into an Apple Store gift card for the value of an iPad 2, as a door prize recently.</p>
+
+<p>And <a href="http://blog.metamatt.com/blog/2013/12/08/everything-but-the-retina-mini/">Apple was giving out Apple Store gift cards with most iPads as a Black Friday promotion that day</a>.</p>
+
+<p>So I added the new desired iPads to the shopping cart, configured them appropriately, clicked along until I got to the payment page, started looking for where to enter the code from my existing gift card&hellip; and this started a 15-minute odyssey of reading Apple help pages and becoming convinced the <a href="http://en.wikipedia.org/wiki/Negroni">holiday cocktail</a> I was sipping had addled my brain.</p>
+
+<p>I mean, this is not supposed to be hard. But I couldn&rsquo;t find anywhere to tell it I had this gift card.</p>
+
+<p>First stop: Apple&rsquo;s help page describing <a href="http://store.apple.com/us/browse/home/giftcards/redeem">How to redeem Apple Store gift cards</a>.</p>
+
+<p><a href="http://www.flickr.com/photos/metamatt/11232695394/"><img src="http://farm4.staticflickr.com/3669/11232695394_85ffb02ea2_o.png" alt="Click the &quot;Apple Store Gift Card tab&quot;" /></a></p>
+
+<p>That sounds straightforward enough, but that&rsquo;s funny, I don&rsquo;t see any such option:</p>
+
+<p><a href="http://www.flickr.com/photos/metamatt/11232795053/"><img src="http://farm4.staticflickr.com/3699/11232795053_3c833b5a34_c.jpg" alt="Payment page with no &quot;gift card&quot; tab" /></a></p>
+
+<p>I delve farther into <a href="http://store.apple.com/us/help/payments#applecard">other more detailed help pages</a>, to no avail.</p>
+
+<p>Finally, feeling pretty stupid and blaming the cocktail, I clicked the &ldquo;Live chat&rdquo; help button. That popped up this window:</p>
+
+<p><a href="http://www.flickr.com/photos/metamatt/11232695584/"><img src="http://farm8.staticflickr.com/7444/11232695584_27f55ece66_c.jpg" alt="Please wait / Top Questions" /></a></p>
+
+<p>And there you have it. Q: &ldquo;How do I use a Gift Card?&rdquo; A: &ldquo;Well, we don&rsquo;t let you use gift cards on orders containing gift cards, and by the way, all orders today contain gift cards, so have fun trying to use a gift card. This was a sufficiently obvious question to make the #1 FAQ of the day, but we&rsquo;ll only tell you this after you get frustrated enough to ask for help.&rdquo;</p>
+
+<p>This was a lot more confusing than it would have been if the &ldquo;gift card&rdquo; tab had remained present, which when selected would have been a perfect opportunity to say why this order wasn&rsquo;t eligible for payment via gift card.</p>
+
+<p>Pro tip for UI designers: making sometimes-applicable-but-not-now options disappear entirely is a lot less friendly than leaving room to explain why they don&rsquo;t currently apply.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Apple shopping cart fail — multiple devices on new cell plan]]></title>
+    <link href="http://blog.metamatt.com/blog/2013/12/08/apple-shopping-cart-fail-multiple-devices-on-new-cell-plan/"/>
+    <updated>2013-12-08T22:25:00-08:00</updated>
+    <id>http://blog.metamatt.com/blog/2013/12/08/apple-shopping-cart-fail-multiple-devices-on-new-cell-plan</id>
+    <content type="html"><![CDATA[<p>I was trying to buy new phones for everyone on our family plan — we had 2-year-old iPhone 4Ses on Sprint, and were planning on getting new iPhone 5Ses on Verizon.</p>
+
+<p>My first stop was store.apple.com, because Apple&rsquo;s website (compared to cell carrier websites) is simple<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> and easy to use and doesn&rsquo;t make you want to gouge your eyes out and doesn&rsquo;t try to upsell you multiple useless accessories during the checkout process.</p>
+
+<p>Then I hit this roadblock:</p>
+
+<p><a href="http://www.flickr.com/photos/metamatt/11232705516/"><img src="http://farm8.staticflickr.com/7323/11232705516_37ec93131d_c.jpg" alt="You can only purchase one iPhone per order on the Apple Online Store" /></a></p>
+
+<p>This was annoying because at the time (October) there was a 2 to 3 week waiting list for iPhone 5Ses. Presumably this 1-phone-per-order thing isn&rsquo;t a problem in physical stores, but due to the backlog they weren&rsquo;t actually stocking the phones in physical stores; you had to pre-order via the website. And the website&rsquo;s solution was to order one phone, wait for it to arrive and activate it, then there&rsquo;s enough of an account set up to add more phones to a family plan. But that would involve doubling the wait time, plus initially ordering a different plan than I want to end up on, and switching midmonth, which would probably involve who-knows-what kind of prorating madness. And then the phones wouldn&rsquo;t all have the same contract date, which would haunt us 2 years from now. No thanks.</p>
+
+<p>I don&rsquo;t actually know what the reason is for this, that renders Apple unable to sell multiple phones to new customers. It doesn&rsquo;t really make sense to me; that doesn&rsquo;t seem like a strange thing to want.</p>
+
+<p>Anyway, the solution was to head off to Verizon&rsquo;s website, and just hold my tongue and avoid gouging my eyeballs out when confronted with their idea of website design and the multiple clicks <em>per line</em> to skip buying a bunch of accessories I didn&rsquo;t need. But they were happy to let me sign up as a new customer and ship me 4 phones at once.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>This is admittedly less true when buying a carrier-subsidized iPhone than anything else in the entire Apple Store. Everything else, you say you want to buy it and then you pay for it. A subsidized iPhone involves entering all sorts of billing information for your current contract plan or all sorts of loan-application-style information to set up a new contract plan. I can only imagine what kind of backend integration was necessary to get Apple&rsquo;s store talking to all the cell networks&#8217; billing systems.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Unexpected side effects switching cell phone providers]]></title>
+    <link href="http://blog.metamatt.com/blog/2013/12/08/unexpected-side-effects-switching-cell-phone-providers/"/>
+    <updated>2013-12-08T22:14:00-08:00</updated>
+    <id>http://blog.metamatt.com/blog/2013/12/08/unexpected-side-effects-switching-cell-phone-providers</id>
+    <content type="html"><![CDATA[<p>I wanted to note that when switching cell phone providers, one source of trouble I had not expected was the non-portable email address associated with my phone number for email-to-SMS forwarding.</p>
+
+<p>Sprint has an email-to-SMS gateway that forwards messages sent to yournumber@messaging.sprintpcs.com. Verizon does the same thing using yournumber@vtext.com.</p>
+
+<p>I was using this mechanism for a smattering of services that know how to send notifications by email but either don&rsquo;t know how or charge extra for sending SMSes:</p>
+
+<ul>
+<li><a href="https://www.pingdom.com/">Pingdom</a> web service monitoring</li>
+<li><a href="http://www.eyezon.com/?page_id=176">Eyez-on Envisalink</a> alarm monitoring</li>
+<li><a href="https://github.com/metamatt/stargate">Custom software I wrote</a> that generates more interesting alerts from the alarm system data (like, it messages me if I leave the garage door open)</li>
+</ul>
+
+
+<p>All of these alerts stopped happening when I switched providers, and I only noticed when I realized I wasn&rsquo;t getting the alerts any more. Then I had to go back and try to remember everywhere I&rsquo;d used that messaging.sprintpcs.com address (hint: this took a couple iterations).</p>
+
+<p>A different case that ended up working out the same way is <a href="https://support.twitter.com/articles/14014-twitter-via-sms-faqs">Twitter&rsquo;s SMS integration</a>. Here, they have real support for SMS (not cheaping out and using a per-carrier email forwarding gateway). But it still broke, with the same symptoms, when I switched carriers: over time, I realized I was no longer getting SMS notifications I used to get. I don&rsquo;t know how Twitter&rsquo;s SMS integration is implemented, and whether they do it themselves or use some service like Twilio; unlike a lot of sites I&rsquo;ve seen that ask you for a phone number to SMS, they just ask for a phone number and not which carrier. Anyway, it broke and there was no obvious setting to change to fix it; I ended up deleting my phone number and re-adding it and that fixed things.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[State of the Last-mile Internet Connection, Year 2013]]></title>
+    <link href="http://blog.metamatt.com/blog/2013/12/08/state-of-the-last-mile-internet-connection-year-2013/"/>
+    <updated>2013-12-08T21:26:00-08:00</updated>
+    <id>http://blog.metamatt.com/blog/2013/12/08/state-of-the-last-mile-internet-connection-year-2013</id>
+    <content type="html"><![CDATA[<p>At home: Using both Comcast and <a href="http://www.monkeybrains.net/">Monkeybrains</a> for their different strengths.</p>
+
+<ul>
+<li>Comcast (aka &ldquo;the man&rdquo;): I&rsquo;m using what used to be a 30mbps down/7mbps up DOCSIS 3 connection with an onstensible 250GB/month cap for $74.95/month (ostensibly $62.95/month but with a surcharge for not buying additional services from them). Last year they removed even the threat of overage charges for exceeding the cap (this may change someday but it&rsquo;s nice for now), and sometime this year they seem to have also stopped shaping my traffic to the 30mbps tier; I now reliably get about 55mbps down and 10mbps up. (DOCSIS cable is a shared medium where you fight your neighbors for bandwidth, but I have never once seen speeds drop below the shaping cap; either Comcast does a good job of provisioning enough capacity or I&rsquo;m extraordinarily lucky.) I don&rsquo;t love Comcast&rsquo;s corporate policies, the fact they&rsquo;re always trying to upsell me TV services I don&rsquo;t want, or their &ldquo;have you tried rebooting it&rdquo; approach to tech support. But their network works well.</li>
+<li>Monkeybrains (a San Francisco local neighborhood provider): Their plan for non-businesses is $35/month over 5GHz point-to-multipoint wireless links, using roof-mounted <a href="http://www.ubnt.com/airmax#nanobridgem">Ubiquiti 5GHz dish antennas</a>. I hadn&rsquo;t realized equipment like this was generally available, or that you could do reliable long-distance wireless links in unlicensed spectrum. It works pretty well. Non-business customers get a shared medium symmetric link; Monkeybrains tells you to expect somewhere around 20mbps in each direction if you&rsquo;re lucky but less if the link is poor or congested. In practice, it&rsquo;s been reliable except during one storm, and I do get about 20mbps in each direction most of the time, though in the evenings when everyone is watching Netflix, I&rsquo;ve seen it drop to about 3mbps (so here, the shared medium effect is often visible). Also, latency is very good (around 4ms for the last-mile hop); far better than I&rsquo;ve ever seen from cable or DSL. I chose to get the additional Monkeybrains connection for 3 reasons: first to see if it could completely replace cable, second for redundancy and additional capacity especially upstream, and third to support a local business. Given the speed characteristics, it&rsquo;s a great value for upstream capacity (over the course of a month, ignoring nightly slowdowns, I could transfer more up through Monkeybrains than even a much more expensive Comcast connection), but it&rsquo;s often not good enough for streaming video in the evening, so I haven&rsquo;t chosen to replace cable entirely.</li>
+<li>Configuring multiple WAN providers is hard. I have my <a href="http://blog.metamatt.com/blog/2012/03/19/custom-built-linux-router-no-thanks-to-realtek/">custom Linux router</a> and I&rsquo;m configuring the firewall, shaping, and routing via <a href="http://shorewall.net/">shorewall</a>. I find Shorewall a lot easier to deal with than raw <a href="http://linux.die.net/man/8/tc">tc</a> and <a href="http://www.netfilter.org/">iptables</a>, but even after reading all of <a href="http://www.shorewall.net/MultiISP.html">Shorewall&rsquo;s Multi-ISP guide</a> and way too much of <a href="http://www.lartc.org/">LARTC</a>, I still haven&rsquo;t figured out how to configure things very well. In a perfect world, everything would use <a href="http://en.wikipedia.org/wiki/Multipath_TCP">Multipath TCP</a> or the equivalent, and adding additional WAN providers would immediately give you more speed, even for a single stream. In the real world, Multipath TCP is not widely deployed, and unless you run the equivalent of a VPN tunnel across all your links to a cooperating router elsewhere, single streams use only a single link. Also, you need fairly smart software watching the links and determining their health and reconfiguring routing if you want the ideal reliability case, where traffic flows as long as at least 1 link is healthy. I haven&rsquo;t tried all that hard, but I haven&rsquo;t even gotten this working. In practice, what&rsquo;s easy to set up leaves you with a combined link that&rsquo;s only as reliable as the weakest link: if any link goes down, at least some traffic stops flowing. I dabbled for a while in round-robining traffic across links (which is kind of like SMP for your CPU: it doesn&rsquo;t help at all with the max speed of an individual stream, but helps keep multiple streams from interfering, so with a large number of users, it&rsquo;s a decent approximation of the ideal case), but given the reliability problems and also the naive load balancing that would often result in slower individual streams by choosing the wrong link, I&rsquo;m now running only Crashplan backup over Monkeybrains, and everything else over Comcast.<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></li>
+</ul>
+
+
+<p>Wireless: I switched our family plan from Sprint to Verizon, despairing that Sprint&rsquo;s promised <a href="http://network.sprint.com/">&ldquo;Network Vision network upgrades</a> will ever bear fruit here in the Bay Area. I&rsquo;ve always like Sprint&rsquo;s focus on less-confusing, lower-priced plans with an emphasis on unlimited data, but Network Vision has been in progress since 2010, their 3G network has been getting slower in my experience ever since then, and their LTE network is still on the horizon. Now that they&rsquo;re finally converting Nextel&rsquo;s lower-frequency spectrum for their own purposes, this could still turn out well, but after waiting 3 years for Network Vision to yield results, I was tired of holding my breath, and I sure wasn&rsquo;t going to sign another 2 year contract under those conditions. Verizon is also The Man, but it turns out they basically don&rsquo;t charge any more for a basically equivalent<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup> 4-line family plan for 4 smartphones. So now we&rsquo;re on Verizon&rsquo;s LTE network, which ranges from awesome (20mbps down, 7mbps up) in downtown SF to barely passable (data barely trickles in each direction) around our house in the Mission District. Most of the time it works pretty well, though. Latencies on both Verizon&rsquo;s LTE and 3G networks seem substantially better than Sprint&rsquo;s 3G network (RTT on Verizon is usually around 70ms; with Sprint it was usually 200ms), which might also be a big factor in it feeling generally snappier for data. True, we had to give up unlimited data, but in practice (partly because it was so slow, partly just due to our natural usage patterns) we weren&rsquo;t using all that much data on Sprint, and given the observed tradeoff, I actually think $10/GB is a fair price to pay for reliably fast data.</p>
+
+<p>At work: A quick mention that at work, we&rsquo;ve tried both Comcast and <a href="http://webpass.net/">WebPass</a>, another local-ish wireless provider with a focus on commercial installations. I like what WebPass is offering, because they sell symmetric connections and can scale up to quite high speeds. Unfortunately the plans that are cost-competitive with Comcast are quite a bit slower downstream, and reliability has not been all that good. The wireless link layer itself seems fine, but I&rsquo;ve seen more than a few weird routing problems, and their tech support doesn&rsquo;t reliably fix these quickly when reported or even call back with promised updates.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>I could write a whole post on weird things you didn&rsquo;t expect to deal with that crop up when you add multiple ISPs to your home network, like trying to keep the weird Xbox Live UDP protocol happy, or updating multiple dyndns addresses, or why it&rsquo;s not easy to keep Shorewall happy when one link goes down. Maybe another day.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>I found it interesting that (in the fall of 2013), Sprint&rsquo;s mainstream plans all have unlimited data and messaging but still have metered voice minutes; Verizon&rsquo;s mainstream plans all have unlimited voice and messaging but metered data.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Everything except the Retina Mini]]></title>
+    <link href="http://blog.metamatt.com/blog/2013/12/08/everything-but-the-retina-mini/"/>
+    <updated>2013-12-08T15:45:00-08:00</updated>
+    <id>http://blog.metamatt.com/blog/2013/12/08/everything-but-the-retina-mini</id>
+    <content type="html"><![CDATA[<p>I noticed on Black Friday (the day after Thanksgiving; this year, November 29) that Apple had discounts on seemingly all of their iPad models: iPad 2, iPad Air and iPad Mini. Usually, Apple discounts prices that day (for many products, the only time they&rsquo;re ever discounted); this year, the discount took the form of a gift card for the Apple Store. Tricksy Apple &mdash; we don&rsquo;t actually get a cheaper price, we just get more for our money.</p>
+
+<p>When I went to order the one I wanted (the new retina-display version of the iPad Mini), I realized they didn&rsquo;t have discounts on <em>quite</em> all the iPads. The &ldquo;iPad Mini with Retina Display&rdquo; is considered a different model and product than the normal &ldquo;iPad Mini&rdquo; (fair enough, I suppose) and there was no discount available.</p>
+
+<p>My question: if Apple was discounting all other iPads including the equally-new and presumably hot-selling iPad Air, but not the Retina Mini, what does this indicate about the Retina Mini?</p>
+
+<p>I have 2 theories:</p>
+
+<ol>
+<li><p>The Retina Mini is in such high demand and/or short supply they have no need to discount it to sell it faster than they can make it.</p></li>
+<li><p>The Retina Mini is already priced much closer to breakeven, and they can&rsquo;t sell it significantly cheaper without losing money.</p></li>
+</ol>
+
+
+<p>I have no idea which of these (if either) is true. I will note that, having ordered both an iPad Air and an iPad Mini with Retina Display that same day (identically configured, and given the $75 near-rebate on the Air, for nearly the same price), the Mini showed up a full week before the Air. That might put a hole in theory #1. Or it might just mean that the $75-off-an-Air promotion was such a huge hit that it created a huge backlog for the Air.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Apple is getting really aggressive about this sleepdelay thing]]></title>
@@ -595,604 +859,6 @@ Machine restore the files.</p>
 <p>I&rsquo;m complaining here about the flaws in the relatively good iOS support for Google services; I suspect that anyone trying to connect to iCloud from Android or Windows apps has it far worse.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
 <li id="fn:4">
 <p>There&rsquo;s some irony here in that the best way to connect some Apple software to some Google software is using protocols designed by Microsoft.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Previewing Markdown files from the terminal]]></title>
-    <link href="http://blog.metamatt.com/blog/2013/01/09/previewing-markdown-files-from-the-terminal/"/>
-    <updated>2013-01-09T00:00:00-08:00</updated>
-    <id>http://blog.metamatt.com/blog/2013/01/09/previewing-markdown-files-from-the-terminal</id>
-    <content type="html"><![CDATA[<p>I&rsquo;ve been wanting a way to preview <a href="http://daringfireball.net/projects/markdown/">Markdown</a>-formatted text files from the terminal, ideally via <a href="http://www.greenwoodsoftware.com/less/">less</a>. Primarily, I think, because Github encourages it, a lot of open source projects are starting to include a <a href="https://www.google.com/search?q=+readme.md">README.md</a> instead of a plain old <a href="http://en.wikipedia.org/wiki/README">README</a><sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>,<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>; these marked-down READMEs are easy to view in Github&rsquo;s web interface but not after (or before) you clone the repo into your own filesystem.</p>
-
-<p>There&rsquo;s <code>zless</code> that can understand compressed files; why not <code>mdless</code> that can understand Markdown files?</p>
-
-<p>I went looking and stackoverflow came to the rescue with this question and answer about a <a href="http://stackoverflow.com/a/7603703/275581">less-style markdown viewer for UNIX systems</a>, suggesting <a href="http://johnmacfarlane.net/pandoc/">pandoc</a> as the tool to translate from Markdown format to troff format. The suggested incantation there works for me under Debian Linux but not under Mac OS X because it relies on <code>man</code>&rsquo;s <code>-l</code> option, which I&rsquo;m guessing is a GNU addition not supported by BSD <code>man</code>. I had to figure out how to duplicate the processing that <code>man -l</code> does, which I knew involved <code>troff</code> (or <code>groff</code>); it turns out that <code>groff</code> understands a <code>-man</code> flag which predefines the macros used by manpages. The version using <code>groff</code> instead of <code>man -l</code> seems more portable (it works fine under Linux as well as Mac OS X), so that&rsquo;s what I&rsquo;ll use.</p>
-
-<p>Hence, the following incantation to view a README.md file:</p>
-
-<p><code>pandoc -s -f markdown -t man README.md | groff -T utf8 -man | less</code></p>
-
-<p>Or, a <code>mdless</code> command implemented as a tcsh alias:</p>
-
-<p><code>alias mdless "pandoc -s -f markdown -t man \!* | groff -T utf8 -man | less"</code></p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>As one data point for when this became common, README.md was added to the short list of common readme file names in this Wikipedia article on <a href="http://en.wikipedia.org/w/index.php?title=README&amp;oldid=480712255">March 7, 2012</a>.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>Not to be confused with <a href="http://www.amazon.com/gp/product/0062191497/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=metamatt-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0062191497">REAMDE</a>.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Mac boot drive selection from Bluetooth keyboard]]></title>
-    <link href="http://blog.metamatt.com/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard/"/>
-    <updated>2012-12-27T00:00:00-08:00</updated>
-    <id>http://blog.metamatt.com/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard</id>
-    <content type="html"><![CDATA[<p>Twice in the last few months<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> I&rsquo;ve had to do troubleshooting steps on Vanessa&rsquo;s iMac that involved booting from alternate volumes<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>. This is normally easy on a Mac, but not quite so easy on a Mac with a wireless Bluetooth keyboard<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>.</p>
-
-<p>Both times, it was an exercise in frustration, as I give the reboot command and wait about 10 seconds for the reboot to actually happen; then I hold Command-R, watch the screen blink black, wait, watch it blink white, wait, chime, wait, Apple logo, wait, and… oh hello, login screen! That&rsquo;s not right. I&rsquo;ve just wasted a minute and I&rsquo;m back where I started.</p>
-
-<p>Apple&rsquo;s <a href="http://support.apple.com/kb/HT4718">support document on recovery mode</a> makes it sound so easy:</p>
-
-<blockquote><p>Restart your Mac and hold down the Command key and the R key (Command-R), and keep holding them until the Apple icon appears, indicating that your Mac is starting up. After the Recovery System is finished starting up, you should see a desktop with a OS X menu bar and a &ldquo;Mac OS X Utilities&rdquo; application window. Note: If you see a login window or your own desktop and icons, it is possible that you didn&rsquo;t hold Command-R early enough. Restart and try again.</p></blockquote>
-
-<p>After reading and rereading that, I try a few more times, holding Command-R earlier and earlier as Apple recommends, and, no luck. Wait a minute, I&rsquo;m using a Bluetooth keyboard. Does that cause complications, like, the computer and keyboard aren&rsquo;t able to communicate right at the beginning of the boot process? Yes<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>. Do I need to go find a USB keyboard to plug in? Not quite.</p>
-
-<p>It turns out the magic answer is to reboot the computer, wait for the LED on the keyboard to flash (which is after the computer starts booting and chimes and does a self-test which on this iMac with 12GB of memory all takes about 20 seconds), and <em>then</em> immediately press and hold Command-R. Any earlier than that, and you&rsquo;ll be ignored.</p>
-
-<p>You&rsquo;d think Apple&rsquo;s help docs could mention this, since they&rsquo;ve been shipping Bluetooth keyboards by default with all their desktop machines for years now.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>Both of these occasions involved disk failures in the <a href="http://blog.metamatt.com/blog/2012/01/20/nothing-is-as-easy-as-it-should-be-ssd-upgrades/">Crucial M4 SSD I installed a year ago</a>. You can probably guess that I&rsquo;m not quite as happy with these as I wanted to be.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p><a href="http://support.apple.com/kb/HT1533">Booting from CD</a> to upgrade firmware, or <a href="http://support.apple.com/kb/HT4718">booting from the recovery partition</a> to attempt disk repair. Each of these requires holding a certain key down while the computer is booting.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-<li id="fn:3">
-<p>I put the same SSD model in my own computer, a Mac Pro tower with easily accessible drive bays and an old-school wired keyboard. It&rsquo;s a lot easier to troubleshoot and a lot easier to repair. Murphy&rsquo;s Law dictates that if we&rsquo;re going to have problems with one SSD, it&rsquo;ll be the one <a href="http://www.ifixit.com/Guide/iMac+Intel+27-Inch+EMC+2309+and+2374+Hard+Drive+Replacement/1634/1">tucked away under the glass front of the iMac</a>.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
-<li id="fn:4">
-<p>Try googling for &ldquo;<a href="https://www.google.com/search?q=boot+mac+from+cd">boot Mac from CD</a>&rdquo; versus &ldquo;<a href="https://www.google.com/search?q=boot+mac+from+cd+bluetooth">boot Mac from CD bluetooth</a>&rdquo;. Big difference. The first one leads you to a simple answer (but deceptively simple in the case you have a Bluetooth keyboard); the second one leads you through a muddle of hundreds of confused people.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Visiting Ireland with baby Dominic]]></title>
-    <link href="http://blog.metamatt.com/blog/2012/11/28/visiting-ireland-with-baby-dominic/"/>
-    <updated>2012-11-28T00:00:00-08:00</updated>
-    <id>http://blog.metamatt.com/blog/2012/11/28/visiting-ireland-with-baby-dominic</id>
-    <content type="html"><![CDATA[<p>Vanessa and I wanted to take a real destination trip with Dominic, kinda sorta
-just to see if we could do it. Not that we were hoping or envisioning that it
-would be impossible, but it was hard to visualize, so we had to try.</p>
-
-<p>We settled on Ireland as the destination based on two propositions: we can
-take the baby to the pub, and the people love babies. (These were the actual
-reasons recommended by an Irish friend of Vanessa.) OK, not that we&rsquo;re such
-raging alcoholics that we can only travel to pubs, but &ldquo;can take the baby to
-the pub&rdquo; is actually a pretty good proxy for &ldquo;is not uptight, and will be
-forgiving of people traveling with a baby&rdquo;, which turned out to be true. Also
-true is that the Irish were not only gracious and charming hosts, but that
-many of them indeed like babies and know how to show it. For us, this
-translated to both people being prepared and understanding, but also to a lot
-of free entertainment. Dominic likes a lot of stimulation, and he got it.</p>
-
-<p>I&rsquo;m pretty proud of our itinerary, in retrospect, because we were making it up
-as we went along and it turned out really easy. No doubt it helps that Ireland
-is a small country, native English speaking (almost), and the people and
-culture are easygoing, so probably anything you do there is likely to go well.
-Still, for us it turned out remarkably easy to travel.</p>
-
-<p>Here&rsquo;s where we went:</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/8219093821"><img src="http://farm9.staticflickr.com/8482/8219093821_5003d3ab90.jpg" alt="Ireland travel map" /></a></p>
-
-<p>The itinerary, of which I&rsquo;m proud because the transfers were so easy and
-involved only public transit: We flew from San Francisco to London and then
-immediately to Dublin and caught the city bus to our hotel. Dublin: 3 days
-walking around, with a side DART trip to Howth. Then we walked from our hotel
-to Heuston Station and caught the Irish Rail train to Galway, where we stayed
-at a hotel a block away from the train station. Galway: 2 days walking around,
-with a bus/boat trip to Inishmore (largest of the Arran Islands). Then we
-rented a car from the Budget office right next to the train station and drove
-south to the Cliffs of Moher, with an overnight stay at Ennis, then to Dingle.
-Dingle: 2 days walking around, with a drive around the peninsula loop. Then we
-drove onwards to the Kerry Peninsula and around the Ring of Kerry, then to
-Kenmare. Kenmare: 2 days walking around including a hilly and marshy segment
-of the Kerry Way. Finally, leaving Kenmare, we drove past Cork to Waterford,
-dropped our rental car off at the tiny airport there, and caught a flight back
-to London Luton, from where it was an easy train ride to the London
-neighborhood we were staying in.</p>
-
-<p>Some photographic evidence of highlights from Ireland:</p>
-
-<p>Howth, a scenic day trip from Dublin:</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/8052048045"><img src="http://farm9.staticflickr.com/8173/8052048045_5ccbedde7b.jpg" alt="Picture perfect" /></a></p>
-
-<p>Dominic disembarking the train in Galway with aplomb:</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/8052048779"><img src="http://farm9.staticflickr.com/8037/8052048779_909def3212_z.jpg" alt="Psyched" /></a></p>
-
-<p>Galway&rsquo;s Dominick Street:</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/8052051235"><img src="http://farm9.staticflickr.com/8309/8052051235_ced4aefd1a.jpg" alt="Cheery" /></a></p>
-
-<p>O&#8217;Brien&rsquo;s Castle above the Cliffs of Moher:</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/8052052633"><img src="http://farm9.staticflickr.com/8032/8052052633_ddc755cdaa.jpg" alt="Castle" /></a></p>
-
-<p>Dominic playing in the window seat at Murphy&rsquo;s ice cream shop in Dingle:</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/8052057411"><img src="http://farm9.staticflickr.com/8037/8052057411_521e317ef2.jpg" alt="Window shopping" /></a></p>
-
-<p>Dominic and Vanessa taking a break from hiking the Kerry Way, above Kenmare:</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/8052092780"><img src="http://farm9.staticflickr.com/8034/8052092780_85ffdb45b2_z.jpg" alt="Dominic and Vanessa" /></a></p>
-
-<p>Have a look at <a href="http://www.flickr.com/photos/metamatt/sets/72157631686525572/">the rest of our pictures</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The effect of time-shifting electrical usage on NEM billing]]></title>
-    <link href="http://blog.metamatt.com/blog/2012/11/13/the-effect-of-time-shifting-electrical-usage-on-nem-billing/"/>
-    <updated>2012-11-13T00:00:00-08:00</updated>
-    <id>http://blog.metamatt.com/blog/2012/11/13/the-effect-of-time-shifting-electrical-usage-on-nem-billing</id>
-    <content type="html"><![CDATA[<p>One more post on the topic of PG&amp;E bills for solar (NEM) customers.</p>
-
-<p>PGE&rsquo;s NEM billing scheme <a href="http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/">blends usage across seasons</a> to allow for seasonal variation in generated power, and their E-6 billing scheme
-<a href="http://blog.metamatt.com/blog/2012/11/11/e-1-vs-e-6-for-residential-solar-customers/">separates usage into 5 time-of-use periods</a> to encourage customers to shift usage away from peak periods.</p>
-
-<p>A question that just occurred to me is whether you can game their billing
-results by time-shifting usage around inside the same true-up period, between
-TOU zones, months, or even seasons.</p>
-
-<p>It&rsquo;s pretty easy to move usage between TOU zones of the same day (say between
-summer on-peak and summer off-peak) by delaying energy-hungry activities like
-baking pies until night; that&rsquo;s both tractable for a home customer and exactly
-the kind of behavior the E-6 TOU billing rates are designed to encourage.
-Moving usage between TOU zones of different seasons (say between summer on-
-peak and winter off-peak), or even from one monthly billing cycle to another,
-would be more difficult (it&rsquo;s possible in theory but doesn&rsquo;t really match
-human activity patterns to delay all your energy-hungry activities for months
-and then execute them in a big batch months later; alternatively you&rsquo;d need a
-really big battery which is exactly what grid tie-in lets you avoid), but I&rsquo;m
-still curious if it would be advantageous in some circumstances.</p>
-
-<p>Again drawing on the example of my last year&rsquo;s experience, the answer turns
-out to be yes for both forms of time-shifting. Say you&rsquo;re going to bake a
-bunch of pies, and need to run the oven at 3KW for a little over 3 hours,
-consuming 10 KWh of electricity. (The 3 KW figure is realistic for an electric
-oven; the heating element running continuously is not; ignore that in the
-service of an example.) If you&rsquo;re going to consume that 10 KWh, does it matter
-<em>when</em> you consume it; what&rsquo;s the effect on your final true-up bill of adding
-10 KWh at various different times?</p>
-
-<p>If you can move that 10 KWh from a higher-value TOU period to a lower-value
-TOU period in the same day, you win; this turns out to be independent of
-tiering, consumption, or which month or season you&rsquo;re in, which is a nice
-property. It won&rsquo;t change your overall consumption for that day or month, so
-it won&rsquo;t change your tiering calculation. If you had a surplus in the higher-
-value TOU period, you&rsquo;ll now have a bigger surplus, which at the higher rate
-is more than enough to buy the same electricity back from PG&amp;E later in the
-day, even if the solar cells aren&rsquo;t producing at that time. (Basically, it
-wasn&rsquo;t immediately obvious to me what the credit/charge calculations do in
-this case, because my intuition keeps wanting to tell me it&rsquo;s better to
-consume energy when I&rsquo;m getting it free from my solar panels than when I&rsquo;m
-buying it from PG&amp;E. That turns out not to be true; the NEM system means if
-you buy and sell the same amount of electricity at a given rate, it&rsquo;s a wash,
-and the TOU system actually rewards you for selling it at a higher rate and
-buying it back at a lower rate.) So yes, you can &ldquo;game&rdquo; the E-6 billing system
-by moving usage from peak times to off-peak times, which use of &ldquo;game&rdquo; gets
-scare quotes because it&rsquo;s actually the behavior they want to encourage.</p>
-
-<p>Meanwhile, if you could move that same 10 KWh across months, the story is a
-lot more complicated. Due to tiering, you may be paying more than the baseline
-rate for some of your electricity, and since PG&amp;E applies the tiering
-calculations entirely inside each month, based on that month&rsquo;s usage, you can
-actually get crossover between &ldquo;high-value&rdquo; and &ldquo;low-value&rdquo; TOU periods. More
-concretely: as a solar generator, you may be paying more for winter off-peak
-electricity at 3rd-tier rates than you are for summer part-peak electricity
-where you never exceed the first tier. This is exactly what happened to me
-over the last year (note in the <a href="http://www.pge.com/tariffs/tm2/pdf/ELEC_SCHEDS_E-6.pdf">E-6 schedule</a> that winter
-off-peak and part-peak above 130% of baseline cost about what summer on-peak
-baseline usage does, and winter off-peak and part-peak above 200% of baseline
-cost more than the summer on-peak baseline). While from the previous example
-you&rsquo;d expect the result of time-shifting your usage to depend on the TOU rates
-(and you would win by shifting from a high-rate TOU to a low-rate TOU, and
-lose by doing the reverse), in fact it also depends on the tiering
-calculations, and you can also win by shifting usage out of a month where you
-had higher-tier usage into a month where you didn&rsquo;t, and this can even be true
-if it involves shifting that usage from a low-rate TOU to a higher-rate TOU.
-So, surprisingly, you could see a net benefit from moving usage from winter to
-summer; it&rsquo;s pretty easy to make the numbers work out if moving from winter
-part-peak to summer part-peak, and in extreme cases, you could even win by
-moving from winter off-peak to summer on-peak. This is decidedly not the
-result they want to encourage, so I&rsquo;d call it gaming the system. (Of course,
-you&rsquo;d need a way to actually buffer your usage across months; a better way to
-lower your winter bills is to simply use less electricity, without
-compensating in the opposite direction in the summer.)</p>
-
-<p>I&rsquo;ll note again that this perverse result derives from the fact that PG&amp;E
-calculates and finalizes the tiering calculations entirely inside each month,
-instead of smoothing them across the true-up period, so it&rsquo;s actually possible
-for a big energy user with an even bigger solar array to generate a net
-surplus for the year but be paying 4th-tier rates for winter electricity when
-the array is underperforming.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[E-1 vs E-6 for residential solar customers]]></title>
-    <link href="http://blog.metamatt.com/blog/2012/11/11/e-1-vs-e-6-for-residential-solar-customers/"/>
-    <updated>2012-11-11T00:00:00-08:00</updated>
-    <id>http://blog.metamatt.com/blog/2012/11/11/e-1-vs-e-6-for-residential-solar-customers</id>
-    <content type="html"><![CDATA[<p>As a follow-on to my <a href="http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/">article on understanding the PG&amp;E NEM bill</a>, I decided to go back and recalculate our usage charges for the normal E-1 billing schedule, in addition to the E-6 I&rsquo;m actually using.</p>
-
-<p>I also threw in the calculation for the E-1 value of the electricity we
-generated instead of buying from PG&amp;E, that is, how much we would have spent
-to buy all the electricity we used from PG&amp;E if we hadn&rsquo;t installed the solar
-array.</p>
-
-<p>In short, E-6 was a solid win for us: a usage charge of $64.54 would have been
-$275.10 with E-1<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>.</p>
-
-<p>The results:</p>
-
-<iframe width='800' height='400' frameborder='0' src='https://docs.google.com/spreadsheet/pub?key=0AvFfqLY9cNwzdHZUWDlROU1QNldhdm85Y1RsUXRrakE&output=html&widget=true'></iframe>
-
-
-<p>E-6 was a solid win for us. In the 6 winter months where we had a usage
-charge, the usage charge was about $10/month higher with E-1<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>. In the 6 summer
-months where we had a usage credit, the usage credit was about $30/month lower
-with E-1<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>.</p>
-
-<p>On the flip side, E-6 has a &ldquo;meter charge&rdquo; of approximately 25 cents per day,
-or $92 per year<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>, which E-1 does not. So our true E-6 cost (for electrical
-usage, plus the privilege of E-6 TOU billing) is $156.88 for the year, and
-E-1&rsquo;s true cost remains at $275.10.</p>
-
-<p>It seems like E-6 would be an easy win for anyone who can generate all of
-their summer on-peak electricity, or especially all of their summer on-peak
-and summer partial-peak electricity. (You can compare the exact prices in the
-E-1 and E-6 billing schedules, but the E-6 off-peak rates and winter part-peak
-rates are lower than E-1 rates; E-6 summer part-peak rates are a little higher
-than E-1 rates; E-6 summer on-peak rates are a lot higher than E-1 rates.)</p>
-
-<p>I also remember being told that PG&amp;E will let you switch from E-1 to E-6 and
-then at the end of the first year, if you didn&rsquo;t save money, you can take a
-mulligan and retroactively undo the switch and pay the E-1 rate. I can&rsquo;t find
-confirmation of that on PG&amp;E&rsquo;s website today, though.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>You may notice that my earlier article lists our usage charge for the year as $60.22 and here it&rsquo;s $64.54; the difference is that $60.22 is PG&amp;E&rsquo;s number and $64.54 is my calculation for what it should be (and I had to fudge the numbers for October 2011 where PG&amp;E switched me from the old plan to NEM midway through the billing cycle, plus we may round differently, plus there may be other errors in my calculations). This seemed close enough to go through the rest of the exercise, and the technique used to calculate this number is the same one I&rsquo;ll use for the E-1 number, so this seemed like the one to use for this comparison.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>E-6 is always a win in the winter, because there&rsquo;s no winter peak zone; winter part-peak and winter off-peak are both cheaper than the E-1 rate. And between the solar array and our usage patterns, the vast majority of our PG&amp;E usage was in the off-peak time anyway.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-<li id="fn:3">
-<p>Between the solar array and our usage patterns, we ran a surplus in summer on-peak and summer part-peak for nearly the entire summer, and had to buy summer electricity only off-peak. This is exactly the behavior that E-6 is designed to encourage, and it rewarded us correspondingly.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
-<li id="fn:4">
-<p>So if you want a true zero bill from E-6, you need to generate enough of a surplus that it would counterbalance this $92/year &ldquo;meter charge&rdquo;. That would take 495 KWh of summer on-peak surplus or 1028 KWh of summer part-peak surplus, paid out at the &ldquo;generation&rdquo; rate due to the NSC rules.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[One year of solar power]]></title>
-    <link href="http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/"/>
-    <updated>2012-11-09T00:00:00-08:00</updated>
-    <id>http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power</id>
-    <content type="html"><![CDATA[<p>When I got solar panels installed on the roof of our house last fall, friends
-immediately started asking how well they were working out, and my answer had
-to be that while they&rsquo;re <a href="https://enlighten.enphaseenergy.com/public/systems/g8ah32261">generating a nice amount of power</a>, I wouldn&rsquo;t know how well they were doing on the actual goal of zeroing our
-electric bill until a year had passed. That year has now passed, and it&rsquo;s time to answer the question.</p>
-
-<p>If you add solar power to your grid energy, at least the way it&rsquo;s done in
-California, two things will happen:</p>
-
-<ol>
-<li> Your electric bills will be lower, but</li>
-<li> You won&rsquo;t understand them.</li>
-</ol>
-
-
-<h2>The problem:</h2>
-
-<p>California electric rates are confusing because they&rsquo;re complicated and
-variable. You pay a different rate depending on how much you use (tiering)<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>.
-You can opt into time-of-use (TOU) billing<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>, which makes electricity more
-expensive at peak times and cheaper the rest of the time to encourage you to
-shift usage away from peak times. The normal residential billing schedule is
-called <a href="http://www.pge.com/tariffs/tm2/pdf/ELEC_SCHEDS_E-1.pdf">E-1 (&ldquo;residential services&rdquo;)</a> and shows
-5 different rates according to tier; the TOU residential schedule is called
-<a href="http://www.pge.com/tariffs/tm2/pdf/ELEC_SCHEDS_E-6.pdf">E-6 (&ldquo;residential time-of-use service&rdquo;)</a> and shows
-25 different rates according to tier and time.</p>
-
-<p>Once you introduce solar (or other generation capabilities) into the mix,
-there&rsquo;s another wrinkle. Assuming you stay connected to the grid, PG&amp;E will
-convert your billing to what they call <a href="http://www.pge.com/standardnem/">NEM</a>
-(Net Energy Metering), which means your electric meter will measure the flow
-of power in both directions — from the grid into your house when you&rsquo;re using
-more than you&rsquo;re generating, and from your house back to the grid when you&rsquo;re
-generating more than you&rsquo;re using. But solar panel output varies by season and
-with weather, in addition to the obvious day/night cycle. To account for this
-seasonal variation, PG&amp;E bills NEM customers on a yearly cycle called the
-<a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/">true-up period</a>.
-Your monthly bills are only an approximation, and at the end of the year they
-calculate the actual balance owed compared to what you already paid, and have
-you &ldquo;true up&rdquo; to that amount, hence the name.</p>
-
-<p>For NEM customers, that&rsquo;s 3 different axes of variation<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>: tiered rates based
-on total consumption, variable rates due to time-of-use, and true-up billing
-to account for seasonal variation of generated output.</p>
-
-<h2>Before adding solar generation</h2>
-
-<p>You have to calculate how much electricity you want to generate to produce the
-desired effect (economically or ecologically or both<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>), and then you need to
-calculate the size of a PV solar array that will produce that effect.</p>
-
-<p>Both of these calculations actually turn out to involve a fair amount of
-prediction. Companies that specialize in solar installations (for example,
-<a href="http://www.luminalt.com/meet-luminalt/about-us">Luminalt</a>, who installed
-ours) can help you with these predictions and calculations.</p>
-
-<p>But even after you&rsquo;ve done the calculations, decided to go solar, and had the
-array installed and it&rsquo;s live, you still won&rsquo;t know if you were right, at
-least for a while. That&rsquo;s what this post is about. I wanted to know if we&rsquo;d
-predicted correctly, and I also wanted to know if PG&amp;E&rsquo;s billing methods
-fairly account for the seasonal variation. (If I have a large surplus in
-summer on-peak in July, and a big deficit in winter off-peak in January, do
-these cancel out, and how?)</p>
-
-<h2>After adding solar generation</h2>
-
-<p>I said that after activating a solar array and switching over to PG&amp;E&rsquo;s NEM
-program, you&rsquo;ll get lower bills that you won&rsquo;t understand. Here&rsquo;s what I mean.
-Each month with my electric bill<sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup>, I get a separate &ldquo;Net energy metering
-electric statement&rdquo;. It includes three amounts:</p>
-
-<ol>
-<li> &ldquo;total current month&rsquo;s billed amount&rdquo;, which is always in the neighborhood of $12.</li>
-<li> &ldquo;current month energy charge or credit&rdquo;, which is the actual charge for electricity I used, or credit for electricity I produced, after accounting for tiered TOU rates.</li>
-<li> &ldquo;cumulative energy charges or credits for the current true-up period&rdquo;, which is the sum of the #2 values.</li>
-</ol>
-
-
-<p>This is hard to interpret month by month, partly because there&rsquo;s no
-relationship between what I&rsquo;m asked to pay (#1) and what I used (#2), and #3
-will swing wildly one direction<sup id="fnref:6"><a href="#fn:6" rel="footnote">6</a></sup> and then correct over the course of the year.
-All of this evens out at the end of the year, which is the reason for the
-1-year true-up method of billing.</p>
-
-<p>But when the 1-year anniversary arrives, and with it the final true-up
-payment, there&rsquo;s a new confusing quantity: &ldquo;total current month&rsquo;s billed
-amount&rdquo; is replaced with &ldquo;total true-up billed amount&rdquo;. This amount, which is
-your actual bill for the 12th month, is not the usual $12, bears no obvious
-relationship to the cumulative energy charge, and isn&rsquo;t explained or derived
-by PG&amp;E on the bill or elsewhere that I could find<sup id="fnref:7"><a href="#fn:7" rel="footnote">7</a></sup>. (In my case: my
-cumulative energy charge after 12 months was $60.22, and the &ldquo;total true-up
-billed amount&rdquo; was $22.02.) Why?</p>
-
-<p>There&rsquo;s a method to their madness, but I had to dig deep into PG&amp;E&rsquo;s rate
-documentation and then spend a few hours messing with a spreadsheet to try to
-derive the calculations that would map my usage to my bills.</p>
-
-<h2>Understanding true-up billing</h2>
-
-<p>First, the monthly bill. Where does this $12 come from? It turns out PG&amp;E
-charges E-6 (TOU) customers a &ldquo;meter charge&rdquo; of approximately $0.25 per day.
-E6 and E-1 both also have a &ldquo;minimum charge&rdquo; of approximately $0.15 per day;
-they don&rsquo;t explain what this means, but if my reverse engineering of my bills
-is correct, for NEM customers it&rsquo;s essentially a placeholder for your usage
-before they know what your usage is. These fees added together and multiplied
-by the number of days in a billing cycle yield the approximately $12 amount
-that I was billed for each month (billing cycles ranged from 28 to 32 days, so
-the monthly bill ranged from $11.22 to $12.83, with the most common bill being
-$12.02 for a 30-day billing cycle).</p>
-
-<p>Second, the usage charges. These are not simple (since they involve both the
-tiering and TOU calculations), but they are actually decently explained on the
-monthly NEM statement itself, and with one nitpicky exception<sup id="fnref:8"><a href="#fn:8" rel="footnote">8</a></sup>, they&rsquo;re the
-same as what you had before you added NEM, and the true-up calculation doesn&rsquo;t
-affect them.</p>
-
-<p>Third, the cumulative usage charge. This one is completely straightforward:
-add the usage charges for the current true-up period, to date. Each NEM
-statement shows the current cumulative charge (this amount) and the amount by
-which it changed (the month&rsquo;s usage charge), and you can verify that the
-current cumulative balance is equal to the previous month&rsquo;s balance plus/minus
-the current month&rsquo;s usage charge/credit. However, as mentioned above, this
-amount will swing one direction and then correct due to seasonal variation,</p>
-
-<p>Fourth, the true-up amount. This is a simple calculation if you know where it
-comes from, but PG&amp;E doesn&rsquo;t explain it, so I had to reverse engineer it,
-learning to understand the daily meter and minimum charges. What it boils down
-to is that the $0.15 &ldquo;minimum charge&rdquo; is not a real charge once the true-up
-period is over, but a provisional placeholder: you pay this with each month&rsquo;s
-$12 bill, but at the end of the year, when your real usage is known, you get
-back the provisional amount and pay the real amount. At the end of the year,
-you take your usage charge/credit, and add the meter charge ($0.25 per day or
-about $7.50 per monthly bill or $92.33 in a full year<sup id="fnref:9"><a href="#fn:9" rel="footnote">9</a></sup>), and that&rsquo;s what you
-owe for the year. Except you&rsquo;ve already paid that meter charge, plus you&rsquo;ve
-paid the &ldquo;minimum&rdquo; usage charge as a provisional placeholder. So subtract the
-provisional usage charge ($0.15 per day or about $4.50 per monthly bill or
-$53.96 in a full year), and you have the amount that&rsquo;s unpaid, that you must
-still pay in order to True Up. So, your first 11 bills are for 30-ish days of
-meter charges and minimum charges, totaling about $12; your 12th bill is for
-30-ish days of meter charges, minus 335-ish days of minimum charges, plus your
-cumulative usage charge for the whole year. In my case, actual usage at the
-end of the year was $60.22, of which $46.27 had already been paid monthly as
-that &ldquo;minimum&rdquo; charge, so what I&rsquo;d call the actual true-up component was
-$13.95; add in $8.07 in meter fees (32 days at $0.25/day) for the final
-billing period and we have what PG&amp;E calls my true-up bill of $22.02.</p>
-
-<h2>Cancelation across TOU periods</h2>
-
-<p>I was curious whether a surplus in one TOU period (for example, summer on-
-peak, which is likely the best case for residential solar customers) can
-partially or wholly cancel a deficit in another TOU period (for example,
-winter off-peak, which is pretty much entirely dark, and thus worst-case for
-solar customers). As it turns out, PG&amp;E doesn&rsquo;t directly add and subtract
-usage across TOU periods; they convert usage to a dollar amount every month
-(based on TOU periods and tiering), then add and subtract the monthly dollar
-amounts. This is a clever way of accounting, since it&rsquo;s pretty easy to
-understand, and does a pretty fair job of reconciling the amounts from
-different TOU periods. (In fact, it works out pretty well for residential
-solar customers, since your summer on-peak surplus is credited at a higher
-rate than that winter off-peak deficit.) My only complaint here is again that
-the tiering calculations are done per month and only affect you on the
-downside.</p>
-
-<h2>Raw facts</h2>
-
-<p>Here are the actual numbers from my house over the last year, which may be
-helpful in understanding the derivations here, making the descriptions more
-concrete, and/or planning your own PV solar system.</p>
-
-<ul>
-<li>Generated by solar: 7195 KWh</li>
-<li>Bought from PG&amp;E: 1601 KWh</li>
-<li>Total consumed: 8796 KWh</li>
-<li>Months with positive grid usage, resulting in PGE charge: 6 (Oct-Mar)</li>
-<li>Months with negative grid usage, resulting in PG&amp;E credit: 6 (Apr-Sept)</li>
-<li>Whole-year usage charge: $60.22</li>
-<li>Value of electricity consumed if I had to buy it all from PG&amp;E: $2052.34 (assuming E-1 and not E-6 billing, since I don&rsquo;t have the generated KWh broken out by TOU period)</li>
-<li>Prior-year electric bill: $1403.77</li>
-<li>Granular usage (from PG&amp;E&rsquo;s point of view), broken down by month and TOU billing period:</li>
-</ul>
-
-
-<h2>Sum-up</h2>
-
-<p>The true-up billing method mostly but not entirely allows you to smooth out
-the seasonal variation, canceling bad performance one month against good
-performance in another month.</p>
-
-<p>You can understand your monthly bills if you think of them like this: $12 a
-month, $7.50 of which is just for the privilege of being connected to the
-grid, and $4.50 of which is a deposit against your actual usage. Meanwhile,
-the actual usage bill accrues in the background, and at the end of the year,
-you pay this balance minus a $49.50 refund for those eleven $4.50 deposits.</p>
-
-<p>Due to the low NCS reimbursement it still seems to me that the optimal array
-size is what brings you very close to even for the year, offsetting your usage
-without generating much of a surplus. However, due to the way usage tiers are
-finalized each month instead of across the true-up period, sizing your array
-slightly larger than this may pay off by reducing higher-tier winter bills,
-even though the net surplus KWh aren&rsquo;t themselves valuable in the NCS
-calculation.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>The baseline usage, which determines the details of the tiering calculation, further varies by where you live in California and whether your home has a gas or electric primary heat source.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>You can opt into TOU billing regardless of whether you have solar or other generation facilities, but in general, it makes a lot of sense if you have generation capabilities and less sense if you don&rsquo;t, plus most people not planning on adding solar won&rsquo;t have the TOU option waved in their face and probably don&rsquo;t even know about it. I don&rsquo;t know the exact numbers, but I presume most NEM customers opt for TOU billing, and most grid-only customers do not.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-<li id="fn:3">
-<p>There&rsquo;s another confusing way they split things up, but I&rsquo;m not denoting it as an axis because it&rsquo;s not orthogonal to the others. PG&amp;E separates the rate into separate quantities for &ldquo;generation&rdquo;, &ldquo;transmission&rdquo;, &ldquo;distribution&rdquo;, and &ldquo;the funding of public purpose programs&rdquo;. We&rsquo;ll come back to the reason for this bookkeeping sleight-of-hand later; it doesn&rsquo;t really matter unless you generate a surplus, but if you do, look for this to raise its head in the Net Surplus Compensation calculation.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
-<li id="fn:4">
-<p>If you believe solar power is cleaner than grid power, the ecologically optimal size for your home array is &ldquo;as large as possible&rdquo;, though of course there&rsquo;s some ecological cost to PV panel manufacturing too. But if you&rsquo;re trying to make your solar array economically viable, you&rsquo;ll want to compare actual costs and benefits; the costs depend on the cost and output of the array and how long you plan to keep it and whether you buy or lease and the details of the financing, all things you can find <a href="http://www.gosolarnow.com/NetMetering.html">companies or calculators</a> to help with. The benefits depend on what you&rsquo;re actually paying for grid electricity, which follows the complicated calculations already described. If you&rsquo;re a light user paying baseline $0.12/KWh rates, you&rsquo;ll save less than a heavy user paying 4th-tier $0.34/KWh rates. While the specifics vary, it&rsquo;s probably easy to generate solar power for less than $0.34/KWh and somewhat hard to generate solar power for less than $0.12/KWh. What this means is most solar customers try to offset most but not all of their own usage, to get back down in the baseline tier. It&rsquo;s often not cost-effective to compete with PG&amp;E&rsquo;s baseline rates. It&rsquo;s especially cost-ineffective to operate at a net surplus, because of the way PG&amp;E values the surplus: read their <a href="http://www.pge.com/myhome/saveenergymoney/solarenergy/afterinstalling/ab920/">Net Surplus Compensation</a> rules, paying special attention to the last section, &ldquo;Why is NSC less than the credit on my NEM statement?&rdquo;. In short, PG&amp;E splits the &ldquo;retail&rdquo; rates that you&rsquo;re used to seeing into separate components for generation, transmission, distribution, and the funding of public programs like nuclear plant decommissioning; your NEM credits come back at the retail rate until you hit break-even; however if you operate at a surplus, PG&amp;E pays only a &ldquo;wholesale-type rate for generation&rdquo;. You can see the actual breakdown on the E-1 or E-6 billing schedules; I don&rsquo;t actually know how to calculate the breakdown for E-6 since your surplus is for the year and it&rsquo;s not clear which TOU rate to apply; in any case generation is less than half of the total.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
-<li id="fn:5">
-<p>Actually not <em>with</em> my electric bill, because I&rsquo;ve opted for paperless billing and told PG&amp;E to stop sending me paperless bills, and I can look at the details on the website. But none of the NEM details are available on their website, nor is there an option to go paperless for the NEM data. So what actually happens is the NEM data shows up on paper in my mailbox a few days after I get the bill itself electronically.<a href="#fnref:5" rev="footnote">&#8617;</a></p></li>
-<li id="fn:6">
-<p>Which direction it swings will depend on when your true-up period starts. Mine starts in October and so the first few months are fall and winter, and I accumulated quite a large charge before April when I started getting credits. By the following October, it was nearly back to 0. If your true-up period starts in April, you&rsquo;d presumably see the reverse, amassing a series of credits and a large negative balance over the summer before winter charges start to eat away at the credit balance.<a href="#fnref:6" rev="footnote">&#8617;</a></p></li>
-<li id="fn:7">
-<p>PG&amp;E&rsquo;s explanation of how to read this is split into four pages on their website, for the <a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/">monthly statement</a>, <a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/monthlybill/">monthly bill</a>, <a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/trueupstatement/">true-up-statement</a>, and <a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/trueupstatement/">true-up bill</a>. These pages explain the meaning of each item on the bill, but don&rsquo;t explain how the amounts are calculated, or why you owe what you owe.<a href="#fnref:7" rev="footnote">&#8617;</a></p></li>
-<li id="fn:8">
-<p>The true-up calculation doesn&rsquo;t affect the monthly usage charge calculation, but arguably it should, because the rates depend on tiering, the tiering depends on usage, and usage is supposed to be smoothed over the entire true-up period. But actually, the tiering calculations are done entirely inside each month. What this means is that in the winter when your solar array is underperforming, higher usage might push you into the upper tiers, and you&rsquo;ll pay more for your grid electricity because of this, and no amount of summer credits can offset these higher rates. Again using my first-year numbers as an example, my assigned baseline value for the year sums to 2878 units, and my actual cumulative usage was 1601 KWh. (Or: the average of the monthly baselines was 240, and my average monthly usage was 133.) I&rsquo;d argue that this means I should be paying only first-tier rates. However, because of the seasonal variation expected with solar generation, my usage from PG&amp;E&rsquo;s point of view is skewed heavily toward winter, and in fact I had above-baseline usage in only the 4 shortest months: November through February. Because PG&amp;E applies the baseline-to-tier calculation on each month&rsquo;s usage individually, instead of across the true-up period, I paid substantially more for electricity in those 4 months. In my case, I was charged $60.22 for my electricity usage, but if it had all been at baseline rates, I would have been owed a $5 credit.<a href="#fnref:8" rev="footnote">&#8617;</a></p></li>
-<li id="fn:9">
-<p>I&rsquo;m writing this after my first year of NEM, and the PGE switched me over to NEM billing in the middle of a billing month without changing the billing cycle, so my first month&rsquo;s NEM bill only included 9 days, and so my first true-up period of 12 bills is only 11 1/3 months or 345 days. Presumably, future true-up periods will be a full year.<a href="#fnref:9" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[One year of cellular data]]></title>
-    <link href="http://blog.metamatt.com/blog/2012/11/07/one-year-of-cellular-data/"/>
-    <updated>2012-11-07T00:00:00-08:00</updated>
-    <id>http://blog.metamatt.com/blog/2012/11/07/one-year-of-cellular-data</id>
-    <content type="html"><![CDATA[<p>Here are the stats on my cellular data usage over one year on Sprint&rsquo;s
-network<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. (I got the phone on Halloween of 2011, and took this screenshot on
-Halloween of 2012.)</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/8163380863"><img src="http://farm8.staticflickr.com/7120/8163380863_21996345ca.jpg" alt="1 year of cellular data usage" /></a></p>
-
-<p>7 GB down and 1 GB up; 8 GB total; that averages to 666 MB per month. Clearly
-I&rsquo;m not a heavy cellular data user and not making the most out of Sprint&rsquo;s
-unlimited data allotment; this would fit comfortably within the other
-carriers&#8217; smallest real<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup> data plans (1GB/month).</p>
-
-<p>Speaking of unlimited data plans: this might sound heretical to some, but I
-really wouldn&rsquo;t mind metered data at a fair price. Say a penny a megabyte,
-billing you only for what you use. That comes out to $10 per gigabyte, which
-is actually the marginal rate that AT&amp;T and Verizon are charging now anyway,
-except first they make you pay a minimum $30/month commitment and then they
-round up to the next gigabyte.</p>
-
-<p>Of course, I also wouldn&rsquo;t mind an unlimited plan that was cheap and fast and
-allowed tethering<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>.</p>
-
-<p>In the meantime, here in the US we have Sprint offering unlimited data at a
-price that&rsquo;s fair for heavy users but not especially cheap for light users,
-and their network isn&rsquo;t the fastest and they have surcharge for tethering.
-Then we have AT&amp;T and Verizon saying unlimited plans don&rsquo;t incent them to
-invest in their networks so they&rsquo;ve moved to metered plans; on the plus side
-their networks have gotten markedly faster and they don&rsquo;t charge extra for
-tethering on the metered plans; however their metering methods don&rsquo;t meet my
-definition of fair.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>Actually 11 1/2 months on Sprint&rsquo;s network, and 10 days on O2 Ireland and 3 days on Three UK during a trip to Europe. Both of their data networks, but especially Three&rsquo;s, were better than what I&rsquo;m accustomed to in the USA, which is especially infuriating given they&rsquo;re also much cheaper.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>Ignoring AT&amp;T&rsquo;s toy 250 MB/month plan.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-<li id="fn:3">
-<p>Which actually exists in much of the world, but not in the USA.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[OAuth and localization fixes for Palm-Evernote importer]]></title>
-    <link href="http://blog.metamatt.com/blog/2012/11/06/oauth-and-localization-fixes-for-palm-evernote-importer/"/>
-    <updated>2012-11-06T00:00:00-08:00</updated>
-    <id>http://blog.metamatt.com/blog/2012/11/06/oauth-and-localization-fixes-for-palm-evernote-importer</id>
-    <content type="html"><![CDATA[<p>I’ve updated my <a href="http://www.maddogsw.com/evernote-utilities/evernote-palm-importer/">utility for importing notes from Palm Desktop into Evernote</a> again.</p>
-
-<p>The big change is that it now uses <a href="http://dev.evernote.com/documentation/cloud/chapters/Authentication.php">OAuth for authentication to the Evernote service</a>, instead of asking you for Evernote account credentials directly. This is a step forward in general; utilities like this one shouldn&rsquo;t have unrestricted access to your entire account, nor should they know your actual password in case you use the same password for other services<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. <a href="http://blog.evernote.com/tech/2012/11/01/third-party-authentication-transition-to-oauth-complete/">Evernote has disabled username/password logins for third party apps</a> to force them to use OAuth, a move which I think more services should make<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
-
-<p>I also made some smaller changes to further improve the chance of success for people outside the USA, using nondefault character encoding or locale settings.</p>
-
-<p>Finally, I added the <a href="https://github.com/metamatt/evernote-palmimport">public source repository</a> to my github account. (I&rsquo;ve always made the source codefor the current version available, but now the complete repository with history is public.)</p>
-
-<p>Download here: <a href="http://www.maddogsw.com/evernote-utilities/evernote-palm-importer/">http://www.maddogsw.com/evernote-utilities/evernote-palm-importer/</a>.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>Which you shouldn&rsquo;t do, but lots of people do anyway.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>I&rsquo;m looking at you, Google Reader clients.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
 </ol>
 </div>
 

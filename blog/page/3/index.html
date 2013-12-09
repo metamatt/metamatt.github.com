@@ -9,8 +9,7 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="When I worked on my high school paper, I spent many hours working on the
-newsroom Macs, but I had a Windows machine at home, and I was pretty &hellip;">
+  <meta name="description" content="I&rsquo;ve been wanting a way to preview Markdown-formatted text files from the terminal, ideally via less. Primarily, I think, because Github &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +76,836 @@ newsroom Macs, but I had a Windows machine at home, and I was pretty &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/09/previewing-markdown-files-from-the-terminal/">Previewing Markdown Files From the Terminal</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-09T00:00:00-08:00" pubdate data-updated="true">Jan 9<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/01/09/previewing-markdown-files-from-the-terminal/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;ve been wanting a way to preview <a href="http://daringfireball.net/projects/markdown/">Markdown</a>-formatted text files from the terminal, ideally via <a href="http://www.greenwoodsoftware.com/less/">less</a>. Primarily, I think, because Github encourages it, a lot of open source projects are starting to include a <a href="https://www.google.com/search?q=+readme.md">README.md</a> instead of a plain old <a href="http://en.wikipedia.org/wiki/README">README</a><sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>,<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>; these marked-down READMEs are easy to view in Github&rsquo;s web interface but not after (or before) you clone the repo into your own filesystem.</p>
+
+<p>There&rsquo;s <code>zless</code> that can understand compressed files; why not <code>mdless</code> that can understand Markdown files?</p>
+
+<p>I went looking and stackoverflow came to the rescue with this question and answer about a <a href="http://stackoverflow.com/a/7603703/275581">less-style markdown viewer for UNIX systems</a>, suggesting <a href="http://johnmacfarlane.net/pandoc/">pandoc</a> as the tool to translate from Markdown format to troff format. The suggested incantation there works for me under Debian Linux but not under Mac OS X because it relies on <code>man</code>&rsquo;s <code>-l</code> option, which I&rsquo;m guessing is a GNU addition not supported by BSD <code>man</code>. I had to figure out how to duplicate the processing that <code>man -l</code> does, which I knew involved <code>troff</code> (or <code>groff</code>); it turns out that <code>groff</code> understands a <code>-man</code> flag which predefines the macros used by manpages. The version using <code>groff</code> instead of <code>man -l</code> seems more portable (it works fine under Linux as well as Mac OS X), so that&rsquo;s what I&rsquo;ll use.</p>
+
+<p>Hence, the following incantation to view a README.md file:</p>
+
+<p><code>pandoc -s -f markdown -t man README.md | groff -T utf8 -man | less</code></p>
+
+<p>Or, a <code>mdless</code> command implemented as a tcsh alias:</p>
+
+<p><code>alias mdless "pandoc -s -f markdown -t man \!* | groff -T utf8 -man | less"</code></p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>As one data point for when this became common, README.md was added to the short list of common readme file names in this Wikipedia article on <a href="http://en.wikipedia.org/w/index.php?title=README&amp;oldid=480712255">March 7, 2012</a>.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>Not to be confused with <a href="http://www.amazon.com/gp/product/0062191497/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=metamatt-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0062191497">REAMDE</a>.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard/">Mac Boot Drive Selection From Bluetooth Keyboard</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-27T00:00:00-08:00" pubdate data-updated="true">Dec 27<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Twice in the last few months<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> I&rsquo;ve had to do troubleshooting steps on Vanessa&rsquo;s iMac that involved booting from alternate volumes<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>. This is normally easy on a Mac, but not quite so easy on a Mac with a wireless Bluetooth keyboard<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>.</p>
+
+<p>Both times, it was an exercise in frustration, as I give the reboot command and wait about 10 seconds for the reboot to actually happen; then I hold Command-R, watch the screen blink black, wait, watch it blink white, wait, chime, wait, Apple logo, wait, and… oh hello, login screen! That&rsquo;s not right. I&rsquo;ve just wasted a minute and I&rsquo;m back where I started.</p>
+
+<p>Apple&rsquo;s <a href="http://support.apple.com/kb/HT4718">support document on recovery mode</a> makes it sound so easy:</p>
+
+<blockquote><p>Restart your Mac and hold down the Command key and the R key (Command-R), and keep holding them until the Apple icon appears, indicating that your Mac is starting up. After the Recovery System is finished starting up, you should see a desktop with a OS X menu bar and a &ldquo;Mac OS X Utilities&rdquo; application window. Note: If you see a login window or your own desktop and icons, it is possible that you didn&rsquo;t hold Command-R early enough. Restart and try again.</p></blockquote>
+
+<p>After reading and rereading that, I try a few more times, holding Command-R earlier and earlier as Apple recommends, and, no luck. Wait a minute, I&rsquo;m using a Bluetooth keyboard. Does that cause complications, like, the computer and keyboard aren&rsquo;t able to communicate right at the beginning of the boot process? Yes<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>. Do I need to go find a USB keyboard to plug in? Not quite.</p>
+
+<p>It turns out the magic answer is to reboot the computer, wait for the LED on the keyboard to flash (which is after the computer starts booting and chimes and does a self-test which on this iMac with 12GB of memory all takes about 20 seconds), and <em>then</em> immediately press and hold Command-R. Any earlier than that, and you&rsquo;ll be ignored.</p>
+
+<p>You&rsquo;d think Apple&rsquo;s help docs could mention this, since they&rsquo;ve been shipping Bluetooth keyboards by default with all their desktop machines for years now.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Both of these occasions involved disk failures in the <a href="http://blog.metamatt.com/blog/2012/01/20/nothing-is-as-easy-as-it-should-be-ssd-upgrades/">Crucial M4 SSD I installed a year ago</a>. You can probably guess that I&rsquo;m not quite as happy with these as I wanted to be.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p><a href="http://support.apple.com/kb/HT1533">Booting from CD</a> to upgrade firmware, or <a href="http://support.apple.com/kb/HT4718">booting from the recovery partition</a> to attempt disk repair. Each of these requires holding a certain key down while the computer is booting.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>I put the same SSD model in my own computer, a Mac Pro tower with easily accessible drive bays and an old-school wired keyboard. It&rsquo;s a lot easier to troubleshoot and a lot easier to repair. Murphy&rsquo;s Law dictates that if we&rsquo;re going to have problems with one SSD, it&rsquo;ll be the one <a href="http://www.ifixit.com/Guide/iMac+Intel+27-Inch+EMC+2309+and+2374+Hard+Drive+Replacement/1634/1">tucked away under the glass front of the iMac</a>.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>Try googling for &ldquo;<a href="https://www.google.com/search?q=boot+mac+from+cd">boot Mac from CD</a>&rdquo; versus &ldquo;<a href="https://www.google.com/search?q=boot+mac+from+cd+bluetooth">boot Mac from CD bluetooth</a>&rdquo;. Big difference. The first one leads you to a simple answer (but deceptively simple in the case you have a Bluetooth keyboard); the second one leads you through a muddle of hundreds of confused people.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/11/28/visiting-ireland-with-baby-dominic/">Visiting Ireland With Baby Dominic</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-28T00:00:00-08:00" pubdate data-updated="true">Nov 28<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/11/28/visiting-ireland-with-baby-dominic/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Vanessa and I wanted to take a real destination trip with Dominic, kinda sorta
+just to see if we could do it. Not that we were hoping or envisioning that it
+would be impossible, but it was hard to visualize, so we had to try.</p>
+
+<p>We settled on Ireland as the destination based on two propositions: we can
+take the baby to the pub, and the people love babies. (These were the actual
+reasons recommended by an Irish friend of Vanessa.) OK, not that we&rsquo;re such
+raging alcoholics that we can only travel to pubs, but &ldquo;can take the baby to
+the pub&rdquo; is actually a pretty good proxy for &ldquo;is not uptight, and will be
+forgiving of people traveling with a baby&rdquo;, which turned out to be true. Also
+true is that the Irish were not only gracious and charming hosts, but that
+many of them indeed like babies and know how to show it. For us, this
+translated to both people being prepared and understanding, but also to a lot
+of free entertainment. Dominic likes a lot of stimulation, and he got it.</p>
+
+<p>I&rsquo;m pretty proud of our itinerary, in retrospect, because we were making it up
+as we went along and it turned out really easy. No doubt it helps that Ireland
+is a small country, native English speaking (almost), and the people and
+culture are easygoing, so probably anything you do there is likely to go well.
+Still, for us it turned out remarkably easy to travel.</p>
+
+<p>Here&rsquo;s where we went:</p>
+
+<p><a href="http://www.flickr.com/photos/67861147@N00/8219093821"><img src="http://farm9.staticflickr.com/8482/8219093821_5003d3ab90.jpg" alt="Ireland travel map" /></a></p>
+
+<p>The itinerary, of which I&rsquo;m proud because the transfers were so easy and
+involved only public transit: We flew from San Francisco to London and then
+immediately to Dublin and caught the city bus to our hotel. Dublin: 3 days
+walking around, with a side DART trip to Howth. Then we walked from our hotel
+to Heuston Station and caught the Irish Rail train to Galway, where we stayed
+at a hotel a block away from the train station. Galway: 2 days walking around,
+with a bus/boat trip to Inishmore (largest of the Arran Islands). Then we
+rented a car from the Budget office right next to the train station and drove
+south to the Cliffs of Moher, with an overnight stay at Ennis, then to Dingle.
+Dingle: 2 days walking around, with a drive around the peninsula loop. Then we
+drove onwards to the Kerry Peninsula and around the Ring of Kerry, then to
+Kenmare. Kenmare: 2 days walking around including a hilly and marshy segment
+of the Kerry Way. Finally, leaving Kenmare, we drove past Cork to Waterford,
+dropped our rental car off at the tiny airport there, and caught a flight back
+to London Luton, from where it was an easy train ride to the London
+neighborhood we were staying in.</p>
+
+<p>Some photographic evidence of highlights from Ireland:</p>
+
+<p>Howth, a scenic day trip from Dublin:</p>
+
+<p><a href="http://www.flickr.com/photos/67861147@N00/8052048045"><img src="http://farm9.staticflickr.com/8173/8052048045_5ccbedde7b.jpg" alt="Picture perfect" /></a></p>
+
+<p>Dominic disembarking the train in Galway with aplomb:</p>
+
+<p><a href="http://www.flickr.com/photos/67861147@N00/8052048779"><img src="http://farm9.staticflickr.com/8037/8052048779_909def3212_z.jpg" alt="Psyched" /></a></p>
+
+<p>Galway&rsquo;s Dominick Street:</p>
+
+<p><a href="http://www.flickr.com/photos/67861147@N00/8052051235"><img src="http://farm9.staticflickr.com/8309/8052051235_ced4aefd1a.jpg" alt="Cheery" /></a></p>
+
+<p>O&#8217;Brien&rsquo;s Castle above the Cliffs of Moher:</p>
+
+<p><a href="http://www.flickr.com/photos/67861147@N00/8052052633"><img src="http://farm9.staticflickr.com/8032/8052052633_ddc755cdaa.jpg" alt="Castle" /></a></p>
+
+<p>Dominic playing in the window seat at Murphy&rsquo;s ice cream shop in Dingle:</p>
+
+<p><a href="http://www.flickr.com/photos/67861147@N00/8052057411"><img src="http://farm9.staticflickr.com/8037/8052057411_521e317ef2.jpg" alt="Window shopping" /></a></p>
+
+<p>Dominic and Vanessa taking a break from hiking the Kerry Way, above Kenmare:</p>
+
+<p><a href="http://www.flickr.com/photos/67861147@N00/8052092780"><img src="http://farm9.staticflickr.com/8034/8052092780_85ffdb45b2_z.jpg" alt="Dominic and Vanessa" /></a></p>
+
+<p>Have a look at <a href="http://www.flickr.com/photos/metamatt/sets/72157631686525572/">the rest of our pictures</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/11/13/the-effect-of-time-shifting-electrical-usage-on-nem-billing/">The Effect of Time-shifting Electrical Usage on NEM Billing</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-13T00:00:00-08:00" pubdate data-updated="true">Nov 13<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/11/13/the-effect-of-time-shifting-electrical-usage-on-nem-billing/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>One more post on the topic of PG&amp;E bills for solar (NEM) customers.</p>
+
+<p>PGE&rsquo;s NEM billing scheme <a href="http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/">blends usage across seasons</a> to allow for seasonal variation in generated power, and their E-6 billing scheme
+<a href="http://blog.metamatt.com/blog/2012/11/11/e-1-vs-e-6-for-residential-solar-customers/">separates usage into 5 time-of-use periods</a> to encourage customers to shift usage away from peak periods.</p>
+
+<p>A question that just occurred to me is whether you can game their billing
+results by time-shifting usage around inside the same true-up period, between
+TOU zones, months, or even seasons.</p>
+
+<p>It&rsquo;s pretty easy to move usage between TOU zones of the same day (say between
+summer on-peak and summer off-peak) by delaying energy-hungry activities like
+baking pies until night; that&rsquo;s both tractable for a home customer and exactly
+the kind of behavior the E-6 TOU billing rates are designed to encourage.
+Moving usage between TOU zones of different seasons (say between summer on-
+peak and winter off-peak), or even from one monthly billing cycle to another,
+would be more difficult (it&rsquo;s possible in theory but doesn&rsquo;t really match
+human activity patterns to delay all your energy-hungry activities for months
+and then execute them in a big batch months later; alternatively you&rsquo;d need a
+really big battery which is exactly what grid tie-in lets you avoid), but I&rsquo;m
+still curious if it would be advantageous in some circumstances.</p>
+
+<p>Again drawing on the example of my last year&rsquo;s experience, the answer turns
+out to be yes for both forms of time-shifting. Say you&rsquo;re going to bake a
+bunch of pies, and need to run the oven at 3KW for a little over 3 hours,
+consuming 10 KWh of electricity. (The 3 KW figure is realistic for an electric
+oven; the heating element running continuously is not; ignore that in the
+service of an example.) If you&rsquo;re going to consume that 10 KWh, does it matter
+<em>when</em> you consume it; what&rsquo;s the effect on your final true-up bill of adding
+10 KWh at various different times?</p>
+
+<p>If you can move that 10 KWh from a higher-value TOU period to a lower-value
+TOU period in the same day, you win; this turns out to be independent of
+tiering, consumption, or which month or season you&rsquo;re in, which is a nice
+property. It won&rsquo;t change your overall consumption for that day or month, so
+it won&rsquo;t change your tiering calculation. If you had a surplus in the higher-
+value TOU period, you&rsquo;ll now have a bigger surplus, which at the higher rate
+is more than enough to buy the same electricity back from PG&amp;E later in the
+day, even if the solar cells aren&rsquo;t producing at that time. (Basically, it
+wasn&rsquo;t immediately obvious to me what the credit/charge calculations do in
+this case, because my intuition keeps wanting to tell me it&rsquo;s better to
+consume energy when I&rsquo;m getting it free from my solar panels than when I&rsquo;m
+buying it from PG&amp;E. That turns out not to be true; the NEM system means if
+you buy and sell the same amount of electricity at a given rate, it&rsquo;s a wash,
+and the TOU system actually rewards you for selling it at a higher rate and
+buying it back at a lower rate.) So yes, you can &ldquo;game&rdquo; the E-6 billing system
+by moving usage from peak times to off-peak times, which use of &ldquo;game&rdquo; gets
+scare quotes because it&rsquo;s actually the behavior they want to encourage.</p>
+
+<p>Meanwhile, if you could move that same 10 KWh across months, the story is a
+lot more complicated. Due to tiering, you may be paying more than the baseline
+rate for some of your electricity, and since PG&amp;E applies the tiering
+calculations entirely inside each month, based on that month&rsquo;s usage, you can
+actually get crossover between &ldquo;high-value&rdquo; and &ldquo;low-value&rdquo; TOU periods. More
+concretely: as a solar generator, you may be paying more for winter off-peak
+electricity at 3rd-tier rates than you are for summer part-peak electricity
+where you never exceed the first tier. This is exactly what happened to me
+over the last year (note in the <a href="http://www.pge.com/tariffs/tm2/pdf/ELEC_SCHEDS_E-6.pdf">E-6 schedule</a> that winter
+off-peak and part-peak above 130% of baseline cost about what summer on-peak
+baseline usage does, and winter off-peak and part-peak above 200% of baseline
+cost more than the summer on-peak baseline). While from the previous example
+you&rsquo;d expect the result of time-shifting your usage to depend on the TOU rates
+(and you would win by shifting from a high-rate TOU to a low-rate TOU, and
+lose by doing the reverse), in fact it also depends on the tiering
+calculations, and you can also win by shifting usage out of a month where you
+had higher-tier usage into a month where you didn&rsquo;t, and this can even be true
+if it involves shifting that usage from a low-rate TOU to a higher-rate TOU.
+So, surprisingly, you could see a net benefit from moving usage from winter to
+summer; it&rsquo;s pretty easy to make the numbers work out if moving from winter
+part-peak to summer part-peak, and in extreme cases, you could even win by
+moving from winter off-peak to summer on-peak. This is decidedly not the
+result they want to encourage, so I&rsquo;d call it gaming the system. (Of course,
+you&rsquo;d need a way to actually buffer your usage across months; a better way to
+lower your winter bills is to simply use less electricity, without
+compensating in the opposite direction in the summer.)</p>
+
+<p>I&rsquo;ll note again that this perverse result derives from the fact that PG&amp;E
+calculates and finalizes the tiering calculations entirely inside each month,
+instead of smoothing them across the true-up period, so it&rsquo;s actually possible
+for a big energy user with an even bigger solar array to generate a net
+surplus for the year but be paying 4th-tier rates for winter electricity when
+the array is underperforming.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/11/11/e-1-vs-e-6-for-residential-solar-customers/">E-1 vs E-6 for Residential Solar Customers</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-11T00:00:00-08:00" pubdate data-updated="true">Nov 11<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/11/11/e-1-vs-e-6-for-residential-solar-customers/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>As a follow-on to my <a href="http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/">article on understanding the PG&amp;E NEM bill</a>, I decided to go back and recalculate our usage charges for the normal E-1 billing schedule, in addition to the E-6 I&rsquo;m actually using.</p>
+
+<p>I also threw in the calculation for the E-1 value of the electricity we
+generated instead of buying from PG&amp;E, that is, how much we would have spent
+to buy all the electricity we used from PG&amp;E if we hadn&rsquo;t installed the solar
+array.</p>
+
+<p>In short, E-6 was a solid win for us: a usage charge of $64.54 would have been
+$275.10 with E-1<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>.</p>
+
+<p>The results:</p>
+
+<iframe width='800' height='400' frameborder='0' src='https://docs.google.com/spreadsheet/pub?key=0AvFfqLY9cNwzdHZUWDlROU1QNldhdm85Y1RsUXRrakE&output=html&widget=true'></iframe>
+
+
+<p>E-6 was a solid win for us. In the 6 winter months where we had a usage
+charge, the usage charge was about $10/month higher with E-1<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>. In the 6 summer
+months where we had a usage credit, the usage credit was about $30/month lower
+with E-1<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>.</p>
+
+<p>On the flip side, E-6 has a &ldquo;meter charge&rdquo; of approximately 25 cents per day,
+or $92 per year<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>, which E-1 does not. So our true E-6 cost (for electrical
+usage, plus the privilege of E-6 TOU billing) is $156.88 for the year, and
+E-1&rsquo;s true cost remains at $275.10.</p>
+
+<p>It seems like E-6 would be an easy win for anyone who can generate all of
+their summer on-peak electricity, or especially all of their summer on-peak
+and summer partial-peak electricity. (You can compare the exact prices in the
+E-1 and E-6 billing schedules, but the E-6 off-peak rates and winter part-peak
+rates are lower than E-1 rates; E-6 summer part-peak rates are a little higher
+than E-1 rates; E-6 summer on-peak rates are a lot higher than E-1 rates.)</p>
+
+<p>I also remember being told that PG&amp;E will let you switch from E-1 to E-6 and
+then at the end of the first year, if you didn&rsquo;t save money, you can take a
+mulligan and retroactively undo the switch and pay the E-1 rate. I can&rsquo;t find
+confirmation of that on PG&amp;E&rsquo;s website today, though.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>You may notice that my earlier article lists our usage charge for the year as $60.22 and here it&rsquo;s $64.54; the difference is that $60.22 is PG&amp;E&rsquo;s number and $64.54 is my calculation for what it should be (and I had to fudge the numbers for October 2011 where PG&amp;E switched me from the old plan to NEM midway through the billing cycle, plus we may round differently, plus there may be other errors in my calculations). This seemed close enough to go through the rest of the exercise, and the technique used to calculate this number is the same one I&rsquo;ll use for the E-1 number, so this seemed like the one to use for this comparison.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>E-6 is always a win in the winter, because there&rsquo;s no winter peak zone; winter part-peak and winter off-peak are both cheaper than the E-1 rate. And between the solar array and our usage patterns, the vast majority of our PG&amp;E usage was in the off-peak time anyway.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>Between the solar array and our usage patterns, we ran a surplus in summer on-peak and summer part-peak for nearly the entire summer, and had to buy summer electricity only off-peak. This is exactly the behavior that E-6 is designed to encourage, and it rewarded us correspondingly.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>So if you want a true zero bill from E-6, you need to generate enough of a surplus that it would counterbalance this $92/year &ldquo;meter charge&rdquo;. That would take 495 KWh of summer on-peak surplus or 1028 KWh of summer part-peak surplus, paid out at the &ldquo;generation&rdquo; rate due to the NSC rules.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/11/09/one-year-of-solar-power/">One Year of Solar Power</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-09T00:00:00-08:00" pubdate data-updated="true">Nov 9<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/11/09/one-year-of-solar-power/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>When I got solar panels installed on the roof of our house last fall, friends
+immediately started asking how well they were working out, and my answer had
+to be that while they&rsquo;re <a href="https://enlighten.enphaseenergy.com/public/systems/g8ah32261">generating a nice amount of power</a>, I wouldn&rsquo;t know how well they were doing on the actual goal of zeroing our
+electric bill until a year had passed. That year has now passed, and it&rsquo;s time to answer the question.</p>
+
+<p>If you add solar power to your grid energy, at least the way it&rsquo;s done in
+California, two things will happen:</p>
+
+<ol>
+<li> Your electric bills will be lower, but</li>
+<li> You won&rsquo;t understand them.</li>
+</ol>
+
+
+<h2>The problem:</h2>
+
+<p>California electric rates are confusing because they&rsquo;re complicated and
+variable. You pay a different rate depending on how much you use (tiering)<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>.
+You can opt into time-of-use (TOU) billing<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>, which makes electricity more
+expensive at peak times and cheaper the rest of the time to encourage you to
+shift usage away from peak times. The normal residential billing schedule is
+called <a href="http://www.pge.com/tariffs/tm2/pdf/ELEC_SCHEDS_E-1.pdf">E-1 (&ldquo;residential services&rdquo;)</a> and shows
+5 different rates according to tier; the TOU residential schedule is called
+<a href="http://www.pge.com/tariffs/tm2/pdf/ELEC_SCHEDS_E-6.pdf">E-6 (&ldquo;residential time-of-use service&rdquo;)</a> and shows
+25 different rates according to tier and time.</p>
+
+<p>Once you introduce solar (or other generation capabilities) into the mix,
+there&rsquo;s another wrinkle. Assuming you stay connected to the grid, PG&amp;E will
+convert your billing to what they call <a href="http://www.pge.com/standardnem/">NEM</a>
+(Net Energy Metering), which means your electric meter will measure the flow
+of power in both directions — from the grid into your house when you&rsquo;re using
+more than you&rsquo;re generating, and from your house back to the grid when you&rsquo;re
+generating more than you&rsquo;re using. But solar panel output varies by season and
+with weather, in addition to the obvious day/night cycle. To account for this
+seasonal variation, PG&amp;E bills NEM customers on a yearly cycle called the
+<a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/">true-up period</a>.
+Your monthly bills are only an approximation, and at the end of the year they
+calculate the actual balance owed compared to what you already paid, and have
+you &ldquo;true up&rdquo; to that amount, hence the name.</p>
+
+<p>For NEM customers, that&rsquo;s 3 different axes of variation<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>: tiered rates based
+on total consumption, variable rates due to time-of-use, and true-up billing
+to account for seasonal variation of generated output.</p>
+
+<h2>Before adding solar generation</h2>
+
+<p>You have to calculate how much electricity you want to generate to produce the
+desired effect (economically or ecologically or both<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>), and then you need to
+calculate the size of a PV solar array that will produce that effect.</p>
+
+<p>Both of these calculations actually turn out to involve a fair amount of
+prediction. Companies that specialize in solar installations (for example,
+<a href="http://www.luminalt.com/meet-luminalt/about-us">Luminalt</a>, who installed
+ours) can help you with these predictions and calculations.</p>
+
+<p>But even after you&rsquo;ve done the calculations, decided to go solar, and had the
+array installed and it&rsquo;s live, you still won&rsquo;t know if you were right, at
+least for a while. That&rsquo;s what this post is about. I wanted to know if we&rsquo;d
+predicted correctly, and I also wanted to know if PG&amp;E&rsquo;s billing methods
+fairly account for the seasonal variation. (If I have a large surplus in
+summer on-peak in July, and a big deficit in winter off-peak in January, do
+these cancel out, and how?)</p>
+
+<h2>After adding solar generation</h2>
+
+<p>I said that after activating a solar array and switching over to PG&amp;E&rsquo;s NEM
+program, you&rsquo;ll get lower bills that you won&rsquo;t understand. Here&rsquo;s what I mean.
+Each month with my electric bill<sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup>, I get a separate &ldquo;Net energy metering
+electric statement&rdquo;. It includes three amounts:</p>
+
+<ol>
+<li> &ldquo;total current month&rsquo;s billed amount&rdquo;, which is always in the neighborhood of $12.</li>
+<li> &ldquo;current month energy charge or credit&rdquo;, which is the actual charge for electricity I used, or credit for electricity I produced, after accounting for tiered TOU rates.</li>
+<li> &ldquo;cumulative energy charges or credits for the current true-up period&rdquo;, which is the sum of the #2 values.</li>
+</ol>
+
+
+<p>This is hard to interpret month by month, partly because there&rsquo;s no
+relationship between what I&rsquo;m asked to pay (#1) and what I used (#2), and #3
+will swing wildly one direction<sup id="fnref:6"><a href="#fn:6" rel="footnote">6</a></sup> and then correct over the course of the year.
+All of this evens out at the end of the year, which is the reason for the
+1-year true-up method of billing.</p>
+
+<p>But when the 1-year anniversary arrives, and with it the final true-up
+payment, there&rsquo;s a new confusing quantity: &ldquo;total current month&rsquo;s billed
+amount&rdquo; is replaced with &ldquo;total true-up billed amount&rdquo;. This amount, which is
+your actual bill for the 12th month, is not the usual $12, bears no obvious
+relationship to the cumulative energy charge, and isn&rsquo;t explained or derived
+by PG&amp;E on the bill or elsewhere that I could find<sup id="fnref:7"><a href="#fn:7" rel="footnote">7</a></sup>. (In my case: my
+cumulative energy charge after 12 months was $60.22, and the &ldquo;total true-up
+billed amount&rdquo; was $22.02.) Why?</p>
+
+<p>There&rsquo;s a method to their madness, but I had to dig deep into PG&amp;E&rsquo;s rate
+documentation and then spend a few hours messing with a spreadsheet to try to
+derive the calculations that would map my usage to my bills.</p>
+
+<h2>Understanding true-up billing</h2>
+
+<p>First, the monthly bill. Where does this $12 come from? It turns out PG&amp;E
+charges E-6 (TOU) customers a &ldquo;meter charge&rdquo; of approximately $0.25 per day.
+E6 and E-1 both also have a &ldquo;minimum charge&rdquo; of approximately $0.15 per day;
+they don&rsquo;t explain what this means, but if my reverse engineering of my bills
+is correct, for NEM customers it&rsquo;s essentially a placeholder for your usage
+before they know what your usage is. These fees added together and multiplied
+by the number of days in a billing cycle yield the approximately $12 amount
+that I was billed for each month (billing cycles ranged from 28 to 32 days, so
+the monthly bill ranged from $11.22 to $12.83, with the most common bill being
+$12.02 for a 30-day billing cycle).</p>
+
+<p>Second, the usage charges. These are not simple (since they involve both the
+tiering and TOU calculations), but they are actually decently explained on the
+monthly NEM statement itself, and with one nitpicky exception<sup id="fnref:8"><a href="#fn:8" rel="footnote">8</a></sup>, they&rsquo;re the
+same as what you had before you added NEM, and the true-up calculation doesn&rsquo;t
+affect them.</p>
+
+<p>Third, the cumulative usage charge. This one is completely straightforward:
+add the usage charges for the current true-up period, to date. Each NEM
+statement shows the current cumulative charge (this amount) and the amount by
+which it changed (the month&rsquo;s usage charge), and you can verify that the
+current cumulative balance is equal to the previous month&rsquo;s balance plus/minus
+the current month&rsquo;s usage charge/credit. However, as mentioned above, this
+amount will swing one direction and then correct due to seasonal variation,</p>
+
+<p>Fourth, the true-up amount. This is a simple calculation if you know where it
+comes from, but PG&amp;E doesn&rsquo;t explain it, so I had to reverse engineer it,
+learning to understand the daily meter and minimum charges. What it boils down
+to is that the $0.15 &ldquo;minimum charge&rdquo; is not a real charge once the true-up
+period is over, but a provisional placeholder: you pay this with each month&rsquo;s
+$12 bill, but at the end of the year, when your real usage is known, you get
+back the provisional amount and pay the real amount. At the end of the year,
+you take your usage charge/credit, and add the meter charge ($0.25 per day or
+about $7.50 per monthly bill or $92.33 in a full year<sup id="fnref:9"><a href="#fn:9" rel="footnote">9</a></sup>), and that&rsquo;s what you
+owe for the year. Except you&rsquo;ve already paid that meter charge, plus you&rsquo;ve
+paid the &ldquo;minimum&rdquo; usage charge as a provisional placeholder. So subtract the
+provisional usage charge ($0.15 per day or about $4.50 per monthly bill or
+$53.96 in a full year), and you have the amount that&rsquo;s unpaid, that you must
+still pay in order to True Up. So, your first 11 bills are for 30-ish days of
+meter charges and minimum charges, totaling about $12; your 12th bill is for
+30-ish days of meter charges, minus 335-ish days of minimum charges, plus your
+cumulative usage charge for the whole year. In my case, actual usage at the
+end of the year was $60.22, of which $46.27 had already been paid monthly as
+that &ldquo;minimum&rdquo; charge, so what I&rsquo;d call the actual true-up component was
+$13.95; add in $8.07 in meter fees (32 days at $0.25/day) for the final
+billing period and we have what PG&amp;E calls my true-up bill of $22.02.</p>
+
+<h2>Cancelation across TOU periods</h2>
+
+<p>I was curious whether a surplus in one TOU period (for example, summer on-
+peak, which is likely the best case for residential solar customers) can
+partially or wholly cancel a deficit in another TOU period (for example,
+winter off-peak, which is pretty much entirely dark, and thus worst-case for
+solar customers). As it turns out, PG&amp;E doesn&rsquo;t directly add and subtract
+usage across TOU periods; they convert usage to a dollar amount every month
+(based on TOU periods and tiering), then add and subtract the monthly dollar
+amounts. This is a clever way of accounting, since it&rsquo;s pretty easy to
+understand, and does a pretty fair job of reconciling the amounts from
+different TOU periods. (In fact, it works out pretty well for residential
+solar customers, since your summer on-peak surplus is credited at a higher
+rate than that winter off-peak deficit.) My only complaint here is again that
+the tiering calculations are done per month and only affect you on the
+downside.</p>
+
+<h2>Raw facts</h2>
+
+<p>Here are the actual numbers from my house over the last year, which may be
+helpful in understanding the derivations here, making the descriptions more
+concrete, and/or planning your own PV solar system.</p>
+
+<ul>
+<li>Generated by solar: 7195 KWh</li>
+<li>Bought from PG&amp;E: 1601 KWh</li>
+<li>Total consumed: 8796 KWh</li>
+<li>Months with positive grid usage, resulting in PGE charge: 6 (Oct-Mar)</li>
+<li>Months with negative grid usage, resulting in PG&amp;E credit: 6 (Apr-Sept)</li>
+<li>Whole-year usage charge: $60.22</li>
+<li>Value of electricity consumed if I had to buy it all from PG&amp;E: $2052.34 (assuming E-1 and not E-6 billing, since I don&rsquo;t have the generated KWh broken out by TOU period)</li>
+<li>Prior-year electric bill: $1403.77</li>
+<li>Granular usage (from PG&amp;E&rsquo;s point of view), broken down by month and TOU billing period:</li>
+</ul>
+
+
+<h2>Sum-up</h2>
+
+<p>The true-up billing method mostly but not entirely allows you to smooth out
+the seasonal variation, canceling bad performance one month against good
+performance in another month.</p>
+
+<p>You can understand your monthly bills if you think of them like this: $12 a
+month, $7.50 of which is just for the privilege of being connected to the
+grid, and $4.50 of which is a deposit against your actual usage. Meanwhile,
+the actual usage bill accrues in the background, and at the end of the year,
+you pay this balance minus a $49.50 refund for those eleven $4.50 deposits.</p>
+
+<p>Due to the low NCS reimbursement it still seems to me that the optimal array
+size is what brings you very close to even for the year, offsetting your usage
+without generating much of a surplus. However, due to the way usage tiers are
+finalized each month instead of across the true-up period, sizing your array
+slightly larger than this may pay off by reducing higher-tier winter bills,
+even though the net surplus KWh aren&rsquo;t themselves valuable in the NCS
+calculation.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>The baseline usage, which determines the details of the tiering calculation, further varies by where you live in California and whether your home has a gas or electric primary heat source.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>You can opt into TOU billing regardless of whether you have solar or other generation facilities, but in general, it makes a lot of sense if you have generation capabilities and less sense if you don&rsquo;t, plus most people not planning on adding solar won&rsquo;t have the TOU option waved in their face and probably don&rsquo;t even know about it. I don&rsquo;t know the exact numbers, but I presume most NEM customers opt for TOU billing, and most grid-only customers do not.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>There&rsquo;s another confusing way they split things up, but I&rsquo;m not denoting it as an axis because it&rsquo;s not orthogonal to the others. PG&amp;E separates the rate into separate quantities for &ldquo;generation&rdquo;, &ldquo;transmission&rdquo;, &ldquo;distribution&rdquo;, and &ldquo;the funding of public purpose programs&rdquo;. We&rsquo;ll come back to the reason for this bookkeeping sleight-of-hand later; it doesn&rsquo;t really matter unless you generate a surplus, but if you do, look for this to raise its head in the Net Surplus Compensation calculation.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>If you believe solar power is cleaner than grid power, the ecologically optimal size for your home array is &ldquo;as large as possible&rdquo;, though of course there&rsquo;s some ecological cost to PV panel manufacturing too. But if you&rsquo;re trying to make your solar array economically viable, you&rsquo;ll want to compare actual costs and benefits; the costs depend on the cost and output of the array and how long you plan to keep it and whether you buy or lease and the details of the financing, all things you can find <a href="http://www.gosolarnow.com/NetMetering.html">companies or calculators</a> to help with. The benefits depend on what you&rsquo;re actually paying for grid electricity, which follows the complicated calculations already described. If you&rsquo;re a light user paying baseline $0.12/KWh rates, you&rsquo;ll save less than a heavy user paying 4th-tier $0.34/KWh rates. While the specifics vary, it&rsquo;s probably easy to generate solar power for less than $0.34/KWh and somewhat hard to generate solar power for less than $0.12/KWh. What this means is most solar customers try to offset most but not all of their own usage, to get back down in the baseline tier. It&rsquo;s often not cost-effective to compete with PG&amp;E&rsquo;s baseline rates. It&rsquo;s especially cost-ineffective to operate at a net surplus, because of the way PG&amp;E values the surplus: read their <a href="http://www.pge.com/myhome/saveenergymoney/solarenergy/afterinstalling/ab920/">Net Surplus Compensation</a> rules, paying special attention to the last section, &ldquo;Why is NSC less than the credit on my NEM statement?&rdquo;. In short, PG&amp;E splits the &ldquo;retail&rdquo; rates that you&rsquo;re used to seeing into separate components for generation, transmission, distribution, and the funding of public programs like nuclear plant decommissioning; your NEM credits come back at the retail rate until you hit break-even; however if you operate at a surplus, PG&amp;E pays only a &ldquo;wholesale-type rate for generation&rdquo;. You can see the actual breakdown on the E-1 or E-6 billing schedules; I don&rsquo;t actually know how to calculate the breakdown for E-6 since your surplus is for the year and it&rsquo;s not clear which TOU rate to apply; in any case generation is less than half of the total.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+<li id="fn:5">
+<p>Actually not <em>with</em> my electric bill, because I&rsquo;ve opted for paperless billing and told PG&amp;E to stop sending me paperless bills, and I can look at the details on the website. But none of the NEM details are available on their website, nor is there an option to go paperless for the NEM data. So what actually happens is the NEM data shows up on paper in my mailbox a few days after I get the bill itself electronically.<a href="#fnref:5" rev="footnote">&#8617;</a></p></li>
+<li id="fn:6">
+<p>Which direction it swings will depend on when your true-up period starts. Mine starts in October and so the first few months are fall and winter, and I accumulated quite a large charge before April when I started getting credits. By the following October, it was nearly back to 0. If your true-up period starts in April, you&rsquo;d presumably see the reverse, amassing a series of credits and a large negative balance over the summer before winter charges start to eat away at the credit balance.<a href="#fnref:6" rev="footnote">&#8617;</a></p></li>
+<li id="fn:7">
+<p>PG&amp;E&rsquo;s explanation of how to read this is split into four pages on their website, for the <a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/">monthly statement</a>, <a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/monthlybill/">monthly bill</a>, <a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/trueupstatement/">true-up-statement</a>, and <a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/trueupstatement/">true-up bill</a>. These pages explain the meaning of each item on the bill, but don&rsquo;t explain how the amounts are calculated, or why you owe what you owe.<a href="#fnref:7" rev="footnote">&#8617;</a></p></li>
+<li id="fn:8">
+<p>The true-up calculation doesn&rsquo;t affect the monthly usage charge calculation, but arguably it should, because the rates depend on tiering, the tiering depends on usage, and usage is supposed to be smoothed over the entire true-up period. But actually, the tiering calculations are done entirely inside each month. What this means is that in the winter when your solar array is underperforming, higher usage might push you into the upper tiers, and you&rsquo;ll pay more for your grid electricity because of this, and no amount of summer credits can offset these higher rates. Again using my first-year numbers as an example, my assigned baseline value for the year sums to 2878 units, and my actual cumulative usage was 1601 KWh. (Or: the average of the monthly baselines was 240, and my average monthly usage was 133.) I&rsquo;d argue that this means I should be paying only first-tier rates. However, because of the seasonal variation expected with solar generation, my usage from PG&amp;E&rsquo;s point of view is skewed heavily toward winter, and in fact I had above-baseline usage in only the 4 shortest months: November through February. Because PG&amp;E applies the baseline-to-tier calculation on each month&rsquo;s usage individually, instead of across the true-up period, I paid substantially more for electricity in those 4 months. In my case, I was charged $60.22 for my electricity usage, but if it had all been at baseline rates, I would have been owed a $5 credit.<a href="#fnref:8" rev="footnote">&#8617;</a></p></li>
+<li id="fn:9">
+<p>I&rsquo;m writing this after my first year of NEM, and the PGE switched me over to NEM billing in the middle of a billing month without changing the billing cycle, so my first month&rsquo;s NEM bill only included 9 days, and so my first true-up period of 12 bills is only 11 1/3 months or 345 days. Presumably, future true-up periods will be a full year.<a href="#fnref:9" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/11/07/one-year-of-cellular-data/">One Year of Cellular Data</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-07T00:00:00-08:00" pubdate data-updated="true">Nov 7<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/11/07/one-year-of-cellular-data/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Here are the stats on my cellular data usage over one year on Sprint&rsquo;s
+network<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. (I got the phone on Halloween of 2011, and took this screenshot on
+Halloween of 2012.)</p>
+
+<p><a href="http://www.flickr.com/photos/67861147@N00/8163380863"><img src="http://farm8.staticflickr.com/7120/8163380863_21996345ca.jpg" alt="1 year of cellular data usage" /></a></p>
+
+<p>7 GB down and 1 GB up; 8 GB total; that averages to 666 MB per month. Clearly
+I&rsquo;m not a heavy cellular data user and not making the most out of Sprint&rsquo;s
+unlimited data allotment; this would fit comfortably within the other
+carriers&#8217; smallest real<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup> data plans (1GB/month).</p>
+
+<p>Speaking of unlimited data plans: this might sound heretical to some, but I
+really wouldn&rsquo;t mind metered data at a fair price. Say a penny a megabyte,
+billing you only for what you use. That comes out to $10 per gigabyte, which
+is actually the marginal rate that AT&amp;T and Verizon are charging now anyway,
+except first they make you pay a minimum $30/month commitment and then they
+round up to the next gigabyte.</p>
+
+<p>Of course, I also wouldn&rsquo;t mind an unlimited plan that was cheap and fast and
+allowed tethering<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>.</p>
+
+<p>In the meantime, here in the US we have Sprint offering unlimited data at a
+price that&rsquo;s fair for heavy users but not especially cheap for light users,
+and their network isn&rsquo;t the fastest and they have surcharge for tethering.
+Then we have AT&amp;T and Verizon saying unlimited plans don&rsquo;t incent them to
+invest in their networks so they&rsquo;ve moved to metered plans; on the plus side
+their networks have gotten markedly faster and they don&rsquo;t charge extra for
+tethering on the metered plans; however their metering methods don&rsquo;t meet my
+definition of fair.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Actually 11 1/2 months on Sprint&rsquo;s network, and 10 days on O2 Ireland and 3 days on Three UK during a trip to Europe. Both of their data networks, but especially Three&rsquo;s, were better than what I&rsquo;m accustomed to in the USA, which is especially infuriating given they&rsquo;re also much cheaper.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>Ignoring AT&amp;T&rsquo;s toy 250 MB/month plan.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>Which actually exists in much of the world, but not in the USA.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/11/06/oauth-and-localization-fixes-for-palm-evernote-importer/">OAuth and Localization Fixes for Palm-Evernote Importer</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-06T00:00:00-08:00" pubdate data-updated="true">Nov 6<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/11/06/oauth-and-localization-fixes-for-palm-evernote-importer/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I’ve updated my <a href="http://www.maddogsw.com/evernote-utilities/evernote-palm-importer/">utility for importing notes from Palm Desktop into Evernote</a> again.</p>
+
+<p>The big change is that it now uses <a href="http://dev.evernote.com/documentation/cloud/chapters/Authentication.php">OAuth for authentication to the Evernote service</a>, instead of asking you for Evernote account credentials directly. This is a step forward in general; utilities like this one shouldn&rsquo;t have unrestricted access to your entire account, nor should they know your actual password in case you use the same password for other services<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. <a href="http://blog.evernote.com/tech/2012/11/01/third-party-authentication-transition-to-oauth-complete/">Evernote has disabled username/password logins for third party apps</a> to force them to use OAuth, a move which I think more services should make<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
+
+<p>I also made some smaller changes to further improve the chance of success for people outside the USA, using nondefault character encoding or locale settings.</p>
+
+<p>Finally, I added the <a href="https://github.com/metamatt/evernote-palmimport">public source repository</a> to my github account. (I&rsquo;ve always made the source codefor the current version available, but now the complete repository with history is public.)</p>
+
+<p>Download here: <a href="http://www.maddogsw.com/evernote-utilities/evernote-palm-importer/">http://www.maddogsw.com/evernote-utilities/evernote-palm-importer/</a>.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Which you shouldn&rsquo;t do, but lots of people do anyway.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>I&rsquo;m looking at you, Google Reader clients.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -309,790 +1138,6 @@ there for long.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/24/playing-by-the-rules/">Playing by the Rules</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-24T00:00:00-07:00" pubdate data-updated="true">Oct 24<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/10/24/playing-by-the-rules/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I read two extensive reviews of Microsoft&rsquo;s new Surface tablets today.</p>
-
-<p><a href="http://arstechnica.com/gadgets/2012/10/microsofts-first-stab-at-a-pc-surface-reviewed/">Peter Bright, writing for Ars Technica</a>:</p>
-
-<blockquote><p>They&rsquo;re covered in polyurethane that should prove hard-wearing and water
-resistant (I was told that they should withstand scouring pads, though I admit
-I&rsquo;m too chicken to try—we had to promise to return our review units unharmed)</p></blockquote>
-
-<p><a href="http://www.wired.com/reviews/2012/10/microsoft-surface/all/">Mathew Honan, writing for Wired</a>:</p>
-
-<blockquote><p>And it’s quite sturdy, to boot. In Microsoft’s lab, we saw Surfaces that had
-been opened and closed hundreds of thousands of times. They still snapped open
-and shut like they were new. We wanted to see how easy it was to break one.
-It’s very possible, but you have to really try. We did manage to break off the
-kickstand by gradually leaning onto it, but I had to put nearly my full weight
-onto the tablet before the kickstand snapped off.</p></blockquote>
-
-<p>and</p>
-
-<blockquote><p>Microsoft showed us a drop test by letting a Surface fall from a chest-high
-height. I duplicated this by literally throwing it at the floor, but to no ill
-effect.</p></blockquote>
-
-<p>All in the name of science, of course. I doubt Bright could have gotten in
-that much trouble for taking a Brillo pad to his Touch Cover. Oh well.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/03/those-ios-6-maps/">Those iOS 6 Maps</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-03T00:00:00-07:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2012</time>
-        
-         | <a href="/blog/2012/10/03/those-ios-6-maps/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>So, it&rsquo;s come to this:</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/8052630604"><img src="http://farm9.staticflickr.com/8031/8052630604_7c3946ed99.jpg" alt="IMG_1136" /></a></p>
-
-<p>I waited a week after iOS 6 was released, asked my Facebook friends what they
-thought of it, and within hours got 6 responses that all said not to upgrade
-if I care about maps. Well, I do care about maps, but how bad can it be? I
-wanted to see for myself, but not shoot myself in the foot on the phone I
-depend on daily, so I upgraded my iPad instead.</p>
-
-<p>Actually, the new 3D view is very cool where the data is good, and here in San
-Francisco the data is good. Zooming around my neighborhood is fun and looks
-great; that&rsquo;s a real win. In fact the maps overall look great, and the zooming
-is much smoother than what we&rsquo;re used to with the Google-powered maps in
-previous versions of iOS. How about the underlying data? Um, not so good.
-Roads are (in my experience) where they belong, but addresses and landmarks
-and businesses are often not. I don&rsquo;t know why anyone is surprised by this;
-it&rsquo;s a very hard problem, and <a href="http://www.theatlantic.com/technology/archive/2012/09/how-google-builds-its-maps-and-what-it-means-for-the-future-of-everything/261913/">Google has worked incredibly hard</a>
-(and thrown a lot of money, human time, and computer time at acquiring and massaging the
-data) to get their maps to the point we all take for granted now. The world is
-very big.</p>
-
-<p>That doesn&rsquo;t mean it&rsquo;s pleasant when I search for an address a mile from where
-I&rsquo;m standing and get a search result for a similarly named street 1000 miles
-away in Texas. That&rsquo;s what happened to me the first time I tried actually
-using Maps for real, i.e. to find something whose location I didn&rsquo;t already
-know. I also tried plugging in a few locations I remember from our trip to
-Ireland, where iOS 5 maps (i.e. Google maps) got us everywhere we needed to
-be, and Apple maps didn&rsquo;t know them; that trip would have been much harder.</p>
-
-<p>But luckily, the built-in Maps app powered by Apple&rsquo;s fledgling data set isn&rsquo;t
-your only choice, and that&rsquo;s what my screen shot above reflects. I tried the
-various alternatives shown here before upgrading, and came to roughly the same
-conclusions as <a href="http://arstechnica.com/apple/2012/10/replacing-ios-6-maps-hands-on-with-mapquest-bing-waze-google-nokia/">this Ars Technica article</a>: Waze is neat for navigation but not a
-replacement map; MapQuest is pretty unpleasant to use; the Google Maps website
-actually works just fine; upon confirming that last, I decided it was fine to
-upgrade.</p>
-
-<p>More surprising to me is that it&rsquo;s Nokia who has the second-best map
-experience — both data quality and interaction design — after Google. (Maybe I
-shouldn&rsquo;t have been surprised. I remember reading about <a href="http://arstechnica.com/gadgets/2011/02/calling-all-cars-measuring-traffic-using-cell-phone-data/">Nokia&rsquo;s Mobile Millenium project</a> and thinking that while their
-approach seemed more like academia than industry and Google is probably
-leaving them in the dust in terms of speed of deploying new features, their
-very thoughtful approach especially with respect to privacy is commendable.
-Clearly, they&rsquo;ve been taking this seriously.) I tried, again, punching in some
-of the hotels we stayed in in Ireland, which Google could locate and Apple
-couldn&rsquo;t, and Nokia found them just fine. That test involves just a few data
-points, but is in keeping with a general reputation that only Google and Nokia
-have decent place data outside the US.</p>
-
-<p>So the obvious conclusion: Apple should just buy Nokia.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/03/nas-brand-loyalty-or-not/">NAS Brand Loyalty (or Not)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-03T00:00:00-07:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2012</time>
-        
-         | <a href="/blog/2012/10/03/nas-brand-loyalty-or-not/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>2006: The first RAID/storage appliance I bought was the original Infrant
-ReadyNAS NV. It was medium-expensive for its time, well-built, and at first I
-liked it a lot. However a few missteps by Infrant (one about spending years
-stonewalling user requests for ssh access while sitting on a MAC-address-based
-backdoor password, one about essentially a product recall of the fan which if
-you read between the lines just meant they&rsquo;d installed it backwards and
-customers who want proper cooling should flip it around but it will get
-louder), one power supply failure, and some mediocre experiences with their
-generally well regarded tech support around buggy CIFS and AFP coexistence,
-then the fact that Infrant sold itself to Netgear (the conventional wisdom on
-which had it that there goes their tech support, although I didn&rsquo;t notice any
-difference, and their jedi council is still at it today), combined with
-extremely middling performance, meant when I needed more space, I went
-elsewhere. (As you&rsquo;ll see, in hindsight this feels misguided; 6 years later
-and the little ReadyNAS NV is still humming along fine, Infrant continues to
-support it with software updates, and it&rsquo;s been far less frustrating and more
-useful than my next couple purchases.)</p>
-
-<p>2008: Elsewhere meant Promise; I bought an NS4300N. It offered a fairly
-similar feature set to the ReadyNAS, but was half the price and slightly
-faster. It was also of notably lower build quality, a lot more rickety and a
-lot louder. Over time the firmware situation got sketchier; the product
-stopped evolving; I moved it to a friend&rsquo;s house to use as offsite backup,
-then slowly stopped using it; now it&rsquo;s gathering dust.</p>
-
-<p>2010: Soured on the consumer-priced NAS market mostly due to poor performance
-(Infrant and Promise had both claimed speeds of around 30MB/second but that
-seems to involve way too many arcane dances and incantations involving jumbo
-frames and disabling journaling and other bad ideas, even for me; configured
-sanely, I see a reliable 10MB/second from the ReadyNAS, which is overkill for
-music storage and backup and frustrating for anything else, so guess what? I
-use it for music storage and backup), and still dreaming of fast centralized
-storage for photos and videos and home directories and data I care about, I
-tried a DAS solution next. The Promise DS4600, cabled via Firewire 800 to a
-Mac Mini which is on all the time anyways. (The decision calculus that lead to
-my original NAS purchase in 2006 involved servers that drew 100+ watts and
-marketing claims that the consumer NAS units performed fine and had reasonable
-AFP implementations; here in 2010 I was betting that I&rsquo;d get better
-performance and correctness from the real Apple AFP server on a real (Intel
-Core 2 Duo) CPU and now that only draws 10 watts.) In retrospect, this was the
-worst of the bunch. On a good day it reads and writes at 50MB/sec, but on the
-much more common bad day it reads and writes at less than 1 MB/sec; as
-originally shipped it would somehow cause the host computer to slow to a crawl
-and need rebooting every few days, spending all its time in unbillable kernel
-space (how a Firewire device accomplishes this, I have no idea); a firmware
-update eventually fixed that, but to this day years later, performance is
-unpredictable and generally slow, especially for small random writes, and if I
-reboot the host computer, the DS4600 array won&rsquo;t be visible until several
-minutes after boot. Also twice the array thought there was no volume
-configured (and it came back up reboot, but that&rsquo;s still pretty scary, and
-meant I had to stop using this for anything important).</p>
-
-<p>Oh, and the configuration app for Mac OS that ships with the DS4600 creates
-1024 threads (for what unholy purpose, I have no idea) and causes 16 identical
-copies of the mouse cursor to appear onscreen, offset vertically by 64 pixels.
-Keep in mind that while I didn&rsquo;t buy this from Apple, this is a product that
-Apple actually stocked and sold specifically for use with Macs, so I shouldn&rsquo;t
-have been that far off the beaten path here. (This is tied with another
-Promise software disaster inflicted on me a few years ago for reasons not to
-keep buying their products. Their hardware seems to perform well for a low
-price, but riddled with software/firmware bugs as it is, no more for me. The
-other case I speak of: I bought a low-end 2-port SATA RAID controller for a
-Windows PC in 2006. All configuration for this PCI card was carried out by a
-Java app with an in-browser interface, meaning you need a Java VM and a web
-browser to twiddle a few hardware registers on a PCI card. Also, the installer
-failed to create any front door to invoke the web browser, so I had to run
-tcpview to figure out what port it was listening on to invoke it. All this for
-something I only had to use once, for one-shot configuration. The RAID
-controller worked fine for years, but what a horrible out-of-box experience.
-The resulting web UI for the PCI card and the standalone NS4300 RAID appliance
-was almost identical, I can almost cross my eyes far enough to envision a
-world where it made sense to do write-once-limp-anywhere for the configuration
-UI, but not quite, and in no case does that excuse making me run tcpview to
-figure out where to point the browser. Though to bring this full circle, this
-division of labor between the embedded software development and real-OS
-software development, or lack thereof, probably explains the 1024 threads the
-&ldquo;SmartNAVI&rdquo; app creates, somehow.)</p>
-
-<p>2012: Thoroughly frustrated with the DS4600 and its foibles, lack of
-reliability, and unpredictable speed. And we&rsquo;re shooting lots of video of
-Dominic, so I need somewhere big and fast to store video files. DAS no longer
-sounds like a good idea, largely because how am I going to connect it? My
-current home server, the Mac Mini, has only USB2 and Firewire 800 and those
-are no longer considered fast. Apple continues to willfully ignore eSATA;
-their anointed storage bus is Thunderbolt which is (still) a tiny expensive
-low-volume ecosystem which tends to point back to Promise, and which is not
-available on any of my current machines anyway; USB3 is starting to creep into
-their machines but as of October 2012 is still inexplicably only available on
-portables; there&rsquo;s just no DAS array that I could plausibly connect to my
-current server and a future server and expect good performance. Now you&rsquo;re
-probably wondering why I&rsquo;m talking about Apple hardware anyway; clearly they
-have no desire to let us do external storage anywhere near the price-
-performance of the PC world; I should just build my own box and run Linux or
-Nexenta and soak in the ZFS goodness and… no thanks. I&rsquo;m crazy enough to
-<a href="http://blog.metamatt.com/blog/2012/03/19/custom-built-linux-router-no-thanks-to-realtek/">build my own networking hardware</a>, but don&rsquo;t want to deal with storage hardware.</p>
-
-<p>So…. back to NAS? The last day the DS4600 thoroughly irked me, a few hours
-later Ars Technica ran <a href="http://arstechnica.com/gadgets/2012/09/synology-ds-412-is-fast-fun-and-flexible/">this gushing review of the Synology DS-412+</a>. Sounds good to me. I ordered one (actually the 5-bay DS-1512+,
-which cost hardly any more) and am setting it up now. Wish me luck. In first
-impressions, the hardware is well built, it runs quieter than either the
-ReadyNAS NV or the DS4600 that it&rsquo;s meant to replace, and I like that they
-gave some thought to fan replacement and memory upgrades. The browser UI is a
-little too flashy for its own good, but is impressive in its own way. I
-haven&rsquo;t done any real performance testing yet. Wish me luck.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/03/airlines-are-getting-worse/">Airlines Are Getting Worse</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-03T00:00:00-07:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2012</time>
-        
-         | <a href="/blog/2012/10/03/airlines-are-getting-worse/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Yeah I know, this is already well known and I&rsquo;m just piling on and
-complaining. Still, it&rsquo;s annoying and worth noting. Airlines keep adding
-arbitrary fees and reducing service quality. Boo. This is worse for us because
-now we&rsquo;re flying with Dominic as a lap infant and the airlines are especially
-poorly optimized for this, at really every level. You can&rsquo;t buy tickets the
-easy way, you can&rsquo;t check in the easy way, and everything gets harder.</p>
-
-<p>A few recent experiences that sucked:</p>
-
-<p>Southwest: they don&rsquo;t charge for a lap infant and are generally friendly,
-which is why we keep flying them. But if you have a lap infant, there&rsquo;s no way
-to add him to the reservation, but you do need to get a boarding pass, which
-can only be done at the full-service checkin line, which is the longest and
-slowest one. They&rsquo;ve increasingly incented people to check in online and
-either skip the front-of-airport counter if not checking luggage, or use the
-faster &ldquo;bag drop only&rdquo; counter if checking luggage, and only people who never
-travel and don&rsquo;t realize any of this, or people with unticketed infants, end
-up in the longest slowest understaffed full-service checkin line that the rest
-of their policies are actively trying to drive us away from. Then, we need to
-gate check Dominic&rsquo;s car seat, which can only be done at the gate counter. So
-every flight involves visiting both the front checkin counter and the gate
-checkin counter. This doesn&rsquo;t waste just our time, but also that of the
-Southwest employees and everyone behind us in line, and really nobody
-benefits.</p>
-
-<p>Aer Lingus: on our trip to Ireland, we booked our international travel from
-the US into Dublin and back from London, and left undecided how and when we&rsquo;d
-get from Ireland back to London. We eventually booked an Aer Lingus flight
-from Waterford to London, which was easy enough (and even let us book a ticket
-for Dominic with no hassle which was a pleasant surprise), but booking this
-ticket on aerlingus.com also had an unpleasant surprise: they quoted the price
-in euros right up till the final &ldquo;buy&rdquo; button, when they converted it to
-dollars, at a rate about 8% worse than the going exchange rate. No way to opt
-out of this. I&rsquo;d have been happy if they charged me in dollars at the current
-exchange rate, and I would have been fine if they&rsquo;d charged me in euros and I
-paid the credit card company their foreign transaction fee (around 3%), and I
-would have been fine if they&rsquo;d charged me in dollars at the current exchange
-rate and added a 3% currency conversion surcharge. But silently pretending the
-exchange rate was significantly worse than it is: that&rsquo;s just shady.</p>
-
-<p>United: trying to get to Mexico in December for a friend&rsquo;s wedding, Kayak
-quoted us $830 roundtrip for 2 adult tickets on United, and there&rsquo;s no way to
-add a lap infant through Kayak. I tried searching for the same flights on
-United&rsquo;s website, where we could add a lap infant, and it came to $915, the
-extra $85 breaking down as $30 for the infant seat (fine) and another $55 in
-US taxes (not fine, because they&rsquo;re repeats of taxes already built into our
-fare, and basically charging the same amount of tax for Dominic as for me and
-Vanessa put together). I don&rsquo;t know where the tax money is going or whose
-fault this is, but it sure doesn&rsquo;t seem right. So I called United to ask
-whether I should add Dominic to the reservation up front and pay those taxes
-or book without him and add him to the reservation after the fact, and they
-couldn&rsquo;t answer the tax question but said the website won&rsquo;t let me book a lap
-infant and I should definitely book without him then call back to add him.
-Even though that didn&rsquo;t seem true, I was hoping the taxes would resolve
-themselves more sanely that way, so that&rsquo;s what I did. Imagine my annoyance
-when I call back to add Dominic to our reservation and am told they will
-charge me $30 for his ticket, $55 in taxes which they can&rsquo;t explain but they
-are what they are, and $25 in reservation fees for not booking online, which
-they now charge even for transactions which the website can&rsquo;t do. (And while
-the website seemed willing to book the lap infant as part of the reservation,
-both customer service agents I talked to told me they don&rsquo;t think it works,
-and that even if it doesn&rsquo;t work, that isn&rsquo;t cause to waive the $25 fee.)
-Fail.</p>
-
-<p>On a less whiny and more humorous note, I&rsquo;ll leave you with
-<a href="http://thoughtcatalog.com/2012/a-satire-about-the-hell-that-is-taking-a%0A-commercial-flight/">this</a>. C&#8217;mon, airlines, we just want to pay a fair price for a
-fair service, no tricks or traps.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/09/14/step-2-is-the-hard-part-indeed/">Step 2 Is the Hard Part, Indeed</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-09-14T00:00:00-07:00" pubdate data-updated="true">Sep 14<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/09/14/step-2-is-the-hard-part-indeed/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>MG Siegler, <a href="http://techcrunch.com/2012/09/13/the-iphone-5-event/">Apple’s Magic Is In The Turn, Not The Prestige</a>:</p>
-
-<blockquote><p>So while some may find Apple’s trick old hat now, no one else has figured
-out how to pull it off — except for the company doing a mediocre copy of the
-trick. I’d argue it’s because everyone is focusing on The Pledge and The
-Prestige, but Apple is the only one focusing on The Turn.</p></blockquote>
-
-<p>Also, I&rsquo;ve been meaning to see that movie.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/08/22/mac-os-hidpi-settings-and-tvs-as-retina-displays/">Mac OS &#8220;HiDPI&#8221; Settings and TVs as &#8220;Retina&#8221; Displays</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-22T00:00:00-07:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2012</time>
-        
-         | <a href="/blog/2012/08/22/mac-os-hidpi-settings-and-tvs-as-retina-displays/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Apple has been dabbling with <a href="http://en.wikipedia.org/wiki/Resolution_independence">resolution independence</a>
-in Mac OS since 2005; in 2011 they shipped double-resolution &ldquo;Retina&rdquo; displays in iPhone
-and iPad, and in that year&rsquo;s Mac OS release (10.7 &ldquo;Lion&rdquo;), renamed the
-tentative resolution-independence support &ldquo;HiDPI&rdquo; and capped it to a 2x
-scaling factor, hinting strongly at the future release of Retina Macs. In
-2012, they released the Retina MacBook Pro and soon thereafter, Mac OS 10.8
-&ldquo;Mountain Lion&rdquo;, bringing the HiDPI modes out from behind the developer tools
-and debug flags.</p>
-
-<p>My question was whether Apple would ever make Mac OS usable for media-watching
-purposes, connected to an HDTV, aka an
-<a href="http://en.wikipedia.org/wiki/Home_theater_PC">HTPC</a>. Connected to our living
-room 1080P LCD TV, we have an Apple TV, an Xbox 360, and a Mac Mini; the Mac
-is there as an HTPC basically to handle whatever the dedicated media devices
-can&rsquo;t; the list of things the ATV and Xbox can&rsquo;t handle has been shrinking
-over time, but still. The pain point in this arrangement has been that if I
-set the Mac Mini to full 1080P output, text onscreen is too small to read. If
-I set it to 720P, text is borderline readable but still on the small side, and
-images are scaled by 1.5X in the TV, so there&rsquo;s some loss of picture quality
-once we get into a movie.</p>
-
-<p>This scenario seems a pretty good match for the HiDPI modes — specifically
-960x540 HiDPI, meaning text and UI elements are rendered for a virtual 960x540
-resolution but the display itself is running at its native 1080P (1920x1080,
-exactly double the virtual resolution in each direction) and images get to
-address every pixel. (It seems faintly ridiculous to me that Mac OS had to
-wait until 2012 to offer any kind of control over the size of UI elements, and
-that after waiting until 2012 it arrives in such limited form; Microsoft
-Windows has offered control over UI element text size since forever; in
-practice apps with custom skins would often misrender some controls if you
-used custom text sizes, and I suppose Apple was trying to limit exposure to
-that problem by exposing such a little and late form of resolution
-independence. Did it work? Read on….)</p>
-
-<p>Note that by Apple&rsquo;s definition, a 32&#8221; 1080P display from a distance of 8
-feet, across our living room, very much qualifies as a &ldquo;Retina&rdquo; display. You
-can&rsquo;t see individual pixels, and both text and images ought to look pretty
-darn great.</p>
-
-<p>In my experience with the &ldquo;960x640 (HiDPI)&rdquo; mode in both Mac OS 10.7 and 10.8,
-by forcing the 2X scaling factor and automatically pixel-doubling unaware
-apps, Apple has successfully avoided the problem with both Windows&#8217; themed UI
-font sizes and Mac OS 10.4-10.6 scaling factors where some UI elements would
-be clipped to the wrong size. On the other hand, by giving me 960x540 as the
-only resolution that both addresses every physical pixel and has readably
-larger text, they&rsquo;ve introduced a new problem: nobody cares about making apps
-actually fit on screen sizes this small. (Typically, the archaic and once-
-grand XGA, 1024x768, resolution is taken as the smallest possible, and indeed
-Mac OS warns you if you select a resolution smaller than that in either
-direction that apps may not fit.)</p>
-
-<p>The problem starts with Apple&rsquo;s own apps; here&rsquo;s Software Update (from 10.7)
-on the 960x540 screen. (A couple notes here. First, the sad thing is this app
-is not design-intensive and does not require any special UI elements; the
-window itself and the individual panes are resizable; there&rsquo;s no reason it
-couldn&rsquo;t run perfectly well at 960x540. Second, in 10.8 this app has been
-replaced with the Mac App Store app, which does a better, but still not good,
-job of fitting at 960x540.)</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/7839608446"><img src="http://farm9.staticflickr.com/8426/7839608446_2a59f28012.jpg" alt="Screen Shot 2012-04-05 at 6.58.22 PM" /></a></p>
-
-<p>Note that the initial window size (above) doesn&rsquo;t even try to use all the
-available screen height; note also that enlarging it (below) helps not at all
-with the real problem.</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/7839608226"><img src="http://farm8.staticflickr.com/7258/7839608226_95d17378a9.jpg" alt="Screen Shot 2012-04-05 at 6.58.45 PM" /></a></p>
-
-<p>Hoping that 10.8 (the first OS X release conceived and shipped for Retina
-Macs) might fix this oversight, I upgraded the OS on this machine. The initial
-results are not pretty. The first thing you see when launching the Mountain
-Lion installer:</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/7839606716"><img src="http://farm8.staticflickr.com/7267/7839606716_ea7f39b90d.jpg" alt="Screen Shot 2012-08-20 at 12.58.33 PM" /></a></p>
-
-<p>Such crisply rendered text! (Click through for a high-res version.) Nice large
-cougar image! Such beautiful use of whitespace! But… where&rsquo;s that promised
-Continue button?</p>
-
-<p>(I cheated, changed display resolution to reveal the Continue button, pressed
-it, then changed resolution back to 960x540 for the next screenshot.) Again,
-the same problem.</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/7839607938"><img src="http://farm9.staticflickr.com/8294/7839607938_e66ef0823c.jpg" alt="Screen Shot 2012-08-20 at 1.04.53 PM" /></a></p>
-
-<p>OK, you say, but those images are still from OS X 10.7. It&rsquo;s an app designed
-for and as part of 10.8, to be sure, but maybe 10.8 itself will be better?
-Reboot into the new OS install, and:</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/7839606564"><img src="http://farm8.staticflickr.com/7117/7839606564_852af9b7d8.jpg" alt="Screen Shot 2012-08-21 at 9.48.12 PM" /></a></p>
-
-<p>Rats. Foiled again. At least the clickable buttons are onscreen, but the
-screen was obviously cropped, and not intentionally.</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/7839606366"><img src="http://farm8.staticflickr.com/7265/7839606366_167da70f92.jpg" alt="Screen Shot 2012-08-21 at 9.48.40 PM" /></a></p>
-
-<p>No, Apple, thank <em>you</em>. (And a special extra thanks for not starting the
-screen sharing daemon until after I click these two right arrows from the
-local display, preventing people from upgrading their Mac OS installs
-remotely. You can do the rest over screen sharing / remote desktop, but you
-need a local display and mouse to get past these two screens.)</p>
-
-<p>The real problem here isn&rsquo;t that TV-as-Retina-display-with-HiDPI couldn&rsquo;t
-work, it&rsquo;s that apparently nobody cares. Nobody cares about screens smaller
-than 1024x768 because nobody&rsquo;s shipping those any more; nobody cares about
-making 960x540 work as a special case for TV use, because you&rsquo;re just supposed
-to buy an Apple TV instead of hooking a Mac up to your TV, I guess.</p>
-
-<p>So close, but yet so far.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/08/22/diesel-vs-gasoline-fuel-mileage-redux/">Diesel vs Gasoline Fuel Mileage, Redux</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-22T00:00:00-07:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2012</time>
-        
-         | <a href="/blog/2012/08/22/diesel-vs-gasoline-fuel-mileage-redux/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Since Vanessa and I have fairly similar cars, one gasoline and one diesel, I
-found it instructive to compare their observed fuel efficiency now that we’ve
-put a few thousand miles on each.</p>
-
-<p>One is a 2012 Audi A4 wagon (4-cylinder 2.0 liter turbocharged gasoline
-engine). The other is a 2011 VW Golf TDI (4-cylinder 2.0 liter turbocharged
-diesel engine).</p>
-
-<p>For both of these, I’ll list real-world numbers for the speeds I actually
-drive, averaged across a bunch of real driving. (I wish it were easy to get
-numbers like these before buying; the EPA test circuit isn’t all that
-reflective of our real world driving). I’ll list the fuel mileage for 3 cases
-which I find instructive:</p>
-
-<ul>
-<li>best-case I’ve seen (long-distance highway driving)</li>
-<li>a typical commute from San Francisco to Palo Alto (37 miles, mostly highway)</li>
-<li>the average over the entire time we’ve had the car (a mix of city driving, medium-distance commuting, and longer road trips).</li>
-</ul>
-
-
-<p>One thing I already knew: the diesel engine is more efficient than the
-gasoline engine. Another thing I already knew: highway mileage is better than
-city mileage (excluding hybrids with regenerative braking, which these cars
-are not). And one thing I didn’t know, but learned from reading the Audi
-owner’s manual and confirmed by real experience: short trips get worse mileage
-than long trips, because mileage is worse before the catalytic converter warms
-up.</p>
-
-<p>On to the numbers (all of which come from the cars’ own trip computers).</p>
-
-<p>Audi A4 (gasoline): average over our entire mix of driving is 25 mpg. Typical
-mileage on the commute is 29 mpg. Best mileage I’ve seen for an extended
-period of highway driving is 33 mpg.</p>
-
-<p>VW Golf TDI (diesel): average over our entire mix of driving is 37 mpg.
-Typical mileage on the commute is 44 mpg. Best mileage I’ve seen for an
-extended period of highway driving is 51 mpg.</p>
-
-<p>Conclusions and observations:</p>
-
-<ul>
-<li>The Golf TDI definitely gets better mileage than the gasoline A4. About 50% better across the board, actually. (Though there are many variables other than the fuel type; the A4 is bigger and heavier, and has all wheel drive and an automatic transmission. On the flip side, bigger isn’t necessarily worse; it’s likely more aerodynamic. And Audi claims their 8-speed automatic transmission delivers equal or better fuel economy to the 6-speed stick.)</li>
-<li>The Golf TDI is more sensitive to speed than the A4; there’s more upside to driving at or below the speed limit.</li>
-<li>There’s an interesting comparison to be made, for both cars, between the “typical commute” and “best I’ve ever seen” numbers. That typical commute is 37 miles starting and ending with a few non-highway miles; the average mpg starts low (non-highway), climbs as I get on the highway, then climbs further as the catalytic converter warms up. By the time I arrive, the running-total average has pretty much stabilized, but only barely. And the going rate on Highway 280 is often around 75 mph, well above the optimum speed for maximum efficiency (closer to 60 mph for both these cars, as far as I can tell).</li>
-<li>The “best I’ve ever seen” results derived from getting on the highway and driving just over 60 mph for a longer distance — so the steady state average mileage is higher (because of lower speed) and contributes more to the final average (since most of the time was spent in the steady state after the catalytic converter warms up).</li>
-<li>Our observed around-town mileage for both cars is significantly worse than the EPA “city” estimate, because these trips tend to be very short, full of stop-and-go, and at suboptimal speeds. I think the EPA cycle tries to account for the latter 2 factors but not the first one. This is true for the diesel car as for the gasoline one, and is a further argument for electric vehicles for in-city driving.</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/08/20/tablet-size-and-implications-for-portability-and-purpose/">Tablet Size, and Implications for Portability and Purpose</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-20T00:00:00-07:00" pubdate data-updated="true">Aug 20<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/08/20/tablet-size-and-implications-for-portability-and-purpose/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Apple <a href="https://www.google.com/search?q=%22tablet+market%22+%22ipad+market%22">pretty much owns the tabletmarket</a>
-<a href="http://thenextweb.com/apple/2012/08/10/this-people-mean-say-ipad-dominating/">today with the 10&#8221; iPad</a>, but the
-<a href="http://www.google.com/nexus/#/7">Nexus 7</a>
-<a href="http://speirs.org/blog/2012/8/2/thoughts-on-the-google-nexus-7.html">is here and good</a>
-(in my opinion, the first viable answer to &ldquo;why buy this instead
-of an iPad&rdquo;), and meanwhile, rumors of a 7-ish-inch &ldquo;iPad Mini&rdquo; or &ldquo;iPad Air&rdquo;
-are <a href="http://daringfireball.net/2012/07/this_ipad_mini_thing">heating</a>
-<a href="http://daringfireball.net/2012/08/ipad_mini_even_througher">up</a>.</p>
-
-<p>My family has both a Nexus 7 and an iPad, and I find myself using the Nexus 7
-more than the iPad, for four reasons. This makes me think that the iPad Mini
-rumors are likely true. In a nutshell, while a 7&#8221; tablet can&rsquo;t do everything a
-10&#8221; tablet can do, the 7&#8221; tablet <em>can</em> do the things where I&rsquo;d choose a tablet
-over a laptop or desktop, and it can often do those things better than the 10&#8221;
-tablet.</p>
-
-<p>First, the reasons that limit what I do on a tablet vs a laptop or desktop:</p>
-
-<p>1) the iPad (like all iOS and Android devices) <a href="http://lifehacker.com/5934539/the-tablet-problem">doesn&rsquo;t have user accounts,
-yet my wife and I share the iPad</a>,
-and I mostly leave it lying around the house. So I haven&rsquo;t given it
-credentials for all the individual apps and services I use — in some cases
-because Vanessa and I would both want to use them; in some cases because I&rsquo;m
-not comfortable leaving that credential cached on a device I don&rsquo;t keep close
-tabs on. So some of the apps I use the most on computers and my phone, and
-would potentially use on a tablet, I don&rsquo;t use on the iPad: email, Facebook,
-Evernote. The ability to have user accounts or profiles (and have
-<a href="http://www.schneier.com/blog/archives/2012/07/all-or-nothing_1.html">some apps available without unlocking an identity, and other apps behind an identity</a>)
-would make a big difference here; I have to assume this will happen at some point.</p>
-
-<p>2) typing on any of these onscreen keyboards is frustrating, so I tend to just
-wait till I get to a computer for serious input. This hit me when I was
-watching my son Dominic learning to crawl: at first he was perfectly happy to
-drag himself around on his belly with his arms, his legs trailing behind; as
-he got closer to real crawling, he started getting frustrated and impatient
-with the previously good-enough belly slide, because he had the yearning for
-real speed. So I feel about typing on a tablet: I can do it, and if I were
-trapped on another planet with no other means of self-expression I would
-surely use it, but if I have thoughts spanning more than a sentence or two,
-I&rsquo;d rather just wait till I get back to a real keyboard to pour them out
-effortlessly. (And I realize I can use a separate keyboard with an iPad: it
-basically negates this disadvantage, but also the portability advantage vs a
-laptop.)</p>
-
-<p>Then, the reasons the Nexus 7 succeeds handsomely at <a href="http://bitingtongue.blogspot.com/2012/07/the-simple-task-that-was-my-charge.html">the modest task that is its charge</a>:</p>
-
-<p>3) the form factor. It&rsquo;s significantly more portable, and significantly easier
-to hold in one hand; notably this makes it much better for reading on trains
-and reading in bed. Given the apps I&rsquo;ve already stopped using (due to #1 and
-#2), these are the primary ways I want to use a tablet. The iPad&rsquo;s bigger
-screen is an advantage, but not enough to make up for the reduced
-portability/holdability.</p>
-
-<p>4) while Android as a whole doesn&rsquo;t feel as fluid or natural as iOS, on both
-platforms the OS is designed to pretty much get out of the way once you&rsquo;re in
-an app; that&rsquo;s to say your real impression of the platform is driven by the
-apps. The main apps I use on the Nexus 7 are surprisingly good. The first-
-party Google apps (gmail, Google Reader, Google Maps) are better than on iOS;
-the builtin Chrome browser is very good; the third party apps I use the most
-(Kindle, Instapaper, Evernote, Facebook) are all available and good. So the
-overall impression the Nexus 7 leaves is very good.</p>
-
-<p>So, iPad Mini…?</p>
-
-<p>There are warts to Android — even with Jellybean, scrolling and touch
-interaction don&rsquo;t feel as smooth as iOS always has. The back button is a
-disaster; you never know what it&rsquo;s going to do. The app selection isn&rsquo;t as
-wide as iOS, and even where equivalents are available, they&rsquo;re often rougher.
-Plus, I&rsquo;ve already paid for a fleet of iOS apps. While it&rsquo;s a tradeoff with #4
-above, I have a feeling an Apple 7&#8221; tablet could be even better than the Nexus
-7.</p>
-
-<p>What all this means is that given the way I use a tablet, I find the Nexus 7
-does everything I want it to, far cheaper and more portably than the 10&#8221; iPad.
-I look forward to seeing what Apple does with the rumored iPad Mini (or iPad
-Air).</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -1110,23 +1155,23 @@ Air).</p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/03/20/apple-is-getting-really-aggressive-about-this-sleepdelay-thing/">Apple is getting really aggressive about this sleepdelay thing</a>
+        <a href="/blog/2013/12/08/mail-dot-app-gmail-and-mavericks/">Mail.app and gmail in Mavericks</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/">From Tumblr to Octopress, part 3: footnotes</a>
+        <a href="/blog/2013/12/08/death-by-dueling-modal-dialog/">Death by dueling modal dialog</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/">From Tumblr to Octopress, part 2: how</a>
+        <a href="/blog/2013/12/08/apple-2-factor-authentication-setup/">2-factor authentication setup for AppleID</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-1-why/">From Tumblr to Octopress, part 1: why</a>
+        <a href="/blog/2013/12/08/apple-shopping-cart-fail-gift-card-in-cart/">Apple shopping cart fail — gift card in cart makes gift card payment option disappear</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+        <a href="/blog/2013/12/08/apple-shopping-cart-fail-multiple-devices-on-new-cell-plan/">Apple shopping cart fail — multiple devices on new cell plan</a>
       </li>
     
   </ul>

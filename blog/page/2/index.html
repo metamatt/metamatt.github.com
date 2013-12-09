@@ -9,8 +9,7 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="The SSD in Vanessa&rsquo;s iMac died and needed to be replaced. In theory, this is
-pretty simple since we have backups — replace the faulty hardware &hellip;">
+  <meta name="description" content="Having decided to move this blog from Tumblr to Octopress, there remained the matter of migrating it1. Octopress is basically a convenience framework &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +76,521 @@ pretty simple since we have backups — replace the faulty hardware &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/">From Tumblr to Octopress, Part 2: How</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-17T01:40:00-07:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Having decided to move this blog from Tumblr to Octopress, there remained the matter of migrating it<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>.</p>
+
+<p>Octopress is basically a convenience framework around Jekyll, adding a nice-by-default theme and some convenience wrappers for starting new posts, invoking Jekyll to generate the site, and deploying the site. You could probably use Octopress quite happily without touching Jekyll directly, unless you want to import an existing blog; then you end up at <a href="https://github.com/mojombo/jekyll/wiki/blog-migrations">Jekyll&rsquo;s Blog Migrations tool</a>, which has options for a number of popular blog engines, including Tumblr.</p>
+
+<p>The instructions for <a href="http://octopress.org/docs/setup/">setting up Octopress</a> are pretty simple and <a href="http://octopress.org/docs/setup/">well documented</a>:</p>
+
+<ul>
+<li>git and ruby (and probably rvm or rbenv) are prerequisites</li>
+<li>obtain octopress itself via &ldquo;git clone&rdquo;</li>
+<li>install dependencies via &ldquo;gem install bundler; bundle install&rdquo;</li>
+<li>install the default Octopress theme (which also generates the skeleton site layout) via &ldquo;rake install&rdquo;</li>
+</ul>
+
+
+<p>At this point, you&rsquo;ve got a working Octopress installation and you could use its rake task-based interface to write and publish posts. However, if you want to migrate an existing blog, you have more setup steps which are also <a href="https://github.com/mojombo/jekyll/wiki/blog-migrations">well documented</a>:</p>
+
+<ul>
+<li>assuming you want to keep your raw posts in markdown format instead of raw HTML, Jekyll&rsquo;s Tumblr migrator needs nokogiri: <code>gem install nokogiri</code></li>
+<li>invoke the Tumblr migrator:<code>ruby -rubygems -e 'require "jekyll/migrators/tumblr"; Jekyll::Tumblr.process("http://www.your_blog_url.com", "md")'</code> Note that this doesn&rsquo;t require any account information or credentials, because the Tumblr API will provide enough information to do this anonymously. Heck, if you&rsquo;re evil, you could convert someone else&rsquo;s blog (don&rsquo;t do that). On the topic of Tumblr reliability, I ran this step a few dozen times while I was figuring out how it works and fixing some bugs in tumblr.rb, and ~90% of the time, it downloaded my ~165 posts almost instantly, but palpably often, it would get stuck halfway as the Tumblr API stopped sending it network traffic. Oh well. Ctrl-C and restart if this happens to you.</li>
+</ul>
+
+
+<p>What neither the Jekyll nor Octopress documentation tells you is what happens next. Assuming you run all the above commands from the octopress directory: Octopress setup (the <code>rake install</code> step) created a directory called &ldquo;source&rdquo;, under which the (initially empty) &ldquo;_posts&rdquo; directory is where Jekyll will look for posts. Meanwhile, Jekyll&rsquo;s tumblr.rb will create and populate a &ldquo;_posts/tumblr&rdquo; directory with your posts, and a &ldquo;posts&rdquo; directory with redirects from the old Tumblr-style post URLs to new Octopress-style URLs<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>,<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>. Neither the &ldquo;_posts&rdquo; nor &ldquo;posts&rdquo; directory spit out by tumblr.rb are under &ldquo;source&rdquo; where Jekyll will look for them. What this means is that without additional effort on your part, Jekyll as invoked by Octopress won&rsquo;t see the files you just imported.</p>
+
+<p>Again: your blog posts go in &ldquo;octopress/source/_posts&rdquo;. The Tumblr migrator will create &ldquo;octopress/posts&rdquo; and &ldquo;octopress/_posts&rdquo;. Just move these two directories under &ldquo;octopress/source&rdquo; once you&rsquo;ve verified they look OK. (NB: the migrator actually dumped all its files under &ldquo;octopress/_posts/tumblr&rdquo;; it&rsquo;s fine to leave them there, so they end up in &ldquo;octopress/source/_posts/tumblr&rdquo;; Octopress doesn&rsquo;t seem to care about the organization of your files inside the source/_posts directory.)</p>
+
+<p>Now, you can tell Octopress to generate the site: &ldquo;rake generate&rdquo;.</p>
+
+<p>If you&rsquo;re reading this at the right point of relative stability, lucky you; you win. I ran into several more issues, due to the fact that Jekyll and Octopress are prerelease open source software intended for an audience of hackers; some assembly definitely required:</p>
+
+<ul>
+<li>At the point I was performing this migration (January 2013), Jekyll was at version 0.12 and the tumblr.rb migrator script was broken in a <a href="https://githubcom/mojombo/jekyll/commit/863643c7e8080c73a7968caabfc9c7e9b18c6b95">couple</a> <a href="https://github.com/mojombo/jekyll/commit/fbc9d0c66397234ab85e03a55955602e0ce40356">respects</a> which I submitted patches for.</li>
+<li>After my patches were merged upstream, I tried running with Jekyll&rsquo;s head version in mid-February, to find that tumblr.rb had been deleted from the Jekyll repository entirely, and moved to a separate <a href="https://github.com/jekyll/jekyll-import">jekyll-import</a> project, which at the time had no documentation and appeared to have little chance of running.</li>
+<li>Meanwhile, using any version of Jekyll newer than 0.12 broke Octopress in a trivial way; the :generate rule in Octopress&rsquo;s Rakefile finishes by invoking Jekyll as <code>system 'jekyll'</code>, with no arguments, and newer versions of Jekyll expect a <code>build</code> argument. Octopress will fix this when Jekyll actually releases a new version (which may have already happened between me finding this and posting this); it makes no sense to fix it sooner.</li>
+</ul>
+
+
+<p>This last list of foibles is probably all related to Jekyll being in the throes of the 1.0 release process and will probably be a historical footnote afterwards.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Many others have done this before; one post I found helpful was <a href="http://blog.assimov.net/blog/2012/03/24/tumblr-to-octopress-powered-by-jekyll-and-markdown/">Goodbye Tumblr. Hello, Octopress Powered by Jekyll and Markdown!</a>.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>The redirects spit out by tumblr.rb are under &ldquo;posts&rdquo; because Tumblr URLs are of the form example.com/posts/12341234/post-title-slug; Octopress URLs are by default of the form example.com/blog/year/month/post-title-slug; tumblr.rb creates redirects from the former to the latter, without requiring any special interaction with the webserver, by just creating a file for each post, named for the Tumblr relative URL (in this case, posts/12341234/post-title-slug/index.html) containing a browser-side meta refresh redirect to the new URL.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>I found the redirects created by tumblr.rb to be not quite enough. Tumblr indexes posts by number, then creates a nice search-engine-friendly SLUG such as post-title-slug, yielding a post URL like example.com/posts/12341234/post-title-slug. But actually, when receiving a request, Tumblr ignores everything after the number, and you could also load that post as example.com/posts/12341234/foobar, or just example.com/posts/12341234, and in fact the latter is the canonical URL used by Disqus. If you are running a webserver with rewrite rules, you might do well to redirect the entire URL namespace under posts/12341234 to the new URL, as Tumblr would have; I settled for copying posts/12341234/post-title-slug/index.html to posts/12341234/index.html for each post, so both number alone and number+SLUG will redirect correctly.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/17/from-tumblr-to-octopress-part-1-why/">From Tumblr to Octopress, Part 1: Why</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-17T01:37:00-07:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-1-why/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>When I first started this blog, I set it up at Tumblr so I wouldn&rsquo;t have to think about hosting it and could concentrate on writing.</p>
+
+<p>I&rsquo;ve since realized that Tumblr is a bad match. Among things that I prioritize higher than Tumblr evidently does, reliability ranks high on the list<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>, as do control over site structure and appearance. Tumblr themes allow some control over appearance — and there are some very nice ones — but not the structure<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
+
+<p>Among things that they care about that I do not are their web posting interface, iOS native clients, a plethora of post types designed to be slightly quicker if you want to post audio/picture/video/quote content<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>, and a follower system<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>.</p>
+
+<p>So. On to Octopress. I get a lot more control over site structure, a more usable form of control over visual layout, and I can host it somewhere reliable (github for now, myself if I want to, and I can move hosting providers without having to do any deeper conversion).</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Reliability problems with Tumblr have been intermittent; sometimes it works fine, sometimes I get &ldquo;the server returned no content&rdquo; errors 10 times in a row before I can load a single page.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>Tumblr&rsquo;s main navigational construct is a list of all posts sorted in descending order by posting date. Individual posts get permalinks, and there&rsquo;s a very slow-loading calendar view which gives some semblance of an overall table of contents, but there&rsquo;s no really usable way to do monthly archives or next/previous links to stitch time back together.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>All Tumblr posts have a URL, a title, and a body; what goes into the body can include really anything you can embed in a webpage, including audio and video. Presumably in an attempt to move beyond text-heavy blogging, in addition to letting you embed pictures/audio/video in a normal &ldquo;text&rdquo; post, Tumblr added these separate post types that special-case the body (the &ldquo;link&rdquo; post type makes the title into a navigable link; the &ldquo;quote&rdquo; type puts quotes around the body, etc). All of these are less general than the &ldquo;text&rdquo; type; they are also poorly represented in the API and, as I&rsquo;ve found out, commensurately poorly handled by export tools. I dabbled in the special post types a few times, and am mostly sorry I did.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>Readers are unlikely to be Tumblr users; that&rsquo;s what RSS is for.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X Has a Builtin Wi-Fi Network Scanner</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-25T00:00:00-08:00" pubdate data-updated="true">Feb 25<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Here&rsquo;s a bonus on top of a bonus: OS X 10.8 (Mountain Lion) adds a really useful &ldquo;Wi-Fi&rdquo; scan feature, buried inside a utility I didn&rsquo;t know existed.</p>
+
+<p>I wanted a Wi-Fi scan tool to show me a list of nearby wireless networks and strengths, so I could avoid interference from existing networks when placing and choosing a channel for a new access point, and verify the new access point is operating properly. A few years ago I did this with KisMAC, MacStumbler or iStumbler, but these utilities seem to have stopped working over time, either as a result of newer hardware or newer OSes.</p>
+
+<p>Googling for new alternatives to these utilities, I found that <a href="http://osxdaily.com/2012/07/31/wi-fi-scanner-mac-os-x-mountain-lion/">Mountain Lion actually has this functionality built in</a>. There&rsquo;s a &ldquo;Wi-Fi Diagnostics&rdquo; app buried in /System/Library/CoreServices (where, annoyingly, Spotlight can&rsquo;t find it and the Finder by default won&rsquo;t show it); at launch it presents a very limited-looking wizard interface, but in the menubar the File:New command and command-N keyboard shortcut have been replaced by an unassuming &ldquo;Network Utilities&rdquo; command.</p>
+
+<p>This brings up a &ldquo;Network Utilities&rdquo; window, not to be confused with <code>/Applications/Utilities/Network Utility.app</code>, with a bunch of really useful utilities (which look like a strict superset of the old Network Utility, have a more modern UI and additional functionality, and except for the &ldquo;Wi-Fi Scan&rdquo; tab, have no reason to be restricted to Wi-Fi networks).</p>
+
+<p>I only wish this thing were easier to find; it should probably replace the old <code>Network Utility app</code>. I don&rsquo;t remember seeing it mentioned in most what&rsquo;s-new-and-why-to-upgrade articles about Mountain Lion. For me, it&rsquo;s a pretty nice bonus to having upgraded and deserves wider mention.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/">A Waterproof Tablet! A Step in in the Right Direction</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-25T00:00:00-08:00" pubdate data-updated="true">Feb 25<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/02/25/a-waterproof-tablet-a-step-in-in-the-right-direction/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In <a href="http://arstechnica.com/gadgets/2013/02/sony-unveils-thinnest-10-1-tablet-ever-the-xperia-tablet-z/">this announcement of a new Sony tablet for Android</a>, the following bit stood out to me:</p>
+
+<blockquote><p>The company claims the tablet is not only the “world’s thinnest 10.1-inch
+tablet” at 6.9 millimeters, but it&rsquo;s apparently waterproof in up to three feet
+of water for 30 minutes.</p></blockquote>
+
+<p>The water resistance is a lot more notable to me than the thinness, in an
+industry obsessed with thin fragile things, given how many phones I&rsquo;ve seen
+destroyed by water, and given how <a href="http://blog.metamatt.com/blog/2012/08/20/iphone-hardware-wishlist/">I put this on my wishlist for the iPhone 5</a>
+last fall. But phones see a lot more exposure to dangerous circumstances than
+tablets do, I wager, so I&rsquo;d still like to see this feature make its way over
+to phones.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/21/speedy-resume/">Speedy Resume</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-21T00:00:00-08:00" pubdate data-updated="true">Feb 21<span>st</span>, 2013</time>
+        
+         | <a href="/blog/2013/02/21/speedy-resume/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>My initial reason for switching from Windows laptops to Mac laptops 7 years
+ago — which has remained a primary benefit across those 7 years — was better
+power management. The details are many but the result is simple: a laptop that
+sleeps and wakes consistently and quickly, which never crashes on wakeup,
+never drops the Wi-Fi connection on wakeup, and is on the network and ready
+for me to type almost as soon as I open the lid. Almost like what we expect
+from a tablet or smartphone.</p>
+
+<p>That&rsquo;s the dream, anyway. I&rsquo;ve never owned or used a Windows laptop (or Linux
+laptop, for that matter) that pulled that off, and not for lack of trying. It
+was much truer of Apple laptops running Mac OS X, ever since their
+introduction in 2001. It remained one of my favorite things about more recent
+Macbooks, but I&rsquo;ve found it getting less true over time, culminating in my
+2012 &ldquo;Macbook Pro with Retina Display&rdquo; (henceforth rMBP), which seems to take
+like 30 seconds to wake from sleep, then sometimes crashes immediately as the
+crowning touch.</p>
+
+<p>After getting frustrated enough by the slow wakeup time to get to the bottom
+of it, I think there are 3 pieces to the puzzle.</p>
+
+<ol>
+<li><p> The rMBP (like Macbook Air models) has no external status lights. No charge level indicator on the battery like older models with removable batteries, no charge level indicator on the side of the unit like previous unibody Macbook Pro models, no power light that winks while asleep and glows while awake like all previous Macbook models. So when you open the lid, if it wakes up and is ready for use, great, but if not, you don&rsquo;t know whether it&rsquo;s powered off, has a dead battery, or is already trying to wake up and just taking its sweet time.</p></li>
+<li><p> The default power-management plan is &ldquo;Safe Sleep&rdquo;, which means that when you close the lid the computer writes a suspend image to disk, then suspends to RAM<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. Then wakeup is normally fast because RAM contents are still present, but if power is lost for any reason (battery dies, battery is removed on models where that&rsquo;s possible, or the computer decides to power itself off to stop expending battery power to support the RAM), it can still resume from where you left it, just more slowly, by reading from disk. This last bit about deciding to power itself off is crucial; it&rsquo;s controlled by a parameter known as <code>standbydelay</code>, and on this computer at least (rMBP running OS X 10.8) the default value of <code>standbydelay</code> was 4200 seconds, or 70 minutes, just over an hour. This means if you suspend the computer and wake it up again within 70 minutes, it will resume from RAM, but if you leave it asleep for more than 70 minutes, it will have powered off entirely, and will resume from disk. On my previous laptop (a 13&#8221; Macbook Pro from 2010, also now running OS X 10.8), <code>standbydelay</code> was not set at all, which I assume means it will try to keep RAM supplied with power until the battery dies. I don&rsquo;t know the reason for the different defaults.</p></li>
+<li><p> This rMBP has 16 gigabytes of RAM, more than any laptop I&rsquo;ve owned in the past. Now, it also has a fast SSD, so I wouldn&rsquo;t have thought it would take that much longer to resume from disk vs RAM (and in actual usage it shouldn&rsquo;t have to save and restore all of it anyway) but it&rsquo;s likely a factor: if it had to transfer the entire 16GB, even at 500 MB/sec that would be 32 seconds. It actually only needs to save/restore the active pages; say on average that&rsquo;s 60% of memory and add a few seconds to get the hardware devices from cold boot to powered on, and you&rsquo;re in the 20 second ballpark that is long enough to annoy me.</p></li>
+</ol>
+
+
+<p>So boiled down: this machine feels slower to resume than previous ones because
+it&rsquo;s suspending to disk, has a lot of memory to restore from disk, and doesn&rsquo;t
+show any visible signs of progress while restoring from disk.</p>
+
+<p>I changed the <code>standbydelay</code> value to 12 hours on battery (<code>sudo pmset -b
+standbydelay 43200</code>) and disabled it entirely on AC power (<code>sudo pmset -c
+standby 0</code>) and things seem much better now<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
+
+<p>Oh. And sleep reliability<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>? That&rsquo;s even more important. When I first got the
+rMBP, it would kernel panic and show &ldquo;Your computer must be restarted&rdquo; when
+resuming from sleep once in a while, roughly once a month. That was
+intolerable; at a guess I disabled PowerNap; I don&rsquo;t know whether it was the
+actual problem but I haven&rsquo;t had reliability problems since.</p>
+
+<p>So these are my current recommendations for power management on a rMBP or
+Macbook Air:</p>
+
+<ul>
+<li>Increase <code>standbydelay</code> value enough that you don&rsquo;t notice the computer resuming from disk in normal use</li>
+<li>Disable PowerNap</li>
+</ul>
+
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>The difference between suspend-to-disk and suspend-to-RAM is that suspend-to-RAM expends battery power to keep the contents of RAM alive, so wakeup is faster, while suspend-to-disk extends battery life at the expense of slower wakeup.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>I didn&rsquo;t realize the import of this at first, but Mac OS maintains separate sleep policies for battery and AC power, and pmset can set either one (-b for battery, -c for charger) or both (-a for both, which is also the default); so there are two <code>standbydelay</code> values. I have my computer set to never sleep on AC power, but I sleep it manually by closing the lid when I&rsquo;m not using it. After having applied the longer standbydelay to battery, I was annoyed to find the computer slow to wake after leaving it asleep and charging for a while. Hence the second command to entirely disable the <code>standby</code> behavior on AC power.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>When talking about sleep reliability, what&rsquo;s actually important is the ability to <em>wake back up</em> reliably, just like when talking about backup reliability, what&rsquo;s important is the ability to restore from backups. It&rsquo;s the round trip that matters.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">Two Things I Didn&#8217;t Know About Mac OS Internet Sharing</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-13T00:00:00-08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>On a recent trip to Mexico, we stayed in a hotel that charged a significant extra fee for fairly slow Internet access. After paying for an access code, we could associate one device at a time to the Wi-Fi network; we could use multiple devices only by paying for multiple codes (which we didn&rsquo;t want to do because for the speed, even paying once was a poor value) or by disconnecting the previous device.</p>
+
+<p>Of course, I went looking for ways around this. We had at our disposal a Mac laptop, two iPads and two iPhones. Mac OS X has <a href="http://support.apple.com/kb/PH6589">built-in Internet connection sharing</a>, but it operates only between separate network adapters: you can share an Ethernet-connected Internet connection over Wi-Fi, or vice versa, but you can&rsquo;t share Wi-Fi over Wi-Fi<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. There&rsquo;s some reason to hope that this would be possible &mdash; it&rsquo;s &ldquo;just&rdquo; a software problem<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>; Windows and Linux generally support multiple virtual Wi-Fi interfaces from the same physical device, as used by <a href="http://www.connectify.me/hotspot/">Connectify Hotspot</a> for Windows or the multi-SSID feature in many Linux-based Wi-Fi access points &mdash; but this software feature doesn&rsquo;t exist for Mac OS X.</p>
+
+<p>So, no sharing Wi-Fi over Wi-Fi with my Mac laptop, unfortunately. But there&rsquo;s another option that works without additional hardware; this is where the learning comes in. <strong>First new fact</strong>: you can share an Internet connection over Bluetooth. I&rsquo;d thought this was only for sharing a cellular data connection from a phone to a computer (under the oxymoronic misnomer of &ldquo;wireless tethering&rdquo;), but it turns out to work in the other direction (known as &ldquo;reverse tethering&rdquo;). If you pair an iPhone or iPad with a Mac over Bluetooth, your Mac will grow a new network adapter called &ldquo;Bluetooth PAN&rdquo; (for Personal Area Network); you can then use the normal Sharing preference panel to enable Internet Sharing from Wi-Fi to Bluetooth PAN. Bingo.</p>
+
+<p>(I can claim only partial success here, but it was good enough for me at the time. This technique works fine for iPads, but not iPhones. I don&rsquo;t know why; <a href="https://discussions.apple.com/message/20996155#20996155">nobody else seems to know why either</a>.)</p>
+
+<p>That got us past our trip, and I was happy to have a new tool for my cheap-connectivity-while-traveling toolbox. However, when we returned home, I had an unpleasant surprise, though it took me a while to connect the dots. My Mac laptop was getting really hot when I left it plugged in overnight to charge. I eventually realized this was because it wasn&rsquo;t asleep, even with the lid closed (and with the lid closed, it generates more heat than it can comfortably dissipate, even at idle). This was frustrating because there are so many things that can keep a Mac from sleeping; this is where more learning comes in. Googling for ways to identify causes of Mac insomnia, I learned of the <code>pmset -g log</code> command, which I now highly recommend. It pointed me right at the culprit. <strong>Second new fact</strong>: Internet connection sharing prevents the Mac from sleeping while plugged in. (This is actually incredibly obvious in retrospect; it says so right in the Sharing panel: &ldquo;Computers connected to AC power won&rsquo;t sleep while Internet Sharing is turned on.&rdquo; I hadn&rsquo;t read that while enabling Internet Sharing because I thought I already knew how to use it; by the time it was causing problems, the problems were too disconnected from the cause.)</p>
+
+<p>In summary: Internet connection sharing is useful, and the Bluetooth PAN variant is further useful, but don&rsquo;t leave it on when you&rsquo;re not using it.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Well, you can share Wi-Fi over Wi-Fi if you have multiple physical Wi-Fi interfaces. My laptop only has the one built-in Wi-Fi interface. It might be worth carrying a cheap additional USB Wi-Fi device for this reason. That would probably be the cheapest reliable solution to this problem.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>At the physical layer, a single Wi-Fi radio can only be tuned to a single channel, but nothing stops it from participating in multiple SSIDs as long as they&rsquo;re all on that channel.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/">Troubleshooting Mac Sleep Problems</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-13T00:00:00-08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/02/13/troubleshooting-mac-sleep-problems/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Here&rsquo;s a useful nugget if you&rsquo;re inclined to poke at computers to see how they work: <code>pmset -g log</code>.</p>
+
+<p>I had a problem where my rMBP would sleep just fine on battery power but <a href="http://blog.metamatt.com/blog/2013/02/13/two-things-i-didnt-know-about-mac-os-internet-sharing/">not when plugged into its charger</a>. Even with the lid closed, and even if I explicitly poked the Sleep button first. This meant my chair got really warm if I left the computer sitting there plugged in to charge overnight. (NB: I did have the slider in energy saver preferences set to sleep:never for AC, but that should only affect sleep-after-idle, not lid-close or explicit sleep request.)</p>
+
+<p>The command <code>pmset -g log</code> helped me learn that this state, where the computer is awake with the lid closed and no external display or keyboard is attached, is called DarkWake and that InternetSharing was the entity requesting that over sleep.</p>
+
+<p>Now that I know about DarkWake, I&rsquo;m curious what the relationship is between it and <a href="http://support.apple.com/kb/ht5394">PowerNap</a>. On this same rMBP, I disabled PowerNap because it would occasionally kernel panic when waking from sleep; I forget how I decided that was PowerNap but it hasn&rsquo;t happened since disabling.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/31/google-default-account-for-multiple-sign-in/">Google Default Account for Multiple Sign In</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-31T00:00:00-08:00" pubdate data-updated="true">Jan 31<span>st</span>, 2013</time>
+        
+         | <a href="/blog/2013/01/31/google-default-account-for-multiple-sign-in/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Google Accounts allow you to <a href="http://support.google.com/accounts/bin/answer.py?hl=en&amp;answer=1721977">stay signed into multiple accounts at once</a>, which is hugely helpful for those of us who have multiple account, but there&rsquo;s one thing that&rsquo;s been frustrating me here.</p>
+
+<p>I use the browser address bar (relying heavily on its autocomplete feature) to do most of my navigation directly from the keyboard. If I want my document files in Google Docs, I open a new browser tab from the keyboard shortcut, then type &ldquo;docs&rdquo; and by that time, autocomplete has already filled in docs.google.com<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>,<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
+
+<p>However, I have 3 different Google Accounts that I&rsquo;m usually signed into: one standard personal account (ending in @gmail.com), one GAFYD<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup> account for my personal email<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>, and one GAFYD account for work. If I navigate to docs.google.com, Google automatically chooses one of the accounts to redirect to, and at different times on different computers I end up with a different (seemingly arbitrary) account selected, and if it wasn&rsquo;t the right one, it&rsquo;s 3 extra clicks in the account switcher to get to the right account.</p>
+
+<p>What&rsquo;s controlling its choice? It turns out it&rsquo;s the order you sign into the accounts. If you look closely at the URLs, either by mousing over the links in the account switcher or by looking at the URL you end up at for gmail but not for docs<sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup>, you&rsquo;ll see an &ldquo;authuser&rdquo; or &ldquo;u&rdquo; parameter which is a low-valued integer. It starts at 0 for the first account you sign into, and counts up from there as you sign into additional accounts.</p>
+
+<p>If you navigate directly to docs.google.com (or mail.google.com, etc), you&rsquo;ll get the account currently associated as authuser 0, which is the first account you signed into.</p>
+
+<p>For the GAFYD case, Google lets you <a href="http://support.google.com/a/bin/answer.py?hl=en&amp;answer=53340">set up convenient forwarding addresses</a> for domains you control, and I&rsquo;ve used this to map mail.mydomain.foo and docs.mydomain.foo to redirect automatically to mail.google.com/a/mydomain.foo and docs.google.com/a/mydomain.foo. This means that for the two GAFYD domains, if I want the mail or docs view associated with that account, I go to docs.mydomain.foo, which in turn means that if I navigate to docs.google.com, I always want my personal account selected by default.</p>
+
+<p>For me, the solution to get the behavior I wanted boils down to:</p>
+
+<ul>
+<li>Sign out (which signs you out of all acocunts)</li>
+<li>Sign into the primary account which I want as default (the one ending in gmail.com) first, then sign into the others.</li>
+<li>Always use this same signin order in the future.</li>
+</ul>
+
+
+<p>Thanks go to <a href="http://www.linkedin.com/pub/ramesh-dharan/1/13b/8a2">Ramesh</a> for helping me figure this out.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Google has rebranded Google Docs as Google Drive, and docs.google.com redirects to drive.google.com. I haven&rsquo;t retrained my fingers, so I always type &ldquo;docs&rdquo;, so I&rsquo;ll keep using the old name. Both names work fine as described in this post.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>(Everything in this post is true for other Google Accounts services like gmail, as well, but docs is the one I navigate directly to the most frequently, so I&rsquo;ll stick with it for the example.)<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>Google Apps for Your Domain, back when that was a thing; since rebranded as <a href="http://www.google.com/intl/en/enterprise/apps/business/">Google Apps for Business</a> once they removed the free option.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>Why a separate gmail.com and personal GAFYD account? I&rsquo;ve long used the same personal email address at a domain I control, predating Gmail. When Google created Gmail and started tacking many other services onto your Gmail account, becoming Google Accounts, I signed up with a gmail address but didn&rsquo;t use it for email, just for Google Accounts. At some point I got tired of running my own email server and dealing with reliability and spam, so I decided to let Google host it via the then-free GAFYD. I could have just forwarded mail from the vanity address to the gmail address without setting up another mailbox, but it seemed simpler to keep them separate. That may have been a mistake.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+<li id="fn:5">
+<p>The URLs vary by service, so this isn&rsquo;t as obvious as it could be. Docs/Drive uses URLs like drive.google.com/?authuser=N in the account switcher, but for a GAFYD account, you actually end up at drive.google.com/a/mydomain.foo. Gmail uses URLs like mail.google.com/u/N, both in the account switcher and where you actually end up, though for a GAFYD account you can also navigate to mail.google.com/a/mydomain.foo (and you&rsquo;ll be redirected to mail.google.com/u/N for the correct value of N if you&rsquo;re already signed into that account, and to the login page if you&rsquo;re not).<a href="#fnref:5" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -243,836 +757,6 @@ Machine restore the files.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/09/previewing-markdown-files-from-the-terminal/">Previewing Markdown Files From the Terminal</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-09T00:00:00-08:00" pubdate data-updated="true">Jan 9<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/01/09/previewing-markdown-files-from-the-terminal/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;ve been wanting a way to preview <a href="http://daringfireball.net/projects/markdown/">Markdown</a>-formatted text files from the terminal, ideally via <a href="http://www.greenwoodsoftware.com/less/">less</a>. Primarily, I think, because Github encourages it, a lot of open source projects are starting to include a <a href="https://www.google.com/search?q=+readme.md">README.md</a> instead of a plain old <a href="http://en.wikipedia.org/wiki/README">README</a><sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>,<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>; these marked-down READMEs are easy to view in Github&rsquo;s web interface but not after (or before) you clone the repo into your own filesystem.</p>
-
-<p>There&rsquo;s <code>zless</code> that can understand compressed files; why not <code>mdless</code> that can understand Markdown files?</p>
-
-<p>I went looking and stackoverflow came to the rescue with this question and answer about a <a href="http://stackoverflow.com/a/7603703/275581">less-style markdown viewer for UNIX systems</a>, suggesting <a href="http://johnmacfarlane.net/pandoc/">pandoc</a> as the tool to translate from Markdown format to troff format. The suggested incantation there works for me under Debian Linux but not under Mac OS X because it relies on <code>man</code>&rsquo;s <code>-l</code> option, which I&rsquo;m guessing is a GNU addition not supported by BSD <code>man</code>. I had to figure out how to duplicate the processing that <code>man -l</code> does, which I knew involved <code>troff</code> (or <code>groff</code>); it turns out that <code>groff</code> understands a <code>-man</code> flag which predefines the macros used by manpages. The version using <code>groff</code> instead of <code>man -l</code> seems more portable (it works fine under Linux as well as Mac OS X), so that&rsquo;s what I&rsquo;ll use.</p>
-
-<p>Hence, the following incantation to view a README.md file:</p>
-
-<p><code>pandoc -s -f markdown -t man README.md | groff -T utf8 -man | less</code></p>
-
-<p>Or, a <code>mdless</code> command implemented as a tcsh alias:</p>
-
-<p><code>alias mdless "pandoc -s -f markdown -t man \!* | groff -T utf8 -man | less"</code></p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>As one data point for when this became common, README.md was added to the short list of common readme file names in this Wikipedia article on <a href="http://en.wikipedia.org/w/index.php?title=README&amp;oldid=480712255">March 7, 2012</a>.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>Not to be confused with <a href="http://www.amazon.com/gp/product/0062191497/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=metamatt-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0062191497">REAMDE</a>.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard/">Mac Boot Drive Selection From Bluetooth Keyboard</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-12-27T00:00:00-08:00" pubdate data-updated="true">Dec 27<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/12/27/mac-boot-drive-selection-from-bluetooth-keyboard/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Twice in the last few months<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> I&rsquo;ve had to do troubleshooting steps on Vanessa&rsquo;s iMac that involved booting from alternate volumes<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>. This is normally easy on a Mac, but not quite so easy on a Mac with a wireless Bluetooth keyboard<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>.</p>
-
-<p>Both times, it was an exercise in frustration, as I give the reboot command and wait about 10 seconds for the reboot to actually happen; then I hold Command-R, watch the screen blink black, wait, watch it blink white, wait, chime, wait, Apple logo, wait, and… oh hello, login screen! That&rsquo;s not right. I&rsquo;ve just wasted a minute and I&rsquo;m back where I started.</p>
-
-<p>Apple&rsquo;s <a href="http://support.apple.com/kb/HT4718">support document on recovery mode</a> makes it sound so easy:</p>
-
-<blockquote><p>Restart your Mac and hold down the Command key and the R key (Command-R), and keep holding them until the Apple icon appears, indicating that your Mac is starting up. After the Recovery System is finished starting up, you should see a desktop with a OS X menu bar and a &ldquo;Mac OS X Utilities&rdquo; application window. Note: If you see a login window or your own desktop and icons, it is possible that you didn&rsquo;t hold Command-R early enough. Restart and try again.</p></blockquote>
-
-<p>After reading and rereading that, I try a few more times, holding Command-R earlier and earlier as Apple recommends, and, no luck. Wait a minute, I&rsquo;m using a Bluetooth keyboard. Does that cause complications, like, the computer and keyboard aren&rsquo;t able to communicate right at the beginning of the boot process? Yes<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>. Do I need to go find a USB keyboard to plug in? Not quite.</p>
-
-<p>It turns out the magic answer is to reboot the computer, wait for the LED on the keyboard to flash (which is after the computer starts booting and chimes and does a self-test which on this iMac with 12GB of memory all takes about 20 seconds), and <em>then</em> immediately press and hold Command-R. Any earlier than that, and you&rsquo;ll be ignored.</p>
-
-<p>You&rsquo;d think Apple&rsquo;s help docs could mention this, since they&rsquo;ve been shipping Bluetooth keyboards by default with all their desktop machines for years now.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>Both of these occasions involved disk failures in the <a href="http://blog.metamatt.com/blog/2012/01/20/nothing-is-as-easy-as-it-should-be-ssd-upgrades/">Crucial M4 SSD I installed a year ago</a>. You can probably guess that I&rsquo;m not quite as happy with these as I wanted to be.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p><a href="http://support.apple.com/kb/HT1533">Booting from CD</a> to upgrade firmware, or <a href="http://support.apple.com/kb/HT4718">booting from the recovery partition</a> to attempt disk repair. Each of these requires holding a certain key down while the computer is booting.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-<li id="fn:3">
-<p>I put the same SSD model in my own computer, a Mac Pro tower with easily accessible drive bays and an old-school wired keyboard. It&rsquo;s a lot easier to troubleshoot and a lot easier to repair. Murphy&rsquo;s Law dictates that if we&rsquo;re going to have problems with one SSD, it&rsquo;ll be the one <a href="http://www.ifixit.com/Guide/iMac+Intel+27-Inch+EMC+2309+and+2374+Hard+Drive+Replacement/1634/1">tucked away under the glass front of the iMac</a>.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
-<li id="fn:4">
-<p>Try googling for &ldquo;<a href="https://www.google.com/search?q=boot+mac+from+cd">boot Mac from CD</a>&rdquo; versus &ldquo;<a href="https://www.google.com/search?q=boot+mac+from+cd+bluetooth">boot Mac from CD bluetooth</a>&rdquo;. Big difference. The first one leads you to a simple answer (but deceptively simple in the case you have a Bluetooth keyboard); the second one leads you through a muddle of hundreds of confused people.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/28/visiting-ireland-with-baby-dominic/">Visiting Ireland With Baby Dominic</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-28T00:00:00-08:00" pubdate data-updated="true">Nov 28<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/11/28/visiting-ireland-with-baby-dominic/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Vanessa and I wanted to take a real destination trip with Dominic, kinda sorta
-just to see if we could do it. Not that we were hoping or envisioning that it
-would be impossible, but it was hard to visualize, so we had to try.</p>
-
-<p>We settled on Ireland as the destination based on two propositions: we can
-take the baby to the pub, and the people love babies. (These were the actual
-reasons recommended by an Irish friend of Vanessa.) OK, not that we&rsquo;re such
-raging alcoholics that we can only travel to pubs, but &ldquo;can take the baby to
-the pub&rdquo; is actually a pretty good proxy for &ldquo;is not uptight, and will be
-forgiving of people traveling with a baby&rdquo;, which turned out to be true. Also
-true is that the Irish were not only gracious and charming hosts, but that
-many of them indeed like babies and know how to show it. For us, this
-translated to both people being prepared and understanding, but also to a lot
-of free entertainment. Dominic likes a lot of stimulation, and he got it.</p>
-
-<p>I&rsquo;m pretty proud of our itinerary, in retrospect, because we were making it up
-as we went along and it turned out really easy. No doubt it helps that Ireland
-is a small country, native English speaking (almost), and the people and
-culture are easygoing, so probably anything you do there is likely to go well.
-Still, for us it turned out remarkably easy to travel.</p>
-
-<p>Here&rsquo;s where we went:</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/8219093821"><img src="http://farm9.staticflickr.com/8482/8219093821_5003d3ab90.jpg" alt="Ireland travel map" /></a></p>
-
-<p>The itinerary, of which I&rsquo;m proud because the transfers were so easy and
-involved only public transit: We flew from San Francisco to London and then
-immediately to Dublin and caught the city bus to our hotel. Dublin: 3 days
-walking around, with a side DART trip to Howth. Then we walked from our hotel
-to Heuston Station and caught the Irish Rail train to Galway, where we stayed
-at a hotel a block away from the train station. Galway: 2 days walking around,
-with a bus/boat trip to Inishmore (largest of the Arran Islands). Then we
-rented a car from the Budget office right next to the train station and drove
-south to the Cliffs of Moher, with an overnight stay at Ennis, then to Dingle.
-Dingle: 2 days walking around, with a drive around the peninsula loop. Then we
-drove onwards to the Kerry Peninsula and around the Ring of Kerry, then to
-Kenmare. Kenmare: 2 days walking around including a hilly and marshy segment
-of the Kerry Way. Finally, leaving Kenmare, we drove past Cork to Waterford,
-dropped our rental car off at the tiny airport there, and caught a flight back
-to London Luton, from where it was an easy train ride to the London
-neighborhood we were staying in.</p>
-
-<p>Some photographic evidence of highlights from Ireland:</p>
-
-<p>Howth, a scenic day trip from Dublin:</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/8052048045"><img src="http://farm9.staticflickr.com/8173/8052048045_5ccbedde7b.jpg" alt="Picture perfect" /></a></p>
-
-<p>Dominic disembarking the train in Galway with aplomb:</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/8052048779"><img src="http://farm9.staticflickr.com/8037/8052048779_909def3212_z.jpg" alt="Psyched" /></a></p>
-
-<p>Galway&rsquo;s Dominick Street:</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/8052051235"><img src="http://farm9.staticflickr.com/8309/8052051235_ced4aefd1a.jpg" alt="Cheery" /></a></p>
-
-<p>O&#8217;Brien&rsquo;s Castle above the Cliffs of Moher:</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/8052052633"><img src="http://farm9.staticflickr.com/8032/8052052633_ddc755cdaa.jpg" alt="Castle" /></a></p>
-
-<p>Dominic playing in the window seat at Murphy&rsquo;s ice cream shop in Dingle:</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/8052057411"><img src="http://farm9.staticflickr.com/8037/8052057411_521e317ef2.jpg" alt="Window shopping" /></a></p>
-
-<p>Dominic and Vanessa taking a break from hiking the Kerry Way, above Kenmare:</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/8052092780"><img src="http://farm9.staticflickr.com/8034/8052092780_85ffdb45b2_z.jpg" alt="Dominic and Vanessa" /></a></p>
-
-<p>Have a look at <a href="http://www.flickr.com/photos/metamatt/sets/72157631686525572/">the rest of our pictures</a>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/13/the-effect-of-time-shifting-electrical-usage-on-nem-billing/">The Effect of Time-shifting Electrical Usage on NEM Billing</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-13T00:00:00-08:00" pubdate data-updated="true">Nov 13<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/11/13/the-effect-of-time-shifting-electrical-usage-on-nem-billing/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>One more post on the topic of PG&amp;E bills for solar (NEM) customers.</p>
-
-<p>PGE&rsquo;s NEM billing scheme <a href="http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/">blends usage across seasons</a> to allow for seasonal variation in generated power, and their E-6 billing scheme
-<a href="http://blog.metamatt.com/blog/2012/11/11/e-1-vs-e-6-for-residential-solar-customers/">separates usage into 5 time-of-use periods</a> to encourage customers to shift usage away from peak periods.</p>
-
-<p>A question that just occurred to me is whether you can game their billing
-results by time-shifting usage around inside the same true-up period, between
-TOU zones, months, or even seasons.</p>
-
-<p>It&rsquo;s pretty easy to move usage between TOU zones of the same day (say between
-summer on-peak and summer off-peak) by delaying energy-hungry activities like
-baking pies until night; that&rsquo;s both tractable for a home customer and exactly
-the kind of behavior the E-6 TOU billing rates are designed to encourage.
-Moving usage between TOU zones of different seasons (say between summer on-
-peak and winter off-peak), or even from one monthly billing cycle to another,
-would be more difficult (it&rsquo;s possible in theory but doesn&rsquo;t really match
-human activity patterns to delay all your energy-hungry activities for months
-and then execute them in a big batch months later; alternatively you&rsquo;d need a
-really big battery which is exactly what grid tie-in lets you avoid), but I&rsquo;m
-still curious if it would be advantageous in some circumstances.</p>
-
-<p>Again drawing on the example of my last year&rsquo;s experience, the answer turns
-out to be yes for both forms of time-shifting. Say you&rsquo;re going to bake a
-bunch of pies, and need to run the oven at 3KW for a little over 3 hours,
-consuming 10 KWh of electricity. (The 3 KW figure is realistic for an electric
-oven; the heating element running continuously is not; ignore that in the
-service of an example.) If you&rsquo;re going to consume that 10 KWh, does it matter
-<em>when</em> you consume it; what&rsquo;s the effect on your final true-up bill of adding
-10 KWh at various different times?</p>
-
-<p>If you can move that 10 KWh from a higher-value TOU period to a lower-value
-TOU period in the same day, you win; this turns out to be independent of
-tiering, consumption, or which month or season you&rsquo;re in, which is a nice
-property. It won&rsquo;t change your overall consumption for that day or month, so
-it won&rsquo;t change your tiering calculation. If you had a surplus in the higher-
-value TOU period, you&rsquo;ll now have a bigger surplus, which at the higher rate
-is more than enough to buy the same electricity back from PG&amp;E later in the
-day, even if the solar cells aren&rsquo;t producing at that time. (Basically, it
-wasn&rsquo;t immediately obvious to me what the credit/charge calculations do in
-this case, because my intuition keeps wanting to tell me it&rsquo;s better to
-consume energy when I&rsquo;m getting it free from my solar panels than when I&rsquo;m
-buying it from PG&amp;E. That turns out not to be true; the NEM system means if
-you buy and sell the same amount of electricity at a given rate, it&rsquo;s a wash,
-and the TOU system actually rewards you for selling it at a higher rate and
-buying it back at a lower rate.) So yes, you can &ldquo;game&rdquo; the E-6 billing system
-by moving usage from peak times to off-peak times, which use of &ldquo;game&rdquo; gets
-scare quotes because it&rsquo;s actually the behavior they want to encourage.</p>
-
-<p>Meanwhile, if you could move that same 10 KWh across months, the story is a
-lot more complicated. Due to tiering, you may be paying more than the baseline
-rate for some of your electricity, and since PG&amp;E applies the tiering
-calculations entirely inside each month, based on that month&rsquo;s usage, you can
-actually get crossover between &ldquo;high-value&rdquo; and &ldquo;low-value&rdquo; TOU periods. More
-concretely: as a solar generator, you may be paying more for winter off-peak
-electricity at 3rd-tier rates than you are for summer part-peak electricity
-where you never exceed the first tier. This is exactly what happened to me
-over the last year (note in the <a href="http://www.pge.com/tariffs/tm2/pdf/ELEC_SCHEDS_E-6.pdf">E-6 schedule</a> that winter
-off-peak and part-peak above 130% of baseline cost about what summer on-peak
-baseline usage does, and winter off-peak and part-peak above 200% of baseline
-cost more than the summer on-peak baseline). While from the previous example
-you&rsquo;d expect the result of time-shifting your usage to depend on the TOU rates
-(and you would win by shifting from a high-rate TOU to a low-rate TOU, and
-lose by doing the reverse), in fact it also depends on the tiering
-calculations, and you can also win by shifting usage out of a month where you
-had higher-tier usage into a month where you didn&rsquo;t, and this can even be true
-if it involves shifting that usage from a low-rate TOU to a higher-rate TOU.
-So, surprisingly, you could see a net benefit from moving usage from winter to
-summer; it&rsquo;s pretty easy to make the numbers work out if moving from winter
-part-peak to summer part-peak, and in extreme cases, you could even win by
-moving from winter off-peak to summer on-peak. This is decidedly not the
-result they want to encourage, so I&rsquo;d call it gaming the system. (Of course,
-you&rsquo;d need a way to actually buffer your usage across months; a better way to
-lower your winter bills is to simply use less electricity, without
-compensating in the opposite direction in the summer.)</p>
-
-<p>I&rsquo;ll note again that this perverse result derives from the fact that PG&amp;E
-calculates and finalizes the tiering calculations entirely inside each month,
-instead of smoothing them across the true-up period, so it&rsquo;s actually possible
-for a big energy user with an even bigger solar array to generate a net
-surplus for the year but be paying 4th-tier rates for winter electricity when
-the array is underperforming.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/11/e-1-vs-e-6-for-residential-solar-customers/">E-1 vs E-6 for Residential Solar Customers</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-11T00:00:00-08:00" pubdate data-updated="true">Nov 11<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/11/11/e-1-vs-e-6-for-residential-solar-customers/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>As a follow-on to my <a href="http://blog.metamatt.com/blog/2012/11/09/one-year-of-solar-power/">article on understanding the PG&amp;E NEM bill</a>, I decided to go back and recalculate our usage charges for the normal E-1 billing schedule, in addition to the E-6 I&rsquo;m actually using.</p>
-
-<p>I also threw in the calculation for the E-1 value of the electricity we
-generated instead of buying from PG&amp;E, that is, how much we would have spent
-to buy all the electricity we used from PG&amp;E if we hadn&rsquo;t installed the solar
-array.</p>
-
-<p>In short, E-6 was a solid win for us: a usage charge of $64.54 would have been
-$275.10 with E-1<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>.</p>
-
-<p>The results:</p>
-
-<iframe width='800' height='400' frameborder='0' src='https://docs.google.com/spreadsheet/pub?key=0AvFfqLY9cNwzdHZUWDlROU1QNldhdm85Y1RsUXRrakE&output=html&widget=true'></iframe>
-
-
-<p>E-6 was a solid win for us. In the 6 winter months where we had a usage
-charge, the usage charge was about $10/month higher with E-1<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>. In the 6 summer
-months where we had a usage credit, the usage credit was about $30/month lower
-with E-1<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>.</p>
-
-<p>On the flip side, E-6 has a &ldquo;meter charge&rdquo; of approximately 25 cents per day,
-or $92 per year<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>, which E-1 does not. So our true E-6 cost (for electrical
-usage, plus the privilege of E-6 TOU billing) is $156.88 for the year, and
-E-1&rsquo;s true cost remains at $275.10.</p>
-
-<p>It seems like E-6 would be an easy win for anyone who can generate all of
-their summer on-peak electricity, or especially all of their summer on-peak
-and summer partial-peak electricity. (You can compare the exact prices in the
-E-1 and E-6 billing schedules, but the E-6 off-peak rates and winter part-peak
-rates are lower than E-1 rates; E-6 summer part-peak rates are a little higher
-than E-1 rates; E-6 summer on-peak rates are a lot higher than E-1 rates.)</p>
-
-<p>I also remember being told that PG&amp;E will let you switch from E-1 to E-6 and
-then at the end of the first year, if you didn&rsquo;t save money, you can take a
-mulligan and retroactively undo the switch and pay the E-1 rate. I can&rsquo;t find
-confirmation of that on PG&amp;E&rsquo;s website today, though.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>You may notice that my earlier article lists our usage charge for the year as $60.22 and here it&rsquo;s $64.54; the difference is that $60.22 is PG&amp;E&rsquo;s number and $64.54 is my calculation for what it should be (and I had to fudge the numbers for October 2011 where PG&amp;E switched me from the old plan to NEM midway through the billing cycle, plus we may round differently, plus there may be other errors in my calculations). This seemed close enough to go through the rest of the exercise, and the technique used to calculate this number is the same one I&rsquo;ll use for the E-1 number, so this seemed like the one to use for this comparison.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>E-6 is always a win in the winter, because there&rsquo;s no winter peak zone; winter part-peak and winter off-peak are both cheaper than the E-1 rate. And between the solar array and our usage patterns, the vast majority of our PG&amp;E usage was in the off-peak time anyway.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-<li id="fn:3">
-<p>Between the solar array and our usage patterns, we ran a surplus in summer on-peak and summer part-peak for nearly the entire summer, and had to buy summer electricity only off-peak. This is exactly the behavior that E-6 is designed to encourage, and it rewarded us correspondingly.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
-<li id="fn:4">
-<p>So if you want a true zero bill from E-6, you need to generate enough of a surplus that it would counterbalance this $92/year &ldquo;meter charge&rdquo;. That would take 495 KWh of summer on-peak surplus or 1028 KWh of summer part-peak surplus, paid out at the &ldquo;generation&rdquo; rate due to the NSC rules.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/09/one-year-of-solar-power/">One Year of Solar Power</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-09T00:00:00-08:00" pubdate data-updated="true">Nov 9<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/11/09/one-year-of-solar-power/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>When I got solar panels installed on the roof of our house last fall, friends
-immediately started asking how well they were working out, and my answer had
-to be that while they&rsquo;re <a href="https://enlighten.enphaseenergy.com/public/systems/g8ah32261">generating a nice amount of power</a>, I wouldn&rsquo;t know how well they were doing on the actual goal of zeroing our
-electric bill until a year had passed. That year has now passed, and it&rsquo;s time to answer the question.</p>
-
-<p>If you add solar power to your grid energy, at least the way it&rsquo;s done in
-California, two things will happen:</p>
-
-<ol>
-<li> Your electric bills will be lower, but</li>
-<li> You won&rsquo;t understand them.</li>
-</ol>
-
-
-<h2>The problem:</h2>
-
-<p>California electric rates are confusing because they&rsquo;re complicated and
-variable. You pay a different rate depending on how much you use (tiering)<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>.
-You can opt into time-of-use (TOU) billing<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>, which makes electricity more
-expensive at peak times and cheaper the rest of the time to encourage you to
-shift usage away from peak times. The normal residential billing schedule is
-called <a href="http://www.pge.com/tariffs/tm2/pdf/ELEC_SCHEDS_E-1.pdf">E-1 (&ldquo;residential services&rdquo;)</a> and shows
-5 different rates according to tier; the TOU residential schedule is called
-<a href="http://www.pge.com/tariffs/tm2/pdf/ELEC_SCHEDS_E-6.pdf">E-6 (&ldquo;residential time-of-use service&rdquo;)</a> and shows
-25 different rates according to tier and time.</p>
-
-<p>Once you introduce solar (or other generation capabilities) into the mix,
-there&rsquo;s another wrinkle. Assuming you stay connected to the grid, PG&amp;E will
-convert your billing to what they call <a href="http://www.pge.com/standardnem/">NEM</a>
-(Net Energy Metering), which means your electric meter will measure the flow
-of power in both directions — from the grid into your house when you&rsquo;re using
-more than you&rsquo;re generating, and from your house back to the grid when you&rsquo;re
-generating more than you&rsquo;re using. But solar panel output varies by season and
-with weather, in addition to the obvious day/night cycle. To account for this
-seasonal variation, PG&amp;E bills NEM customers on a yearly cycle called the
-<a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/">true-up period</a>.
-Your monthly bills are only an approximation, and at the end of the year they
-calculate the actual balance owed compared to what you already paid, and have
-you &ldquo;true up&rdquo; to that amount, hence the name.</p>
-
-<p>For NEM customers, that&rsquo;s 3 different axes of variation<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>: tiered rates based
-on total consumption, variable rates due to time-of-use, and true-up billing
-to account for seasonal variation of generated output.</p>
-
-<h2>Before adding solar generation</h2>
-
-<p>You have to calculate how much electricity you want to generate to produce the
-desired effect (economically or ecologically or both<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>), and then you need to
-calculate the size of a PV solar array that will produce that effect.</p>
-
-<p>Both of these calculations actually turn out to involve a fair amount of
-prediction. Companies that specialize in solar installations (for example,
-<a href="http://www.luminalt.com/meet-luminalt/about-us">Luminalt</a>, who installed
-ours) can help you with these predictions and calculations.</p>
-
-<p>But even after you&rsquo;ve done the calculations, decided to go solar, and had the
-array installed and it&rsquo;s live, you still won&rsquo;t know if you were right, at
-least for a while. That&rsquo;s what this post is about. I wanted to know if we&rsquo;d
-predicted correctly, and I also wanted to know if PG&amp;E&rsquo;s billing methods
-fairly account for the seasonal variation. (If I have a large surplus in
-summer on-peak in July, and a big deficit in winter off-peak in January, do
-these cancel out, and how?)</p>
-
-<h2>After adding solar generation</h2>
-
-<p>I said that after activating a solar array and switching over to PG&amp;E&rsquo;s NEM
-program, you&rsquo;ll get lower bills that you won&rsquo;t understand. Here&rsquo;s what I mean.
-Each month with my electric bill<sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup>, I get a separate &ldquo;Net energy metering
-electric statement&rdquo;. It includes three amounts:</p>
-
-<ol>
-<li> &ldquo;total current month&rsquo;s billed amount&rdquo;, which is always in the neighborhood of $12.</li>
-<li> &ldquo;current month energy charge or credit&rdquo;, which is the actual charge for electricity I used, or credit for electricity I produced, after accounting for tiered TOU rates.</li>
-<li> &ldquo;cumulative energy charges or credits for the current true-up period&rdquo;, which is the sum of the #2 values.</li>
-</ol>
-
-
-<p>This is hard to interpret month by month, partly because there&rsquo;s no
-relationship between what I&rsquo;m asked to pay (#1) and what I used (#2), and #3
-will swing wildly one direction<sup id="fnref:6"><a href="#fn:6" rel="footnote">6</a></sup> and then correct over the course of the year.
-All of this evens out at the end of the year, which is the reason for the
-1-year true-up method of billing.</p>
-
-<p>But when the 1-year anniversary arrives, and with it the final true-up
-payment, there&rsquo;s a new confusing quantity: &ldquo;total current month&rsquo;s billed
-amount&rdquo; is replaced with &ldquo;total true-up billed amount&rdquo;. This amount, which is
-your actual bill for the 12th month, is not the usual $12, bears no obvious
-relationship to the cumulative energy charge, and isn&rsquo;t explained or derived
-by PG&amp;E on the bill or elsewhere that I could find<sup id="fnref:7"><a href="#fn:7" rel="footnote">7</a></sup>. (In my case: my
-cumulative energy charge after 12 months was $60.22, and the &ldquo;total true-up
-billed amount&rdquo; was $22.02.) Why?</p>
-
-<p>There&rsquo;s a method to their madness, but I had to dig deep into PG&amp;E&rsquo;s rate
-documentation and then spend a few hours messing with a spreadsheet to try to
-derive the calculations that would map my usage to my bills.</p>
-
-<h2>Understanding true-up billing</h2>
-
-<p>First, the monthly bill. Where does this $12 come from? It turns out PG&amp;E
-charges E-6 (TOU) customers a &ldquo;meter charge&rdquo; of approximately $0.25 per day.
-E6 and E-1 both also have a &ldquo;minimum charge&rdquo; of approximately $0.15 per day;
-they don&rsquo;t explain what this means, but if my reverse engineering of my bills
-is correct, for NEM customers it&rsquo;s essentially a placeholder for your usage
-before they know what your usage is. These fees added together and multiplied
-by the number of days in a billing cycle yield the approximately $12 amount
-that I was billed for each month (billing cycles ranged from 28 to 32 days, so
-the monthly bill ranged from $11.22 to $12.83, with the most common bill being
-$12.02 for a 30-day billing cycle).</p>
-
-<p>Second, the usage charges. These are not simple (since they involve both the
-tiering and TOU calculations), but they are actually decently explained on the
-monthly NEM statement itself, and with one nitpicky exception<sup id="fnref:8"><a href="#fn:8" rel="footnote">8</a></sup>, they&rsquo;re the
-same as what you had before you added NEM, and the true-up calculation doesn&rsquo;t
-affect them.</p>
-
-<p>Third, the cumulative usage charge. This one is completely straightforward:
-add the usage charges for the current true-up period, to date. Each NEM
-statement shows the current cumulative charge (this amount) and the amount by
-which it changed (the month&rsquo;s usage charge), and you can verify that the
-current cumulative balance is equal to the previous month&rsquo;s balance plus/minus
-the current month&rsquo;s usage charge/credit. However, as mentioned above, this
-amount will swing one direction and then correct due to seasonal variation,</p>
-
-<p>Fourth, the true-up amount. This is a simple calculation if you know where it
-comes from, but PG&amp;E doesn&rsquo;t explain it, so I had to reverse engineer it,
-learning to understand the daily meter and minimum charges. What it boils down
-to is that the $0.15 &ldquo;minimum charge&rdquo; is not a real charge once the true-up
-period is over, but a provisional placeholder: you pay this with each month&rsquo;s
-$12 bill, but at the end of the year, when your real usage is known, you get
-back the provisional amount and pay the real amount. At the end of the year,
-you take your usage charge/credit, and add the meter charge ($0.25 per day or
-about $7.50 per monthly bill or $92.33 in a full year<sup id="fnref:9"><a href="#fn:9" rel="footnote">9</a></sup>), and that&rsquo;s what you
-owe for the year. Except you&rsquo;ve already paid that meter charge, plus you&rsquo;ve
-paid the &ldquo;minimum&rdquo; usage charge as a provisional placeholder. So subtract the
-provisional usage charge ($0.15 per day or about $4.50 per monthly bill or
-$53.96 in a full year), and you have the amount that&rsquo;s unpaid, that you must
-still pay in order to True Up. So, your first 11 bills are for 30-ish days of
-meter charges and minimum charges, totaling about $12; your 12th bill is for
-30-ish days of meter charges, minus 335-ish days of minimum charges, plus your
-cumulative usage charge for the whole year. In my case, actual usage at the
-end of the year was $60.22, of which $46.27 had already been paid monthly as
-that &ldquo;minimum&rdquo; charge, so what I&rsquo;d call the actual true-up component was
-$13.95; add in $8.07 in meter fees (32 days at $0.25/day) for the final
-billing period and we have what PG&amp;E calls my true-up bill of $22.02.</p>
-
-<h2>Cancelation across TOU periods</h2>
-
-<p>I was curious whether a surplus in one TOU period (for example, summer on-
-peak, which is likely the best case for residential solar customers) can
-partially or wholly cancel a deficit in another TOU period (for example,
-winter off-peak, which is pretty much entirely dark, and thus worst-case for
-solar customers). As it turns out, PG&amp;E doesn&rsquo;t directly add and subtract
-usage across TOU periods; they convert usage to a dollar amount every month
-(based on TOU periods and tiering), then add and subtract the monthly dollar
-amounts. This is a clever way of accounting, since it&rsquo;s pretty easy to
-understand, and does a pretty fair job of reconciling the amounts from
-different TOU periods. (In fact, it works out pretty well for residential
-solar customers, since your summer on-peak surplus is credited at a higher
-rate than that winter off-peak deficit.) My only complaint here is again that
-the tiering calculations are done per month and only affect you on the
-downside.</p>
-
-<h2>Raw facts</h2>
-
-<p>Here are the actual numbers from my house over the last year, which may be
-helpful in understanding the derivations here, making the descriptions more
-concrete, and/or planning your own PV solar system.</p>
-
-<ul>
-<li>Generated by solar: 7195 KWh</li>
-<li>Bought from PG&amp;E: 1601 KWh</li>
-<li>Total consumed: 8796 KWh</li>
-<li>Months with positive grid usage, resulting in PGE charge: 6 (Oct-Mar)</li>
-<li>Months with negative grid usage, resulting in PG&amp;E credit: 6 (Apr-Sept)</li>
-<li>Whole-year usage charge: $60.22</li>
-<li>Value of electricity consumed if I had to buy it all from PG&amp;E: $2052.34 (assuming E-1 and not E-6 billing, since I don&rsquo;t have the generated KWh broken out by TOU period)</li>
-<li>Prior-year electric bill: $1403.77</li>
-<li>Granular usage (from PG&amp;E&rsquo;s point of view), broken down by month and TOU billing period:</li>
-</ul>
-
-
-<h2>Sum-up</h2>
-
-<p>The true-up billing method mostly but not entirely allows you to smooth out
-the seasonal variation, canceling bad performance one month against good
-performance in another month.</p>
-
-<p>You can understand your monthly bills if you think of them like this: $12 a
-month, $7.50 of which is just for the privilege of being connected to the
-grid, and $4.50 of which is a deposit against your actual usage. Meanwhile,
-the actual usage bill accrues in the background, and at the end of the year,
-you pay this balance minus a $49.50 refund for those eleven $4.50 deposits.</p>
-
-<p>Due to the low NCS reimbursement it still seems to me that the optimal array
-size is what brings you very close to even for the year, offsetting your usage
-without generating much of a surplus. However, due to the way usage tiers are
-finalized each month instead of across the true-up period, sizing your array
-slightly larger than this may pay off by reducing higher-tier winter bills,
-even though the net surplus KWh aren&rsquo;t themselves valuable in the NCS
-calculation.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>The baseline usage, which determines the details of the tiering calculation, further varies by where you live in California and whether your home has a gas or electric primary heat source.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>You can opt into TOU billing regardless of whether you have solar or other generation facilities, but in general, it makes a lot of sense if you have generation capabilities and less sense if you don&rsquo;t, plus most people not planning on adding solar won&rsquo;t have the TOU option waved in their face and probably don&rsquo;t even know about it. I don&rsquo;t know the exact numbers, but I presume most NEM customers opt for TOU billing, and most grid-only customers do not.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-<li id="fn:3">
-<p>There&rsquo;s another confusing way they split things up, but I&rsquo;m not denoting it as an axis because it&rsquo;s not orthogonal to the others. PG&amp;E separates the rate into separate quantities for &ldquo;generation&rdquo;, &ldquo;transmission&rdquo;, &ldquo;distribution&rdquo;, and &ldquo;the funding of public purpose programs&rdquo;. We&rsquo;ll come back to the reason for this bookkeeping sleight-of-hand later; it doesn&rsquo;t really matter unless you generate a surplus, but if you do, look for this to raise its head in the Net Surplus Compensation calculation.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
-<li id="fn:4">
-<p>If you believe solar power is cleaner than grid power, the ecologically optimal size for your home array is &ldquo;as large as possible&rdquo;, though of course there&rsquo;s some ecological cost to PV panel manufacturing too. But if you&rsquo;re trying to make your solar array economically viable, you&rsquo;ll want to compare actual costs and benefits; the costs depend on the cost and output of the array and how long you plan to keep it and whether you buy or lease and the details of the financing, all things you can find <a href="http://www.gosolarnow.com/NetMetering.html">companies or calculators</a> to help with. The benefits depend on what you&rsquo;re actually paying for grid electricity, which follows the complicated calculations already described. If you&rsquo;re a light user paying baseline $0.12/KWh rates, you&rsquo;ll save less than a heavy user paying 4th-tier $0.34/KWh rates. While the specifics vary, it&rsquo;s probably easy to generate solar power for less than $0.34/KWh and somewhat hard to generate solar power for less than $0.12/KWh. What this means is most solar customers try to offset most but not all of their own usage, to get back down in the baseline tier. It&rsquo;s often not cost-effective to compete with PG&amp;E&rsquo;s baseline rates. It&rsquo;s especially cost-ineffective to operate at a net surplus, because of the way PG&amp;E values the surplus: read their <a href="http://www.pge.com/myhome/saveenergymoney/solarenergy/afterinstalling/ab920/">Net Surplus Compensation</a> rules, paying special attention to the last section, &ldquo;Why is NSC less than the credit on my NEM statement?&rdquo;. In short, PG&amp;E splits the &ldquo;retail&rdquo; rates that you&rsquo;re used to seeing into separate components for generation, transmission, distribution, and the funding of public programs like nuclear plant decommissioning; your NEM credits come back at the retail rate until you hit break-even; however if you operate at a surplus, PG&amp;E pays only a &ldquo;wholesale-type rate for generation&rdquo;. You can see the actual breakdown on the E-1 or E-6 billing schedules; I don&rsquo;t actually know how to calculate the breakdown for E-6 since your surplus is for the year and it&rsquo;s not clear which TOU rate to apply; in any case generation is less than half of the total.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
-<li id="fn:5">
-<p>Actually not <em>with</em> my electric bill, because I&rsquo;ve opted for paperless billing and told PG&amp;E to stop sending me paperless bills, and I can look at the details on the website. But none of the NEM details are available on their website, nor is there an option to go paperless for the NEM data. So what actually happens is the NEM data shows up on paper in my mailbox a few days after I get the bill itself electronically.<a href="#fnref:5" rev="footnote">&#8617;</a></p></li>
-<li id="fn:6">
-<p>Which direction it swings will depend on when your true-up period starts. Mine starts in October and so the first few months are fall and winter, and I accumulated quite a large charge before April when I started getting credits. By the following October, it was nearly back to 0. If your true-up period starts in April, you&rsquo;d presumably see the reverse, amassing a series of credits and a large negative balance over the summer before winter charges start to eat away at the credit balance.<a href="#fnref:6" rev="footnote">&#8617;</a></p></li>
-<li id="fn:7">
-<p>PG&amp;E&rsquo;s explanation of how to read this is split into four pages on their website, for the <a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/">monthly statement</a>, <a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/monthlybill/">monthly bill</a>, <a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/trueupstatement/">true-up-statement</a>, and <a href="http://www.pge.com/myhome/myaccount/explanationofbill/nem/trueupstatement/">true-up bill</a>. These pages explain the meaning of each item on the bill, but don&rsquo;t explain how the amounts are calculated, or why you owe what you owe.<a href="#fnref:7" rev="footnote">&#8617;</a></p></li>
-<li id="fn:8">
-<p>The true-up calculation doesn&rsquo;t affect the monthly usage charge calculation, but arguably it should, because the rates depend on tiering, the tiering depends on usage, and usage is supposed to be smoothed over the entire true-up period. But actually, the tiering calculations are done entirely inside each month. What this means is that in the winter when your solar array is underperforming, higher usage might push you into the upper tiers, and you&rsquo;ll pay more for your grid electricity because of this, and no amount of summer credits can offset these higher rates. Again using my first-year numbers as an example, my assigned baseline value for the year sums to 2878 units, and my actual cumulative usage was 1601 KWh. (Or: the average of the monthly baselines was 240, and my average monthly usage was 133.) I&rsquo;d argue that this means I should be paying only first-tier rates. However, because of the seasonal variation expected with solar generation, my usage from PG&amp;E&rsquo;s point of view is skewed heavily toward winter, and in fact I had above-baseline usage in only the 4 shortest months: November through February. Because PG&amp;E applies the baseline-to-tier calculation on each month&rsquo;s usage individually, instead of across the true-up period, I paid substantially more for electricity in those 4 months. In my case, I was charged $60.22 for my electricity usage, but if it had all been at baseline rates, I would have been owed a $5 credit.<a href="#fnref:8" rev="footnote">&#8617;</a></p></li>
-<li id="fn:9">
-<p>I&rsquo;m writing this after my first year of NEM, and the PGE switched me over to NEM billing in the middle of a billing month without changing the billing cycle, so my first month&rsquo;s NEM bill only included 9 days, and so my first true-up period of 12 bills is only 11 1/3 months or 345 days. Presumably, future true-up periods will be a full year.<a href="#fnref:9" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/07/one-year-of-cellular-data/">One Year of Cellular Data</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-07T00:00:00-08:00" pubdate data-updated="true">Nov 7<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/11/07/one-year-of-cellular-data/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Here are the stats on my cellular data usage over one year on Sprint&rsquo;s
-network<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. (I got the phone on Halloween of 2011, and took this screenshot on
-Halloween of 2012.)</p>
-
-<p><a href="http://www.flickr.com/photos/67861147@N00/8163380863"><img src="http://farm8.staticflickr.com/7120/8163380863_21996345ca.jpg" alt="1 year of cellular data usage" /></a></p>
-
-<p>7 GB down and 1 GB up; 8 GB total; that averages to 666 MB per month. Clearly
-I&rsquo;m not a heavy cellular data user and not making the most out of Sprint&rsquo;s
-unlimited data allotment; this would fit comfortably within the other
-carriers&#8217; smallest real<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup> data plans (1GB/month).</p>
-
-<p>Speaking of unlimited data plans: this might sound heretical to some, but I
-really wouldn&rsquo;t mind metered data at a fair price. Say a penny a megabyte,
-billing you only for what you use. That comes out to $10 per gigabyte, which
-is actually the marginal rate that AT&amp;T and Verizon are charging now anyway,
-except first they make you pay a minimum $30/month commitment and then they
-round up to the next gigabyte.</p>
-
-<p>Of course, I also wouldn&rsquo;t mind an unlimited plan that was cheap and fast and
-allowed tethering<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>.</p>
-
-<p>In the meantime, here in the US we have Sprint offering unlimited data at a
-price that&rsquo;s fair for heavy users but not especially cheap for light users,
-and their network isn&rsquo;t the fastest and they have surcharge for tethering.
-Then we have AT&amp;T and Verizon saying unlimited plans don&rsquo;t incent them to
-invest in their networks so they&rsquo;ve moved to metered plans; on the plus side
-their networks have gotten markedly faster and they don&rsquo;t charge extra for
-tethering on the metered plans; however their metering methods don&rsquo;t meet my
-definition of fair.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>Actually 11 1/2 months on Sprint&rsquo;s network, and 10 days on O2 Ireland and 3 days on Three UK during a trip to Europe. Both of their data networks, but especially Three&rsquo;s, were better than what I&rsquo;m accustomed to in the USA, which is especially infuriating given they&rsquo;re also much cheaper.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>Ignoring AT&amp;T&rsquo;s toy 250 MB/month plan.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-<li id="fn:3">
-<p>Which actually exists in much of the world, but not in the USA.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/06/oauth-and-localization-fixes-for-palm-evernote-importer/">OAuth and Localization Fixes for Palm-Evernote Importer</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-06T00:00:00-08:00" pubdate data-updated="true">Nov 6<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/11/06/oauth-and-localization-fixes-for-palm-evernote-importer/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I’ve updated my <a href="http://www.maddogsw.com/evernote-utilities/evernote-palm-importer/">utility for importing notes from Palm Desktop into Evernote</a> again.</p>
-
-<p>The big change is that it now uses <a href="http://dev.evernote.com/documentation/cloud/chapters/Authentication.php">OAuth for authentication to the Evernote service</a>, instead of asking you for Evernote account credentials directly. This is a step forward in general; utilities like this one shouldn&rsquo;t have unrestricted access to your entire account, nor should they know your actual password in case you use the same password for other services<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. <a href="http://blog.evernote.com/tech/2012/11/01/third-party-authentication-transition-to-oauth-complete/">Evernote has disabled username/password logins for third party apps</a> to force them to use OAuth, a move which I think more services should make<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
-
-<p>I also made some smaller changes to further improve the chance of success for people outside the USA, using nondefault character encoding or locale settings.</p>
-
-<p>Finally, I added the <a href="https://github.com/metamatt/evernote-palmimport">public source repository</a> to my github account. (I&rsquo;ve always made the source codefor the current version available, but now the complete repository with history is public.)</p>
-
-<p>Download here: <a href="http://www.maddogsw.com/evernote-utilities/evernote-palm-importer/">http://www.maddogsw.com/evernote-utilities/evernote-palm-importer/</a>.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>Which you shouldn&rsquo;t do, but lots of people do anyway.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>I&rsquo;m looking at you, Google Reader clients.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -1090,23 +774,23 @@ definition of fair.</p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/03/20/apple-is-getting-really-aggressive-about-this-sleepdelay-thing/">Apple is getting really aggressive about this sleepdelay thing</a>
+        <a href="/blog/2013/12/08/mail-dot-app-gmail-and-mavericks/">Mail.app and gmail in Mavericks</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/">From Tumblr to Octopress, part 3: footnotes</a>
+        <a href="/blog/2013/12/08/death-by-dueling-modal-dialog/">Death by dueling modal dialog</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/">From Tumblr to Octopress, part 2: how</a>
+        <a href="/blog/2013/12/08/apple-2-factor-authentication-setup/">2-factor authentication setup for AppleID</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-1-why/">From Tumblr to Octopress, part 1: why</a>
+        <a href="/blog/2013/12/08/apple-shopping-cart-fail-gift-card-in-cart/">Apple shopping cart fail — gift card in cart makes gift card payment option disappear</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+        <a href="/blog/2013/12/08/apple-shopping-cart-fail-multiple-devices-on-new-cell-plan/">Apple shopping cart fail — multiple devices on new cell plan</a>
       </li>
     
   </ul>

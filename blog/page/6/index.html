@@ -9,8 +9,8 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="I&rsquo;ve been wishing and waiting and watching and waiting, with an idea in my
-head of what I want: from computers and the internet, regarding &hellip;">
+  <meta name="description" content="Over the past 5 years, I&rsquo;ve used smartphones from Apple and Palm (powered by
+iOS and webOS), and played around with Android devices over the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,674 @@ head of what I want: from computers and the internet, regarding &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/20/observations-on-mobile-platform-speed/">Observations on Mobile Platform Speed</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-20T00:00:00-08:00" pubdate data-updated="true">Jan 20<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/01/20/observations-on-mobile-platform-speed/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Over the past 5 years, I&rsquo;ve used smartphones from Apple and Palm (powered by
+iOS and webOS), and played around with Android devices over the same timeframe
+though I&rsquo;ve never owned one for daily use.</p>
+
+<p>Still, I find the different design choices at the system level to be very
+different, and the results pretty much what you&rsquo;d expect for each one:</p>
+
+<ul>
+<li>webOS as Palm originally shipped it: apps are written in Javascript and run in an interpreter; the platform doesn&rsquo;t swap out virtual memory. I never saw apps crash; it was pretty common to get out-of-memory errors (in the guise of a message that says you&rsquo;re trying to do too many things at once and need to close some apps). Apps were pretty slow.</li>
+<li>webOS as reinterpreted by the hacker/modder community: apps are still Javascript running in an interpreter, but now there&rsquo;s a swapfile pretending there&rsquo;s more memory. (I think Palm liked this patch enough they eventually folded it back into their official kernels, actually. And if swapping caused a hit to speed, it was compensated for by the fact that the hacker kernels also overclocked the CPU.) The result with this was a platform on which apps never crashed, and also never run out of memory, but they could be glacially slow. The poster child here was the Google Maps app, which often took so long just to launch — over a minute, no kidding — that it would apparently become confused about why it had launched in the first place, and just draw a white screen. (The bit about confusion is just my narrative, but it often would draw nothing but a white screen, and that seemed to correlate highly with the times it took forever to launch.) You can certainly make the argument that an app that takes a minute to launch to a broken state is no more helpful than an app that crashed; there&rsquo;s no panacea here.</li>
+<li>iOS: apps are written in Objective C and compiled to native code; there&rsquo;s no swapfile I&rsquo;m aware of. There are two results here: apps run fast, and they crash often. They crash because they segv from bad code, they crash because malloc returns null and they segv instead of checking for that, and they crash because the platform kills them for using too much memory.</li>
+<li>Android: apps are written in Java and run in a JIT-compiled VM (which has gotten faster over time, notably in the 2.3 release); I don&rsquo;t know if there&rsquo;s a swapfile, but I suspect stock Android releases don&rsquo;t have one and mods like CyanogenMod allow one. As I said above, I don&rsquo;t have deep experience with Android devices, but my general perception is that on contemporary roughly equivalent hardware, it feels significantly faster than webOS and significantly slower than iOS. (I&rsquo;m talking about user perception of speed here, which has to do both with how responsive the UI is and how fast real work gets done. iOS and webOS both pay more attention than Android to keeping the UI responsive, to the best of my knowledge.)</li>
+</ul>
+
+
+<p>So. This evidence is relatively unsurprising and easy to explain — interpreted
+code that can have as much memory as it wants never crashes but takes forever
+to do anything useful; native code under tight memory management is much
+faster and much more crash prone — what&rsquo;s interesting to me is that all 3 of
+these approaches were considered viable in the marketplace. And I don&rsquo;t even
+know that the dog slowness of webOS is the reason it failed in the marketplace
+(and if HP had poured the right resources into it and actually shipped what
+they said they would in 2011, a better optimized webOS 3 running on 2011-class
+hardware might not have even felt slow). But even discounting webOS, the other
+two approaches are both provably market-viable.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/20/nothing-is-as-easy-as-it-should-be-ssd-upgrades/">Nothing Is as Easy as It Should Be: SSD Upgrades</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-20T00:00:00-08:00" pubdate data-updated="true">Jan 20<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/01/20/nothing-is-as-easy-as-it-should-be-ssd-upgrades/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Santa, bless the guy, heard me getting annoyed at the sounds of hard drives
+spinning up and down in the night, and decided to help me out by bringing me
+SSD&rsquo;s for my and Vanessa&rsquo;s computers.</p>
+
+<p>So, the week after Christmas, I replaced the spinning rust in my (2006) Mac
+Pro and her (2009) iMac with <a href="http://amzn.to/wUySKX">Crucial M4 solid state drives</a>.</p>
+
+<p>This was really easy in the Mac Pro; this machine is the easiest to work on
+I&rsquo;ve ever owned or used, and that&rsquo;s probably why a machine from 2006 is still
+ticking along so happily in 2012 &mdash; I&rsquo;ve upgraded the RAM twice, the hard
+drives three times for bigger/better hard drives and twice more to supplement
+and now replace them with SSDs &mdash; I don&rsquo;t really feel bottlenecked by 5-year-
+old CPUs.</p>
+
+<p>Drive upgrades are not as easy in the iMac. First of all, there are no screws
+on the outside of the case; all the guts are behind the glass of the screen,
+which is held on by magnets, and you need to remove it with a suction cup.
+Seriously. (If you already know this, you probably don&rsquo;t find it surprising,
+but when I first learned it, I was really surprised.) It&rsquo;s actually not as
+hard as it sounds, but I did have to buy a suction cup. Then you have to
+carefully disconnect a bunch of miniature ribbon cables. I followed the
+<a href="http://www.btobey.com/learn/imac-ssd-install.php">walkthrough here</a> because
+it has nice pictures, except I couldn&rsquo;t actually follow it because the 2009
+iMac I was working on, unlike the more recent models, doesn&rsquo;t have a 2nd SATA
+port. Which means I had to replace the hard drive, instead of adding the SSD
+alongside it. That was actually the goal, since I didn&rsquo;t want to hear drives
+spinning up and down, but it means I had to contend with the <a href="http://blog.macsales.com/2751-proprietary-cable-can-put-the-brakes-on-upgrading-late-09-imacs">temperature sensor issue</a>.</p>
+
+<p>There seem to be 5 ways people deal with this:</p>
+
+<ul>
+<li>ignore it and deal with loud fans</li>
+<li>use aftermarket software to control the fan speed, ignoring drive temperature</li>
+<li>buy the cable from the previous generation iMac, which had the temperature sensor outside the hard drive</li>
+<li>short out the temperature sensor circuit, which is apparently temperature-sensor code for &ldquo;it&rsquo;s cool&rdquo;</li>
+<li>(only on newer iMacs with 2 SATA ports) leave the OEM factory hard drive attached, and add the SSD as a 2nd drive</li>
+</ul>
+
+
+<p>I opted for shorting the pins, as I don&rsquo;t want loud fans, don&rsquo;t really trust a
+software solution, don&rsquo;t want to pay and wait for the extra part which seems
+to be hard to find now anyway, and don&rsquo;t have the newer model with the 2nd
+SATA port.</p>
+
+<p>This just leaves the question of how to short the pins. Jumpers from old PC
+hard drives would probably do the trick, but I don&rsquo;t have any lying around. I
+could cut the cable and just short the wires, but I wanted to leave the option
+to reverse this procedure if things didn&rsquo;t work out.</p>
+
+<p>I ended up making a jumper out of a short piece of one conductor from solid-
+core Category 6 network wire. Strip that, bend it in a tight U, jam it inside
+the connector at the end of the sensor cable, and it fits nicely. Seems to be
+working fine.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/20/nothing-is-as-easy-as-it-should-be-nas-upgrades/">Nothing Is as Easy as It Should Be: NAS Upgrades</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-20T00:00:00-08:00" pubdate data-updated="true">Jan 20<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/01/20/nothing-is-as-easy-as-it-should-be-nas-upgrades/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>After <a href="http://blog.metamatt.com/blog/2012/01/20/nothing-is-as-easy-as-it-should-be-ssd-upgrades/">the SSD upgrade project</a>, I now have a stack of unused 1TB hard drives. I also have an old NAS unit (ReadyNAS NV) which is currently hosting 4 320GB hard drives, is almost full, and while old is still compatible with the 1TB drives. Sounds like a good match — time to upgrade.</p>
+
+<p>Reading about <a href="http://www.readynas.com/?cat=54">ReadyNAS&#8217; vaunted X-RAID technology</a>, a proprietary extension to RAID
+that allows resizing, this sounds easy — one by one, replace each drive with a
+larger one, and wait for the RAID to rebuild onto the new drive. When the
+drives are different sizes, the array will be limited to 4x the size of the
+smallest, but after upgrading all 4 to 1TB, I simply reboot and will have
+access to the full new size. And since the ReadyNAS supports hot swap and has
+the drives mounted in nice hot swappable sleds, I don&rsquo;t even have to reboot
+except for that final resize (and I&rsquo;m not really clear on why I have to then,
+but whatever).</p>
+
+<p>Sounds easy… until I actually try swapping out the drives. The drives are in
+sleds, see, and the sleds have this latch, and the latch has this release
+button… and nothing happens when I press the release button. I try reading the
+manual, which talks about how easy it is to add drives but doesn&rsquo;t go into any
+details on what to do if you have trouble removing one. I try reading &ldquo;<a href="http://www.readynas.com/?page_id=193">The definitive guide to the ReadyNAS NV+</a>&rdquo;
+(a slightly newer but very similar model) for tips; it talks about how disk
+replacement eases the stress of disk failure; my mind jumps to bad puns about
+stressing the ease while easing the stress, and thinking I&rsquo;m glad I&rsquo;m not
+dealing with the stress of a failed disk that I can&rsquo;t remove.</p>
+
+<p>Eventually I find a <a href="http://www.readynas.com/forum/viewtopic.php?p=30550">forum thread on the problem</a>, with the
+solution. It&rsquo;s 5.5 years old, and still kicking. Much like my ReadyNAS NV, I suppose.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/20/nest-learning-thermostat-review/">Nest Learning Thermostat Review</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-20T00:00:00-08:00" pubdate data-updated="true">Jan 20<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/01/20/nest-learning-thermostat-review/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I bought two <a href="http://www.nest.com/living-with-%20nest/">Nest Learning Thermostats</a> for my house, which has two furnaces. Here&rsquo;s how they&rsquo;re working out for me.</p>
+
+<p><strong>Ordering</strong></p>
+
+<p>I almost bought them on the day they were announced back in November, but dithered, and the initial batch sold out; I got on the waiting list and waited. In early January they sent me an email allowing me to place an order (for up to 5 units); I ordered two; they arrived Friday and I&rsquo;ve spent the weekend playing (er, working) with them.</p>
+
+<p>One thing that happened between when I didn&rsquo;t order them the first day and when my turn to order came around was <a href="http://www.marco.org/2011/12/17%20/nest-incompatibility-without-c-wire">Marco Arment&rsquo;s post on Nest incompatibility with his existing wiring</a>. Having read that, I semi-carefully checked my own wiring against Nest&rsquo;s online compatibility wizard before ordering (which I might not have bothered doing if I hadn&rsquo;t read Marco&rsquo;s post, given that my furnaces and wiring are only 3 years old, so I assumed they&rsquo;re modern). When I say &ldquo;semi-carefully&rdquo;, I mean I looked at my wires and verified them against Nest&rsquo;s tool (which says I&rsquo;m fine), and I considered Marco&rsquo;s problem (2 wires, red and white, are enough for a basic thermostat to control heating, but not to power or recharge the thermostat without activating said heating) and made sure I had a 3rd wire and figured I wouldn&rsquo;t have that problem.</p>
+
+<p>In fact, when my thermostats arrived and I installed them, I also uttered a <a href="https://twitter.com/#!/metamatt/status/157882839508062209">triumphant but premature tweet</a> about having modern wiring. If only. If you&rsquo;re reading carefully — more carefully than I had read Marco&rsquo;s post — you&rsquo;ll note I said I had 3 wires, but not which 3 wires. And, as it turns out, I had it wrong. No, I didn&rsquo;t have a C (common) wire; my third wire was a G (fan) wire.</p>
+
+<p><strong>Unboxing and setup</strong></p>
+
+<p>The packaging is nice; the actual thermostat unit is nice; the base which you attach to the wall has a built-in level, and pressure-fit connectors for the wires instead of screw terminals. It&rsquo;s obvious the device was carefully designed and built without taking shortcuts — which had better be true, given the price.</p>
+
+<p>It was fairly easy to take my old thermostat off the wall, note how it was using the wires, reconnect the same wires (Rh, W and G, again) in the same capacity to the Nest base, attach the Nest base to the wall, and then press the Nest device onto the base. It didn&rsquo;t take long to do this twice, in fact — once upstairs and once downstairs.</p>
+
+<p>The next step is to connect the thermostat my Wi-Fi network — entering Wi-Fi passwords on small devices without keyboards is usually no fun, but entering text on the Nest&rsquo;s rotating dial is surprisingly satisfying. Kind of like using a combination lock from high school again, but less confusing. As soon as it connected to the network, the Nest found itself a software update, invoking the download-and-reboot cycle that&rsquo;s the bane of many modern smart devices. In fact, it seemed to reboot twice. The downstairs device survived this fine and next wanted me to join it to a cloud management account; the upstairs device asked me what time it was, which is a bad sign for something that&rsquo;s supposed to be connected to the internet. It turns out it had forgotten how to connect to the network, so I had to enter my Wi-Fi password again.</p>
+
+<p>After this setup phase — which took a little longer than I&rsquo;d expected due to all that rebooting — the thermostats were active, ready to use manually, and, ostensibly, learning my habits so I don&rsquo;t need to tell them what to do.</p>
+
+<p><strong>Use</strong></p>
+
+<p>These thermostats are easy on the eyes and easy to use; you just turn the dial to change the temperature, or push in on the dial to bring up the onscreen UI with easy-to-understand options for setting home/away, turning the whole thing off, or invoking manual scheduling settings I haven&rsquo;t bothered playing with.</p>
+
+<p>If you create a Nest account and install the smartphone app or use their website, you can monitor and change the temperature from anywhere, which is pretty darn space age if you ask me.</p>
+
+<p>One minor glitch is that the just-approach-to-wake-screen feature seems to only sometimes work; the Nest is supposed to recognize when you approach and greet you by turning on the screen, but sometimes it doesn&rsquo;t turn on until I actually touch it, sometimes it only turns in when I stick my hand within inches, and sometimes it turns on when I just walk by. This would be a minor annoyance, but it also makes me wonder how well the auto-away feature will work, since that&rsquo;s also based on a proximity sensor (maybe the same one, maybe a different one, I don&rsquo;t know).</p>
+
+<p>Two simple things my old, not-worth-blogging-about thermostat did that the Nest doesn&rsquo;t: show you the time on the main screen (my wife and I are used to using the thermostat as a clock on our way out the door, as it&rsquo;s conveniently located for that) and remind you to change the furnace filters. Oh well, not a dealbreaker, and maybe these features will appear in a future software update.</p>
+
+<p>One design deficiency that wouldn&rsquo;t be worth complaining about with any other thermostat, but is noteworthy with the Nest now that they&rsquo;re trying to apply good design to elevate thermostats to the level of art object: off-angle viewing of the display is terrible. It looks great from straight on, but thermostats are usually mounted at chest level, not at eye level, and used from fairly close by, so in normal use I&rsquo;m looking down at the display at a fairly steep angle. Part of the problem is the LCD display itself, and part of the problem is the convex lens sitting over it; it&rsquo;s really not putting its best face forward in actual use.</p>
+
+<p><strong>Problems</strong></p>
+
+<p>The second day after I installed the two Nests, I heard a clicking sound coming from the heating ducts. Upon inspection, the downstairs furnace was working fine, but the upstairs furnace was making the clicking noises, which were resonating through the ducts. I fiddled with the thermostat; it wanted the furnace on but it wouldn&rsquo;t come on. I turned the thermostat off; the clicking stopped. I turned the thermostat back on, and it turned on the furnace for about a minute, then the furnace turned off and went back to clicking. I fiddled with the thermostat for a while longer, and was able to provoke various permutations of this behavior, but not a working upstairs furnace.</p>
+
+<p>I called Nest support, and got a really helpful and knowledgeable guy who suggested I swap the upstairs and downstairs units, to help rule out a problem with the thermostat itself. After the swap, I still had problems upstairs and not downstairs — apparently the problem is with the furnace, and not the specific Nest unit. His hypothesis was that my furnace was so sensitive to voltage that it would work fine if the thermostat just bridges the Rh and W wires, but if the thermostat pulls any power at all from those wires, the furnace relays get confused and start toggling instead of staying on. Just for fun, I measured the wiring at both thermostats with a multimeter and couldn&rsquo;t detect much difference between upstairs and downstairs (in both cases, the multimeter saw 28 V across Rh and W with the thermostat detached and the furnace not running, and 0.485 A across Rh and W with the furnace running), but the Nest&rsquo;s built-in technical details monitoring report claimed voltage dropped from 29 V upstairs when not running the furnace to 7.77 V when running the furnace (and compared to 9.19 V downstairs). Is that 1.4 V difference enough to explain why one would work and the other wouldn&rsquo;t? I don&rsquo;t know.</p>
+
+<p>When I called back to Nest support with these results, the tech support guy said this sounds like a power stealing problem and the probable solution is to run a C wire. I asked why two nearly identical (same model, different size) furnaces that are only 3 years old would be different in this regard, and he didn&rsquo;t really know.</p>
+
+<p>Note this isn&rsquo;t the same problem Marco wrote about, though I&rsquo;d likely have that problem over time too; his problem happens if the furnace doesn&rsquo;t run very often and the Nest needs to charge itself without running the furnace; in my case the fully charged Nest couldn&rsquo;t even run the furnace when it should be on.</p>
+
+<p><strong>Gripes</strong></p>
+
+<p>Beyond the fact that the thermostat can&rsquo;t run one of my furnaces, it&rsquo;s annoying that the <a href="http://store.nest.com/#compatibility">Nest compatibility tool</a> doesn&rsquo;t even warn of this problem.</p>
+
+<p>A few other things that came up with I was on the support call: first, when I was first describing the problem and giving information on how I&rsquo;d connected the Nest et cetera, I asked if they were already collecting diagnostic information in the cloud since the thermostat is smart and internet-connected, and was told no. I find that surprising and disappointing — a missed opportunity. (There&rsquo;s maybe a privacy concern, and I don&rsquo;t want them selling data on how often I run my furnace or how often I&rsquo;m home vs away, but I certainly wouldn&rsquo;t mind them collecting diagnostics to improve their product.)</p>
+
+<p>Also while chatting with the support tech, I asked if there was a way to get the Nest to display a clock on the main screen, and to remind me when to change the furnace filter, and was told no on both accounts; then I asked if I could file a feature request for those and was told that not only do they not take feature requests from customers, but that the support techs are prohibited from talking to the product designers, both for legal/intellectual property reasons. I joked that this must be because Nest was founded by people from Apple — famous for not being persnickety about taking ideas from people who might then claim ownership of said ideas; what can you say about a company with an official &ldquo;<a href="http://www.apple.com/legal/policies/ideas.html">unsolicited idea submission policy</a>&rdquo;? — and he said yeah, if you read our privacy policy it has a lot in common with Apple&rsquo;s. But come on. It&rsquo;s not like there&rsquo;s any intellectual property in the idea of a thermostat displaying the time of day. And more than that: a policy that says a company can&rsquo;t listen to its customers is a customer-hostile policy.</p>
+
+<p><strong>Solution</strong></p>
+
+<p>Basically, to get the Nest working with my upstairs furnace, I need to give it a C wire. I did consider running new thermostat control wiring, but when I looked at where the wires run, it&rsquo;s not worth the trouble — there&rsquo;s no way to rerun the wires without opening walls.</p>
+
+<p>But. What&rsquo;s this G wire for, anyway? Following the <a href="http://%20wiki.xtronics.com/index.php/Thermostat_signals_and_wiring#Heating">Transtronics wiki</a> Marco linked to, and confirmed by observation, the thermostat doesn&rsquo;t need to tell the fan when to run while heating — I have gas heating and the furnace itself controls the fan. Now, the thermostat can also tell the fan to run without the heat, and it turns out that&rsquo;s all the G wire is good for. After checking with my wife, I confirmed we almost never use that feature (and it was relatively easy to access before, with a switch on our old thermostats, whereas with the Nest it requires digging through the settings menu a bit, so we&rsquo;re even less likely to do it).</p>
+
+<p>Thus, the solution: repurpose the G wire as a C wire. We don&rsquo;t really need direct control over the fan, and if I do, I can run new wiring for that, to locations that aren&rsquo;t as hard to get to as the thermostat locations. (Note that this works for me because we have gas heat; electric heaters don&rsquo;t control the fan themselves, so removing the G wire would not be a good idea.) So, I had to turn off the furnace and reconnect the green wire on that end too, moving it from the G terminal to the C terminal. This quick-and-dirty solution satisfies my hacker instincts, and after a couple days of use, the Nest is much happier: the Nest&rsquo;s voltage monitoring reports 36 V at 100 mA, instead of 8 V at 20 mA without the C wire, and the furnace runs when it should.</p>
+
+<p><strong>Summary</strong></p>
+
+<p>I like it; I&rsquo;ll keep mine.</p>
+
+<p>But based on my experience, I can&rsquo;t recommend the Nest thermostat unless you can give it a C wire. And I&rsquo;m disappointed that all the information Nest will give you before buying doesn&rsquo;t point out even a whiff of such problems.</p>
+
+<p><strong>Update</strong>: Nest support <a href="https://twitter.com/#!/nest/status/160464579711877120">tweeted me back</a> to say they&rsquo;ve updated the compatibility tool with a note about the C wire, but in my opinion <a href="http://blog.metamatt.com/blog/2012/01/20/nest-c-wire-update/">it&rsquo;s still buried where it&rsquo;s too easy to miss</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/20/nest-c-wire-update/">Nest &#8220;C&#8221; Wire Update</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-20T00:00:00-08:00" pubdate data-updated="true">Jan 20<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/01/20/nest-c-wire-update/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>My <a href="http://blog.metamatt.com/blog/2012/01/20/nest-%20learning-thermostat-review/">Nest thermostat review</a> complained about up-front lack of obviousness about &ldquo;C&rdquo; wire compatibility issues, and Nest support <a href="https://twitter.com/#!/nest/status/160464579711877120">replied with a tweet</a> saying</p>
+
+<blockquote><p>We&rsquo;ve updated the compatibility tool so there&rsquo;s a note about C wire, but you&rsquo;re right &ndash; it could be clearer.</p></blockquote>
+
+<p>I took a trip back through the compatibility wizard, and (unless there are more changes coming) it&rsquo;s there but it&rsquo;s still not obvious.</p>
+
+<p>First, I tell it what I&rsquo;ve got:</p>
+
+<p><img src="http://farm8.staticflickr.com/7001/6733277723_e2c7b691a7_z.jpg" alt="" /></p>
+
+<p>Then, it tells me what to expect:</p>
+
+<p><img src="http://farm8.staticflickr.com/7167/6733277795_b182cdd286_z.jpg" alt="" /></p>
+
+<p>I&rsquo;m compatible, no reservations, it says. Unless I click through the &ldquo;<a href="http://support.nest.com/customer/portal/articles/285077">Learn more</a>&rdquo; link, which from the context sounds like it&rsquo;s going to help me decide whether I can install it without help, not whether it&rsquo;s compatible with my wiring. That link goes to a &ldquo;<a href="http://support.nest.com/customer/portal/articles/285077">Does Nest need a common wire?</a>&rdquo; article, which has some useful information, including recognition of the possible problem, a suggestion to do what I did (turn another wire into a C wire if possible), and a link to <a href="http://support.nest.com/customer/portal/articles/197951-when-nest-%20needs-a-common-wire">even more details</a>.</p>
+
+<p>That&rsquo;s the right information, but I wouldn&rsquo;t expect to find it hidden behind that &ldquo;Learn more&rdquo; link, and I still think anyone who clicks through the compatibility wizard without a C wire should see it. Maybe these problems are rarer than my small sample size indicates, but on the other hand, this &ldquo;power stealing&rdquo; problem doesn&rsquo;t seem like an easy one.</p>
+
+<p>C&#8217;mon, Nest — I like the product, and now that I&rsquo;ve got mine working, I expect to remain a happy customer. But for an issue this subtle and important, I think you&rsquo;d do well to err on the side of caution.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/20/blog-comment-semi-spam/">Blog Comment Semi-spam</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-20T00:00:00-08:00" pubdate data-updated="true">Jan 20<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/01/20/blog-comment-semi-spam/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Seems like spammers are taking to spamming weblog comments wherever they are
+allowed with innocuous-looking content-free posts just to link back to
+themselves. (Is this somewhere between spam and
+<a href="http://en.wikipedia.org/wiki/Bacn">bacn</a>, since it&rsquo;s not quite spam? I was
+unsure at first, but now I think it&rsquo;s just spam.)</p>
+
+<p>Typically these posts will be written in a fairly reasonable facsimile of
+English, and not overtly spammy — a bunch of compliments I&rsquo;m almost
+egotistical enough to believe, except there&rsquo;s no relation to the post they&rsquo;re
+commenting on, and somewhere at the end, a link to some site they&rsquo;re pimping.</p>
+
+<p>These range from the fairly obvious link</p>
+
+<p><img src="http://farm8.staticflickr.com/7163/6729985265_71906afdc5.jpg" alt="" /></p>
+
+<p>to a link trying to masquerade as a signature</p>
+
+<p><img src="http://farm8.staticflickr.com/7155/6729985235_df30215312.jpg" alt="" /></p>
+
+<p>to links only in the author&rsquo;s name</p>
+
+<p><img src="http://farm8.staticflickr.com/7018/6729985403_6d6804566d.jpg" alt="" /></p>
+
+<p>and then there&rsquo;s the variant using Tumblr&rsquo;s &ldquo;like&rdquo; feature, as in</p>
+
+<p><img src="http://farm8.staticflickr.com/7003/6729985363_b922c7938a.jpg" alt="" /></p>
+
+<p>or</p>
+
+<p><img src="http://farm8.staticflickr.com/7021/6729985315_1f0dabf0c8.jpg" alt="" /></p>
+
+<p>and for a final really blatant example, there&rsquo;s this guy:</p>
+
+<p><img src="http://farm8.staticflickr.com/7031/6729985535_44467970b4_z.jpg" alt="" /></p>
+
+<p><img src="http://farm8.staticflickr.com/7024/6729985563_f4143d2412_z.jpg" alt="" /></p>
+
+<p>These last ones might actually require more than 2 seconds of thought to
+recognize as spam, if they didn&rsquo;t appear in batches of 8 on the same post.</p>
+
+<p>Needless to say, I just delete all these, except for the Tumblr &ldquo;like&rdquo; spam
+which I don&rsquo;t know how to target directly. (The next step would be turning off
+both comments and Tumblr &ldquo;notes&rdquo; in the theme, which would make these problems
+go away entirely.)</p>
+
+<p>The ironic thing is these people are probably doing this for Google link
+juice, but the way comments work via Disqus, it&rsquo;s all Javascript and not in
+the real HTML as the page loads anyway, so I doubt indexers follow it. Plus I
+just delete it anyway. Spammers, if you&rsquo;re reading this, you&rsquo;re just wasting
+your time and mine.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/28/configuring-ios-for-googles-cloud-data-services/">Configuring iOS for Google&#8217;s Cloud Data Services</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-28T00:00:00-08:00" pubdate data-updated="true">Nov 28<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/11/28/configuring-ios-for-googles-cloud-data-services/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you&rsquo;re a Gmail user, you&rsquo;ve already got cloud email, a contact list or
+address book, and a calendar (actually a set of calendars) hosted by Google.
+And if you have an iPhone, you want to connect the built-in email, contacts
+and calendar applications to those Google data sources.</p>
+
+<p>It&rsquo;s possible, but it&rsquo;s not as easy as it should be.</p>
+
+<p>&ldquo;Not easy&rdquo;, you&rsquo;re thinking? Go to Settings, &ldquo;Mail, Contacts, Calendars&rdquo;, &ldquo;Add
+Account&rdquo;, and there&rsquo;s Gmail — enter your credentials, the account is set up,
+what could be easier than that?</p>
+
+<p>Well, that isn&rsquo;t hard, but it also doesn&rsquo;t work very well. If you use the
+&ldquo;Gmail&rdquo; account type, it doesn&rsquo;t sync contacts at all. Email is there, via
+IMAP, but Gmail via IMAP has some notable deficiencies: push email doesn&rsquo;t
+work (so the iPhone doesn&rsquo;t see new mail or other changes right away), the
+delete behavior is weird, and there&rsquo;s this extra &ldquo;All Mail&rdquo; folder which might
+sync an extra copy of all your messages. Your calendars are there &mdash; well, by
+default, only the main calendar, and not any others you may have created, or
+calendars others have shared with you, or delegated/published calendars like
+the one TripIt can automatically publish your travel plans to. (<a href="http://www.google.com/support/mobile/bin/answer.py?answer=151674">You can fix this with an extra step</a>, after which multiple calendars work normally.)</p>
+
+<p>There&rsquo;s another way: add your Google account using the &ldquo;Microsoft Exchange&rdquo;
+account type. (If this seems confusing, note that what this really means is to
+access Google&rsquo;s data services using the Exchange ActiveSync, or EAS, protocol,
+<a href="http://en.wikipedia.org/wiki/ActiveSync">which Microsoft has licensed to both Apple and Google among others</a>. Even more confusing, Google
+brands this method of access to its services not as Exchange or EAS, but as
+&ldquo;<a href="http://www.google.com/mobile/sync/">Google Sync</a>&rdquo;. Whatever.)</p>
+
+<p>If you do this, things get quite a bit better: contacts sync to the phone;
+email gains push (and in my opinion, the folder list and delete button work
+better). This is actually t<a href="http://www.google.com/support/mobile/bin/answer.py?answer=138740">he method Google recommends for use with iOS</a>. Again,
+only the main calendar syncs to the phone, but again, <a href="http://www.google.com/support/mobile/bin/answer.py?answer=139206">there&rsquo;s a way to enable
+the other calendars</a>,
+which is even more of a pain than the CalDAV method.</p>
+
+<p>(Aside: I think the ability to get multiple calendars via Google Sync and EAS
+was recently added, because when I first set up my iPhone I couldn&rsquo;t find this
+method, and resorted to adding my Gmail account twice: once using the
+&ldquo;Exchange&rdquo; account type for email and contacts with calendars disabled, and
+once using the &ldquo;Gmail&rdquo; account type for calendars with email disabled. This no
+longer seems necessary, but it may be a useful tip for anyone who wants Google
+contacts synced to their phone but for whatever reason don&rsquo;t like the
+EAS/Google Sync behavior for email or calendars.)</p>
+
+<p>You may also run into some problems with contact sync, documented on the &ldquo;<a href="http://www.google.com/support/mobile/bin/answer.py?answer=139635">Google Sync known issues with iOS</a>&rdquo; page,
+under &ldquo;Limited Contact Information&rdquo;: &ldquo;Phone number synchronization is limited
+to 2 Home numbers, 1 Home Fax, 1 Mobile, 1 Pager, 3 Work (one will be labeled
+&lsquo;Company Main&rsquo;) and one Work Fax number.&rdquo; Another problem <strong>not</strong> described
+here is that phone numbers not exactly matching the expected labels (which are
+case sensitive) will not sync: I had dozens of friends who in in my Google
+contacts list had their mobile phone number labeled as &ldquo;Mobile&rdquo; instead of
+&ldquo;mobile&rdquo;, and these people showed up on my iPhone with no phone number at all.</p>
+
+<p>The end result is that it&rsquo;s possible to make iOS and Google accounts play
+nicely together, but it requires some up front knowledge, some extra steps in
+account step on the iOS device, and some extra massaging of, potentially,
+every entry in your address book to make sure the expected phone numbers sync.</p>
+
+<p>Is it possible to do better than this? Sure. The late
+<a href="http://en.wikipedia.org/wiki/WebOS">webOS</a> synced all my Google data (email,
+calendars and contacts) easily with no extra setup beyond choosing the Gmail
+account type and adding my credentials. Presumably Android is capable of
+similarly smooth integration. Apple may not be interested in smoothing the
+process in iOS because they&rsquo;re wary of Google&rsquo;s dominance and want to push
+<a href="http://www.apple.com/icloud/">their own cloud data services</a>, but given the
+number of people who use both Gmail and iOS, I think they do their users a
+disservice.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/27/using-itunes-match-as-itunes-library-sync/">Using iTunes Match as iTunes Library Sync</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-27T00:00:00-08:00" pubdate data-updated="true">Nov 27<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/11/27/using-itunes-match-as-itunes-library-sync/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Apple recently added two new features to iTunes: &ldquo;<a href="http://www.apple.com/icloud/features/">iTunes in the Cloud</a>&rdquo;, which adds all your iTunes
+music purchases to a cloud library which can be streamed or downloaded as
+often as you want to any of your devices (iPhone, iPod, iPad, computer with
+iTunes), and &ldquo;iTunes Match&rdquo;, which adds all the music you <em>didn&rsquo;t</em> buy from
+iTunes to that same cloud library, enabling all the same &ldquo;iTunes in the Cloud&rdquo;
+features.</p>
+
+<p>Apple is billing this primarily as a way to get your music from your iTunes
+library onto your phone or iPad without having to plan ahead and pre-sync the
+music onto the device.</p>
+
+<p>However, in addition to using iCloud to sync music between devices, iTunes
+Match also has another benefit: it syncs the library metadata between multiple
+iTunes libraries that enable iTunes Match using the same account.</p>
+
+<p>This subtle addition is actually something important that I&rsquo;ve wanted from
+iTunes as long as I&rsquo;ve been using it: iTunes has a bunch of organization
+features including smart playlists which work best if it knows what you listen
+to and how much you like it. It tracks how many times you play each song and
+allows you to rate songs, and it automatically syncs this between one iTunes
+library and any connected iPods, but until now each iTunes library has been an
+island: if you have two computers, say a desktop and a laptop, each has its
+own library, with its own play counts and ratings and playlists, and its own
+idea of your preferences, and any iPods or other Apple devices you have were
+able to sync songs and metadata from a single one of these libraries.</p>
+
+<p>Now, with iTunes Match enabled, all my computers with iTunes see the same
+library — all of the songs on any one of them are synced up to iCloud and then
+back to the other computers, and metadata including play counts, ratings and
+playlists are also kept in sync. This joining of the libraries also means it
+matters a lot less which of my computers I sync a given iPod with, since
+effectively they all use the same library.</p>
+
+<p>There&rsquo;s one minor remaining annoyance given the way I use iTunes at home: I
+have a file server with all my music, a Mac Mini in the living room which can
+play music and movies, and my main desktop computer, and each of these Macs
+uses the network file server for the music files instead of storing a local
+copy. (My laptop spends enough time disconnected from the home network that it
+does deserve a local copy of the music.) This means that if I add music to the
+library on one of the desktop computers, it&rsquo;s already accessible in the
+expected location from any of the other computers that can access the file
+server, though the other computers won&rsquo;t know it until I tell iTunes to add
+the files to the local library. The storage is shared; the library metadata is
+still per-computer. Using iTunes Match, the libraries are kept in sync
+automatically, but iTunes doesn&rsquo;t notice that some of the files are magically
+already local — it will show such files with the cloud icon, and offer to
+stream them or download them even though that&rsquo;s unnecessary. Streaming works
+fine, and downloading works, but actually downloads the file to the same
+folder, notices that the file already exists, and adds a numeric suffix to
+make the filename unique.</p>
+
+<p>It would be nice if there was a way to tell iTunes to notice local copies of
+files that it thinks are only in iCloud. Also, I occasionally found myself
+having downloaded extra copies of songs, noticing this cluttering up the music
+folder, and deleting the extra files outside of iTunes (using Finder) — this
+left me in a broken state where iTunes has an entry for the song in the
+library, and the file exists in the filesystem and in iCloud, but iTunes
+thinks it&rsquo;s local so won&rsquo;t stream or download from iCloud and thinks it has a
+different name so it won&rsquo;t play the local file, at which point things are
+pretty broken. What&rsquo;s needed here is a way to stuff the file back into the
+cloud, making iTunes think there is no local copy so it will go get it from
+iCloud again the next time it&rsquo;s needed — I couldn&rsquo;t figure out how to do this
+until I read this <a href="http://arstechnica.com/apple/news/2011/11/more-itunes-match-answers-dj-sets-how-to-replace-music-and-more.ars,">Q&amp;A article at Ars Technica</a> which has the secret: select the
+song, hold the option key while pressing the delete key, and the normal delete
+confirmation dialog will grow a new checkbox &ldquo;also delete this song from
+iCloud&rdquo;. Leaving that option unchecked, you can delete the local copy of the
+song (or, a broken link to a missing local copy of a song) while leaving it in
+the cloud library, the cloud icon comes back, and iTunes will go back to
+getting the data from iCloud as needed again.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -314,716 +982,6 @@ updates, though.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/17/how-much-can-the-kindle-fire-improve-with-software-updates/">How Much Can the Kindle Fire Improve With Software Updates?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-17T00:00:00-08:00" pubdate data-updated="true">Nov 17<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/11/17/how-much-can-the-kindle-fire-improve-with-software-updates/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I wrote a <a href="http://blog.metamatt.com/blog/2011/11/17/kindle-fire-first-impressions/">semi-positive mini-review of the Kindle Fire</a> this morning.</p>
-
-<p>Then I read <a href="http://www.marco.org/2011/11/17/kindle-fire-review">Marco Arment&rsquo;s rather scathing &ldquo;human review&rdquo;</a>, and wondered: wait a minute, if it&rsquo;s that bad, should I return it, and wait for a better version (or save my money if no better version materializes)?</p>
-
-<p>The thing is, I saw most of the same things he did and had most of the same
-complaints; I just expect Amazon to fix them. Marco sees the glass half-empty;
-I see it half-full; maybe I&rsquo;m too much of an optimist. I understand that it&rsquo;s
-smarter to buy something for or judge something on its current capabilities,
-not ones that may or may not materialize in the future. Still, it seems worth
-considering how much better the current generation hardware might be able to
-get with software updates.</p>
-
-<p>Most of the complaints centered around speed and touch interaction. And those
-are legitimate &mdash; lots of taps are ignored; lots of taps are interpreted as
-small drags from nowhere to nowhere; scrolling is chunky and jerky; it&rsquo;s at
-best annoying and far from a premium experience. For goodness sake, the orange
-pointed stripe that you drag to unlock the device, every time you want to wake
-it from sleep, doesn&rsquo;t drag smoothly &mdash; it&rsquo;s the first thing you see; how hard
-is it to get that right? Still, if Amazon cares &mdash; and I hope they do &mdash; they
-should be able to fix this.</p>
-
-<p>So will they (fix it)? What&rsquo;s the problem here, anyway? <a href="http://www.anandtech.com/show/5117/amazon-kindle-fire-tore-down-has-512mb-of-ram">The hardware should be up to the task</a> &mdash; <a href="http://en.wikipedia.org/wiki/Texas_Instruments_OMAP#OMAP_4">TI OMAP 4430 SOC</a> with two
-gigahertz CPU cores on Cortex A9 architecture and PowerVR SGX540 GPU, 512MB of
-RAM. That compares favorably with this year&rsquo;s Apple devices based on the A5
-SOC (iPad 2, iPhone 4S: two comparable CPU cores and a somewhat newer GPU
-core) and very favorably with last year&rsquo;s Apple devices based on the A4 SOC
-(iPhone 4 and 4th-generation iPod Touch: one comparable CPU core and a
-somewhat older GPU core). I heard that <a href="http://daringfireball.net/linked/2011/11/14/siegler-specs">specs are dead</a>, but at least
-this establishes a baseline. And note that at the Kindle Fire&rsquo;s 1024x600
-screen resolution, it&rsquo;s pushing the exact same number of pixels as the 960x640
-retina display in the iPhone 4 and 4S. So assuming they can figure out how to
-effectively leverage the CPUs and GPU &mdash; I don&rsquo;t know how good Android is at
-this, and I don&rsquo;t know what shortcuts Amazon took in forking Android, and so
-on &mdash; you&rsquo;d think they should be able to get iPhone 4S-like performance out of
-this. At the very least they should be able to compete with the 4th-generation
-iPod Touch (which is a year old and the same price). The point is that Amazon
-and Apple (and everyone else too) are using similar guts, with similar-
-architecture ARM CPU cores and PowerVR GPU cores. Right now, the iPod Touch is
-night and day more responsive. Amazon, get cracking.</p>
-
-<p>(I&rsquo;ve owned the previous 2 generations of e-ink Kindle and Amazon delivered
-significant software updates to these long after purchase; that gives me
-reason to be hopeful the same applies to the Kindle Fire.)</p>
-
-<p>Some of the complaints were about missing physical buttons &mdash; hardware volume
-buttons would be nice, a dedicated home button would be nice, and there&rsquo;s no
-way to fix those problems in software. (The headphone complaints are also
-legitimate; the headphone jack location is obviously not patchable in
-software; the popping might be; however I don&rsquo;t really care, because the iPod
-has so won the music race that I don&rsquo;t have any desire to use the Kindle Fire
-for music. I do find it notable that pretty much every non-Apple multifunction
-device that <em>can</em> play music takes it so unseriously that they have popping
-problems like this; that&rsquo;s par for the course with old and new Palm
-smartphones too… oh well.)</p>
-
-<p>What this boils down to is this: if Amazon can wring decent performance out of
-the hardware, and pay some real attention to nitpicky details about the touch
-interaction, about half of Marco&rsquo;s (and my) complaints should go away. I see
-no reason this is impossible to fix with the current hardware. However, if
-they also decide to yield to common sense and add hardware home and volume
-buttons, the first-generation units will forever feel lacking by comparison.</p>
-
-<p>I&rsquo;ll close with a final note on why I&rsquo;m willing to give the Kindle Fire some
-slack. I&rsquo;m not trying to compare the Kindle Fire and iPad or argue the Kindle
-Fire kills or replaces anything else, much less the iPad. But I do think the
-Kindle Fire has the right guts to deliver a much better experience than it
-does today, and is fixable in software if Amazon has the will to improve it.
-I&rsquo;m also intrigued that there&rsquo;s finally an Android competitor to the iPod
-Touch &mdash; decent hardware sold contract-free and unsubsidized for an honest
-$200. (Incidentally, that&rsquo;s something <a href="http://daringfireball.net/2010/11/apples_pricing_advantage">John Gruber called out for before</a>.) The big
-difference between the Kindle Fire and the iPod Touch, other than the
-operating system (and the responsiveness and app ecosystem that put Apple way
-ahead on the software side) is obviously the size; I&rsquo;m not going to get into
-the screen size argument, other than to point out that anything that doesn&rsquo;t
-fit in a pocket is clearly less portable than anything that does, and that
-size imposes so many tradeoffs there&rsquo;s no one perfect size. Pick the one that
-works for you.</p>
-
-<p>Given that the $200 Android-based iPod Touch competitor now exists, I&rsquo;m
-interested to see what happens with the app ecosystem. I think it could be a
-big gaming success, the way the iPod Touch has been, for example.</p>
-
-<p>If Amazon can endow it with a major dose of missing snappiness, that is.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/08/nyc-marathon-results/">NYC Marathon Results</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-08T00:00:00-08:00" pubdate data-updated="true">Nov 8<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/11/08/nyc-marathon-results/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>For the MMRF: They raised about $525K via this marathon, which is one third of
-their overall events-based fundraising for the year. (And this year was a
-record high.) $4300 of that was from you all, so one more big thank-you from
-me, the MMRF, and the people they try to help.</p>
-
-<p>For the marathon as a whole: Conditions were great, and the top 3 men all beat
-the previous course record. You can find plenty of news stories on this if
-you&rsquo;re curious.</p>
-
-<p>For me: I originally started training for this marathon (my first) with a goal
-of finishing in under 4 hours, which is about 9 minutes per mile. Towards the
-middle of my training, it became obvious that I&rsquo;d be able to exceed that goal
-and revised it to somewhere between a very optimistic 8 minutes per mile (3:30
-total) to a more realistic 8:30 per mile (3:45 total). I ran with my friend
-Jeff pacing me (he&rsquo;s run a couple marathons before) and we set out with a goal
-of starting with 8:30 miles and speeding up as we went.</p>
-
-<p>Of course, at the beginning we felt great and it was hard to run the exact
-speed we&rsquo;d planned. We did the first 6 miles a little slower than 8 minutes,
-then still felt strong so we sped up a little. Up through the first 16 miles
-(which is right where the course enters Manhattan for the first time) I felt
-great. At 16 miles I began to feel only good, but we kept the pace around 8
-minutes per mile until mile 22, where a couple things happened: I began to
-feel not great at all, there&rsquo;s a very mild but very long uphill leading into
-Central Park, and I decided I needed to slow down. Jeff stayed strong and went
-on ahead; I slowed down by about a minute a mile, did the last 4 miles at
-about a 9:30 pace, and finished in 3:37:19. (Jeff finished in 3:32:35, and I
-say thanks to Jeff for pulling me along at a strong pace and congrats for
-being able to stick it out the whole way.)</p>
-
-<p>It&rsquo;s funny, because during the first 16 miles I felt like I should go do this
-every day, and during the last 4 miles I never wanted to do it again, and
-after finishing, of course, my feelings (a little more detached and not in the
-middle of a runner&rsquo;s high or extreme pain) are somewhere in between. During
-those last 4 miles, I knew I had to just keep slogging on to the finish; I
-couldn&rsquo;t quite keep the 8 minute pace but I knew I had to keep running;
-slowing down any more wouldn&rsquo;t have felt better; the only thing that would
-have felt good at that point was quitting, and I knew that wasn&rsquo;t an option,
-not least because of yall&rsquo;s support.</p>
-
-<p>Anyway, I&rsquo;m very happy with the result for my first marathon, and looking
-back, I don&rsquo;t know if the pain and the subsequent slowdown in the last 4 miles
-is (a) because we went out too fast, (b) because I didn&rsquo;t do quite enough
-training at a >20 mile distance, &copy; lack of fuel, or (d) totally normal and
-that&rsquo;s why they call it a marathon.</p>
-
-<p>I also have to praise the marathon organizers &mdash; this race had the best
-organization (website, runner tracking, getting to the start line, knowing
-what to expect), the best infrastructure (timing mats almost every mile,
-drinks and food along the way), and the best cheering crowd of any race I&rsquo;ve
-ever been involved in. That&rsquo;s what I was told to expect ahead of time, but it
-sure lived up to expectations. If you&rsquo;ve run NYC before you know what I&rsquo;m
-talking about, and if you haven&rsquo;t and you&rsquo;re a runner, do consider it. It
-really was a great experience.</p>
-
-<p>If you&rsquo;re curious for any more details, the marathon website has the detailed
-splits available &mdash; go to <a href="http://trackmyrunners.ingnycmarathon.org/Runners.aspx">http://trackmyrunners.ingnycmarathon.org/Runners.aspx</a> and search for Ginzton. Then click the +
-button on the far right, and it&rsquo;ll turn my name into a link which you can
-click on for the details.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/10/09/growing-up-with-apple/">Growing Up With Apple</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-10-09T00:00:00-07:00" pubdate data-updated="true">Oct 9<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/10/09/growing-up-with-apple/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>RIP Steve Jobs. Along with his passing, everyone in the tech world seems to be
-telling their <a href="http://arstechnica.com/apple/news/2011/10/the-first-time-i-used-an-apple-computer-was.ars">stories about Apple&rsquo;s influence on them in their formative years</a>; here&rsquo;s mine.</p>
-
-<p>Like Eric Bangeman in the above-linked Ars Technica article, my first computer
-wasn&rsquo;t an Apple II &mdash; I also had contemporary experience with TRS-80, TI
-99-4/A, and Commodore 64 machines. Unlike him, my first experiences with the
-Apple II didn&rsquo;t stand out as more satisfying &mdash; I actually was touched more
-deeply by the Commodore 64, likely because it was so much cheaper my family
-could afford one much sooner. But I did spend a lot of time playing with an
-Apple II+ at a friend&rsquo;s house. Lots of Moon Patrol on the C64, lots of Lode
-Runner on the II+, lots of BASIC programming on both… the C64 was a very
-gentle introduction to these newfangled home computers, since you could plug
-it into any TV, and it worked fine with no storage (games came on cartridges),
-or with very cheap storage (cassette tape adapter), or you could buy a disk
-drive. And the C64 had color graphics and better sound support than the
-contemporary Apple II models… on the other hand, Apple&rsquo;s BASIC actually had
-graphics commands, which on the C64 forced you into machine language
-territory.</p>
-
-<p>Later I got an Apple IIc, and it was better in many ways than the Commodore 64
-&mdash; but in other ways not much better, or no better at all, especially
-considering the price. I really appreciated the democratizing influence of the
-Commodore&rsquo;s price &mdash; they were available for $150 at Toys &lsquo;R&rsquo; Us, IIRC.</p>
-
-<p>As it became time to upgrade the IIc, the original Macintosh was already on
-the scene, and I had a choice &mdash; jump to Mac, or upgrade to the latest and
-greatest Apple II, the IIgs. It seemed like an easy choice at the time &mdash; the
-IIgs was backwards compatible with the software and peripherals I already had,
-had color graphics and awesome sound, was expandable, and was roughly
-equivalently powerful. Only a couple years later, Apple made it obvious they
-were betting only on the Mac, finally introducing a Mac which supported color
-and expandability, and essentially killed off the IIgs. (They did continue to
-release impressive software updates for the IIgs, including a couple complete
-rewrites of its GS/OS operating system, which I take to mean that the IIgs
-software team felt much as I did about their machine&rsquo;s demise.)</p>
-
-<p>This was a real blow to me &mdash; the IIgs had been a stretch for my family to
-afford, and I don&rsquo;t recall any hints at the time from Apple that it would be a
-dead-end purchase &mdash; so, with the wrath that only a 12 year old boy can
-muster, I swore that I&rsquo;d never buy another Apple product. (Only much later did
-I realize that this coincided with the Steveless interregnum at Apple, opening
-the door for me to reverse this pledge later.)</p>
-
-<p>Thus was kicked off a 15 year period of PC buying, where I learned the use and
-programming of MS-DOS and then Windows, from 286 to 386 to 486 and Pentium and
-beyond, and again the democratizing influence of the Wintel economy was
-attractive &mdash; people have long claimed that Apple computers were an overpriced
-item for the snob market, and while we all know that&rsquo;s not true and even the
-stereotype has mostly dissolved, it&rsquo;s still worth examining a little deeper.
-It&rsquo;s now widely accepted &mdash; and if you look closely you realize it&rsquo;s been true
-even longer &mdash; that Apple computers offer a good value for the money you do
-spend, and compare favorably with PCs at the same price point. And yet, there
-were often lower price points, satisfied only by PCs, that were still good
-enough to be relevant. Probably Steve Jobs didn&rsquo;t feel that way, but I know I
-did, with the C64 in 1982, and with my 386 in 1992.</p>
-
-<p>In high school, as a staffer and eventually editor of our school paper, we did
-most everything on Macs &mdash; a few Mac Classics, and later one color IIci. They
-were underpowered and slow, and we cursed them often, but they did the job and
-most of the curses were affectionate. They also networked, which was something
-PCs of the day didn&rsquo;t easily do. Unlike standalone computers, networked
-computers need names &mdash; I don&rsquo;t remember all of them, but two of them were
-Eddie Vedder and Kurt Cobain, provoking utterances like &ldquo;dammit, Kurt Cobain
-crashed again.&rdquo;</p>
-
-<p>In college in the later 90&rsquo;s, learning about CS fundamentals and history and
-non-consumer architectures and Unix and operating systems and the impact of
-the MMU, it became obvious that neither Mac OS (stalled at System 7) nor
-Windows (in the throes of the 9x procession) was really living up to the
-promise of performance and reliability supported by the hardware that was
-commonplace at this time, but that Windows 9x was closer &mdash; at least most of
-the software ran preemptively scheduled separate memory spaces, and its mostly
-backwards compatible cousin Windows NT could even be called a real OS. So it
-was easy for me to continue looking askance at Macs (while, to be sure, my Mac
-loving friends looked equally askance at Windows machines, and I&rsquo;m sure we
-both claimed the other crashed more). However you look at it, this was not the
-proudest period for the Mac, while Apple kept trying and failing to get its
-house in order with Taligent and Pink.</p>
-
-<p>Around this time Steve Jobs returned to Apple, and kicked off efforts to
-revitalize both the software and hardware behind the Mac. The hardware efforts
-paid off right away, with the bondi blue iMac and later iBook; the software
-efforts would take longer. I wasn&rsquo;t the least bit tempted by these fruity
-looking computers, running the same tired Mac OS derivatives (8 and 9 being
-like Windows 98 and ME, that is, not meaningfully better than what they
-succeeded), and the IIgs experience still smarted, 10 years later.</p>
-
-<p>This remained basically true until OS X came out &mdash; a Mac OS a geek could run,
-and still respect himself in the morning &mdash; and with it, the white iBook,
-which both in appearance and in internals was far more respectable than its
-predecessor. Just as I was graduating from college, I used my Apple student
-discount and bought one, finally breaking my age-12 promise.</p>
-
-<p>The early revs of OS X (beta, and 10.0, and 10.1) showed a lot of promise but
-they were still new, under optimized and slow, and the iBook&rsquo;s hardware wasn&rsquo;t
-enough to compensate for this, and I never ended up using it for anything
-serious, deferring to more capable PC hardware I continued to buy. A year
-later, I traded the iBook away as a partial payment for a Ducati motorcycle.
-However, the hook was set and a couple years later, as OS X hit its stride
-with 10.2 and G4 processors became affordable, that underpowered feel was
-gone; I bought a G4 laptop, was won over by several factors that really matter
-on laptops (suspend/resume that&rsquo;s reliable, wifi that&rsquo;s reliable, combining to
-mean you can open the lid and be online and typing a few seconds later &mdash;
-something that was a total crapshoot under Windows at the time and, um, still
-mostly is another 7 years later), and, to close with another reference to
-Bangeman, every computer I&rsquo;ve bought since that I didn&rsquo;t build myself has been
-a Mac.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/07/29/sf-12-marathon-challenge/">SF 1/2 Marathon Challenge</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-29T00:00:00-07:00" pubdate data-updated="true">Jul 29<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/07/29/sf-12-marathon-challenge/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;m <a href="http://blog.metamatt.com/blog/2011/07/26/nyc-marathon/">planning to run the NYC Marathon in November</a>, as
-described earlier.</p>
-
-<p>I&rsquo;m also going to run the first half of the SF Marathon this coming Sunday.</p>
-
-<p>If you&rsquo;re interested in helping support my donation campaign for the NYC
-Marathon, I&rsquo;d like to propose a fun challenge based on how I do in the &frac12;
-marathon this weekend.</p>
-
-<p>I&rsquo;ve run this &frac12; marathon before, 3 years ago, and finished in 1 hour 52
-minutes &mdash; just a little faster than a 9-minute-per-mile pace. My training
-goal for this time is an 8:00-per-mile pace (1 hour 45 minutes overall), and
-my last couple training runs were at about 8:05 per mile. But I think I can do
-it faster.</p>
-
-<p>I&rsquo;d be happy with an 8:00 pace &mdash; substantially faster than my current record
-for this race &mdash; but even happier with 7:40 (just over 1 hour 40 minutes
-total). Want to bet I can&rsquo;t do it? I&rsquo;ll bet I can run 7:40 miles and you bet I
-can&rsquo;t run faster than 8:00 miles and we&rsquo;ll both donate to the MMRF based on
-the difference.</p>
-
-<p>So. If you&rsquo;d like to take this challenge, and challenge me to run faster than
-8:00 miles this weekend, let me know and give me a dollar amount per second.
-I&rsquo;ll promise to donate that amount for every second slower than 7:40 I run
-(average pace), and you promise to donate that amount for every second faster
-than 8:00 I run.</p>
-
-<p>Example: you bet me $5 per second, and I finish with an average of 7:45. You
-donate $75, and I donate $25. Of course, if I finish with an average of 7:55,
-you donate $25 and I donate $75.</p>
-
-<p>I chose these times because it&rsquo;ll push me to run a little faster than
-otherwise, and it stands a good chance of raising some money for the MMRF (as
-opposed to, say, if I just bet you over/under 8:00, then there&rsquo;s no
-disincentive to run slower and they get less money).</p>
-
-<p>Of course, if you&rsquo;d like to make a normal less complicated donation to the
-MMRF in support of my marathon bid, that&rsquo;s welcome too, and <a href="http://www.active.com/donate/2011mmrfNYC/NYFULLMGinzton">my fundraising page is here</a>.</p>
-
-<p>But if this complicated challenge sounds fun and/or you want to make me sweat
-more, please contact me (email, comments here, comments on Facebook, carrier
-pigeon…) with your bet amount.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/07/26/nyc-marathon/">NYC Marathon</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-26T00:00:00-07:00" pubdate data-updated="true">Jul 26<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/07/26/nyc-marathon/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;ve signed up to run the New York City marathon in November. It&rsquo;ll be my
-first marathon, so both training and the actual event should be interesting
-and challenging.</p>
-
-<p>In addition to the personal challenge, I&rsquo;m running on a team collecting
-donations for the <a href="http://themmrf.org/">Multiple Myeloma Research Foundation</a>.
-(Before anyone freaks out, no, I don&rsquo;t have any direct connection to this
-disease, neither I nor any of my immediate relatives or acquaintances. I chose
-to fundraise for them because my mom and her oncologist husband say they do
-good research and use their money wisely. And as my mom said, &ldquo;The fight
-against any kind of cancer benefits the fight against all kinds of cancer.&rdquo;)</p>
-
-<p>If you can spare $20, or more, or less, to sponsor me and support the MMRF, I,
-the MMRF, and multiple myeloma patients present and future would all
-appreciate it: <a href="http://www.active.com/donate/2011mmrfNYC/NYFULLMGinzton">just follow this link to my fundraising page</a>. Thank you.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/06/23/not-the-modem-after-all/">Not the Modem After All</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-23T00:00:00-07:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2011</time>
-        
-         | <a href="/blog/2011/06/23/not-the-modem-after-all/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>My outbound Internet connection stopped working again this morning, and (like
-the last couple times) evidence pointed towards my router, not the modem or
-anything provided by Comcast.</p>
-
-<p>(As I said <a href="http://blog.metamatt.com/blog/2011/06/13/update-on-comcast-last-mile-isp-connection/">last time</a>, I&rsquo;m convinced there were originally
-multiple problems leading to confusion and increasing troubleshooting
-difficulty, but it appears I owe Comcast at least a partial apology.)</p>
-
-<p>The good news is there&rsquo;s a software fix, which can be invoked remotely
-(unfortunately not from outside the house since outbound connectivity is down,
-but it does mean I don&rsquo;t have to walk over to the equipment closet to power
-cycle modems or routers): &ldquo;mii-tool -r -R eth1&rdquo; made everything happy again.</p>
-
-<p>The router in question is a <a href="http://www.netgear.com/home/products/wirelessrouters/high-performance/WNDR3700.aspx">Netgear WNDR3700</a> running <a href="http://backfire.openwrt.org/10.03/README">OpenWrt 10.03 &ldquo;backfire&rdquo;</a>. I wonder whether this
-happens to others and whether it&rsquo;s a hardware or software bug. I&rsquo;m hoping a
-newer version of OpenWrt might fix it (but since release candidates of 10.03.1
-have been appearing for 15 months now, I&rsquo;m giving up hope for a new official
-release; newer version probably just means trunk); alternately, it won&rsquo;t be
-too hard to whip up a monitoring script that tries to ping the modem and does
-the mii-tool reset whenever it doesn&rsquo;t see a response.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/06/13/update-on-mac-os-x-headless-fast-user-switching-bug/">Update on Mac OS X Headless Fast User Switching Bug</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-13T00:00:00-07:00" pubdate data-updated="true">Jun 13<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/06/13/update-on-mac-os-x-headless-fast-user-switching-bug/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I <a href="http://blog.metamatt.com/blog/2011/02/15/mac-os-x-bugs-apples-never-gonna-fix/">complained</a> that Fast User Switching over a Screen Sharing connection is a bag of hurt, and that it seems like something Apple&rsquo;s never going to fix (#4 on the list at that link).</p>
-
-<p>(Fingers crossed), maybe I was wrong: the <a href="http://www.apple.com/macosx/whats-new/features.html#screensharing">what&rsquo;s-new page for Lion</a><sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> advertises per-user screen sharing, which sounds more like the Microsoft Windows Terminal Server approach: a combination of fast user switching and remote access, so that multiple sessions can be active simultaneously, and remote sessions aren&rsquo;t onscreen on the local console.</p>
-
-<p>I can only hope that this new feature will make the old bug go away; I have a hard time imagining how they&rsquo;d implement detached remote sessions that still result in the buggy behavior I described. Though, from the bug I described and earlier incarnations that seemed related, it seems that headless isn&rsquo;t a primary/supported use case in Apple&rsquo;s eyes.</p>
-
-<p>Here&rsquo;s hoping it gets better.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>I wonder how long that URL will last; probably until the next major version is announced, since there&rsquo;s no versioning in the URL. I hate linking to links that are going to break, but I don&rsquo;t know of a stable equivalent.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/06/13/update-on-comcast-last-mile-isp-connection/">Update on Comcast Last-mile ISP Connection</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-13T00:00:00-07:00" pubdate data-updated="true">Jun 13<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/06/13/update-on-comcast-last-mile-isp-connection/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>After <a href="http://blog.metamatt.com/blog/2011/04/07/state-of-the-last-mile-internet-connection-year-2009/">months of woe with my Comcast cable connection</a>, and a couple months of <a href="http://blog.metamatt.com/blog/2011/04/21/dsl-disappointments-too-bad-%20that-didnt-work/">flirtation with indie DSL</a>, I called Comcast out for a third service visit to focus on the external wiring. (Aside: This took some convincing from the service rep on the phone; more on this later.)</p>
-
-<p>I realized that our house had a bunch of old exterior cable wiring including a
-dodgy splitter, left over from when we bought it, and entirely unused now.
-Comcast hadn&rsquo;t decided to look at this before, and it hadn&rsquo;t occurred to me
-that it would be related since I have no idea how things are wired downstream
-of their lock box except inside my part of the house, but this time I decided
-to be more careful. When the tech arrived, I asked him to open the lock box
-and disconnect everything in there that I&rsquo;m not using.</p>
-
-<p>Also, the tech took a look at the wire from the pole to the lock box and said
-it doesn&rsquo;t meet their current standards and offered to replace it.</p>
-
-<p>Other than some hilarity involving division of labor (one guy calls in the
-order for new wiring, a separate guy shows up a day later and strings it, then
-the first guy comes back a day later and actually connects it inside the lock
-box, because the first guy doesn&rsquo;t have the cherry picker truck to string the
-cable and the second guy doesn&rsquo;t have the key to the lock box?), this went
-pretty smoothly.</p>
-
-<p>So now I have shiny new wire from the pole to my house, we disconnected all
-the other old wiring so from the lock box the only connected wiring is my own
-new indoor wiring, and, knock on wood. one of these things was the problem and
-the problem is no more.</p>
-
-<p>(This was a month ago, and I hesitated to write about it immediately for fear
-of jinxing it, but now that it&rsquo;s been a month with none of the same old
-problem, I&rsquo;m feeling better about it.)</p>
-
-<p>The promised aside: the service rep I spoke with on the phone was either a
-genius or knew just enough about networking to be dangerous; I&rsquo;m not sure
-which. He asked how I knew it was Comcast&rsquo;s problem and I said I&rsquo;d tried
-replacing the modem already so what else could it be. He said what if it&rsquo;s my
-router; I should try connecting my computer directly to the router and see if
-the problem still happens. I explained how the problem only happens an average
-of once every two weeks and there&rsquo;s no way I&rsquo;m disconnecting all but one
-computer in the house for weeks on end, and why should I suspect my router
-anyway? Then we got in an argument about 192.168.100.1 and whether it is
-indeed the address of the cable modem, as I believe, or, as he said, &ldquo;the
-address my computer uses to get online&rdquo; (whatever that means). I was convinced
-he was stonewalling me and he was convinced I was being difficult and this was
-going nowhere so finally I said just send a tech out and he said OK but we&rsquo;ll
-have to charge you if it&rsquo;s not our fault and I said fine, you&rsquo;ve already done
-that twice and I&rsquo;ll just have all the charges reversed once it does turn out
-to be your fault. (And I did call back later and Comcast was happy to refund
-the earlier service charges once they saw they&rsquo;d had 3 calls for the same
-issue.)</p>
-
-<p>So anyway. I didn&rsquo;t find any of his facts or arguments highly convincing but
-it did get me thinking &mdash; how do I know my router&rsquo;s not acting up? It doesn&rsquo;t
-seem to be, but maybe. It is bleeding-edge <a href="https://openwrt.org/">OpenWRT</a>,
-after all, totally awesome in its power but not the most mainstream and tested
-thing. So the next time the usual problem happened (conveniently, before the
-wiring repairs mentioned above were finished), instead of power cycling the
-modem I disconnected and reconnected the ethernet cable between modem and
-router, thus toggling the ethernet link state. After that, connectivity was
-restored &mdash; I could ping both the router and external sites &mdash; and the modem
-reported no downtime.</p>
-
-<p>That seemed like a smoking gun, but it doesn&rsquo;t explain why each Comcast wiring
-repair changed the frequency of the problem. At this point I&rsquo;m pretty sure I&rsquo;m
-dealing with multiple problems, interacting or at least masking each other in
-complicated ways, and making troubleshooting that much harder. It really seems
-like the wiring repairs helped materially, but if I do see more &ldquo;modem
-crashes&rdquo;, I&rsquo;ll be looking hard at the router first.</p>
-
-<p>(And to make things even more confusing, I&rsquo;ll note I&rsquo;ve also seen a handful of
-&ldquo;T4 timeout&rdquo; problems where the modem complains to its logfile and then
-reboots itself; that&rsquo;s definitely a Comcast-side problem; it&rsquo;s also wholly
-distinct from the one I&rsquo;ve been calling &ldquo;the problem&rdquo; and easily identifiable
-since the modem clearly identifies it as such; it&rsquo;s also a lot less annoying
-because it only seems to happen in the middle of the night and it fixes itself
-within minutes.)</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/7/">&larr; Older</a>
@@ -1041,23 +999,23 @@ within minutes.)</p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/03/20/apple-is-getting-really-aggressive-about-this-sleepdelay-thing/">Apple is getting really aggressive about this sleepdelay thing</a>
+        <a href="/blog/2013/12/08/mail-dot-app-gmail-and-mavericks/">Mail.app and gmail in Mavericks</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-3-footnotes/">From Tumblr to Octopress, part 3: footnotes</a>
+        <a href="/blog/2013/12/08/death-by-dueling-modal-dialog/">Death by dueling modal dialog</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-2-how/">From Tumblr to Octopress, part 2: how</a>
+        <a href="/blog/2013/12/08/apple-2-factor-authentication-setup/">2-factor authentication setup for AppleID</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/03/17/from-tumblr-to-octopress-part-1-why/">From Tumblr to Octopress, part 1: why</a>
+        <a href="/blog/2013/12/08/apple-shopping-cart-fail-gift-card-in-cart/">Apple shopping cart fail — gift card in cart makes gift card payment option disappear</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/02/25/os-x-has-a-builtin-wi-fi-network-scanner/">OS X has a builtin Wi-Fi network scanner</a>
+        <a href="/blog/2013/12/08/apple-shopping-cart-fail-multiple-devices-on-new-cell-plan/">Apple shopping cart fail — multiple devices on new cell plan</a>
       </li>
     
   </ul>
