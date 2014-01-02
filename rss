@@ -4,7 +4,7 @@
   <title><![CDATA[Step 2 is the hard part.]]></title>
   <link href="http://blog.metamatt.com/atom.xml" rel="self"/>
   <link href="http://blog.metamatt.com/"/>
-  <updated>2013-12-09T00:19:51-08:00</updated>
+  <updated>2014-01-01T23:04:44-08:00</updated>
   <id>http://blog.metamatt.com/</id>
   <author>
     <name><![CDATA[Matt Ginzton]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[More mail fail]]></title>
+    <link href="http://blog.metamatt.com/blog/2014/01/01/more-mail-fail/"/>
+    <updated>2014-01-01T22:59:00-08:00</updated>
+    <id>http://blog.metamatt.com/blog/2014/01/01/more-mail-fail</id>
+    <content type="html"><![CDATA[<p>The OS X 10.9.1 update didn&rsquo;t fix <a href="http://blog.metamatt.com/blog/2013/12/08/mail-dot-app-gmail-and-mavericks/">the problems I&rsquo;m having with Mail.app against gmail accounts</a>.</p>
+
+<p>On a lark, I tried copying the Mountain Lion version of Mail.app (the /Applications/Mail.app bundle from a different machine running OS X 10.8.5) onto the machine with Mavericks. No dice:</p>
+
+<p><a href="http://www.flickr.com/photos/metamatt/11703232323/in/set-72157625600517372"><img src="http://farm8.staticflickr.com/7361/11703232323_584f1d967a_o.png" alt="You can't use this version of the application &quot;Mail&quot; with this version of OS X." /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Happy New Year]]></title>
+    <link href="http://blog.metamatt.com/blog/2014/01/01/happy-new-year/"/>
+    <updated>2014-01-01T09:30:00-08:00</updated>
+    <id>http://blog.metamatt.com/blog/2014/01/01/happy-new-year</id>
+    <content type="html"><![CDATA[<p>Step 1. Teach your almost-2-year-old to say &ldquo;Happy New Year&rdquo;.</p>
+
+<p>Step 2. Wake said almost-2-year-old up in the middle of the night because you were going to a New Years party and didn&rsquo;t have babysitting so you had him sleep in the guest room except he woke up and then saw all the cake and sweets and wanted to eat all the cake and then he had a sugar high and wanted to party.</p>
+
+<p>Step 3. Lie awake in bed at 2 am as said almost-2-year-old says &ldquo;Happy new year!&rdquo; over and over and over and over.</p>
+
+<p>Happy New Year, everybody!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Mail.app and gmail in Mavericks]]></title>
@@ -752,113 +780,6 @@ Macbook Air:</p>
 <p>Why a separate gmail.com and personal GAFYD account? I&rsquo;ve long used the same personal email address at a domain I control, predating Gmail. When Google created Gmail and started tacking many other services onto your Gmail account, becoming Google Accounts, I signed up with a gmail address but didn&rsquo;t use it for email, just for Google Accounts. At some point I got tired of running my own email server and dealing with reliability and spam, so I decided to let Google host it via the then-free GAFYD. I could have just forwarded mail from the vanity address to the gmail address without setting up another mailbox, but it seemed simpler to keep them separate. That may have been a mistake.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
 <li id="fn:5">
 <p>The URLs vary by service, so this isn&rsquo;t as obvious as it could be. Docs/Drive uses URLs like drive.google.com/?authuser=N in the account switcher, but for a GAFYD account, you actually end up at drive.google.com/a/mydomain.foo. Gmail uses URLs like mail.google.com/u/N, both in the account switcher and where you actually end up, though for a GAFYD account you can also navigate to mail.google.com/a/mydomain.foo (and you&rsquo;ll be redirected to mail.google.com/u/N for the correct value of N if you&rsquo;re already signed into that account, and to the login page if you&rsquo;re not).<a href="#fnref:5" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Restore from backup]]></title>
-    <link href="http://blog.metamatt.com/blog/2013/01/23/restore-from-backup/"/>
-    <updated>2013-01-23T00:00:00-08:00</updated>
-    <id>http://blog.metamatt.com/blog/2013/01/23/restore-from-backup</id>
-    <content type="html"><![CDATA[<p>The SSD in Vanessa&rsquo;s iMac died and needed to be replaced. In theory, this is
-pretty simple since we have backups — replace the faulty hardware, restore the
-backup, and get on with life.</p>
-
-<p>In reality, it&rsquo;s a little more complicated. I suppose these are small
-complaints since in the big picture, she didn&rsquo;t lose any data. Still.</p>
-
-<p>The way I carried out the restore was to</p>
-
-<ul>
-<li>Attach the replacement SSD in an external USB enclosure (the &ldquo;drive toaster&rdquo;)</li>
-<li>Boot off the recovery partition of the failing SSD, which still worked well enough for this purpose (otherwise I would have had to make a bootable USB stick or DVD)</li>
-<li>Invoke restore from Time Machine onto the new drive</li>
-<li>Power down, open the computer, and install the new SSD in place of the old one. (This is the hard part on a recent iMac, involving taking the screen off with suction cups, and so on.)</li>
-</ul>
-
-
-<p>And we&rsquo;re done, right? Not quite. Even after the Time Machine restore, a bunch
-of things were wonky:</p>
-
-<ul>
-<li>There&rsquo;s no recovery partition on the new drive. You&rsquo;d think Time Machine would recreate that, too, but it doesn&rsquo;t. Internet wisdom says all you need to do is reinstall the current version of Mac OS X over itself and it will automatically recreate the recovery partition; I tried it and that wasn&rsquo;t the case. What this means is the next failure will be harder to deal with because I&rsquo;ll need alternate boot media; the manual means of creating the recovery partition at this point seem just as hard as dealing with that problem when it arises, so I&rsquo;m ignoring it for now.</li>
-<li>Legitimate licensed Adobe CreativeSuite apps had their copy protection crap out, and refused to run with scary messages from the licensing subsystem using the word &ldquo;catastrophic&rdquo;. I called Adobe tech support, and they took 20 minutes to tell me to uninstall and reinstall the apps, which took another 20 minutes but worked.</li>
-<li>CrashPlan backups weren&rsquo;t running because their software uses Java and Mac OS X ships without Java until you launch an interactive Java app at which point you&rsquo;re prompted whether you want to automatically install a Java runtime.</li>
-<li>Time Machine backups weren&rsquo;t running because who knows why, until I went into System Preferences and manually prodded them to run once, after which they kept running fine automatically.</li>
-<li>Mac App Store wasn&rsquo;t automatically updating software until I launched it and manually signed in.</li>
-</ul>
-
-
-<p>These problems could have been caused by the hard drive replacement, the
-restore from backup, or the OS reinstall; I don&rsquo;t really know which. I just
-know there was a lot more to getting a working system back than letting Time
-Machine restore the files.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Google account access from an iPhone]]></title>
-    <link href="http://blog.metamatt.com/blog/2013/01/23/google-account-access-from-an-iphone/"/>
-    <updated>2013-01-23T00:00:00-08:00</updated>
-    <id>http://blog.metamatt.com/blog/2013/01/23/google-account-access-from-an-iphone</id>
-    <content type="html"><![CDATA[<p>Google recently announced that after January 2013, they&rsquo;ll be <a href="http://support.google.com/a/bin/answer.py?hl=en&amp;answer=2716936">deprecating EAS access to Gmail</a> (and calendar, and address book) for free customers (addresses ending in @gmail.com, and free Google Apps accounts). It&rsquo;ll still be available for paid Google Apps customers, and it&rsquo;ll keep working for normal customers who are already using it, but only on their existing devices.</p>
-
-<p>This is bad news because EAS (aka Google Sync) has been and continues to be the best way to get Google services on an iOS device. In my opinion, iOS + Google Sync continues to be the best combination of mobile device and cloud services, but this change makes them work a little less well together.</p>
-
-<p>Google Sync (EAS) is the best way to connect iOS to Google services because</p>
-
-<ul>
-<li>One &ldquo;account&rdquo; (setup step in iOS) handles mail, contacts and calendars.</li>
-<li>Until September 2012, this was the only way to sync contacts between iOS and Google.</li>
-<li>Mail works better: Push works, and the delete button works the way you&rsquo;d expect. (Supposedly both iOS mail client and Gimap mail server support IMAP IDLE, but they disagree on how, or something, because the result doesn&rsquo;t work.)</li>
-<li>Also, if you enable Google&rsquo;s 2-factor authentication, you need to generate fallback &ldquo;app-specific&rdquo; passwords for all your devices<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>, and for EAS this is one per device, and without EAS it&rsquo;s at least two<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</li>
-</ul>
-
-
-<p>For these reasons, especially the second one, I&rsquo;ve been using — and recommending to friends and family — EAS as the preferred way of connecting to Google accounts. In fact, I didn&rsquo;t even realize that contact sync was now possible without it (Google just added CardDAV support in September 2012).</p>
-
-<p>Similarly, I&rsquo;ve been using — and recommending to friends and family — Google Apps (Gmail and friends) as my preferred provider for cloud mail/contacts/calendars. Apple&rsquo;s track record for cloud mail services is spotty; even if iCloud is improving, I just don&rsquo;t see the advantage over Google, especially if you don&rsquo;t want to tie yourself to Apple devices forever<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>.</p>
-
-<p>That leaves us trying to connect iOS to Google&rsquo;s services as best we can. Which to be fair is pretty good, but losing EAS is a step back<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>. This speaks to <a href="http://levelsofdetail.kendeeter.com/post/31926718063/maps">something my friend Ken wrote months ago</a> (in the context of the maps kerfuffle):</p>
-
-<blockquote><p>Why is it that two tech giants with best-of-breed tech in different areas rarely seem to be able to cooperate to produce an awesome product for the user?</p></blockquote>
-
-<p>This has been a bright spot in this regard, which is getting a little less bright at the end of January.</p>
-
-<p>Google probably doesn&rsquo;t care about keeping free EAS working because, in order of preference, they&rsquo;d like to see</p>
-
-<ul>
-<li>You using an Android device to connect to Gmail+friends</li>
-<li>You using a (paid) Google Apps for Business account</li>
-<li>And for anyone else, using a non-Google device to connect to a free Google account, there are still the open protocols (IMAP for mail, CardDAV and CalDAV for calendar and contacts).</li>
-</ul>
-
-
-<p>Apple may not care about optimizing the Gmail experience for iOS users because</p>
-
-<ul>
-<li>They&rsquo;d like to see you using iCloud for mail+contacts+calendars</li>
-<li>Plus they&rsquo;ve already connected you to Google services using EAS, so why should they have to do it again differently.</li>
-</ul>
-
-
-<p>In fairness to Apple, adding a &ldquo;Gmail&rdquo; account to iOS adds both mail and calendars (IMAP + CalDAV), and Google only added CardDAV support on the server side in September 2012 (i.e. after the current iOS release). Maybe, hopefully, Apple will make iOS &ldquo;Gmail&rdquo; accounts start supporting calendars via CardDAV in the next release. In the meantime, you have to do it manually.</p>
-
-<p>I don&rsquo;t see any reason why the open-protocol support from iOS to Google services couldn&rsquo;t work just as well as EAS — if one setup step added all 3 protocols, and if push were made to work — but it&rsquo;s not the case now.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>It&rsquo;s too bad that native device clients basically negate the advantage of 2-factor authentication, since they aren&rsquo;t compatible and force you to use the fallback mechanism.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>One for the &ldquo;Gmail&rdquo; account supporting IMAP and CalDAV, and one for the separate CardDAV account you have to add. And I don&rsquo;t know whether/how &ldquo;app-specific&rdquo; password authentication actually works for the Gmail account type, given that it&rsquo;s a hybrid of two protocols; it&rsquo;s possible that doesn&rsquo;t work in which case you would have to avoid the Gmail account type, generate 3 fallback passwords, and set up IMAP and CardDAV and CalDav separately.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-<li id="fn:3">
-<p>I&rsquo;m complaining here about the flaws in the relatively good iOS support for Google services; I suspect that anyone trying to connect to iCloud from Android or Windows apps has it far worse.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
-<li id="fn:4">
-<p>There&rsquo;s some irony here in that the best way to connect some Apple software to some Google software is using protocols designed by Microsoft.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
 </ol>
 </div>
 

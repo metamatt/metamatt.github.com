@@ -9,8 +9,8 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="Useful tip: for carrying a pocket digital camera, keep it in a $5 microfiber
-bag like the ones used for sunglasses (easily obtainable at a sunglass &hellip;">
+  <meta name="description" content="Pocket camera: Canon Powershot S90 (the recent S95 is probably even better).
+Takes the best photos I&rsquo;ve seen from any camera that will fit in a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,154 @@ bag like the ones used for sunglasses (easily obtainable at a sunglass &hellip;"
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/17/camera-stuff-i-like/">Camera Stuff I Like</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-17T00:00:00-07:00" pubdate data-updated="true">Sep 17<span>th</span>, 2010</time>
+        
+         | <a href="/blog/2010/09/17/camera-stuff-i-like/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Pocket camera: Canon Powershot S90 (the recent S95 is probably even better).
+Takes the best photos I&rsquo;ve seen from any camera that will fit in a pants
+pocket, and works pretty well in low light too, so you can shoot indoors
+without a flash.</p>
+
+<p>Neck strap for SLR: Luma Loop (<a href="http://www.luma-labs.com/products/loop">http://www.luma-labs.com/products/loop</a>). Way more comfortable than a standard neck
+strap, especially for heavier camera/lens combinations, and really practical
+&mdash; easy to slide camera from hanging position to shooting position, easy to
+detach camera to hand it to someone else.</p>
+
+<p>Digital SLR &lt; $1000 (DX): Nikon D90 (upcoming D7000 should be even better).
+Great controls and hand feel, great set of features, great pictures.</p>
+
+<p>Digital SLR, full-frame (FX): Nikon D700. Ditto what I said about the D90,
+except even better controls and even better pictures, especially in low light
+(high ISO). Heavy and expensive, but that goes with the territory for now at
+least.</p>
+
+<p>FX lenses:</p>
+
+<ul>
+<li><p>50mm F/1.4: natural length fixed lens, fast for low light</p></li>
+<li><p>24-85mm zoom: good zoom range for walkaround lens</p></li>
+<li><p>70-300mm VR zoom: gets you close, zooms far out enough to leave on the camera most of the time</p></li>
+<li><p>17-35mm F/2.8 zoom: super wide angle, fast enough for low light and background blur</p></li>
+</ul>
+
+
+<p>DX lenses:</p>
+
+<ul>
+<li><p>35mm F/1.8: natural length fixed lens, fast for low light</p></li>
+<li><p>18-200mm VR zoom: jack of all trades, good enough for almost anything</p></li>
+<li><p>12-24mm zoom: super wide angle</p></li>
+</ul>
+
+
+<p>Note that all the FX lenses work fine on the DX camera too, but the field of
+view is reduced, which makes some of them less useful. The 17-35 is a really
+useful zoom range on the DX camera, though, and with the reduced field of
+view, vignetting is not a problem.</p>
+
+<p>This is all stuff I own, would buy again and would recommend.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/15/mjpg-streamer-from-openwrt-with-cheap-webcams/">Mjpg-streamer From OpenWRT With Cheap Webcams</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-15T00:00:00-07:00" pubdate data-updated="true">Sep 15<span>th</span>, 2010</time>
+        
+         | <a href="/blog/2010/09/15/mjpg-streamer-from-openwrt-with-cheap-webcams/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>One thing OpenWRT can do (if you run it on a router with USB ports) is stream
+video from a webcam using mjpg-streamer. Pretty useful if you want to put a
+webcam in some random place.</p>
+
+<p>(The current version of OpenWRT, backfire, needs additional nondefault
+packages involved: see <a href="http://blog.bashroom.com/2010/05/04/webcam-streaming-with-openwrt-backfire/">http://blog.bashroom.com/2010/05/04/webcam-streaming-with-openwrt-backfire/</a>.)</p>
+
+<p>I tried this with an old webcam I had lying around, but the old webcam
+predated the UVC (USB Video Class) standard, and I couldn&rsquo;t get it to work. So
+then I bought a couple of the cheapest webcams on Amazon that claimed UVC
+support.</p>
+
+<p>Not too surprisingly, neither one worked right away &mdash; when I start mjpg-
+streamer as described in the abovelinked article, it would say &ldquo;Unable to set
+format: invalid argument&rdquo;. This turns out to be because these cheaper cameras
+don&rsquo;t support MJPG in hardware, only YUV output; mjpg-streamer can convert but
+you have to pass -y to it.</p>
+
+<p>So for OpenWRT, I edited /etc/init.d/mjpg-streamer to add -y to the &mdash;input
+argument.</p>
+
+<p>The resulting stream is choppy, and gets backed up several frames, but is good
+enough for my purposes. It also spikes the router CPU to 100%, even on a newer
+faster router I have, so I told mjpg-streamer to stream at 1 fps, which is not
+that much choppier and still good enough for my purposes (edit /etc/config
+/mjpg-streamer to do this).</p>
+
+<p>Moral of the story: it&rsquo;s probably better to buy a webcam known to support MJPG
+in hardware.</p>
+
+<p>(Thanks to <a href="https://forum.openwrt.org/viewtopic.php?pid=98294">https://forum.openwrt.org/viewtopic.php?pid=98294</a>and <a href="http://arthurhong-linux.blogspot.com/2008/11/mjpgstreamer-or-uvcstreamer-always.html">http://arthurhong-linux.blogspot.com/2008/11/mjpgstreamer-or-uvcstreamer-always.html</a> for helping me figure out the YUV format problem and solution.)</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -265,6 +413,14 @@ onscreen keyboards, though.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/01/more-mail-fail/">More mail fail</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/01/happy-new-year/">Happy New Year</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/08/mail-dot-app-gmail-and-mavericks/">Mail.app and gmail in Mavericks</a>
       </li>
     
@@ -274,14 +430,6 @@ onscreen keyboards, though.</p>
     
       <li class="post">
         <a href="/blog/2013/12/08/apple-2-factor-authentication-setup/">2-factor authentication setup for AppleID</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/08/apple-shopping-cart-fail-gift-card-in-cart/">Apple shopping cart fail — gift card in cart makes gift card payment option disappear</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/08/apple-shopping-cart-fail-multiple-devices-on-new-cell-plan/">Apple shopping cart fail — multiple devices on new cell plan</a>
       </li>
     
   </ul>
@@ -352,7 +500,7 @@ onscreen keyboards, though.</p>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Matt Ginzton -
+  Copyright &copy; 2014 - Matt Ginzton -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

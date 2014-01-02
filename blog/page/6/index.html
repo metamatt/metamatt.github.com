@@ -9,8 +9,7 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="Over the past 5 years, I&rsquo;ve used smartphones from Apple and Palm (powered by
-iOS and webOS), and played around with Android devices over the &hellip;">
+  <meta name="description" content="After reading about Apple&rsquo;s new Mountain Lion, including coverage from Daring Fireball and Ars Technica, my immediate reaction is: Address Book &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +76,158 @@ iOS and webOS), and played around with Android devices over the &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/16/off-the-cuff-reaction-to-os-x-mountain-lion/">Off-the-cuff Reaction to OS X Mountain Lion</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-16T00:00:00-08:00" pubdate data-updated="true">Feb 16<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/02/16/off-the-cuff-reaction-to-os-x-mountain-lion/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>After reading about <a href="http://www.apple.com/macosx%20/mountain-lion/">Apple&rsquo;s new Mountain Lion</a>, including coverage from <a href="http://daringfireball.net/2012/02/mountain_lion%20">Daring Fireball</a> and <a href="http://arstechnica.com/apple/news/2012/02/apple-unleashes-mountain-lion-on-developers-set-for-summer-release.ars">Ars Technica</a>, my immediate reaction is:</p>
+
+<ul>
+<li>Address Book is being renamed Contacts? Great. I can&rsquo;t tell you how many times I&rsquo;ve typed Command-Space, C-O-N, trying to launch Address Book via Spotlight.</li>
+<li>So long Growl? I already said &ldquo;so long&rdquo; to Growl months ago, since I don&rsquo;t like the way old notifications pile up. Notification Center, at least in its iOS incarnation, is much less intrusive.</li>
+<li>Messages (the app, with support for, er, messages via iMessage) from the desktop makes perfect sense.</li>
+</ul>
+
+
+<p>But top to bottom, from today&rsquo;s announcements, this feels much more like a
+collection of iOS apps appearing in OS X, not a revamp of the OS itself. Where
+are the system-level changes? OK, Notification Center is system-wide, and
+there&rsquo;s more iCloud support including document save/load directly to iCloud,
+and there&rsquo;s Gatekeeper (the ability to ban installation of unsigned apps).
+AirPlay mirroring will be useful, but it&rsquo;s too bad the current AppleTV limits
+the output to 720p. Still, most of the changes (as documented today) are at
+the surface.</p>
+
+<p>On the other hand, recent OS X releases (especially Snow Leopard, but also to
+a large degree Lion) were about laying new system infrastructure, so maybe
+this is perfectly appropriate. Also, compared to Windows, OS X distinguishes
+itself more and more by its useful collection of built-in apps, so improving
+and extending that collection is fair game. And finally, the name signifies
+it&rsquo;s a new lion, not a whole new cat.</p>
+
+<p>From which I conclude the meta-news here is that with a plan to update the OS
+annually and the ability to roll out these upgrades via the Mac App Store for
+$30, we should get used to regular incremental updates, not revolutions every
+blue moon. Which is a pretty sane way to develop quality software, really.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/20/space-limiting-your-time-machine-network-backups/">Space Limiting Your Time Machine Network Backups</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-20T00:00:00-08:00" pubdate data-updated="true">Jan 20<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/01/20/space-limiting-your-time-machine-network-backups/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>As part of the <a href="http://blog.metamatt.com/blog/2012/01/20/nothing-is-as-easy-as-it-%20should-be-ssd-upgrades/">aforementioned office-quieting project</a>, I wanted spinning disks out of the office, so I
+garbage collected 2 1TB drives from external enclosures that had served for
+Time Machine, and <a href="http://blog.metamatt.com/blog/2012/01/20/nothing-is-as-easy-as-it-should-be-nas-upgrades/">moved them into a NAS enclosure</a> in the basement.</p>
+
+<p>That solved the noise problem and gave me a bunch more network-attached
+storage, but turned off Time Machine; the next step was to re-enable TIme
+Machine but back up to the network.</p>
+
+<p>A few years ago setting up Time Machine to back up over the network, to
+anything but the Time Capsule mini-NAS that Apple designed for it, took some
+minor rocket science (and in my experience caused no shortage of kernel panics
+on the client machines); now it&rsquo;s more stable and easy to set up, especially
+if the network file services are provided by Apple&rsquo;s own AFP server. I have
+some free space on another RAID array attached to a Mac Mini also in the
+basement, perfect for this sort of thing, and so all I had to do was mount
+that drive from the client machine, then go to the Time Machine prefpane and
+select it for backup. Time Machine creates itself a disk image and goes to
+town.</p>
+
+<p>The one problem with this is that it creates a disk image with the same size
+as the underlying physical volume. It&rsquo;s a sparse image, so it doesn&rsquo;t
+immediately fill the whole volume, but it will grow to do so over time. That&rsquo;s
+not good, since I want multiple Time Machine backups to be able to share that
+volume, and they&rsquo;re not the only thing that lives there.</p>
+
+<p>Googling for solutions to this, I found an article on how to <a href="http://code.stephenmorley.org/articles/time-machine-on-a-network-%20drive/">pre-create the sparseimage with whatever size you want</a>. I tried that, but when I enabled Time Machine, it ignored the
+hostname_macaddress.sparseimage directory and just created a new
+hostname.sparseimage directory next to it. (Which, IMHO, is a good thing,
+since keying the backup name from the MAC address is not going to work well
+with machines with multiple network interfaces, for example a laptop which is
+sometimes using Ethernet and sometimes using Wi-Fi.) Maybe that&rsquo;s a holdover
+from a previous OS version; who knows. So then I tried precreating the image
+file as just hostname.sparseimage, but then when I enabled Time Machine to the
+same volume, it noticed the existing one, decided not to use it, and created
+&ldquo;hostname 1.sparseimage&rdquo; instead.</p>
+
+<p>Then I stumbled on a simpler recipe:</p>
+
+<ol>
+<li> Enable Time Machine the normal way (mount a network volume, open System Preferences, go to Time Machine preferences, click Select Disk, and choose the network volume).</li>
+<li> Let Time Machine do its thing. It will create a sparse image there with the same size as the underlying volume, and do the initial backup, and (eventually) unmount the sparse image.</li>
+<li> Later, when Time Machine is not running, use hdiutil to resize the sparseimage to something smaller. I used &ldquo;hdiutil resize -size 750g hostname.sparseimage&rdquo; (down from its original 3TB size).</li>
+</ol>
+
+
+<p>Boom. Seems to work fine. After having backed up a little over 400GB, Time
+Machine now displays the backup status with &ldquo;Available: 385 GB of 3 TB&rdquo;, so
+after backing up another 385GB, it&rsquo;ll start pruning the backup set, instead of
+filling the volume and getting confused.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -746,242 +897,6 @@ getting the data from iCloud as needed again.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/24/how-photo-sync-would-be-done-right/">How Photo Sync Would Be Done Right</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-24T00:00:00-08:00" pubdate data-updated="true">Nov 24<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/11/24/how-photo-sync-would-be-done-right/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;ve been wishing and waiting and watching and waiting, with an idea in my
-head of what I want: from computers and the internet, regarding photos and
-photo management, and connecting all the computers I use. Some of this is very
-specific to photos, and some of this is general multi-computer file
-management, and after years of watching and waiting, little of it is done the
-way I wish it was.</p>
-
-<p>I take photos with digital cameras. I want all of those photos accessible to
-me wherever I go, on all the computers and smart devices I own and any I
-happen to use temporarily; I want them backed up for safety; I want some of
-them shared with my friends or the whole internet. In short: I want my
-memories protected, accessible to me, and selectively shared with those I
-choose to share them with.</p>
-
-<p>There exist good file sync solutions, and there exist good backup solutions,
-and there exist good photo sharing solutions, but all of them have drawbacks,
-not least of which is that they&rsquo;re separate and don&rsquo;t really work together, so
-I need to do more to get these combined benefits.</p>
-
-<p>Ideally, I&rsquo;d like all photos I take immediately uploaded to a private site in
-the cloud, automatically, which acts as backup and also automatically syncs
-them between all my devices, and which also offers a web interface capable of
-giving me full access to the collection, and selecting some photos for sharing
-in a nice way, with or without authentication.</p>
-
-<p>Since upload bandwidth is generally too slow and expensive, I want the cloud
-upload to happen once, automatically and asynchronously in the background, as
-soon as possible; the photo is now backed up and syncable; if I choose to
-share it, there&rsquo;s no further waiting for upload.</p>
-
-<p>I want flexible organization (which should work well with as much metadata as
-I want to add, or as little), to scale to my collection of thousands of photos
-over many years, and grow into the future. I want the sync solution to play
-promiscuously well with other apps I choose to use, and not enforce a
-particular filesystem or logical organization scheme, but I want it to offer
-optional organization features which help me keep a well-groomed collection if
-I can use the help. And the sync part of the solution means that any
-organizational changes I make, on any connected device and in any app, is
-reflected everywhere.</p>
-
-<p>I want this to work with full-resolution photos, and raw photos, and I want it
-to work with arbitrary metadata. And I want it to be promiscuously
-crossplatform: on Mac and Windows and Linux desktops, and iOS and Android and
-whichever other mobile platforms manage to prove their relevance.</p>
-
-<p>I want the mobile device version to realize and revel in the constraints of
-the platform, acknowledging that connectivity is ubiquitous but not always
-fast or reliable, that memory is limited, and that snappy touch interactions
-feel good. Thus, if I&rsquo;m using a device that combines a camera and a network
-interface (any smartphone) I want every photo I take immediately sent to the
-cloud for backup and syncability. I also want my entire collection synced down
-to my device as a photo wallet, but, acknowledging local storage limits, I
-want this to automatically downscale to an appropriate resolution, and I want
-to be able to select per-device subsets of the entire collection to subscribe
-to.</p>
-
-<p>It would be great if the sync/backup/share features work with non-photo files
-&mdash; the solution I envision would be file-based, and have a bunch of special
-sugar for image files, but would be useful even for other files &mdash; but that&rsquo;s
-not necessary. Non-photo files are already handled pretty well by services
-like DropBox.</p>
-
-<p>In fact, my continuing desire for the magic super photo cloud service is
-driven by noting that by and large, photos are the only remaining file type I
-have to really care about on my computer, meaning data I create that isn&rsquo;t
-already well handled by cloud services. Examples that are already well
-handled: Email (tons of cloud services including Gmail);  office documents
-(Google Docs); unstructured notes and clippings (Evernote); miscellaneous
-files that don&rsquo;t fall into the above buckets but are small (Dropbox): what&rsquo;s
-left? Well, photos, music and video. But music is a special beast, which like
-photos also involves largish files but unlike photos is something I buy
-instead of create, meaning any individual file I want already exists in some
-canonical form I can get from lots of other sources; anyway it&rsquo;s well handled:
-Amazon, Apple, and Google have cloud sync; the file-based approach is somewhat
-displaced by subscription services like Rhapsody and Spotify. Video is a
-combination of photos and music which, in the case of video we record
-ourselves, I think will end up having the same properties as photos: large
-files we create, embodying our memories, that we want to sync and backup and
-share. So it&rsquo;s the photos we take (and by extension I include video we take)
-that we care about managing with computers, better than it&rsquo;s currently done.</p>
-
-<p>Here&rsquo;s a smattering of things that exist now, attacking some of the above
-problems and illustrating a variety of different approaches. I&rsquo;ll call out
-what they do right, and what I find lacking:</p>
-
-<ul>
-<li><a href="https://www.dropbox.com/">Dropbox</a> (file sync and then some): can do most of what I&rsquo;m asking for, but it&rsquo;s not photo-specific (which could be bug or feature or both). The price is high (compared to photo sharing and backup services which usually offer unlimited storage). They have a sharing UI which has been somewhat customized for photo albums, but it&rsquo;s pretty bare bones compared to full-blown photo sharing sites. The syncing is good but not perfect; p2p sync first requires an upload to the cloud (so it makes you wait for the slow hop then skips the fast hop); it enforces a certain filesystem layout on computer clients; it doesn&rsquo;t have an appropriate mode for syncing all photos to/from smart devices at suitable resolution. All this said, Dropbox is probably the closest existing thing to what I want, and it offers good 3rd party APIs allowing others to extend it &mdash; I think they see themselves more as storage infrastructure for the web than any specific application &mdash; so if the interoperability and pricing concerns don&rsquo;t bother you, maybe it&rsquo;s already the right answer.</li>
-<li><a href="http://www.apple.com/icloud/features/photo-stream.html">Photo Stream</a> (photo sync): gets the sync right (the first I&rsquo;ve seen that automatically adds photos as they&rsquo;re taken). However, it has very strict and arbitrary limits: no deletion, no organization, and includes only the last 1000 photos or 30 days, so it&rsquo;s basically this write-only temporary repository that syncs across devices but which you need to manually fish the things you care about out of, and manage separately. It does have the magic auto-upload feature for network-connected cameras, and it does deal with RAW images. I see this as a promising demo of one aspect of what I&rsquo;m looking for, but it doesn&rsquo;t even touch the others (organization, backup, or sharing).</li>
-<li><a href="http://www.adobe.com/products/carousel.html">Adobe Carousel</a> (photo sync and sharing): haven&rsquo;t tried it yet, and it looks promising but with limited platform support and doesn&rsquo;t handle raw files. Pricing may be a turnoff (monthly fee and limited number of carousels). Should handle sharing, both public and private. But not suitable for my entire photo library, as far as I can tell.</li>
-<li><a href="http://www.crashplan.com/">CrashPlan</a> (online backup, also see Mozy, Carbonite, BackBlaze): cheap unlimited-size cloud backup, which can also let you retrieve individual files from the cloud via a web interface, which in a pinch means you can get at your files from anywhere. The web interface isn&rsquo;t optimized for this case though, nor is it optimized for photo display, and there are no suitable features for sharing (albums, delegatable access control).</li>
-<li><a href="http://www.flickr.com/">Flickr</a> (photo sharing): Flickr is great for photo hosting and sharing; it has great organizational features and a good community. The pro version offers effectively unlimited storage and has neat tracking features so you can see the popularity of what you post. However, Flickr doesn&rsquo;t itself handle uploads or, really, client software in general, so it doesn&rsquo;t handle sync (it does have an API with good 3rd party adoption, addressing this somewhat). It doesn&rsquo;t handle RAW files, and it&rsquo;s not suitable for backup. The sharing features allow flexible public and private sharing, but with not a lot of flexibility for album display. In general, the evolution of the site has been slow since Yahoo! bought them out. I think the site was originally designed with a forward-looking vision that in the near future, nobody would need any local photo software, and you could just upload everything to Flickr, edit and organize it there, share it there, and you wouldn&rsquo;t need sync or backup. And maybe if the site had continued on its original trajectory and pace, this would have happened by now &mdash; but I find it&rsquo;s anything but true in the real world.</li>
-<li><a href="https://www.facebook.com/">Facebook</a> (photo sharing): Facebook has huge adoption, and I&rsquo;ve found that photos I post there get seen (and &ldquo;liked&rdquo; and commented on) more than anywhere else, including Flickr. But, Facebook is a walled garden (it may be possible to use it for public photo sharing but I don&rsquo;t see people doing that in practice); content hosted there is not search engine friendly; you as the photographer also get zero control over photo presentation, zero insight into who&rsquo;s viewing your photos, and only very limited organizational features (albums with a size limit which can&rsquo;t be nested hierarchically). Person tagging and automatic face recognition make up for some of this; general ease of use and speed and reach make Facebook a good solution for sharing your photos as long as your needs are simple; however on my list of big top-level wishes (handle sync, backup, and sharing) it only touches sharing, and honestly, given the limited control over organization and presentation, I&rsquo;d prefer to use Flickr if I could get the same reach. Given the name of the site (it&rsquo;s the book of faces, after all) and the mandate implied therein, I feel like they could take this feature much much farther, but it also seems like the backup/syncing aspect I want is not part of this &ldquo;book of faces&rdquo; mandate and cries out for a dedicated solution. Note that Facebook is free and offers unlimited storage (as far as I know); the platform scales well (and is, I believe, by far the world&rsquo;s largest-volume photo server); it doesn&rsquo;t handle RAW files, or even particularly high-resolution images.</li>
-<li><a href="https://picasaweb.google.com/">Google&rsquo;s photo suite</a> (photo organization and sharing): Google has nice desktop client software for photo organization and editing (Picasa), which they eventually built an online companion for with sharing and automatic sync features (Picasaweb), and then integrated into their new social network, Google+. Taken together, this provides a pretty good start-to-finish solution for taking, editing, uploading, and sharing photos. However the upload/sync solution based on Picasa is not flexible or pervasive enough to serve as backup or sync files managed outside Picasa, and the website is certainly not designed to serve as a central hub for managing and syncing my entire photo library. I&rsquo;m not even sure if the sync is bidirectional; it may be upload-only.</li>
-<li><a href="http://evernote.com/">Evernote</a> (generic unstructured data sync): Evernote has a good web service, with client apps and a web app for access, automatic syncing for offline access, and attractive pricing. However it doesn&rsquo;t offer any of the organization or sharing features you&rsquo;d really want for photo management, nor does it integrate with other apps via the filesystem (stuff stored in and synced via Evernote is available via the Evernote API, but not via older integration points, namely local filesystems).</li>
-<li>File sync in general: Beyond Dropbox, described above, I haven&rsquo;t seen anything that really scratches this itch in the way I&rsquo;m envisioning.</li>
-<li>Photo sharing in general: there are tons more photo sharing services, but by and large, they have the same properties I ascribed to Flickr above, but are less good at it. You might have a favorite that you think I&rsquo;m giving short shrift to here; fine; let me know if you know of any that are qualitatively better than Flickr on the list of things I&rsquo;m wishing for in this post.</li>
-<li>Other things not mentioned here: This list is intended to show examples, not be exhaustive, so I&rsquo;ve collapsed whole categories onto one exemplar; for example, while I&rsquo;m aware of SpiderOak and see it having certain advantages over Dropbox, for my purposes here it&rsquo;s essentially the same. There are probably many other sync, backup and photo sharing services that have their own advantages but don&rsquo;t break new ground on the aspects I care about; if you know about something I missed that does address my wish list, please let me know.</li>
-</ul>
-
-
-<p>How I&rsquo;d build this: I&rsquo;d want the following pieces:</p>
-
-<ol>
-<li> The central cloud service which stores files securely for backup, and handles sync to any clients I&rsquo;ve authorized.</li>
-<li> Client software for every platform which matters, which handles sync, automatically in the background: new files appearing first on this device are uploaded to the cloud service; new files announced from the cloud service are synced (at an appropriate resolution) down to this device&rsquo;s local library; changes to existing files (including filesystem metadata like name and location, picture-specific metadata like that encoded in EXIF and IPTC mechanisms, and image data itself) are also automatically synced in both directions.</li>
-<li> Web app atop the first cloud service which handles organization and management &mdash; letting me move files between folders or albums, apply tags, and designate what to share with whom.</li>
-<li> Web app for sharing, pulling authorized files from the cloud service, and displaying them with nice presentation and according to whatever organization (individual file, album, by tag, etc) I&rsquo;ve chosen.</li>
-<li> Client local versions of #3 (optional and lower priority, since I should be able to use the web version or any local software I want to most things this could do).</li>
-</ol>
-
-
-<p>(I think Evernote, top to bottom, service to applications, is a great example
-of this architecture &mdash; handling what they call &ldquo;notes&rdquo;, which basically means
-document snippets with attachments &mdash; but, as described above, it doesn&rsquo;t
-solve my photo sync problem, since the client local apps don&rsquo;t integrate my
-local filesystem and provide an integration point for other local apps, and
-the web interface doesn&rsquo;t have theorganization and display features I&rsquo;d want
-for photos.)</p>
-
-<p>I don&rsquo;t know what this should cost or what I&rsquo;d be willing to pay for it &mdash;
-more than free (Google and Facebook); probably more than Flickr&rsquo;s $25/year and
-more than the unlimited backup companies&#8217; $5/month; probably less than
-Dropbox&rsquo;s per-GB-per-month fees. For this to be done right, the storage and
-bandwidth would probably have significant cost, and most of the data is
-private so can&rsquo;t be de-duped.</p>
-
-<p>Clearly this isn&rsquo;t easy &mdash; the inherent challenges of handling and
-transporting and scaling to this much data, and designing good interfaces for
-all the services and applications, are real, and for anyone but the
-incumbents, there are also the additional challenges of integrating with 3rd
-party software and OS platforms, especially less open and less flexible mobile
-platforms (given the sandboxing and multitasking restrictions in iOS, for
-example, I&rsquo;m not sure anyone but Apple is in a position to implement Photo
-Stream for iOS right now).</p>
-
-<p>But it would be nice.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/17/kindle-fire-first-impressions/">Kindle Fire First Impressions</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-17T00:00:00-08:00" pubdate data-updated="true">Nov 17<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/11/17/kindle-fire-first-impressions/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>My first impressions after playing with the Kindle Fire for an hour or so:</p>
-
-<ul>
-<li><p>it&rsquo;s basically a color, video-happy, app-happy Kindle.</p></li>
-<li><p>fine for reading Kindle books, but if that&rsquo;s what you want to do, the e-ink Kindles are cheaper, lighter, less distracting, and have much better battery life.</p></li>
-<li><p>video playback from Amazon&rsquo;s store or Netflix works great</p></li>
-<li><p>app selection is small, but I&rsquo;ll bet a lot of games show up soon/over time</p></li>
-<li><p>overall touch interaction is ok but clunky, doesn&rsquo;t quite feel right compared to iOS, scrolling is choppy, some touches aren&rsquo;t recognized, some light touches send it scrolling for miles</p></li>
-<li><p>web browser feels decidedly not as fast as this year&rsquo;s Apple devices (iPad 2, iPhone 4S). So much for Silk?</p></li>
-</ul>
-
-
-<p>Overall, if you compare it head to head against an iPad 2, of course the iPad
-comes out ahead, but it also costs 2.5x more, and is bigger and heavier. But
-iOS still sets the standard for natural touch interaction, and iOS also has a
-much wider app selection. Plus there&rsquo;s more hardware packed into an iPad:
-camera and GPS, and options for adding external keyboards, so some people even
-find they can use it as a laptop replacement… anyway, I don&rsquo;t see the Kindle
-Fire having comparable versatility.</p>
-
-<p>If you want to focus on reading, video and games, and you like the 7&#8221; size
-(which is just right in many ways), the Kindle Fire is pretty compelling,
-especially given the price.</p>
-
-<p>I sure hope Amazon is rapidly improving the touch interaction via software
-updates, though.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/7/">&larr; Older</a>
@@ -999,6 +914,14 @@ updates, though.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/01/more-mail-fail/">More mail fail</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/01/happy-new-year/">Happy New Year</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/08/mail-dot-app-gmail-and-mavericks/">Mail.app and gmail in Mavericks</a>
       </li>
     
@@ -1008,14 +931,6 @@ updates, though.</p>
     
       <li class="post">
         <a href="/blog/2013/12/08/apple-2-factor-authentication-setup/">2-factor authentication setup for AppleID</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/08/apple-shopping-cart-fail-gift-card-in-cart/">Apple shopping cart fail — gift card in cart makes gift card payment option disappear</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/08/apple-shopping-cart-fail-multiple-devices-on-new-cell-plan/">Apple shopping cart fail — multiple devices on new cell plan</a>
       </li>
     
   </ul>
@@ -1086,7 +1001,7 @@ updates, though.</p>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Matt Ginzton -
+  Copyright &copy; 2014 - Matt Ginzton -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

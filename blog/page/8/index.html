@@ -9,8 +9,8 @@
   <meta name="author" content="Matt Ginzton">
 
   
-  <meta name="description" content="Two keyboard shortcuts I use very frequently under Mac OS X are: Command-H: hide the current application
-Command-L: jump to the browser address bar ( &hellip;">
+  <meta name="description" content="In response to my previous articles about frustrations with my DSL modem,
+Sonic.net sent me a replacement modem to see if it would fare better. It &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,163 @@ Command-L: jump to the browser address bar ( &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/05/03/misleading-dsl-sync-speeds-revisited/">Misleading DSL Sync Speeds, Revisited</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-03T00:00:00-07:00" pubdate data-updated="true">May 3<span>rd</span>, 2011</time>
+        
+         | <a href="/blog/2011/05/03/misleading-dsl-sync-speeds-revisited/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In response to my previous articles about frustrations with my DSL modem,
+Sonic.net sent me a replacement modem to see if it would fare better. It had
+one specific improvement but for the most part duplicated the previous
+results; however I promised to post an update, and during the extra testing I
+learned one more useful fact, so this is that update with that one useful
+fact.</p>
+
+<p>That useful fact: if you have two DSL lines in bonded mode, but the DSL lines
+sync at different speeds, the Comtrend 5361 modem cares a lot about which
+order you connect the lines (which of the fast/slow lines is master and which
+is slave).</p>
+
+<p>In more detail: the testing I was doing involved different ways of connecting
+the modem to the DSL lines (one line at a time or both lines bonded, if bonded
+then testing both ways to pair the incoming lines with the modem, with and
+without DSL filters, with and without additional indoor wiring, and with both
+Annex A and Annex M spectrum allocation modes).</p>
+
+<p>If the modem is configured for Annex A operation and is connected to the MPOE
+with no filter and minimal indoor wiring, I see it provide the good results
+you&rsquo;d expect: on either line alone, it transfers real bits at about 85% of
+that line&rsquo;s claimed sync speed, and connecting both lines together, I get the
+sum of the individual speeds (or 85% of the combined sync speed, which is the
+same thing), and it doesn&rsquo;t matter which line is master and which line is
+slave.</p>
+
+<p>That&rsquo;s all as it should be. Where it gets weird is if I deviate from that
+exact configuration. If I add a DSL filter, or enable Annex M, then the modem
+may deliver only 1/3 of the claimed sync speed, depending on the way I connect
+the 2 lines for bonded operation. Single-line operation still yields data
+transfers at 85% of sync speed, and if I connect it for bonded operation with
+the fast line as the master and slow line as slave I get the expected combined
+rate, but if I connect the slow line as the master and the fast line as the
+slave, real-world performance drops drastically. This is extra weird because
+the line order doesn&rsquo;t affect the sync speed; in the bad ordering, the modem
+still claims a nice fast sync speed and just can&rsquo;t transfer data nearly as
+fast as it should. I&rsquo;m still at a loss to know where the performance is going
+or why.</p>
+
+<p>Now, if you know this is a problem and know how to fix it, you can route
+around it. And most people probably don&rsquo;t end up with 2 DSL lines that sync at
+different speeds, and I presume that if they sync at the same speed the modem
+doesn&rsquo;t care how you connect them. But this weird behavior sure caused me a
+lot of grief and lost time.</p>
+
+<p>On the bright side, the newer modem did perform correctly for single-line
+operation on either line, which does address my initial complaint.</p>
+
+<p>Previously:</p>
+
+<ul>
+<li><a href="http://blog.metamatt.com/blog/2011/04/13/dsl-modem-annoyances/">DSL Modem Annoyances</a></li>
+<li><a href="http://blog.metamatt.com/blog/2011/04/18/dsl-disappointments-annex-m-edition/">DSL Disappointments: Annex M edition</a></li>
+<li><a href="http://blog.metamatt.com/blog/2011/04/18/dsl-disappointments-misleading-sync-speed-edition/">DSL Disappointments: Misleading sync speed edition</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/21/dsl-disappointments-too-bad-that-didnt-work/">DSL Disappointments: Too Bad That Didn&#8217;t Work</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-21T00:00:00-07:00" pubdate data-updated="true">Apr 21<span>st</span>, 2011</time>
+        
+         | <a href="/blog/2011/04/21/dsl-disappointments-too-bad-that-didnt-work/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;m giving up on DSL. There are really 3 separate reasons that it&rsquo;s not
+performing as I&rsquo;d hoped and expected:</p>
+
+<ul>
+<li>Reliance on AT&amp;T&rsquo;s wiring, and no incentives for AT&amp;T to provide good enough wiring. There&rsquo;s apparently no clear agreement between Sonic.net (and more importantly their DSL equipment) and AT&amp;T as to what constitutes acceptable wiring. AT&amp;T claims they&rsquo;ve met their side of the bargain, but I have one line that syncs at 18mbps and one that syncs at 3-5mbps. Clearly, there&rsquo;s an important difference between them, but it&rsquo;s one that AT&amp;T isn&rsquo;t required to care about.</li>
+<li><a href="http://blog.metamatt.com/blog/2011/04/18/dsl-disappointments-annex-m-edition/">Annex M doesn&rsquo;t deliver, for me</a>. Maybe it works in other cases, but for both my fast line and slow line, it caused a significant decrease in downstream performance and no increase whatsoever in upstream performance.</li>
+<li>The modem is finicky: depending on exactly how I connect it (which cabling, whether I use a filter, and what order I connect the two lines), <a href="http://blog.metamatt.com/blog/2011/04/18/dsl-disappointments-misleading-sync-speed-edition/">it delivers as little as 30% of the sync speed as usable performance</a>.</li>
+</ul>
+
+
+<p>I was hoping to see Annex A speeds syncing at the expected 40mbps down/2mbps
+up, which using Annex M could be reallocated as something like 30mbps
+down/5mbps up. But instead I&rsquo;m getting 22mbps/2mbps from the wires in Annex A,
+and Annex M reallocates that as 15mbps/2mbps, which there&rsquo;s no reason to do.
+The highest real transfer speeds (not sync speeds) I&rsquo;ve seen, sticking with
+the Annex A configuration, are 20mbps down, 1.8mbps up.</p>
+
+<p>That 1.8mbps upstream is the clincher &mdash; that&rsquo;s only a quarter of what I&rsquo;m
+getting from Comcast. That might be fine for people who don&rsquo;t want to run
+offsite backups across the WAN, but I&rsquo;ve grown addicted to faster upload
+speeds.</p>
+
+<p>I really like Sonic.net as a company &mdash; their policies and their attitude
+towards customers are preferable to any of the incumbents that own their own
+wires. But the wiring they&rsquo;re able to rent from AT&amp;T doesn&rsquo;t cut it for me. If
+in the future they&rsquo;re able to connect my house with something better than AT&amp;T
+phone wiring, I&rsquo;d certainly consider it.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -854,121 +1011,6 @@ people to find what really happened.</p></blockquote>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/11/open-for-business/">Open for Business</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-11T00:00:00-07:00" pubdate data-updated="true">Apr 11<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/04/11/open-for-business/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><blockquote><p>Nokia says that Symbian is no longer open source, just &ldquo;open for business.&rdquo;
-The definition of &ldquo;open&rdquo; in the mobile space is apparently completely
-different than it is everywhere else in the software industry.</p></blockquote>
-
-<p>Ryan Paul, <a href="http://arstechnica.com/gadgets/news/2011/04/nokia-transitions-symbian-source-to-non-open-license.ars">Nokia transitions Symbian source to non-open license</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/11/levelsofdetail-eject/">LevelsOfDetail: Eject</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-11T00:00:00-07:00" pubdate data-updated="true">Apr 11<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/04/11/levelsofdetail-eject/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://puntium.tumblr.com/post/4517405510">LevelsOfDetail: eject</a></p>
-
-<p><a href="http://puntium.tumblr.com/post/4517405510">puntium</a>:</p>
-
-<blockquote><p>I shouldn’t have to ask this, but what is the fastest way to eject a
-removable disk in Windows 7? So far I’ve been finding an explorer window, then
-right clicking on the drive, and picking eject. Why is this three difficult
-clicks? What’s the one thing that you know is going to happen with…</p></blockquote>
-
-<p>I use the systray icon. I don&rsquo;t think it&rsquo;s that bad. Except when it breaks…
-yeah, that shouldn&rsquo;t be a concern but it is; even under Win7 I&rsquo;ve seen quite a
-few occurrences where right-clicking that Unplug/Eject systray icon does
-nothing. Then you have to double-click said icon, and navigate through the
-resulting dialog box, which is too many clicks. Also, even when the systray
-icon isn&rsquo;t broken, sometimes the autohide logic decides to hide it (and I
-understand the sad state of affairs that led MS to implement autohide for
-systray icons, but I don&rsquo;t think it should choose transient status icons like
-this one). I just set it to always show.</p>
-
-<p>I&rsquo;m not 100% with you on &ldquo;what&rsquo;s the one thing you know is going to happen
-with&rdquo; removable disks. Just because it&rsquo;s connected to a bus that technically
-supports hotplug doesn&rsquo;t mean you&rsquo;re going to remove it. On my Mac, I have a
-couple drives connected via Firewire that I never unplug, and I actively
-dislike that there&rsquo;s always an eject button staring me in the face and
-tempting me to press it, or waiting for errant clicks. I&rsquo;ve only ever
-accidentally ejected one of these drives once, but that&rsquo;s still once too many.
-And in no case should the guest user be able to eject the Time Machine drive.
-(<a href="http://www.facebook.com/metamatt/posts/10150099468713843">I complained about this before</a>;
-unfortunately that was on Facebook and links from the public web won&rsquo;t work
-well so apologies if you&rsquo;re reading this and can&rsquo;t see that.) And even for
-disks you do unplug sometimes, the OS gets no guarantees as to when.</p>
-
-<p>I&rsquo;m fine with how Windows exposes this (though it should actually always
-work). And I wish that Mac OS had a way to say &ldquo;treat this drive as
-nonremovable&rdquo;, or at least require admin abilities and a confirmation dialog
-before ejecting it.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/9/">&larr; Older</a>
@@ -986,6 +1028,14 @@ before ejecting it.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/01/more-mail-fail/">More mail fail</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/01/happy-new-year/">Happy New Year</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/08/mail-dot-app-gmail-and-mavericks/">Mail.app and gmail in Mavericks</a>
       </li>
     
@@ -995,14 +1045,6 @@ before ejecting it.</p>
     
       <li class="post">
         <a href="/blog/2013/12/08/apple-2-factor-authentication-setup/">2-factor authentication setup for AppleID</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/08/apple-shopping-cart-fail-gift-card-in-cart/">Apple shopping cart fail — gift card in cart makes gift card payment option disappear</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/08/apple-shopping-cart-fail-multiple-devices-on-new-cell-plan/">Apple shopping cart fail — multiple devices on new cell plan</a>
       </li>
     
   </ul>
@@ -1073,7 +1115,7 @@ before ejecting it.</p>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Matt Ginzton -
+  Copyright &copy; 2014 - Matt Ginzton -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
